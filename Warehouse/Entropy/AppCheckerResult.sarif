@@ -14,19 +14,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "HomeSale.Container6.Gallery3.TabIndex"
+                  "fullyQualifiedName": "HomeSale.containerContent_HomeSale.galleryServiceList_HomeSale.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "HomeSale.Container6.Gallery3.TabIndex",
+                  "fullyQualifiedName": "HomeSale.containerContent_HomeSale.galleryServiceList_HomeSale.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "HomeSale",
-                "type": "HomeSale.Container6.Gallery3"
+                "type": "HomeSale.containerContent_HomeSale.galleryServiceList_HomeSale"
               }
             }
           ],
@@ -44,19 +44,139 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "HomeSale.Container6.Gallery3.AccessibleLabel"
+                  "fullyQualifiedName": "HomeSale.containerContent_HomeSale.galleryServiceList_HomeSale.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "HomeSale.Container6.Gallery3.AccessibleLabel",
+                  "fullyQualifiedName": "HomeSale.containerContent_HomeSale.galleryServiceList_HomeSale.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "HomeSale",
-                "type": "HomeSale.Container6.Gallery3"
+                "type": "HomeSale.containerContent_HomeSale.galleryServiceList_HomeSale"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "HomeSale.containerContent_HomeSale.containerInformationService_HomeSale.edtIdService_HomeSale.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "HomeSale.containerContent_HomeSale.containerInformationService_HomeSale.edtIdService_HomeSale.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "HomeSale",
+                "type": "HomeSale.containerContent_HomeSale.containerInformationService_HomeSale.edtIdService_HomeSale"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "HomeSale.containerContent_HomeSale.containerInformationService_HomeSale.edtSerViceName_HomeSale.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "HomeSale.containerContent_HomeSale.containerInformationService_HomeSale.edtSerViceName_HomeSale.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "HomeSale",
+                "type": "HomeSale.containerContent_HomeSale.containerInformationService_HomeSale.edtSerViceName_HomeSale"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "HomeSale.containerContent_HomeSale.containerInformationService_HomeSale.edtDescriptionService_HomeSale.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "HomeSale.containerContent_HomeSale.containerInformationService_HomeSale.edtDescriptionService_HomeSale.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "HomeSale",
+                "type": "HomeSale.containerContent_HomeSale.containerInformationService_HomeSale.edtDescriptionService_HomeSale"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "HomeSale.containerContent_HomeSale.containerInformationService_HomeSale.edtPridceService_HomeSale.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "HomeSale.containerContent_HomeSale.containerInformationService_HomeSale.edtPridceService_HomeSale.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "HomeSale",
+                "type": "HomeSale.containerContent_HomeSale.containerInformationService_HomeSale.edtPridceService_HomeSale"
               }
             }
           ],

@@ -10,12 +10,16 @@
         "dataSources": {
           "Service": {
             "tableName": "8229fdaa-a05f-4f93-b31f-df90b9e3e14d"
+          },
+          "Service_1": {
+            "tableName": "8229fdaa-a05f-4f93-b31f-df90b9e3e14d"
           }
         }
       }
     },
     "dataSources": [
-      "Service"
+      "Service",
+      "Service_1"
     ],
     "dependencies": {},
     "dependents": [],
