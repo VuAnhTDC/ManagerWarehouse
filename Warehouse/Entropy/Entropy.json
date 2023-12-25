@@ -3,37 +3,81 @@
   "ControlUniqueGuids": {},
   "ControlUniqueIds": {
     "App": 1,
+    "Body2": 26,
+    "containerInformationUser_HomeSale": 5,
+    "containerRole_HomeSale": 9,
+    "Gallery2": 21,
+    "galleryTemplate2": 22,
     "HomeSale": 4,
-    "Host": 3
+    "Host": 3,
+    "iconUser_HomeSale": 6,
+    "lblRole_HomeSale": 10,
+    "lblUserName_HomeSale": 8,
+    "Title2": 24
   },
   "FunctionParamsInvariantScripts": {},
   "FunctionParamsInvariantScriptsOnInstances": {},
-  "HeaderLastSavedDateTimeUTC": "12/25/2023 08:03:22",
+  "HeaderLastSavedDateTimeUTC": "12/25/2023 08:23:04",
   "IsLegacyComponentAllowGlobalScopeCase": false,
   "LocalConnectionIDReferences": {},
   "LocalDatabaseReferencesAsEmpty": false,
-  "LocalResourceFileNames": {},
-  "LocalResourceRootPaths": {},
+  "LocalResourceFileNames": {
+    "icons8-username-48": "88975814-9970-4973-afe8-7448bebdf76e.png",
+    "icons8-username-48_1": "b982fc81-a7b3-4377-89bf-1550a5e394b4.png"
+  },
+  "LocalResourceRootPaths": {
+    "icons8-username-48": "https://docserverpwaprodseas.blob.core.windows.net/8cf13c44-670a-4265-9a2b-5a286d072129-1/resource/ad97e6fb-7355-4f75-be8b-02bcd1c2f4aa.png?skoid=58690ece-ec83-4ce2-9ce8-883d4d6a54ee&sktid=975f013f-7f24-47e8-a7d3-abc4752bf346&skt=2023-12-25T08%3A06%3A04Z&ske=2023-12-26T08%3A21%3A04Z&sks=b&skv=2022-11-02&sv=2022-11-02&spr=https&se=2023-12-26T08%3A21%3A04Z&sr=b&sp=r&sig=6wxdNfxSdHScEoNLmgEdz%2F08%2FSEfo1DYlNiA0QnLrzc%3D",
+    "icons8-username-48_1": "https://docserverpwaprodseas.blob.core.windows.net/8cf13c44-670a-4265-9a2b-5a286d072129-1/resource/f324b3f1-91cd-451d-a7b8-c4e74addb0a4.png?skoid=58690ece-ec83-4ce2-9ce8-883d4d6a54ee&sktid=975f013f-7f24-47e8-a7d3-abc4752bf346&skt=2023-12-25T08%3A10%3A29Z&ske=2023-12-26T08%3A25%3A29Z&sks=b&skv=2022-11-02&sv=2022-11-02&spr=https&se=2023-12-26T08%3A25%3A29Z&sr=b&sp=r&sig=gRVwxyYcNISPZ7XN46%2BTTx%2BeN7H4SoBK5yj95hpfrqY%3D"
+  },
   "OrderComponentMetadata": {},
   "OrderComponentTemplate": {},
-  "OrderDataSource": {},
+  "OrderDataSource": {
+    "CustomGallerySample": 0
+  },
   "OrderGroupControls": {},
   "OrderPcfTemplate": {},
   "OrderTemplate": {},
-  "OrderXMLTemplate": {},
+  "OrderXMLTemplate": {
+    "gallery": 3,
+    "groupContainer": 0,
+    "image": 1,
+    "label": 2
+  },
   "OverridablePropertiesEntry": {
     "App": {},
+    "Body2": {},
+    "containerInformationUser_HomeSale": {},
+    "containerRole_HomeSale": {},
+    "Gallery2": {},
+    "galleryTemplate2": {},
     "HomeSale": {},
-    "Host": {}
+    "Host": {},
+    "iconUser_HomeSale": {},
+    "lblRole_HomeSale": {},
+    "lblUserName_HomeSale": {},
+    "Title2": {}
   },
   "PCFDynamicSchemaForIRRetrievalEntry": {},
   "PCFTemplateEntry": {},
   "PublishOrderIndices": {
     "App": 0,
+    "Body2": 8,
+    "containerInformationUser_HomeSale": 0,
+    "containerRole_HomeSale": 3,
+    "Gallery2": 5,
+    "galleryTemplate2": 6,
     "HomeSale": 0,
-    "Host": 0
+    "Host": 0,
+    "iconUser_HomeSale": 1,
+    "lblRole_HomeSale": 4,
+    "lblUserName_HomeSale": 2,
+    "Title2": 7
   },
-  "ResourcesJsonIndices": {},
+  "ResourcesJsonIndices": {
+    "Image-icons8-username-48": 1,
+    "Image-icons8-username-48_1": 2,
+    "Image-SampleImage": 0
+  },
   "RuleScreenIdWithoutScreen": {},
   "TemplateVersions": {},
   "VolatileProperties": {
