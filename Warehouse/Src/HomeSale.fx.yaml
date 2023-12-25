@@ -72,35 +72,58 @@ HomeSale As screen:
             ZIndex: =5
 
         Container5 As groupContainer.manualLayoutContainer:
+            BorderThickness: =1
             Height: =69
+            RadiusBottomLeft: =5
+            RadiusBottomRight: =5
+            RadiusTopLeft: =5
+            RadiusTopRight: =5
             Width: =248
             X: =35
-            Y: =207
+            Y: =212
             ZIndex: =6
-
-            Rectangle4 As rectangle:
-                BorderThickness: =1
-                Height: =23
-                Width: =181
-                X: =35
-                Y: =5
-                ZIndex: =1
 
             Label5 As label:
                 Align: =Align.Center
+                BorderThickness: =1
+                Fill: =RGBA(215, 223, 240, 1)
                 Height: =23
                 Text: ="Danh sách dịch vụ"
                 Width: =181
                 X: =35
-                Y: =5
+                Y: =10
                 ZIndex: =2
 
             Label5_1 As label:
                 Align: =Align.Center
+                BorderThickness: =1
+                Fill: =RGBA(175, 191, 224, 1)
                 Height: =23
-                Text: ="Danh sách dịch vụ"
+                Text: ="Thêm dịch vụ"
                 Width: =181
                 X: =35
-                Y: =40
+                Y: =39
                 ZIndex: =3
+
+        Label4_1 As label:
+            Align: =Align.Center
+            BorderThickness: =1
+            Color: =RGBA(245, 237, 237, 1)
+            FontWeight: =FontWeight.Bold
+            Text: ="Khách hàng"
+            Width: =281
+            X: =20
+            Y: =303
+            ZIndex: =7
+
+        Label4_2 As label:
+            Align: =Align.Center
+            BorderThickness: =1
+            Color: =RGBA(245, 237, 237, 1)
+            FontWeight: =FontWeight.Bold
+            Text: ="Khách hàng"
+            Width: =281
+            X: =20
+            Y: =355
+            ZIndex: =8
 
