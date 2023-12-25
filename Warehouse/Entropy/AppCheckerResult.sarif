@@ -194,18 +194,18 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Screen1"
+                  "fullyQualifiedName": "Screen2"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Screen1",
+                  "fullyQualifiedName": "Screen2",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "module": "Screen1",
-                "type": "Screen1"
+                "module": "Screen2",
+                "type": "Screen2"
               }
             }
           ],
@@ -223,19 +223,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Screen1.Container3_Admin.Container5_1_Admin.Container6_Admin.Gallery1_Admin.AccessibleLabel"
+                  "fullyQualifiedName": "Admin.Container3_Admin.Container5_1_Admin.Container6_Admin.Gallery1_Admin.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Screen1.Container3_Admin.Container5_1_Admin.Container6_Admin.Gallery1_Admin.AccessibleLabel",
+                  "fullyQualifiedName": "Admin.Container3_Admin.Container5_1_Admin.Container6_Admin.Gallery1_Admin.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
-                "module": "Screen1",
-                "type": "Screen1.Container3_Admin.Container5_1_Admin.Container6_Admin.Gallery1_Admin"
+                "module": "Admin",
+                "type": "Admin.Container3_Admin.Container5_1_Admin.Container6_Admin.Gallery1_Admin"
               }
             }
           ],
@@ -253,19 +253,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Screen1.Container3_Admin.Container5_1_Admin.Container6_Admin.Gallery1_Admin.TabIndex"
+                  "fullyQualifiedName": "Admin.Container3_Admin.Container5_1_Admin.Container6_Admin.Gallery1_Admin.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Screen1.Container3_Admin.Container5_1_Admin.Container6_Admin.Gallery1_Admin.TabIndex",
+                  "fullyQualifiedName": "Admin.Container3_Admin.Container5_1_Admin.Container6_Admin.Gallery1_Admin.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
-                "module": "Screen1",
-                "type": "Screen1.Container3_Admin.Container5_1_Admin.Container6_Admin.Gallery1_Admin"
+                "module": "Admin",
+                "type": "Admin.Container3_Admin.Container5_1_Admin.Container6_Admin.Gallery1_Admin"
               }
             }
           ],
@@ -283,19 +283,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Screen1.Container3_Admin.Container5_1_Admin.Container6_1_Admin.TextInput_Name_Admin.AccessibleLabel"
+                  "fullyQualifiedName": "Admin.Container3_Admin.Container5_1_Admin.Container6_1_Admin.TextInput_Name_Admin.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Screen1.Container3_Admin.Container5_1_Admin.Container6_1_Admin.TextInput_Name_Admin.AccessibleLabel",
+                  "fullyQualifiedName": "Admin.Container3_Admin.Container5_1_Admin.Container6_1_Admin.TextInput_Name_Admin.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
-                "module": "Screen1",
-                "type": "Screen1.Container3_Admin.Container5_1_Admin.Container6_1_Admin.TextInput_Name_Admin"
+                "module": "Admin",
+                "type": "Admin.Container3_Admin.Container5_1_Admin.Container6_1_Admin.TextInput_Name_Admin"
               }
             }
           ],
@@ -313,19 +313,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Screen1.Container3_Admin.Container5_1_Admin.Container6_1_Admin.TextInput_Email_Admin.AccessibleLabel"
+                  "fullyQualifiedName": "Admin.Container3_Admin.Container5_1_Admin.Container6_1_Admin.TextInput_Email_Admin.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Screen1.Container3_Admin.Container5_1_Admin.Container6_1_Admin.TextInput_Email_Admin.AccessibleLabel",
+                  "fullyQualifiedName": "Admin.Container3_Admin.Container5_1_Admin.Container6_1_Admin.TextInput_Email_Admin.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
-                "module": "Screen1",
-                "type": "Screen1.Container3_Admin.Container5_1_Admin.Container6_1_Admin.TextInput_Email_Admin"
+                "module": "Admin",
+                "type": "Admin.Container3_Admin.Container5_1_Admin.Container6_1_Admin.TextInput_Email_Admin"
               }
             }
           ],
@@ -343,19 +343,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Screen1.Container3_Admin.Container5_1_Admin.Container6_1_Admin.TextInput_Phone_Admin.AccessibleLabel"
+                  "fullyQualifiedName": "Admin.Container3_Admin.Container5_1_Admin.Container6_1_Admin.TextInput_Phone_Admin.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Screen1.Container3_Admin.Container5_1_Admin.Container6_1_Admin.TextInput_Phone_Admin.AccessibleLabel",
+                  "fullyQualifiedName": "Admin.Container3_Admin.Container5_1_Admin.Container6_1_Admin.TextInput_Phone_Admin.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
-                "module": "Screen1",
-                "type": "Screen1.Container3_Admin.Container5_1_Admin.Container6_1_Admin.TextInput_Phone_Admin"
+                "module": "Admin",
+                "type": "Admin.Container3_Admin.Container5_1_Admin.Container6_1_Admin.TextInput_Phone_Admin"
               }
             }
           ],
@@ -373,19 +373,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Screen1.Container3_Admin.Container5_1_Admin.Container6_1_Admin.Dropdown_Role_Admin.AccessibleLabel"
+                  "fullyQualifiedName": "Admin.Container3_Admin.Container5_1_Admin.Container6_1_Admin.Dropdown_Role_Admin.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Screen1.Container3_Admin.Container5_1_Admin.Container6_1_Admin.Dropdown_Role_Admin.AccessibleLabel",
+                  "fullyQualifiedName": "Admin.Container3_Admin.Container5_1_Admin.Container6_1_Admin.Dropdown_Role_Admin.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
-                "module": "Screen1",
-                "type": "Screen1.Container3_Admin.Container5_1_Admin.Container6_1_Admin.Dropdown_Role_Admin"
+                "module": "Admin",
+                "type": "Admin.Container3_Admin.Container5_1_Admin.Container6_1_Admin.Dropdown_Role_Admin"
               }
             }
           ],
@@ -397,6 +397,126 @@
           },
           "ruleId": "acc-AccessibleLabelNeeded",
           "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen2.Gallery1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen2.Gallery1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Screen2",
+                "type": "Screen2.Gallery1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen2.Gallery1.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen2.Gallery1.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Screen2",
+                "type": "Screen2.Gallery1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen2.Gallery1.Gallery2.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen2.Gallery1.Gallery2.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Screen2",
+                "type": "Screen2.Gallery1.Gallery2"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen2.Gallery1.Gallery2.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen2.Gallery1.Gallery2.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Screen2",
+                "type": "Screen2.Gallery1.Gallery2"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 1
         },
         {
           "locations": [
