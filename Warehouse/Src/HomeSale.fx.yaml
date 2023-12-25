@@ -62,9 +62,45 @@ HomeSale As screen:
             ZIndex: =4
 
         Label4 As label:
-            Text: ="Text"
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Bold
+            Text: ="Dịch vụ"
             Width: =281
             X: =19
             Y: =167
             ZIndex: =5
+
+        Container5 As groupContainer.manualLayoutContainer:
+            Height: =69
+            Width: =248
+            X: =35
+            Y: =207
+            ZIndex: =6
+
+            Rectangle4 As rectangle:
+                BorderThickness: =1
+                Height: =23
+                Width: =181
+                X: =35
+                Y: =5
+                ZIndex: =1
+
+            Label5 As label:
+                Align: =Align.Center
+                Height: =23
+                Text: ="Danh sách dịch vụ"
+                Width: =181
+                X: =35
+                Y: =5
+                ZIndex: =2
+
+            Label5_1 As label:
+                Align: =Align.Center
+                Height: =23
+                Text: ="Danh sách dịch vụ"
+                Width: =181
+                X: =35
+                Y: =40
+                ZIndex: =3
 
