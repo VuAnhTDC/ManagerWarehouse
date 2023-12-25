@@ -357,6 +357,8 @@ HomeSale As screen:
             btnDeleteService_HomeSale As button:
                 FontWeight: =FontWeight.Bold
                 Height: =50
+                OnSelect: |
+                    =true;
                 Text: ="Xóa"
                 Width: =232
                 X: =339
