@@ -1,1 +1,24 @@
-{}
+{
+  "c9efb40e-e2c4-4d94-9da5-241348de59ed": {
+    "connectionRef": {
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1670/1.0.1670.3526/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline"
+    },
+    "datasets": {
+      "https://cmmspronet.sharepoint.com/sites/PowerAppTraining": {
+        "dataSources": {
+          "Service": {
+            "tableName": "8229fdaa-a05f-4f93-b31f-df90b9e3e14d"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "Service"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "c9efb40e-e2c4-4d94-9da5-241348de59ed"
+  }
+}

@@ -158,10 +158,129 @@ HomeSale As screen:
         ZIndex: =2
 
         Label6 As label:
+            Align: =Align.Center
+            Fill: =RGBA(130, 191, 169, 1)
+            FontWeight: =FontWeight.Bold
             Height: =31
-            Text: ="Text"
+            Text: ="Danh sách dịch vụ"
             Width: =278
-            X: =16
-            Y: =24
+            X: =40
+            Y: =38
             ZIndex: =1
+
+        "Gallery3 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+            BorderThickness: =1
+            DelayItemLoading: =true
+            Fill: =RGBA(241, 244, 249, 1)
+            Height: =620
+            Items: =Service
+            Layout: =Layout.Vertical
+            LoadingSpinner: =LoadingSpinner.Data
+            TemplateSize: =84
+            Width: =324
+            X: =16
+            Y: =81
+            ZIndex: =2
+
+            Title3 As label:
+                FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                Height: =Self.Size * 1.8
+                OnSelect: =Select(Parent)
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =ThisItem.Title
+                VerticalAlign: =VerticalAlign.Top
+                Width: =Parent.TemplateWidth - 173
+                X: =103
+                Y: =(Parent.TemplateHeight - (Self.Size * 1.8 + Subtitle1.Size * 1.8)) / 2
+                ZIndex: =2
+
+            Subtitle1 As label:
+                FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                Height: =26
+                OnSelect: =Select(Parent)
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =15
+                Text: =ThisItem.service_Name
+                VerticalAlign: =VerticalAlign.Top
+                Width: =242
+                X: =14
+                Y: =16
+                ZIndex: =3
+
+            NextArrow1 As icon.ChevronRight:
+                AccessibleLabel: =Self.Tooltip
+                Color: =RGBA(166, 166, 166, 1)
+                Height: =50
+                Icon: =Icon.ChevronRight
+                OnSelect: =Select(Parent)
+                PaddingBottom: =16
+                PaddingLeft: =16
+                PaddingRight: =16
+                PaddingTop: =16
+                Tooltip: ="View item details"
+                Width: =50
+                X: =Parent.TemplateWidth - Self.Width - 12
+                Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+                ZIndex: =4
+
+            Separator1 As rectangle:
+                BorderStyle: =BorderStyle.Dotted
+                BorderThickness: =1
+                Height: =0
+                OnSelect: =Select(Parent)
+                Width: =Parent.TemplateWidth
+                Y: =Parent.TemplateHeight - Self.Height
+                ZIndex: =5
+
+            Rectangle6 As rectangle:
+                Height: =Parent.TemplateHeight - Separator1.Height
+                OnSelect: =Select(Parent)
+                Visible: =ThisItem.IsSelected
+                Width: =4
+                ZIndex: =6
+
+            Label7 As label:
+                Height: =26
+                Italic: =true
+                OnSelect: =Select(Parent)
+                Text: |-
+                    =Text(ThisItem.service_Price, "#,##0", "en-US")
+                Width: =216
+                X: =27
+                Y: =50
+                ZIndex: =7
+
+        Container7 As groupContainer.manualLayoutContainer:
+            BorderThickness: =1
+            Height: =705
+            RadiusBottomLeft: =10
+            RadiusBottomRight: =10
+            RadiusTopLeft: =10
+            RadiusTopRight: =10
+            Width: =627
+            X: =357
+            Y: =12
+            ZIndex: =3
+
+            Label8 As label:
+                FontWeight: =FontWeight.Bold
+                Height: =67
+                Size: =30
+                Text: ="Thông tin dịch vụ"
+                Width: =448
+                X: =12
+                Y: =15
+                ZIndex: =1
+
+            Label9 As label:
+                Text: ="Text"
+                X: =63
+                Y: =99
+                ZIndex: =2
 
