@@ -4,6 +4,7 @@
   "ControlUniqueIds": {
     "App": 1,
     "Container5": 30,
+    "Container6": 38,
     "containerInformationUser_HomeSale": 5,
     "containerRole_HomeSale": 9,
     "HomeSale": 4,
@@ -12,15 +13,18 @@
     "Label4": 29,
     "Label4_1": 34,
     "Label4_2": 35,
+    "Label4_3": 36,
+    "Label4_4": 37,
     "Label5": 32,
     "Label5_1": 33,
+    "Label6": 40,
     "lblRole_HomeSale": 10,
     "lblUserName_HomeSale": 8,
     "Rectangle3": 27
   },
   "FunctionParamsInvariantScripts": {},
   "FunctionParamsInvariantScriptsOnInstances": {},
-  "HeaderLastSavedDateTimeUTC": "12/25/2023 08:30:46",
+  "HeaderLastSavedDateTimeUTC": "12/25/2023 08:34:56",
   "IsLegacyComponentAllowGlobalScopeCase": false,
   "LocalConnectionIDReferences": {},
   "LocalDatabaseReferencesAsEmpty": false,
@@ -49,6 +53,7 @@
   "OverridablePropertiesEntry": {
     "App": {},
     "Container5": {},
+    "Container6": {},
     "containerInformationUser_HomeSale": {},
     "containerRole_HomeSale": {},
     "HomeSale": {},
@@ -57,8 +62,11 @@
     "Label4": {},
     "Label4_1": {},
     "Label4_2": {},
+    "Label4_3": {},
+    "Label4_4": {},
     "Label5": {},
     "Label5_1": {},
+    "Label6": {},
     "lblRole_HomeSale": {},
     "lblUserName_HomeSale": {},
     "Rectangle3": {}
@@ -68,6 +76,7 @@
   "PublishOrderIndices": {
     "App": 0,
     "Container5": 7,
+    "Container6": 0,
     "containerInformationUser_HomeSale": 0,
     "containerRole_HomeSale": 3,
     "HomeSale": 0,
@@ -76,8 +85,11 @@
     "Label4": 5,
     "Label4_1": 5,
     "Label4_2": 5,
+    "Label4_3": 5,
+    "Label4_4": 5,
     "Label5": 8,
     "Label5_1": 9,
+    "Label6": 0,
     "lblRole_HomeSale": 4,
     "lblUserName_HomeSale": 2,
     "Rectangle3": 6
@@ -92,7 +104,7 @@
   "VolatileProperties": {
     "AnalysisLoadTime": 0.0198584,
     "ControlCount": {
-      "label": 3
+      "label": 5
     }
   },
   "WasLocalDatabaseReferencesEmpty": true

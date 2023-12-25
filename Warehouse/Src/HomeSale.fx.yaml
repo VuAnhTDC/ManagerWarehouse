@@ -86,7 +86,7 @@ HomeSale As screen:
             Label5 As label:
                 Align: =Align.Center
                 BorderThickness: =1
-                Fill: =RGBA(215, 223, 240, 1)
+                Fill: =RGBA(175, 191, 224, 1)
                 Height: =23
                 Text: ="Danh sách dịch vụ"
                 Width: =181
@@ -97,7 +97,7 @@ HomeSale As screen:
             Label5_1 As label:
                 Align: =Align.Center
                 BorderThickness: =1
-                Fill: =RGBA(175, 191, 224, 1)
+                Fill: =RGBA(255, 255, 255, 0)
                 Height: =23
                 Text: ="Thêm dịch vụ"
                 Width: =181
@@ -121,9 +121,47 @@ HomeSale As screen:
             BorderThickness: =1
             Color: =RGBA(245, 237, 237, 1)
             FontWeight: =FontWeight.Bold
-            Text: ="Khách hàng"
+            Text: ="Báo giá, đơn hàng"
             Width: =281
             X: =20
             Y: =355
             ZIndex: =8
+
+        Label4_3 As label:
+            Align: =Align.Center
+            BorderThickness: =1
+            Color: =RGBA(245, 237, 237, 1)
+            FontWeight: =FontWeight.Bold
+            Text: ="Yêu cầu mua hàng"
+            Width: =281
+            X: =20
+            Y: =407
+            ZIndex: =9
+
+        Label4_4 As label:
+            Align: =Align.Center
+            BorderThickness: =1
+            Color: =RGBA(245, 237, 237, 1)
+            FontWeight: =FontWeight.Bold
+            Text: ="Giao dịch"
+            Width: =281
+            X: =20
+            Y: =459
+            ZIndex: =10
+
+    Container6 As groupContainer.manualLayoutContainer:
+        BorderThickness: =1
+        Height: =735
+        Width: =997
+        X: =352
+        Y: =18
+        ZIndex: =2
+
+        Label6 As label:
+            Height: =31
+            Text: ="Text"
+            Width: =278
+            X: =16
+            Y: =24
+            ZIndex: =1
 
