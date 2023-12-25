@@ -8,18 +8,26 @@
     "datasets": {
       "https://cmmspronet.sharepoint.com/sites/PowerAppTraining": {
         "dataSources": {
+          "Role": {
+            "tableName": "256f4f99-e6fd-47e0-b5e7-ce7662ac5367"
+          },
           "Service": {
             "tableName": "8229fdaa-a05f-4f93-b31f-df90b9e3e14d"
           },
           "Service_1": {
             "tableName": "8229fdaa-a05f-4f93-b31f-df90b9e3e14d"
+          },
+          "User": {
+            "tableName": "b963092a-cd27-4c6a-a03b-39c4b01f2cb8"
           }
         }
       }
     },
     "dataSources": [
       "Service",
-      "Service_1"
+      "Service_1",
+      "User",
+      "Role"
     ],
     "dependencies": {},
     "dependents": [],

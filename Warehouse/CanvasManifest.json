@@ -95,7 +95,7 @@
       "useguiddatatypes": true,
       "usenonblockingonstartrule": true,
       "webbarcodescanner": false,
-      "zeroalltabindexes": true
+      "zeroalltabindexes": false
     },
     "Author": "",
     "BindingErrorCount": 0,
@@ -114,7 +114,7 @@
     "Id": "801641d1-1200-410b-a59c-ce7f30ce4533",
     "InstrumentationKey": "",
     "LocalDatabaseReferences": "{}",
-    "ManualOfflineProfileId": null,
+    "ManualOfflineProfileId": "",
     "Name": "Warehouser",
     "OriginatingVersion": "1.336",
     "ParserErrorCount": 0,
@@ -132,6 +132,7 @@
     "UserLocale": "en-US"
   },
   "ScreenOrder": [
-    "HomeSale"
+    "HomeSale",
+    "Screen1"
   ]
 }

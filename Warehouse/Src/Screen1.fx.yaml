@@ -1,0 +1,319 @@
+Screen1 As screen:
+
+    Container3_Admin As groupContainer.verticalAutoLayoutContainer:
+        Height: =768
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutMode: =LayoutMode.Auto
+        Width: =1366
+        ZIndex: =1
+
+        Container5_Admin As groupContainer.manualLayoutContainer:
+            FillPortions: =0.5
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            ZIndex: =1
+
+            Label1_Admin As label:
+                FontWeight: =FontWeight.Semibold
+                Size: =20
+                Text: ="Xin chào, Admin"
+                Width: =842
+                X: =184
+                Y: =48
+                ZIndex: =1
+
+            Label1_1_Admin As label:
+                FontWeight: =FontWeight.Semibold
+                Size: =20
+                Text: ="Thoát"
+                Width: =125
+                X: =1180
+                Y: =48
+                ZIndex: =3
+
+            Image2_Admin As image:
+                Height: =80
+                Image: ='icons8-username-48_2'
+                Width: =80
+                X: =80
+                Y: =28
+                ZIndex: =4
+
+        Container5_1_Admin As groupContainer.manualLayoutContainer:
+            FillPortions: =2.5
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            ZIndex: =2
+
+            Container6_Admin As groupContainer.manualLayoutContainer:
+                Height: =586
+                RadiusBottomLeft: =10
+                RadiusBottomRight: =10
+                RadiusTopLeft: =10
+                RadiusTopRight: =10
+                Width: =409
+                X: =27
+                Y: =21
+                ZIndex: =1
+
+                Label2_Admin As label:
+                    Align: =Align.Center
+                    Fill: =RGBA(102, 182, 227, 1)
+                    FontWeight: =FontWeight.Semibold
+                    Height: =49
+                    Size: =20
+                    Text: ="Người dùng"
+                    Width: =409
+                    ZIndex: =1
+
+                "Gallery1_Admin As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver5.0'":
+                    DelayItemLoading: =true
+                    Height: =537
+                    Items: =User
+                    Layout: =Layout.Vertical
+                    LoadingSpinner: =LoadingSpinner.Data
+                    TemplatePadding: =0
+                    TemplateSize: =116
+                    Width: =409
+                    Y: =49
+                    ZIndex: =1
+
+                    Title2_Admin As label:
+                        FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                        Height: =26
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Text: =ThisItem.user_Name
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =188
+                        X: =16
+                        Y: =(Parent.TemplateHeight - (Self.Size*1.8 + Subtitle2_Admin.Size*1.8 + 2 + Body1_Admin.Size*1.8)) / 2
+                        ZIndex: =1
+
+                    Subtitle2_Admin As label:
+                        FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                        Height: =Self.Size * 1.8
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Text: =ThisItem.phonenumber_User
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =Title2_Admin.Width
+                        X: =Title2_Admin.X
+                        Y: =Title2_Admin.Y + Title2_Admin.Height
+                        ZIndex: =2
+
+                    Body1_Admin As label:
+                        FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                        Height: =Self.Size * 1.8
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Text: =ThisItem.email_User
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =Title2_Admin.Width
+                        X: =Title2_Admin.X
+                        Y: =Subtitle2_Admin.Y + Subtitle2_Admin.Height
+                        ZIndex: =3
+
+                    NextArrow2_Admin As icon.ChevronRight:
+                        AccessibleLabel: =Self.Tooltip
+                        Color: =RGBA(166, 166, 166, 1)
+                        Height: =50
+                        Icon: =Icon.ChevronRight
+                        OnSelect: =
+                        PaddingBottom: =16
+                        PaddingLeft: =16
+                        PaddingRight: =16
+                        PaddingTop: =16
+                        Tooltip: ="View item details"
+                        Width: =50
+                        X: =Parent.TemplateWidth - Self.Width - 12
+                        Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+                        ZIndex: =4
+
+                    Separator2_Admin As rectangle:
+                        Height: =8
+                        OnSelect: =Select(Parent)
+                        Width: =Parent.TemplateWidth
+                        Y: =Parent.TemplateHeight - Self.Height
+                        ZIndex: =5
+
+                    Rectangle2_Admin As rectangle:
+                        Height: =Parent.TemplateHeight - Separator2_Admin.Height
+                        OnSelect: =Select(Parent)
+                        Visible: =ThisItem.IsSelected
+                        Width: =4
+                        ZIndex: =6
+
+                    Title2_1_Admin As label:
+                        Align: =Align.Right
+                        Color: =RGBA(0, 121, 187, 1)
+                        FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                        Height: =26
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Text: =LookUp(Role,ID=ThisItem.id_Role).name_Role
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =127
+                        X: =219
+                        Y: =(Parent.TemplateHeight - (Self.Size*1.8 + Subtitle2_Admin.Size*1.8 + 2 + Body1_Admin.Size*1.8)) / 2
+                        ZIndex: =7
+
+            Container6_1_Admin As groupContainer.manualLayoutContainer:
+                Height: =586
+                RadiusBottomLeft: =10
+                RadiusBottomRight: =10
+                RadiusTopLeft: =10
+                RadiusTopRight: =10
+                Width: =880
+                X: =459
+                Y: =21
+                ZIndex: =2
+
+                Label2_1_Admin As label:
+                    Align: =Align.Center
+                    Fill: =RGBA(102, 182, 227, 1)
+                    FontWeight: =FontWeight.Semibold
+                    Height: =49
+                    Size: =20
+                    Text: ="Thông tin người dùng"
+                    Width: =880
+                    ZIndex: =1
+
+                Label5_Admin As label:
+                    FontWeight: =FontWeight.Semibold
+                    Height: =36
+                    Size: =15
+                    Text: ="Tên người dùng"
+                    Width: =793
+                    X: =40
+                    Y: =64
+                    ZIndex: =2
+
+                TextInput_Name_Admin As text:
+                    Default: =Gallery1_Admin.Selected.user_Name
+                    Height: =50
+                    HintText: ="Nhập tên người dùng"
+                    Size: =15
+                    Width: =793
+                    X: =40
+                    Y: =100
+                    ZIndex: =3
+
+                Label5_1_Admin As label:
+                    FontWeight: =FontWeight.Semibold
+                    Height: =36
+                    Size: =15
+                    Text: ="Email"
+                    Width: =793
+                    X: =40
+                    Y: =150
+                    ZIndex: =4
+
+                TextInput_Email_Admin As text:
+                    Default: =Gallery1_Admin.Selected.email_User
+                    Height: =50
+                    HintText: ="Nhập email"
+                    Size: =15
+                    Width: =793
+                    X: =40
+                    Y: =186
+                    ZIndex: =5
+
+                Label5_2_Admin As label:
+                    FontWeight: =FontWeight.Semibold
+                    Height: =36
+                    Size: =15
+                    Text: ="Số điện thoại"
+                    Width: =793
+                    X: =40
+                    Y: =236
+                    ZIndex: =6
+
+                TextInput_Phone_Admin As text:
+                    Default: =Gallery1_Admin.Selected.phonenumber_User
+                    Height: =50
+                    HintText: ="Nhập số điện thoại"
+                    Size: =15
+                    Width: =793
+                    X: =40
+                    Y: =272
+                    ZIndex: =7
+
+                Label5_3_Admin As label:
+                    FontWeight: =FontWeight.Semibold
+                    Height: =36
+                    Size: =15
+                    Text: ="Vai trò"
+                    Width: =793
+                    X: =40
+                    Y: =322
+                    ZIndex: =8
+
+                Dropdown_Role_Admin As dropdown:
+                    Height: =50
+                    Items: =Role
+                    Size: =15
+                    Width: =793
+                    X: =40
+                    Y: =358
+                    ZIndex: =9
+
+                Button_Sửa_Admin As button:
+                    OnSelect: |-
+                        =Patch(
+                            User,
+                            LookUp(
+                                User,
+                                ID = Gallery1_Admin.Selected.ID
+                            ),
+                            {
+                                user_Name: TextInput_Name_Admin.Text,
+                                email_User: TextInput_Email_Admin.Text,
+                                phonenumber_User: TextInput_Phone_Admin.Text,
+                                id_Role: Dropdown_Role_Admin.Selected.ID
+                            }
+                        )
+                    Text: ="Sửa"
+                    X: =673
+                    Y: =447
+                    ZIndex: =10
+
+                Button_Thêm_Admin As button:
+                    OnSelect: |-
+                        =Patch(
+                            User,
+                            Defaults(User),
+                            {
+                                user_Name: TextInput_Name_Admin.Text,
+                                email_User: TextInput_Email_Admin.Text,
+                                phonenumber_User: TextInput_Phone_Admin.Text,
+                                id_Role: Dropdown_Role_Admin.Selected.ID
+                            }
+                        )
+                    Text: ="Thêm"
+                    Width: =166
+                    X: =299
+                    Y: =447
+                    ZIndex: =12
+
+                Button_Xóa_Admin As button:
+                    Fill: =RGBA(255, 0, 0, 1)
+                    HoverFill: =ColorFade(RGBA(255, 0, 0, 1), -20%)
+                    OnSelect: =
+                    Text: ="Xóa"
+                    X: =487
+                    Y: =447
+                    ZIndex: =13
+
