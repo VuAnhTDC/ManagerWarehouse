@@ -28,7 +28,7 @@
     "Container6_1_Admin": 79,
     "Container6_Admin": 68,
     "containerContentFunctionService_HomeSale_1": 17,
-    "containerContentServicec_HomeSale": 5,
+    "containerContentService_HomeSale": 5,
     "containerFunctionAddService_HomeSale_1": 6,
     "containerInformationService_HomeSale_1": 18,
     "containerInformationUser_HomeSale": 39,
@@ -95,7 +95,7 @@
   },
   "FunctionParamsInvariantScripts": {},
   "FunctionParamsInvariantScriptsOnInstances": {},
-  "HeaderLastSavedDateTimeUTC": "12/26/2023 02:54:48",
+  "HeaderLastSavedDateTimeUTC": "12/26/2023 03:01:29",
   "IsLegacyComponentAllowGlobalScopeCase": false,
   "LocalConnectionIDReferences": {
     "c9efb40e-e2c4-4d94-9da5-241348de59ed": "\"/providers/microsoft.powerapps/apis/shared_sharepointonline/connections/48359898d0a74a34b43202afe58eae58\""
@@ -107,9 +107,9 @@
     "icons8-username-48_2": "59fa8e52-f9c2-472c-9a05-9437f1ae364e.png"
   },
   "LocalResourceRootPaths": {
-    "icons8-username-48": "https://docserverpwaprodeas.blob.core.windows.net/e24423da-b6e5-4246-ba6a-38b1530cc9e5-1/resource/Assets0Images088975814-9970-4973-afe8-7448bebdf76e.png?skoid=58690ece-ec83-4ce2-9ce8-883d4d6a54ee&sktid=975f013f-7f24-47e8-a7d3-abc4752bf346&skt=2023-12-26T02%3A54%3A05Z&ske=2023-12-27T03%3A09%3A05Z&sks=b&skv=2022-11-02&sv=2022-11-02&spr=https&se=2023-12-27T03%3A09%3A05Z&sr=b&sp=r&sig=6PuB%2B6S1Hqjs8v0rnFMKUtgcnAYyKlA%2Bbb%2F9C2arj3s%3D",
-    "icons8-username-48_1": "https://docserverpwaprodeas.blob.core.windows.net/e24423da-b6e5-4246-ba6a-38b1530cc9e5-1/resource/Assets0Images0b982fc81-a7b3-4377-89bf-1550a5e394b4.png?skoid=58690ece-ec83-4ce2-9ce8-883d4d6a54ee&sktid=975f013f-7f24-47e8-a7d3-abc4752bf346&skt=2023-12-26T02%3A54%3A05Z&ske=2023-12-27T03%3A09%3A05Z&sks=b&skv=2022-11-02&sv=2022-11-02&spr=https&se=2023-12-27T03%3A09%3A05Z&sr=b&sp=r&sig=BSu8d2eFVVD6i7B4UcpYM0RKbeuSj7ef4LhpKbcYPO8%3D",
-    "icons8-username-48_2": "https://docserverpwaprodeas.blob.core.windows.net/e24423da-b6e5-4246-ba6a-38b1530cc9e5-1/resource/Assets0Images059fa8e52-f9c2-472c-9a05-9437f1ae364e.png?skoid=58690ece-ec83-4ce2-9ce8-883d4d6a54ee&sktid=975f013f-7f24-47e8-a7d3-abc4752bf346&skt=2023-12-26T02%3A54%3A05Z&ske=2023-12-27T03%3A09%3A05Z&sks=b&skv=2022-11-02&sv=2022-11-02&spr=https&se=2023-12-27T03%3A09%3A05Z&sr=b&sp=r&sig=E5Dl40nof14wTyKLbBdmdrwG%2F9PPSCl2lxnSDFnuyHA%3D"
+    "icons8-username-48": "https://docserverpwaprodeas.blob.core.windows.net/b87171f4-2f91-4a8e-8683-3870560990e0-1/resource/Assets0Images088975814-9970-4973-afe8-7448bebdf76e.png?skoid=58690ece-ec83-4ce2-9ce8-883d4d6a54ee&sktid=975f013f-7f24-47e8-a7d3-abc4752bf346&skt=2023-12-26T02%3A58%3A59Z&ske=2023-12-27T03%3A13%3A59Z&sks=b&skv=2022-11-02&sv=2022-11-02&spr=https&se=2023-12-27T03%3A13%3A59Z&sr=b&sp=r&sig=cEL12I%2FL7966Rj1rgDn3hGfPHwzrF5fp5jUONKmF%2FvE%3D",
+    "icons8-username-48_1": "https://docserverpwaprodeas.blob.core.windows.net/b87171f4-2f91-4a8e-8683-3870560990e0-1/resource/Assets0Images0b982fc81-a7b3-4377-89bf-1550a5e394b4.png?skoid=58690ece-ec83-4ce2-9ce8-883d4d6a54ee&sktid=975f013f-7f24-47e8-a7d3-abc4752bf346&skt=2023-12-26T02%3A58%3A59Z&ske=2023-12-27T03%3A13%3A59Z&sks=b&skv=2022-11-02&sv=2022-11-02&spr=https&se=2023-12-27T03%3A13%3A59Z&sr=b&sp=r&sig=Q2rZNTxsja1BnUfoK1CXradOgFqOAuwtSQ7iCAxZ3OQ%3D",
+    "icons8-username-48_2": "https://docserverpwaprodeas.blob.core.windows.net/b87171f4-2f91-4a8e-8683-3870560990e0-1/resource/Assets0Images059fa8e52-f9c2-472c-9a05-9437f1ae364e.png?skoid=58690ece-ec83-4ce2-9ce8-883d4d6a54ee&sktid=975f013f-7f24-47e8-a7d3-abc4752bf346&skt=2023-12-26T02%3A58%3A59Z&ske=2023-12-27T03%3A13%3A59Z&sks=b&skv=2022-11-02&sv=2022-11-02&spr=https&se=2023-12-27T03%3A13%3A59Z&sr=b&sp=r&sig=tZ%2F4lXT30niciafXiWZN4%2BvbRr68jbm5jddbr8%2Ftfrk%3D"
   },
   "OrderComponentMetadata": {},
   "OrderComponentTemplate": {},
@@ -164,7 +164,7 @@
     "Container6_1_Admin": {},
     "Container6_Admin": {},
     "containerContentFunctionService_HomeSale_1": {},
-    "containerContentServicec_HomeSale": {},
+    "containerContentService_HomeSale": {},
     "containerFunctionAddService_HomeSale_1": {},
     "containerInformationService_HomeSale_1": {},
     "containerInformationUser_HomeSale": {},
@@ -258,7 +258,7 @@
     "Container6_1_Admin": 61,
     "Container6_Admin": 50,
     "containerContentFunctionService_HomeSale_1": 12,
-    "containerContentServicec_HomeSale": 0,
+    "containerContentService_HomeSale": 0,
     "containerFunctionAddService_HomeSale_1": 1,
     "containerInformationService_HomeSale_1": 13,
     "containerInformationUser_HomeSale": 34,
@@ -332,7 +332,7 @@
   "RuleScreenIdWithoutScreen": {},
   "TemplateVersions": {},
   "VolatileProperties": {
-    "AnalysisLoadTime": 0.4561294,
+    "AnalysisLoadTime": 0.5157128,
     "ControlCount": {
       "arrow": 1,
       "button": 13,
@@ -347,7 +347,7 @@
       "screen": 3,
       "text": 10
     },
-    "DeserializationLoadTime": 1.2499537
+    "DeserializationLoadTime": 1.2655763
   },
   "WasLocalDatabaseReferencesEmpty": true
 }

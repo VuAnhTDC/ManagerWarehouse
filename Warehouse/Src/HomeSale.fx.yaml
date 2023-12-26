@@ -112,7 +112,7 @@ HomeSale As screen:
             Y: =368
             ZIndex: =15
 
-    containerContentServicec_HomeSale As groupContainer.manualLayoutContainer:
+    containerContentService_HomeSale As groupContainer.manualLayoutContainer:
         Height: =735
         Visible: =If(btnFunctionSelection_Value_HomeSale =1,true,false)
         Width: =997
