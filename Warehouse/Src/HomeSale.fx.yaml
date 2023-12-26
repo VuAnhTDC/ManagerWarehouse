@@ -595,7 +595,7 @@ HomeSale As screen:
             Width: =997
             ZIndex: =1
 
-            Container4_1 As groupContainer.manualLayoutContainer:
+            containerCustomerControl_HomeSale As groupContainer.manualLayoutContainer:
                 BorderThickness: =1
                 Height: =694
                 RadiusBottomLeft: =10
@@ -607,7 +607,7 @@ HomeSale As screen:
                 Y: =21
                 ZIndex: =1
 
-                Container5_1 As groupContainer.manualLayoutContainer:
+                containerSearch_HomeSale As groupContainer.manualLayoutContainer:
                     BorderThickness: =1
                     Height: =90
                     Width: =310
@@ -615,7 +615,7 @@ HomeSale As screen:
                     Y: =16
                     ZIndex: =1
 
-                    TextInput1_1 As text:
+                    edtKeySearchCustomer_HomeSale As text:
                         Default: =""
                         Height: =28
                         HintText: ="Từ khóa tìm kiếm ..."
@@ -624,7 +624,7 @@ HomeSale As screen:
                         Y: =8
                         ZIndex: =1
 
-                    Button2_1 As button:
+                    btnSearchCustomer_HomeSale As button:
                         Height: =24
                         Text: ="Tìm kiếm"
                         Width: =127
@@ -632,7 +632,7 @@ HomeSale As screen:
                         Y: =42
                         ZIndex: =2
 
-                "Gallery3_1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+                "galleryCustomerList_HomeSale As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
                     BorderThickness: =1
                     DelayItemLoading: =true
                     Height: =477
@@ -659,10 +659,10 @@ HomeSale As screen:
                         VerticalAlign: =VerticalAlign.Top
                         Width: =Parent.TemplateWidth - 173
                         X: =103
-                        Y: =(Parent.TemplateHeight - (Self.Size * 1.8 + Subtitle2_1.Size * 1.8)) / 2
+                        Y: =(Parent.TemplateHeight - (Self.Size * 1.8 + lblTaxCode_Item_HomeSale.Size * 1.8)) / 2
                         ZIndex: =2
 
-                    Subtitle2_1 As label:
+                    lblTaxCode_Item_HomeSale As label:
                         FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
                         Height: =Self.Size * 1.8
                         OnSelect: =Select(Parent)
@@ -692,7 +692,7 @@ HomeSale As screen:
                         Width: =4
                         ZIndex: =6
 
-                    Label3_1 As label:
+                    lblCustomerName_item_HomeSale As label:
                         Height: =17
                         OnSelect: =Select(Parent)
                         Text: =ThisItem.customer_Name
@@ -701,7 +701,7 @@ HomeSale As screen:
                         Y: =36
                         ZIndex: =7
 
-                    Label4_1 As label:
+                    lblAddressCustomer_item_HomeSale As label:
                         Height: =34
                         OnSelect: =Select(Parent)
                         Text: =ThisItem.customer_Address
@@ -710,7 +710,7 @@ HomeSale As screen:
                         Y: =62
                         ZIndex: =8
 
-                Container1_1 As groupContainer.manualLayoutContainer:
+                containerCustomerList_HomeSale As groupContainer.manualLayoutContainer:
                     BorderThickness: =1
                     Height: =54
                     RadiusBottomLeft: =30
@@ -722,13 +722,13 @@ HomeSale As screen:
                     Y: =618
                     ZIndex: =3
 
-                    Rectangle3_1 As rectangle:
+                    retangleAddCustomerNew_HomeSale As rectangle:
                         Fill: =RGBA(215, 223, 240, 1)
                         Height: =54
                         Width: =227
                         ZIndex: =1
 
-                    Icon3_1 As icon.Add:
+                    iconAddCustomerNew_HomeSale As icon.Add:
                         BorderThickness: =1
                         Height: =30
                         Icon: =Icon.Add
@@ -737,7 +737,7 @@ HomeSale As screen:
                         Y: =12
                         ZIndex: =2
 
-                    Label5_1 As label:
+                    lblAddCustomerNew_HomeSale As label:
                         Align: =Align.Center
                         FontWeight: =FontWeight.Bold
                         Height: =30
@@ -747,7 +747,7 @@ HomeSale As screen:
                         Y: =12
                         ZIndex: =3
 
-            Label1_1 As label:
+            lblTitleCustomeList_HomeSale As label:
                 FontWeight: =FontWeight.Bold
                 Height: =56
                 Size: =25
@@ -757,7 +757,7 @@ HomeSale As screen:
                 Y: =21
                 ZIndex: =2
 
-            Label2_6 As label:
+            lblTaxCode_HomeSale As label:
                 Align: =Align.Right
                 FontWeight: =FontWeight.Bold
                 Text: ="Mã số thuế"
@@ -765,15 +765,15 @@ HomeSale As screen:
                 Y: =97
                 ZIndex: =3
 
-            TextInput2_6 As text:
-                Default: =Gallery3_1.Selected.taxCode
+            edtTaxCode_HomeSale As text:
+                Default: =galleryCustomerList_HomeSale.Selected.taxCode
                 DisplayMode: =DisplayMode.Disabled
                 Width: =407
                 X: =549
                 Y: =97
                 ZIndex: =4
 
-            Label2_7 As label:
+            lblCustomerName_HomeSale As label:
                 Align: =Align.Right
                 FontWeight: =FontWeight.Bold
                 Text: ="Tên khách hàng"
@@ -781,15 +781,15 @@ HomeSale As screen:
                 Y: =156
                 ZIndex: =5
 
-            TextInput2_7 As text:
-                Default: =Gallery3_1.Selected.customer_Name
+            edtCustomerName_HomeSale As text:
+                Default: =galleryCustomerList_HomeSale.Selected.customer_Name
                 OnChange: =Set(isDisableBtnUpdateCustomer,true);
                 Width: =407
                 X: =549
                 Y: =156
                 ZIndex: =6
 
-            Label2_8 As label:
+            lblCustomerAddress_HomeSale As label:
                 Align: =Align.Right
                 FontWeight: =FontWeight.Bold
                 Text: ="Địa chỉ"
@@ -797,8 +797,8 @@ HomeSale As screen:
                 Y: =216
                 ZIndex: =7
 
-            TextInput2_8 As text:
-                Default: =Gallery3_1.Selected.customer_Address
+            edtCustomerAddress_HomeSale As text:
+                Default: =galleryCustomerList_HomeSale.Selected.customer_Address
                 Height: =87
                 Mode: =TextMode.MultiLine
                 OnChange: =Set(isDisableBtnUpdateCustomer,true);
@@ -807,15 +807,15 @@ HomeSale As screen:
                 Y: =216
                 ZIndex: =8
 
-            TextInput2_9 As text:
-                Default: =Gallery3_1.Selected.contactPersonName_Customer
+            edtcontactNamePerson_CustomerList_HomeSale As text:
+                Default: =galleryCustomerList_HomeSale.Selected.contactPersonName_Customer
                 OnChange: =Set(isDisableBtnUpdateCustomer,true);
                 Width: =407
                 X: =549
                 Y: =323
                 ZIndex: =10
 
-            Label2_9 As label:
+            lblContactNamePerson_CustomerList_HomeSale As label:
                 Align: =Align.Right
                 FontWeight: =FontWeight.Bold
                 Text: ="Tên người liên hệ"
@@ -824,7 +824,7 @@ HomeSale As screen:
                 Y: =323
                 ZIndex: =11
 
-            Label2_10 As label:
+            lblContactPhonenumberPerson_CustomerList_HomeSale As label:
                 Align: =Align.Right
                 FontWeight: =FontWeight.Bold
                 Text: ="SDT người liên hê"
@@ -833,15 +833,15 @@ HomeSale As screen:
                 Y: =386
                 ZIndex: =12
 
-            TextInput2_10 As text:
-                Default: =Gallery3_1.Selected.contactPersonPhoneNumber_Customer
+            edtContactPhonenumberPerson_CustomerList_HomeSale As text:
+                Default: =galleryCustomerList_HomeSale.Selected.contactPersonPhoneNumber_Customer
                 OnChange: =Set(isDisableBtnUpdateCustomer,true);
                 Width: =407
                 X: =549
                 Y: =386
                 ZIndex: =13
 
-            Label2_11 As label:
+            lblContactEmailPerson_CustomerList_HomeSale As label:
                 Align: =Align.Right
                 FontWeight: =FontWeight.Bold
                 Text: ="Email người liên hệ"
@@ -850,8 +850,8 @@ HomeSale As screen:
                 Y: =449
                 ZIndex: =14
 
-            TextInput2_11 As text:
-                Default: =Gallery3_1.Selected.contactPersonEmail_Customer
+            edtContactEmailPerson_CustomerList_HomeSale As text:
+                Default: =galleryCustomerList_HomeSale.Selected.contactPersonEmail_Customer
                 OnChange: =Set(isDisableBtnUpdateCustomer,true);
                 Width: =407
                 X: =549
@@ -864,14 +864,14 @@ HomeSale As screen:
                 OnSelect: |-
                     =Set(showDialogUpdateCustomer,true);
                     Set(positionDialogCustomer,1);
-                    Set(contentDialogCustomer,"Bạn muốn thay đổi thông tin khách hàng có mã số thuế này không: " & Gallery3_1.Selected.taxCode & " này không?");
+                    Set(contentDialogCustomer,"Bạn muốn thay đổi thông tin khách hàng có mã số thuế này không: " & galleryCustomerList_HomeSale.Selected.taxCode & " này không?");
                 Text: ="Sửa"
                 Width: =226
                 X: =453
                 Y: =543
                 ZIndex: =16
 
-            Button4_3 As button:
+            btnDeleteCustomer_HomeSale As button:
                 Height: =46
                 Text: ="Xóa"
                 Width: =226
@@ -917,6 +917,7 @@ HomeSale As screen:
             btnYesDialogCustomer_HomeSale As button:
                 FontWeight: =FontWeight.Bold
                 Height: =48
+                OnSelect: =
                 Size: =20
                 Text: ="Có"
                 Width: =270
