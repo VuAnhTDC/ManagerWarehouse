@@ -8,6 +8,7 @@ HomeSale As screen:
         Set(isDisableBtnUpdateService,false);
         Set(isDisableBtnUpdateCustomer,false);
         Set(showDialogUpdateService,false);
+        Set(showDialogUpdateCustomer,false);
         Set(informationUser, LookUp(
             User,
             email_User = User().Email
@@ -15,6 +16,8 @@ HomeSale As screen:
         Set(getRoleUser, LookUp(Role,ID = informationUser.id_Role));
         Set(positionDialog,0);
         Set(contentDialog, "");
+        Set(positionDialogCustomer,0);
+        Set(contentDialogCustomer,"");
         
 
     containerInformationUser_HomeSale As groupContainer.manualLayoutContainer:
@@ -855,13 +858,13 @@ HomeSale As screen:
                 Y: =449
                 ZIndex: =15
 
-            Button4_2 As button:
+            btnUpdateCustomer_CustomerList_HomeSale As button:
                 DisplayMode: =If(isDisableBtnUpdateCustomer,DisplayMode.Edit,DisplayMode.Disabled)
                 Height: =46
                 OnSelect: |-
-                    =Set(showDialogUpdateService,true);
-                    Set(positionDialog,3);
-                    Set(contentDialog,"Bạn có chắc muốn sửa thông tin khách hàng có mã số thuế: " & TextInput2_6.Text & " này không?");
+                    =Set(showDialogUpdateCustomer,true);
+                    Set(positionDialogCustomer,1);
+                    Set(contentDialogCustomer,"Bạn muốn thay đổi thông tin khách hàng có mã số thuế này không: " & Gallery3_1.Selected.taxCode & " này không?");
                 Text: ="Sửa"
                 Width: =226
                 X: =453
@@ -875,4 +878,60 @@ HomeSale As screen:
                 X: =709
                 Y: =543
                 ZIndex: =17
+
+    containerDialogCustomer_HomeSale As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(36, 31, 31, 0.35)
+        Height: =768
+        Visible: =showDialogUpdateCustomer
+        Width: =1366
+        ZIndex: =8
+
+        containerContentDialogCustomer_HomeSale As groupContainer.manualLayoutContainer:
+            Fill: =RGBA(241, 244, 249, 1)
+            Height: =420
+            Width: =846
+            X: =290
+            Y: =120
+            ZIndex: =1
+
+            lblTitleDialogCustomer_HomeSale As label:
+                FontWeight: =FontWeight.Bold
+                Height: =60
+                Size: =25
+                Text: ="Thông báo"
+                Width: =247
+                X: =30
+                Y: =12
+                ZIndex: =1
+
+            lblContentDialogCustomer_HomeSale As label:
+                Align: =Align.Center
+                Height: =165
+                Size: =20
+                Text: =contentDialogCustomer
+                Width: =566
+                X: =144
+                Y: =84
+                ZIndex: =2
+
+            btnYesDialogCustomer_HomeSale As button:
+                FontWeight: =FontWeight.Bold
+                Height: =48
+                Size: =20
+                Text: ="Có"
+                Width: =270
+                X: =145
+                Y: =302
+                ZIndex: =3
+
+            btnNoDialogCustomer_HomeSale As button:
+                FontWeight: =FontWeight.Bold
+                Height: =48
+                OnSelect: =Set(showDialogUpdateCustomer,false)
+                Size: =20
+                Text: ="Không"
+                Width: =270
+                X: =438
+                Y: =302
+                ZIndex: =4
 
