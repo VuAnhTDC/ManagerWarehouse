@@ -1,10 +1,14 @@
 HomeSale As screen:
-    OnVisible: |-
+    OnVisible: |
         =Set(btnFunctionSelection_Value_HomeSale,1);
         Set(isVisibaleAddServiceNew_HomeSale,true);
         Set(isVisibaleServiceList_HomeSale,false);
         Set(isDisableBtnUpdateService,false);
         Set(showDialogUpdateService,false);
+        Set(informationUser, LookUp(
+            User,
+            email_User = User().Email
+        ));
 
     containerInformationUser_HomeSale As groupContainer.manualLayoutContainer:
         Fill: =RGBA(217, 217, 217, 1)
@@ -35,7 +39,7 @@ HomeSale As screen:
             FontWeight: =FontWeight.Bold
             Height: =28
             Size: =10
-            Text: ="Tên người đăng nhập"
+            Text: =informationUser.user_Name
             VerticalAlign: =VerticalAlign.Bottom
             Width: =211
             X: =90
@@ -171,6 +175,7 @@ HomeSale As screen:
                 Clear: =true
                 Default: =""
                 HintText: ="Vui lòng nhập tên dịch vụ"
+                OnSelect: =
                 Width: =676
                 X: =237
                 Y: =98
@@ -216,9 +221,24 @@ HomeSale As screen:
                 ZIndex: =7
 
             btnAddService_containerAdd_HomeSale_1 As button:
-                DisplayMode: =DisplayMode.Disabled
+                DisplayMode: =If(IsBlank(edtNameSerVice_containerAdd_HomeSale_1.Text) || IsBlank(edtDescriptionService_containerAdd_HomeSale_1.Text) ||IsBlank(edtPriceService_containerAdd_HomeSale_1.Text),DisplayMode.Disabled,DisplayMode.Edit)
                 FontWeight: =FontWeight.Bold
                 Height: =46
+                OnSelect: |
+                    =
+                    Patch(
+                        Service,
+                        Defaults(Service),
+                        {
+                            id_Serivce: "DV_" & Text(Now(),"ddmmyyhhmmss"),
+                            service_Name:edtNameSerVice_containerAdd_HomeSale_1.Text,
+                            service_Decription:edtDescriptionService_containerAdd_HomeSale_1.Text,
+                            service_Price: Value(edtPriceService_containerAdd_HomeSale_1.Text)
+                        }
+                    );
+                    Notify("Thêm dữ liệu thành công",NotificationType.Success);
+                    Set(isVisibaleServiceList_HomeSale,!isVisibaleServiceList_HomeSale);
+                    Set(isVisibaleAddServiceNew_HomeSale,!isVisibaleAddServiceNew_HomeSale);
                 Size: =20
                 Text: ="Thêm dịch vụ"
                 Width: =340
@@ -433,7 +453,8 @@ HomeSale As screen:
                 btnDeleteService_HomeSale_1 As button:
                     FontWeight: =FontWeight.Bold
                     Height: =50
-                    OnSelect: =true;
+                    OnSelect: |
+                        =true;
                     Text: ="Xóa"
                     Width: =232
                     X: =339
