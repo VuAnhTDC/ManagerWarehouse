@@ -1003,36 +1003,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App.positionDialogCustomer"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App.positionDialogCustomer",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "positionDialogCustomer",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-UnusedVariables",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "App.icons8-username-48"
                 }
               ],

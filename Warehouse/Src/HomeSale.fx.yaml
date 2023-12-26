@@ -917,7 +917,21 @@ HomeSale As screen:
             btnYesDialogCustomer_HomeSale As button:
                 FontWeight: =FontWeight.Bold
                 Height: =48
-                OnSelect: =
+                OnSelect: |-
+                    =If(positionDialogCustomer =1,
+                    Patch(
+                        Customer,
+                        LookUp(
+                            Customer,
+                            taxCode = edtTaxCode_HomeSale.Text,
+                            {
+                                customer_Name: edtCustomerName_HomeSale.Text,
+                                customer_Address:edtCustomerAddress_HomeSale.Text,contactPersonName_Customer:edtcontactNamePerson_CustomerList_HomeSale.Text,contactPersonEmail_Customer:edtContactEmailPerson_CustomerList_HomeSale.Text,
+                                contactPersonPhoneNumber_Customer:edtContactPhonenumberPerson_CustomerList_HomeSale.Text
+                            }
+                        )
+                    )
+                    )
                 Size: =20
                 Text: ="Có"
                 Width: =270
