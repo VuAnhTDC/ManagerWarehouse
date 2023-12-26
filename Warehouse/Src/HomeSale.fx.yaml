@@ -852,6 +852,10 @@ HomeSale As screen:
         Button4 As button:
             DisplayMode: =If(isDisableBtnUpdateCustomer,DisplayMode.Edit,DisplayMode.Disabled)
             Height: =46
+            OnSelect: |-
+                =Set(showDialogUpdateService,true);
+                Set(positionDialog,3);
+                Set(contentDialog,"Bạn có chắc muốn sửa thông tin khách hàng có mã số thuế: " & TextInput2.Text & " này không?");
             Text: ="Sửa"
             Width: =226
             X: =453
