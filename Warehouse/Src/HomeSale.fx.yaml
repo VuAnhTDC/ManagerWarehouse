@@ -934,7 +934,9 @@ HomeSale As screen:
                                     contactPersonEmail_Customer: edtContactEmailPerson_CustomerList_HomeSale.Text,
                                     contactPersonPhoneNumber_Customer: edtContactPhonenumberPerson_CustomerList_HomeSale.Text
                                 }
-                        )
+                        );
+                        Notify("Sửa thông tin khách hàng thành công",NotificationType.Success);
+                        Set(showDialogUpdateCustomer,false);
                     )
                 Size: =20
                 Text: ="Có"
