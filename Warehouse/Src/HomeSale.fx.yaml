@@ -9,6 +9,7 @@ HomeSale As screen:
             User,
             email_User = User().Email
         ));
+        Set(getRoleUser, LookUp(Role,ID = informationUser.id_Role))
         
 
     containerInformationUser_HomeSale As groupContainer.manualLayoutContainer:
@@ -60,7 +61,7 @@ HomeSale As screen:
                 FontWeight: =FontWeight.Semibold
                 Height: =34
                 Italic: =true
-                Text: ="Chức vụ"
+                Text: =getRoleUser.name_Role
                 Width: =223
                 ZIndex: =1
 
