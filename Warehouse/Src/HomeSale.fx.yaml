@@ -3,7 +3,10 @@ HomeSale As screen:
         =Set(btnFunctionSelection_Value_HomeSale,1);
         Set(isVisibaleAddServiceNew_HomeSale,true);
         Set(isVisibaleServiceList_HomeSale,false);
+        Set(isVisibaleAddCustomer_HomeSale,false);
+        Set(isVisibaleCustomerList_HomeSale,true);
         Set(isDisableBtnUpdateService,false);
+        Set(isDisableBtnUpdateCustomer,false);
         Set(showDialogUpdateService,false);
         Set(informationUser, LookUp(
             User,
@@ -575,8 +578,9 @@ HomeSale As screen:
                 Y: =87
                 ZIndex: =5
 
-    Container3 As groupContainer.manualLayoutContainer:
+    containerContentCustomer_HomeSale As groupContainer.manualLayoutContainer:
         Height: =735
+        Visible: =If(btnFunctionSelection_Value_HomeSale =2,true,false)
         Width: =997
         X: =352
         Y: =18
@@ -620,11 +624,13 @@ HomeSale As screen:
                     ZIndex: =2
 
             "Gallery3 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+                BorderThickness: =1
                 DelayItemLoading: =true
-                Height: =503
+                Height: =477
                 Items: =Customer
                 Layout: =Layout.Vertical
                 LoadingSpinner: =LoadingSpinner.Data
+                OnSelect: =Set(isDisableBtnUpdateCustomer,false);
                 TemplatePadding: =0
                 TemplateSize: =104
                 Width: =319
@@ -694,4 +700,169 @@ HomeSale As screen:
                     X: =36
                     Y: =62
                     ZIndex: =8
+
+            Container1 As groupContainer.manualLayoutContainer:
+                BorderThickness: =1
+                Height: =54
+                RadiusBottomLeft: =30
+                RadiusBottomRight: =30
+                RadiusTopLeft: =30
+                RadiusTopRight: =30
+                Width: =227
+                X: =51
+                Y: =618
+                ZIndex: =3
+
+                Rectangle3 As rectangle:
+                    Fill: =RGBA(215, 223, 240, 1)
+                    Height: =54
+                    Width: =227
+                    ZIndex: =1
+
+                Icon3 As icon.Add:
+                    BorderThickness: =1
+                    Height: =30
+                    Icon: =Icon.Add
+                    Width: =31
+                    X: =42
+                    Y: =12
+                    ZIndex: =2
+
+                Label5 As label:
+                    Align: =Align.Center
+                    FontWeight: =FontWeight.Bold
+                    Height: =30
+                    Text: ="Thêm mới"
+                    Width: =100
+                    X: =84
+                    Y: =12
+                    ZIndex: =3
+
+        Label1 As label:
+            FontWeight: =FontWeight.Bold
+            Height: =56
+            Size: =25
+            Text: ="Thông tin khách hàng"
+            Width: =371
+            X: =382
+            Y: =21
+            ZIndex: =2
+
+        Label2 As label:
+            Align: =Align.Right
+            FontWeight: =FontWeight.Bold
+            Text: ="Mã số thuế"
+            X: =382
+            Y: =97
+            ZIndex: =3
+
+        TextInput2 As text:
+            Default: =Gallery3.Selected.taxCode
+            DisplayMode: =DisplayMode.Disabled
+            Width: =407
+            X: =549
+            Y: =97
+            ZIndex: =4
+
+        Label2_1 As label:
+            Align: =Align.Right
+            FontWeight: =FontWeight.Bold
+            Text: ="Tên khách hàng"
+            X: =382
+            Y: =156
+            ZIndex: =5
+
+        TextInput2_1 As text:
+            Default: =Gallery3.Selected.customer_Name
+            OnChange: =Set(isDisableBtnUpdateCustomer,true);
+            Width: =407
+            X: =549
+            Y: =156
+            ZIndex: =6
+
+        Label2_2 As label:
+            Align: =Align.Right
+            FontWeight: =FontWeight.Bold
+            Text: ="Địa chỉ"
+            X: =382
+            Y: =216
+            ZIndex: =7
+
+        TextInput2_2 As text:
+            Default: =Gallery3.Selected.customer_Address
+            Height: =87
+            Mode: =TextMode.MultiLine
+            OnChange: =Set(isDisableBtnUpdateCustomer,true);
+            Width: =407
+            X: =549
+            Y: =216
+            ZIndex: =8
+
+        TextInput2_3 As text:
+            Default: =Gallery3.Selected.contactPersonName_Customer
+            OnChange: =Set(isDisableBtnUpdateCustomer,true);
+            Width: =407
+            X: =549
+            Y: =323
+            ZIndex: =10
+
+        Label2_3 As label:
+            Align: =Align.Right
+            FontWeight: =FontWeight.Bold
+            Text: ="Tên người liên hệ"
+            Width: =166
+            X: =365
+            Y: =323
+            ZIndex: =11
+
+        Label2_4 As label:
+            Align: =Align.Right
+            FontWeight: =FontWeight.Bold
+            Text: ="SDT người liên hê"
+            Width: =167
+            X: =365
+            Y: =386
+            ZIndex: =12
+
+        TextInput2_4 As text:
+            Default: =Gallery3.Selected.contactPersonPhoneNumber_Customer
+            OnChange: =Set(isDisableBtnUpdateCustomer,true);
+            Width: =407
+            X: =549
+            Y: =386
+            ZIndex: =13
+
+        Label2_5 As label:
+            Align: =Align.Right
+            FontWeight: =FontWeight.Bold
+            Text: ="Email người liên hệ"
+            Width: =185
+            X: =347
+            Y: =449
+            ZIndex: =14
+
+        TextInput2_5 As text:
+            Default: =Gallery3.Selected.contactPersonEmail_Customer
+            OnChange: =Set(isDisableBtnUpdateCustomer,true);
+            Width: =407
+            X: =549
+            Y: =449
+            ZIndex: =15
+
+        Button4 As button:
+            DisplayMode: =If(isDisableBtnUpdateCustomer,DisplayMode.Edit,DisplayMode.Disabled)
+            Height: =46
+            Text: ="Sửa"
+            Width: =226
+            X: =453
+            Y: =543
+            ZIndex: =16
+
+        Button4_1 As button:
+            Height: =46
+            Text: ="Xóa"
+            Width: =226
+            X: =709
+            Y: =543
+            ZIndex: =17
 
