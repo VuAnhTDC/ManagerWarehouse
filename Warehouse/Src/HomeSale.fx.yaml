@@ -1,4 +1,8 @@
 HomeSale As screen:
+    OnVisible: |-
+        =Set(btnFunctionSelection_Value_HomeSale,1);
+        Set(isVisibaleAddServiceNew_HomeSale,false);
+        Set(isVisibaleServiceList_HomeSale,true);
 
     containerInformationUser_HomeSale As groupContainer.manualLayoutContainer:
         Fill: =RGBA(217, 217, 217, 1)
@@ -53,314 +57,404 @@ HomeSale As screen:
                 Width: =223
                 ZIndex: =1
 
-        lblService_HomeSale As label:
-            Align: =Align.Center
-            BorderThickness: =1
-            Color: =RGBA(255, 255, 255, 1)
-            Fill: =RGBA(0, 18, 107, 1)
-            FontWeight: =FontWeight.Bold
+        btnService_HomeSale As button:
+            Color: =If(btnFunctionSelection_Value_HomeSale = 1,Color.White,Color.Black)
+            Fill: =If(btnFunctionSelection_Value_HomeSale = 1,Color.Blue,RGBA(241,244,249,1))
+            Height: =36
+            OnSelect: |-
+                =Set(btnFunctionSelection_Value_HomeSale,1);
+                Set(isVisibaleServiceList_HomeSale,true);
             Text: ="Dịch vụ"
-            Width: =281
-            X: =19
-            Y: =167
-            ZIndex: =5
+            Width: =300
+            X: =8
+            Y: =158
+            ZIndex: =11
 
-        containerOptionFunctionService_HomeSale As groupContainer.manualLayoutContainer:
-            BorderThickness: =1
-            Height: =69
-            RadiusBottomLeft: =5
-            RadiusBottomRight: =5
-            RadiusTopLeft: =5
-            RadiusTopRight: =5
-            Width: =248
-            X: =35
-            Y: =212
-            ZIndex: =6
-
-            lblOptionServiceList_FunctionService_HomeSale As label:
-                Align: =Align.Center
-                BorderThickness: =1
-                Fill: =RGBA(175, 191, 224, 1)
-                Height: =23
-                Text: ="Danh sách dịch vụ"
-                Width: =181
-                X: =35
-                Y: =10
-                ZIndex: =2
-
-            lblOptionAddServie_FunctionService_HomeSale As label:
-                Align: =Align.Center
-                BorderThickness: =1
-                Fill: =RGBA(255, 255, 255, 0)
-                Height: =23
-                Text: ="Thêm dịch vụ"
-                Width: =181
-                X: =35
-                Y: =39
-                ZIndex: =3
-
-        retangleCustomer_HomeSale As label:
-            Align: =Align.Center
-            BorderThickness: =1
-            Color: =RGBA(245, 237, 237, 1)
-            FontWeight: =FontWeight.Bold
+        btnCustomer_HomSale As button:
+            Color: =If(btnFunctionSelection_Value_HomeSale = 2,Color.White,Color.Black)
+            Fill: =If(btnFunctionSelection_Value_HomeSale = 2,Color.Blue,RGBA(241,244,249,1))
+            Height: =36
+            OnSelect: =Set(btnFunctionSelection_Value_HomeSale,2);
             Text: ="Khách hàng"
-            Width: =281
-            X: =20
-            Y: =303
-            ZIndex: =7
+            Width: =300
+            X: =8
+            Y: =213
+            ZIndex: =12
 
-        retangleQuote_HomeSale As label:
-            Align: =Align.Center
-            BorderThickness: =1
-            Color: =RGBA(245, 237, 237, 1)
-            FontWeight: =FontWeight.Bold
+        btnQuote_HomeSale As button:
+            Color: =If(btnFunctionSelection_Value_HomeSale = 3,Color.White,Color.Black)
+            Fill: =If(btnFunctionSelection_Value_HomeSale = 3,Color.Blue,RGBA(241,244,249,1))
+            Height: =36
+            OnSelect: =Set(btnFunctionSelection_Value_HomeSale,3)
             Text: ="Báo giá, đơn hàng"
-            Width: =281
-            X: =20
-            Y: =355
-            ZIndex: =8
+            Width: =300
+            X: =8
+            Y: =266
+            ZIndex: =13
 
-        retanglePuschareRequest_HomeSale As label:
-            Align: =Align.Center
-            BorderThickness: =1
-            Color: =RGBA(245, 237, 237, 1)
-            FontWeight: =FontWeight.Bold
+        btnPurchaseRequest_HomeSale As button:
+            Color: =If(btnFunctionSelection_Value_HomeSale = 4,Color.White,Color.Black)
+            Fill: =If(btnFunctionSelection_Value_HomeSale = 4,Color.Blue,RGBA(241,244,249,1))
+            Height: =36
+            OnSelect: =Set(btnFunctionSelection_Value_HomeSale,4)
             Text: ="Yêu cầu mua hàng"
-            Width: =281
-            X: =20
-            Y: =407
-            ZIndex: =9
+            Width: =300
+            X: =8
+            Y: =318
+            ZIndex: =14
 
-        retangleTransaction_HomeSale As label:
-            Align: =Align.Center
-            BorderThickness: =1
-            Color: =RGBA(245, 237, 237, 1)
-            FontWeight: =FontWeight.Bold
+        btnTransaction_HomeSale As button:
+            Color: =If(btnFunctionSelection_Value_HomeSale = 5,Color.White,Color.Black)
+            Fill: =If(btnFunctionSelection_Value_HomeSale = 5,Color.Blue,RGBA(241,244,249,1))
+            Height: =36
+            OnSelect: =Set(btnFunctionSelection_Value_HomeSale,5)
             Text: ="Giao dịch"
-            Width: =281
-            X: =20
-            Y: =459
-            ZIndex: =10
+            Width: =300
+            X: =8
+            Y: =368
+            ZIndex: =15
 
-    containerContent_HomeSale As groupContainer.manualLayoutContainer:
-        BorderThickness: =1
+    containerContentServicec_HomeSale As groupContainer.manualLayoutContainer:
         Height: =735
+        Visible: =If(btnFunctionSelection_Value_HomeSale =1,true,false)
         Width: =997
         X: =352
         Y: =18
-        ZIndex: =2
+        ZIndex: =4
 
-        lblTitleServiceList_HomeSale As label:
-            Align: =Align.Center
-            Fill: =RGBA(130, 191, 169, 1)
-            FontWeight: =FontWeight.Bold
-            Height: =31
-            Text: ="Danh sách dịch vụ"
-            Width: =278
-            X: =40
-            Y: =38
+        containerFunctionAddService_HomeSale_1 As groupContainer.manualLayoutContainer:
+            Height: =735
+            Visible: =isVisibaleServiceList_HomeSale
+            Width: =997
             ZIndex: =1
 
-        "galleryServiceList_HomeSale As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
-            BorderThickness: =1
-            DelayItemLoading: =true
-            Fill: =RGBA(241, 244, 249, 1)
-            Height: =620
-            Items: =Service
-            Layout: =Layout.Vertical
-            LoadingSpinner: =LoadingSpinner.Data
-            TemplateSize: =84
-            Width: =324
-            X: =16
-            Y: =81
-            ZIndex: =2
-
-            lblServiceNameItem_HomeSale As label:
-                FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
-                Height: =26
-                OnSelect: =Select(Parent)
-                PaddingBottom: =0
-                PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
-                Size: =15
-                Text: =ThisItem.service_Name
-                VerticalAlign: =VerticalAlign.Top
-                Width: =242
-                X: =14
-                Y: =16
-                ZIndex: =3
-
-            chartDetailItemService_HomeSale As icon.ChevronRight:
-                AccessibleLabel: =Self.Tooltip
-                Color: =RGBA(166, 166, 166, 1)
-                Height: =50
-                Icon: =Icon.ChevronRight
-                OnSelect: =Select(Parent)
-                PaddingBottom: =16
-                PaddingLeft: =16
-                PaddingRight: =16
-                PaddingTop: =16
-                Tooltip: ="View item details"
-                Width: =50
-                X: =Parent.TemplateWidth - Self.Width - 12
-                Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
-                ZIndex: =4
-
-            chartItemSerwvice_HomeSale As rectangle:
-                BorderStyle: =BorderStyle.Dotted
-                BorderThickness: =1
-                Height: =0
-                OnSelect: =Select(Parent)
-                Width: =Parent.TemplateWidth
-                Y: =Parent.TemplateHeight - Self.Height
-                ZIndex: =5
-
-            chartPositionItemSelected_HomeSale As rectangle:
-                Height: =Parent.TemplateHeight - chartItemSerwvice_HomeSale.Height
-                OnSelect: =Select(Parent)
-                Visible: =ThisItem.IsSelected
-                Width: =4
-                ZIndex: =6
-
-            lblPriceServiceItem_HomeSale As label:
-                Height: =26
-                Italic: =true
-                OnSelect: =Select(Parent)
-                Text: |-
-                    =Text(ThisItem.service_Price, "#,##0", "en-US")
-                Width: =216
-                X: =27
-                Y: =50
-                ZIndex: =7
-
-        containerInformationService_HomeSale As groupContainer.manualLayoutContainer:
-            BorderThickness: =1
-            Height: =705
-            RadiusBottomLeft: =10
-            RadiusBottomRight: =10
-            RadiusTopLeft: =10
-            RadiusTopRight: =10
-            Width: =627
-            X: =357
-            Y: =12
-            ZIndex: =3
-
-            lblTitleContent_HomeSale As label:
-                FontWeight: =FontWeight.Bold
-                Height: =67
-                Size: =30
-                Text: ="Thông tin dịch vụ"
-                Width: =448
-                X: =12
-                Y: =15
+            containerTitleSerivce_containerAdd_HomeSale_1 As groupContainer.manualLayoutContainer:
+                Height: =57
+                RadiusBottomLeft: =10
+                RadiusBottomRight: =10
+                RadiusTopLeft: =10
+                RadiusTopRight: =10
+                Width: =937
+                X: =30
+                Y: =14
                 ZIndex: =1
 
-            lblIdServicce_HomeSale As label:
+                titleService_containerTitleService_containerAdd_HomeSale_1 As label:
+                    Align: =Align.Center
+                    Fill: =RGBA(232, 244, 217, 1)
+                    FontWeight: =FontWeight.Bold
+                    Height: =57
+                    Size: =30
+                    Text: ="Thêm dịch vụ"
+                    Width: =937
+                    ZIndex: =1
+
+                Arrow1_1 As arrow.backArrow:
+                    OnSelect: |-
+                        =Set(isVisibaleServiceList_HomeSale,!isVisibaleServiceList_HomeSale);
+                        Set(isVisibaleAddServiceNew_HomeSale,!isVisibaleAddServiceNew_HomeSale);
+                    X: =17
+                    Y: =3
+                    ZIndex: =2
+
+            lblNameService_containerAdd_HomeSale_1 As label:
                 Align: =Align.Right
                 FontWeight: =FontWeight.Bold
-                Text: ="Mã dịch vụ"
-                X: =29
-                Y: =82
+                Size: =20
+                Text: ="Tên dịch vụ"
+                Width: =176
+                X: =42
+                Y: =98
                 ZIndex: =2
 
-            edtIdService_HomeSale As text:
-                Default: =galleryServiceList_HomeSale.Selected.id_Serivce
-                DisplayMode: =DisplayMode.Disabled
-                Width: =400
-                X: =198
-                Y: =82
+            edtNameSerVice_containerAdd_HomeSale_1 As text:
+                Default: =""
+                HintText: ="Vui lòng nhập tên dịch vụ"
+                Width: =676
+                X: =237
+                Y: =98
                 ZIndex: =3
 
-            lblServicecName_HomeSale As label:
+            lblDescriptionServicec_containerAdd_HomeSale_1 As label:
                 Align: =Align.Right
                 FontWeight: =FontWeight.Bold
-                Text: ="Tên dịch vụ"
-                X: =29
-                Y: =135
+                Size: =20
+                Text: ="Mô tả"
+                Width: =176
+                X: =42
+                Y: =159
                 ZIndex: =4
 
-            edtSerViceName_HomeSale As text:
-                BorderThickness: =1
-                Default: =galleryServiceList_HomeSale.Selected.service_Name
-                Width: =400
-                X: =198
-                Y: =135
+            edtDescriptionService_containerAdd_HomeSale_1 As text:
+                Default: =""
+                Height: =334
+                HintText: ="Vui lòng nhập mô tả dịch vụ"
+                Mode: =TextMode.MultiLine
+                Width: =677
+                X: =237
+                Y: =159
                 ZIndex: =5
 
-            lblDescriptionService_HomeSale As label:
+            lblPriceService_containerAdd_HomeSale_1 As label:
                 Align: =Align.Right
                 FontWeight: =FontWeight.Bold
-                Text: ="Mô tả"
-                X: =29
-                Y: =189
+                Size: =20
+                Text: ="Giá"
+                Width: =176
+                X: =42
+                Y: =543
                 ZIndex: =6
 
-            edtDescriptionService_HomeSale As text:
-                BorderThickness: =1
-                Default: =galleryServiceList_HomeSale.Selected.service_Decription
-                Height: =237
-                Mode: =TextMode.MultiLine
-                Width: =400
-                X: =198
-                Y: =189
+            edtPriceService_containerAdd_HomeSale_1 As text:
+                Default: =
+                Format: =TextFormat.Number
+                HintText: ="Vui lòng nhập giá dịch vụ"
+                Width: =310
+                X: =237
+                Y: =543
                 ZIndex: =7
 
-            lblPriceService_HomeSale As label:
-                Align: =Align.Right
+            btnAddService_containerAdd_HomeSale_1 As button:
+                DisplayMode: =DisplayMode.Disabled
                 FontWeight: =FontWeight.Bold
-                Text: ="Giá"
-                X: =29
-                Y: =447
+                Height: =46
+                Size: =20
+                Text: ="Thêm dịch vụ"
+                Width: =340
+                X: =642
+                Y: =618
                 ZIndex: =8
 
-            edtPridceService_HomeSale As text:
-                Default: |-
-                    =Text(Value(galleryServiceList_HomeSale.Selected.service_Price), "[$-en-US]#,###")
-                Format: =TextFormat.Number
-                Width: =400
-                X: =198
-                Y: =447
-                ZIndex: =9
+        containerContentFunctionService_HomeSale_1 As groupContainer.manualLayoutContainer:
+            BorderThickness: =1
+            Height: =735
+            Visible: =isVisibaleAddServiceNew_HomeSale
+            Width: =997
+            ZIndex: =2
 
-            btnUpdateService_HomeSale As button:
+            lblTitleServiceList_HomeSale_1 As label:
+                Align: =Align.Center
+                Fill: =RGBA(130, 191, 169, 1)
                 FontWeight: =FontWeight.Bold
-                Height: =50
-                OnSelect: |-
-                    =true;
-                    If(
-                        IsBlank(edtSerViceName_HomeSale.Text) || IsBlank(edtDescriptionService_HomeSale.Text) || IsBlank(edtPridceService_HomeSale.Text),
-                        Notify(
-                            "Vui lòng không để trống thông tin",
-                            NotificationType.Error
-                        ),
-                        Patch(
-                            Service,
-                            LookUp(
-                                Service,
-                                id_Serivce = edtIdService_HomeSale.Text
+                Height: =31
+                Text: ="Danh sách dịch vụ"
+                Width: =278
+                X: =40
+                Y: =38
+                ZIndex: =1
+
+            "galleryServiceList_HomeSale_1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+                BorderThickness: =1
+                DelayItemLoading: =true
+                Fill: =RGBA(241, 244, 249, 1)
+                Height: =554
+                Items: =Service
+                Layout: =Layout.Vertical
+                LoadingSpinner: =LoadingSpinner.Data
+                TemplateSize: =84
+                Width: =324
+                X: =16
+                Y: =81
+                ZIndex: =2
+
+                lblServiceNameItem_HomeSale_1 As label:
+                    FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                    Height: =26
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =15
+                    Text: =ThisItem.service_Name
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =242
+                    X: =14
+                    Y: =16
+                    ZIndex: =3
+
+                chartDetailItemService_HomeSale_1 As icon.ChevronRight:
+                    AccessibleLabel: =Self.Tooltip
+                    Color: =RGBA(166, 166, 166, 1)
+                    Height: =50
+                    Icon: =Icon.ChevronRight
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =16
+                    PaddingLeft: =16
+                    PaddingRight: =16
+                    PaddingTop: =16
+                    Tooltip: ="View item details"
+                    Width: =50
+                    X: =Parent.TemplateWidth - Self.Width - 12
+                    Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+                    ZIndex: =4
+
+                chartItemSerwvice_HomeSale_1 As rectangle:
+                    BorderStyle: =BorderStyle.Dotted
+                    BorderThickness: =1
+                    Height: =0
+                    OnSelect: =Select(Parent)
+                    Width: =Parent.TemplateWidth
+                    Y: =Parent.TemplateHeight - Self.Height
+                    ZIndex: =5
+
+                chartPositionItemSelected_HomeSale_1 As rectangle:
+                    Height: =Parent.TemplateHeight - chartItemSerwvice_HomeSale_1.Height
+                    OnSelect: =Select(Parent)
+                    Visible: =ThisItem.IsSelected
+                    Width: =4
+                    ZIndex: =6
+
+                lblPriceServiceItem_HomeSale_1 As label:
+                    Height: =26
+                    Italic: =true
+                    OnSelect: =Select(Parent)
+                    Text: |-
+                        =Text(ThisItem.service_Price, "#,##0", "en-US")
+                    Width: =216
+                    X: =27
+                    Y: =50
+                    ZIndex: =7
+
+            containerInformationService_HomeSale_1 As groupContainer.manualLayoutContainer:
+                BorderThickness: =1
+                Height: =705
+                RadiusBottomLeft: =10
+                RadiusBottomRight: =10
+                RadiusTopLeft: =10
+                RadiusTopRight: =10
+                Width: =627
+                X: =357
+                Y: =12
+                ZIndex: =3
+
+                lblTitleContent_HomeSale_1 As label:
+                    FontWeight: =FontWeight.Bold
+                    Height: =67
+                    Size: =30
+                    Text: ="Thông tin dịch vụ"
+                    Width: =448
+                    X: =12
+                    Y: =15
+                    ZIndex: =1
+
+                lblIdServicce_HomeSale_1 As label:
+                    Align: =Align.Right
+                    FontWeight: =FontWeight.Bold
+                    Text: ="Mã dịch vụ"
+                    X: =29
+                    Y: =82
+                    ZIndex: =2
+
+                edtIdService_HomeSale_1 As text:
+                    Default: =galleryServiceList_HomeSale_1.Selected.id_Serivce
+                    DisplayMode: =DisplayMode.Disabled
+                    Width: =400
+                    X: =198
+                    Y: =82
+                    ZIndex: =3
+
+                lblServicecName_HomeSale_1 As label:
+                    Align: =Align.Right
+                    FontWeight: =FontWeight.Bold
+                    Text: ="Tên dịch vụ"
+                    X: =29
+                    Y: =135
+                    ZIndex: =4
+
+                edtSerViceName_HomeSale_1 As text:
+                    BorderThickness: =1
+                    Default: =galleryServiceList_HomeSale_1.Selected.service_Name
+                    Width: =400
+                    X: =198
+                    Y: =135
+                    ZIndex: =5
+
+                lblDescriptionService_HomeSale_1 As label:
+                    Align: =Align.Right
+                    FontWeight: =FontWeight.Bold
+                    Text: ="Mô tả"
+                    X: =29
+                    Y: =189
+                    ZIndex: =6
+
+                edtDescriptionService_HomeSale_1 As text:
+                    BorderThickness: =1
+                    Default: =galleryServiceList_HomeSale_1.Selected.service_Decription
+                    Height: =237
+                    Mode: =TextMode.MultiLine
+                    Width: =400
+                    X: =198
+                    Y: =189
+                    ZIndex: =7
+
+                lblPriceService_HomeSale_1 As label:
+                    Align: =Align.Right
+                    FontWeight: =FontWeight.Bold
+                    Text: ="Giá"
+                    X: =29
+                    Y: =447
+                    ZIndex: =8
+
+                edtPridceService_HomeSale_1 As text:
+                    Default: |-
+                        =Text(Value(galleryServiceList_HomeSale_1.Selected.service_Price), "[$-en-US]#,###")
+                    Format: =TextFormat.Number
+                    Width: =400
+                    X: =198
+                    Y: =447
+                    ZIndex: =9
+
+                btnUpdateService_HomeSale_1 As button:
+                    FontWeight: =FontWeight.Bold
+                    Height: =50
+                    OnSelect: |-
+                        =true;
+                        If(
+                            IsBlank(edtSerViceName_HomeSale_1.Text) || IsBlank(edtDescriptionService_HomeSale_1.Text) || IsBlank(edtPridceService_HomeSale_1.Text),
+                            Notify(
+                                "Vui lòng không để trống thông tin",
+                                NotificationType.Error
                             ),
-                            {
-                                service_Name:edtSerViceName_HomeSale.Text,
-                                service_Decription:edtDescriptionService_HomeSale.Text,
-                                service_Price:Value(edtPridceService_HomeSale.Text)
-                            }
+                            Patch(
+                                Service,
+                                LookUp(
+                                    Service,
+                                    id_Serivce = edtIdService_HomeSale_1.Text
+                                ),
+                                {
+                                    service_Name:edtSerViceName_HomeSale_1.Text,
+                                    service_Decription:edtDescriptionService_HomeSale_1.Text,
+                                    service_Price:Value(edtPridceService_HomeSale_1.Text)
+                                }
+                            )
                         )
-                    )
-                Text: ="Sửa"
-                Width: =232
-                X: =93
-                Y: =546
-                ZIndex: =10
+                    Text: ="Sửa"
+                    Width: =232
+                    X: =93
+                    Y: =546
+                    ZIndex: =10
 
-            btnDeleteService_HomeSale As button:
+                btnDeleteService_HomeSale_1 As button:
+                    FontWeight: =FontWeight.Bold
+                    Height: =50
+                    OnSelect: =true;
+                    Text: ="Xóa"
+                    Width: =232
+                    X: =339
+                    Y: =546
+                    ZIndex: =11
+
+            btnAddServiceNew_HomeSale_1 As button:
                 FontWeight: =FontWeight.Bold
-                Height: =50
-                OnSelect: =true;
-                Text: ="Xóa"
-                Width: =232
-                X: =339
-                Y: =546
-                ZIndex: =11
+                Height: =54
+                OnSelect: |-
+                    =Set(isVisibaleServiceList_HomeSale,!isVisibaleServiceList_HomeSale);
+                    Set(isVisibaleAddServiceNew_HomeSale,!isVisibaleAddServiceNew_HomeSale);
+                Size: =20
+                Text: ="Thêm mới"
+                Width: =324
+                X: =16
+                Y: =662
+                ZIndex: =4
 
