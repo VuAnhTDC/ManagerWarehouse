@@ -973,19 +973,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App.isVisibaleAddCustomer_HomeSale"
+                  "fullyQualifiedName": "HomeSale.containerContentCustomer_HomeSale.containeCostumerList_HomeSale.containerCustomerControl_HomeSale.containerCustomerList_HomeSale.retangleAddCustomerNew_HomeSale.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "App.isVisibaleAddCustomer_HomeSale",
+                  "fullyQualifiedName": "HomeSale.containerContentCustomer_HomeSale.containeCostumerList_HomeSale.containerCustomerControl_HomeSale.containerCustomerList_HomeSale.retangleAddCustomerNew_HomeSale.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "member": "isVisibaleAddCustomer_HomeSale",
-                "module": "App",
-                "type": "App"
+                "member": "AccessibleLabel",
+                "module": "HomeSale",
+                "type": "HomeSale.containerContentCustomer_HomeSale.containeCostumerList_HomeSale.containerCustomerControl_HomeSale.containerCustomerList_HomeSale.retangleAddCustomerNew_HomeSale"
               }
             }
           ],
@@ -995,8 +995,38 @@
           "properties": {
             "level": "Medium"
           },
-          "ruleId": "app-UnusedVariables",
-          "ruleIndex": 3
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "HomeSale.containerContentCustomer_HomeSale.containeCostumerList_HomeSale.containerCustomerControl_HomeSale.containerCustomerList_HomeSale.retangleAddCustomerNew_HomeSale.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "HomeSale.containerContentCustomer_HomeSale.containeCostumerList_HomeSale.containerCustomerControl_HomeSale.containerCustomerList_HomeSale.retangleAddCustomerNew_HomeSale.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "HomeSale",
+                "type": "HomeSale.containerContentCustomer_HomeSale.containeCostumerList_HomeSale.containerCustomerControl_HomeSale.containerCustomerList_HomeSale.retangleAddCustomerNew_HomeSale"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
         },
         {
           "locations": [
@@ -1026,7 +1056,7 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedMediaResources",
-          "ruleIndex": 4
+          "ruleIndex": 3
         },
         {
           "locations": [
@@ -1056,7 +1086,7 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedMediaResources",
-          "ruleIndex": 4
+          "ruleIndex": 3
         }
       ],
       "tool": {
@@ -1113,23 +1143,6 @@
                 "level": "Medium",
                 "primaryCategory": "accessibility",
                 "whyFix": "People who use the keyboard with your app will not be able to access this element without a tab stop."
-              }
-            },
-            {
-              "id": "app-UnusedVariables",
-              "messageStrings": {
-                "issue": {
-                  "text": "Unused variable"
-                }
-              },
-              "properties": {
-                "componentType": "app",
-                "howToFix": [
-                  "Remove the unused variable."
-                ],
-                "level": "Medium",
-                "primaryCategory": "performance",
-                "whyFix": "This variable is declared but is not referenced by any control, so it is not needed."
               }
             },
             {
