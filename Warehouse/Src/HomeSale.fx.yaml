@@ -1,5 +1,5 @@
 HomeSale As screen:
-    OnVisible: |
+    OnVisible: |+
         =Set(btnFunctionSelection_Value_HomeSale,1);
         Set(isVisibaleAddServiceNew_HomeSale,true);
         Set(isVisibaleServiceList_HomeSale,false);
@@ -9,6 +9,7 @@ HomeSale As screen:
             User,
             email_User = User().Email
         ));
+        
 
     containerInformationUser_HomeSale As groupContainer.manualLayoutContainer:
         Fill: =RGBA(217, 217, 217, 1)
