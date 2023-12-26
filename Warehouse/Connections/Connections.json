@@ -8,6 +8,9 @@
     "datasets": {
       "https://cmmspronet.sharepoint.com/sites/PowerAppTraining": {
         "dataSources": {
+          "Customer": {
+            "tableName": "5489a516-bf85-4059-ab9a-347313e45a2f"
+          },
           "Role": {
             "tableName": "256f4f99-e6fd-47e0-b5e7-ce7662ac5367"
           },
@@ -27,7 +30,8 @@
       "Service",
       "Service_1",
       "User",
-      "Role"
+      "Role",
+      "Customer"
     ],
     "dependencies": {},
     "dependents": [],
