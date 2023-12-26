@@ -876,7 +876,7 @@ HomeSale As screen:
                 OnSelect: |-
                     =Set(showDialogUpdateCustomer,true);
                     Set(positionDialogCustomer,2);
-                    Set(contentDialogCustomer,"Bạn có chắc chắcn muốn xóa khách hàng có mã số thuế: "& edtTaxCode_HomeSale.Text & " này không?")
+                    Set(contentDialogCustomer,"Bạn có chắc chắn muốn xóa khách hàng có mã số thuế: "& edtTaxCode_HomeSale.Text & " này không?")
                 Text: ="Xóa"
                 Width: =226
                 X: =709
@@ -929,18 +929,33 @@ HomeSale As screen:
                             LookUp(
                                 Customer,
                                 taxCode = edtTaxCode_HomeSale.Text
-                                
                             ),
                             {
-                                    customer_Name: edtCustomerName_HomeSale.Text,
-                                    customer_Address: edtCustomerAddress_HomeSale.Text,
-                                    contactPersonName_Customer: edtcontactNamePerson_CustomerList_HomeSale.Text,
-                                    contactPersonEmail_Customer: edtContactEmailPerson_CustomerList_HomeSale.Text,
-                                    contactPersonPhoneNumber_Customer: edtContactPhonenumberPerson_CustomerList_HomeSale.Text
-                                }
+                                customer_Name: edtCustomerName_HomeSale.Text,
+                                customer_Address: edtCustomerAddress_HomeSale.Text,
+                                contactPersonName_Customer: edtcontactNamePerson_CustomerList_HomeSale.Text,
+                                contactPersonEmail_Customer: edtContactEmailPerson_CustomerList_HomeSale.Text,
+                                contactPersonPhoneNumber_Customer: edtContactPhonenumberPerson_CustomerList_HomeSale.Text
+                            }
                         );
-                        Notify("Sửa thông tin khách hàng thành công",NotificationType.Success);
-                        Set(showDialogUpdateCustomer,false);
+                        Notify(
+                            "Sửa thông tin khách hàng thành công",
+                            NotificationType.Success
+                        );
+                        Set(
+                            showDialogUpdateCustomer,
+                            false
+                        );
+                        
+                    );
+                    If(
+                        positionDialogCustomer = 2,
+                        RemoveIf(
+                            Customer,
+                            taxCode = edtTaxCode_HomeSale.Text
+                        );
+                        Notify("Xóa khách hàng thành công",NotificationType.Success);
+                        Set(showDialogUpdateCustomer,false)
                     )
                 Size: =20
                 Text: ="Có"
