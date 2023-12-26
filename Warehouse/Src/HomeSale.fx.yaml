@@ -3,6 +3,8 @@ HomeSale As screen:
         =Set(btnFunctionSelection_Value_HomeSale,1);
         Set(isVisibaleAddServiceNew_HomeSale,true);
         Set(isVisibaleServiceList_HomeSale,false);
+        Set(isDisableBtnUpdateService,false);
+        Set(showDialogUpdateService,false);
 
     containerInformationUser_HomeSale As groupContainer.manualLayoutContainer:
         Fill: =RGBA(217, 217, 217, 1)
@@ -166,6 +168,7 @@ HomeSale As screen:
                 ZIndex: =2
 
             edtNameSerVice_containerAdd_HomeSale_1 As text:
+                Clear: =true
                 Default: =""
                 HintText: ="Vui lòng nhập tên dịch vụ"
                 Width: =676
@@ -200,7 +203,7 @@ HomeSale As screen:
                 Text: ="Giá"
                 Width: =176
                 X: =42
-                Y: =543
+                Y: =518
                 ZIndex: =6
 
             edtPriceService_containerAdd_HomeSale_1 As text:
@@ -209,7 +212,7 @@ HomeSale As screen:
                 HintText: ="Vui lòng nhập giá dịch vụ"
                 Width: =310
                 X: =237
-                Y: =543
+                Y: =518
                 ZIndex: =7
 
             btnAddService_containerAdd_HomeSale_1 As button:
@@ -249,6 +252,7 @@ HomeSale As screen:
                 Items: =Service
                 Layout: =Layout.Vertical
                 LoadingSpinner: =LoadingSpinner.Data
+                OnSelect: =Set(isDisableBtnUpdateService,false)
                 TemplateSize: =84
                 Width: =324
                 X: =16
@@ -276,7 +280,9 @@ HomeSale As screen:
                     Color: =RGBA(166, 166, 166, 1)
                     Height: =50
                     Icon: =Icon.ChevronRight
-                    OnSelect: =Select(Parent)
+                    OnSelect: |-
+                        =Select(Parent);
+                        Set(isDisableBtnUpdateService,false);
                     PaddingBottom: =16
                     PaddingLeft: =16
                     PaddingRight: =16
@@ -363,6 +369,7 @@ HomeSale As screen:
                 edtSerViceName_HomeSale_1 As text:
                     BorderThickness: =1
                     Default: =galleryServiceList_HomeSale_1.Selected.service_Name
+                    OnChange: =Set(isDisableBtnUpdateService,true)
                     Width: =400
                     X: =198
                     Y: =135
@@ -404,6 +411,7 @@ HomeSale As screen:
                     ZIndex: =9
 
                 btnUpdateService_HomeSale_1 As button:
+                    DisplayMode: =If(isDisableBtnUpdateService,DisplayMode.Edit,DisplayMode.Disabled)
                     FontWeight: =FontWeight.Bold
                     Height: =50
                     OnSelect: |-
@@ -414,18 +422,7 @@ HomeSale As screen:
                                 "Vui lòng không để trống thông tin",
                                 NotificationType.Error
                             ),
-                            Patch(
-                                Service,
-                                LookUp(
-                                    Service,
-                                    id_Serivce = edtIdService_HomeSale_1.Text
-                                ),
-                                {
-                                    service_Name:edtSerViceName_HomeSale_1.Text,
-                                    service_Decription:edtDescriptionService_HomeSale_1.Text,
-                                    service_Price:Value(edtPridceService_HomeSale_1.Text)
-                                }
-                            )
+                            Set(showDialogUpdateService,true)
                         )
                     Text: ="Sửa"
                     Width: =232
@@ -449,10 +446,86 @@ HomeSale As screen:
                 OnSelect: |-
                     =Set(isVisibaleServiceList_HomeSale,!isVisibaleServiceList_HomeSale);
                     Set(isVisibaleAddServiceNew_HomeSale,!isVisibaleAddServiceNew_HomeSale);
+                    Reset(edtNameSerVice_containerAdd_HomeSale_1);
+                    Reset(edtDescriptionService_containerAdd_HomeSale_1);
+                    Reset(edtPriceService_containerAdd_HomeSale_1);
                 Size: =20
                 Text: ="Thêm mới"
                 Width: =324
                 X: =16
                 Y: =662
                 ZIndex: =4
+
+    containerDialogUpdateService_HomeSale As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(36, 31, 31, 0.35)
+        Height: =768
+        Visible: |-
+            =showDialogUpdateService
+            //true
+        Width: =1366
+        ZIndex: =5
+
+        containerContentDialogUpdateService_HomeSale As groupContainer.manualLayoutContainer:
+            Fill: =RGBA(213, 231, 242, 1)
+            Height: =336
+            Width: =793
+            X: =300
+            Y: =190
+            ZIndex: =1
+
+            lblTitleDialogUpdateService_HomeSale As label:
+                Align: =Align.Center
+                Fill: =RGBA(204, 189, 182, 1)
+                FontWeight: =FontWeight.Bold
+                Size: =25
+                Text: ="Thông báo"
+                Width: =676
+                X: =60
+                Y: =9
+                ZIndex: =1
+
+            lblContentDialogUpdateService_HomeSale As label:
+                Align: =Align.Center
+                FontWeight: =FontWeight.Semibold
+                Height: =116
+                Size: =20
+                Text: ="Bạn có chắc chắn thay đổi dữ liệu này không?"
+                Width: =403
+                X: =196
+                Y: =79
+                ZIndex: =2
+
+            btnYesDialogUpdateService_HomeSale As button:
+                OnSelect: |-
+                    =Patch(
+                            Service,
+                            LookUp(
+                                Service,
+                                id_Serivce = edtIdService_HomeSale_1.Text
+                            ),
+                            {
+                                service_Name:edtSerViceName_HomeSale_1.Text,
+                                service_Decription:edtDescriptionService_HomeSale_1.Text,
+                                service_Price:Value(edtPridceService_HomeSale_1.Text)
+                            }
+                        );
+                        Set(showDialogUpdateService,false);
+                Text: ="Có"
+                X: =218
+                Y: =225
+                ZIndex: =3
+
+            btnNoDialogUpdateService_HomeSale As button:
+                OnSelect: =Set(showDialogUpdateService,false);
+                Text: ="Không"
+                X: =418
+                Y: =225
+                ZIndex: =4
+
+            imageIconQuestionUpdateService_HomeSale As image:
+                Image: =icon_Question_1
+                ImagePosition: =ImagePosition.Fill
+                X: =60
+                Y: =87
+                ZIndex: =5
 
