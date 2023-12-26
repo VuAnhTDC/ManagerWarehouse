@@ -873,6 +873,10 @@ HomeSale As screen:
 
             btnDeleteCustomer_HomeSale As button:
                 Height: =46
+                OnSelect: |-
+                    =Set(showDialogUpdateCustomer,true);
+                    Set(positionDialogCustomer,2);
+                    Set(contentDialogCustomer,"Bạn có chắc chắcn muốn xóa khách hàng có mã số thuế: "& edtTaxCode_HomeSale.Text & " này không?")
                 Text: ="Xóa"
                 Width: =226
                 X: =709
