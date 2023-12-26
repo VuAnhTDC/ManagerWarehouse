@@ -580,6 +580,7 @@ HomeSale As screen:
 
     containerContentCustomer_HomeSale As groupContainer.manualLayoutContainer:
         Height: =735
+        Visible: =If(btnFunctionSelection_Value_HomeSale=2,true,false)
         Width: =997
         X: =352
         Y: =18
@@ -587,7 +588,7 @@ HomeSale As screen:
 
         containeCostumerList_HomeSale As groupContainer.manualLayoutContainer:
             Height: =735
-            Visible: =If(btnFunctionSelection_Value_HomeSale =2,true,false)
+            Visible: =isVisibaleCustomerList_HomeSale
             Width: =997
             ZIndex: =1
 
