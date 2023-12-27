@@ -18,6 +18,8 @@ HomeSale As screen:
         Set(contentDialog, "");
         Set(positionDialogCustomer,0);
         Set(contentDialogCustomer,"");
+        Set(valuePosionRequestQuote,0);
+        
         
 
     containerInformationUser_HomeSale As groupContainer.manualLayoutContainer:
@@ -99,7 +101,9 @@ HomeSale As screen:
             Color: =If(btnFunctionSelection_Value_HomeSale = 3,Color.White,Color.Black)
             Fill: =If(btnFunctionSelection_Value_HomeSale = 3,Color.Blue,RGBA(241,244,249,1))
             Height: =36
-            OnSelect: =Set(btnFunctionSelection_Value_HomeSale,3)
+            OnSelect: |-
+                =Set(btnFunctionSelection_Value_HomeSale,3);
+                Set(valuePosionRequestQuote,0);
             Text: ="Báo giá, đơn hàng"
             Width: =300
             X: =8
@@ -1277,7 +1281,7 @@ HomeSale As screen:
             Width: =997
             ZIndex: =1
 
-            Container3 As groupContainer.manualLayoutContainer:
+            containerStatusQuoteList_HomeSale As groupContainer.manualLayoutContainer:
                 BorderThickness: =1
                 Height: =75
                 RadiusBottomLeft: =10
@@ -1289,7 +1293,7 @@ HomeSale As screen:
                 Y: =8
                 ZIndex: =1
 
-                Label5 As label:
+                lblListRequest As label:
                     FontWeight: =FontWeight.Bold
                     Height: =45
                     Size: =20
@@ -1299,32 +1303,37 @@ HomeSale As screen:
                     Y: =7
                     ZIndex: =1
 
-                Button4 As button:
+                btnAllList_Quote_HomSale As button:
+                    Color: =If(valuePosionRequestQuote = 0,Color.White,Color.Black)
+                    Fill: =If(valuePosionRequestQuote=0,RGBA(56, 96, 178, 1),RGBA(215, 223, 240, 1))
                     FontWeight: =FontWeight.Bold
+                    OnSelect: =Set(valuePosionRequestQuote,0)
                     Text: ="Tất cả"
                     X: =375
                     Y: =14
                     ZIndex: =2
 
-                Button4_1 As button:
-                    Color: =RGBA(0, 0, 0, 1)
-                    Fill: =RGBA(215, 223, 240, 1)
+                btnQuoteList_Quote_HomeSale As button:
+                    Color: =If(valuePosionRequestQuote = 1,Color.White,Color.Black)
+                    Fill: =If(valuePosionRequestQuote=1,RGBA(56, 96, 178, 1),RGBA(215, 223, 240, 1))
                     FontWeight: =FontWeight.Normal
+                    OnSelect: =Set(valuePosionRequestQuote,1)
                     Text: ="Báo giá"
                     X: =555
                     Y: =12
                     ZIndex: =3
 
-                Button5 As button:
-                    Color: =RGBA(0, 0, 0, 1)
-                    Fill: =RGBA(215, 223, 240, 1)
+                btnOrderList_Quote_HomeSale As button:
+                    Color: =If(valuePosionRequestQuote = 2,Color.White,Color.Black)
+                    Fill: =If(valuePosionRequestQuote=2,RGBA(56, 96, 178, 1),RGBA(215, 223, 240, 1))
                     FontWeight: =FontWeight.Normal
+                    OnSelect: =Set(valuePosionRequestQuote,2)
                     Text: ="Đơn hàng"
                     X: =737
                     Y: =12
                     ZIndex: =4
 
-            Label6 As label:
+            lblSearchQuote_HomeSale As label:
                 FontWeight: =FontWeight.Bold
                 Text: ="Tìm kiếm"
                 Width: =95
@@ -1332,7 +1341,7 @@ HomeSale As screen:
                 Y: =96
                 ZIndex: =2
 
-            TextInput2 As text:
+            edtKeySearchQuote_HomeSale As text:
                 Default: =""
                 HintText: ="Tìm kiếm"
                 Width: =413
@@ -1340,7 +1349,7 @@ HomeSale As screen:
                 Y: =96
                 ZIndex: =3
 
-            Label7 As label:
+            lblQuatityQuoteList_HomeSale As label:
                 Color: =RGBA(187, 221, 140, 1)
                 Height: =42
                 Italic: =true
@@ -1350,20 +1359,39 @@ HomeSale As screen:
                 Y: =158
                 ZIndex: =4
 
-            "Gallery3 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+            "quetoList_HomeSale As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+                BorderThickness: =1
                 DelayItemLoading: =true
-                Height: =423
-                Items: =Quote
+                Height: =445
+                Items: |-
+                    =If(
+                        valuePosionRequestQuote = 0,
+                        Quote,
+                        If(
+                            valuePosionRequestQuote = 1,
+                            Filter(
+                                Quote,
+                                quote_Status = false
+                            ),
+                            If(
+                                valuePosionRequestQuote = 2,
+                                Filter(
+                                    Quote,
+                                    quote_Status = true
+                                )
+                            )
+                        )
+                    )
                 Layout: =Layout.Vertical
                 LoadingSpinner: =LoadingSpinner.Data
                 TemplatePadding: =0
                 TemplateSize: =104
                 Width: =979
                 X: =8
-                Y: =262
+                Y: =275
                 ZIndex: =5
 
-                NextArrow2 As icon.ChevronRight:
+                rowDetailQuote_ItemQuoteList_HomeSale As icon.ChevronRight:
                     AccessibleLabel: =Self.Tooltip
                     Color: =RGBA(166, 166, 166, 1)
                     Height: =50
@@ -1379,32 +1407,36 @@ HomeSale As screen:
                     Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
                     ZIndex: =4
 
-                Separator2 As rectangle:
-                    Height: =8
+                borderLine_ItemQuoteList_HomeSale As rectangle:
+                    BorderStyle: =BorderStyle.Dashed
+                    BorderThickness: =1
+                    FocusedBorderThickness: =1
+                    Height: =2
                     OnSelect: =Select(Parent)
-                    Width: =Parent.TemplateWidth
+                    Width: =863
+                    X: =54
                     Y: =Parent.TemplateHeight - Self.Height
                     ZIndex: =5
 
-                Rectangle3 As rectangle:
-                    Height: =Parent.TemplateHeight - Separator2.Height
+                ratnagleLeft_ItemQuoteList_HomeSale As rectangle:
+                    Height: =Parent.TemplateHeight - borderLine_ItemQuoteList_HomeSale.Height
                     OnSelect: =Select(Parent)
                     Visible: =ThisItem.IsSelected
                     Width: =4
                     ZIndex: =6
 
-                Label8 As label:
-                    BorderThickness: =1
+                lblRequestQuote_HomeSale As label:
+                    Align: =Align.Center
                     Height: =47
                     OnSelect: =Select(Parent)
                     Text: =ThisItem.quote_Decription
-                    Width: =321
+                    Width: =333
                     X: =21
                     Y: =27
                     ZIndex: =7
 
-                Label8_1 As label:
-                    BorderThickness: =1
+                lblDateQuote_HomeSale As label:
+                    Align: =Align.Center
                     Height: =47
                     OnSelect: =Select(Parent)
                     Text: =ThisItem.quote_Date
@@ -1413,21 +1445,91 @@ HomeSale As screen:
                     Y: =27
                     ZIndex: =8
 
-                Label8_2 As label:
-                    BorderThickness: =1
+                lblPriceQuote_HomeSale As label:
+                    Align: =Align.Center
                     Height: =47
                     OnSelect: =Select(Parent)
-                    Text: =ThisItem.sumPriceQuote
+                    Text: |-
+                        =Text(Value(ThisItem.sumPriceQuote), "[$-en-US]#,###"  & " VND")
                     Width: =164
                     X: =700
                     Y: =27
                     ZIndex: =9
 
-                Button8 As button:
-                    Fill: =RGBA(209, 232, 178, 1)
-                    OnSelect: =Select(Parent)
+                btnStatusQuote_HomeSale As button:
+                    DisplayMode: =DisplayMode.View
+                    Fill: =If(quetoList_HomeSale.Selected.quote_Status, RGBA(72,209 ,204 , 1),RGBA(205, 190, 112, 1))
+                    OnSelect: =
                     Text: ="Báo giá"
                     X: =514
                     Y: =30
                     ZIndex: =10
+
+            containerTitleQuoteList_HomeSale As groupContainer.manualLayoutContainer:
+                BorderColor: =RGBA(204, 208, 225, 1)
+                BorderThickness: =1
+                Fill: =RGBA(186, 202, 226, 1)
+                Height: =62
+                RadiusBottomLeft: =10
+                RadiusBottomRight: =10
+                RadiusTopLeft: =10
+                RadiusTopRight: =10
+                Width: =979
+                X: =8
+                Y: =200
+                ZIndex: =6
+
+                lblRequets_Title_HomeSale As label:
+                    Align: =Align.Center
+                    FontWeight: =FontWeight.Bold
+                    Height: =46
+                    Size: =15
+                    Text: ="Yêu cầu"
+                    Width: =341
+                    X: =18
+                    Y: =12
+                    ZIndex: =1
+
+                lblDateQuote_Title_HomeSale As label:
+                    Align: =Align.Center
+                    FontWeight: =FontWeight.Bold
+                    Height: =46
+                    Size: =15
+                    Text: ="Ngày tạo"
+                    Width: =140
+                    X: =359
+                    Y: =12
+                    ZIndex: =2
+
+                lblStatusQuote_Title_HomeSale As label:
+                    Align: =Align.Center
+                    FontWeight: =FontWeight.Bold
+                    Height: =46
+                    Size: =15
+                    Text: ="Trạng thái"
+                    Width: =182
+                    X: =499
+                    Y: =12
+                    ZIndex: =3
+
+                lblPriceQuote_Title_HomeSale As label:
+                    Align: =Align.Center
+                    FontWeight: =FontWeight.Bold
+                    Height: =46
+                    Size: =15
+                    Text: ="Giá"
+                    Width: =189
+                    X: =681
+                    Y: =12
+                    ZIndex: =4
+
+            btnCreateQuoteNew_HomeSale As button:
+                Color: =RGBA(118, 0, 0, 1)
+                Fill: =RGBA(240, 166, 132, 0.58)
+                FontWeight: =FontWeight.Bold
+                Text: ="Tạo báo giá"
+                Width: =262
+                X: =706
+                Y: =100
+                ZIndex: =7
 
