@@ -1534,3 +1534,305 @@ HomeSale As screen:
                 Y: =100
                 ZIndex: =7
 
+    containerContentPurchaseProduct_HomeSale As groupContainer.manualLayoutContainer:
+        BorderThickness: =1
+        Height: =735
+        Width: =997
+        X: =352
+        Y: =18
+        ZIndex: =10
+
+        contentPurchaseProduct_Home_HomeSale As groupContainer.manualLayoutContainer:
+            Height: =745
+            Width: =997
+            ZIndex: =1
+
+            Container8 As groupContainer.manualLayoutContainer:
+                BorderThickness: =1
+                Height: =637
+                Width: =350
+                X: =12
+                Y: =20
+                ZIndex: =1
+
+                Container9 As groupContainer.manualLayoutContainer:
+                    BorderThickness: =1
+                    Height: =121
+                    Width: =340
+                    X: =4
+                    Y: =8
+                    ZIndex: =1
+
+                    Label12 As label:
+                        FontWeight: =FontWeight.Bold
+                        Size: =20
+                        Text: ="Tìm kiếm"
+                        X: =8
+                        Y: =8
+                        ZIndex: =1
+
+                    TextInput3 As text:
+                        Default: =""
+                        HintText: ="Từ khóa tìm kiếm ..."
+                        X: =8
+                        Y: =48
+                        ZIndex: =2
+
+                "Gallery4 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+                    BorderThickness: =1
+                    DelayItemLoading: =true
+                    Height: =477
+                    Items: =Product
+                    Layout: =Layout.Vertical
+                    LoadingSpinner: =LoadingSpinner.Data
+                    TemplatePadding: =0
+                    TemplateSize: =104
+                    Width: =350
+                    Y: =160
+                    ZIndex: =2
+
+                    Title4 As label:
+                        FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                        Height: =25
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Text: =ThisItem.Title
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =264
+                        X: =24
+                        Y: =15
+                        ZIndex: =2
+
+                    Subtitle4 As label:
+                        FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                        Height: =62
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Text: =ThisItem.'name_ Product'
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =264
+                        X: =Title4.X
+                        Y: =15
+                        ZIndex: =3
+
+                    NextArrow4 As icon.ChevronRight:
+                        AccessibleLabel: =Self.Tooltip
+                        Color: =RGBA(166, 166, 166, 1)
+                        Height: =50
+                        Icon: =Icon.ChevronRight
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =16
+                        PaddingLeft: =16
+                        PaddingRight: =16
+                        PaddingTop: =16
+                        Tooltip: ="View item details"
+                        Width: =50
+                        X: =Parent.TemplateWidth - Self.Width - 12
+                        Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+                        ZIndex: =4
+
+                    Separator4 As rectangle:
+                        Height: =8
+                        OnSelect: =Select(Parent)
+                        Width: =Parent.TemplateWidth
+                        Y: =Parent.TemplateHeight - Self.Height
+                        ZIndex: =5
+
+                    Rectangle5 As rectangle:
+                        Height: =Parent.TemplateHeight - Separator4.Height
+                        OnSelect: =Select(Parent)
+                        Visible: =ThisItem.IsSelected
+                        Width: =4
+                        ZIndex: =6
+
+            Container10 As groupContainer.manualLayoutContainer:
+                BorderThickness: =1
+                Height: =384
+                Width: =610
+                X: =374
+                Y: =10
+                ZIndex: =2
+
+                Label13 As label:
+                    FontWeight: =FontWeight.Bold
+                    Height: =44
+                    Size: =18
+                    Text: ="Thông tin sản phẩm"
+                    Width: =290
+                    X: =12
+                    Y: =9
+                    ZIndex: =1
+
+                Label14 As label:
+                    Align: =Align.Right
+                    FontWeight: =FontWeight.Bold
+                    Text: ="Tên sản phẩm"
+                    X: =32
+                    Y: =53
+                    ZIndex: =2
+
+                TextInput4 As text:
+                    Default: =Gallery4.Selected.'name_ Product'
+                    DisplayMode: =DisplayMode.Disabled
+                    HintText: ="Tên sản phẩm"
+                    Width: =382
+                    X: =200
+                    Y: =53
+                    ZIndex: =3
+
+                Label14_1 As label:
+                    Align: =Align.Right
+                    FontWeight: =FontWeight.Bold
+                    Text: ="Giá"
+                    X: =32
+                    Y: =108
+                    ZIndex: =4
+
+                TextInput4_1 As text:
+                    Default: |-
+                        =Text(Value(Gallery4.Selected.'price_ Product'), "[$-en-US]#,###" & " VND")
+                    DisplayMode: =DisplayMode.Disabled
+                    Format: =TextFormat.Number
+                    HintText: ="Giá sản phẩm"
+                    Width: =382
+                    X: =200
+                    Y: =108
+                    ZIndex: =5
+
+                Label14_2 As label:
+                    Align: =Align.Right
+                    FontWeight: =FontWeight.Bold
+                    Text: ="Số lượng"
+                    X: =32
+                    Y: =166
+                    ZIndex: =6
+
+                TextInput4_2 As text:
+                    Default: =""
+                    DisplayMode: =DisplayMode.Disabled
+                    Format: =TextFormat.Number
+                    HintText: ="Số lượng"
+                    Width: =382
+                    X: =200
+                    Y: =166
+                    ZIndex: =7
+
+                Label14_3 As label:
+                    Align: =Align.Right
+                    FontWeight: =FontWeight.Bold
+                    Text: ="Danh mục"
+                    X: =32
+                    Y: =226
+                    ZIndex: =8
+
+                TextInput4_3 As text:
+                    Default: =""
+                    DisplayMode: =DisplayMode.Disabled
+                    HintText: ="Danh mục"
+                    Width: =382
+                    X: =200
+                    Y: =226
+                    ZIndex: =9
+
+                Label14_4 As label:
+                    Align: =Align.Right
+                    FontWeight: =FontWeight.Bold
+                    Text: ="Kho lưu trữ"
+                    X: =32
+                    Y: =284
+                    ZIndex: =10
+
+                TextInput4_4 As text:
+                    Default: =""
+                    DisplayMode: =DisplayMode.Disabled
+                    HintText: ="Kho lưu trữ"
+                    Width: =382
+                    X: =200
+                    Y: =284
+                    ZIndex: =11
+
+                Button4 As button:
+                    Text: ="Yêu cầu mua hàng"
+                    Width: =213
+                    X: =210
+                    Y: =337
+                    ZIndex: =12
+
+            Container11 As groupContainer.manualLayoutContainer:
+                BorderThickness: =1
+                Height: =318
+                Width: =610
+                X: =374
+                Y: =406
+                ZIndex: =3
+
+                "Gallery5 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+                    DelayItemLoading: =true
+                    Height: =234
+                    Items: =CustomGallerySample
+                    Layout: =Layout.Vertical
+                    LoadingSpinner: =LoadingSpinner.Data
+                    TemplatePadding: =0
+                    TemplateSize: =104
+                    Width: =610
+                    ZIndex: =1
+
+                    Title5 As label:
+                        FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                        Height: =Self.Size * 1.8
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Text: =ThisItem.SampleHeading
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =Parent.TemplateWidth - 173
+                        X: =35
+                        Y: =39
+                        ZIndex: =2
+
+                    Separator5 As rectangle:
+                        Height: =8
+                        OnSelect: =Select(Parent)
+                        Width: =Parent.TemplateWidth
+                        Y: =Parent.TemplateHeight - Self.Height
+                        ZIndex: =5
+
+                    Rectangle6 As rectangle:
+                        Height: =Parent.TemplateHeight - Separator5.Height
+                        OnSelect: =Select(Parent)
+                        Visible: =ThisItem.IsSelected
+                        Width: =4
+                        ZIndex: =6
+
+                    Icon1 As icon.CancelBadge:
+                        Icon: =Icon.CancelBadge
+                        OnSelect: =Select(Parent)
+                        X: =517
+                        Y: =16
+                        ZIndex: =7
+
+                Button5 As button:
+                    FontWeight: =FontWeight.Bold
+                    Height: =45
+                    Text: ="Tạo yêu cầu"
+                    Width: =256
+                    X: =339
+                    Y: =261
+                    ZIndex: =2
+
+            Button6 As button:
+                Height: =54
+                Text: ="Mua sản phẩm mới"
+                Width: =350
+                X: =12
+                Y: =669
+                ZIndex: =4
+

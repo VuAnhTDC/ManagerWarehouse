@@ -1,4 +1,8 @@
 CreateQuote_Sreen As screen:
+    OnVisible: |-
+        =Set(isVisibleAddProductQuote_CreateQuoteCreen,false);
+        Set(isVisibleDialogAddQuote_CreateQuoteScreen,false);
+        Set(productAddQuoteList,[]);
 
     retangleHeader_CreateQuoteScreen As rectangle:
         Fill: =RGBA(175, 191, 224, 1)
@@ -78,7 +82,7 @@ CreateQuote_Sreen As screen:
             FontWeight: =FontWeight.Bold
             Height: =35
             Size: =15
-            Text: ="Ngày hết hạng"
+            Text: ="Ngày hết hạn"
             Width: =279
             X: =12
             Y: =22
@@ -129,11 +133,12 @@ CreateQuote_Sreen As screen:
         "productList_CreateQuoteScreen As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
             DelayItemLoading: =true
             Height: =344
-            Items: =CustomGallerySample
+            Items: =productAddQuoteList
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             TemplatePadding: =0
             TemplateSize: =104
+            Visible: =If(IsBlank(productAddQuoteList),false,true)
             Width: =425
             Y: =91
             ZIndex: =3
@@ -146,7 +151,7 @@ CreateQuote_Sreen As screen:
                 PaddingLeft: =0
                 PaddingRight: =0
                 PaddingTop: =0
-                Text: =ThisItem.SampleHeading
+                Text: =
                 VerticalAlign: =VerticalAlign.Top
                 Width: =Parent.TemplateWidth - 173
                 X: =22
@@ -161,7 +166,7 @@ CreateQuote_Sreen As screen:
                 PaddingLeft: =0
                 PaddingRight: =0
                 PaddingTop: =0
-                Text: =ThisItem.SampleText
+                Text: =
                 VerticalAlign: =VerticalAlign.Top
                 Width: =Title2.Width
                 X: =57
@@ -201,7 +206,7 @@ CreateQuote_Sreen As screen:
             Label10 As label:
                 Height: =15
                 OnSelect: =Select(Parent)
-                Text: =ThisItem.SampleText
+                Text: =
                 Width: =69
                 X: =344
                 Y: =12
@@ -325,4 +330,173 @@ CreateQuote_Sreen As screen:
         X: =32
         Y: =610
         ZIndex: =12
+
+    containerContentAdd_CreateQuoteScreen As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(0, 0, 0, 0.41)
+        Height: =764
+        Visible: =isVisibleDialogAddQuote_CreateQuoteScreen
+        Width: =1366
+        Y: =4
+        ZIndex: =13
+
+        containerContentAdd_AddPeoduct_CreateQuoteScreen As groupContainer.manualLayoutContainer:
+            Fill: =RGBA(241, 244, 249, 1)
+            Height: =515
+            Width: =1058
+            X: =129
+            Y: =90
+            ZIndex: =1
+
+            Rectangle4 As rectangle:
+                Height: =60
+                Width: =1058
+                ZIndex: =2
+
+            lblTitleAddProductQuote_CreateQuoteScreen As label:
+                Align: =Align.Center
+                FontWeight: =FontWeight.Bold
+                Height: =60
+                Size: =25
+                Text: ="Chọn sản phẩm báo giá"
+                Width: =458
+                X: =300
+                ZIndex: =3
+
+            containerContent_CreateQuoteScvreen As groupContainer.manualLayoutContainer:
+                BorderThickness: =1
+                Height: =411
+                RadiusBottomLeft: =10
+                RadiusBottomRight: =10
+                RadiusTopLeft: =10
+                RadiusTopRight: =10
+                Width: =991
+                X: =33
+                Y: =71
+                ZIndex: =4
+
+                lblProductQuote_CreateQuoteScreen As label:
+                    Align: =Align.Right
+                    FontWeight: =FontWeight.Bold
+                    Text: ="Sản phẩm"
+                    X: =24
+                    Y: =15
+                    ZIndex: =1
+
+                dropdowProductQuote_CreateQuoteScreen As dropdown:
+                    Items: =Product_1
+                    Width: =349
+                    X: =208
+                    Y: =15
+                    ZIndex: =2
+
+                lblPriceAddProductQuote_CreateQuoteScreen As label:
+                    Align: =Align.Right
+                    FontWeight: =FontWeight.Bold
+                    Text: ="Giá sản phẩm"
+                    X: =24
+                    Y: =73
+                    ZIndex: =3
+
+                edtPriceAddPRoductQuote_CreateQuoteScreen As text:
+                    Default: ="Text input"
+                    DisplayMode: =DisplayMode.Disabled
+                    Width: =349
+                    X: =208
+                    Y: =73
+                    ZIndex: =4
+
+                lblQuantityAddProductQuote_CreateQuoteScreen As label:
+                    Align: =Align.Right
+                    FontWeight: =FontWeight.Bold
+                    Text: ="Số lượng"
+                    X: =24
+                    Y: =130
+                    ZIndex: =5
+
+                edtQuantityAddProductQuote_CreateQuoteScreen As text:
+                    Default: =""
+                    Format: =TextFormat.Number
+                    HintText: ="Vui lòng nhập số lượng..."
+                    Width: =349
+                    X: =208
+                    Y: =130
+                    ZIndex: =6
+
+                lblNodeAddProductQuote_CreateQuoteScreen As label:
+                    Align: =Align.Right
+                    FontWeight: =FontWeight.Bold
+                    Text: ="Ghi chú"
+                    X: =24
+                    Y: =183
+                    ZIndex: =7
+
+                edtNoteAddProductQuote_CreateQuoteScreen As text:
+                    Default: =""
+                    Format: =TextFormat.Number
+                    Height: =200
+                    HintText: ="Vui lòng nhập ghi chú ..."
+                    Mode: =TextMode.MultiLine
+                    Width: =349
+                    X: =208
+                    Y: =183
+                    ZIndex: =8
+
+                lblTitleVatAddproductQuote_CreateQuote As label:
+                    Align: =Align.Right
+                    FontWeight: =FontWeight.Bold
+                    Text: ="VAT"
+                    Width: =45
+                    X: =604
+                    Y: =15
+                    ZIndex: =9
+
+                edtVATAddProductQuote_CreatQuoteScreen As text:
+                    Align: =Align.Right
+                    Default: =""
+                    Format: =TextFormat.Number
+                    Height: =38
+                    HintText: ="%"
+                    Width: =175
+                    X: =669
+                    Y: =15
+                    ZIndex: =10
+
+                containerSumpriceAddProduct_CreateQuoteScreen As groupContainer.manualLayoutContainer:
+                    BorderThickness: =1
+                    Height: =143
+                    Width: =360
+                    X: =604
+                    Y: =80
+                    ZIndex: =11
+
+                    lblTitleSumpriceAddProduct_CreateQuoteScreen As label:
+                        FontWeight: =FontWeight.Bold
+                        Size: =15
+                        Text: ="Tổng tiền"
+                        X: =9
+                        Y: =9
+                        ZIndex: =1
+
+                    lblSumpriceAddProduct_CreateQuoteScreen As label:
+                        Color: =RGBA(168, 0, 0, 1)
+                        Fill: =RGBA(215, 223, 240, 1)
+                        FontWeight: =FontWeight.Semibold
+                        Height: =46
+                        Italic: =true
+                        Text: ="Text"
+                        Width: =306
+                        X: =32
+                        Y: =49
+                        ZIndex: =2
+
+                btnConfirmAddProductQuote_CreateQuoteScreen As button:
+                    DisplayMode: =If(IsBlank(edtPriceAddPRoductQuote_CreateQuoteScreen.Text)||IsBlank(edtQuantityAddProductQuote_CreateQuoteScreen.Text)||IsBlank(edtNoteAddProductQuote_CreateQuoteScreen.Text)||IsBlank(edtVATAddProductQuote_CreatQuoteScreen.Text),DisplayMode.Disabled,DisplayMode.Edit)
+                    FontWeight: =FontWeight.Bold
+                    Height: =43
+                    Size: =20
+                    Text: ="Xác nhận"
+                    Width: =240
+                    X: =738
+                    Y: =279
+                    ZIndex: =12
 

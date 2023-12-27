@@ -14,6 +14,12 @@
           "Customer_1": {
             "tableName": "5489a516-bf85-4059-ab9a-347313e45a2f"
           },
+          "Product": {
+            "tableName": "0a5f6ca4-73e1-4525-b7f0-9522ce22c151"
+          },
+          "Product_1": {
+            "tableName": "0a5f6ca4-73e1-4525-b7f0-9522ce22c151"
+          },
           "Quote": {
             "tableName": "c51f4e27-d122-4952-b3e0-bc053cb92d6b"
           },
@@ -39,7 +45,9 @@
       "Role",
       "Customer",
       "Quote",
-      "Customer_1"
+      "Customer_1",
+      "Product",
+      "Product_1"
     ],
     "dependencies": {},
     "dependents": [],
