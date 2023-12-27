@@ -1,18 +1,21 @@
 CreateQuote_Sreen As screen:
 
-    Rectangle2 As rectangle:
+    retangleHeader_CreateQuoteScreen As rectangle:
         Fill: =RGBA(175, 191, 224, 1)
         Height: =58
         Width: =1366
         ZIndex: =1
 
-    Arrow2 As arrow.backArrow:
+    back_CreateQuoteScreen As arrow.backArrow:
         Fill: =RGBA(0, 0, 0, 1)
+        OnSelect: |-
+            =Back();
+            Set(btnFunctionSelection_Value_HomeSale,3);
         X: =32
         Y: =4
         ZIndex: =2
 
-    Label2 As label:
+    lblTitle_CreateQuoteScreen As label:
         Align: =Align.Center
         FontWeight: =FontWeight.Bold
         Height: =58
@@ -22,7 +25,7 @@ CreateQuote_Sreen As screen:
         X: =425
         ZIndex: =3
 
-    Label3 As label:
+    lblIdQuote_CreateQuoteScreen As label:
         Align: =Align.Right
         FontWeight: =FontWeight.Bold
         Size: =16
@@ -31,7 +34,7 @@ CreateQuote_Sreen As screen:
         Y: =78
         ZIndex: =4
 
-    TextInput1 As text:
+    edtIdQuote_CreateQuoteScreen As text:
         Default: =""
         HintText: ="Vui lòng nhập mã báo giá ..."
         Width: =728
@@ -39,7 +42,7 @@ CreateQuote_Sreen As screen:
         Y: =78
         ZIndex: =5
 
-    Label3_1 As label:
+    lblDescriptionQuote_CreateQuoteScreen As label:
         Align: =Align.Right
         FontWeight: =FontWeight.Bold
         Size: =16
@@ -48,7 +51,7 @@ CreateQuote_Sreen As screen:
         Y: =135
         ZIndex: =6
 
-    TextInput1_1 As text:
+    edtDescriptionQuote_CreateQuoteScreen As text:
         Default: =""
         Height: =156
         HintText: ="Vui lòng nhập mô tả ..."
@@ -58,7 +61,7 @@ CreateQuote_Sreen As screen:
         Y: =135
         ZIndex: =7
 
-    Container2 As groupContainer.manualLayoutContainer:
+    containerDateQuoteAndCustomer_CreareQuoteScreen As groupContainer.manualLayoutContainer:
         BorderThickness: =1
         Height: =254
         Width: =420
@@ -96,7 +99,7 @@ CreateQuote_Sreen As screen:
             Y: =169
             ZIndex: =4
 
-    Container3 As groupContainer.manualLayoutContainer:
+    containerProductListSelectedAddQuote_CreateQuoteScreen As groupContainer.manualLayoutContainer:
         BorderThickness: =1
         Height: =437
         Width: =425
@@ -104,7 +107,7 @@ CreateQuote_Sreen As screen:
         Y: =310
         ZIndex: =9
 
-        Label9 As label:
+        lblTitlePRoductListAdd_SCreateQuoteScreen As label:
             BorderThickness: =1
             FontWeight: =FontWeight.Bold
             Height: =29
@@ -115,7 +118,7 @@ CreateQuote_Sreen As screen:
             Y: =8
             ZIndex: =1
 
-        Button3 As button:
+        btnAddProduct_CreateQuoteScreen As button:
             Height: =34
             Text: ="Thêm"
             Width: =145
@@ -123,7 +126,7 @@ CreateQuote_Sreen As screen:
             Y: =37
             ZIndex: =2
 
-        "Gallery3 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+        "productList_CreateQuoteScreen As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
             DelayItemLoading: =true
             Height: =344
             Items: =CustomGallerySample
@@ -204,7 +207,7 @@ CreateQuote_Sreen As screen:
                 Y: =12
                 ZIndex: =7
 
-    Container3_1 As groupContainer.manualLayoutContainer:
+    containerServiceListSelectedAddQuote_CreateQuoteScreen As groupContainer.manualLayoutContainer:
         BorderThickness: =1
         Height: =437
         Width: =425
@@ -212,7 +215,7 @@ CreateQuote_Sreen As screen:
         Y: =310
         ZIndex: =10
 
-        Label9_1 As label:
+        lblTitleAddService_CreateQuoteScreen As label:
             BorderThickness: =1
             FontWeight: =FontWeight.Bold
             Height: =29
@@ -223,7 +226,7 @@ CreateQuote_Sreen As screen:
             Y: =6
             ZIndex: =1
 
-        Button3_1 As button:
+        btnAddService_CreateQuoteScreen As button:
             Height: =34
             Text: ="Thêm"
             Width: =145
@@ -231,7 +234,7 @@ CreateQuote_Sreen As screen:
             Y: =35
             ZIndex: =2
 
-        "Gallery3_1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+        "serviceList_CreateQuoteScreen As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
             DelayItemLoading: =true
             Height: =344
             Items: =CustomGallerySample
@@ -303,7 +306,7 @@ CreateQuote_Sreen As screen:
                 Width: =4
                 ZIndex: =6
 
-    Label7 As label:
+    lblSumprice_CreateQuoteScreen As label:
         BorderThickness: =1
         FontWeight: =FontWeight.Bold
         Height: =77
@@ -315,7 +318,7 @@ CreateQuote_Sreen As screen:
         Y: =650
         ZIndex: =11
 
-    Label8 As label:
+    lblTitleSumPrice_CreateQuoteScreen As label:
         FontWeight: =FontWeight.Bold
         Size: =15
         Text: ="Tổng tiền"

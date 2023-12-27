@@ -1,6 +1,6 @@
 HomeSale As screen:
     OnVisible: |+
-        =Set(btnFunctionSelection_Value_HomeSale,1);
+        =If(IsBlank(btnFunctionSelection_Value_HomeSale),Set(btnFunctionSelection_Value_HomeSale,1));
         Set(isVisibaleAddServiceNew_HomeSale,true);
         Set(isVisibaleServiceList_HomeSale,false);
         Set(isVisibaleAddCustomer_HomeSale,false);
@@ -1527,6 +1527,7 @@ HomeSale As screen:
                 Color: =RGBA(118, 0, 0, 1)
                 Fill: =RGBA(240, 166, 132, 0.58)
                 FontWeight: =FontWeight.Bold
+                OnSelect: =Navigate(CreateQuote_Sreen,ScreenTransition.Fade)
                 Text: ="Tạo báo giá"
                 Width: =262
                 X: =706
