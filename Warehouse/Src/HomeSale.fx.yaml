@@ -2059,29 +2059,46 @@ HomeSale As screen:
                 FontWeight: =FontWeight.Bold
                 Height: =44
                 OnSelect: |-
-                    =
-                    /*If(
+                    =If(
                         IsBlank(dpkDeliveryDate_HomeSale.SelectedDate),
                         Notify(
                             "Vui lòng chọn ngày nhận hàng",
                             NotificationType.Error
                         ),
+                        Set(
+                            idPurchaseRequest,
+                            "PRQ" & Text(
+                                Now(),
+                                "ddmmyyyyhhmmss"
+                            ) & informationUser.ID
+                        );
                         Patch(
                             Purchase_request,
                             Defaults(Purchase_request),
                             {
-                                id_Purchase_request: "PurchaseRequest_" & Text(
-                                    Now(),
-                                    "ddmmyyyyhhmmss"
-                                ),
+                                id_Purchase_request: idPurchaseRequest,
                                 request_Date: Now(),
                                 delivery_Date: dpkDeliveryDate_HomeSale.SelectedDate,
                                 status_PurchaseRequest: false,
                                 id_User: informationUser.ID
                             }
+                        );
+                        ForAll(
+                            arrayProductAddPurchaseRequest,
+                            Patch(
+                                Purchase_request_Product,
+                                Defaults(Purchase_request_Product),
+                                {
+                                    id_Purchase_request: idPurchaseRequest,
+                                    id_Product: ThisRecord.informationProduct.id_Product,
+                                    name_Product: ThisRecord.informationProduct.'name_ Product',
+                                    request_Quantity: Value(ThisRecord.quantity),
+                                    request_Note: ThisRecord.note,
+                                    unit: unit
+                                }
+                            )
                         )
-                    )*/
-                    Notify("asd: " & dpkDeliveryDate_HomeSale.SelectedDate)
+                    )
                 Text: ="Xác nhận"
                 Width: =262
                 X: =251
