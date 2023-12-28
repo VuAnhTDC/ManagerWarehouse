@@ -1819,20 +1819,16 @@ HomeSale As screen:
                         ZIndex: =6
 
                     Icon1 As icon.CancelBadge:
+                        Fill: =RGBA(255, 255, 255, 1)
                         Icon: =Icon.CancelBadge
-                        OnSelect: |-
+                        OnSelect: |
                             =ClearCollect(
-                                tempCollection,
-                                RemoveIf(
+                                arrayProductAddPurchaseRequest,
+                                Filter(
                                     arrayProductAddPurchaseRequest,
-                                     informationProduct.'name_ Product' = "Xiaomi Redmi Note 10"
+                                    Not(informationProduct.'name_ Product' = Gallery5.Selected.informationProduct.'name_ Product')
                                 )
                             );
-                            
-                            ClearCollect(
-                                arrayProductAddPurchaseRequest,
-                                tempCollection
-                            )
                         X: =517
                         Y: =16
                         ZIndex: =7
