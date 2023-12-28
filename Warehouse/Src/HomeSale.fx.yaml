@@ -19,6 +19,8 @@ HomeSale As screen:
         Set(positionDialogCustomer,0);
         Set(contentDialogCustomer,"");
         Set(valuePosionRequestQuote,0);
+        Set(isVisiblePurchaseRequest_AddProduct,false);
+        ClearCollect(arrayProductAddPurchaseRequest,[]);
         
         
 
@@ -1761,6 +1763,7 @@ HomeSale As screen:
                     ZIndex: =11
 
                 Button4 As button:
+                    OnSelect: =Set(isVisiblePurchaseRequest_AddProduct,!isVisiblePurchaseRequest_AddProduct)
                     Text: ="Yêu cầu mua hàng"
                     Width: =213
                     X: =210
@@ -1778,7 +1781,7 @@ HomeSale As screen:
                 "Gallery5 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
                     DelayItemLoading: =true
                     Height: =234
-                    Items: =CustomGallerySample
+                    Items: =arrayProductAddPurchaseRequest
                     Layout: =Layout.Vertical
                     LoadingSpinner: =LoadingSpinner.Data
                     TemplatePadding: =0
@@ -1788,17 +1791,17 @@ HomeSale As screen:
 
                     Title5 As label:
                         FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
-                        Height: =Self.Size * 1.8
+                        Height: =23
                         OnSelect: =Select(Parent)
                         PaddingBottom: =0
                         PaddingLeft: =0
                         PaddingRight: =0
                         PaddingTop: =0
-                        Text: =ThisItem.SampleHeading
+                        Text: =ThisItem.informationProduct.'name_ Product'
                         VerticalAlign: =VerticalAlign.Top
-                        Width: =Parent.TemplateWidth - 173
-                        X: =35
-                        Y: =39
+                        Width: =474
+                        X: =24
+                        Y: =16
                         ZIndex: =2
 
                     Separator5 As rectangle:
@@ -1822,6 +1825,13 @@ HomeSale As screen:
                         Y: =16
                         ZIndex: =7
 
+                    Label3 As label:
+                        OnSelect: =Select(Parent)
+                        Text: =ThisItem.quantity
+                        X: =348
+                        Y: =56
+                        ZIndex: =8
+
                 Button5 As button:
                     FontWeight: =FontWeight.Bold
                     Height: =45
@@ -1838,4 +1848,149 @@ HomeSale As screen:
                 X: =12
                 Y: =669
                 ZIndex: =4
+
+    containerAddProductRequest_HomeSale As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(0, 0, 0, 0.34)
+        Height: =768
+        Visible: =isVisiblePurchaseRequest_AddProduct
+        Width: =1366
+        ZIndex: =11
+
+        containerContentAddProduct_HomeSale As groupContainer.manualLayoutContainer:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =531
+            Width: =1091
+            X: =146
+            Y: =110
+            ZIndex: =1
+
+            retangleAddProductRequest_HomeSale As rectangle:
+                Height: =55
+                Width: =1091
+                ZIndex: =1
+
+            lblTitleAddProductRequest_HomeSale As label:
+                Align: =Align.Center
+                FontWeight: =FontWeight.Bold
+                Height: =55
+                Size: =20
+                Text: ="Thiệt lập thông tin sản phẩm yêu cầu"
+                Width: =695
+                X: =198
+                ZIndex: =2
+
+            iconExitAddProductRequest_HomeSale As icon.CancelBadge:
+                Height: =40
+                Icon: =Icon.CancelBadge
+                OnSelect: =Set(isVisiblePurchaseRequest_AddProduct,!isVisiblePurchaseRequest_AddProduct)
+                Width: =40
+                X: =1023
+                Y: =7
+                ZIndex: =3
+
+            lblNameProductRequest_HomeSale As label:
+                Align: =Align.Right
+                FontWeight: =FontWeight.Bold
+                Text: ="Tên sản phẩm"
+                X: =167
+                Y: =74
+                ZIndex: =4
+
+            edtNameProductRequest_HomeSale As text:
+                Default: =TextInput4.Text
+                DisplayMode: =DisplayMode.Disabled
+                HintText: ="Tên sản phẩm"
+                Width: =583
+                X: =341
+                Y: =74
+                ZIndex: =5
+
+            lblQuantityAddPRoductRequest_HomeSale As label:
+                Align: =Align.Right
+                FontWeight: =FontWeight.Bold
+                Text: ="Số lượng"
+                Width: =88
+                X: =235
+                Y: =130
+                ZIndex: =6
+
+            edtQuantityAddProductRequest_HomeSale As text:
+                Default: =""
+                Format: =TextFormat.Number
+                HintText: ="Số lượng yêu cầu"
+                Width: =238
+                X: =345
+                Y: =130
+                ZIndex: =7
+
+            lblUnitAddProductRequest_HomeSale As label:
+                Align: =Align.Right
+                FontWeight: =FontWeight.Bold
+                Text: ="Đơn vị"
+                Width: =72
+                X: =605
+                Y: =130
+                ZIndex: =8
+
+            edtUnitAddProductRequest_HomeSale As text:
+                Default: =""
+                HintText: ="Đơn vị tính"
+                Width: =238
+                X: =686
+                Y: =130
+                ZIndex: =9
+
+            lblReasonAddProductRequest_HomeSale As label:
+                Align: =Align.Right
+                FontWeight: =FontWeight.Bold
+                Text: ="Lý do"
+                X: =167
+                Y: =183
+                ZIndex: =10
+
+            edtReasonAddProductRequest_HomeSale As text:
+                Default: =""
+                Height: =108
+                HintText: ="Ví do yêu cầu mua hàng"
+                Mode: =TextMode.MultiLine
+                Width: =583
+                X: =341
+                Y: =183
+                ZIndex: =11
+
+            lblNotAddProductRequest_HomeSale As label:
+                Align: =Align.Right
+                FontWeight: =FontWeight.Bold
+                Text: ="Ghi chú"
+                X: =167
+                Y: =311
+                ZIndex: =12
+
+            edtNoteAddProductRequest_HomeSale As text:
+                Default: =""
+                Height: =103
+                HintText: ="Ghi chú yêu cầu mua hàng"
+                Mode: =TextMode.MultiLine
+                Width: =583
+                X: =341
+                Y: =311
+                ZIndex: =13
+
+            btnConfirmAddProductRequest_HomeSale As button:
+                Height: =41
+                OnSelect: |-
+                    =If(
+                        IsBlank(edtQuantityAddProductRequest_HomeSale.Text) || IsBlank(edtUnitAddProductRequest_HomeSale.Text) || IsBlank(edtReasonAddProductRequest_HomeSale.Text) || IsBlank(edtNoteAddProductRequest_HomeSale),
+                        Notify(
+                            "Vui lòng điền đủ thông tin",
+                            NotificationType.Error
+                        ),
+                        Collect(arrayProductAddPurchaseRequest,{informationProduct: Gallery4.Selected,quantity: edtQuantityAddProductRequest_HomeSale.Text,unit: edtUnitAddProductRequest_HomeSale.Text,reason: edtReasonAddProductRequest_HomeSale.Text,note:edtNoteAddProductRequest_HomeSale.Text});
+                        Set(isVisiblePurchaseRequest_AddProduct,!isVisiblePurchaseRequest_AddProduct)
+                    )
+                Text: ="Xác nhận"
+                Width: =221
+                X: =435
+                Y: =441
+                ZIndex: =14
 
