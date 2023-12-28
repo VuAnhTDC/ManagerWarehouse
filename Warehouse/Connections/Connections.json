@@ -23,6 +23,12 @@
           "Product_1": {
             "tableName": "0a5f6ca4-73e1-4525-b7f0-9522ce22c151"
           },
+          "Purchase_request": {
+            "tableName": "e12b6bc7-f314-4716-aab2-28cd9e604591"
+          },
+          "Purchase_request_Product": {
+            "tableName": "4b41f7e2-0828-49f4-a9a1-0391c3b3bf3b"
+          },
           "Quote": {
             "tableName": "c51f4e27-d122-4952-b3e0-bc053cb92d6b"
           },
@@ -55,7 +61,9 @@
       "Product",
       "Product_1",
       "Category",
-      "Warehouse"
+      "Warehouse",
+      "Purchase_request",
+      "Purchase_request_Product"
     ],
     "dependencies": {},
     "dependents": [],
