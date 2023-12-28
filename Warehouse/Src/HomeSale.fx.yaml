@@ -1820,7 +1820,19 @@ HomeSale As screen:
 
                     Icon1 As icon.CancelBadge:
                         Icon: =Icon.CancelBadge
-                        OnSelect: =Select(Parent)
+                        OnSelect: |-
+                            =ClearCollect(
+                                tempCollection,
+                                RemoveIf(
+                                    arrayProductAddPurchaseRequest,
+                                     informationProduct.'name_ Product' = "Xiaomi Redmi Note 10"
+                                )
+                            );
+                            
+                            ClearCollect(
+                                arrayProductAddPurchaseRequest,
+                                tempCollection
+                            )
                         X: =517
                         Y: =16
                         ZIndex: =7
@@ -1853,6 +1865,7 @@ HomeSale As screen:
                         ZIndex: =10
 
                 Button5 As button:
+                    DisplayMode: =If(CountRows(arrayProductAddPurchaseRequest)>0,DisplayMode.Edit,DisplayMode.Disabled)
                     FontWeight: =FontWeight.Bold
                     Height: =45
                     OnSelect: =Set(isVisibleContainerChoiceDeliveryDateReuqest,!isVisibleContainerChoiceDeliveryDateReuqest)
@@ -2006,8 +2019,20 @@ HomeSale As screen:
                             "Vui lòng điền đủ thông tin",
                             NotificationType.Error
                         ),
-                        Collect(arrayProductAddPurchaseRequest,{informationProduct: Gallery4.Selected,quantity: edtQuantityAddProductRequest_HomeSale.Text,unit: edtUnitAddProductRequest_HomeSale.Text,reason: edtReasonAddProductRequest_HomeSale.Text,note:edtNoteAddProductRequest_HomeSale.Text});
-                        Set(isVisiblePurchaseRequest_AddProduct,!isVisiblePurchaseRequest_AddProduct)
+                        Collect(
+                            arrayProductAddPurchaseRequest,
+                            {
+                                informationProduct: Gallery4.Selected,
+                                quantity: edtQuantityAddProductRequest_HomeSale.Text,
+                                unit: edtUnitAddProductRequest_HomeSale.Text,
+                                reason: edtReasonAddProductRequest_HomeSale.Text,
+                                note: edtNoteAddProductRequest_HomeSale.Text
+                            }
+                        );
+                        Set(
+                            isVisiblePurchaseRequest_AddProduct,
+                            !isVisiblePurchaseRequest_AddProduct
+                        )
                     )
                 Text: ="Xác nhận"
                 Width: =221
@@ -2072,6 +2097,13 @@ HomeSale As screen:
                                 "ddmmyyyyhhmmss"
                             ) & informationUser.ID
                         );
+                        Set(
+                            sumPricePurchase,
+                            Sum(
+                                arrayProductAddPurchaseRequest,
+                                quantity * informationProduct.'price_ Product'
+                            )
+                        );
                         Patch(
                             Purchase_request,
                             Defaults(Purchase_request),
@@ -2080,7 +2112,8 @@ HomeSale As screen:
                                 request_Date: Now(),
                                 delivery_Date: dpkDeliveryDate_HomeSale.SelectedDate,
                                 status_PurchaseRequest: false,
-                                id_User: informationUser.ID
+                                id_User: informationUser.ID,
+                                sumPrice_PurchaseRequest: sumPricePurchase
                             }
                         );
                         ForAll(
@@ -2094,13 +2127,20 @@ HomeSale As screen:
                                     name_Product: ThisRecord.informationProduct.'name_ Product',
                                     request_Quantity: Value(ThisRecord.quantity),
                                     request_Note: ThisRecord.note,
-                                    request_Reason:reason,
+                                    request_Reason: reason,
                                     unit: unit
                                 }
                             )
                         );
-                        Set(isVisibleContainerChoiceDeliveryDateReuqest,!isVisibleContainerChoiceDeliveryDateReuqest);
-                       ClearCollect(arrayProductAddPurchaseRequest,[]);
+                        Set(
+                            isVisibleContainerChoiceDeliveryDateReuqest,
+                            !isVisibleContainerChoiceDeliveryDateReuqest
+                        );
+                        ClearCollect(
+                            arrayProductAddPurchaseRequest,
+                            []
+                        );
+                        
                     )
                 Text: ="Xác nhận"
                 Width: =262
