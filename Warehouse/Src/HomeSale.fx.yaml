@@ -2094,10 +2094,13 @@ HomeSale As screen:
                                     name_Product: ThisRecord.informationProduct.'name_ Product',
                                     request_Quantity: Value(ThisRecord.quantity),
                                     request_Note: ThisRecord.note,
+                                    request_Reason:reason,
                                     unit: unit
                                 }
                             )
-                        )
+                        );
+                        Set(isVisibleContainerChoiceDeliveryDateReuqest,!isVisibleContainerChoiceDeliveryDateReuqest);
+                       ClearCollect(arrayProductAddPurchaseRequest,[]);
                     )
                 Text: ="Xác nhận"
                 Width: =262
