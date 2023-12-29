@@ -2322,8 +2322,8 @@ HomeSale As screen:
                                 informationProduct: {
                                     ID: 0,
                                     id_Product: "",
-                                    'name_ Product': edtNameProductRequestBuyPrduct.Text,
-                                    'price_ Product': 0,
+                                    name_Product: edtNameProductRequestBuyPrduct.Text,
+                                    price_Product: 0,
                                     quantity_Product:0,
                                     id_Category: drwCategoryRequestBuyProduct.Selected.ID,
                                     id_Warehouse: drwWarehouseRequestBuyProduct.Selected.ID
