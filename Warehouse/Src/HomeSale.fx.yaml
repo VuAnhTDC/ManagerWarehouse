@@ -2020,7 +2020,7 @@ HomeSale As screen:
                         Collect(
                             arrayProductAddPurchaseRequest,
                             {
-                                 information:Gallery4.Selected,
+                                 Gallery4.Selected,
                                 quantity: edtQuantityAddProductRequest_HomeSale.Text,
                                 unit: edtUnitAddProductRequest_HomeSale.Text,
                                 reason: edtReasonAddProductRequest_HomeSale.Text,
@@ -2315,11 +2315,11 @@ HomeSale As screen:
                         Collect(
                             arrayProductAddPurchaseRequest,
                             {
-                                information: { name_Product: edtNameProductRequestBuyPrduct.Text,
+                                name_Product: edtNameProductRequestBuyPrduct.Text,
                                     price_Product: 0,
                                     quantity_Product:0,
                                     id_Category: drwCategoryRequestBuyProduct.Selected.ID,
-                                    id_Warehouse: drwWarehouseRequestBuyProduct.Selected.ID},
+                                    id_Warehouse: drwWarehouseRequestBuyProduct.Selected.ID,
                                 quantity:edtQuantityRequestBuyProduct.Text,
                                 unit:edtUnitRequestBuyProduct.Text,
                                 reason:edtReasonRequestBuyProduct.Text,
