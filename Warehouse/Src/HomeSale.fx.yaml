@@ -1854,7 +1854,7 @@ HomeSale As screen:
                     Label3_1 As label:
                         FontWeight: =FontWeight.Bold
                         OnSelect: =Select(Parent)
-                        Text: =ThisItem.name_Product
+                        Text: =ThisItem.information.name_Product
                         Width: =481
                         X: =17
                         Y: =16
@@ -2315,11 +2315,11 @@ HomeSale As screen:
                         Collect(
                             arrayProductAddPurchaseRequest,
                             {
-                                 name_Product: edtNameProductRequestBuyPrduct.Text,
+                                information: { name_Product: edtNameProductRequestBuyPrduct.Text,
                                     price_Product: 0,
                                     quantity_Product:0,
                                     id_Category: drwCategoryRequestBuyProduct.Selected.ID,
-                                    id_Warehouse: drwWarehouseRequestBuyProduct.Selected.ID,
+                                    id_Warehouse: drwWarehouseRequestBuyProduct.Selected.ID},
                                 quantity:edtQuantityRequestBuyProduct.Text,
                                 unit:edtUnitRequestBuyProduct.Text,
                                 reason:edtReasonRequestBuyProduct.Text,
