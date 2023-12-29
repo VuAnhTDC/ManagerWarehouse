@@ -2309,15 +2309,14 @@ HomeSale As screen:
 
             btnConfirmRequestBuyProduct As button:
                 Height: =51
-                OnSelect: |-
+                OnSelect: |
                     =If(
                         IsBlank(edtNameProductRequestBuyPrduct.Text) || IsBlank(edtQuantityRequestBuyProduct.Text) || IsBlank(edtReasonRequestBuyProduct.Text) || IsBlank(edtNoteRequestBuyProduct.Text),
                         Notify(
                             "Vui lòng điển đủ thông tin bắt buộc",
                             NotificationType.Error
-                        )
-                    );
-                    Collect(
+                        ),
+                        Collect(
                             arrayProductAddPurchaseRequest,
                             {
                                 informationProduct: {
@@ -2335,6 +2334,8 @@ HomeSale As screen:
                                 note: edtNoteAddProductRequest_HomeSale.Text
                             }
                         );
+                        Set(isVisibleRequestBuyProductHaveNotWarehouse,!isVisibleRequestBuyProductHaveNotWarehouse);
+                    );
                 Text: ="Xác nhận"
                 Width: =356
                 X: =394
