@@ -2244,13 +2244,13 @@ HomeSale As screen:
                 FontWeight: =FontWeight.Bold
                 Text: ="Danh mục"
                 X: =38
-                Y: =193
+                Y: =262
                 ZIndex: =8
 
             drwCategoryRequestBuyProduct As dropdown:
                 Items: =Category
                 X: =211
-                Y: =192
+                Y: =261
                 ZIndex: =9
 
             lblWarehouseRequestBuyProduct As label:
@@ -2258,13 +2258,13 @@ HomeSale As screen:
                 FontWeight: =FontWeight.Bold
                 Text: ="Kho lưu"
                 X: =38
-                Y: =254
+                Y: =323
                 ZIndex: =10
 
             drwWarehouseRequestBuyProduct As dropdown:
                 Items: =Warehouse
                 X: =211
-                Y: =253
+                Y: =322
                 ZIndex: =11
 
             lblNoteRequestBuyProduct As label:
@@ -2322,16 +2322,16 @@ HomeSale As screen:
                                 informationProduct: {
                                     ID: 0,
                                     id_Product: "",
-                                    name_Product: edtNameProductRequestBuyPrduct.Text,
-                                    price_Product: 0,
+                                    'name_ Product': edtNameProductRequestBuyPrduct.Text,
+                                    'price_ Product': 0,
                                     quantity_Product:0,
                                     id_Category: drwCategoryRequestBuyProduct.Selected.ID,
                                     id_Warehouse: drwWarehouseRequestBuyProduct.Selected.ID
                                 },
-                                quantity: edtQuantityAddProductRequest_HomeSale.Text,
-                                unit: edtUnitAddProductRequest_HomeSale.Text,
-                                reason: edtReasonAddProductRequest_HomeSale.Text,
-                                note: edtNoteAddProductRequest_HomeSale.Text
+                                quantity:edtQuantityRequestBuyProduct.Text,
+                                unit:edtUnitRequestBuyProduct.Text,
+                                reason:edtReasonRequestBuyProduct.Text,
+                                note: edtNoteRequestBuyProduct.Text
                             }
                         );
                         Set(isVisibleRequestBuyProductHaveNotWarehouse,!isVisibleRequestBuyProductHaveNotWarehouse);
@@ -2341,4 +2341,21 @@ HomeSale As screen:
                 X: =394
                 Y: =482
                 ZIndex: =16
+
+            lblUnitRequestBuyProduct As label:
+                Align: =Align.Right
+                FontWeight: =FontWeight.Bold
+                Text: ="Đươn vị"
+                X: =38
+                Y: =194
+                ZIndex: =17
+
+            edtUnitRequestBuyProduct As text:
+                Default: =""
+                Format: =TextFormat.Number
+                HintText: ="Vui lòng nhập số lượng ..."
+                Width: =291
+                X: =211
+                Y: =196
+                ZIndex: =18
 
