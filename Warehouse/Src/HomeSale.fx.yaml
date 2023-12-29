@@ -2352,7 +2352,6 @@ HomeSale As screen:
 
             edtUnitRequestBuyProduct As text:
                 Default: =""
-                Format: =TextFormat.Number
                 HintText: ="Vui lòng nhập số lượng ..."
                 Width: =291
                 X: =211
