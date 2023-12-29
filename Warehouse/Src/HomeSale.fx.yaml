@@ -1619,7 +1619,7 @@ HomeSale As screen:
                         PaddingLeft: =0
                         PaddingRight: =0
                         PaddingTop: =0
-                        Text: =ThisItem.'name_ Product'
+                        Text: =ThisItem.name_Product
                         VerticalAlign: =VerticalAlign.Top
                         Width: =301
                         X: =Title4.X
@@ -1658,7 +1658,7 @@ HomeSale As screen:
                         Italic: =true
                         OnSelect: =Select(Parent)
                         Text: |-
-                            = "Giá: "&Text(Value(ThisItem.'price_ Product'), "[$-en-US]#,###")
+                            = "Giá: "&Text(Value(ThisItem.price_Product), "[$-en-US]#,###")
                         Width: =195
                         X: =4
                         Y: =75
@@ -1691,7 +1691,7 @@ HomeSale As screen:
                     ZIndex: =2
 
                 TextInput4 As text:
-                    Default: =Gallery4.Selected.'name_ Product'
+                    Default: =Gallery4.Selected.name_Product
                     DisplayMode: =DisplayMode.Disabled
                     HintText: ="Tên sản phẩm"
                     Width: =382
@@ -1709,7 +1709,7 @@ HomeSale As screen:
 
                 TextInput4_1 As text:
                     Default: |-
-                        =Text(Value(Gallery4.Selected.'price_ Product'), "[$-en-US]#,###" & " VND")
+                        =Text(Value(Gallery4.Selected.price_Product), "[$-en-US]#,###" & " VND")
                     DisplayMode: =DisplayMode.Disabled
                     HintText: ="Giá sản phẩm"
                     Width: =382
@@ -1827,7 +1827,7 @@ HomeSale As screen:
                                 arrayProductAddPurchaseRequest,
                                 Filter(
                                     arrayProductAddPurchaseRequest,
-                                    Not(informationProduct.'name_ Product' = Gallery5.Selected.informationProduct.'name_ Product')
+                                    Not(informationProduct.name_Product = Gallery5.Selected.informationProduct.name_Product)
                                 )
                             );
                         X: =517
@@ -1855,7 +1855,7 @@ HomeSale As screen:
                         FontWeight: =FontWeight.Bold
                         Height: =51
                         OnSelect: =Select(Parent)
-                        Text: =ThisItem.informationProduct.'name_ Product'
+                        Text: =ThisItem.informationProduct.'name_Product'
                         Width: =489
                         X: =9
                         Y: =5
@@ -2104,7 +2104,7 @@ HomeSale As screen:
                             sumPricePurchase,
                             Sum(
                                 arrayProductAddPurchaseRequest,
-                                quantity * informationProduct.'price_ Product'
+                                quantity * informationProduct.price_Product
                             )
                         );
                         Patch(
@@ -2127,7 +2127,7 @@ HomeSale As screen:
                                 {
                                     id_Purchase_request: idPurchaseRequest,
                                     id_Product: ThisRecord.informationProduct.id_Product,
-                                    name_Product: ThisRecord.informationProduct.'name_ Product',
+                                    name_Product: ThisRecord.informationProduct.name_Product,
                                     request_Quantity: Value(ThisRecord.quantity),
                                     request_Note: ThisRecord.note,
                                     request_Reason: reason,
