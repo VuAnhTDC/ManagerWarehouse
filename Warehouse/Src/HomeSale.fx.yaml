@@ -2020,7 +2020,7 @@ HomeSale As screen:
                         Collect(
                             arrayProductAddPurchaseRequest,
                             {
-                                 Gallery4.Selected,
+                                 information:Gallery4.Selected,
                                 quantity: edtQuantityAddProductRequest_HomeSale.Text,
                                 unit: edtUnitAddProductRequest_HomeSale.Text,
                                 reason: edtReasonAddProductRequest_HomeSale.Text,
