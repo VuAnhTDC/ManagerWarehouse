@@ -2107,7 +2107,7 @@ HomeSale As screen:
                                 id_Purchase_request: idPurchaseRequest,
                                 request_Date: Now(),
                                 delivery_Date: dpkDeliveryDate_HomeSale.SelectedDate,
-                                status_PurchaseRequest: false,
+                                status_PurchaseRequest: {Value:"Chưa duyệt"},
                                 id_User: informationUser.ID,
                                 sumPrice_PurchaseRequest: sumPricePurchase
                             }
