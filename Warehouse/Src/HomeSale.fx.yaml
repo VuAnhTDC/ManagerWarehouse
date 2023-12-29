@@ -22,6 +22,7 @@ HomeSale As screen:
         Set(isVisiblePurchaseRequest_AddProduct,false);
         Set(isVisibleContainerChoiceDeliveryDateReuqest,false);
         ClearCollect(arrayProductAddPurchaseRequest,[]);
+        Set(isVisibleRequestBuyProductHaveNotWarehouse, false);
         
         
 
@@ -1873,6 +1874,12 @@ HomeSale As screen:
 
             Button6 As button:
                 Height: =54
+                OnSelect: |-
+                    =Set(isVisibleRequestBuyProductHaveNotWarehouse,!isVisibleRequestBuyProductHaveNotWarehouse);
+                    Reset(edtReasonRequestBuyProduct);
+                    Reset(edtNoteRequestBuyProduct);
+                    Reset(edtQuantityRequestBuyProduct);
+                    Reset(edtNameProductRequestBuyPrduct);
                 Text: ="Mua sản phẩm mới"
                 Width: =350
                 X: =12
@@ -2157,4 +2164,180 @@ HomeSale As screen:
                 X: =706
                 Y: =2
                 ZIndex: =6
+
+    containerRequestBuyProductNew_HomeSale As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(26, 26, 26, 0.34)
+        Height: =768
+        Visible: =isVisibleRequestBuyProductHaveNotWarehouse
+        Width: =1366
+        ZIndex: =13
+
+        contentRequestBuyProductNew_HomeSale As groupContainer.manualLayoutContainer:
+            Fill: =RGBA(255, 250, 250, 1)
+            Height: =597
+            Width: =1205
+            X: =75
+            Y: =72
+            ZIndex: =1
+
+            Rectangle7 As rectangle:
+                BorderThickness: =1
+                Height: =51
+                Width: =1205
+                ZIndex: =1
+
+            cancleRequestBuyProduct As icon.CancelBadge:
+                Height: =45
+                Icon: =Icon.CancelBadge
+                OnSelect: =Set(isVisibleRequestBuyProductHaveNotWarehouse,!isVisibleRequestBuyProductHaveNotWarehouse)
+                Width: =45
+                X: =1141
+                Y: =3
+                ZIndex: =2
+
+            titleRequestBuyProduct As text:
+                Align: =Align.Center
+                Default: ="Yêu cầu mua sản phẩm mới"
+                Fill: =RGBA(255, 255, 255, 0)
+                FontWeight: =FontWeight.Bold
+                Height: =51
+                Size: =25
+                Width: =671
+                X: =267
+                ZIndex: =3
+
+            lblNameProductRequestBuyPduct As label:
+                Align: =Align.Right
+                FontWeight: =FontWeight.Bold
+                Text: ="Tên hàng hóa"
+                X: =38
+                Y: =73
+                ZIndex: =4
+
+            edtNameProductRequestBuyPrduct As text:
+                Default: =""
+                HintText: ="Vui lòng nhập tên hàng hóa ..."
+                Width: =612
+                X: =211
+                Y: =73
+                ZIndex: =5
+
+            lblQuantityRequestBuyProduct As label:
+                Align: =Align.Right
+                FontWeight: =FontWeight.Bold
+                Text: ="Số lượng"
+                X: =38
+                Y: =130
+                ZIndex: =6
+
+            edtQuantityRequestBuyProduct As text:
+                Default: =""
+                Format: =TextFormat.Number
+                HintText: ="Vui lòng nhập số lượng ..."
+                Width: =291
+                X: =211
+                Y: =132
+                ZIndex: =7
+
+            lblCategoryRequestBuyProduct As label:
+                Align: =Align.Right
+                FontWeight: =FontWeight.Bold
+                Text: ="Danh mục"
+                X: =38
+                Y: =193
+                ZIndex: =8
+
+            drwCategoryRequestBuyProduct As dropdown:
+                Items: =Category
+                X: =211
+                Y: =192
+                ZIndex: =9
+
+            lblWarehouseRequestBuyProduct As label:
+                Align: =Align.Right
+                FontWeight: =FontWeight.Bold
+                Text: ="Kho lưu"
+                X: =38
+                Y: =254
+                ZIndex: =10
+
+            drwWarehouseRequestBuyProduct As dropdown:
+                Items: =Warehouse
+                X: =211
+                Y: =253
+                ZIndex: =11
+
+            lblNoteRequestBuyProduct As label:
+                Align: =Align.Right
+                FontWeight: =FontWeight.Bold
+                Height: =39
+                Text: ="Ghi chú"
+                Width: =92
+                X: =592
+                Y: =132
+                ZIndex: =12
+
+            edtNoteRequestBuyProduct As text:
+                Default: =""
+                Height: =139
+                HintText: ="Vui lòng nhập ghi chú"
+                Mode: =TextMode.MultiLine
+                Width: =394
+                X: =711
+                Y: =132
+                ZIndex: =13
+
+            lblReasonRequetBuyProduct As label:
+                Align: =Align.Right
+                FontWeight: =FontWeight.Bold
+                Height: =41
+                Text: ="Lý do"
+                Width: =93
+                X: =592
+                Y: =292
+                ZIndex: =14
+
+            edtReasonRequestBuyProduct As text:
+                Default: =""
+                Height: =135
+                HintText: ="Vui lòng nhập lý do"
+                Mode: =TextMode.MultiLine
+                Width: =394
+                X: =711
+                Y: =292
+                ZIndex: =15
+
+            btnConfirmRequestBuyProduct As button:
+                Height: =51
+                OnSelect: |-
+                    =If(
+                        IsBlank(edtNameProductRequestBuyPrduct.Text) || IsBlank(edtQuantityRequestBuyProduct.Text) || IsBlank(edtReasonRequestBuyProduct.Text) || IsBlank(edtNoteRequestBuyProduct.Text),
+                        Notify(
+                            "Vui lòng điển đủ thông tin bắt buộc",
+                            NotificationType.Error
+                        )
+                    );
+                    Collect(
+                            arrayProductAddPurchaseRequest,
+                            {
+                                informationProduct: {
+                                    ID: 0,
+                                    id_Product: "",
+                                    name_Product: edtNameProductRequestBuyPrduct.Text,
+                                    price_Product: 0,
+                                    quantity_Product:0,
+                                    id_Category: drwCategoryRequestBuyProduct.Selected.ID,
+                                    id_Warehouse: drwWarehouseRequestBuyProduct.Selected.ID
+                                },
+                                quantity: edtQuantityAddProductRequest_HomeSale.Text,
+                                unit: edtUnitAddProductRequest_HomeSale.Text,
+                                reason: edtReasonAddProductRequest_HomeSale.Text,
+                                note: edtNoteAddProductRequest_HomeSale.Text
+                            }
+                        );
+                Text: ="Xác nhận"
+                Width: =356
+                X: =394
+                Y: =482
+                ZIndex: =16
 
