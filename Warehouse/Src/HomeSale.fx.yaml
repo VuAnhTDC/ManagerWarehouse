@@ -1855,7 +1855,7 @@ HomeSale As screen:
                         FontWeight: =FontWeight.Bold
                         Height: =51
                         OnSelect: =Select(Parent)
-                        Text: =ThisItem.informationProduct.'name_Product'
+                        Text: =ThisItem.informationProduct.name_Product
                         Width: =489
                         X: =9
                         Y: =5
@@ -1874,12 +1874,8 @@ HomeSale As screen:
 
             Button6 As button:
                 Height: =54
-                OnSelect: |-
+                OnSelect: |
                     =Set(isVisibleRequestBuyProductHaveNotWarehouse,!isVisibleRequestBuyProductHaveNotWarehouse);
-                    Reset(edtReasonRequestBuyProduct);
-                    Reset(edtNoteRequestBuyProduct);
-                    Reset(edtQuantityRequestBuyProduct);
-                    Reset(edtNameProductRequestBuyPrduct);
                 Text: ="Mua sản phẩm mới"
                 Width: =350
                 X: =12
@@ -2320,8 +2316,6 @@ HomeSale As screen:
                             arrayProductAddPurchaseRequest,
                             {
                                 informationProduct: {
-                                    ID: 0,
-                                    id_Product: "",
                                     name_Product: edtNameProductRequestBuyPrduct.Text,
                                     price_Product: 0,
                                     quantity_Product:0,
