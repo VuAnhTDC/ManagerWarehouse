@@ -1851,14 +1851,13 @@ HomeSale As screen:
                         Y: =56
                         ZIndex: =9
 
-                    Label2 As label:
+                    Label3_1 As label:
                         FontWeight: =FontWeight.Bold
-                        Height: =51
                         OnSelect: =Select(Parent)
-                        Text: =ThisItem.informationProduct.name_Product
-                        Width: =489
-                        X: =9
-                        Y: =5
+                        Text: =ThisItem.name_Product
+                        Width: =481
+                        X: =17
+                        Y: =16
                         ZIndex: =10
 
                 Button5 As button:
@@ -2021,7 +2020,7 @@ HomeSale As screen:
                         Collect(
                             arrayProductAddPurchaseRequest,
                             {
-                                informationProduct: Gallery4.Selected,
+                                 Gallery4.Selected,
                                 quantity: edtQuantityAddProductRequest_HomeSale.Text,
                                 unit: edtUnitAddProductRequest_HomeSale.Text,
                                 reason: edtReasonAddProductRequest_HomeSale.Text,
@@ -2306,7 +2305,8 @@ HomeSale As screen:
             btnConfirmRequestBuyProduct As button:
                 Height: =51
                 OnSelect: |
-                    =If(
+                    =
+                    If(
                         IsBlank(edtNameProductRequestBuyPrduct.Text) || IsBlank(edtQuantityRequestBuyProduct.Text) || IsBlank(edtReasonRequestBuyProduct.Text) || IsBlank(edtNoteRequestBuyProduct.Text),
                         Notify(
                             "Vui lòng điển đủ thông tin bắt buộc",
@@ -2315,13 +2315,11 @@ HomeSale As screen:
                         Collect(
                             arrayProductAddPurchaseRequest,
                             {
-                                informationProduct: {
-                                    name_Product: edtNameProductRequestBuyPrduct.Text,
+                                 name_Product: edtNameProductRequestBuyPrduct.Text,
                                     price_Product: 0,
                                     quantity_Product:0,
                                     id_Category: drwCategoryRequestBuyProduct.Selected.ID,
-                                    id_Warehouse: drwWarehouseRequestBuyProduct.Selected.ID
-                                },
+                                    id_Warehouse: drwWarehouseRequestBuyProduct.Selected.ID,
                                 quantity:edtQuantityRequestBuyProduct.Text,
                                 unit:edtUnitRequestBuyProduct.Text,
                                 reason:edtReasonRequestBuyProduct.Text,
