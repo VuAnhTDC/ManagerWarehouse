@@ -2082,7 +2082,7 @@ HomeSale As screen:
                 FontWeight: =FontWeight.Bold
                 Height: =44
                 OnSelect: |-
-                    =If(
+                    =If(!IsBlank(arrayProductAddPurchaseRequest),If(
                         IsBlank(dpkDeliveryDate_HomeSale.SelectedDate),
                         Notify(
                             "Vui lòng chọn ngày nhận hàng",
@@ -2139,7 +2139,7 @@ HomeSale As screen:
                             []
                         );
                         
-                    )
+                    ))
                 Text: ="Xác nhận"
                 Width: =262
                 X: =251
