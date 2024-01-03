@@ -1354,9 +1354,10 @@ HomeSale As screen:
                 ZIndex: =3
 
             lblQuatityQuoteList_HomeSale As label:
-                Color: =RGBA(187, 221, 140, 1)
+                Color: =RGBA(93, 133, 38, 1)
                 Height: =42
                 Italic: =true
+                Size: =15
                 Text: ="Số lượng danh sách"
                 Width: =616
                 X: =20
@@ -1433,6 +1434,7 @@ HomeSale As screen:
                     Align: =Align.Center
                     Height: =47
                     OnSelect: =Select(Parent)
+                    Size: =15
                     Text: =ThisItem.quote_Decription
                     Width: =333
                     X: =21
