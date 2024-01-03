@@ -3,6 +3,7 @@ CreateQuote_Sreen As screen:
         =Set(isVisibleAddProductQuote_CreateQuoteCreen,false);
         Set(isVisibleDialogAddQuote_CreateQuoteScreen,false);
         Set(productAddQuoteList,[]);
+        Set(serviceAddQuoteList,[]);
 
     retangleHeader_CreateQuoteScreen As rectangle:
         Fill: =RGBA(175, 191, 224, 1)
@@ -29,30 +30,13 @@ CreateQuote_Sreen As screen:
         X: =425
         ZIndex: =3
 
-    lblIdQuote_CreateQuoteScreen As label:
-        Align: =Align.Right
-        FontWeight: =FontWeight.Bold
-        Size: =16
-        Text: ="Mã báo giá"
-        X: =227
-        Y: =78
-        ZIndex: =4
-
-    edtIdQuote_CreateQuoteScreen As text:
-        Default: =""
-        HintText: ="Vui lòng nhập mã báo giá ..."
-        Width: =728
-        X: =411
-        Y: =78
-        ZIndex: =5
-
     lblDescriptionQuote_CreateQuoteScreen As label:
         Align: =Align.Right
         FontWeight: =FontWeight.Bold
         Size: =16
         Text: ="Mô tả"
-        X: =227
-        Y: =135
+        X: =226
+        Y: =106
         ZIndex: =6
 
     edtDescriptionQuote_CreateQuoteScreen As text:
@@ -61,8 +45,8 @@ CreateQuote_Sreen As screen:
         HintText: ="Vui lòng nhập mô tả ..."
         Mode: =TextMode.MultiLine
         Width: =728
-        X: =411
-        Y: =135
+        X: =410
+        Y: =106
         ZIndex: =7
 
     containerDateQuoteAndCustomer_CreareQuoteScreen As groupContainer.manualLayoutContainer:
@@ -124,6 +108,7 @@ CreateQuote_Sreen As screen:
 
         btnAddProduct_CreateQuoteScreen As button:
             Height: =34
+            OnSelect: =Set(isVisibleDialogAddQuote_CreateQuoteScreen,!isVisibleDialogAddQuote_CreateQuoteScreen)
             Text: ="Thêm"
             Width: =145
             X: =272
@@ -151,7 +136,7 @@ CreateQuote_Sreen As screen:
                 PaddingLeft: =0
                 PaddingRight: =0
                 PaddingTop: =0
-                Text: =
+                Text: =ThisItem.sumPrice_Quote_Product
                 VerticalAlign: =VerticalAlign.Top
                 Width: =Parent.TemplateWidth - 173
                 X: =22
@@ -242,7 +227,7 @@ CreateQuote_Sreen As screen:
         "serviceList_CreateQuoteScreen As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
             DelayItemLoading: =true
             Height: =344
-            Items: =CustomGallerySample
+            Items: =serviceAddQuoteList
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             TemplatePadding: =0
@@ -259,7 +244,7 @@ CreateQuote_Sreen As screen:
                 PaddingLeft: =0
                 PaddingRight: =0
                 PaddingTop: =0
-                Text: =ThisItem.SampleHeading
+                Text: =
                 VerticalAlign: =VerticalAlign.Top
                 Width: =Parent.TemplateWidth - 173
                 X: =22
@@ -274,7 +259,7 @@ CreateQuote_Sreen As screen:
                 PaddingLeft: =0
                 PaddingRight: =0
                 PaddingTop: =0
-                Text: =ThisItem.SampleText
+                Text: =
                 VerticalAlign: =VerticalAlign.Top
                 Width: =Title2_2.Width
                 X: =57
@@ -339,7 +324,7 @@ CreateQuote_Sreen As screen:
         Y: =4
         ZIndex: =13
 
-        containerContentAdd_AddPeoduct_CreateQuoteScreen As groupContainer.manualLayoutContainer:
+        containerContentAdd_AddProduct_CreateQuoteScreen As groupContainer.manualLayoutContainer:
             Fill: =RGBA(241, 244, 249, 1)
             Height: =515
             Width: =1058
@@ -398,7 +383,8 @@ CreateQuote_Sreen As screen:
                     ZIndex: =3
 
                 edtPriceAddPRoductQuote_CreateQuoteScreen As text:
-                    Default: ="Text input"
+                    Default: |-
+                        =Text(Value(dropdowProductQuote_CreateQuoteScreen.SelectedText.price_Product), "[$-en-US]#,###đ")
                     DisplayMode: =DisplayMode.Disabled
                     Width: =349
                     X: =208
@@ -432,7 +418,6 @@ CreateQuote_Sreen As screen:
 
                 edtNoteAddProductQuote_CreateQuoteScreen As text:
                     Default: =""
-                    Format: =TextFormat.Number
                     Height: =200
                     HintText: ="Vui lòng nhập ghi chú ..."
                     Mode: =TextMode.MultiLine
@@ -456,6 +441,7 @@ CreateQuote_Sreen As screen:
                     Format: =TextFormat.Number
                     Height: =38
                     HintText: ="%"
+                    OnChange: =
                     Width: =175
                     X: =669
                     Y: =15
@@ -483,7 +469,8 @@ CreateQuote_Sreen As screen:
                         FontWeight: =FontWeight.Semibold
                         Height: =46
                         Italic: =true
-                        Text: ="Text"
+                        Text: |-
+                            =If(!IsBlank(edtQuantityAddProductQuote_CreateQuoteScreen.Text) && !IsBlank(edtVATAddProductQuote_CreatQuoteScreen.Text),Text(Value(dropdowProductQuote_CreateQuoteScreen.SelectedText.price_Product * Value(edtQuantityAddProductQuote_CreateQuoteScreen.Text)) + (Value(dropdowProductQuote_CreateQuoteScreen.SelectedText.price_Product * Value(edtQuantityAddProductQuote_CreateQuoteScreen.Text) * Value(edtVATAddProductQuote_CreatQuoteScreen.Text)%)), "[$-en-US]#,###đ"),"0 đ")
                         Width: =306
                         X: =32
                         Y: =49
@@ -493,10 +480,36 @@ CreateQuote_Sreen As screen:
                     DisplayMode: =If(IsBlank(edtPriceAddPRoductQuote_CreateQuoteScreen.Text)||IsBlank(edtQuantityAddProductQuote_CreateQuoteScreen.Text)||IsBlank(edtNoteAddProductQuote_CreateQuoteScreen.Text)||IsBlank(edtVATAddProductQuote_CreatQuoteScreen.Text),DisplayMode.Disabled,DisplayMode.Edit)
                     FontWeight: =FontWeight.Bold
                     Height: =43
+                    OnSelect: |-
+                        =Collect(productAddQuoteList,{
+                            id_Product:dropdowProductQuote_CreateQuoteScreen.SelectedText.'data-ADB4D7A662F548B49FAC2B986E348A1Bid_Product',
+                            price_Quote_Product:dropdowProductQuote_CreateQuoteScreen.SelectedText.price_Product,
+                            quantity_Quote_Product:Value(edtPriceAddPRoductQuote_CreateQuoteScreen.Text),
+                            quote_Note:edtNoteAddProductQuote_CreateQuoteScreen.Text,
+                            sumPrice_Quote_Product:lblSumpriceAddProduct_CreateQuoteScreen.Text,
+                            vat: edtVATAddProductQuote_CreatQuoteScreen.Text
+                        });
+                        Set(isVisibleDialogAddQuote_CreateQuoteScreen,!isVisibleDialogAddQuote_CreateQuoteScreen)
                     Size: =20
                     Text: ="Xác nhận"
                     Width: =240
                     X: =738
                     Y: =279
                     ZIndex: =12
+
+            cancelAddProduct_CreateQuoteScreen As icon.CancelBadge:
+                Height: =50
+                Icon: =Icon.CancelBadge
+                OnSelect: =Set(isVisibleDialogAddQuote_CreateQuoteScreen,!isVisibleDialogAddQuote_CreateQuoteScreen)
+                Width: =50
+                X: =995
+                Y: =5
+                ZIndex: =5
+
+    btnCreateQuoteNew_CreateQuote As button:
+        OnSelect: =If(IsBlank(edtDescriptionQuote_CreateQuoteScreen.Text)||IsBlank(productAddQuoteList)||IsBlank(serviceAddQuoteList),Notify("Vui long nhap du thong tin"))
+        Text: ="Tạo"
+        X: =1177
+        Y: =9
+        ZIndex: =14
 

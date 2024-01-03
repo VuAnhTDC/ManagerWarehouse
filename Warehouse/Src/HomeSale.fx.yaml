@@ -2098,13 +2098,13 @@ HomeSale As screen:
                                 "ddmmyyyyhhmmss"
                             ) & informationUser.ID
                         );
-                        Set(
+                       /* Set(
                             sumPricePurchase,
                             Sum(
                                 arrayProductAddPurchaseRequest,
                                 quantity * price_Product
                             )
-                        );
+                        );*/
                         Patch(
                             Purchase_request,
                             Defaults(Purchase_request),
@@ -2113,8 +2113,7 @@ HomeSale As screen:
                                 request_Date: Now(),
                                 delivery_Date: dpkDeliveryDate_HomeSale.SelectedDate,
                                 status_PurchaseRequest: {Value:"Chưa duyệt"},
-                                id_User: informationUser.ID,
-                                sumPrice_PurchaseRequest: sumPricePurchase
+                                id_User: informationUser.ID
                             }
                         );
                         ForAll(
@@ -2296,9 +2295,9 @@ HomeSale As screen:
                                 price_Product:0,
                                 quantity_Product:0,
                                 quantity: edtQuantityRequestBuyProduct.Text,
-                                unit: edtUnitAddProductRequest_HomeSale.Text,
-                                reason: edtReasonAddProductRequest_HomeSale.Text,
-                                note: edtNoteAddProductRequest_HomeSale.Text
+                                unit: edtUnitRequestBuyProduct.Text,
+                                reason: edtReasonRequestBuyProduct.Text,
+                                note: edtNoteRequestBuyProduct.Text
                             }
                         );
                         Set(isVisibleRequestBuyProductHaveNotWarehouse,!isVisibleRequestBuyProductHaveNotWarehouse);
