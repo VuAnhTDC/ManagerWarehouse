@@ -1,6 +1,6 @@
 CreateQuote_Sreen As screen:
     OnVisible: |-
-        =Set(isVisibleAddProductQuote_CreateQuoteCreen,false);
+        =Set(isConTentDialogAddQuote,0);
         Set(isVisibleDialogAddQuote_CreateQuoteScreen,false);
         ClearCollect(productAddQuoteList,[]);
         ClearCollect(serviceAddQuoteList,[]);
@@ -108,7 +108,9 @@ CreateQuote_Sreen As screen:
 
         btnAddProduct_CreateQuoteScreen As button:
             Height: =34
-            OnSelect: =Set(isVisibleDialogAddQuote_CreateQuoteScreen,!isVisibleDialogAddQuote_CreateQuoteScreen)
+            OnSelect: |-
+                =Set(isVisibleDialogAddQuote_CreateQuoteScreen,!isVisibleDialogAddQuote_CreateQuoteScreen);
+                Set(isConTentDialogAddQuote,1);
             Text: ="Thêm"
             Width: =145
             X: =272
@@ -176,6 +178,7 @@ CreateQuote_Sreen As screen:
                 Height: =41
                 Italic: =true
                 OnSelect: =Select(Parent)
+                Size: =18
                 Text: |-
                     =LookUp(
                         Product,
@@ -220,7 +223,9 @@ CreateQuote_Sreen As screen:
 
         btnAddService_CreateQuoteScreen As button:
             Height: =34
-            OnSelect: =Set(isVisibleDialogAddQuote_CreateQuoteScreen,!isVisibleDialogAddQuote_CreateQuoteScreen)
+            OnSelect: |-
+                =Set(isVisibleDialogAddQuote_CreateQuoteScreen,!isVisibleDialogAddQuote_CreateQuoteScreen);
+                Set(isConTentDialogAddQuote,1);
             Text: ="Thêm"
             Width: =145
             X: =273
@@ -256,7 +261,9 @@ CreateQuote_Sreen As screen:
                 ZIndex: =4
 
             Separator2_2 As rectangle:
-                Height: =8
+                BorderStyle: =BorderStyle.Dotted
+                BorderThickness: =1
+                Height: =2
                 OnSelect: =Select(Parent)
                 Width: =Parent.TemplateWidth
                 Y: =Parent.TemplateHeight - Self.Height
@@ -274,7 +281,7 @@ CreateQuote_Sreen As screen:
                 Height: =41
                 Italic: =true
                 OnSelect: =Select(Parent)
-                Size: =20
+                Size: =18
                 Text: |-
                     =LookUp(
                         Service,
@@ -282,16 +289,19 @@ CreateQuote_Sreen As screen:
                     ).service_Name
                 Width: =359
                 X: =4
+                Y: =16
                 ZIndex: =7
 
             Label16 As label:
                 Align: =Align.Right
                 Color: =RGBA(255, 0, 0, 1)
+                Height: =39
                 Italic: =true
                 OnSelect: =Select(Parent)
-                Text: =ThisItem.price_Quote_Service
-                Width: =360
-                X: =15
+                Text: |-
+                    =Text(Value(ThisItem.price_Quote_Service), "[$-en-US]#,### đ")
+                Width: =275
+                X: =88
                 Y: =57
                 ZIndex: =8
 
@@ -301,7 +311,7 @@ CreateQuote_Sreen As screen:
         Height: =77
         Italic: =true
         Size: =20
-        Text: ="Text"
+        Text: =
         Width: =405
         X: =39
         Y: =650
@@ -328,9 +338,7 @@ CreateQuote_Sreen As screen:
         containerContentAdd_AddProduct_CreateQuoteScreen As groupContainer.manualLayoutContainer:
             Fill: =RGBA(241, 244, 249, 1)
             Height: =515
-            Visible: |-
-                =//true
-                false
+            Visible: =If(isConTentDialogAddQuote =1,true,false)
             Width: =1058
             X: =129
             Y: =90
@@ -514,6 +522,7 @@ CreateQuote_Sreen As screen:
             BorderThickness: =1
             Fill: =RGBA(255, 255, 255, 1)
             Height: =550
+            Visible: =If(isConTentDialogAddQuote = 2,true,false)
             Width: =967
             X: =174
             Y: =101
@@ -581,7 +590,7 @@ CreateQuote_Sreen As screen:
                 ZIndex: =7
 
             edtPriceService_CreateQuoteScreen As text:
-                Default: =""
+                Default: =If(ckbPriceService_CreateQuoteScreen.Value,drwService_CreateQuoteScreen.SelectedText.'data-ADB4D7A662F548B49FAC2B986E348A1Bservice_Price',"")
                 Format: =TextFormat.Number
                 Height: =44
                 HintText: ="Giá dịch vụ"
@@ -593,6 +602,7 @@ CreateQuote_Sreen As screen:
             ckbPriceService_CreateQuoteScreen As checkbox:
                 FontWeight: =FontWeight.Semibold
                 Height: =54
+                OnSelect: =
                 Size: =18
                 Text: ="Giá gốc dịch vụ"
                 Width: =282
