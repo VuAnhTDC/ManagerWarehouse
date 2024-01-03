@@ -1827,7 +1827,7 @@ HomeSale As screen:
                                 arrayProductAddPurchaseRequest,
                                 Filter(
                                     arrayProductAddPurchaseRequest,
-                                    Not(informationProduct.name_Product = Gallery5.Selected.informationProduct.name_Product)
+                                    Not(name_Product = Gallery5.Selected.name_Product)
                                 )
                             );
                         X: =517
@@ -1854,7 +1854,7 @@ HomeSale As screen:
                     Label3_1 As label:
                         FontWeight: =FontWeight.Bold
                         OnSelect: =Select(Parent)
-                        Text: =ThisItem.information.name_Product
+                        Text: =ThisItem.name_Product
                         Width: =481
                         X: =17
                         Y: =16
@@ -2102,7 +2102,7 @@ HomeSale As screen:
                             sumPricePurchase,
                             Sum(
                                 arrayProductAddPurchaseRequest,
-                                quantity * informationProduct.price_Product
+                                quantity * price_Product
                             )
                         );
                         Patch(
@@ -2124,11 +2124,12 @@ HomeSale As screen:
                                 Defaults(Purchase_request_Product),
                                 {
                                     id_Purchase_request: idPurchaseRequest,
-                                    id_Product: ThisRecord.informationProduct.id_Product,
-                                    name_Product: ThisRecord.informationProduct.name_Product,
+                                    id_Product: ThisRecord.id_Product,
+                                    name_Product: ThisRecord.name_Product,
                                     request_Quantity: Value(ThisRecord.quantity),
                                     request_Note: ThisRecord.note,
                                     request_Reason: reason,
+                                    importProduct_Quantity:0,
                                     unit: unit
                                 }
                             )
@@ -2237,41 +2238,13 @@ HomeSale As screen:
                 Y: =132
                 ZIndex: =7
 
-            lblCategoryRequestBuyProduct As label:
-                Align: =Align.Right
-                FontWeight: =FontWeight.Bold
-                Text: ="Danh mục"
-                X: =38
-                Y: =262
-                ZIndex: =8
-
-            drwCategoryRequestBuyProduct As dropdown:
-                Items: =Category
-                X: =211
-                Y: =261
-                ZIndex: =9
-
-            lblWarehouseRequestBuyProduct As label:
-                Align: =Align.Right
-                FontWeight: =FontWeight.Bold
-                Text: ="Kho lưu"
-                X: =38
-                Y: =323
-                ZIndex: =10
-
-            drwWarehouseRequestBuyProduct As dropdown:
-                Items: =Warehouse
-                X: =211
-                Y: =322
-                ZIndex: =11
-
             lblNoteRequestBuyProduct As label:
                 Align: =Align.Right
                 FontWeight: =FontWeight.Bold
                 Height: =39
                 Text: ="Ghi chú"
                 Width: =92
-                X: =592
+                X: =537
                 Y: =132
                 ZIndex: =12
 
@@ -2281,7 +2254,7 @@ HomeSale As screen:
                 HintText: ="Vui lòng nhập ghi chú"
                 Mode: =TextMode.MultiLine
                 Width: =394
-                X: =711
+                X: =646
                 Y: =132
                 ZIndex: =13
 
@@ -2291,18 +2264,18 @@ HomeSale As screen:
                 Height: =41
                 Text: ="Lý do"
                 Width: =93
-                X: =592
-                Y: =292
+                X: =95
+                Y: =290
                 ZIndex: =14
 
             edtReasonRequestBuyProduct As text:
                 Default: =""
-                Height: =135
+                Height: =137
                 HintText: ="Vui lòng nhập lý do"
                 Mode: =TextMode.MultiLine
-                Width: =394
-                X: =711
-                Y: =292
+                Width: =829
+                X: =211
+                Y: =290
                 ZIndex: =15
 
             btnConfirmRequestBuyProduct As button:
@@ -2318,15 +2291,14 @@ HomeSale As screen:
                         Collect(
                             arrayProductAddPurchaseRequest,
                             {
-                                name_Product: edtNameProductRequestBuyPrduct.Text,
-                                    price_Product: 0,
-                                    quantity_Product:0,
-                                    id_Category: drwCategoryRequestBuyProduct.Selected.ID,
-                                    id_Warehouse: drwWarehouseRequestBuyProduct.Selected.ID,
-                                quantity:edtQuantityRequestBuyProduct.Text,
-                                unit:edtUnitRequestBuyProduct.Text,
-                                reason:edtReasonRequestBuyProduct.Text,
-                                note: edtNoteRequestBuyProduct.Text
+                                 id_Product:"",
+                                name_Product:edtNameProductRequestBuyPrduct.Text,
+                                price_Product:0,
+                                quantity_Product:0,
+                                quantity: edtQuantityRequestBuyProduct.Text,
+                                unit: edtUnitAddProductRequest_HomeSale.Text,
+                                reason: edtReasonAddProductRequest_HomeSale.Text,
+                                note: edtNoteAddProductRequest_HomeSale.Text
                             }
                         );
                         Set(isVisibleRequestBuyProductHaveNotWarehouse,!isVisibleRequestBuyProductHaveNotWarehouse);
