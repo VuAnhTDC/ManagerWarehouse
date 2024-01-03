@@ -220,6 +220,7 @@ CreateQuote_Sreen As screen:
 
         btnAddService_CreateQuoteScreen As button:
             Height: =34
+            OnSelect: =Set(isVisibleDialogAddQuote_CreateQuoteScreen,!isVisibleDialogAddQuote_CreateQuoteScreen)
             Text: ="Thêm"
             Width: =145
             X: =273
@@ -237,36 +238,6 @@ CreateQuote_Sreen As screen:
             Width: =425
             Y: =93
             ZIndex: =3
-
-            Title2_2 As label:
-                FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
-                Height: =Self.Size * 1.8
-                OnSelect: =Select(Parent)
-                PaddingBottom: =0
-                PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
-                Text: =
-                VerticalAlign: =VerticalAlign.Top
-                Width: =Parent.TemplateWidth - 173
-                X: =22
-                Y: =27
-                ZIndex: =2
-
-            Subtitle2_1 As label:
-                FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
-                Height: =Self.Size * 1.8
-                OnSelect: =Select(Parent)
-                PaddingBottom: =0
-                PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
-                Text: =
-                VerticalAlign: =VerticalAlign.Top
-                Width: =Title2_2.Width
-                X: =57
-                Y: =56
-                ZIndex: =3
 
             NextArrow2_1 As icon.ChevronRight:
                 AccessibleLabel: =Self.Tooltip
@@ -298,6 +269,32 @@ CreateQuote_Sreen As screen:
                 Width: =4
                 ZIndex: =6
 
+            Label11 As label:
+                FontWeight: =FontWeight.Bold
+                Height: =41
+                Italic: =true
+                OnSelect: =Select(Parent)
+                Size: =20
+                Text: |-
+                    =LookUp(
+                        Service,
+                        id_Serivce = ThisItem.id_Service
+                    ).service_Name
+                Width: =359
+                X: =4
+                ZIndex: =7
+
+            Label16 As label:
+                Align: =Align.Right
+                Color: =RGBA(255, 0, 0, 1)
+                Italic: =true
+                OnSelect: =Select(Parent)
+                Text: =ThisItem.price_Quote_Service
+                Width: =360
+                X: =15
+                Y: =57
+                ZIndex: =8
+
     lblSumprice_CreateQuoteScreen As label:
         BorderThickness: =1
         FontWeight: =FontWeight.Bold
@@ -322,8 +319,8 @@ CreateQuote_Sreen As screen:
         Fill: =RGBA(0, 0, 0, 0.41)
         Height: =764
         Visible: |-
-            =//isVisibleDialogAddQuote_CreateQuoteScreen
-            true
+            =isVisibleDialogAddQuote_CreateQuoteScreen
+            //true
         Width: =1366
         Y: =4
         ZIndex: =13
@@ -516,18 +513,18 @@ CreateQuote_Sreen As screen:
         containerContentAddService_CreateQuoteScreen As groupContainer.manualLayoutContainer:
             BorderThickness: =1
             Fill: =RGBA(255, 255, 255, 1)
-            Height: =492
+            Height: =550
             Width: =967
             X: =174
             Y: =101
             ZIndex: =2
 
             Rectangle8 As rectangle:
-                Height: =48
+                Height: =50
                 Width: =967
                 ZIndex: =1
 
-            Label8 As label:
+            titleAddServiceQuote_CreateQuoteScreen As label:
                 Align: =Align.Center
                 FontWeight: =FontWeight.Bold
                 Height: =48
@@ -537,7 +534,7 @@ CreateQuote_Sreen As screen:
                 X: =315
                 ZIndex: =2
 
-            Label9 As label:
+            lblService_CreateQuoteScreen As label:
                 Align: =Align.Right
                 FontWeight: =FontWeight.Bold
                 Text: |-
@@ -546,14 +543,14 @@ CreateQuote_Sreen As screen:
                 Y: =68
                 ZIndex: =3
 
-            Dropdown2 As dropdown:
+            drwService_CreateQuoteScreen As dropdown:
                 Items: =Service
                 Width: =390
                 X: =229
                 Y: =68
                 ZIndex: =4
 
-            Label9_1 As label:
+            lblNoteService_CreateQuoteScreen As label:
                 Align: =Align.Right
                 FontWeight: =FontWeight.Bold
                 Height: =48
@@ -563,16 +560,17 @@ CreateQuote_Sreen As screen:
                 Y: =130
                 ZIndex: =5
 
-            TextInput1 As text:
-                Default: ="Vui lòng nhập ghi chú ..."
+            edtNoteService_CreateQuoteScreen As text:
+                Default: =""
                 Height: =168
+                HintText: ="Vui lòng nhập ghi chú ..."
                 Mode: =TextMode.MultiLine
                 Width: =578
                 X: =229
                 Y: =130
                 ZIndex: =6
 
-            Label9_2 As label:
+            lblPriceService_CreateQuoteScreen As label:
                 Align: =Align.Right
                 FontWeight: =FontWeight.Bold
                 Height: =48
@@ -581,6 +579,59 @@ CreateQuote_Sreen As screen:
                 X: =68
                 Y: =323
                 ZIndex: =7
+
+            edtPriceService_CreateQuoteScreen As text:
+                Default: =""
+                Format: =TextFormat.Number
+                Height: =44
+                HintText: ="Giá dịch vụ"
+                Width: =475
+                X: =229
+                Y: =327
+                ZIndex: =8
+
+            ckbPriceService_CreateQuoteScreen As checkbox:
+                FontWeight: =FontWeight.Semibold
+                Height: =54
+                Size: =18
+                Text: ="Giá gốc dịch vụ"
+                Width: =282
+                X: =325
+                Y: =384
+                ZIndex: =9
+
+            btnConfirmCreateQuoteService_CreateQuoteScreen As button:
+                Height: =53
+                OnSelect: |-
+                    =If(
+                        IsBlank(edtNoteService_CreateQuoteScreen.Text),
+                        Notify(
+                            "Vui lòng nhập ghi chú",
+                            NotificationType.Error
+                        ),
+                        Collect(
+                            serviceAddQuoteList,
+                            {
+                                id_Service: drwService_CreateQuoteScreen.SelectedText.'data-ADB4D7A662F548B49FAC2B986E348A1Bid_Serivce',
+                                quote_Service_Not:edtNoteService_CreateQuoteScreen.Text,
+                                price_Quote_Service: If(IsBlank(edtPriceService_CreateQuoteScreen.Text), 0,Value(edtPriceService_CreateQuoteScreen.Text))
+                            }
+                        );
+                        Set(isVisibleDialogAddQuote_CreateQuoteScreen,!isVisibleDialogAddQuote_CreateQuoteScreen)
+                    )
+                Text: ="Xác nhận"
+                Width: =304
+                X: =331
+                Y: =453
+                ZIndex: =10
+
+            exitAddQuoteService_CreateQuoteScreen As icon.CancelBadge:
+                Height: =50
+                Icon: =Icon.CancelBadge
+                OnSelect: =Set(isVisibleDialogAddQuote_CreateQuoteScreen,!isVisibleDialogAddQuote_CreateQuoteScreen)
+                Width: =50
+                X: =902
+                ZIndex: =11
 
     btnCreateQuoteNew_CreateQuote As button:
         OnSelect: =If(IsBlank(edtDescriptionQuote_CreateQuoteScreen.Text)||IsBlank(productAddQuoteList)||IsBlank(serviceAddQuoteList),Notify("Vui long nhap du thong tin"))

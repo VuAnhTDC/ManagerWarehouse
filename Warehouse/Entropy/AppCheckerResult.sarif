@@ -2863,19 +2863,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "CreateQuote_Sreen.containerContentAdd_CreateQuoteScreen.containerContentAddService_CreateQuoteScreen.Dropdown2.AccessibleLabel"
+                  "fullyQualifiedName": "CreateQuote_Sreen.containerContentAdd_CreateQuoteScreen.containerContentAddService_CreateQuoteScreen.drwService_CreateQuoteScreen.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "CreateQuote_Sreen.containerContentAdd_CreateQuoteScreen.containerContentAddService_CreateQuoteScreen.Dropdown2.AccessibleLabel",
+                  "fullyQualifiedName": "CreateQuote_Sreen.containerContentAdd_CreateQuoteScreen.containerContentAddService_CreateQuoteScreen.drwService_CreateQuoteScreen.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "CreateQuote_Sreen",
-                "type": "CreateQuote_Sreen.containerContentAdd_CreateQuoteScreen.containerContentAddService_CreateQuoteScreen.Dropdown2"
+                "type": "CreateQuote_Sreen.containerContentAdd_CreateQuoteScreen.containerContentAddService_CreateQuoteScreen.drwService_CreateQuoteScreen"
               }
             }
           ],
@@ -2893,19 +2893,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "CreateQuote_Sreen.containerContentAdd_CreateQuoteScreen.containerContentAddService_CreateQuoteScreen.TextInput1.AccessibleLabel"
+                  "fullyQualifiedName": "CreateQuote_Sreen.containerContentAdd_CreateQuoteScreen.containerContentAddService_CreateQuoteScreen.edtNoteService_CreateQuoteScreen.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "CreateQuote_Sreen.containerContentAdd_CreateQuoteScreen.containerContentAddService_CreateQuoteScreen.TextInput1.AccessibleLabel",
+                  "fullyQualifiedName": "CreateQuote_Sreen.containerContentAdd_CreateQuoteScreen.containerContentAddService_CreateQuoteScreen.edtNoteService_CreateQuoteScreen.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "CreateQuote_Sreen",
-                "type": "CreateQuote_Sreen.containerContentAdd_CreateQuoteScreen.containerContentAddService_CreateQuoteScreen.TextInput1"
+                "type": "CreateQuote_Sreen.containerContentAdd_CreateQuoteScreen.containerContentAddService_CreateQuoteScreen.edtNoteService_CreateQuoteScreen"
               }
             }
           ],
@@ -2917,6 +2917,96 @@
           },
           "ruleId": "acc-AccessibleLabelNeeded",
           "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CreateQuote_Sreen.containerContentAdd_CreateQuoteScreen.containerContentAddService_CreateQuoteScreen.edtPriceService_CreateQuoteScreen.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "CreateQuote_Sreen.containerContentAdd_CreateQuoteScreen.containerContentAddService_CreateQuoteScreen.edtPriceService_CreateQuoteScreen.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "CreateQuote_Sreen",
+                "type": "CreateQuote_Sreen.containerContentAdd_CreateQuoteScreen.containerContentAddService_CreateQuoteScreen.edtPriceService_CreateQuoteScreen"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CreateQuote_Sreen.containerContentAdd_CreateQuoteScreen.containerContentAddService_CreateQuoteScreen.exitAddQuoteService_CreateQuoteScreen.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "CreateQuote_Sreen.containerContentAdd_CreateQuoteScreen.containerContentAddService_CreateQuoteScreen.exitAddQuoteService_CreateQuoteScreen.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "CreateQuote_Sreen",
+                "type": "CreateQuote_Sreen.containerContentAdd_CreateQuoteScreen.containerContentAddService_CreateQuoteScreen.exitAddQuoteService_CreateQuoteScreen"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CreateQuote_Sreen.containerContentAdd_CreateQuoteScreen.containerContentAddService_CreateQuoteScreen.exitAddQuoteService_CreateQuoteScreen.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "CreateQuote_Sreen.containerContentAdd_CreateQuoteScreen.containerContentAddService_CreateQuoteScreen.exitAddQuoteService_CreateQuoteScreen.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "CreateQuote_Sreen",
+                "type": "CreateQuote_Sreen.containerContentAdd_CreateQuoteScreen.containerContentAddService_CreateQuoteScreen.exitAddQuoteService_CreateQuoteScreen"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 1
         },
         {
           "locations": [
