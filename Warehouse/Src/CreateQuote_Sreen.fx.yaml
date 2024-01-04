@@ -90,7 +90,7 @@ CreateQuote_Sreen As screen:
             ZIndex: =4
 
         txtSumPriceQuote_CreateQuoteCreen As text:
-            Default: =""
+            Default: =Sum(productAddQuoteList,sumPrice_Quote_Product) + Sum(serviceAddQuoteList,price_Quote_Service)
             DisplayMode: =DisplayMode.Disabled
             Height: =65
             HintText: |-
@@ -113,6 +113,47 @@ CreateQuote_Sreen As screen:
         btnConfirm_CreateQuoteCreen As button:
             FontWeight: =FontWeight.Bold
             Height: =62
+            OnSelect: |-
+                =If(
+                    IsBlank(edtDescriptionQuote_CreateQuoteScreen.Text) || (IsBlank(productAddQuoteList) && IsBlank(serviceAddQuoteList)),
+                    Notify("Vui lòng cung cấp đầy đủ thông tin"),
+                    Set(
+                        idQuote,
+                        "QT" & Text(
+                            Now(),
+                            "ddmmyyyyhhmmss"
+                        ) & informationUser.ID
+                    );
+                    Patch(
+                        Quote,
+                        Defaults(Quote),
+                        {
+                            id_Quote: idQuote,
+                            quote_Decription: edtDescriptionQuote_CreateQuoteScreen.Text,
+                            quote_Date: Now(),
+                            quote_Expire: DatePicker1.SelectedDate,
+                            quote_Status: false,
+                            id_User: informationUser.ID,
+                            id_Customer: Dropdown1.SelectedText.'data-ADB4D7A662F548B49FAC2B986E348A1BID',
+                            sumPriceQuote: Value(txtSumPriceQuote_CreateQuoteCreen.Text)
+                        }
+                    );
+                    ForAll(
+                        productAddQuoteList,
+                        Patch(
+                            Quote_Product,
+                            Defaults(Quote_Product),
+                            {
+                                id_Quote: idQuote,
+                                id_Product: ThisRecord.id_Product,
+                                price_Quote_Product: ThisRecord.price_Quote_Product,
+                                quantity_Quote_Product: ThisRecord.quantity_Quote_Product,
+                                quote_Product_Note: ThisRecord.quote_Note,
+                                vat: Value(ThisRecord.vat)
+                            }
+                        )
+                    )
+                )
             Size: =20
             Text: ="Xác nhận"
             Width: =267
@@ -229,7 +270,8 @@ CreateQuote_Sreen As screen:
                 Height: =36
                 Italic: =true
                 OnSelect: =Select(Parent)
-                Text: =ThisItem.sumPrice_Quote_Product
+                Text: |
+                    =Text(Value(ThisItem.sumPrice_Quote_Product), "[$-en-US]#,### đ")
                 Width: =334
                 X: =29
                 Y: =68
@@ -409,8 +451,7 @@ CreateQuote_Sreen As screen:
                     ZIndex: =3
 
                 edtPriceAddPRoductQuote_CreateQuoteScreen As text:
-                    Default: |-
-                        =Text(Value(dropdowProductQuote_CreateQuoteScreen.SelectedText.price_Product), "[$-en-US]#,###đ")
+                    Default: =dropdowProductQuote_CreateQuoteScreen.SelectedText.price_Product
                     DisplayMode: =DisplayMode.Disabled
                     Width: =349
                     X: =208
@@ -495,8 +536,7 @@ CreateQuote_Sreen As screen:
                         FontWeight: =FontWeight.Semibold
                         Height: =46
                         Italic: =true
-                        Text: |-
-                            =If(!IsBlank(edtQuantityAddProductQuote_CreateQuoteScreen.Text) && !IsBlank(edtVATAddProductQuote_CreatQuoteScreen.Text),Text(Value(dropdowProductQuote_CreateQuoteScreen.SelectedText.price_Product * Value(edtQuantityAddProductQuote_CreateQuoteScreen.Text)) + (Value(dropdowProductQuote_CreateQuoteScreen.SelectedText.price_Product * Value(edtQuantityAddProductQuote_CreateQuoteScreen.Text) * Value(edtVATAddProductQuote_CreatQuoteScreen.Text)%)), "[$-en-US]#,###đ"),"0 đ")
+                        Text: =If(!IsBlank(edtQuantityAddProductQuote_CreateQuoteScreen.Text) && !IsBlank(edtVATAddProductQuote_CreatQuoteScreen.Text),dropdowProductQuote_CreateQuoteScreen.SelectedText.price_Product * Value(edtQuantityAddProductQuote_CreateQuoteScreen.Text)) + (Value(dropdowProductQuote_CreateQuoteScreen.SelectedText.price_Product * Value(edtQuantityAddProductQuote_CreateQuoteScreen.Text) * Value(edtVATAddProductQuote_CreatQuoteScreen.Text)%))
                         Width: =306
                         X: =32
                         Y: =49

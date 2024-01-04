@@ -32,6 +32,12 @@
           "Quote": {
             "tableName": "c51f4e27-d122-4952-b3e0-bc053cb92d6b"
           },
+          "Quote_Product": {
+            "tableName": "37afd1ad-c35c-441e-85e8-5e881cf5fdfd"
+          },
+          "Quote_Service": {
+            "tableName": "55f5da9a-35b4-43f0-a6ca-20133797b72a"
+          },
           "Role": {
             "tableName": "256f4f99-e6fd-47e0-b5e7-ce7662ac5367"
           },
@@ -63,7 +69,9 @@
       "Category",
       "Warehouse",
       "Purchase_request",
-      "Purchase_request_Product"
+      "Purchase_request_Product",
+      "Quote_Product",
+      "Quote_Service"
     ],
     "dependencies": {},
     "dependents": [],

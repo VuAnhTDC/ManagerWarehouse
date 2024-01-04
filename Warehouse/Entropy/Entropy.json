@@ -328,7 +328,7 @@
   },
   "FunctionParamsInvariantScripts": {},
   "FunctionParamsInvariantScriptsOnInstances": {},
-  "HeaderLastSavedDateTimeUTC": "01/04/2024 02:33:25",
+  "HeaderLastSavedDateTimeUTC": "01/04/2024 03:25:21",
   "IsLegacyComponentAllowGlobalScopeCase": false,
   "LocalConnectionIDReferences": {
     "c9efb40e-e2c4-4d94-9da5-241348de59ed": "\"/providers/microsoft.powerapps/apis/shared_sharepointonline/connections/48359898d0a74a34b43202afe58eae58\""
@@ -351,7 +351,7 @@
   "OrderComponentMetadata": {},
   "OrderComponentTemplate": {},
   "OrderDataSource": {
-    "arrayProductAddPurchaseRequest": 16,
+    "arrayProductAddPurchaseRequest": 18,
     "Category": 11,
     "Customer": 6,
     "Customer_1": 8,
@@ -359,15 +359,17 @@
     "DropDownSample": 3,
     "Product": 9,
     "Product_1": 10,
-    "productAddQuoteList": 17,
+    "productAddQuoteList": 19,
     "Purchase_request": 13,
     "Purchase_request_Product": 14,
     "Quote": 7,
+    "Quote_Product": 15,
+    "Quote_Service": 16,
     "Role": 5,
     "Service": 1,
     "Service_1": 2,
-    "serviceAddQuoteList": 18,
-    "test": 15,
+    "serviceAddQuoteList": 20,
+    "test": 17,
     "User": 4,
     "Warehouse": 12
   },
