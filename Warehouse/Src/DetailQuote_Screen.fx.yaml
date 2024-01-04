@@ -135,6 +135,20 @@ DetailQuote_Screen As screen:
             Y: =549
             ZIndex: =12
 
+        Label21 As label:
+            Align: =Align.Center
+            Fill: =RGBA(121, 87, 171, 0.34)
+            FontWeight: =FontWeight.Semibold
+            Height: =57
+            Italic: =true
+            Size: =20
+            Text: |-
+                ="Tổng tiền: " & Text(Value(quoteList_HomeSale.Selected.sumPriceQuote), "[$-en-US]#,### đ")
+            Width: =515
+            X: =12
+            Y: =600
+            ZIndex: =13
+
     Container3 As groupContainer.manualLayoutContainer:
         BorderThickness: =1
         Height: =291

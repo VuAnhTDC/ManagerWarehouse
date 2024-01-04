@@ -1358,7 +1358,8 @@ HomeSale As screen:
                 Height: =42
                 Italic: =true
                 Size: =15
-                Text: ="Số lượng danh sách"
+                Text: |-
+                    ="Số lượng danh sách: " & quoteList_HomeSale.AllItemsCount
                 Width: =616
                 X: =20
                 Y: =158
@@ -1660,7 +1661,7 @@ HomeSale As screen:
                         Italic: =true
                         OnSelect: =Select(Parent)
                         Text: |-
-                            = "Giá: "&If(ThisItem.price_Product = 0, "0 đ",Text(Value(ThisItem.price_Product), "[$-en-US]#,###"))
+                            = "Giá: "&If(ThisItem.price_Product = 0, "0 đ",Text(Value(ThisItem.price_Product), "[$-en-US]#,### đ"))
                         Width: =195
                         X: =4
                         Y: =75
@@ -2313,7 +2314,7 @@ HomeSale As screen:
             lblUnitRequestBuyProduct As label:
                 Align: =Align.Right
                 FontWeight: =FontWeight.Bold
-                Text: ="Đươn vị"
+                Text: ="Đơn vị"
                 X: =38
                 Y: =194
                 ZIndex: =17
@@ -2325,4 +2326,13 @@ HomeSale As screen:
                 X: =211
                 Y: =196
                 ZIndex: =18
+
+    containerTransaction_HomeSale As groupContainer.manualLayoutContainer:
+        BorderThickness: =1
+        Height: =735
+        Visible: =If(btnFunctionSelection_Value_HomeSale = 5, true, false)
+        Width: =997
+        X: =352
+        Y: =18
+        ZIndex: =14
 
