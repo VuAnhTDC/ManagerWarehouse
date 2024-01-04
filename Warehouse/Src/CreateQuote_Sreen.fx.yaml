@@ -33,28 +33,30 @@ CreateQuote_Sreen As screen:
     lblDescriptionQuote_CreateQuoteScreen As label:
         Align: =Align.Right
         FontWeight: =FontWeight.Bold
+        Height: =42
         Size: =16
         Text: ="Mô tả"
-        X: =226
-        Y: =106
+        Width: =80
+        X: =53
+        Y: =84
         ZIndex: =6
 
     edtDescriptionQuote_CreateQuoteScreen As text:
         Default: =""
-        Height: =156
+        Height: =197
         HintText: ="Vui lòng nhập mô tả ..."
         Mode: =TextMode.MultiLine
-        Width: =728
-        X: =410
-        Y: =106
+        Width: =773
+        X: =150
+        Y: =84
         ZIndex: =7
 
     containerDateQuoteAndCustomer_CreareQuoteScreen As groupContainer.manualLayoutContainer:
         BorderThickness: =1
-        Height: =254
+        Height: =505
         Width: =420
-        X: =32
-        Y: =325
+        X: =938
+        Y: =84
         ZIndex: =8
 
         DatePicker1 As datepicker:
@@ -87,12 +89,43 @@ CreateQuote_Sreen As screen:
             Y: =169
             ZIndex: =4
 
+        txtSumPriceQuote_CreateQuoteCreen As text:
+            Default: =""
+            DisplayMode: =DisplayMode.Disabled
+            Height: =65
+            HintText: |-
+                ="Tổng tiền: 0 đ"
+            Italic: =true
+            Size: =20
+            Width: =367
+            X: =31
+            Y: =285
+            ZIndex: =5
+
+        lblSumPriceQuote_CreateQuoteScreen As label:
+            FontWeight: =FontWeight.Bold
+            Size: =15
+            Text: ="Tổng tiền"
+            X: =12
+            Y: =245
+            ZIndex: =6
+
+        btnConfirm_CreateQuoteCreen As button:
+            FontWeight: =FontWeight.Bold
+            Height: =62
+            Size: =20
+            Text: ="Xác nhận"
+            Width: =267
+            X: =81
+            Y: =407
+            ZIndex: =7
+
     containerProductListSelectedAddQuote_CreateQuoteScreen As groupContainer.manualLayoutContainer:
         BorderThickness: =1
         Height: =437
         Width: =425
-        X: =470
-        Y: =310
+        X: =53
+        Y: =300
         ZIndex: =9
 
         lblTitlePRoductListAdd_SCreateQuoteScreen As label:
@@ -150,11 +183,11 @@ CreateQuote_Sreen As screen:
                 BorderStyle: =BorderStyle.Dotted
                 BorderThickness: =1
                 Fill: =RGBA(0, 0, 0, 1)
-                Height: =0
+                Height: =1
                 OnSelect: =Select(Parent)
                 Width: =336
-                X: =40
-                Y: =104
+                X: =52
+                Y: =103
                 ZIndex: =5
 
             Rectangle3 As rectangle:
@@ -206,8 +239,8 @@ CreateQuote_Sreen As screen:
         BorderThickness: =1
         Height: =437
         Width: =425
-        X: =912
-        Y: =310
+        X: =499
+        Y: =300
         ZIndex: =10
 
         lblTitleAddService_CreateQuoteScreen As label:
@@ -225,7 +258,7 @@ CreateQuote_Sreen As screen:
             Height: =34
             OnSelect: |-
                 =Set(isVisibleDialogAddQuote_CreateQuoteScreen,!isVisibleDialogAddQuote_CreateQuoteScreen);
-                Set(isConTentDialogAddQuote,1);
+                Set(isConTentDialogAddQuote,2);
             Text: ="Thêm"
             Width: =145
             X: =273
@@ -265,8 +298,9 @@ CreateQuote_Sreen As screen:
                 BorderThickness: =1
                 Height: =2
                 OnSelect: =Select(Parent)
-                Width: =Parent.TemplateWidth
-                Y: =Parent.TemplateHeight - Self.Height
+                Width: =336
+                X: =43
+                Y: =100
                 ZIndex: =5
 
             Rectangle3_1 As rectangle:
@@ -304,26 +338,6 @@ CreateQuote_Sreen As screen:
                 X: =88
                 Y: =57
                 ZIndex: =8
-
-    lblSumprice_CreateQuoteScreen As label:
-        BorderThickness: =1
-        FontWeight: =FontWeight.Bold
-        Height: =77
-        Italic: =true
-        Size: =20
-        Text: =
-        Width: =405
-        X: =39
-        Y: =650
-        ZIndex: =11
-
-    lblTitleSumPrice_CreateQuoteScreen As label:
-        FontWeight: =FontWeight.Bold
-        Size: =15
-        Text: ="Tổng tiền"
-        X: =32
-        Y: =610
-        ZIndex: =12
 
     containerContentAdd_CreateQuoteScreen As groupContainer.manualLayoutContainer:
         Fill: =RGBA(0, 0, 0, 0.41)
@@ -642,11 +656,4 @@ CreateQuote_Sreen As screen:
                 Width: =50
                 X: =902
                 ZIndex: =11
-
-    btnCreateQuoteNew_CreateQuote As button:
-        OnSelect: =If(IsBlank(edtDescriptionQuote_CreateQuoteScreen.Text)||IsBlank(productAddQuoteList)||IsBlank(serviceAddQuoteList),Notify("Vui long nhap du thong tin"))
-        Text: ="Tạo"
-        X: =1177
-        Y: =9
-        ZIndex: =14
 
