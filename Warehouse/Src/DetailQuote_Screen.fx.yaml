@@ -18,7 +18,7 @@ DetailQuote_Screen As screen:
             FontWeight: =FontWeight.Bold
             Height: =62
             Size: =20
-            Text: ="Chi tiết báo giá"
+            Text: =If(quoteList_HomeSale.Selected.quote_Status,"Chi tiết đơn hàng","Chi tiết báo giá")
             Width: =667
             X: =351
             ZIndex: =2
@@ -217,7 +217,11 @@ DetailQuote_Screen As screen:
         "Gallery3_1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
             DelayItemLoading: =true
             Height: =251
-            Items: =CustomGallerySample
+            Items: |-
+                =Filter(
+                    Quote_Service,
+                    id_Quote = quoteList_HomeSale.Selected.id_Quote
+                )
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             TemplatePadding: =0
@@ -226,68 +230,13 @@ DetailQuote_Screen As screen:
             Y: =40
             ZIndex: =2
 
-            Image2_1 As image:
-                Height: =72
-                OnSelect: =Select(Parent)
-                RadiusBottomLeft: =8
-                RadiusBottomRight: =8
-                RadiusTopLeft: =8
-                RadiusTopRight: =8
-                Width: =72
-                X: =16
-                Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
-                ZIndex: =1
-
-            Title2_2 As label:
-                FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
-                Height: =Self.Size * 1.8
-                OnSelect: =Select(Parent)
-                PaddingBottom: =0
-                PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
-                Text: =ThisItem.SampleHeading
-                VerticalAlign: =VerticalAlign.Top
-                Width: =Parent.TemplateWidth - 173
-                X: =103
-                Y: =(Parent.TemplateHeight - (Self.Size * 1.8 + Subtitle2_1.Size * 1.8)) / 2
-                ZIndex: =2
-
-            Subtitle2_1 As label:
-                FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
-                Height: =Self.Size * 1.8
-                OnSelect: =Select(Parent)
-                PaddingBottom: =0
-                PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
-                Text: =ThisItem.SampleText
-                VerticalAlign: =VerticalAlign.Top
-                Width: =Title2_2.Width
-                X: =Title2_2.X
-                Y: =Title2_2.Y + Title2_2.Height
-                ZIndex: =3
-
-            NextArrow3_1 As icon.ChevronRight:
-                AccessibleLabel: =Self.Tooltip
-                Color: =RGBA(166, 166, 166, 1)
-                Height: =50
-                Icon: =Icon.ChevronRight
-                OnSelect: =Select(Parent)
-                PaddingBottom: =16
-                PaddingLeft: =16
-                PaddingRight: =16
-                PaddingTop: =16
-                Tooltip: ="View item details"
-                Width: =50
-                X: =Parent.TemplateWidth - Self.Width - 12
-                Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
-                ZIndex: =4
-
             Separator3_1 As rectangle:
-                Height: =8
+                BorderStyle: =BorderStyle.Dotted
+                BorderThickness: =1
+                Height: =1
                 OnSelect: =Select(Parent)
-                Width: =Parent.TemplateWidth
+                Width: =629
+                X: =82
                 Y: =Parent.TemplateHeight - Self.Height
                 ZIndex: =5
 
@@ -298,21 +247,47 @@ DetailQuote_Screen As screen:
                 Width: =4
                 ZIndex: =6
 
+            Label19 As label:
+                FontWeight: =FontWeight.Bold
+                Height: =47
+                OnSelect: =Select(Parent)
+                Size: =20
+                Text: =LookUp(Service,id_Serivce = ThisItem.id_Service).service_Name
+                Width: =707
+                X: =4
+                ZIndex: =7
+
+            Label20 As label:
+                Align: =Align.Right
+                Color: =RGBA(255, 0, 0, 1)
+                FontWeight: =FontWeight.Semibold
+                Height: =35
+                Italic: =true
+                OnSelect: =Select(Parent)
+                Size: =15
+                Text: |-
+                    =Text(Value(ThisItem.price_Quote_Service), "[$-en-US]#,### đ")
+                Width: =601
+                X: =108
+                Y: =60
+                ZIndex: =8
+
     Button2 As button:
         FontWeight: =FontWeight.Bold
         Height: =41
         Size: =18
         Text: ="Xuất file PDF"
         Width: =308
-        X: =696
-        Y: =705
+        X: =1047
+        Y: =708
         ZIndex: =5
 
     Button2_1 As button:
         Height: =41
         Text: ="Chuyển sang đơn hàng"
+        Visible: =!quoteList_HomeSale.Selected.quote_Status
         Width: =308
-        X: =1031
-        Y: =705
+        X: =722
+        Y: =708
         ZIndex: =6
 

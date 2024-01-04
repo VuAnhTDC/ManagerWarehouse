@@ -1660,7 +1660,7 @@ HomeSale As screen:
                         Italic: =true
                         OnSelect: =Select(Parent)
                         Text: |-
-                            = "Giá: "&Text(Value(ThisItem.price_Product), "[$-en-US]#,###")
+                            = "Giá: "&If(ThisItem.price_Product = 0, "0 đ",Text(Value(ThisItem.price_Product), "[$-en-US]#,###"))
                         Width: =195
                         X: =4
                         Y: =75
