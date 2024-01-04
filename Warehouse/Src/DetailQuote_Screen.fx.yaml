@@ -8,6 +8,7 @@ DetailQuote_Screen As screen:
 
         Arrow1 As arrow.backArrow:
             Fill: =RGBA(255, 255, 255, 1)
+            OnSelect: =Back()
             X: =9
             Y: =6
             ZIndex: =1
@@ -39,7 +40,7 @@ DetailQuote_Screen As screen:
             ZIndex: =1
 
         TextInput1 As text:
-            Default: =""
+            Default: =quoteList_HomeSale.Selected.id_Quote
             DisplayMode: =DisplayMode.Disabled
             HintText: ="Mã báo giá"
             Width: =458
@@ -57,7 +58,7 @@ DetailQuote_Screen As screen:
             ZIndex: =3
 
         TextInput1_1 As text:
-            Default: =""
+            Default: =quoteList_HomeSale.Selected.quote_Decription
             DisplayMode: =DisplayMode.Disabled
             Height: =166
             HintText: ="Mô tả báo giá"
@@ -75,7 +76,7 @@ DetailQuote_Screen As screen:
             ZIndex: =5
 
         TextInput1_2 As text:
-            Default: =""
+            Default: =quoteList_HomeSale.Selected.quote_Date
             DisplayMode: =DisplayMode.Disabled
             HintText: ="Ngày tạo"
             Width: =194
@@ -91,7 +92,7 @@ DetailQuote_Screen As screen:
             ZIndex: =7
 
         TextInput1_3 As text:
-            Default: =""
+            Default: =quoteList_HomeSale.Selected.quote_Expire
             DisplayMode: =DisplayMode.Disabled
             HintText: ="Ngày hết hạn"
             Width: =194
@@ -107,7 +108,10 @@ DetailQuote_Screen As screen:
             ZIndex: =9
 
         TextInput1_4 As text:
-            Default: =""
+            Default: |-
+                =LookUp(
+                    User,ID = quoteList_HomeSale.Selected.id_User
+                ).user_Name
             DisplayMode: =DisplayMode.Disabled
             HintText: ="Nhân viên"
             Width: =458
@@ -123,7 +127,7 @@ DetailQuote_Screen As screen:
             ZIndex: =11
 
         TextInput1_5 As text:
-            Default: =""
+            Default: =LookUp(Customer,ID = quoteList_HomeSale.Selected.id_Customer).customer_Name
             DisplayMode: =DisplayMode.Disabled
             HintText: ="Khách hàng"
             Width: =458
@@ -141,6 +145,7 @@ DetailQuote_Screen As screen:
 
         Label17 As label:
             Align: =Align.Center
+            Fill: =RGBA(152, 208, 70, 0.31)
             FontWeight: =FontWeight.Bold
             Size: =15
             Text: ="Sản phẩm"
@@ -167,9 +172,9 @@ DetailQuote_Screen As screen:
                 BorderThickness: =1
                 Height: =1
                 OnSelect: =Select(Parent)
-                Width: =542
-                X: =111
-                Y: =Parent.TemplateHeight - Self.Height
+                Width: =602
+                X: =76
+                Y: =102
                 ZIndex: =5
 
             Rectangle9 As rectangle:
@@ -180,8 +185,10 @@ DetailQuote_Screen As screen:
                 ZIndex: =6
 
             Label18 As label:
+                FontWeight: =FontWeight.Semibold
                 Height: =47
                 OnSelect: =Select(Parent)
+                Size: =20
                 Text: |-
                     =LookUp(
                        Product,id_Product = ThisItem.id_Product 
@@ -191,9 +198,16 @@ DetailQuote_Screen As screen:
                 ZIndex: =7
 
             Label18_1 As label:
+                Align: =Align.Right
+                Color: =RGBA(255, 0, 0, 1)
+                Fill: =RGBA(255, 255, 255, 1)
+                FontWeight: =FontWeight.Semibold
                 Height: =47
+                Italic: =true
                 OnSelect: =Select(Parent)
-                Text: =ThisItem.price_Quote_Product
+                Size: =15
+                Text: |-
+                    =Text(Value(ThisItem.price_Quote_Product), "[$-en-US]#,### đ")
                 Width: =690
                 X: =4
                 Y: =51
@@ -209,6 +223,7 @@ DetailQuote_Screen As screen:
 
         Label17_1 As label:
             Align: =Align.Center
+            Fill: =RGBA(152, 208, 70, 0.31)
             FontWeight: =FontWeight.Bold
             Size: =15
             Text: ="Dịch vụ"
@@ -248,7 +263,7 @@ DetailQuote_Screen As screen:
                 ZIndex: =6
 
             Label19 As label:
-                FontWeight: =FontWeight.Bold
+                FontWeight: =FontWeight.Semibold
                 Height: =47
                 OnSelect: =Select(Parent)
                 Size: =20
@@ -284,6 +299,15 @@ DetailQuote_Screen As screen:
 
     Button2_1 As button:
         Height: =41
+        OnSelect: |-
+            =Patch(
+                Quote,
+                LookUp(
+                    Quote,
+                    id_Quote = TextInput1.Text
+                ),
+                 {quote_Status: true}
+            )
         Text: ="Chuyển sang đơn hàng"
         Visible: =!quoteList_HomeSale.Selected.quote_Status
         Width: =308

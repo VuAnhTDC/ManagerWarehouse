@@ -1401,7 +1401,7 @@ HomeSale As screen:
                     Color: =RGBA(166, 166, 166, 1)
                     Height: =50
                     Icon: =Icon.ChevronRight
-                    OnSelect: =Select(Parent)
+                    OnSelect: =Navigate(DetailQuote_Screen,ScreenTransition.Fade)
                     PaddingBottom: =16
                     PaddingLeft: =16
                     PaddingRight: =16
@@ -1464,9 +1464,9 @@ HomeSale As screen:
 
                 btnStatusQuote_HomeSale As button:
                     DisplayMode: =DisplayMode.View
-                    Fill: =If(quoteList_HomeSale.Selected.quote_Status, RGBA(72,209 ,204 , 1),RGBA(205, 190, 112, 1))
+                    Fill: =If(ThisItem.quote_Status, RGBA(72,209 ,204 , 1),RGBA(205, 190, 112, 1))
                     OnSelect: =
-                    Text: ="Báo giá"
+                    Text: =If(ThisItem.quote_Status, "Đơn hàng","Báo giá")
                     X: =514
                     Y: =30
                     ZIndex: =10
