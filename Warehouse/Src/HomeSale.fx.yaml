@@ -1364,7 +1364,7 @@ HomeSale As screen:
                 Y: =158
                 ZIndex: =4
 
-            "quetoList_HomeSale As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+            "quoteList_HomeSale As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
                 BorderThickness: =1
                 DelayItemLoading: =true
                 Height: =445
@@ -1464,7 +1464,7 @@ HomeSale As screen:
 
                 btnStatusQuote_HomeSale As button:
                     DisplayMode: =DisplayMode.View
-                    Fill: =If(quetoList_HomeSale.Selected.quote_Status, RGBA(72,209 ,204 , 1),RGBA(205, 190, 112, 1))
+                    Fill: =If(quoteList_HomeSale.Selected.quote_Status, RGBA(72,209 ,204 , 1),RGBA(205, 190, 112, 1))
                     OnSelect: =
                     Text: ="Báo giá"
                     X: =514
@@ -1533,7 +1533,7 @@ HomeSale As screen:
                 Color: =RGBA(118, 0, 0, 1)
                 Fill: =RGBA(240, 166, 132, 0.58)
                 FontWeight: =FontWeight.Bold
-                OnSelect: =Navigate(CreateQuote_Sreen,ScreenTransition.Fade)
+                OnSelect: =Navigate(CreateQuote_Screen,ScreenTransition.Fade)
                 Text: ="Tạo báo giá"
                 Width: =262
                 X: =706

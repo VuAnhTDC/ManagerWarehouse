@@ -1,4 +1,4 @@
-CreateQuote_Sreen As screen:
+CreateQuote_Screen As screen:
     OnVisible: |-
         =Set(isConTentDialogAddQuote,0);
         Set(isVisibleDialogAddQuote_CreateQuoteScreen,false);

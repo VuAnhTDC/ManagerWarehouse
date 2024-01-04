@@ -1,0 +1,318 @@
+DetailQuote_Screen As screen:
+
+    Container1 As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(109, 49, 162, 1)
+        Height: =62
+        Width: =1366
+        ZIndex: =1
+
+        Arrow1 As arrow.backArrow:
+            Fill: =RGBA(255, 255, 255, 1)
+            X: =9
+            Y: =6
+            ZIndex: =1
+
+        Label8 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =62
+            Size: =20
+            Text: ="Chi tiết báo giá"
+            Width: =667
+            X: =351
+            ZIndex: =2
+
+    Container2 As groupContainer.manualLayoutContainer:
+        BorderThickness: =1
+        Height: =671
+        Width: =550
+        X: =15
+        Y: =78
+        ZIndex: =2
+
+        Label9 As label:
+            FontWeight: =FontWeight.Bold
+            Text: ="Mã báo giá"
+            X: =12
+            Y: =12
+            ZIndex: =1
+
+        TextInput1 As text:
+            Default: =""
+            DisplayMode: =DisplayMode.Disabled
+            HintText: ="Mã báo giá"
+            Width: =458
+            X: =39
+            Y: =52
+            ZIndex: =2
+
+        Label9_1 As label:
+            Align: =Align.Right
+            FontWeight: =FontWeight.Bold
+            Text: ="Mô tả"
+            Width: =61
+            X: =12
+            Y: =107
+            ZIndex: =3
+
+        TextInput1_1 As text:
+            Default: =""
+            DisplayMode: =DisplayMode.Disabled
+            Height: =166
+            HintText: ="Mô tả báo giá"
+            Mode: =TextMode.MultiLine
+            Width: =458
+            X: =39
+            Y: =147
+            ZIndex: =4
+
+        Label9_2 As label:
+            FontWeight: =FontWeight.Bold
+            Text: ="Ngày tạo"
+            X: =12
+            Y: =313
+            ZIndex: =5
+
+        TextInput1_2 As text:
+            Default: =""
+            DisplayMode: =DisplayMode.Disabled
+            HintText: ="Ngày tạo"
+            Width: =194
+            X: =39
+            Y: =353
+            ZIndex: =6
+
+        Label9_3 As label:
+            FontWeight: =FontWeight.Bold
+            Text: ="Ngày hết hạn"
+            X: =276
+            Y: =313
+            ZIndex: =7
+
+        TextInput1_3 As text:
+            Default: =""
+            DisplayMode: =DisplayMode.Disabled
+            HintText: ="Ngày hết hạn"
+            Width: =194
+            X: =303
+            Y: =353
+            ZIndex: =8
+
+        Label9_4 As label:
+            FontWeight: =FontWeight.Bold
+            Text: ="Nhân viên"
+            X: =12
+            Y: =413
+            ZIndex: =9
+
+        TextInput1_4 As text:
+            Default: =""
+            DisplayMode: =DisplayMode.Disabled
+            HintText: ="Nhân viên"
+            Width: =458
+            X: =39
+            Y: =453
+            ZIndex: =10
+
+        Label9_5 As label:
+            FontWeight: =FontWeight.Bold
+            Text: ="Khách hàng"
+            X: =12
+            Y: =509
+            ZIndex: =11
+
+        TextInput1_5 As text:
+            Default: =""
+            DisplayMode: =DisplayMode.Disabled
+            HintText: ="Khách hàng"
+            Width: =458
+            X: =39
+            Y: =549
+            ZIndex: =12
+
+    Container3 As groupContainer.manualLayoutContainer:
+        BorderThickness: =1
+        Height: =291
+        Width: =773
+        X: =582
+        Y: =75
+        ZIndex: =3
+
+        Label17 As label:
+            Align: =Align.Center
+            FontWeight: =FontWeight.Bold
+            Size: =15
+            Text: ="Sản phẩm"
+            ZIndex: =1
+
+        "Gallery3 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+            DelayItemLoading: =true
+            Height: =251
+            Items: |-
+                =Filter(
+                    Quote_Product,
+                    id_Quote = quoteList_HomeSale.Selected.id_Quote
+                )
+            Layout: =Layout.Vertical
+            LoadingSpinner: =LoadingSpinner.Data
+            TemplatePadding: =0
+            TemplateSize: =104
+            Width: =773
+            Y: =40
+            ZIndex: =2
+
+            Separator3 As rectangle:
+                BorderStyle: =BorderStyle.Dotted
+                BorderThickness: =1
+                Height: =1
+                OnSelect: =Select(Parent)
+                Width: =542
+                X: =111
+                Y: =Parent.TemplateHeight - Self.Height
+                ZIndex: =5
+
+            Rectangle9 As rectangle:
+                Height: =Parent.TemplateHeight - Separator3.Height
+                OnSelect: =Select(Parent)
+                Visible: =ThisItem.IsSelected
+                Width: =4
+                ZIndex: =6
+
+            Label18 As label:
+                Height: =47
+                OnSelect: =Select(Parent)
+                Text: |-
+                    =LookUp(
+                       Product,id_Product = ThisItem.id_Product 
+                    ).name_Product
+                Width: =690
+                X: =4
+                ZIndex: =7
+
+            Label18_1 As label:
+                Height: =47
+                OnSelect: =Select(Parent)
+                Text: =ThisItem.price_Quote_Product
+                Width: =690
+                X: =4
+                Y: =51
+                ZIndex: =8
+
+    Container3_1 As groupContainer.manualLayoutContainer:
+        BorderThickness: =1
+        Height: =300
+        Width: =773
+        X: =582
+        Y: =386
+        ZIndex: =4
+
+        Label17_1 As label:
+            Align: =Align.Center
+            FontWeight: =FontWeight.Bold
+            Size: =15
+            Text: ="Dịch vụ"
+            ZIndex: =1
+
+        "Gallery3_1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+            DelayItemLoading: =true
+            Height: =251
+            Items: =CustomGallerySample
+            Layout: =Layout.Vertical
+            LoadingSpinner: =LoadingSpinner.Data
+            TemplatePadding: =0
+            TemplateSize: =104
+            Width: =773
+            Y: =40
+            ZIndex: =2
+
+            Image2_1 As image:
+                Height: =72
+                OnSelect: =Select(Parent)
+                RadiusBottomLeft: =8
+                RadiusBottomRight: =8
+                RadiusTopLeft: =8
+                RadiusTopRight: =8
+                Width: =72
+                X: =16
+                Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            Title2_2 As label:
+                FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                Height: =Self.Size * 1.8
+                OnSelect: =Select(Parent)
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =ThisItem.SampleHeading
+                VerticalAlign: =VerticalAlign.Top
+                Width: =Parent.TemplateWidth - 173
+                X: =103
+                Y: =(Parent.TemplateHeight - (Self.Size * 1.8 + Subtitle2_1.Size * 1.8)) / 2
+                ZIndex: =2
+
+            Subtitle2_1 As label:
+                FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                Height: =Self.Size * 1.8
+                OnSelect: =Select(Parent)
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =ThisItem.SampleText
+                VerticalAlign: =VerticalAlign.Top
+                Width: =Title2_2.Width
+                X: =Title2_2.X
+                Y: =Title2_2.Y + Title2_2.Height
+                ZIndex: =3
+
+            NextArrow3_1 As icon.ChevronRight:
+                AccessibleLabel: =Self.Tooltip
+                Color: =RGBA(166, 166, 166, 1)
+                Height: =50
+                Icon: =Icon.ChevronRight
+                OnSelect: =Select(Parent)
+                PaddingBottom: =16
+                PaddingLeft: =16
+                PaddingRight: =16
+                PaddingTop: =16
+                Tooltip: ="View item details"
+                Width: =50
+                X: =Parent.TemplateWidth - Self.Width - 12
+                Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+                ZIndex: =4
+
+            Separator3_1 As rectangle:
+                Height: =8
+                OnSelect: =Select(Parent)
+                Width: =Parent.TemplateWidth
+                Y: =Parent.TemplateHeight - Self.Height
+                ZIndex: =5
+
+            Rectangle9_1 As rectangle:
+                Height: =Parent.TemplateHeight - Separator3_1.Height
+                OnSelect: =Select(Parent)
+                Visible: =ThisItem.IsSelected
+                Width: =4
+                ZIndex: =6
+
+    Button2 As button:
+        FontWeight: =FontWeight.Bold
+        Height: =41
+        Size: =18
+        Text: ="Xuất file PDF"
+        Width: =308
+        X: =696
+        Y: =705
+        ZIndex: =5
+
+    Button2_1 As button:
+        Height: =41
+        Text: ="Chuyển sang đơn hàng"
+        Width: =308
+        X: =1031
+        Y: =705
+        ZIndex: =6
+
