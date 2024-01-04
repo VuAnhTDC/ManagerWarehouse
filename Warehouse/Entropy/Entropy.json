@@ -208,6 +208,7 @@
     "Label2_Admin": 79,
     "Label20": 363,
     "Label21": 364,
+    "Label22": 368,
     "Label3": 347,
     "Label3_1": 345,
     "Label4": 243,
@@ -359,13 +360,12 @@
     "Title2_Admin": 83,
     "Title4": 336,
     "titleAddServiceQuote_CreateQuoteScreen": 29,
-    "titleRequestBuyProduct": 192,
     "titleService_containerTitleService_containerAdd_HomeSale_1": 208,
     "txtSumPriceQuote_CreateQuoteCreen": 48
   },
   "FunctionParamsInvariantScripts": {},
   "FunctionParamsInvariantScriptsOnInstances": {},
-  "HeaderLastSavedDateTimeUTC": "01/04/2024 07:09:51",
+  "HeaderLastSavedDateTimeUTC": "01/04/2024 09:45:18",
   "IsLegacyComponentAllowGlobalScopeCase": false,
   "LocalConnectionIDReferences": {
     "c9efb40e-e2c4-4d94-9da5-241348de59ed": "\"/providers/microsoft.powerapps/apis/shared_sharepointonline/connections/48359898d0a74a34b43202afe58eae58\""
@@ -634,6 +634,7 @@
     "Label2_Admin": {},
     "Label20": {},
     "Label21": {},
+    "Label22": {},
     "Label3": {},
     "Label3_1": {},
     "Label4": {},
@@ -785,7 +786,6 @@
     "Title2_Admin": {},
     "Title4": {},
     "titleAddServiceQuote_CreateQuoteScreen": {},
-    "titleRequestBuyProduct": {},
     "titleService_containerTitleService_containerAdd_HomeSale_1": {},
     "txtSumPriceQuote_CreateQuoteCreen": {}
   },
@@ -998,6 +998,7 @@
     "Label2_Admin": 218,
     "Label20": 349,
     "Label21": 342,
+    "Label22": 40,
     "Label3": 195,
     "Label3_1": 193,
     "Label4": 91,
@@ -1149,7 +1150,6 @@
     "Title2_Admin": 222,
     "Title4": 184,
     "titleAddServiceQuote_CreateQuoteScreen": 276,
-    "titleRequestBuyProduct": 40,
     "titleService_containerTitleService_containerAdd_HomeSale_1": 56,
     "txtSumPriceQuote_CreateQuoteCreen": 295
   },
@@ -1159,7 +1159,8 @@
     "Image-icons8-username-48": 1,
     "Image-icons8-username-48_1": 2,
     "Image-icons8-username-48_2": 3,
-    "Image-SampleImage": 0
+    "Image-SampleImage": 0,
+    "Pdf-SamplePdf": 6
   },
   "RuleScreenIdWithoutScreen": {},
   "TemplateVersions": {},

@@ -304,6 +304,7 @@ DetailQuote_Screen As screen:
     Button2 As button:
         FontWeight: =FontWeight.Bold
         Height: =41
+        OnSelect: =
         Size: =18
         Text: ="Xuất file PDF"
         Width: =308
