@@ -1648,7 +1648,7 @@ HomeSale As screen:
                         Italic: =true
                         OnSelect: =Select(Parent)
                         Text: |-
-                            = "Số lượng: "&ThisItem.quantity_Product
+                            = "SL: "&ThisItem.quantity_Product
                         Width: =134
                         X: =210
                         Y: =75
