@@ -23,6 +23,7 @@ HomeSale As screen:
         Set(isVisibleContainerChoiceDeliveryDateReuqest,false);
         ClearCollect(arrayProductAddPurchaseRequest,[]);
         Set(isVisibleRequestBuyProductHaveNotWarehouse, false);
+        ClearCollect(data,Quote);
         
         
 
@@ -2338,4 +2339,111 @@ HomeSale As screen:
         X: =352
         Y: =18
         ZIndex: =14
+
+        Container5 As groupContainer.manualLayoutContainer:
+            BorderThickness: =1
+            Height: =118
+            Width: =980
+            X: =9
+            Y: =6
+            ZIndex: =1
+
+            TextInput2 As text:
+                Default: ="Text input"
+                Height: =46
+                Width: =762
+                X: =19
+                Y: =52
+                ZIndex: =1
+
+            Button1 As button:
+                Height: =46
+                Text: ="Button"
+                Width: =182
+                X: =781
+                Y: =52
+                ZIndex: =2
+
+            Label23 As label:
+                FontWeight: =FontWeight.Bold
+                Size: =18
+                Text: ="Tìm kiếm "
+                X: =8
+                Y: =12
+                ZIndex: =3
+
+        Container6 As groupContainer.manualLayoutContainer:
+            BorderThickness: =1
+            Height: =52
+            Width: =978
+            X: =11
+            Y: =147
+            ZIndex: =2
+
+        "Gallery1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+            BorderThickness: =1
+            DelayItemLoading: =true
+            Height: =512
+            Items: =data
+            Layout: =Layout.Vertical
+            LoadingSpinner: =LoadingSpinner.Data
+            TemplatePadding: =0
+            TemplateSize: =104
+            Width: =978
+            X: =11
+            Y: =214
+            ZIndex: =3
+
+            NextArrow1 As icon.ChevronRight:
+                AccessibleLabel: =Self.Tooltip
+                Color: =RGBA(166, 166, 166, 1)
+                Height: =50
+                Icon: =Icon.ChevronRight
+                OnSelect: =Select(Parent)
+                PaddingBottom: =16
+                PaddingLeft: =16
+                PaddingRight: =16
+                PaddingTop: =16
+                Tooltip: ="View item details"
+                Width: =50
+                X: =Parent.TemplateWidth - Self.Width - 12
+                Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+                ZIndex: =4
+
+            Separator1 As rectangle:
+                BorderStyle: =BorderStyle.Dashed
+                BorderThickness: =0.5
+                Height: =1
+                OnSelect: =Select(Parent)
+                Width: =Parent.TemplateWidth
+                Y: =Parent.TemplateHeight - Self.Height
+                ZIndex: =5
+
+            Rectangle1 As rectangle:
+                Height: =Parent.TemplateHeight - Separator1.Height
+                OnSelect: =Select(Parent)
+                Visible: =ThisItem.IsSelected
+                Width: =4
+                ZIndex: =6
+
+            Label26 As label:
+                FontWeight: =FontWeight.Semibold
+                Height: =48
+                Italic: =true
+                OnSelect: =Select(Parent)
+                Size: =15
+                Text: |-
+                    ="MST: " & ThisItem.taxCode
+                Width: =633
+                X: =25
+                ZIndex: =7
+
+            Label27 As label:
+                Height: =48
+                OnSelect: =Select(Parent)
+                Text: |-
+                    ="SL: " & CountRows(Filter(data,id_Customer = ThisItem.ID && quote_Status = true))
+                Width: =204
+                X: =712
+                ZIndex: =8
 
