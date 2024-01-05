@@ -2478,65 +2478,77 @@ HomeSale As screen:
                 RadiusBottomRight: =5
                 RadiusTopLeft: =5
                 RadiusTopRight: =5
-                Width: =289
-                X: =897
+                Width: =852
+                X: =333
                 Y: =82
                 ZIndex: =2
 
+                Container7 As groupContainer.manualLayoutContainer:
+                    BorderThickness: =1
+                    Height: =550
+                    RadiusBottomLeft: =10
+                    RadiusBottomRight: =10
+                    RadiusTopLeft: =10
+                    RadiusTopRight: =10
+                    Width: =270
+                    X: =9
+                    Y: =9
+                    ZIndex: =1
+
+                    Label31 As label:
+                        FontWeight: =FontWeight.Bold
+                        Height: =44
+                        Text: =Gallery2.Selected.id_Quote
+                        Width: =258
+                        X: =6
+                        Y: =6
+                        ZIndex: =1
+
+                    Label32 As label:
+                        BorderThickness: =1
+                        Height: =198
+                        Overflow: =Overflow.Scroll
+                        Text: =Gallery2.Selected.quote_Decription
+                        Width: =270
+                        Y: =80
+                        ZIndex: =2
+
+                    Label33 As label:
+                        Align: =Align.Center
+                        FontWeight: =FontWeight.Semibold
+                        Text: ="Mô tả"
+                        X: =60
+                        Y: =40
+                        ZIndex: =3
+
+                Container12 As groupContainer.verticalAutoLayoutContainer:
+                    BorderThickness: =1
+                    Height: =550
+                    LayoutDirection: =LayoutDirection.Vertical
+                    LayoutMode: =LayoutMode.Auto
+                    Width: =551
+                    X: =295
+                    Y: =9
+                    ZIndex: =2
+
             "Gallery2 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+                BorderThickness: =1
                 DelayItemLoading: =true
                 Height: =569
-                Items: =CustomGallerySample
+                Items: |-
+                    =Filter(
+                        Quote,
+                        id_Customer = Gallery1.Selected.ID && quote_Status = true
+                    )
                 Layout: =Layout.Vertical
                 LoadingSpinner: =LoadingSpinner.Data
+                OnSelect: =
                 TemplatePadding: =0
-                TemplateSize: =104
-                Width: =870
+                TemplateSize: =168
+                Width: =304
                 X: =15
                 Y: =82
                 ZIndex: =3
-
-                Image1 As image:
-                    Height: =72
-                    OnSelect: =Select(Parent)
-                    RadiusBottomLeft: =8
-                    RadiusBottomRight: =8
-                    RadiusTopLeft: =8
-                    RadiusTopRight: =8
-                    Width: =72
-                    X: =16
-                    Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
-                    ZIndex: =1
-
-                Title1 As label:
-                    FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
-                    Height: =Self.Size * 1.8
-                    OnSelect: =Select(Parent)
-                    PaddingBottom: =0
-                    PaddingLeft: =0
-                    PaddingRight: =0
-                    PaddingTop: =0
-                    Text: =ThisItem.SampleHeading
-                    VerticalAlign: =VerticalAlign.Top
-                    Width: =Parent.TemplateWidth - 173
-                    X: =103
-                    Y: =(Parent.TemplateHeight - (Self.Size * 1.8 + Subtitle1.Size * 1.8)) / 2
-                    ZIndex: =2
-
-                Subtitle1 As label:
-                    FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
-                    Height: =Self.Size * 1.8
-                    OnSelect: =Select(Parent)
-                    PaddingBottom: =0
-                    PaddingLeft: =0
-                    PaddingRight: =0
-                    PaddingTop: =0
-                    Text: =ThisItem.SampleText
-                    VerticalAlign: =VerticalAlign.Top
-                    Width: =Title1.Width
-                    X: =Title1.X
-                    Y: =Title1.Y + Title1.Height
-                    ZIndex: =3
 
                 Separator6 As rectangle:
                     BorderStyle: =BorderStyle.Dashed
@@ -2546,4 +2558,35 @@ HomeSale As screen:
                     Width: =Parent.TemplateWidth
                     Y: =Parent.TemplateHeight - Self.Height
                     ZIndex: =5
+
+                Label28 As label:
+                    FontWeight: =FontWeight.Bold
+                    Height: =51
+                    OnSelect: =Select(Parent)
+                    Size: =15
+                    Text: =ThisItem.id_Quote
+                    Width: =290
+                    Y: =6
+                    ZIndex: =6
+
+                Label29 As label:
+                    Height: =76
+                    OnSelect: =Select(Parent)
+                    Overflow: =Overflow.Scroll
+                    Text: =ThisItem.quote_Decription
+                    Width: =304
+                    Y: =57
+                    ZIndex: =7
+
+                Label30 As label:
+                    Align: =Align.Right
+                    FontWeight: =FontWeight.Bold
+                    Height: =34
+                    Italic: =true
+                    OnSelect: =Select(Parent)
+                    Text: =ThisItem.quote_Date & " --" & ThisItem.quote_Expire 
+                    Width: =250
+                    X: =40
+                    Y: =133
+                    ZIndex: =8
 
