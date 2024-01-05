@@ -132,6 +132,7 @@ HomeSale As screen:
             OnSelect: |-
                 =Set(btnFunctionSelection_Value_HomeSale,5);
                 ClearCollect(data,Quote);
+                Set(isVisibleContentDialogDetailQuoteCustomer, false);
             Text: ="Giao dịch"
             Width: =300
             X: =8
@@ -2381,6 +2382,7 @@ HomeSale As screen:
             Items: =Customer
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
+            OnSelect: =If(CountRows(Filter(data,id_Customer = ThisItem.ID && quote_Status = true)) > 0 ,Set(isVisibleContentDialogDetailQuoteCustomer,true),Notify("Khách hàng chưa có đơn đặt hàng nào"))
             TemplatePadding: =0
             TemplateSize: =104
             Width: =978
@@ -2431,6 +2433,7 @@ HomeSale As screen:
     containerDialogDetailTransaction_HomeSale As groupContainer.manualLayoutContainer:
         Fill: =RGBA(0, 0, 0, 0.31)
         Height: =768
+        Visible: =isVisibleContentDialogDetailQuoteCustomer
         Width: =1366
         ZIndex: =15
 
@@ -2455,9 +2458,12 @@ HomeSale As screen:
 
                 Icon2 As icon.CancelBadge:
                     Color: =RGBA(255, 255, 255, 1)
-                    Height: =63
+                    Height: =50
                     Icon: =Icon.CancelBadge
-                    X: =1088
+                    OnSelect: =Set(isVisibleContentDialogDetailQuoteCustomer,false)
+                    Width: =50
+                    X: =1116
+                    Y: =6
                     ZIndex: =1
 
                 Label25 As label:
@@ -2496,17 +2502,21 @@ HomeSale As screen:
                     ZIndex: =2
 
                     Label46 As label:
+                        Align: =Align.Center
+                        BorderThickness: =1
+                        Fill: =RGBA(241, 244, 249, 1)
                         FontWeight: =FontWeight.Bold
+                        Size: =18
                         Text: ="Sản phẩm"
+                        Underline: =true
+                        Visible: =If(CountRows(dataProductQuote) = 0, false,true)
                         ZIndex: =1
 
                     "Gallery6 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
                         DelayItemLoading: =true
-                        Height: =300
-                        Items: |-
-                            =Filter(
-                                Quote_Product,id_Quote = Gallery2.Selected.id_Quote
-                            )
+                        FillPortions: =0
+                        Height: =CountRows(dataProductQuote) * Gallery6.TemplateHeight
+                        Items: =dataProductQuote
                         Layout: =Layout.Vertical
                         LayoutMinHeight: =287
                         LayoutMinWidth: =320
@@ -2558,16 +2568,20 @@ HomeSale As screen:
                             ZIndex: =8
 
                     Label47 As label:
+                        Align: =Align.Center
+                        BorderThickness: =1
+                        Fill: =RGBA(241, 244, 249, 1)
                         FontWeight: =FontWeight.Bold
+                        Size: =18
                         Text: ="Dịch vụ"
+                        Underline: =true
+                        Visible: =If(CountRows(dataServiceQuote) = 0 ,false,true)
                         ZIndex: =3
 
                     "Gallery7 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
                         DelayItemLoading: =true
-                        Items: |-
-                            =Filter(
-                                Quote_Service,id_Quote = Gallery2.Selected.id_Quote
-                            )
+                        Height: =CountRows(dataServiceQuote) * Gallery7.TemplateHeight
+                        Items: =dataServiceQuote
                         Layout: =Layout.Vertical
                         LayoutMinHeight: =287
                         LayoutMinWidth: =320
@@ -2603,7 +2617,7 @@ HomeSale As screen:
                             Italic: =true
                             OnSelect: =Select(Parent)
                             Text: |-
-                                =If(ThisItem.price_Quote_Service = 0, "0 đ",Text(Value(ThisItem.price_Quote_Service), "#,### đ"))
+                                =If(ThisItem.price_Quote_Service = 0, "0 đ", "Giá: " &Text(Value(ThisItem.price_Quote_Service), "#,### đ"))
                             Width: =474
                             X: =51
                             Y: =54
@@ -2722,7 +2736,21 @@ HomeSale As screen:
                     )
                 Layout: =Layout.Vertical
                 LoadingSpinner: =LoadingSpinner.Data
-                OnSelect: =
+                OnSelect: |-
+                    =ClearCollect(
+                        dataProductQuote,
+                        Filter(
+                            Quote_Product,
+                            id_Quote = Gallery2.Selected.id_Quote
+                        )
+                    );
+                    ClearCollect(
+                        dataServiceQuote,
+                        Filter(
+                            Quote_Service,
+                            id_Quote = Gallery2.Selected.id_Quote
+                        )
+                    )
                 TemplatePadding: =0
                 TemplateSize: =144
                 Width: =304
