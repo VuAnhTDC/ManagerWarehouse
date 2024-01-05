@@ -134,7 +134,7 @@ HomeSale As screen:
                 ClearCollect(data,Quote);
                 ClearCollect(dataCustomer,Customer);
                 Set(isVisibleContentDialogDetailQuoteCustomer, false);
-            Text: ="Giao dịch"
+            Text: ="Lịch sử giao dịch"
             Width: =300
             X: =8
             Y: =368
@@ -2354,21 +2354,12 @@ HomeSale As screen:
 
             TextInput2 As text:
                 Default: =""
-                Height: =46
+                Height: =52
                 HintText: ="Vui lòng nhập mã số thuế"
-                Width: =744
+                Width: =937
                 X: =24
                 Y: =52
                 ZIndex: =1
-
-            Button1 As button:
-                Height: =46
-                Size: =20
-                Text: ="Tìm kiếm"
-                Width: =182
-                X: =781
-                Y: =52
-                ZIndex: =2
 
             Label23 As label:
                 FontWeight: =FontWeight.Bold
@@ -2383,9 +2374,11 @@ HomeSale As screen:
             DelayItemLoading: =true
             Height: =578
             Items: |-
-                =Filter(
+                =If(IsBlank(TextInput2.Text),Filter(
                     dataCustomer,ID in data.id_Customer
-                )
+                ),Filter(
+                    dataCustomer,StartsWith(taxCode,TextInput2.Text)
+                ))
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             OnSelect: =If(CountRows(Filter(data,id_Customer = ThisItem.ID && quote_Status = true)) > 0 ,Set(isVisibleContentDialogDetailQuoteCustomer,true),Notify("Khách hàng chưa có đơn đặt hàng nào"))

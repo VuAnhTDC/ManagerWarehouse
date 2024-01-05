@@ -1,0 +1,62 @@
+ViewContentPDF_Screen As screen:
+
+    Container17 As groupContainer.manualLayoutContainer:
+        Height: =76
+        Width: =1366
+        ZIndex: =1
+
+        Icon6 As icon.CancelBadge:
+            Color: =RGBA(0, 0, 0, 1)
+            Icon: =Icon.CancelBadge
+            X: =1290
+            Y: =4
+            ZIndex: =1
+
+    Label60 As label:
+        Align: =Align.Right
+        FontWeight: =FontWeight.Bold
+        Text: |-
+            ="Mã: "
+        Width: =75
+        X: =36
+        Y: =90
+        ZIndex: =2
+
+    TextInput7 As text:
+        Default: =""
+        DisplayMode: =DisplayMode.Disabled
+        HintText: ="Mã báo giá - đơn hàng"
+        Width: =622
+        X: =111
+        Y: =90
+        ZIndex: =3
+
+    Label61 As label:
+        Text: |-
+            ="Thời gian: 01/01/2024"
+        Width: =257
+        X: =1084
+        Y: =90
+        ZIndex: =4
+
+    Container20 As groupContainer.verticalAutoLayoutContainer:
+        Height: =618
+        LayoutAlignItems: =LayoutAlignItems.Stretch
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutMode: =LayoutMode.Auto
+        Width: =1366
+        Y: =150
+        ZIndex: =5
+
+        Label63 As label:
+            Align: =Align.Center
+            FontWeight: =FontWeight.Bold
+            Size: =20
+            Text: ="Báo giá - Đơn hàng"
+            ZIndex: =1
+
+        Label64 As label:
+            Text: |-
+                ="Thời gian tạo - hết hạn: "
+            ZIndex: =2
+

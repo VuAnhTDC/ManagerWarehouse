@@ -1,4 +1,5 @@
 DetailQuote_Screen As screen:
+    OnVisible: =Set(isVisibleContentFilePDF, false)
 
     Container1 As groupContainer.manualLayoutContainer:
         Fill: =RGBA(109, 49, 162, 1)
@@ -304,7 +305,9 @@ DetailQuote_Screen As screen:
     Button2 As button:
         FontWeight: =FontWeight.Bold
         Height: =41
-        OnSelect: =
+        OnSelect: |-
+            =Set(vardpf,PDF(DetailQuote_Screen));
+            Set(isVisibleContentFilePDF,true)
         Size: =18
         Text: ="Xuất file PDF"
         Width: =308
@@ -329,4 +332,37 @@ DetailQuote_Screen As screen:
         X: =722
         Y: =708
         ZIndex: =6
+
+    containerContentFilePDF_DetailQuote As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(0, 0, 0, 0.31)
+        Height: =768
+        Visible: =isVisibleContentFilePDF
+        Width: =1366
+        ZIndex: =7
+
+        Icon3 As icon.CancelBadge:
+            Color: =RGBA(255, 255, 255, 1)
+            Icon: =Icon.CancelBadge
+            OnSelect: =Set(isVisibleContentFilePDF, false)
+            X: =1284
+            Y: =4
+            ZIndex: =1
+
+    PdfViewer3 As pdfViewer:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Document: =vardpf
+        Fill: =RGBA(0, 0, 0, 0.5)
+        Height: =690
+        Visible: =isVisibleContentFilePDF
+        Width: =1366
+        Y: =78
+        ZIndex: =8
+
+    PdfViewer4 As pdfViewer:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Document: =vardpf
+        Fill: =RGBA(0, 0, 0, 0.5)
+        X: =352
+        Y: =108
+        ZIndex: =9
 
