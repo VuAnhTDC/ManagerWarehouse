@@ -23,7 +23,6 @@ HomeSale As screen:
         Set(isVisibleContainerChoiceDeliveryDateReuqest,false);
         ClearCollect(arrayProductAddPurchaseRequest,[]);
         Set(isVisibleRequestBuyProductHaveNotWarehouse, false);
-        ClearCollect(data,Quote);
         
         
 
@@ -130,7 +129,7 @@ HomeSale As screen:
             Color: =If(btnFunctionSelection_Value_HomeSale = 5,Color.White,Color.Black)
             Fill: =If(btnFunctionSelection_Value_HomeSale = 5,Color.Blue,RGBA(241,244,249,1))
             Height: =36
-            OnSelect: =Set(btnFunctionSelection_Value_HomeSale,5)
+            OnSelect: =Set(btnFunctionSelection_Value_HomeSale,5);
             Text: ="Giao dịch"
             Width: =300
             X: =8
@@ -2384,7 +2383,7 @@ HomeSale As screen:
             BorderThickness: =1
             DelayItemLoading: =true
             Height: =512
-            Items: =data
+            Items: =Quote
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             TemplatePadding: =0
