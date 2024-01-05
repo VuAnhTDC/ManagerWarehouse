@@ -2513,11 +2513,41 @@ HomeSale As screen:
 
                     Label32 As label:
                         Align: =Align.Center
+                        BorderThickness: =2
+                        Fill: =RGBA(215, 223, 240, 1)
                         FontWeight: =FontWeight.Bold
                         Italic: =true
                         Size: =15
                         Text: ="Thông tin"
                         ZIndex: =2
+
+                    Label34 As label:
+                        FontWeight: =FontWeight.Semibold
+                        Text: ="Mô tả"
+                        Underline: =true
+                        ZIndex: =3
+
+                    Label35 As label:
+                        Height: |
+                            =200
+                        Overflow: =Overflow.Scroll
+                        PaddingLeft: =10
+                        Text: =Gallery2.Selected.quote_Decription
+                        ZIndex: =4
+
+                    Label36 As label:
+                        FontWeight: =FontWeight.Semibold
+                        Text: ="Nhân viên tạo"
+                        Underline: =true
+                        ZIndex: =5
+
+                    Label37 As label:
+                        PaddingLeft: =10
+                        Text: |-
+                            =LookUp(
+                                User,ID = Gallery2.Selected.id_User
+                            ).user_Name
+                        ZIndex: =6
 
             "Gallery2 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
                 BorderThickness: =1
