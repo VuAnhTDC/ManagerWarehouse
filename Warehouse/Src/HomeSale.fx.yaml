@@ -132,6 +132,7 @@ HomeSale As screen:
             OnSelect: |-
                 =Set(btnFunctionSelection_Value_HomeSale,5);
                 ClearCollect(data,Quote);
+                ClearCollect(dataCustomer,Customer);
                 Set(isVisibleContentDialogDetailQuoteCustomer, false);
             Text: ="Giao dịch"
             Width: =300
@@ -2380,9 +2381,11 @@ HomeSale As screen:
         "Gallery1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
             BorderThickness: =1
             DelayItemLoading: =true
-            Fill: =If(CountRows(Filter(data,id_Customer = ThisItem.ID && quote_Status = true)) > 0,RGBA(250,240,230,0),RGBA(0, 0, 0, 0))
             Height: =578
-            Items: =Customer
+            Items: |-
+                =Filter(
+                    dataCustomer,ID in data.id_Customer
+                )
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             OnSelect: =If(CountRows(Filter(data,id_Customer = ThisItem.ID && quote_Status = true)) > 0 ,Set(isVisibleContentDialogDetailQuoteCustomer,true),Notify("Khách hàng chưa có đơn đặt hàng nào"))
@@ -2475,7 +2478,7 @@ HomeSale As screen:
                     FontWeight: =FontWeight.Bold
                     Height: =63
                     Size: =20
-                    Text: ="Chi tiết giao dịch"
+                    Text: ="Lịch sử giao dịch"
                     Width: =554
                     X: =316
                     ZIndex: =2
