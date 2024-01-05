@@ -2344,6 +2344,7 @@ HomeSale As screen:
 
         Container5 As groupContainer.manualLayoutContainer:
             BorderThickness: =1
+            Fill: =RGBA(241, 244, 249, 1)
             Height: =118
             Width: =980
             X: =9
@@ -2351,10 +2352,11 @@ HomeSale As screen:
             ZIndex: =1
 
             TextInput2 As text:
-                Default: ="Text input"
+                Default: =""
                 Height: =46
-                Width: =762
-                X: =19
+                HintText: ="Vui lòng nhập mã số thuế"
+                Width: =744
+                X: =24
                 Y: =52
                 ZIndex: =1
 
@@ -2378,6 +2380,7 @@ HomeSale As screen:
         "Gallery1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
             BorderThickness: =1
             DelayItemLoading: =true
+            Fill: =If(CountRows(Filter(data,id_Customer = ThisItem.ID && quote_Status = true)) > 0,RGBA(250,240,230,0),RGBA(0, 0, 0, 0))
             Height: =578
             Items: =Customer
             Layout: =Layout.Vertical
