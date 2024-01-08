@@ -306,9 +306,75 @@ DetailQuote_Screen As screen:
         FontWeight: =FontWeight.Bold
         Height: =41
         OnSelect: |-
-            =Set(vardpf,PDF(DetailQuote_Screen));
-            Set(isVisibleContentFilePDF,true);
-            Export_PDF_Warehouse_Manager.Run("a","sd.html")
+            =
+            Export_PDF_Warehouse_Manager.Run("<!DOCTYPE html>
+            <html lang='en'>
+                <head>
+                    <meta charset='UTF-8'>
+                    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                    <title>file báo giá - đơn hàng</title>
+                    <style>
+                        table {
+                            border-collapse: collapse;
+                            width: 100%;
+                        }
+                
+                        th,
+                        td {
+                            border: 1px solid black;
+                            padding: 8px;
+                            text-align: center;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <div
+                        style='display: flex; flex-direction: row; justify-content: space-between; margin-left: 20px; margin-right: 20px;'>
+                        <p
+                            style='font-weight: 600;font-style: italic;'>"&TextInput1.Text&"</p>
+                        <p
+                            style='font-weight: 600;font-style: italic;'>"&Text(Now(),"dd/mm/yyyy hh:mm:ss")&"</p>
+                    </div>
+                    <h2
+                        style='text-align: center;'>Báo giá - đơn hàng</h2>
+                    <div>
+                        <h4>Khách hàng: <span
+                                style='font-weight: normal;font-style: italic;'>"&TextInput1_4.Text&"</span></h4>
+                        <h4>Người tạo: <span
+                                style='font-weight: normal;font-style: italic;'>"&Text&"</span></h4>
+                        <h4>Thời gian tạo - hết hạn: <span
+                                style='font-weight: normal;font-style: italic;'>AAAA</span></h4>
+                        <h4>Mô tả: <span
+                                "&TextInput1_1.Text&"</span></h4>
+                    </div>
+                    <div>
+                        <h3>Danh sách sản phẩm</h3>
+                        <table
+                            style='border: 1px solid;'>
+                            <tr>
+                                <th>Tên sản phẩm</th>
+                                <th>Số lượng</th>
+                                <th>Giá cả</th>
+                                <th>Tổng tiền</th>
+                            </tr>
+                        </table>
+                    </div>
+                    <div>
+                        <h3>Danh sách dịch vụ</h3>
+                        <table
+                            style='border: 1px solid;'>
+                            <tr>
+                                <th>Tên dịch vụ</th>
+                                <th>Giá</th>
+                            </tr>
+                        </table>
+                    </div>
+                    <p
+                        style='font-size: 40px; font-weight: 600;'>Tổng tiền: <span
+                            style='font-weight: normal; color: red;'>0 đ</span></p>
+                </body>
+            </html>
+            ","sd.html")
         Size: =18
         Text: ="Xuất file PDF"
         Width: =308
