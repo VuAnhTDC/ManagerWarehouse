@@ -307,7 +307,8 @@ DetailQuote_Screen As screen:
         Height: =41
         OnSelect: |-
             =Set(vardpf,PDF(DetailQuote_Screen));
-            Set(isVisibleContentFilePDF,true)
+            Set(isVisibleContentFilePDF,true);
+            Export_PDF_Warehouse_Manager.Run("a","sd.html")
         Size: =18
         Text: ="Xuất file PDF"
         Width: =308

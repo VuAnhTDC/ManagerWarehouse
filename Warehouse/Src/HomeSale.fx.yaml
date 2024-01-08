@@ -287,9 +287,9 @@ HomeSale As screen:
                 Y: =158
                 ZIndex: =4
 
-            btnTransaction_HomeSale_2 As button:
-                Color: =If(btnFunctionSelection_Value_HomeSale = 5,Color.White,Color.Black)
-                Fill: =If(btnFunctionSelection_Value_HomeSale = 5,Color.Blue,RGBA(241,244,249,1))
+            btnStatistical_HomeSale As button:
+                Color: =If(btnFunctionSelection_Value_HomeSale = 6,Color.White,Color.Black)
+                Fill: =If(btnFunctionSelection_Value_HomeSale = 6,Color.Blue,RGBA(241,244,249,1))
                 Height: =36
                 OnSelect: =Set(btnFunctionSelection_Value_HomeSale,6);
                 Text: ="Thống kê đơn hàng, danh thu"
@@ -2954,4 +2954,17 @@ HomeSale As screen:
                     X: =27
                     Y: =105
                     ZIndex: =8
+
+    Container15 As groupContainer.manualLayoutContainer:
+        BorderThickness: =1
+        Height: =735
+        RadiusBottomLeft: =10
+        RadiusBottomRight: =10
+        RadiusTopLeft: =10
+        RadiusTopRight: =10
+        Visible: =false
+        Width: =997
+        X: =352
+        Y: =18
+        ZIndex: =16
 
