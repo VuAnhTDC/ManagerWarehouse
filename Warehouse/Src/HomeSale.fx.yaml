@@ -79,66 +79,73 @@ HomeSale As screen:
                 Width: =223
                 ZIndex: =1
 
-        btnService_HomeSale As button:
-            Color: =If(btnFunctionSelection_Value_HomeSale = 1,Color.White,Color.Black)
-            Fill: =If(btnFunctionSelection_Value_HomeSale = 1,Color.Blue,RGBA(241,244,249,1))
-            Height: =36
-            OnSelect: =Set(btnFunctionSelection_Value_HomeSale,1);
-            Text: ="Dịch vụ"
-            Width: =300
-            X: =8
-            Y: =158
-            ZIndex: =11
+        Container7 As groupContainer.manualLayoutContainer:
+            BorderThickness: =0.5
+            Height: =321
+            Width: =317
+            Y: =162
+            ZIndex: =16
 
-        btnCustomer_HomSale As button:
-            Color: =If(btnFunctionSelection_Value_HomeSale = 2,Color.White,Color.Black)
-            Fill: =If(btnFunctionSelection_Value_HomeSale = 2,Color.Blue,RGBA(241,244,249,1))
-            Height: =36
-            OnSelect: =Set(btnFunctionSelection_Value_HomeSale,2);
-            Text: ="Khách hàng"
-            Width: =300
-            X: =8
-            Y: =213
-            ZIndex: =12
+            btnTransaction_HomeSale As button:
+                Color: =If(btnFunctionSelection_Value_HomeSale = 5,Color.White,Color.Black)
+                Fill: =If(btnFunctionSelection_Value_HomeSale = 5,Color.Blue,RGBA(241,244,249,1))
+                Height: =36
+                OnSelect: |-
+                    =Set(btnFunctionSelection_Value_HomeSale,5);
+                    ClearCollect(data,Quote);
+                    ClearCollect(dataCustomer,Customer);
+                    Set(isVisibleContentDialogDetailQuoteCustomer, false);
+                Text: ="Lịch sử giao dịch"
+                Width: =300
+                X: =9
+                Y: =228
+                ZIndex: =1
 
-        btnQuote_HomeSale As button:
-            Color: =If(btnFunctionSelection_Value_HomeSale = 3,Color.White,Color.Black)
-            Fill: =If(btnFunctionSelection_Value_HomeSale = 3,Color.Blue,RGBA(241,244,249,1))
-            Height: =36
-            OnSelect: |-
-                =Set(btnFunctionSelection_Value_HomeSale,3);
-                Set(valuePosionRequestQuote,0);
-            Text: ="Báo giá, đơn hàng"
-            Width: =300
-            X: =8
-            Y: =266
-            ZIndex: =13
+            btnPurchaseRequest_HomeSale As button:
+                Color: =If(btnFunctionSelection_Value_HomeSale = 4,Color.White,Color.Black)
+                Fill: =If(btnFunctionSelection_Value_HomeSale = 4,Color.Blue,RGBA(241,244,249,1))
+                Height: =36
+                OnSelect: =Set(btnFunctionSelection_Value_HomeSale,4)
+                Text: ="Yêu cầu mua hàng"
+                Width: =300
+                X: =9
+                Y: =174
+                ZIndex: =2
 
-        btnPurchaseRequest_HomeSale As button:
-            Color: =If(btnFunctionSelection_Value_HomeSale = 4,Color.White,Color.Black)
-            Fill: =If(btnFunctionSelection_Value_HomeSale = 4,Color.Blue,RGBA(241,244,249,1))
-            Height: =36
-            OnSelect: =Set(btnFunctionSelection_Value_HomeSale,4)
-            Text: ="Yêu cầu mua hàng"
-            Width: =300
-            X: =8
-            Y: =318
-            ZIndex: =14
+            btnQuote_HomeSale As button:
+                Color: =If(btnFunctionSelection_Value_HomeSale = 3,Color.White,Color.Black)
+                Fill: =If(btnFunctionSelection_Value_HomeSale = 3,Color.Blue,RGBA(241,244,249,1))
+                Height: =36
+                OnSelect: |-
+                    =Set(btnFunctionSelection_Value_HomeSale,3);
+                    Set(valuePosionRequestQuote,0);
+                Text: ="Báo giá, đơn hàng"
+                Width: =300
+                X: =9
+                Y: =120
+                ZIndex: =3
 
-        btnTransaction_HomeSale As button:
-            Color: =If(btnFunctionSelection_Value_HomeSale = 5,Color.White,Color.Black)
-            Fill: =If(btnFunctionSelection_Value_HomeSale = 5,Color.Blue,RGBA(241,244,249,1))
-            Height: =36
-            OnSelect: |-
-                =Set(btnFunctionSelection_Value_HomeSale,5);
-                ClearCollect(data,Quote);
-                ClearCollect(dataCustomer,Customer);
-                Set(isVisibleContentDialogDetailQuoteCustomer, false);
-            Text: ="Lịch sử giao dịch"
-            Width: =300
-            X: =8
-            Y: =368
-            ZIndex: =15
+            btnCustomer_HomSale As button:
+                Color: =If(btnFunctionSelection_Value_HomeSale = 2,Color.White,Color.Black)
+                Fill: =If(btnFunctionSelection_Value_HomeSale = 2,Color.Blue,RGBA(241,244,249,1))
+                Height: =36
+                OnSelect: =Set(btnFunctionSelection_Value_HomeSale,2);
+                Text: ="Khách hàng"
+                Width: =300
+                X: =9
+                Y: =66
+                ZIndex: =4
+
+            btnService_HomeSale As button:
+                Color: =If(btnFunctionSelection_Value_HomeSale = 1,Color.White,Color.Black)
+                Fill: =If(btnFunctionSelection_Value_HomeSale = 1,Color.Blue,RGBA(241,244,249,1))
+                Height: =36
+                OnSelect: =Set(btnFunctionSelection_Value_HomeSale,1);
+                Text: ="Dịch vụ"
+                Width: =300
+                X: =9
+                Y: =10
+                ZIndex: =5
 
     containerContentService_HomeSale As groupContainer.manualLayoutContainer:
         Height: =735

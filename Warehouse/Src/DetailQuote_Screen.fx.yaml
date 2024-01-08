@@ -358,11 +358,3 @@ DetailQuote_Screen As screen:
         Y: =78
         ZIndex: =8
 
-    PdfViewer4 As pdfViewer:
-        BorderColor: =RGBA(0, 0, 0, 1)
-        Document: =vardpf
-        Fill: =RGBA(0, 0, 0, 0.5)
-        X: =352
-        Y: =108
-        ZIndex: =9
-
