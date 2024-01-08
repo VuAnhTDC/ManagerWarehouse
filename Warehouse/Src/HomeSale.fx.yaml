@@ -233,7 +233,7 @@ HomeSale As screen:
                 Color: =If(btnFunctionSelection_Value_HomeSale = 2,Color.White,Color.Black)
                 Fill: =If(btnFunctionSelection_Value_HomeSale = 2,Color.Blue,RGBA(241,244,249,1))
                 Height: =36
-                OnSelect: =Set(btnFunctionSelection_Value_HomeSale,1);
+                OnSelect: =Set(btnFunctionSelection_Value_HomeSale,2);
                 Text: ="Khách hàng"
                 Width: =300
                 X: =7
@@ -245,7 +245,7 @@ HomeSale As screen:
                 Fill: =If(btnFunctionSelection_Value_HomeSale = 3,Color.Blue,RGBA(241,244,249,1))
                 Height: =36
                 OnSelect: |-
-                    =Set(btnFunctionSelection_Value_HomeSale,2);
+                    =Set(btnFunctionSelection_Value_HomeSale,3);
                     Set(valuePosionRequestQuote,0);
                 Text: ="Báo giá, đơn hàng"
                 Width: =300
@@ -257,7 +257,7 @@ HomeSale As screen:
                 Color: =If(btnFunctionSelection_Value_HomeSale = 4,Color.White,Color.Black)
                 Fill: =If(btnFunctionSelection_Value_HomeSale = 4,Color.Blue,RGBA(241,244,249,1))
                 Height: =36
-                OnSelect: =Set(btnFunctionSelection_Value_HomeSale,3)
+                OnSelect: =Set(btnFunctionSelection_Value_HomeSale,4)
                 Text: ="Yêu cầu mua hàng"
                 Width: =300
                 X: =7
@@ -269,7 +269,7 @@ HomeSale As screen:
                 Fill: =If(btnFunctionSelection_Value_HomeSale = 5,Color.Blue,RGBA(241,244,249,1))
                 Height: =36
                 OnSelect: |-
-                    =Set(btnFunctionSelection_Value_HomeSale,4);
+                    =Set(btnFunctionSelection_Value_HomeSale,5);
                     ClearCollect(data,Quote);
                     ClearCollect(dataCustomer,Customer);
                     Set(isVisibleContentDialogDetailQuoteCustomer, false);
