@@ -306,8 +306,31 @@ DetailQuote_Screen As screen:
         FontWeight: =FontWeight.Bold
         Height: =41
         OnSelect: |-
-            =
-            Export_PDF_Warehouse_Manager.Run("<!DOCTYPE html>
+            =ClearCollect(
+                dataProductQuoteIdCustomer,
+                Filter(
+                    Quote_Product,
+                    id_Quote = quoteList_HomeSale.Selected.id_Quote
+                )
+            );
+            Set(
+                trtdDataProductQuote,
+                ""
+            );
+            ForAll(
+                dataProductQuoteIdCustomer,
+                trtdDataProductQuote & "<tr>
+                    <td>" & LookUp(
+                    Product,
+                    id_Product = ThisRecord.id_Product
+                ).name_Product & "</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    </tr>"
+            );
+            Export_PDF_Warehouse_Manager.Run(
+                "<!DOCTYPE html>
             <html lang='en'>
                 <head>
                     <meta charset='UTF-8'>
@@ -318,7 +341,6 @@ DetailQuote_Screen As screen:
                             border-collapse: collapse;
                             width: 100%;
                         }
-                
                         th,
                         td {
                             border: 1px solid black;
@@ -331,23 +353,28 @@ DetailQuote_Screen As screen:
                     <div
                         style='display: flex; flex-direction: row; justify-content: space-between; margin-left: 20px; margin-right: 20px;'>
                         <p
-                            style='font-weight: 600;font-style: italic;'>"&TextInput1.Text&"</p>
+                            style='font-weight: 600;font-style: italic;'>" & TextInput1.Text & "</p>
                         <p
-                            style='font-weight: 600;font-style: italic;'>"&Text(Now(),"dd/mm/yyyy hh:mm:ss")&"</p>
+                            style='font-weight: 600;font-style: italic;'>" & Text(
+                    Now(),
+                    "dd/mm/yyyy hh:mm:ss"
+                ) & "</p>
                     </div>
                     <h2
                         style='text-align: center;'>Báo giá - đơn hàng</h2>
                     <div>
                         <h4>Khách hàng: <span
-                                style='font-weight: normal;font-style: italic;'>"&TextInput1_4.Text&"</span></h4>
+                                style='font-weight: normal;font-style: italic;'>" & TextInput1_4.Text & "</span></h4>
                         <h4>Người tạo: <span
-                                style='font-weight: normal;font-style: italic;'>"&Text&"</span></h4>
+                                style='font-weight: normal;font-style: italic;'>" & TextInput1_5.Text & "</span></h4>
                         <h4>Thời gian tạo - hết hạn: <span
-                                style='font-weight: normal;font-style: italic;'>AAAA</span></h4>
+                                style='font-weight: normal;font-style: italic;'>" & TextInput1_2.Text & "-" & TextInput1_3.Text & "</span></h4>
                         <h4>Mô tả: <span
-                                "&TextInput1_1.Text&"</span></h4>
+                                " & TextInput1_1.Text & "</span></h4>
                     </div>
-                    <div>
+                    " & If(
+                    !IsBlank(dataProductQuoteIdCustomer),
+                    "<div>
                         <h3>Danh sách sản phẩm</h3>
                         <table
                             style='border: 1px solid;'>
@@ -356,9 +383,10 @@ DetailQuote_Screen As screen:
                                 <th>Số lượng</th>
                                 <th>Giá cả</th>
                                 <th>Tổng tiền</th>
-                            </tr>
+                            </tr>" & trtdDataProductQuote & "
                         </table>
-                    </div>
+                    </div>"
+                ) & "
                     <div>
                         <h3>Danh sách dịch vụ</h3>
                         <table
@@ -374,7 +402,9 @@ DetailQuote_Screen As screen:
                             style='font-weight: normal; color: red;'>0 đ</span></p>
                 </body>
             </html>
-            ","sd.html")
+            ",
+                "sd.html"
+            )
         Size: =18
         Text: ="Xuất file PDF"
         Width: =308

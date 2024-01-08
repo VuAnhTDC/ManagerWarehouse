@@ -422,11 +422,11 @@
   },
   "FunctionParamsInvariantScripts": {},
   "FunctionParamsInvariantScriptsOnInstances": {},
-  "HeaderLastSavedDateTimeUTC": "01/08/2024 04:40:16",
+  "HeaderLastSavedDateTimeUTC": "01/08/2024 05:02:06",
   "IsLegacyComponentAllowGlobalScopeCase": false,
   "LocalConnectionIDReferences": {
-    "0235c6ef-04c0-4e5e-b550-3351908727ea": "\"/providers/microsoft.powerapps/apis/shared_onedriveforbusiness/connections/shared-onedriveforbu-785c46af-7f59-4e2b-afa0-ef2649421e58\"",
-    "2581f69f-1892-496c-9a42-7dc0e0e9049f": "\"/providers/Microsoft.PowerApps/apis/shared_logicflows/connections/79633DF4A1D9496E8D60D288F04F22EC-2E7EEE4B684A949A\"",
+    "52f89f35-1744-40b3-9099-0d2a94b2740a": "\"/providers/microsoft.powerapps/apis/shared_onedriveforbusiness/connections/shared-onedriveforbu-785c46af-7f59-4e2b-afa0-ef2649421e58\"",
+    "7dbd58d5-94a1-46c1-8285-116a33e02b75": "\"/providers/microsoft.powerapps/apis/shared_logicflows/connections/79633df4a1d9496e8d60d288f04f22ec-2e7eee4b684a949a\"",
     "c9efb40e-e2c4-4d94-9da5-241348de59ed": "\"/providers/microsoft.powerapps/apis/shared_sharepointonline/connections/48359898d0a74a34b43202afe58eae58\""
   },
   "LocalDatabaseReferencesAsEmpty": false,
@@ -455,6 +455,7 @@
     "data": 24,
     "dataCustomer": 21,
     "dataProductQuote": 22,
+    "dataProductQuoteIdCustomer": 25,
     "dataServiceQuote": 23,
     "DropDownSample": 4,
     "Export_PDF_Warehouse_Manager": 0,
