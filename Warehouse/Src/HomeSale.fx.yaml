@@ -1,30 +1,94 @@
 HomeSale As screen:
-    OnVisible: |+
-        =If(IsBlank(btnFunctionSelection_Value_HomeSale),Set(btnFunctionSelection_Value_HomeSale,1));
-        Set(isVisibaleAddServiceNew_HomeSale,true);
-        Set(isVisibaleServiceList_HomeSale,false);
-        Set(isVisibaleAddCustomer_HomeSale,false);
-        Set(isVisibaleCustomerList_HomeSale,true);
-        Set(isDisableBtnUpdateService,false);
-        Set(isDisableBtnUpdateCustomer,false);
-        Set(showDialogUpdateService,false);
-        Set(showDialogUpdateCustomer,false);
-        Set(informationUser, LookUp(
-            User,
-            email_User = User().Email
-        ));
-        Set(getRoleUser, LookUp(Role,ID = informationUser.id_Role));
-        Set(positionDialog,0);
-        Set(contentDialog, "");
-        Set(positionDialogCustomer,0);
-        Set(contentDialogCustomer,"");
-        Set(valuePosionRequestQuote,0);
-        Set(isVisiblePurchaseRequest_AddProduct,false);
-        Set(isVisibleContainerChoiceDeliveryDateReuqest,false);
-        ClearCollect(arrayProductAddPurchaseRequest,[]);
-        Set(isVisibleRequestBuyProductHaveNotWarehouse, false);
-        
-        
+    OnVisible: |
+        =If(
+            IsBlank(btnFunctionSelection_Value_HomeSale),
+            Set(
+                btnFunctionSelection_Value_HomeSale,
+                1
+            )
+        );
+        Set(
+            isVisibaleAddServiceNew_HomeSale,
+            true
+        );
+        Set(
+            isVisibaleServiceList_HomeSale,
+            false
+        );
+        Set(
+            isVisibaleAddCustomer_HomeSale,
+            false
+        );
+        Set(
+            isVisibaleCustomerList_HomeSale,
+            true
+        );
+        Set(
+            isDisableBtnUpdateService,
+            false
+        );
+        Set(
+            isDisableBtnUpdateCustomer,
+            false
+        );
+        Set(
+            showDialogUpdateService,
+            false
+        );
+        Set(
+            showDialogUpdateCustomer,
+            false
+        );
+        Set(
+            informationUser,
+            LookUp(
+                User,
+                email_User = User().Email
+            )
+        );
+        Set(
+            getRoleUser,
+            LookUp(
+                Role,
+                ID = informationUser.id_Role
+            )
+        );
+        Set(
+            positionDialog,
+            0
+        );
+        Set(
+            contentDialog,
+            ""
+        );
+        Set(
+            positionDialogCustomer,
+            0
+        );
+        Set(
+            contentDialogCustomer,
+            ""
+        );
+        Set(
+            valuePosionRequestQuote,
+            0
+        );
+        Set(
+            isVisiblePurchaseRequest_AddProduct,
+            false
+        );
+        Set(
+            isVisibleContainerChoiceDeliveryDateReuqest,
+            false
+        );
+        ClearCollect(
+            arrayProductAddPurchaseRequest,
+            []
+        );
+        Set(
+            isVisibleRequestBuyProductHaveNotWarehouse,
+            false
+        );
 
     containerInformationUser_HomeSale As groupContainer.manualLayoutContainer:
         Fill: =RGBA(217, 217, 217, 1)
@@ -81,7 +145,13 @@ HomeSale As screen:
 
         Container7 As groupContainer.manualLayoutContainer:
             BorderThickness: =0.5
-            Height: =321
+            Fill: =RGBA(241, 244, 249, 1)
+            Height: =516
+            RadiusBottomLeft: =10
+            RadiusBottomRight: =10
+            RadiusTopLeft: =10
+            RadiusTopRight: =10
+            Visible: =false
             Width: =317
             Y: =162
             ZIndex: =16
@@ -146,6 +216,68 @@ HomeSale As screen:
                 X: =9
                 Y: =10
                 ZIndex: =5
+
+        Container14 As groupContainer.manualLayoutContainer:
+            BorderThickness: =0.5
+            Fill: =RGBA(241, 244, 249, 1)
+            Height: =516
+            RadiusBottomLeft: =10
+            RadiusBottomRight: =10
+            RadiusTopLeft: =10
+            RadiusTopRight: =10
+            Width: =317
+            Y: =162
+            ZIndex: =17
+
+            btnCustomer_HomSale_1 As button:
+                Color: =If(btnFunctionSelection_Value_HomeSale = 2,Color.White,Color.Black)
+                Fill: =If(btnFunctionSelection_Value_HomeSale = 2,Color.Blue,RGBA(241,244,249,1))
+                Height: =36
+                OnSelect: =Set(btnFunctionSelection_Value_HomeSale,1);
+                Text: ="Khách hàng"
+                Width: =300
+                X: =7
+                Y: =16
+                ZIndex: =1
+
+            btnQuote_HomeSale_1 As button:
+                Color: =If(btnFunctionSelection_Value_HomeSale = 3,Color.White,Color.Black)
+                Fill: =If(btnFunctionSelection_Value_HomeSale = 3,Color.Blue,RGBA(241,244,249,1))
+                Height: =36
+                OnSelect: |-
+                    =Set(btnFunctionSelection_Value_HomeSale,2);
+                    Set(valuePosionRequestQuote,0);
+                Text: ="Báo giá, đơn hàng"
+                Width: =300
+                X: =6
+                Y: =64
+                ZIndex: =2
+
+            btnPurchaseRequest_HomeSale_1 As button:
+                Color: =If(btnFunctionSelection_Value_HomeSale = 4,Color.White,Color.Black)
+                Fill: =If(btnFunctionSelection_Value_HomeSale = 4,Color.Blue,RGBA(241,244,249,1))
+                Height: =36
+                OnSelect: =Set(btnFunctionSelection_Value_HomeSale,3)
+                Text: ="Yêu cầu mua hàng"
+                Width: =300
+                X: =7
+                Y: =111
+                ZIndex: =3
+
+            btnTransaction_HomeSale_1 As button:
+                Color: =If(btnFunctionSelection_Value_HomeSale = 5,Color.White,Color.Black)
+                Fill: =If(btnFunctionSelection_Value_HomeSale = 5,Color.Blue,RGBA(241,244,249,1))
+                Height: =36
+                OnSelect: |-
+                    =Set(btnFunctionSelection_Value_HomeSale,4);
+                    ClearCollect(data,Quote);
+                    ClearCollect(dataCustomer,Customer);
+                    Set(isVisibleContentDialogDetailQuoteCustomer, false);
+                Text: ="Lịch sử giao dịch"
+                Width: =300
+                X: =6
+                Y: =158
+                ZIndex: =4
 
     containerContentService_HomeSale As groupContainer.manualLayoutContainer:
         Height: =735
