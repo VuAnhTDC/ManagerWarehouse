@@ -316,7 +316,36 @@ DetailQuote_Screen As screen:
         FontWeight: =FontWeight.Bold
         Height: =41
         OnSelect: |-
-            =ClearCollect(dataSV,"");
+            =Set(
+                dataSerVice,
+                Service
+            );
+            Set(
+                dataProduct,
+                Product
+            );
+            If(!IsBlank(dataSerivceQuoteByIdCustomer),Set(
+                strHtmlService,
+                Concat(
+                    dataSerivceQuoteByIdCustomer,
+                    " <tr>
+                                <td>" & LookUp(
+                        dataSerVice,
+                        id_Serivce = ThisRecord.id_Serivce
+                    ).service_Name & "</td><td>" & Text(ThisRecord.price_Quote_Service,"#,### đ") & "</td></tr>"
+                )
+            ));
+            If(IsBlank(dataProductQuoteByIdCustomer),Set(
+                strHtmlProduct,
+                Concat(
+                    dataProductQuoteByIdCustomer,
+                    " <tr>
+                                <td>" & LookUp(
+                        dataProduct,
+                        id_Product = ThisRecord.id_Product
+                    ).name_Product & "</td><td>" & ThisRecord.quantity_Quote_Product & "</td><td>" & Text(ThisRecord.price_Quote_Product,"#,### đ") & "</td><td>" & Text(Value(ThisRecord.quantity_Quote_Product * ThisRecord.price_Quote_Product), "#,### đ") & "</td></tr>"
+                )
+            ));
             Set(
                 htmlText,
                 "<!DOCTYPE html>
@@ -361,7 +390,9 @@ DetailQuote_Screen As screen:
                         <h4>Mô tả:  <span
                                 style='font-weight: normal;'>" & TextInput1_1.Text & "</span></h4>
                     </div>
-                   <div>
+                  " & If(
+                    !IsBlank(dataProduct),
+                    " <div>
                         <h3>Danh sách sản phẩm</h3>
                         <table
                             style='border: 1px solid;'>
@@ -371,9 +402,13 @@ DetailQuote_Screen As screen:
                                 <th>Giá cả</th>
                                 <th>Tổng tiền</th>
                             </tr>
+                            "&strHtmlProduct&"
                         </table>
-                    </div>
-                    <div>
+                    </div>"
+                ) & "
+                    " & If(
+                    !IsBlank(dataSerVice),
+                    "<div>
                         <h3>Danh sách dịch vụ</h3>
                         <table
                             style='border: 1px solid;'>
@@ -381,8 +416,10 @@ DetailQuote_Screen As screen:
                                 <th>Tên dịch vụ</th>
                                 <th>Giá</th>
                             </tr>
+                            " & strHtmlService & "
                         </table>
-                    </div>
+                    </div>"
+                ) & "
                     <p
                         style='font-size: 40px; font-weight: 600;'>Tổng tiền: <span
                             style='font-weight: normal; color: red;'>0 đ</span></p>
