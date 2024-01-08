@@ -152,6 +152,17 @@ CreateQuote_Screen As screen:
                                 vat: Value(ThisRecord.vat)
                             }
                         )
+                    );
+                    ForAll(
+                        serviceAddQuoteList,
+                        Patch(
+                            Quote_Service,
+                            Defaults(Quote_Service),
+                            {
+                                id_Quote: idQuote,
+                                id_Service:ThisRecord.id_Service,quote_Service_Note:ThisRecord.quote_Service_Not,price_Quote_Service:ThisRecord.price_Quote_Service
+                            }
+                        )
                     )
                 )
             Size: =20

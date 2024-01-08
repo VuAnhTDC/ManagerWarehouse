@@ -335,7 +335,7 @@ DetailQuote_Screen As screen:
                     ).service_Name & "</td><td>" & Text(ThisRecord.price_Quote_Service,"#,### đ") & "</td></tr>"
                 )
             ));
-            If(IsBlank(dataProductQuoteByIdCustomer),Set(
+            If(!IsBlank(dataProductQuoteByIdCustomer),Set(
                 strHtmlProduct,
                 Concat(
                     dataProductQuoteByIdCustomer,
