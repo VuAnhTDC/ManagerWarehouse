@@ -547,7 +547,11 @@ CreateQuote_Screen As screen:
                         FontWeight: =FontWeight.Semibold
                         Height: =46
                         Italic: =true
-                        Text: =If(!IsBlank(edtQuantityAddProductQuote_CreateQuoteScreen.Text) && !IsBlank(edtVATAddProductQuote_CreatQuoteScreen.Text),dropdowProductQuote_CreateQuoteScreen.SelectedText.price_Product * Value(edtQuantityAddProductQuote_CreateQuoteScreen.Text)) + (Value(dropdowProductQuote_CreateQuoteScreen.SelectedText.price_Product * Value(edtQuantityAddProductQuote_CreateQuoteScreen.Text) * Value(edtVATAddProductQuote_CreatQuoteScreen.Text)%))
+                        Text: |-
+                            =If(
+                                !IsBlank(edtQuantityAddProductQuote_CreateQuoteScreen.Text) && !IsBlank(edtVATAddProductQuote_CreatQuoteScreen.Text),
+                                dropdowProductQuote_CreateQuoteScreen.SelectedText.price_Product * Value(edtQuantityAddProductQuote_CreateQuoteScreen.Text)
+                            ) + (Value(dropdowProductQuote_CreateQuoteScreen.SelectedText.price_Product * Value(edtQuantityAddProductQuote_CreateQuoteScreen.Text) * Value(edtVATAddProductQuote_CreatQuoteScreen.Text)%))
                         Width: =306
                         X: =32
                         Y: =49
@@ -561,7 +565,7 @@ CreateQuote_Screen As screen:
                         =Collect(productAddQuoteList,{
                             id_Product:dropdowProductQuote_CreateQuoteScreen.SelectedText.'data-ADB4D7A662F548B49FAC2B986E348A1Bid_Product',
                             price_Quote_Product:dropdowProductQuote_CreateQuoteScreen.SelectedText.price_Product,
-                            quantity_Quote_Product:Value(edtPriceAddPRoductQuote_CreateQuoteScreen.Text),
+                            quantity_Quote_Product:Value(edtQuantityAddProductQuote_CreateQuoteScreen.Text),
                             quote_Note:edtNoteAddProductQuote_CreateQuoteScreen.Text,
                             sumPrice_Quote_Product:lblSumpriceAddProduct_CreateQuoteScreen.Text,
                             vat: edtVATAddProductQuote_CreatQuoteScreen.Text

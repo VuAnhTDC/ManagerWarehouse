@@ -236,7 +236,7 @@ DetailQuote_Screen As screen:
                 OnSelect: =Select(Parent)
                 Size: =15
                 Text: |-
-                    =Text(Value(ThisItem.price_Quote_Product), "[$-en-US]#,### đ")
+                    =Text(Value(ThisItem.price_Quote_Product * ThisItem.quantity_Quote_Product + (ThisItem.price_Quote_Product * ThisItem.quantity_Quote_Product * ThisItem.vat%)), "[$-en-US]#,### đ")
                 Width: =690
                 X: =4
                 Y: =51
@@ -324,22 +324,47 @@ DetailQuote_Screen As screen:
                 dataProduct,
                 Product
             );
-            If(!IsBlank(dataSerivceQuoteByIdCustomer),Set(
-                strHtmlService,
-                Concat(
-                    dataSerivceQuoteByIdCustomer As Temp,
-                    " <tr>
-                                <td>" &LookUp(dataSerVice,id_Serivce = Temp.id_Service).service_Name& "</td><td>" & Text(Temp.price_Quote_Service,"#,### đ") & "</td></tr>"
+            If(
+                CountRows(dataSerivceQuoteByIdCustomer) > 0,
+                Set(
+                    strHtmlService,
+                    Concat(
+                        dataSerivceQuoteByIdCustomer As Temp,
+                        " <tr>
+                                <td>" & LookUp(
+                            dataSerVice,
+                            id_Serivce = Temp.id_Service
+                        ).service_Name & "</td><td>" & Text(
+                            Temp.price_Quote_Service,
+                            "#,### đ"
+                        ) & "</td></tr>"
+                    )
                 )
-            ));
-            If(!IsBlank(dataProductQuoteByIdCustomer),Set(
-                strHtmlProduct,
-                Concat(
-                    dataProductQuoteByIdCustomer As TemPd,
-                    " <tr>
-                                <td>" &LookUp(dataProduct,id_Product = TemPd.id_Product).name_Product & "</td><td>" & TemPd.quantity_Quote_Product & "</td><td>" & Text(TemPd.price_Quote_Product,"#,### đ") & "</td><td>" & Text(Value(TemPd.quantity_Quote_Product * TemPd.price_Quote_Product), "#,### đ") & "</td></tr>"
+            );
+            If(
+                CountRows(dataProductQuoteByIdCustomer) > 0,
+                Set(
+                    strHtmlProduct,
+                    Concat(
+                        dataProductQuoteByIdCustomer As TemPd,
+                        " <tr>
+                                <td>" & LookUp(
+                            dataProduct,
+                            id_Product = TemPd.id_Product
+                        ).name_Product & "</td><td>" & TemPd.quantity_Quote_Product & "</td><td>" & Text(
+                            TemPd.price_Quote_Product,
+                            "#,### đ"
+                        ) & "</td><td>" & Text(
+                            Value(TemPd.quantity_Quote_Product * TemPd.price_Quote_Product * TemPd.vat%),
+                            "#,### đ"
+                        ) & "</td>
+                        <td>" & Text(
+                            Value(TemPd.quantity_Quote_Product * TemPd.price_Quote_Product + (TemPd.quantity_Quote_Product * TemPd.price_Quote_Product * TemPd.vat%)),
+                            "#,### đ"
+                        ) & "</td></tr>"
+                    )
                 )
-            ));
+            );
             Set(
                 htmlText,
                 "<!DOCTYPE html>
@@ -361,20 +386,14 @@ DetailQuote_Screen As screen:
                         }
                     </style>
                 </head>
-                <body>
-                    <div
-                        style='display: flex; flex-direction: row; justify-content: space-between; margin-left: 20px; margin-right: 20px;'>
-                        <p
-                            style='font-weight: 600;font-style: italic;'>" & TextInput1.Text & "</p>
-                        <p
-                            style='font-weight: 600;font-style: italic;'>" & Text(
-                    Now(),
-                    "dd/mm/yyyy hh:mm:ss"
-                ) & "</p>
-                    </div>
+                <body
+            
+                >
                     <h2
-                        style='text-align: center;'>Báo giá - đơn hàng</h2>
+                        style='text-align: center;'>BÁO GIÁ - ĐƠN HÀNG</h2>
                     <div>
+                    <p
+                            style='font-weight: 600;font-style: italic;'> Mã báo giá - đơn hàng: " & TextInput1.Text & "</p>
                         <h4>Khách hàng: <span
                                 style='font-weight: normal;font-style: italic;'>" & TextInput1_4.Text & "</span></h4>
                         <h4>Người tạo: <span
@@ -385,7 +404,7 @@ DetailQuote_Screen As screen:
                                 style='font-weight: normal;'>" & TextInput1_1.Text & "</span></h4>
                     </div>
                   " & If(
-                    !IsBlank(dataProduct),
+                    CountRows(dataProductQuoteByIdCustomer) > 0,
                     " <div>
                         <h3>Danh sách sản phẩm</h3>
                         <table
@@ -394,14 +413,14 @@ DetailQuote_Screen As screen:
                                 <th>Tên sản phẩm</th>
                                 <th>Số lượng</th>
                                 <th>Giá cả</th>
+                                <th>VAT</th>
                                 <th>Tổng tiền</th>
                             </tr>
-                            "&strHtmlProduct&"
+                            " & strHtmlProduct & "
                         </table>
                     </div>"
-                ) & "
-                    " & If(
-                    !IsBlank(dataSerVice),
+                ) & If(
+                    CountRows(dataSerivceQuoteByIdCustomer) > 0,
                     "<div>
                         <h3>Danh sách dịch vụ</h3>
                         <table
@@ -415,8 +434,16 @@ DetailQuote_Screen As screen:
                     </div>"
                 ) & "
                     <p
-                        style='font-size: 40px; font-weight: 600;'>Tổng tiền: <span
-                            style='font-weight: normal; color: red;'>0 đ</span></p>
+                        style='font-size: 26px; font-weight: 600;'>Tổng tiền: <span
+                            style='font-weight: normal; color: red;'>" & Text(
+                    Value(quoteList_HomeSale.Selected.sumPriceQuote),
+                    "[$-en-US]#,### đ"
+                ) & "</span></p>
+                 <p
+                            style='font-style: italic;text-align :right;'>Thời gian in: " & Text(
+                    Now(),
+                    "dd/mm/yyyy hh:mm:ss"
+                ) & "</p>
                 </body>
             </html>
             "
