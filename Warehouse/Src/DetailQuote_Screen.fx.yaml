@@ -326,23 +326,29 @@ DetailQuote_Screen As screen:
                             </tr>"
             );
             Set(
-                rowService, "<tr>
+                rowService, Text("<tr>
                                 <td></td>
                                 <td></td>
-                            </tr>"
+                            </tr>")
             );
             ForAll(
                 dataProductQuoteByIdCustomer,
                 rowProduct & rowProduct
             );
             ForAll(
-                dataSerivceQuoteByIdCustomer, Set(
-                    rowService,
-                    rowService & "<tr><td>"
+                dataProductQuoteByIdCustomer,
+                Collect(
+                    rowServiceCollection,
+                   "<tr>
+                                <td></td>
+                                <td></td>
+                            </tr>"
                 )
             );
-            Export_PDF_Warehouse_Manager.Run(
-                "<!DOCTYPE html>
+            
+            Set(
+                htmlText,
+                    "<!DOCTYPE html>
             <html lang='en'>
                 <head>
                     <meta charset='UTF-8'>
@@ -405,7 +411,10 @@ DetailQuote_Screen As screen:
                                 <th>Tên dịch vụ</th>
                                 <th>Giá</th>
                             </tr>
-                            "&rowService&"
+                            "&Concatenate(dataSerivceQuoteByIdCustomer,"<tr>
+                                <td></td>
+                                <td></td>
+                            </tr>")&"
                         </table>
                     </div>
                     <p
@@ -413,7 +422,11 @@ DetailQuote_Screen As screen:
                             style='font-weight: normal; color: red;'>0 đ</span></p>
                 </body>
             </html>
-            ",
+            "
+            );
+            
+            Export_PDF_Warehouse_Manager.Run(
+            htmlText,
                 "sd.html"
             )
         Size: =18
