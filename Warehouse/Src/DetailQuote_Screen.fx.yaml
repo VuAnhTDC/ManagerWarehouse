@@ -327,23 +327,17 @@ DetailQuote_Screen As screen:
             If(!IsBlank(dataSerivceQuoteByIdCustomer),Set(
                 strHtmlService,
                 Concat(
-                    dataSerivceQuoteByIdCustomer,
+                    dataSerivceQuoteByIdCustomer As Temp,
                     " <tr>
-                                <td>" & LookUp(
-                        dataSerVice,
-                        id_Serivce = ThisRecord.id_Serivce
-                    ).service_Name & "</td><td>" & Text(ThisRecord.price_Quote_Service,"#,### đ") & "</td></tr>"
+                                <td>" &LookUp(dataSerVice,id_Serivce = Temp.id_Service).service_Name& "</td><td>" & Text(Temp.price_Quote_Service,"#,### đ") & "</td></tr>"
                 )
             ));
             If(!IsBlank(dataProductQuoteByIdCustomer),Set(
                 strHtmlProduct,
                 Concat(
-                    dataProductQuoteByIdCustomer,
+                    dataProductQuoteByIdCustomer As TemPd,
                     " <tr>
-                                <td>" & LookUp(
-                        dataProduct,
-                        id_Product = ThisRecord.id_Product
-                    ).name_Product & "</td><td>" & ThisRecord.quantity_Quote_Product & "</td><td>" & Text(ThisRecord.price_Quote_Product,"#,### đ") & "</td><td>" & Text(Value(ThisRecord.quantity_Quote_Product * ThisRecord.price_Quote_Product), "#,### đ") & "</td></tr>"
+                                <td>" &LookUp(dataProduct,id_Product = TemPd.id_Product).name_Product & "</td><td>" & TemPd.quantity_Quote_Product & "</td><td>" & Text(TemPd.price_Quote_Product,"#,### đ") & "</td><td>" & Text(Value(TemPd.quantity_Quote_Product * TemPd.price_Quote_Product), "#,### đ") & "</td></tr>"
                 )
             ));
             Set(
