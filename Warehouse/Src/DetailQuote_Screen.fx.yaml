@@ -316,7 +316,31 @@ DetailQuote_Screen As screen:
         FontWeight: =FontWeight.Bold
         Height: =41
         OnSelect: |-
-            =
+            =Set(
+                rowProduct,
+                " <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>"
+            );
+            Set(
+                rowService, "<tr>
+                                <td></td>
+                                <td></td>
+                            </tr>"
+            );
+            ForAll(
+                dataProductQuoteByIdCustomer,
+                rowProduct & rowProduct
+            );
+            ForAll(
+                dataSerivceQuoteByIdCustomer, Set(
+                    rowService,
+                    rowService & "<tr><td>"
+                )
+            );
             Export_PDF_Warehouse_Manager.Run(
                 "<!DOCTYPE html>
             <html lang='en'>
@@ -357,7 +381,8 @@ DetailQuote_Screen As screen:
                                 style='font-weight: normal;font-style: italic;'>" & TextInput1_5.Text & "</span></h4>
                         <h4>Thời gian tạo - hết hạn: <span
                                 style='font-weight: normal;font-style: italic;'>" & TextInput1_2.Text & "-" & TextInput1_3.Text & "</span></h4>
-                        <h4>Mô tả: "&TextInput1_1.Text&"</h4>
+                        <h4>Mô tả:  <span
+                                style='font-weight: normal;'>" & TextInput1_1.Text & "</span></h4>
                     </div>
                    <div>
                         <h3>Danh sách sản phẩm</h3>
@@ -369,6 +394,7 @@ DetailQuote_Screen As screen:
                                 <th>Giá cả</th>
                                 <th>Tổng tiền</th>
                             </tr>
+                            "&rowProduct&"
                         </table>
                     </div>
                     <div>
@@ -379,6 +405,7 @@ DetailQuote_Screen As screen:
                                 <th>Tên dịch vụ</th>
                                 <th>Giá</th>
                             </tr>
+                            "&rowService&"
                         </table>
                     </div>
                     <p
