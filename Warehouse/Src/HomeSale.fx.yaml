@@ -1,10 +1,32 @@
 HomeSale As screen:
     OnVisible: |
-        =If(
+        =Set(
+            informationUser,
+            LookUp(
+                User,
+                email_User = User().Email
+            )
+        );
+        Set(
+            getRoleUser,
+            LookUp(
+                Role,
+                ID = informationUser.id_Role
+            )
+        );
+        If(
             IsBlank(btnFunctionSelection_Value_HomeSale),
-            Set(
-                btnFunctionSelection_Value_HomeSale,
-                1
+            If(
+                informationUser.id_Role = 1,
+                Set(
+                    btnFunctionSelection_Value_HomeSale,
+                    1
+                ),
+                informationUser.id_Role = 2,
+                Set(
+                    btnFunctionSelection_Value_HomeSale,
+                    2
+                )
             )
         );
         Set(
@@ -38,20 +60,6 @@ HomeSale As screen:
         Set(
             showDialogUpdateCustomer,
             false
-        );
-        Set(
-            informationUser,
-            LookUp(
-                User,
-                email_User = User().Email
-            )
-        );
-        Set(
-            getRoleUser,
-            LookUp(
-                Role,
-                ID = informationUser.id_Role
-            )
         );
         Set(
             positionDialog,
