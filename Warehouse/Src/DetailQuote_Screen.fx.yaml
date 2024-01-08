@@ -1,5 +1,5 @@
 DetailQuote_Screen As screen:
-    OnVisible: |-
+    OnVisible: |
         =Set(
             isVisibleContentFilePDF,
             false
@@ -17,7 +17,7 @@ DetailQuote_Screen As screen:
                 Quote_Service,
                 id_Quote = quoteList_HomeSale.Selected.id_Quote
             )
-        )
+        );
 
     Container1 As groupContainer.manualLayoutContainer:
         Fill: =RGBA(109, 49, 162, 1)
@@ -316,39 +316,10 @@ DetailQuote_Screen As screen:
         FontWeight: =FontWeight.Bold
         Height: =41
         OnSelect: |-
-            =Set(
-                rowProduct,
-                " <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>"
-            );
-            Set(
-                rowService, Text("<tr>
-                                <td></td>
-                                <td></td>
-                            </tr>")
-            );
-            ForAll(
-                dataProductQuoteByIdCustomer,
-                rowProduct & rowProduct
-            );
-            ForAll(
-                dataProductQuoteByIdCustomer,
-                Collect(
-                    rowServiceCollection,
-                   "<tr>
-                                <td></td>
-                                <td></td>
-                            </tr>"
-                )
-            );
-            
+            =ClearCollect(dataSV,"");
             Set(
                 htmlText,
-                    "<!DOCTYPE html>
+                "<!DOCTYPE html>
             <html lang='en'>
                 <head>
                     <meta charset='UTF-8'>
@@ -400,7 +371,6 @@ DetailQuote_Screen As screen:
                                 <th>Giá cả</th>
                                 <th>Tổng tiền</th>
                             </tr>
-                            "&rowProduct&"
                         </table>
                     </div>
                     <div>
@@ -410,11 +380,7 @@ DetailQuote_Screen As screen:
                             <tr>
                                 <th>Tên dịch vụ</th>
                                 <th>Giá</th>
-                            </tr>
-                            "&Concatenate(dataSerivceQuoteByIdCustomer,"<tr>
-                                <td></td>
-                                <td></td>
-                            </tr>")&"
+                            </tr>" & abc & "
                         </table>
                     </div>
                     <p
@@ -424,9 +390,8 @@ DetailQuote_Screen As screen:
             </html>
             "
             );
-            
             Export_PDF_Warehouse_Manager.Run(
-            htmlText,
+                htmlText,
                 "sd.html"
             )
         Size: =18
