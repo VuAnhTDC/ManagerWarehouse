@@ -1,5 +1,23 @@
 DetailQuote_Screen As screen:
-    OnVisible: =Set(isVisibleContentFilePDF, false)
+    OnVisible: |-
+        =Set(
+            isVisibleContentFilePDF,
+            false
+        );
+        ClearCollect(
+            dataProductQuoteByIdCustomer,
+            Filter(
+                Quote_Product,
+                id_Quote = quoteList_HomeSale.Selected.id_Quote
+            )
+        );
+        ClearCollect(
+            dataSerivceQuoteByIdCustomer,
+            Filter(
+                Quote_Service,
+                id_Quote = quoteList_HomeSale.Selected.id_Quote
+            )
+        )
 
     Container1 As groupContainer.manualLayoutContainer:
         Fill: =RGBA(109, 49, 162, 1)
@@ -169,11 +187,7 @@ DetailQuote_Screen As screen:
         "Gallery3 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
             DelayItemLoading: =true
             Height: =251
-            Items: |-
-                =Filter(
-                    Quote_Product,
-                    id_Quote = quoteList_HomeSale.Selected.id_Quote
-                )
+            Items: =dataProductQuoteByIdCustomer
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             TemplatePadding: =0
@@ -247,11 +261,7 @@ DetailQuote_Screen As screen:
         "Gallery3_1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
             DelayItemLoading: =true
             Height: =251
-            Items: |-
-                =Filter(
-                    Quote_Service,
-                    id_Quote = quoteList_HomeSale.Selected.id_Quote
-                )
+            Items: =dataSerivceQuoteByIdCustomer
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             TemplatePadding: =0
@@ -306,29 +316,7 @@ DetailQuote_Screen As screen:
         FontWeight: =FontWeight.Bold
         Height: =41
         OnSelect: |-
-            =ClearCollect(
-                dataProductQuoteIdCustomer,
-                Filter(
-                    Quote_Product,
-                    id_Quote = quoteList_HomeSale.Selected.id_Quote
-                )
-            );
-            Set(
-                trtdDataProductQuote,
-                ""
-            );
-            ForAll(
-                dataProductQuoteIdCustomer,
-                trtdDataProductQuote & "<tr>
-                    <td>" & LookUp(
-                    Product,
-                    id_Product = ThisRecord.id_Product
-                ).name_Product & "</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    </tr>"
-            );
+            =
             Export_PDF_Warehouse_Manager.Run(
                 "<!DOCTYPE html>
             <html lang='en'>
@@ -369,12 +357,9 @@ DetailQuote_Screen As screen:
                                 style='font-weight: normal;font-style: italic;'>" & TextInput1_5.Text & "</span></h4>
                         <h4>Thời gian tạo - hết hạn: <span
                                 style='font-weight: normal;font-style: italic;'>" & TextInput1_2.Text & "-" & TextInput1_3.Text & "</span></h4>
-                        <h4>Mô tả: <span
-                                " & TextInput1_1.Text & "</span></h4>
+                        <h4>Mô tả: "&TextInput1_1.Text&"</h4>
                     </div>
-                    " & If(
-                    !IsBlank(dataProductQuoteIdCustomer),
-                    "<div>
+                   <div>
                         <h3>Danh sách sản phẩm</h3>
                         <table
                             style='border: 1px solid;'>
@@ -383,10 +368,9 @@ DetailQuote_Screen As screen:
                                 <th>Số lượng</th>
                                 <th>Giá cả</th>
                                 <th>Tổng tiền</th>
-                            </tr>" & trtdDataProductQuote & "
+                            </tr>
                         </table>
-                    </div>"
-                ) & "
+                    </div>
                     <div>
                         <h3>Danh sách dịch vụ</h3>
                         <table
@@ -447,7 +431,7 @@ DetailQuote_Screen As screen:
 
     PdfViewer3 As pdfViewer:
         BorderColor: =RGBA(0, 0, 0, 1)
-        Document: =vardpf
+        Document: =
         Fill: =RGBA(0, 0, 0, 0.5)
         Height: =690
         Visible: =isVisibleContentFilePDF
