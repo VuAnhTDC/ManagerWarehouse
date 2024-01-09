@@ -8,34 +8,27 @@ Admin As screen:
         ZIndex: =1
 
         Container5_Admin As groupContainer.manualLayoutContainer:
+            Fill: =RGBA(56, 96, 178, 1)
             FillPortions: =0.5
             LayoutMinHeight: =100
             LayoutMinWidth: =250
             ZIndex: =1
 
             Label1_Admin As label:
+                Color: =RGBA(255, 255, 255, 1)
                 FontWeight: =FontWeight.Semibold
                 Size: =20
                 Text: ="Xin chào, Admin"
                 Width: =842
-                X: =184
+                X: =107
                 Y: =48
                 ZIndex: =1
 
-            Label1_1_Admin As label:
-                FontWeight: =FontWeight.Semibold
-                Size: =20
-                Text: ="Thoát"
-                Width: =125
-                X: =1180
-                Y: =48
-                ZIndex: =3
-
             Image2_Admin As image:
                 Height: =80
-                Image: ='icons8-username-48_2'
+                Image: ='icons8-username-48'
                 Width: =80
-                X: =80
+                X: =27
                 Y: =28
                 ZIndex: =4
 
@@ -58,7 +51,8 @@ Admin As screen:
 
                 Label2_Admin As label:
                     Align: =Align.Center
-                    Fill: =RGBA(102, 182, 227, 1)
+                    Color: =RGBA(255, 255, 255, 1)
+                    Fill: =RGBA(56, 96, 178, 1)
                     FontWeight: =FontWeight.Semibold
                     Height: =49
                     Size: =20
@@ -66,9 +60,9 @@ Admin As screen:
                     Width: =409
                     ZIndex: =1
 
-                "Gallery1_Admin As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver5.0'":
+                "Gallery1_User_Admin As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver5.0'":
                     DelayItemLoading: =true
-                    Height: =537
+                    Height: =464
                     Items: =User
                     Layout: =Layout.Vertical
                     LoadingSpinner: =LoadingSpinner.Data
@@ -110,7 +104,7 @@ Admin As screen:
 
                     Body1_Admin As label:
                         FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
-                        Height: =Self.Size * 1.8
+                        Height: =25
                         OnSelect: =Select(Parent)
                         PaddingBottom: =0
                         PaddingLeft: =0
@@ -118,7 +112,7 @@ Admin As screen:
                         PaddingTop: =0
                         Text: =ThisItem.email_User
                         VerticalAlign: =VerticalAlign.Top
-                        Width: =Title2_Admin.Width
+                        Width: =330
                         X: =Title2_Admin.X
                         Y: =Subtitle2_Admin.Y + Subtitle2_Admin.Height
                         ZIndex: =3
@@ -128,7 +122,8 @@ Admin As screen:
                         Color: =RGBA(166, 166, 166, 1)
                         Height: =50
                         Icon: =Icon.ChevronRight
-                        OnSelect: =
+                        OnSelect: |
+                            =
                         PaddingBottom: =16
                         PaddingLeft: =16
                         PaddingRight: =16
@@ -153,8 +148,9 @@ Admin As screen:
                         Width: =4
                         ZIndex: =6
 
-                    Title2_1_Admin As label:
+                    Body1_Admin_1 As label:
                         Align: =Align.Right
+                        AutoHeight: =true
                         Color: =RGBA(0, 121, 187, 1)
                         FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
                         Height: =26
@@ -165,12 +161,32 @@ Admin As screen:
                         PaddingTop: =0
                         Text: =LookUp(Role,ID=ThisItem.id_Role).name_Role
                         VerticalAlign: =VerticalAlign.Top
-                        Width: =127
-                        X: =219
-                        Y: =(Parent.TemplateHeight - (Self.Size*1.8 + Subtitle2_Admin.Size*1.8 + 2 + Body1_Admin.Size*1.8)) / 2
-                        ZIndex: =7
+                        Width: =123
+                        X: =221
+                        Y: =22
+                        ZIndex: =9
 
-            Container6_1_Admin As groupContainer.manualLayoutContainer:
+                Button1_AddNew_Admin As button:
+                    DisabledColor: =RGBA(255, 255, 255, 1)
+                    Height: =61
+                    OnSelect: |-
+                        =Set(
+                            add_admin,
+                            true
+                        );
+                        Reset(TextInput_Name_Admin);
+                        Reset(TextInput_Email_Admin);
+                        Reset(TextInput_Phone_Admin);
+                        Reset(Dropdown_Role_Admin);
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Size: =20
+                    Text: ="Tạo mới"
+                    Width: =409
+                    Y: =525
+                    ZIndex: =2
+
+            Container6_Information_Admin As groupContainer.manualLayoutContainer:
                 Height: =586
                 RadiusBottomLeft: =10
                 RadiusBottomRight: =10
@@ -183,11 +199,12 @@ Admin As screen:
 
                 Label2_1_Admin As label:
                     Align: =Align.Center
-                    Fill: =RGBA(102, 182, 227, 1)
+                    Color: =RGBA(255, 255, 255, 1)
+                    Fill: =RGBA(56, 96, 178, 1)
                     FontWeight: =FontWeight.Semibold
-                    Height: =49
+                    Height: =64
                     Size: =20
-                    Text: ="Thông tin người dùng"
+                    Text: =If(add_admin=true,"Thêm người dùng","Thông tin người dùng")
                     Width: =880
                     ZIndex: =1
 
@@ -202,7 +219,8 @@ Admin As screen:
                     ZIndex: =2
 
                 TextInput_Name_Admin As text:
-                    Default: =Gallery1_Admin.Selected.user_Name
+                    Clear: =true
+                    Default: =If(add_admin=true,"",Gallery1_User_Admin.Selected.user_Name)
                     Height: =50
                     HintText: ="Nhập tên người dùng"
                     Size: =15
@@ -222,7 +240,8 @@ Admin As screen:
                     ZIndex: =4
 
                 TextInput_Email_Admin As text:
-                    Default: =Gallery1_Admin.Selected.email_User
+                    Clear: =true
+                    Default: =If(add_admin=true,"",Gallery1_User_Admin.Selected.email_User)
                     Height: =50
                     HintText: ="Nhập email"
                     Size: =15
@@ -242,7 +261,9 @@ Admin As screen:
                     ZIndex: =6
 
                 TextInput_Phone_Admin As text:
-                    Default: =Gallery1_Admin.Selected.phonenumber_User
+                    Clear: =true
+                    Default: =If(add_admin=true,"",Gallery1_User_Admin.Selected.phonenumber_User)
+                    Format: =TextFormat.Number
                     Height: =50
                     HintText: ="Nhập số điện thoại"
                     Size: =15
@@ -262,6 +283,15 @@ Admin As screen:
                     ZIndex: =8
 
                 Dropdown_Role_Admin As dropdown:
+                    Default: |-
+                        =If(
+                            add_admin = true,
+                              First(Role).name_Role,
+                            LookUp(
+                                Role,
+                                ID = Gallery1_User_Admin.Selected.id_Role
+                            ).name_Role
+                        )
                     Height: =50
                     Items: =Role
                     Size: =15
@@ -271,49 +301,258 @@ Admin As screen:
                     ZIndex: =9
 
                 Button_Sửa_Admin As button:
-                    OnSelect: |-
-                        =Patch(
-                            User,
-                            LookUp(
-                                User,
-                                ID = Gallery1_Admin.Selected.ID
-                            ),
-                            {
-                                user_Name: TextInput_Name_Admin.Text,
-                                email_User: TextInput_Email_Admin.Text,
-                                phonenumber_User: TextInput_Phone_Admin.Text,
-                                id_Role: Dropdown_Role_Admin.Selected.ID
-                            }
-                        )
+                    OnSelect: =Set(confirm_dialog_admin,"Edit")
                     Text: ="Sửa"
+                    Visible: =If(add_admin=true,false,true)
                     X: =673
                     Y: =447
                     ZIndex: =10
 
                 Button_Thêm_Admin As button:
-                    OnSelect: |-
-                        =Patch(
-                            User,
-                            Defaults(User),
-                            {
-                                user_Name: TextInput_Name_Admin.Text,
-                                email_User: TextInput_Email_Admin.Text,
-                                phonenumber_User: TextInput_Phone_Admin.Text,
-                                id_Role: Dropdown_Role_Admin.Selected.ID
-                            }
-                        )
+                    OnSelect: =Set(confirm_dialog_admin,"Add")
                     Text: ="Thêm"
+                    Visible: =If(add_admin=true,true,false)
                     Width: =166
-                    X: =299
+                    X: =667
                     Y: =447
                     ZIndex: =12
 
                 Button_Xóa_Admin As button:
                     Fill: =RGBA(255, 0, 0, 1)
                     HoverFill: =ColorFade(RGBA(255, 0, 0, 1), -20%)
-                    OnSelect: =
+                    OnSelect: =Set(confirm_dialog_admin,"Remove")
                     Text: ="Xóa"
+                    Visible: =If(add_admin=true,false,true)
                     X: =487
                     Y: =447
                     ZIndex: =13
+
+                Icon2_1 As icon.BackArrow:
+                    Color: =RGBA(255, 255, 255, 1)
+                    Height: =35
+                    Icon: =Icon.CancelBadge
+                    OnSelect: =Set(add_admin,false)
+                    Visible: =If(add_admin=true,true,false)
+                    Width: =35
+                    X: =798
+                    Y: =14
+                    ZIndex: =14
+
+    dialog_confim_Admin As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =8
+
+        Rectangle4_Admin As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(0, 0, 0, 0.5)
+            Height: =768
+            Visible: =If(Or(confirm_dialog_admin="Add",confirm_dialog_admin="Edit",confirm_dialog_admin="Remove"),true,false)
+            Width: =1366
+            X: =
+            ZIndex: =2
+
+        Rectangle3_Admin As rectangle:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =209
+            Visible: =If(Or(confirm_dialog_admin="Add",confirm_dialog_admin="Edit",confirm_dialog_admin="Remove"),true,false)
+            Width: =464
+            X: =491
+            Y: =319
+            ZIndex: =3
+
+        Label6_Admin As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(56, 96, 178, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =56
+            Size: =20
+            Text: =confirm_dialog_admin
+            Visible: =If(Or(confirm_dialog_admin="Add",confirm_dialog_admin="Edit",confirm_dialog_admin="Remove"),true,false)
+            Width: =464
+            X: =491
+            Y: =319
+            ZIndex: =4
+
+        Label7_Admin As label:
+            Align: =Align.Center
+            FontWeight: =FontWeight.Semibold
+            Height: =48
+            Size: =15
+            Text: |-
+                =If(
+                    confirm_dialog_admin = "Add",
+                    "Bạn có muốn thêm User không ?",
+                    confirm_dialog_admin = "Remove",
+                    "Bạn có muốn xóa User không ?",
+                    confirm_dialog_admin = "Edit",
+                    "Bạn có muốn sửa User không ?",
+                    "Error!!!"
+                )
+            Visible: =If(Or(confirm_dialog_admin="Add",confirm_dialog_admin="Edit",confirm_dialog_admin="Remove"),true,false)
+            Width: =464
+            X: =491
+            Y: =375
+            ZIndex: =5
+
+        Button_Confirm_Admin As button:
+            OnSelect: |
+                =If(
+                    confirm_dialog_admin = "Add",
+                    //Validate User Name
+                    If(
+                        IsBlank(TextInput_Name_Admin.Text),
+                        Notify(
+                            "Vui lòng nhập tên người dùng!!!",
+                            NotificationType.Error
+                        ),
+                         //Validate Email
+                        If(
+                            IsBlank(TextInput_Email_Admin.Text),
+                            Notify(
+                                "Vui lòng nhập email!!!",
+                                NotificationType.Error
+                            ),
+                             //Validate Format Email
+                            If(
+                                !IsMatch(
+                                    TextInput_Email_Admin.Text,
+                                    "^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$"
+                                ),// Kiểm tra định dạng email
+                                Notify(
+                                    "Địa chỉ email không hợp lệ!!!",
+                                    NotificationType.Error
+                                ),
+                                 //Validate PhoneNumber
+                                If(
+                                    IsBlank(TextInput_Phone_Admin.Text),
+                                    Notify(
+                                        "Vui lòng nhập số điện thoại!!!",
+                                        NotificationType.Error
+                                    ),
+                                    //Add User
+                                    Patch(
+                                        User,
+                                        Defaults(User),
+                                        {
+                                            user_Name: TextInput_Name_Admin.Text,
+                                            email_User: TextInput_Email_Admin.Text,
+                                            phonenumber_User: TextInput_Phone_Admin.Text,
+                                            id_Role: Dropdown_Role_Admin.Selected.ID
+                                        }
+                                    );
+                                    Reset(TextInput_Name_Admin);
+                                    Reset(TextInput_Email_Admin);
+                                    Reset(TextInput_Phone_Admin);
+                                    Reset(Dropdown_Role_Admin);
+                                    Notify(
+                                        "User đã được thêm thành công.",
+                                        NotificationType.Success
+                                    )
+                                )
+                            )
+                        )
+                    ),
+                    confirm_dialog_admin = "Remove",
+                    RemoveIf(
+                        User,
+                        ID = Gallery1_User_Admin.Selected.ID
+                    );
+                    Notify(
+                        "User đã được xóa thành công.",
+                        NotificationType.Success
+                    ),
+                    confirm_dialog_admin = "Edit",
+                     //Validate User Name
+                    If(
+                        IsBlank(TextInput_Name_Admin.Text),
+                        Notify(
+                            "Vui lòng nhập tên người dùng!!!",
+                            NotificationType.Error
+                        ),
+                         //Validate Email
+                        If(
+                            IsBlank(TextInput_Email_Admin.Text),
+                            Notify(
+                                "Vui lòng nhập email!!!",
+                                NotificationType.Error
+                            ),
+                             //Validate Format Email
+                            If(
+                                !IsMatch(
+                                    TextInput_Email_Admin.Text,
+                                    "^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$"
+                                ),// Kiểm tra định dạng email
+                                Notify(
+                                    "Địa chỉ email không hợp lệ!!!",
+                                    NotificationType.Error
+                                ),
+                                 //Validate PhoneNumber
+                                If(
+                                    IsBlank(TextInput_Phone_Admin),
+                                    Notify(
+                                        "Vui lòng nhập số điện thoại!!!",
+                                        NotificationType.Error
+                                    ),
+                                    //Edit User
+                                    If(
+                                        IsError(
+                                            Patch(
+                                                User,
+                                                LookUp(
+                                                    User,
+                                                    ID = Gallery1_User_Admin.Selected.ID
+                                                ),
+                                                {
+                                                    user_Name: TextInput_Name_Admin.Text,
+                                                    email_User: TextInput_Email_Admin.Text,
+                                                    phonenumber_User: TextInput_Phone_Admin.Text,
+                                                    id_Role: Dropdown_Role_Admin.Selected.ID
+                                                }
+                                            )
+                                        ),
+                                        Notify(
+                                            "User đã được sửa không thành công!!!",
+                                            NotificationType.Success
+                                        ),
+                                        If(
+                                            Gallery1_User_Admin.Selected.id_Role <> Dropdown_Role_Admin.Selected.ID,
+                                            Warehouse_Manager_SendEmailRole.Run(
+                                                TextInput_Email_Admin.Text,
+                                                "Chuyển đổi Role",
+                                                "Bạn đã được chuyển sang Role: " & Dropdown_Role_Admin.Selected.name_Role
+                                            )
+                                        );
+                                    );
+                                    Notify(
+                                            "User đã được sửa thành công!!!",
+                                            NotificationType.Success
+                                        )
+                                )
+                            )
+                        )
+                    )
+                );
+                Set(
+                    confirm_dialog_admin,
+                    ""
+                );
+            Text: ="Có"
+            Visible: =If(Or(confirm_dialog_admin="Add",confirm_dialog_admin="Edit",confirm_dialog_admin="Remove"),true,false)
+            X: =537
+            Y: =452
+            ZIndex: =6
+
+        Button_Cancel_Admin As button:
+            Fill: =RGBA(255, 0, 0, 1)
+            HoverFill: =ColorFade(RGBA(255, 0, 0, 1), -20%)
+            OnSelect: =Set(confirm_dialog_admin,"")
+            Text: ="Không"
+            Visible: =If(Or(confirm_dialog_admin="Add",confirm_dialog_admin="Edit",confirm_dialog_admin="Remove"),true,false)
+            X: =745
+            Y: =452
+            ZIndex: =7
 
