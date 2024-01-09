@@ -166,7 +166,7 @@ HomeSale As screen:
             btnTransaction_HomeSale As button:
                 Color: =If(btnFunctionSelection_Value_HomeSale = 5,Color.White,Color.Black)
                 Fill: =If(btnFunctionSelection_Value_HomeSale = 5,Color.Blue,RGBA(241,244,249,1))
-                Height: =36
+                Height: =50
                 OnSelect: |-
                     =Set(btnFunctionSelection_Value_HomeSale,5);
                     ClearCollect(data,Quote);
@@ -175,48 +175,48 @@ HomeSale As screen:
                 Text: ="Lịch sử giao dịch"
                 Width: =300
                 X: =9
-                Y: =228
+                Y: =277
                 ZIndex: =1
 
             btnPurchaseRequest_HomeSale As button:
                 Color: =If(btnFunctionSelection_Value_HomeSale = 4,Color.White,Color.Black)
                 Fill: =If(btnFunctionSelection_Value_HomeSale = 4,Color.Blue,RGBA(241,244,249,1))
-                Height: =36
+                Height: =50
                 OnSelect: =Set(btnFunctionSelection_Value_HomeSale,4)
                 Text: ="Yêu cầu mua hàng"
                 Width: =300
                 X: =9
-                Y: =174
+                Y: =211
                 ZIndex: =2
 
             btnQuote_HomeSale As button:
                 Color: =If(btnFunctionSelection_Value_HomeSale = 3,Color.White,Color.Black)
                 Fill: =If(btnFunctionSelection_Value_HomeSale = 3,Color.Blue,RGBA(241,244,249,1))
-                Height: =36
+                Height: =50
                 OnSelect: |-
                     =Set(btnFunctionSelection_Value_HomeSale,3);
                     Set(valuePosionRequestQuote,0);
                 Text: ="Báo giá, đơn hàng"
                 Width: =300
                 X: =9
-                Y: =120
+                Y: =145
                 ZIndex: =3
 
             btnCustomer_HomSale As button:
                 Color: =If(btnFunctionSelection_Value_HomeSale = 2,Color.White,Color.Black)
                 Fill: =If(btnFunctionSelection_Value_HomeSale = 2,Color.Blue,RGBA(241,244,249,1))
-                Height: =36
+                Height: =50
                 OnSelect: =Set(btnFunctionSelection_Value_HomeSale,2);
                 Text: ="Khách hàng"
                 Width: =300
                 X: =9
-                Y: =66
+                Y: =77
                 ZIndex: =4
 
             btnService_HomeSale As button:
                 Color: =If(btnFunctionSelection_Value_HomeSale = 1,Color.White,Color.Black)
                 Fill: =If(btnFunctionSelection_Value_HomeSale = 1,Color.Blue,RGBA(241,244,249,1))
-                Height: =36
+                Height: =50
                 OnSelect: =Set(btnFunctionSelection_Value_HomeSale,1);
                 Text: ="Dịch vụ"
                 Width: =300
