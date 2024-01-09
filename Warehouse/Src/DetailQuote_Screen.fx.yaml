@@ -450,7 +450,7 @@ DetailQuote_Screen As screen:
             );
             Export_PDF_Warehouse_Manager.Run(
                 htmlText,
-                "sd.html"
+                TextInput1.Text & TextInput1_5.Text & ".html"
             )
         Size: =18
         Text: ="Xuất file PDF"

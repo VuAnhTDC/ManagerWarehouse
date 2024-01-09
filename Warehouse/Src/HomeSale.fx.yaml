@@ -159,6 +159,7 @@ HomeSale As screen:
             RadiusBottomRight: =10
             RadiusTopLeft: =10
             RadiusTopRight: =10
+            Visible: =If(informationUser.id_Role = 1, true,false)
             Width: =317
             Y: =162
             ZIndex: =16
@@ -232,7 +233,7 @@ HomeSale As screen:
             RadiusBottomRight: =10
             RadiusTopLeft: =10
             RadiusTopRight: =10
-            Visible: =false
+            Visible: =If(informationUser.id_Role = 2, true,false)
             Width: =317
             Y: =162
             ZIndex: =17
@@ -2962,7 +2963,7 @@ HomeSale As screen:
         RadiusBottomRight: =10
         RadiusTopLeft: =10
         RadiusTopRight: =10
-        Visible: =false
+        Visible: =If(btnFunctionSelection_Value_HomeSale = 6, true,false)
         Width: =997
         X: =352
         Y: =18

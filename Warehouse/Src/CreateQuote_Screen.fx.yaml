@@ -215,22 +215,6 @@ CreateQuote_Screen As screen:
             Y: =91
             ZIndex: =3
 
-            NextArrow2 As icon.ChevronRight:
-                AccessibleLabel: =Self.Tooltip
-                Color: =RGBA(166, 166, 166, 1)
-                Height: =50
-                Icon: =Icon.ChevronRight
-                OnSelect: =Select(Parent)
-                PaddingBottom: =16
-                PaddingLeft: =16
-                PaddingRight: =16
-                PaddingTop: =16
-                Tooltip: ="View item details"
-                Width: =50
-                X: =Parent.TemplateWidth - Self.Width - 12
-                Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
-                ZIndex: =4
-
             Separator2 As rectangle:
                 BorderStyle: =BorderStyle.Dotted
                 BorderThickness: =1
@@ -288,6 +272,15 @@ CreateQuote_Screen As screen:
                 Y: =68
                 ZIndex: =9
 
+            Icon4 As icon.CancelBadge:
+                Height: =50
+                Icon: =Icon.CancelBadge
+                OnSelect: =ClearCollect(productAddQuoteList,Filter(productAddQuoteList,Not(id_Product = productList_CreateQuoteScreen.Selected.id_Product)))
+                Width: =50
+                X: =363
+                Y: =18
+                ZIndex: =10
+
     containerServiceListSelectedAddQuote_CreateQuoteScreen As groupContainer.manualLayoutContainer:
         BorderThickness: =1
         Height: =437
@@ -329,22 +322,6 @@ CreateQuote_Screen As screen:
             Width: =425
             Y: =93
             ZIndex: =3
-
-            NextArrow2_1 As icon.ChevronRight:
-                AccessibleLabel: =Self.Tooltip
-                Color: =RGBA(166, 166, 166, 1)
-                Height: =50
-                Icon: =Icon.ChevronRight
-                OnSelect: =Select(Parent)
-                PaddingBottom: =16
-                PaddingLeft: =16
-                PaddingRight: =16
-                PaddingTop: =16
-                Tooltip: ="View item details"
-                Width: =50
-                X: =Parent.TemplateWidth - Self.Width - 12
-                Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
-                ZIndex: =4
 
             Separator2_2 As rectangle:
                 BorderStyle: =BorderStyle.Dotted
@@ -391,6 +368,15 @@ CreateQuote_Screen As screen:
                 X: =88
                 Y: =57
                 ZIndex: =8
+
+            Icon5 As icon.CancelBadge:
+                Height: =50
+                Icon: =Icon.CancelBadge
+                OnSelect: =ClearCollect(serviceAddQuoteList,Filter(serviceAddQuoteList,id_Service = serviceList_CreateQuoteScreen.Selected.id_Service))
+                Width: =50
+                X: =363
+                Y: =16
+                ZIndex: =9
 
     containerContentAdd_CreateQuoteScreen As groupContainer.manualLayoutContainer:
         Fill: =RGBA(0, 0, 0, 0.41)
