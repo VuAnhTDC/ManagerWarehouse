@@ -95,7 +95,7 @@ DetailQuote_Screen As screen:
             ZIndex: =5
 
         TextInput1_2 As text:
-            Default: =quoteList_HomeSale.Selected.quote_Date
+            Default: =Text(quoteList_HomeSale.Selected.quote_Date,"dd/mm/yyyy")
             DisplayMode: =DisplayMode.Disabled
             HintText: ="Ngày tạo"
             Width: =194
@@ -111,7 +111,7 @@ DetailQuote_Screen As screen:
             ZIndex: =7
 
         TextInput1_3 As text:
-            Default: =quoteList_HomeSale.Selected.quote_Expire
+            Default: =Text(quoteList_HomeSale.Selected.quote_Expire,"dd/mm/yyyy")
             DisplayMode: =DisplayMode.Disabled
             HintText: ="Ngày hết hạn"
             Width: =194
