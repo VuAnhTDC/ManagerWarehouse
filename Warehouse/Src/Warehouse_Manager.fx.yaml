@@ -868,7 +868,7 @@ Warehouse_Manager As screen:
                     Height: =200
                     IsInDataCard: =true
                     Items: =
-                    MaxAttachments: =5
+                    MaxAttachments: =1
                     PaddingBottom: =5
                     PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                     PaddingRight: =5
