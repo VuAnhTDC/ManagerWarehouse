@@ -1,0 +1,42 @@
+Main As screen:
+    OnVisible: |
+        =Set(
+            informationUser,
+            LookUp(
+                User,
+                email_User = User().Email
+            )
+        );
+
+    Button1 As button:
+        FontWeight: =FontWeight.Bold
+        Height: =60
+        OnSelect: =If(informationUser.id_Role = 1 || informationUser.id_Role = 2, Navigate(HomeSale,ScreenTransition.Fade),informationUser.id_Role = 3, Navigate(Warehouse_Manager,ScreenTransition.Fade), informationUser.id_Role = 5, Navigate(Admin,ScreenTransition.Fade),Navigate(Director,ScreenTransition.Fade))
+        Size: =25
+        Text: ="Vào hệ thống"
+        Width: =583
+        X: =763
+        Y: =384
+        ZIndex: =1
+
+    Image1 As image:
+        Height: =713
+        Image: =imagkho
+        ImagePosition: =ImagePosition.Fill
+        Width: =739
+        X: =14
+        Y: =20
+        ZIndex: =2
+
+    Label33 As label:
+        Align: =Align.Center
+        Color: =RGBA(50, 86, 160, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =173
+        Size: =30
+        Text: ="Vào hệ thống với tên tài khoản"
+        Width: =496
+        X: =807
+        Y: =170
+        ZIndex: =3
+
