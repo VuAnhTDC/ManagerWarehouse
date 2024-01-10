@@ -536,9 +536,15 @@ CreateQuote_Screen As screen:
                         Italic: =true
                         Text: |-
                             =If(
-                                !IsBlank(edtQuantityAddProductQuote_CreateQuoteScreen.Text) && !IsBlank(edtVATAddProductQuote_CreatQuoteScreen.Text),
+                                !IsBlank(edtQuantityAddProductQuote_CreateQuoteScreen.Text) || !IsBlank(edtVATAddProductQuote_CreatQuoteScreen.Text),
                                 dropdowProductQuote_CreateQuoteScreen.SelectedText.price_Product * Value(edtQuantityAddProductQuote_CreateQuoteScreen.Text)
-                            ) + (Value(dropdowProductQuote_CreateQuoteScreen.SelectedText.price_Product * Value(edtQuantityAddProductQuote_CreateQuoteScreen.Text) * If(IsBlank(edtVATAddProductQuote_CreatQuoteScreen.Text),10,Value(edtVATAddProductQuote_CreatQuoteScreen.Text))%))
+                            ) + (Value(
+                                 If(
+                                    IsBlank(edtVATAddProductQuote_CreatQuoteScreen.Text),
+                                    dropdowProductQuote_CreateQuoteScreen.SelectedText.price_Product * Value(edtQuantityAddProductQuote_CreateQuoteScreen.Text) * 10%,
+                                    dropdowProductQuote_CreateQuoteScreen.SelectedText.price_Product * Value(edtQuantityAddProductQuote_CreateQuoteScreen.Text) * Value(edtVATAddProductQuote_CreatQuoteScreen.Text)%
+                                )
+                            ))
                         Width: =306
                         X: =32
                         Y: =49
