@@ -502,7 +502,7 @@ CreateQuote_Screen As screen:
 
                 edtVATAddProductQuote_CreatQuoteScreen As text:
                     Align: =Align.Right
-                    Default: =""
+                    Default: ="10"
                     Format: =TextFormat.Number
                     Height: =38
                     HintText: ="%"
@@ -538,7 +538,7 @@ CreateQuote_Screen As screen:
                             =If(
                                 !IsBlank(edtQuantityAddProductQuote_CreateQuoteScreen.Text) && !IsBlank(edtVATAddProductQuote_CreatQuoteScreen.Text),
                                 dropdowProductQuote_CreateQuoteScreen.SelectedText.price_Product * Value(edtQuantityAddProductQuote_CreateQuoteScreen.Text)
-                            ) + (Value(dropdowProductQuote_CreateQuoteScreen.SelectedText.price_Product * Value(edtQuantityAddProductQuote_CreateQuoteScreen.Text) * Value(edtVATAddProductQuote_CreatQuoteScreen.Text)%))
+                            ) + (Value(dropdowProductQuote_CreateQuoteScreen.SelectedText.price_Product * Value(edtQuantityAddProductQuote_CreateQuoteScreen.Text) * If(IsBlank(edtVATAddProductQuote_CreatQuoteScreen.Text),10,Value(edtVATAddProductQuote_CreatQuoteScreen.Text))%))
                         Width: =306
                         X: =32
                         Y: =49

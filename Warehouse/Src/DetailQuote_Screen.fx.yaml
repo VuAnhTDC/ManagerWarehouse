@@ -549,7 +549,7 @@ DetailQuote_Screen As screen:
                                 Warehouse_Manager_SendEmailRole.Run(
                                     TempUser.email_User,
                                     "Sản phẩm có số lượng không đáp ứng nhu cầu khách hàng",
-                                    "Sản phẩm có mã: " & Temp.idData & " .Hiện tại không đáp ứng nhu cầu đơn hàng của khách hàng"
+                                    "Sản phẩm có mã: " & Temp.idData & " .Hiện tại không đáp ứng nhu cầu đơn hàng của khách hàng. Khách hàng yêu cầu số lượng: " & LookUp(Quote_Product, id_Product = Temp.idData).quantity_Quote_Product & " .Nhưng số lượng chỉ còn là: " & LookUp(Product,id_Product = Temp.idData).quantity_Product
                                 )
                             )
                         )
