@@ -1,17 +1,38 @@
 Main As screen:
-    OnVisible: |
-        =Set(
-            informationUser,
-            LookUp(
-                User,
-                email_User = User().Email
-            )
-        );
+    OnVisible: =
 
     Button1 As button:
         FontWeight: =FontWeight.Bold
         Height: =60
-        OnSelect: =If(informationUser.id_Role = 1 || informationUser.id_Role = 2, Navigate(HomeSale,ScreenTransition.Fade),informationUser.id_Role = 3, Navigate(Warehouse_Manager,ScreenTransition.Fade), informationUser.id_Role = 5, Navigate(Admin,ScreenTransition.Fade),Navigate(Director,ScreenTransition.Fade))
+        OnSelect: |-
+            =Set(
+                informationUser,
+                LookUp(
+                    User,
+                    email_User = User().Email
+                )
+            );
+            If(
+                informationUser.id_Role = 1 || informationUser.id_Role = 2,
+                Navigate(
+                    HomeSale,
+                    ScreenTransition.Fade
+                ),
+                informationUser.id_Role = 3,
+                Navigate(
+                    Warehouse_Manager,
+                    ScreenTransition.Fade
+                ),
+                informationUser.id_Role = 5,
+                Navigate(
+                    Admin,
+                    ScreenTransition.Fade
+                ),
+                Navigate(
+                    Director,
+                    ScreenTransition.Fade
+                )
+            )
         Size: =25
         Text: ="Vào hệ thống"
         Width: =583
