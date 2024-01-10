@@ -231,16 +231,31 @@ DetailQuote_Screen As screen:
                 Color: =RGBA(255, 0, 0, 1)
                 Fill: =RGBA(255, 255, 255, 1)
                 FontWeight: =FontWeight.Semibold
-                Height: =47
+                Height: =51
                 Italic: =true
                 OnSelect: =Select(Parent)
                 Size: =15
                 Text: |-
                     =Text(Value(ThisItem.price_Quote_Product * ThisItem.quantity_Quote_Product + (ThisItem.price_Quote_Product * ThisItem.quantity_Quote_Product * ThisItem.vat%)), "[$-en-US]#,### đ")
-                Width: =690
-                X: =4
+                Width: =435
+                X: =258
                 Y: =51
                 ZIndex: =8
+
+            Label53 As label:
+                Align: =Align.Center
+                Color: =RGBA(173, 165, 165, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =48
+                Italic: =true
+                OnSelect: =Select(Parent)
+                Size: =16
+                Text: ="Ngừng kinh doanh"
+                Visible: =!LookUp(Product, id_Product = ThisItem.id_Product).activity
+                Width: =328
+                X: =34
+                Y: =54
+                ZIndex: =9
 
     Container3_1 As groupContainer.manualLayoutContainer:
         BorderThickness: =1
@@ -301,16 +316,30 @@ DetailQuote_Screen As screen:
                 Align: =Align.Right
                 Color: =RGBA(255, 0, 0, 1)
                 FontWeight: =FontWeight.Semibold
-                Height: =35
+                Height: =43
                 Italic: =true
                 OnSelect: =Select(Parent)
                 Size: =15
                 Text: |-
                     =Text(Value(ThisItem.price_Quote_Service), "[$-en-US]#,### đ")
-                Width: =601
-                X: =108
+                Width: =269
+                X: =439
                 Y: =60
                 ZIndex: =8
+
+            Label54 As label:
+                Align: =Align.Center
+                Color: =RGBA(173, 165, 165, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =48
+                Italic: =true
+                OnSelect: =Select(Parent)
+                Text: ="Ngừng kinh doanh"
+                Visible: =!LookUp(Service,id_Serivce = ThisItem.id_Service).activity
+                Width: =328
+                X: =34
+                Y: =54
+                ZIndex: =9
 
     Button2 As button:
         FontWeight: =FontWeight.Bold
@@ -462,13 +491,80 @@ DetailQuote_Screen As screen:
     Button2_1 As button:
         Height: =41
         OnSelect: |-
-            =Patch(
-                Quote,
-                LookUp(
-                    Quote,
-                    id_Quote = TextInput1.Text
+            =ClearCollect(
+                dataNotEnough,
+                []
+            );
+            ForAll(
+                dataProductQuoteByIdCustomer As Temp,
+                If(
+                    LookUp(
+                        Product,
+                        id_Product = Temp.id_Product
+                    ).quantity_Product - Temp.quantity_Quote_Product < 0,
+                    Collect(
+                        dataNotEnough,
+                        {
+                            idData: Temp.id_Product,
+                            table: "Product",
+                            status: true
+                        }
+                    ),
+                    !LookUp(
+                        Product,
+                        id_Product = Temp.id_Product
+                    ).activity,
+                    dataNotEnough,
+                    {
+                        idData: Temp.id_Product,
+                        table: "Product",
+                        status: false
+                    }
+                )
+            );
+            ForAll(
+                dataSerivceQuoteByIdCustomer As Temp,
+                If(
+                    !LookUp(
+                        Service,
+                        id_Serivce = Temp.id_Service
+                    ).activity,
+                    Collect(
+                        dataNotEnough,
+                        {
+                            idData: Temp.id_Service,
+                            table: "Service"
+                        }
+                    )
+                )
+            );
+            If(
+                CountRows(dataNotEnough) > 0,
+                Notify(
+                    "Không thể chuyển sang đơn hàng khi không đáp ứng như cầu khách hàng (Sản phẩm không đủ hoặc sản phẩm đã ngừng kinh doanh)",
+                    NotificationType.Error
+                );
+                ForAll(
+                    dataNotEnough As Temp,
+                    If(
+                        Temp.table = "Product" && Temp.status,
+                       ForAll(
+                        User As TempUser, If(TempUser.id_Role = 3,Warehouse_Manager_SendEmailRole.Run(TempUser.email_User,"Sản phẩm có số lượng không đáp ứng nhu cầu khách hàng"))
+                       )
+                    )
                 ),
-                 {quote_Status: true}
+                Patch(
+                    Quote,
+                    LookUp(
+                        Quote,
+                        id_Quote = TextInput1.Text
+                    ),
+                    {quote_Status: true}
+                );
+                Notify(
+                    "Chuyển sang đơn hàng thành công",
+                    NotificationType.Information
+                )
             )
         Text: ="Chuyển sang đơn hàng"
         Visible: =!quoteList_HomeSale.Selected.quote_Status

@@ -163,7 +163,8 @@ CreateQuote_Screen As screen:
                                 id_Service:ThisRecord.id_Service,quote_Service_Note:ThisRecord.quote_Service_Not,price_Quote_Service:ThisRecord.price_Quote_Service
                             }
                         )
-                    )
+                    );
+                    Back();
                 )
             Size: =20
             Text: ="Xác nhận"
@@ -433,7 +434,7 @@ CreateQuote_Screen As screen:
                     ZIndex: =1
 
                 dropdowProductQuote_CreateQuoteScreen As dropdown:
-                    Items: =Product_1
+                    Items: =Filter(Product,activity = true)
                     Width: =349
                     X: =208
                     Y: =15
@@ -608,7 +609,7 @@ CreateQuote_Screen As screen:
                 ZIndex: =3
 
             drwService_CreateQuoteScreen As dropdown:
-                Items: =Service
+                Items: =Filter(Service, activity = true)
                 Width: =390
                 X: =229
                 Y: =68
