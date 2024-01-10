@@ -815,10 +815,10 @@ HomeSale As screen:
                     Items: |
                         =If(
                             IsBlank(edtKeySearchCustomer_HomeSale.Text),
-                            Customer,
+                            Filter(Customer,activity = true),
                             Filter(
                                 Customer,
-                               (StartsWith(taxCode,edtKeySearchCustomer_HomeSale.Text))
+                               (StartsWith(taxCode,edtKeySearchCustomer_HomeSale.Text) && activity = true)
                             )
                         )
                     Layout: =Layout.Vertical
@@ -1104,10 +1104,10 @@ HomeSale As screen:
 
             btnDeleteCustomer_HomeSale As button:
                 Height: =46
-                OnSelect: |-
+                OnSelect: |
                     =Set(showDialogUpdateCustomer,true);
                     Set(positionDialogCustomer,2);
-                    Set(contentDialogCustomer,"Bạn có chắc chắn muốn xóa khách hàng có mã số thuế: "& edtTaxCode_HomeSale.Text & " này không?")
+                    Set(contentDialogCustomer,"Bạn có chắc chắn muốn xóa khách hàng có mã số thuế: "& edtTaxCode_HomeSale.Text & " này không?");
                 Text: ="Xóa"
                 Width: =226
                 X: =709
@@ -1368,9 +1368,9 @@ HomeSale As screen:
                     );
                     If(
                         positionDialogCustomer = 2,
-                        RemoveIf(
+                        Patch(
                             Customer,
-                            taxCode = edtTaxCode_HomeSale.Text
+                            LookUp(Customer, taxCode = galleryCustomerList_HomeSale.Selected.taxCode),{activity: false}
                         );
                         Notify(
                             "Xóa khách hàng thành công",
