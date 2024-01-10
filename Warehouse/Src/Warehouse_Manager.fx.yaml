@@ -555,7 +555,7 @@ Warehouse_Manager As screen:
                     Width: =Parent.Width
                     ZIndex: =2
 
-                Button1_AddNew_Admin_1 As button:
+                Button1_AddNew_Product As button:
                     DisabledColor: =RGBA(255, 255, 255, 1)
                     Height: =61
                     OnSelect: |-
@@ -888,7 +888,7 @@ Warehouse_Manager As screen:
                     Y: =95
                     ZIndex: =24
 
-                Button_Thêm__Product_Manager_Warehouse_1 As button:
+                Button_Add_Choose_File__Product_Manager_Warehouse As button:
                     OnSelect: =Set(confirm_dialog_warehouse,"Add_Choose_File")
                     Text: ="Thêm"
                     Visible: =add_product_choose_file
@@ -2006,9 +2006,9 @@ Warehouse_Manager As screen:
 
                                 ComboBox_Product_Import_Product_Warehouse As combobox:
                                     DisplayFields: =["name_Produc"]
-                                    Items: =Product
+                                    Items: =Filter(Product,activity=true)
                                     SearchFields: =["name_Produc"]
-                                    SearchItems: =Search(Product,ComboBox_Product_Import_Product_Warehouse.SearchText,"name_Produc")
+                                    SearchItems: =Search(Filter(Product,activity=true),ComboBox_Product_Import_Product_Warehouse.SearchText,"name_Produc")
                                     SelectMultiple: =false
                                     Size: =15
                                     Visible: =add_import_product_no_request
@@ -2312,7 +2312,7 @@ Warehouse_Manager As screen:
                         NotificationType.Success,
                         1500
                     ),
-                    //Thêm
+                    //Sửa
                     confirm_dialog_warehouse = "Edit",
                     If(
                         IsBlank(TextInput_MaSP_Warehouse.Text) || IsBlank(TextInput_Name_Product_Warehouse.Text) || IsBlank(TextInput_Price_Warehouse.Text) || IsBlank(TextInput_Quantity_Warehouse.Text),
@@ -2938,8 +2938,8 @@ Warehouse_Manager As screen:
             Height: =611
             Visible: =show_Dialog_Detail_Product_Request
             Width: =799
-            X: =411
-            Y: =135
+            X: =283
+            Y: =78
             ZIndex: =32
 
         Label_Title_Detail_Product_Request_Warehouse As label:
@@ -2953,8 +2953,8 @@ Warehouse_Manager As screen:
             Text: ="Chi tiết"
             Visible: =show_Dialog_Detail_Product_Request
             Width: =Rectangle_Dialog_Detail_Product_Request_Warehouse.Width
-            X: =411
-            Y: =135
+            X: =283
+            Y: =78
             ZIndex: =33
 
         Label_Id_Detail_Product_Request_Warehouse As label:
@@ -2972,8 +2972,8 @@ Warehouse_Manager As screen:
             Text: ="Mã sản phẩm"
             Visible: =show_Dialog_Detail_Product_Request
             Width: =374
-            X: =459
-            Y: =216
+            X: =331
+            Y: =159
             ZIndex: =34
 
         Label_Quantity_Detail_Product_Request_Warehouse As label:
@@ -2991,8 +2991,8 @@ Warehouse_Manager As screen:
             Text: ="Số lượng yêu cầu"
             Visible: =show_Dialog_Detail_Product_Request
             Width: =374
-            X: =459
-            Y: =376
+            X: =331
+            Y: =319
             ZIndex: =35
 
         Label_Name_Detail_Product_Request_Warehouse As label:
@@ -3010,8 +3010,8 @@ Warehouse_Manager As screen:
             Text: ="Tên sản phẩm"
             Visible: =show_Dialog_Detail_Product_Request
             Width: =374
-            X: =459
-            Y: =296
+            X: =331
+            Y: =239
             ZIndex: =36
 
         Label_Reason_Detail_Product_Request_Warehouse As label:
@@ -3029,8 +3029,8 @@ Warehouse_Manager As screen:
             Text: ="Lý do"
             Visible: =show_Dialog_Detail_Product_Request
             Width: =374
-            X: =459
-            Y: =450
+            X: =331
+            Y: =393
             ZIndex: =37
 
         Label_Note_Detail_Product_Request_Warehouse As label:
@@ -3048,8 +3048,8 @@ Warehouse_Manager As screen:
             Text: ="Ghi chú"
             Visible: =show_Dialog_Detail_Product_Request
             Width: =374
-            X: =459
-            Y: =576
+            X: =331
+            Y: =519
             ZIndex: =38
 
         Icon_Cancel_Detail_Product_Request_Warehouse As icon.CancelBadge:
@@ -3059,8 +3059,8 @@ Warehouse_Manager As screen:
             OnSelect: =Set(show_Dialog_Detail_Product_Request,false)
             Visible: =show_Dialog_Detail_Product_Request
             Width: =34
-            X: =1139
-            Y: =143
+            X: =1011
+            Y: =86
             ZIndex: =39
 
         TextInput_Id__Detail_Product_Request_Warehouse As text:
@@ -3090,8 +3090,8 @@ Warehouse_Manager As screen:
             Size: =15
             Visible: =show_Dialog_Detail_Product_Request
             Width: =If(show_Dialog_Detail_Product_Request && IsBlank(Gallery_Request_Product_Warehouse.Selected.id_Product),220,700)
-            X: =461
-            Y: =246
+            X: =333
+            Y: =189
             ZIndex: =40
 
         TextInput_Name_Detail_Product_Request_Warehouse As text:
@@ -3103,8 +3103,8 @@ Warehouse_Manager As screen:
             Size: =15
             Visible: =show_Dialog_Detail_Product_Request
             Width: =700
-            X: =461
-            Y: =326
+            X: =333
+            Y: =269
             ZIndex: =41
 
         TextInput_Quantity_Detail_Product_Request_Warehouse As text:
@@ -3116,8 +3116,8 @@ Warehouse_Manager As screen:
             Size: =15
             Visible: =show_Dialog_Detail_Product_Request
             Width: =700
-            X: =461
-            Y: =400
+            X: =333
+            Y: =343
             ZIndex: =42
 
         TextInput_Reason_Detail_Product_Request_Warehouse As text:
@@ -3132,8 +3132,8 @@ Warehouse_Manager As screen:
             Size: =15
             Visible: =show_Dialog_Detail_Product_Request
             Width: =700
-            X: =461
-            Y: =474
+            X: =333
+            Y: =417
             ZIndex: =43
 
         TextInput_Note_Detail_Product_Request_Warehouse As text:
@@ -3148,8 +3148,8 @@ Warehouse_Manager As screen:
             Size: =15
             Visible: =show_Dialog_Detail_Product_Request
             Width: =700
-            X: =462
-            Y: =600
+            X: =334
+            Y: =543
             ZIndex: =44
 
         Label_Id_Detail_Product_Request_Warehouse_1 As label:
@@ -3209,8 +3209,8 @@ Warehouse_Manager As screen:
             Underline: =true
             Visible: =If(show_Dialog_Detail_Product_Request && IsBlank(Gallery_Request_Product_Warehouse.Selected.id_Product),true,false)
             Width: =250
-            X: =909
-            Y: =186
+            X: =781
+            Y: =129
             ZIndex: =45
 
         DropdownDropdown_Category_Detail_Prodcut_Request As dropdown:
@@ -3218,8 +3218,8 @@ Warehouse_Manager As screen:
             Items: =Category
             Visible: =If(show_Dialog_Detail_Product_Request && IsBlank(Gallery_Request_Product_Warehouse.Selected.id_Product),true,false)
             Width: =220
-            X: =700
-            Y: =246
+            X: =572
+            Y: =189
             ZIndex: =46
 
         Dropdown_Warehouse_Detail_Product_Request As dropdown:
@@ -3227,8 +3227,8 @@ Warehouse_Manager As screen:
             Items: =Warehouse_1
             Visible: =If(show_Dialog_Detail_Product_Request && IsBlank(Gallery_Request_Product_Warehouse.Selected.id_Product),true,false)
             Width: =220
-            X: =939
-            Y: =246
+            X: =811
+            Y: =189
             ZIndex: =47
 
         Label_Warehouse_Detail_Product_Request_Warehouse As label:
@@ -3246,8 +3246,8 @@ Warehouse_Manager As screen:
             Text: ="Kho"
             Visible: =If(show_Dialog_Detail_Product_Request && IsBlank(Gallery_Request_Product_Warehouse.Selected.id_Product),true,false)
             Width: =222
-            X: =937
-            Y: =216
+            X: =809
+            Y: =159
             ZIndex: =48
 
         Label_Category_Detail_Product_Request_Warehouse As label:
@@ -3265,8 +3265,8 @@ Warehouse_Manager As screen:
             Text: ="Danh mục"
             Visible: =If(show_Dialog_Detail_Product_Request && IsBlank(Gallery_Request_Product_Warehouse.Selected.id_Product),true,false)
             Width: =222
-            X: =698
-            Y: =216
+            X: =570
+            Y: =159
             ZIndex: =49
 
     dialog_Confirm_Import_Product_Warehouse As group:
