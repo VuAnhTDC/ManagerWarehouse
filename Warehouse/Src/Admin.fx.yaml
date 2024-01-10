@@ -63,7 +63,7 @@ Admin As screen:
                 "Gallery1_User_Admin As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver5.0'":
                     DelayItemLoading: =true
                     Height: =464
-                    Items: =User
+                    Items: =Filter(User,activity=true)
                     Layout: =Layout.Vertical
                     LoadingSpinner: =LoadingSpinner.Data
                     TemplatePadding: =0
@@ -441,7 +441,8 @@ Admin As screen:
                                             user_Name: TextInput_Name_Admin.Text,
                                             email_User: TextInput_Email_Admin.Text,
                                             phonenumber_User: TextInput_Phone_Admin.Text,
-                                            id_Role: Dropdown_Role_Admin.Selected.ID
+                                            id_Role: Dropdown_Role_Admin.Selected.ID,
+                                            activity: true
                                         }
                                     );
                                     Reset(TextInput_Name_Admin);
@@ -457,9 +458,13 @@ Admin As screen:
                         )
                     ),
                     confirm_dialog_admin = "Remove",
-                    RemoveIf(
+                    Patch(
                         User,
-                        ID = Gallery1_User_Admin.Selected.ID
+                        LookUp(
+                            User,
+                            ID = Gallery1_User_Admin.Selected.ID
+                        ),
+                        {activity: false}
                     );
                     Notify(
                         "User đã được xóa thành công.",
@@ -528,9 +533,9 @@ Admin As screen:
                                         );
                                     );
                                     Notify(
-                                            "User đã được sửa thành công!!!",
-                                            NotificationType.Success
-                                        )
+                                        "User đã được sửa thành công!!!",
+                                        NotificationType.Success
+                                    )
                                 )
                             )
                         )

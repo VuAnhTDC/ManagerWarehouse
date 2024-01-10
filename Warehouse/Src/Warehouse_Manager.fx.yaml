@@ -78,7 +78,7 @@ Warehouse_Manager As screen:
                 "Gallery_Category_Warehouse As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver5.0'":
                     DelayItemLoading: =true
                     Height: =464
-                    Items: =Category
+                    Items: =Filter(Category,activity=true)
                     Layout: =Layout.Vertical
                     LoadingSpinner: =LoadingSpinner.Data
                     TemplatePadding: =0
@@ -238,11 +238,11 @@ Warehouse_Manager As screen:
                 Icon2_3 As icon.BackArrow:
                     Color: =RGBA(255, 255, 255, 1)
                     Height: =35
-                    Icon: =Icon.BackArrow
+                    Icon: =Icon.CancelBadge
                     OnSelect: =Set(add_category,false)
                     Visible: =If(add_category=true,true,false)
                     Width: =35
-                    X: =40
+                    X: =795
                     Y: =14
                     ZIndex: =14
 
@@ -383,16 +383,19 @@ Warehouse_Manager As screen:
                     Items: |-
                         =If(
                             IsBlank(TextInput_Search_Warehouse.Text),
-                            Product,
                             Filter(
                                 Product,
-                                StartsWith(
+                                activity = true
+                            ),
+                            Filter(
+                                Product,
+                                (StartsWith(
                                     id_Product,
                                     TextInput_Search_Warehouse.Text
                                 ) || StartsWith(
                                     name_Product,
                                     TextInput_Search_Warehouse.Text
-                                )
+                                )) && activity = true
                             )
                         )
                     Layout: =Layout.Vertical
@@ -724,7 +727,12 @@ Warehouse_Manager As screen:
                 Button_Thêm__Product_Manager_Warehouse As button:
                     OnSelect: =Set(confirm_dialog_warehouse,"Add")
                     Text: ="Thêm"
-                    Visible: =!add_product_choose_file
+                    Visible: |-
+                        =If(
+                            !add_product_choose_file && add_warehouse,
+                            true,
+                            false
+                        )
                     X: =541
                     Y: =673
                     ZIndex: =12
@@ -930,13 +938,13 @@ Warehouse_Manager As screen:
                     Items: |-
                         =If(
                             IsBlank(TextInput_Search_Supplier_Warehouse.Text),
-                            Supplier,
+                            Filter(Supplier,activity=true),
                             Filter(
                                 Supplier,
                                 StartsWith(
                                     name_Supplier,
                                     TextInput_Search_Supplier_Warehouse.Text
-                                )
+                                )&&activity=true
                             )
                         )
                     Layout: =Layout.Vertical
@@ -2264,7 +2272,8 @@ Warehouse_Manager As screen:
                                     price_Product: Value(TextInput_Price_Warehouse.Text),
                                     quantity_Product: Value(TextInput_Quantity_Warehouse.Text),
                                     id_Category: Dropdown_Category_Warehouse.SelectedText.'data-ADB4D7A662F548B49FAC2B986E348A1BID',
-                                    id_Warehouse: Dropdown_Warehouse.SelectedText.'data-ADB4D7A662F548B49FAC2B986E348A1BID'
+                                    id_Warehouse: Dropdown_Warehouse.SelectedText.'data-ADB4D7A662F548B49FAC2B986E348A1BID',
+                                    activity: true
                                 }
                             );
                             Reset(TextInput_MaSP_Warehouse);
@@ -2289,14 +2298,14 @@ Warehouse_Manager As screen:
                             "Vui lòng chọn item cần xóa!!!",
                             NotificationType.Error
                         ),
-                        RemoveIf(
-                            Product_Supplier,
-                            id_Product = Gallery1_Product_Warehouse.Selected.id_Product
-                        );
-                        RemoveIf(
+                        Patch(
                             Product,
-                            id_Product = Gallery1_Product_Warehouse.Selected.id_Product
-                        )
+                            LookUp(
+                                Product,
+                                id_Product = Gallery1_Product_Warehouse.Selected.id_Product
+                            ),
+                            {activity: false}
+                        );
                     );
                     Notify(
                         "Sản phẩm đã được xóa thành công!!!",
@@ -2374,7 +2383,8 @@ Warehouse_Manager As screen:
                                         name: First(DataCardValue_ChooseFile_Product_Warehouse.Attachments).Name
                                     }
                                 }
-                            ); Notify(
+                            );
+                            Notify(
                                 "Thêm thành công!!!",
                                 NotificationType.Success,
                                 1500
@@ -2474,7 +2484,11 @@ Warehouse_Manager As screen:
                     confirm_supplier_warehouse = "Add",
                     If(
                         IsBlank(TextInput_TaxCode_Warehouse.Text) || IsBlank(TextInput_Name_Supplier_Warehouse.Text) || IsBlank(TextInput_Address_Supplier_Warehouse.Text) || IsBlank(TextInput_Contact_Name_Warehouse.Text) || IsBlank(TextInput_Contact_Email_Warehouse.Text) || IsBlank(TextInput_Contact_Phone_Warehouse.Text),
-                        Notify("Vui lòng điền đầy đủ thông tin!!!"),
+                        Notify(
+                            "Vui lòng điền đầy đủ thông tin!!!",
+                            NotificationType.Error,
+                            1500
+                        ),
                         If(
                             !IsBlank(
                                 LookUp(
@@ -2496,7 +2510,8 @@ Warehouse_Manager As screen:
                                     ),
                                     Notify(
                                         "Email không hợp lệ!!!",
-                                        NotificationType.Error
+                                        NotificationType.Error,
+                                        1500
                                     ),
                                     Patch(
                                         Supplier,
@@ -2507,7 +2522,8 @@ Warehouse_Manager As screen:
                                             'address_ Supplier': TextInput_Address_Supplier_Warehouse.Text,
                                             contact_Person_Name: TextInput_Contact_Name_Warehouse.Text,
                                             contact_Person_Email: TextInput_Contact_Email_Warehouse.Text,
-                                            contact_Person_Phone_Number: TextInput_Contact_Phone_Warehouse.Text
+                                            contact_Person_Phone_Number: TextInput_Contact_Phone_Warehouse.Text,
+                                            activity: true
                                         }
                                     );
                                     Reset(TextInput_TaxCode_Warehouse);
@@ -2516,7 +2532,11 @@ Warehouse_Manager As screen:
                                     Reset(TextInput_Contact_Name_Warehouse);
                                     Reset(TextInput_Contact_Email_Warehouse);
                                     Reset(TextInput_Contact_Phone_Warehouse);
-                                    Notify("Nhà cung cấp đã được thêm thành công!!!")
+                                    Notify(
+                                        "Nhà cung cấp đã được thêm thành công!!!",
+                                        NotificationType.Success,
+                                        1500
+                                    )
                                 )
                             )
                         )
@@ -2529,12 +2549,20 @@ Warehouse_Manager As screen:
                             "Vui lòng chọn item cần xóa!!!",
                             NotificationType.Error
                         ),
-                        RemoveIf(
+                        Patch(
                             Supplier,
-                            taxCode = Gallery_Supplier_Warehouse.Selected.taxCode
+                            LookUp(
+                                Supplier,
+                                taxCode = Gallery_Supplier_Warehouse.Selected.taxCode
+                            ),
+                            {activity: false}
                         )
                     );
-                    Notify("Nhà cung cấp đã được xóa thành công!!!"),
+                    Notify(
+                        "Nhà cung cấp đã được xóa thành công!!!",
+                        NotificationType.Success,
+                        1500
+                    ),
                     //Sửa
                     confirm_supplier_warehouse = "Edit",
                     If(
@@ -2570,7 +2598,11 @@ Warehouse_Manager As screen:
                                         contact_Person_Phone_Number: TextInput_Contact_Phone_Warehouse.Text
                                     }
                                 );
-                                Notify("Nhà cung cấp đã được sửa thành công!!!")
+                                Notify(
+                                    "Nhà cung cấp đã được sửa thành công!!!",
+                                    NotificationType.Success,
+                                    1500
+                                )
                             )
                         )
                     );
@@ -2670,12 +2702,16 @@ Warehouse_Manager As screen:
                         Patch(
                             Category,
                             Defaults(Category),
-                            {name_Category: TextInput_Name_Category_Warehouse.Text}
+                            {
+                                name_Category: TextInput_Name_Category_Warehouse.Text,
+                                activity: true
+                            }
                         );
                         Reset(TextInput_Name_Category_Warehouse);
                         Notify(
                             "Thêm danh mục thành công!!!",
-                            NotificationType.Success
+                            NotificationType.Success,
+                            1500
                         )
                     ),
                     //Xóa
@@ -2686,11 +2722,19 @@ Warehouse_Manager As screen:
                             "Vui lòng chọn item cần xóa!!!",
                             NotificationType.Error
                         ),
-                        RemoveIf(
+                        Patch(
                             Category,
-                            ID = Gallery_Category_Warehouse.Selected.ID
+                            LookUp(
+                                Category,
+                                ID = Gallery_Category_Warehouse.Selected.ID
+                            ),
+                            {activity: false}
                         );
-                        Notify("Xóa danh mục thành công!!!")
+                        Notify(
+                            "Xóa danh mục thành công!!!",
+                            NotificationType.Success,
+                            1500
+                        )
                     ),
                     //Sửa
                     confirm_category_warehouse = "Edit",
@@ -2716,7 +2760,8 @@ Warehouse_Manager As screen:
                             );
                             Notify(
                                 "Sửa danh mục thành công!!!",
-                                NotificationType.Success
+                                NotificationType.Success,
+                                1500
                             )
                         )
                     );
