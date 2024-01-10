@@ -1481,7 +1481,9 @@ HomeSale As screen:
                     Color: =If(valuePosionRequestQuote = 0,Color.White,Color.Black)
                     Fill: =If(valuePosionRequestQuote=0,RGBA(56, 96, 178, 1),RGBA(215, 223, 240, 1))
                     FontWeight: =FontWeight.Bold
-                    OnSelect: =Set(valuePosionRequestQuote,0)
+                    OnSelect: |-
+                        =Set(valuePosionRequestQuote,0);
+                        Reset(edtKeySearchQuote_HomeSale)
                     Text: ="Tất cả"
                     X: =375
                     Y: =14
@@ -1491,7 +1493,9 @@ HomeSale As screen:
                     Color: =If(valuePosionRequestQuote = 1,Color.White,Color.Black)
                     Fill: =If(valuePosionRequestQuote=1,RGBA(56, 96, 178, 1),RGBA(215, 223, 240, 1))
                     FontWeight: =FontWeight.Normal
-                    OnSelect: =Set(valuePosionRequestQuote,1)
+                    OnSelect: |-
+                        =Set(valuePosionRequestQuote,1);
+                        Reset(edtKeySearchQuote_HomeSale)
                     Text: ="Báo giá"
                     X: =555
                     Y: =12
@@ -1501,7 +1505,9 @@ HomeSale As screen:
                     Color: =If(valuePosionRequestQuote = 2,Color.White,Color.Black)
                     Fill: =If(valuePosionRequestQuote=2,RGBA(56, 96, 178, 1),RGBA(215, 223, 240, 1))
                     FontWeight: =FontWeight.Normal
-                    OnSelect: =Set(valuePosionRequestQuote,2)
+                    OnSelect: |-
+                        =Set(valuePosionRequestQuote,2);
+                        Reset(edtKeySearchQuote_HomeSale)
                     Text: ="Đơn hàng"
                     X: =737
                     Y: =12
@@ -1542,7 +1548,7 @@ HomeSale As screen:
                 Height: =445
                 Items: |-
                     =If(
-                        IsBlank(edtKeySearchQuote_HomeSale),
+                        IsBlank(edtKeySearchQuote_HomeSale.Text),
                         If(
                             valuePosionRequestQuote = 0,
                             Quote,
