@@ -237,8 +237,8 @@ DetailQuote_Screen As screen:
                 Size: =15
                 Text: |-
                     =Text(Value(ThisItem.price_Quote_Product * ThisItem.quantity_Quote_Product + (ThisItem.price_Quote_Product * ThisItem.quantity_Quote_Product * ThisItem.vat%)), "[$-en-US]#,### đ")
-                Width: =435
-                X: =258
+                Width: =365
+                X: =328
                 Y: =51
                 ZIndex: =8
 
@@ -548,9 +548,17 @@ DetailQuote_Screen As screen:
                     dataNotEnough As Temp,
                     If(
                         Temp.table = "Product" && Temp.status,
-                       ForAll(
-                        User As TempUser, If(TempUser.id_Role = 3,Warehouse_Manager_SendEmailRole.Run(TempUser.email_User,"Sản phẩm có số lượng không đáp ứng nhu cầu khách hàng"))
-                       )
+                        ForAll(
+                            User As TempUser,
+                            If(
+                                TempUser.id_Role = 3,
+                                Warehouse_Manager_SendEmailRole.Run(
+                                    TempUser.email_User,
+                                    "Sản phẩm có số lượng không đáp ứng nhu cầu khách hàng",
+                                    "Sản phẩm có mã: " & Temp.idData & " .Hiện tại không đáp ứng nhu cầu đơn hàng của khách hàng"
+                                )
+                            )
+                        )
                     )
                 ),
                 Patch(
