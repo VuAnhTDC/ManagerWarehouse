@@ -1518,6 +1518,7 @@ HomeSale As screen:
             edtKeySearchQuote_HomeSale As text:
                 Default: =""
                 HintText: ="Tìm kiếm"
+                OnSelect: =If(!IsBlank(edtKeySearchQuote_HomeSale.Text),Set(valuePosionRequestQuote,0))
                 Width: =413
                 X: =158
                 Y: =96
@@ -1541,21 +1542,31 @@ HomeSale As screen:
                 Height: =445
                 Items: |-
                     =If(
-                        valuePosionRequestQuote = 0,
-                        Quote,
+                        IsBlank(edtKeySearchQuote_HomeSale),
                         If(
-                            valuePosionRequestQuote = 1,
-                            Filter(
-                                Quote,
-                                quote_Status = false
-                            ),
+                            valuePosionRequestQuote = 0,
+                            Quote,
                             If(
-                                valuePosionRequestQuote = 2,
+                                valuePosionRequestQuote = 1,
                                 Filter(
                                     Quote,
-                                    quote_Status = true
+                                    quote_Status = false
+                                ),
+                                If(
+                                    valuePosionRequestQuote = 2,
+                                    Filter(
+                                        Quote,
+                                        quote_Status = true
+                                    )
                                 )
                             )
+                        ),
+                        Filter(
+                            Quote,
+                            (StartsWith(
+                                id_Quote,
+                                edtKeySearchQuote_HomeSale.Text
+                            ))
                         )
                     )
                 Layout: =Layout.Vertical
