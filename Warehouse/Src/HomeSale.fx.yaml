@@ -295,7 +295,7 @@ HomeSale As screen:
                 Fill: =If(btnFunctionSelection_Value_HomeSale = 6,Color.Blue,RGBA(241,244,249,1))
                 Height: =60
                 OnSelect: =Set(btnFunctionSelection_Value_HomeSale,6);
-                Text: ="Thống kê đơn hàng, danh thu"
+                Text: ="Thống kê đơn hàng, doanh thu"
                 Width: =300
                 X: =7
                 Y: =361
