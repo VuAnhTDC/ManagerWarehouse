@@ -2580,6 +2580,7 @@ HomeSale As screen:
 
             Label27 As label:
                 Height: =48
+                Italic: =true
                 OnSelect: =Select(Parent)
                 Text: |-
                     ="Đơn hàng: " & CountRows(Filter(data,id_Customer = ThisItem.ID && quote_Status = true))
