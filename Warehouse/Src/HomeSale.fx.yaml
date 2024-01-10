@@ -591,6 +591,7 @@ HomeSale As screen:
                     Default: =galleryServiceList_HomeSale_1.Selected.service_Decription
                     Height: =237
                     Mode: =TextMode.MultiLine
+                    OnChange: =Set(isDisableBtnUpdateService,true)
                     Width: =400
                     X: =198
                     Y: =189
@@ -608,6 +609,7 @@ HomeSale As screen:
                     Default: |-
                         =Text(Value(galleryServiceList_HomeSale_1.Selected.service_Price), "[$-en-US]#,###")
                     Format: =TextFormat.Number
+                    OnChange: =Set(isDisableBtnUpdateService,true)
                     Width: =400
                     X: =198
                     Y: =447
