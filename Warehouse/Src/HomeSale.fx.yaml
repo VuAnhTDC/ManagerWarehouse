@@ -7,6 +7,7 @@ HomeSale As screen:
                 email_User = User().Email
             )
         );
+        
         Set(
             getRoleUser,
             LookUp(
@@ -15,18 +16,12 @@ HomeSale As screen:
             )
         );
         If(
-            IsBlank(btnFunctionSelection_Value_HomeSale),
+            IsBlank(functionClick),
             If(
                 informationUser.id_Role = 1,
-                Set(
-                    btnFunctionSelection_Value_HomeSale,
-                    1
-                ),
+                Set(functionClick,"");,
                 informationUser.id_Role = 2,
-                Set(
-                    btnFunctionSelection_Value_HomeSale,
-                    2
-                )
+                Set(functionClick,"khach_hang");
             )
         );
         Set(
@@ -97,7 +92,6 @@ HomeSale As screen:
             isVisibleRequestBuyProductHaveNotWarehouse,
             false
         );
-        Set(functionClick,"");
 
     containerInformationUser_HomeSale As groupContainer.manualLayoutContainer:
         Fill: =RGBA(255, 255, 255, 1)
@@ -256,6 +250,7 @@ HomeSale As screen:
             LoadingSpinner: =LoadingSpinner.Data
             TemplatePadding: =0
             TemplateSize: =100
+            Visible: =If(informationUser.id_Role =2,true,false)
             Width: =317
             Y: =162
             ZIndex: =17
