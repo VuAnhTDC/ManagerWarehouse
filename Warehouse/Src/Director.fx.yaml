@@ -511,10 +511,10 @@ Director As screen:
                                 Collect_Report,
                                 JSONFormat.IncludeBinaryData & JSONFormat.IgnoreUnsupportedTypes
                             ),
-                            "Báo cáo đơn hàng_" & ComboBox_Sales_Director.Selected.user_Name & "_" & Dropdown_Year_Director.Selected.Value
+                            "Báo cáo_" & ComboBox_Sales_Director.Selected.user_Name & "_" & Dropdown_Year_Director.Selected.Value
                         ).url;
                         Notify(
-                            "Xuất file đơn hàng thành công!!!",
+                            "Xuất file thành công!!!",
                             NotificationType.Success,
                             1500
                         )
