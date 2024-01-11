@@ -2229,22 +2229,47 @@ HomeSale As screen:
                             "Vui lòng điền đủ thông tin",
                             NotificationType.Error
                         ),
-                        Collect(
-                            arrayProductAddPurchaseRequest,
-                            {
-                                id_Product:Gallery4.Selected.id_Product,
-                                name_Product:Gallery4.Selected.name_Product,
-                                price_Product:Gallery4.Selected.price_Product,
-                                quantity_Product:Gallery4.Selected.quantity_Product,
-                                quantity: edtQuantityAddProductRequest_HomeSale.Text,
-                                unit: edtUnitAddProductRequest_HomeSale.Text,
-                                reason: edtReasonAddProductRequest_HomeSale.Text,
-                                note: edtNoteAddProductRequest_HomeSale.Text
-                            }
-                        );
-                        Set(
-                            isVisiblePurchaseRequest_AddProduct,
-                            !isVisiblePurchaseRequest_AddProduct
+                        If(
+                            IsBlank(
+                                LookUp(
+                                    arrayProductAddPurchaseRequest,
+                                    id_Product = Gallery4.Selected.id_Product
+                                )
+                            ),
+                            Collect(
+                                arrayProductAddPurchaseRequest,
+                                {
+                                    id_Product: Gallery4.Selected.id_Product,
+                                    name_Product: Gallery4.Selected.name_Product,
+                                    price_Product: Gallery4.Selected.price_Product,
+                                    quantity_Product: Gallery4.Selected.quantity_Product,
+                                    quantity: edtQuantityAddProductRequest_HomeSale.Text,
+                                    unit: edtUnitAddProductRequest_HomeSale.Text,
+                                    reason: edtReasonAddProductRequest_HomeSale.Text,
+                                    note: edtNoteAddProductRequest_HomeSale.Text
+                                }
+                            );
+                            Set(
+                                isVisiblePurchaseRequest_AddProduct,
+                                !isVisiblePurchaseRequest_AddProduct
+                            ),
+                            Patch(
+                                arrayProductAddPurchaseRequest,
+                                LookUp(
+                                    arrayProductAddPurchaseRequest,
+                                    id_Product = Gallery4.Selected.id_Product
+                                ),
+                                {
+                                    quantity: LookUp(
+                                        arrayProductAddPurchaseRequest,
+                                        id_Product = Gallery4.Selected.id_Product
+                                    ).quantity + Value(edtQuantityAddProductRequest_HomeSale.Text)
+                                }
+                            );
+                             Set(
+                                isVisiblePurchaseRequest_AddProduct,
+                                !isVisiblePurchaseRequest_AddProduct
+                            )
                         )
                     )
                 Text: ="Xác nhận"
