@@ -1780,11 +1780,17 @@ Warehouse_Manager As screen:
                 Button1_AddNew_Import_Product_Warehouse As button:
                     DisabledColor: =RGBA(255, 255, 255, 1)
                     Height: =61
-                    OnSelect: |
+                    OnSelect: |-
                         =Set(
                             add_import_product_no_request,
                             true
                         );
+                        Reset(TextInput_Quantity_Import_Product_Warehouse);
+                        Reset(TextInput_Price_Import_Product_Warehouse);
+                        Reset(TextInput_Note_Import_Product_Warehouse);
+                        Reset(TextInput_Reason_Import_Product_Warehouse);
+                        Reset(DatePicker_Date_Import_Product_Warehouse);
+                        Reset(ComboBox_Supplier_Import_Product_Warehouse);
                     RadiusTopLeft: =0
                     RadiusTopRight: =0
                     Size: =20
@@ -1829,7 +1835,14 @@ Warehouse_Manager As screen:
                         Color: =RGBA(255, 255, 255, 1)
                         Height: =35
                         Icon: =Icon.CancelBadge
-                        OnSelect: =Set(add_import_product_no_request,false)
+                        OnSelect: |-
+                            =Set(add_import_product_no_request,false);
+                            Reset(TextInput_Quantity_Import_Product_Warehouse);
+                            Reset(TextInput_Price_Import_Product_Warehouse);
+                            Reset(TextInput_Note_Import_Product_Warehouse);
+                            Reset(TextInput_Reason_Import_Product_Warehouse);
+                            Reset(DatePicker_Date_Import_Product_Warehouse);
+                            Reset(ComboBox_Supplier_Import_Product_Warehouse);
                         Visible: =add_import_product_no_request
                         Width: =35
                         X: =677
@@ -3376,6 +3389,23 @@ Warehouse_Manager As screen:
                             "Nhập hàng thành công!!!",
                             NotificationType.Success
                         );
+                        //Update supplier for product
+                If(
+                            IsBlank(
+                                LookUp(
+                                    Product_Supplier,
+                                    id_Product = ComboBox_Product_Import_Product_Warehouse.Selected.id_Product && taxCode_Supplier = ComboBox_Supplier_Import_Product_Warehouse.Selected.taxCode
+                                )
+                            ),
+                            Patch(
+                                Product_Supplier,
+                                Defaults(Product_Supplier),
+                                {
+                                    id_Product: ComboBox_Product_Import_Product_Warehouse.Selected.id_Product,
+                                    taxCode_Supplier: ComboBox_Supplier_Import_Product_Warehouse.Selected.taxCode
+                                }
+                            )
+                        );
                         Set(
                             show_dialog_import_product,
                             false
@@ -3452,6 +3482,23 @@ Warehouse_Manager As screen:
                             ).email_User,
                             "Hoàn tất nhập hàng!!!",
                             "Đã nhập hàng theo yêu cầu" & "<br>" & "Mã yêu cầu: " & Gallery_Request_Import_Product_Warehouse.Selected.id_Purchase_request & "<br>" & "ID sản phẩm: " & Gallery_Request_Import_Product_Warehouse.Selected.id_Product & "<br>" & "Tên sản phẩm: " & Gallery_Request_Import_Product_Warehouse.Selected.name_Product & "<br>" & "Số lượng yêu cầu: " & Gallery_Request_Import_Product_Warehouse.Selected.request_Quantity & " " & Gallery_Request_Import_Product_Warehouse.Selected.unit & "<br>" & "Số lượng đã nhập: " & Gallery_Request_Import_Product_Warehouse.Selected.importProduct_Quantity & " " & Gallery_Request_Import_Product_Warehouse.Selected.unit
+                        );
+                        //Update supplier for product
+                If(
+                            IsBlank(
+                                LookUp(
+                                    Product_Supplier,
+                                    id_Product = Gallery_Request_Import_Product_Warehouse.Selected.id_Product && taxCode_Supplier = ComboBox_Supplier_Import_Product_Warehouse.Selected.taxCode
+                                )
+                            ),
+                            Patch(
+                                Product_Supplier,
+                                Defaults(Product_Supplier),
+                                {
+                                    id_Product: Gallery_Request_Import_Product_Warehouse.Selected.id_Product,
+                                    taxCode_Supplier: ComboBox_Supplier_Import_Product_Warehouse.Selected.taxCode
+                                }
+                            )
                         );
                         Notify(
                             "Nhập hàng thành công!!!",
