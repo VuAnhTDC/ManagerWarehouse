@@ -1779,7 +1779,21 @@ HomeSale As screen:
                     BorderThickness: =1
                     DelayItemLoading: =true
                     Height: =477
-                    Items: =Filter(Product,activity = true)
+                    Items: |-
+                        =If(
+                            IsBlank(TextInput3.Text),
+                            Filter(
+                                Product,
+                                activity = true
+                            ),
+                            Filter(
+                                Product,
+                                (StartsWith(
+                                    id_Product,
+                                    TextInput3.Text
+                                ))
+                            )
+                        )
                     Layout: =Layout.Vertical
                     LoadingSpinner: =LoadingSpinner.Data
                     TemplatePadding: =0
