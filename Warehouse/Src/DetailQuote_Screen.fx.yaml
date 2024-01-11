@@ -583,7 +583,11 @@ DetailQuote_Screen As screen:
                                 id_Product = Temp.id_Product
                             ).quantity_Product - Temp.quantity_Quote_Product
                         }
-                    )
+                    );
+                    Notify("asd: "& LookUp(
+                                Product,
+                                id_Product = Temp.id_Product
+                            ).quantity_Product)
                 );
                 Notify(
                     "Chuyển sang đơn hàng thành công",
