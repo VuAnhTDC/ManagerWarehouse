@@ -2531,7 +2531,7 @@ Warehouse_Manager As screen:
                                         Supplier,
                                         Defaults(Supplier),
                                         {
-                                            taxCode: Value(TextInput_TaxCode_Warehouse.Text),
+                                            taxCode: TextInput_TaxCode_Warehouse.Text,
                                             name_Supplier: TextInput_Name_Supplier_Warehouse.Text,
                                             'address_ Supplier': TextInput_Address_Supplier_Warehouse.Text,
                                             contact_Person_Name: TextInput_Contact_Name_Warehouse.Text,
