@@ -2164,7 +2164,7 @@ Warehouse_Manager As screen:
                                 ComboBox_Supplier_Import_Product_Warehouse As combobox:
                                     DisplayFields: =["name_Supplier"]
                                     IsSearchable: =false
-                                    Items: =Supplier
+                                    Items: =Filter(Supplier,activity = true)
                                     SearchFields: =["name_Supplier"]
                                     SearchItems: =[]
                                     SelectMultiple: =false
@@ -2233,7 +2233,7 @@ Warehouse_Manager As screen:
             ZIndex: =6
 
         Button_Confirm_Product_Warehouse As button:
-            OnSelect: |-
+            OnSelect: |
                 =If(
                     //Thêm
                     confirm_dialog_warehouse = "Add",
@@ -2388,7 +2388,8 @@ Warehouse_Manager As screen:
                                 "Thêm thành công!!!",
                                 NotificationType.Success,
                                 1500
-                            ),
+                            );
+                           ,
                             Notify(
                                 "Vui lòng chọn tệp excel!!!",
                                 NotificationType.Error,
@@ -2400,7 +2401,7 @@ Warehouse_Manager As screen:
                 Set(
                     confirm_dialog_warehouse,
                     ""
-                )
+                );
             Text: ="Có"
             Visible: =If(Or(confirm_dialog_warehouse="Add",confirm_dialog_warehouse="Edit",confirm_dialog_warehouse="Remove",confirm_dialog_warehouse="Add_Choose_File"),true,false)
             X: =528
