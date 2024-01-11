@@ -2297,58 +2297,63 @@ HomeSale As screen:
                 FontWeight: =FontWeight.Bold
                 Height: =44
                 OnSelect: |-
-                    =If(!IsBlank(arrayProductAddPurchaseRequest),If(
-                        IsBlank(dpkDeliveryDate_HomeSale.SelectedDate),
-                        Notify(
-                            "Vui lòng chọn ngày nhận hàng",
-                            NotificationType.Error
-                        ),
-                        Set(
-                            idPurchaseRequest,
-                            "PRQ" & Text(
-                                Now(),
-                                "ddmmyyyyhhmmss"
-                            ) & informationUser.ID
-                        );
-                        Patch(
-                            Purchase_request,
-                            Defaults(Purchase_request),
-                            {
-                                id_Purchase_request: idPurchaseRequest,
-                                request_Date: Now(),
-                                delivery_Date: dpkDeliveryDate_HomeSale.SelectedDate,
-                                status_PurchaseRequest: {Value:"Chưa duyệt"},
-                                id_User: informationUser.ID
-                            }
-                        );
-                        ForAll(
-                            arrayProductAddPurchaseRequest,
+                    =If(
+                        !IsBlank(arrayProductAddPurchaseRequest),
+                        If(
+                            IsBlank(dpkDeliveryDate_HomeSale.SelectedDate),
+                            Notify(
+                                "Vui lòng chọn ngày nhận hàng",
+                                NotificationType.Error
+                            ),
+                            Set(
+                                idPurchaseRequest,
+                                "PRQ" & Text(
+                                    Now(),
+                                    "ddmmyyyyhhmmss"
+                                ) & informationUser.ID
+                            );
                             Patch(
-                                Purchase_request_Product,
-                                Defaults(Purchase_request_Product),
+                                Purchase_request,
+                                Defaults(Purchase_request),
                                 {
                                     id_Purchase_request: idPurchaseRequest,
-                                    id_Product: ThisRecord.id_Product,
-                                    name_Product: ThisRecord.name_Product,
-                                    request_Quantity: Value(ThisRecord.quantity),
-                                    request_Note: ThisRecord.note,
-                                    request_Reason: reason,
-                                    importProduct_Quantity:0,
-                                    unit: unit
+                                    request_Date: Now(),
+                                    delivery_Date: dpkDeliveryDate_HomeSale.SelectedDate,
+                                    status_PurchaseRequest: {Value: "Chưa duyệt"},
+                                    id_User: informationUser.ID
                                 }
+                            );
+                            ForAll(
+                                arrayProductAddPurchaseRequest,
+                                Patch(
+                                    Purchase_request_Product,
+                                    Defaults(Purchase_request_Product),
+                                    {
+                                        id_Purchase_request: idPurchaseRequest,
+                                        id_Product: ThisRecord.id_Product,
+                                        name_Product: ThisRecord.name_Product,
+                                        request_Quantity: Value(ThisRecord.quantity),
+                                        request_Note: ThisRecord.note,
+                                        request_Reason: reason,
+                                        importProduct_Quantity: 0,
+                                        unit: unit
+                                    }
+                                )
+                            );
+                            Set(
+                                isVisibleContainerChoiceDeliveryDateReuqest,
+                                !isVisibleContainerChoiceDeliveryDateReuqest
+                            );
+                            ClearCollect(
+                                arrayProductAddPurchaseRequest,
+                                []
+                            );
+                            Notify(
+                                "Tạo yêu cầu mua hàng thành công (Yêu cầu sẽ được gửi đến quản lý kho phê duyệt)",
+                                NotificationType.Success
                             )
-                        );
-                        Set(
-                            isVisibleContainerChoiceDeliveryDateReuqest,
-                            !isVisibleContainerChoiceDeliveryDateReuqest
-                        );
-                        ClearCollect(
-                            arrayProductAddPurchaseRequest,
-                            []
-                        );
-                        Notify("Tạo yêu cầu mua hàng thành công (Yêu cầu sẽ được gửi đến quản lý kho phê duyệt)")
-                        
-                    ))
+                        )
+                    )
                 Text: ="Xác nhận"
                 Width: =262
                 X: =251
