@@ -303,9 +303,9 @@ HomeSale As screen:
             Items: |-
                 =Table(
                    {
-                        Menu_Icon: customer,
-                        Menu_Name: "Khách hàng",
-                        Screen: "khach_hang"
+                        Menu_Icon: iconservice,
+                        Menu_Name: "Dịch vụ",
+                        Screen: "dichvu"
                     },{
                         Menu_Icon: quote,
                         Menu_Name: "Báo giá, đơn hàng",
@@ -328,7 +328,7 @@ HomeSale As screen:
             LoadingSpinner: =LoadingSpinner.Data
             TemplatePadding: =0
             TemplateSize: =100
-            Visible: =If(informationUser.id_Role =2,true,false)
+            Visible: =If(informationUser.id_Role =1,true,false)
             Width: =317
             Y: =162
             ZIndex: =18
@@ -380,7 +380,7 @@ HomeSale As screen:
                         );
                         Set(
                             functionClick,
-                            "khach_hang"
+                            "khachhang"
                         ),
                         If(
                             ThisItem.Menu_Name = "Báo giá, đơn hàng",
@@ -429,14 +429,14 @@ HomeSale As screen:
                                         "lichsugiaodich"
                                     ),
                                     If(
-                                        ThisItem.Menu_Name = "Thống kê đơn hàng, doanh thu",
+                                        ThisItem.Menu_Name = "Dịch vụ",
                                         Set(
                                             btnFunctionSelection_Value_HomeSale,
-                                            6
+                                            1
                                         );
                                         Set(
                                             functionClick,
-                                            "thongke"
+                                            "dichvu"
                                         )
                                     )
                                 )
