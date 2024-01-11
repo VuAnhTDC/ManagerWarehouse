@@ -2310,13 +2310,6 @@ HomeSale As screen:
                                 "ddmmyyyyhhmmss"
                             ) & informationUser.ID
                         );
-                       /* Set(
-                            sumPricePurchase,
-                            Sum(
-                                arrayProductAddPurchaseRequest,
-                                quantity * price_Product
-                            )
-                        );*/
                         Patch(
                             Purchase_request,
                             Defaults(Purchase_request),
@@ -2353,6 +2346,7 @@ HomeSale As screen:
                             arrayProductAddPurchaseRequest,
                             []
                         );
+                        Notify("Tạo yêu cầu mua hàng thành công (Yêu cầu sẽ được gửi đến quản lý kho phê duyệt)")
                         
                     ))
                 Text: ="Xác nhận"
