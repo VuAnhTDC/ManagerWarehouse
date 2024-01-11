@@ -583,6 +583,16 @@ Warehouse_Manager As screen:
                     Y: =49
                     ZIndex: =4
 
+                Icon6 As icon.Reload:
+                    Color: =RGBA(255, 255, 255, 1)
+                    Height: =35
+                    Icon: =Icon.Reload
+                    OnSelect: =Refresh(Product)
+                    Width: =35
+                    X: =299
+                    Y: =7
+                    ZIndex: =5
+
             Container6_Information_Product_Manager_Warehouse As groupContainer.manualLayoutContainer:
                 AlignInContainer: =AlignInContainer.SetByContainer
                 FillPortions: =2
@@ -2397,6 +2407,7 @@ Warehouse_Manager As screen:
                                     }
                                 }
                             );
+                            Refresh(Product);
                             Notify(
                                 "Thêm thành công!!!",
                                 NotificationType.Success,

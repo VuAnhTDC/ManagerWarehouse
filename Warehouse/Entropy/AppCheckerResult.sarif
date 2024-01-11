@@ -41961,6 +41961,66 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "Warehouse_Manager.Container_Warehouse.Container_Product_Manager_Warehouse.Container6_Product_Manager_Warehouse.Icon6.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Warehouse_Manager.Container_Warehouse.Container_Product_Manager_Warehouse.Container6_Product_Manager_Warehouse.Icon6.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Warehouse_Manager",
+                "type": "Warehouse_Manager.Container_Warehouse.Container_Product_Manager_Warehouse.Container6_Product_Manager_Warehouse.Icon6"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Warehouse_Manager.Container_Warehouse.Container_Product_Manager_Warehouse.Container6_Product_Manager_Warehouse.Icon6.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Warehouse_Manager.Container_Warehouse.Container_Product_Manager_Warehouse.Container6_Product_Manager_Warehouse.Icon6.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Warehouse_Manager",
+                "type": "Warehouse_Manager.Container_Warehouse.Container_Product_Manager_Warehouse.Container6_Product_Manager_Warehouse.Icon6"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "App.icons8-username-48_2"
                 }
               ],
