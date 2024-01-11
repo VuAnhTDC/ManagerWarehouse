@@ -2880,6 +2880,14 @@ Warehouse_Manager As screen:
                     ),
                     If(
                         confirm_approve_warehouse = "Approved",
+                        Warehouse_Manager_SendEmailRole.Run(
+                            LookUp(
+                                User,
+                                ID = Gallery_Request_Approve_Warehouse.Selected.id_User
+                            ).email_User,
+                            "Hoàn tất phê duyệt!!!",
+                            "Yêu cầu mua hàng của bạn đã được phê duyệt <br>Mã yêu cầu: " & Gallery_Request_Approve_Warehouse.Selected.id_Purchase_request
+                        );
                         If(
                             IsError(
                                 Patch(
@@ -2901,14 +2909,6 @@ Warehouse_Manager As screen:
                                 NotificationType.Success,
                                 1500
                             );
-                            Warehouse_Manager_SendEmailRole.Run(
-                                LookUp(
-                                    User,
-                                    ID = Gallery_Request_Approve_Warehouse.Selected.id_User
-                                ).email_User,
-                                "Hoàn tất phê duyệt!!!",
-                                "Yêu cầu mua hàng của bạn đã được phê duyệt <br>Mã yêu cầu: " & Gallery_Request_Approve_Warehouse.Selected.id_Purchase_request
-                            ),
                             ClearCollect(
                                 Purchase_request1,
                                 Purchase_request
@@ -3690,6 +3690,14 @@ Warehouse_Manager As screen:
                             NotificationType.Error,
                             1500
                         ),
+                        Warehouse_Manager_SendEmailRole.Run(
+                            LookUp(
+                                User,
+                                ID = Gallery_Request_Approve_Warehouse.Selected.id_User
+                            ).email_User,
+                            "Từ chối yêu cầu mua hàng!!!",
+                            "Yêu cầu mua hàng của bạn đã bị từ chối <br>Mã yêu cầu: " & Gallery_Request_Approve_Warehouse.Selected.id_Purchase_request & "<br>Lý do từ chối: " & TextInput5_Reason_Decline_Request_Warehouse.Text
+                        );
                         If(
                             IsError(
                                 Patch(
@@ -3710,14 +3718,6 @@ Warehouse_Manager As screen:
                                 "Từ chối thành công!!!",
                                 NotificationType.Success,
                                 1500
-                            );
-                            Warehouse_Manager_SendEmailRole.Run(
-                                LookUp(
-                                    User,
-                                    ID = Gallery_Request_Approve_Warehouse.Selected.id_User
-                                ).email_User,
-                                "Từ chối yêu cầu mua hàng!!!",
-                                "Yêu cầu mua hàng của bạn đã bị từ chối <br>Mã yêu cầu: " & Gallery_Request_Approve_Warehouse.Selected.id_Purchase_request&"<br>Lý do từ chối: "&TextInput5_Reason_Decline_Request_Warehouse.Text
                             )
                         )
                     );
