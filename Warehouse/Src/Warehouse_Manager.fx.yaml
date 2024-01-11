@@ -1210,9 +1210,9 @@ Warehouse_Manager As screen:
                     Clear: =true
                     Default: =If(add_supplier=true,"",Gallery_Supplier_Warehouse.Selected.taxCode)
                     DisplayMode: =If(add_supplier=true,DisplayMode.Edit,DisplayMode.Disabled)
-                    Format: =TextFormat.Number
                     Height: =50
                     HintText: ="Nhập mã số thuế"
+                    MaxLength: =10
                     Size: =15
                     Width: =Parent.Width-80
                     X: =40
@@ -1243,9 +1243,9 @@ Warehouse_Manager As screen:
                 TextInput_Contact_Phone_Warehouse As text:
                     Clear: =true
                     Default: =If(add_supplier=true,"",Gallery_Supplier_Warehouse.Selected.contact_Person_Phone_Number)
-                    Format: =TextFormat.Number
                     Height: =50
                     HintText: ="Nhập số điện thoại"
+                    MaxLength: =10
                     Size: =15
                     Width: =Parent.Width-80
                     X: =40
@@ -2507,7 +2507,7 @@ Warehouse_Manager As screen:
                             !IsBlank(
                                 LookUp(
                                     Supplier,
-                                    taxCode = Value(TextInput_TaxCode_Warehouse.Text)
+                                    taxCode = TextInput_TaxCode_Warehouse.Text
                                 )
                             ),
                             Notify("Mã số thuế đã tồn tại!!!"),
