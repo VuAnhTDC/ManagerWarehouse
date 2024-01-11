@@ -622,7 +622,7 @@ Warehouse_Manager As screen:
 
                 TextInput_Name_Product_Warehouse As text:
                     Clear: =true
-                    Default: =If(add_warehouse=true,"",Gallery_Supplier_Warehouse.Selected.name_Supplier)
+                    Default: =If(add_warehouse=true,"",Gallery1_Product_Warehouse.Selected.name_Product)
                     Height: =50
                     HintText: ="Nhập tên sản phẩm"
                     Size: =15
