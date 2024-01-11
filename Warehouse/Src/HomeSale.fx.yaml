@@ -730,9 +730,10 @@ HomeSale As screen:
                     );
                     If(
                         positionDialog = 2,
-                        RemoveIf(
+                        Patch(
                             Service,
-                            id_Serivce = edtIdService_HomeSale_1.Text
+                            LookUp(Service, id_Serivce = galleryServiceList_HomeSale_1.Selected.id_Serivce),
+                           {activity: false}
                         );
                         Notify("Xóa dịch vụ thành công",NotificationType.Success);
                         Set(showDialogUpdateService,false)
