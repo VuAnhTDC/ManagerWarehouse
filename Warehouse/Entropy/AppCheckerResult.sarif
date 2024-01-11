@@ -181,7 +181,7 @@
                 },
                 "region": {
                   "charLength": 11,
-                  "charOffset": 99,
+                  "charOffset": 100,
                   "snippet": {
                     "text": "\"user_Name\""
                   }
@@ -340,88 +340,8 @@
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 17,
-                  "charOffset": 478,
-                  "snippet": {
-                    "text": "Month(quote_Date)"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "HomeSale",
-                "type": "HomeSale.Container15.Container_Director_1.Container_Chart_Director_1.Container_Order_Director_1.LineChart2_Order_Director_1"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Month"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Chart_Director_1.Container_Order_Director_1.LineChart2_Order_Director_1.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Chart_Director_1.Container_Order_Director_1.LineChart2_Order_Director_1.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 496,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "HomeSale",
-                "type": "HomeSale.Container15.Container_Director_1.Container_Chart_Director_1.Container_Order_Director_1.LineChart2_Order_Director_1"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Filter"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Chart_Director_1.Container_Order_Director_1.LineChart2_Order_Director_1.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Chart_Director_1.Container_Order_Director_1.LineChart2_Order_Director_1.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
                   "charLength": 2,
-                  "charOffset": 500,
+                  "charOffset": 294,
                   "snippet": {
                     "text": "&&"
                   }
@@ -461,7 +381,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 746,
+                  "charOffset": 501,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -501,7 +421,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 764,
+                  "charOffset": 519,
                   "snippet": {
                     "text": "="
                   }
@@ -541,7 +461,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 768,
+                  "charOffset": 523,
                   "snippet": {
                     "text": "&&"
                   }
@@ -581,7 +501,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 1014,
+                  "charOffset": 769,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -621,7 +541,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 1032,
+                  "charOffset": 787,
                   "snippet": {
                     "text": "="
                   }
@@ -661,7 +581,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 1036,
+                  "charOffset": 791,
                   "snippet": {
                     "text": "&&"
                   }
@@ -701,7 +621,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 1282,
+                  "charOffset": 1037,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -741,7 +661,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 1300,
+                  "charOffset": 1055,
                   "snippet": {
                     "text": "="
                   }
@@ -781,7 +701,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 1304,
+                  "charOffset": 1059,
                   "snippet": {
                     "text": "&&"
                   }
@@ -821,7 +741,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 1550,
+                  "charOffset": 1305,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -861,7 +781,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 1568,
+                  "charOffset": 1323,
                   "snippet": {
                     "text": "="
                   }
@@ -901,7 +821,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 1572,
+                  "charOffset": 1327,
                   "snippet": {
                     "text": "&&"
                   }
@@ -941,7 +861,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 1818,
+                  "charOffset": 1573,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -981,7 +901,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 1836,
+                  "charOffset": 1591,
                   "snippet": {
                     "text": "="
                   }
@@ -1021,7 +941,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 1840,
+                  "charOffset": 1595,
                   "snippet": {
                     "text": "&&"
                   }
@@ -1061,7 +981,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 2086,
+                  "charOffset": 1841,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -1101,7 +1021,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 2104,
+                  "charOffset": 1859,
                   "snippet": {
                     "text": "="
                   }
@@ -1141,7 +1061,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 2108,
+                  "charOffset": 1863,
                   "snippet": {
                     "text": "&&"
                   }
@@ -1181,7 +1101,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 2354,
+                  "charOffset": 2109,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -1221,7 +1141,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 2372,
+                  "charOffset": 2127,
                   "snippet": {
                     "text": "="
                   }
@@ -1261,7 +1181,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 2376,
+                  "charOffset": 2131,
                   "snippet": {
                     "text": "&&"
                   }
@@ -1301,7 +1221,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 2623,
+                  "charOffset": 2377,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -1341,7 +1261,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 2641,
+                  "charOffset": 2395,
                   "snippet": {
                     "text": "="
                   }
@@ -1381,48 +1301,48 @@
                 },
                 "region": {
                   "charLength": 2,
+                  "charOffset": 2399,
+                  "snippet": {
+                    "text": "&&"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Items",
+                "module": "HomeSale",
+                "type": "HomeSale.Container15.Container_Director_1.Container_Chart_Director_1.Container_Order_Director_1.LineChart2_Order_Director_1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Chart_Director_1.Container_Order_Director_1.LineChart2_Order_Director_1.Items"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Chart_Director_1.Container_Order_Director_1.LineChart2_Order_Director_1.Items",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 17,
                   "charOffset": 2646,
                   "snippet": {
-                    "text": "&&"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "HomeSale",
-                "type": "HomeSale.Container15.Container_Director_1.Container_Chart_Director_1.Container_Order_Director_1.LineChart2_Order_Director_1"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Filter"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Chart_Director_1.Container_Order_Director_1.LineChart2_Order_Director_1.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Chart_Director_1.Container_Order_Director_1.LineChart2_Order_Director_1.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 17,
-                  "charOffset": 2893,
-                  "snippet": {
                     "text": "Month(quote_Date)"
                   }
                 }
@@ -1461,7 +1381,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 2911,
+                  "charOffset": 2664,
                   "snippet": {
                     "text": "="
                   }
@@ -1501,48 +1421,48 @@
                 },
                 "region": {
                   "charLength": 2,
+                  "charOffset": 2669,
+                  "snippet": {
+                    "text": "&&"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Items",
+                "module": "HomeSale",
+                "type": "HomeSale.Container15.Container_Director_1.Container_Chart_Director_1.Container_Order_Director_1.LineChart2_Order_Director_1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Chart_Director_1.Container_Order_Director_1.LineChart2_Order_Director_1.Items"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Chart_Director_1.Container_Order_Director_1.LineChart2_Order_Director_1.Items",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 17,
                   "charOffset": 2916,
                   "snippet": {
-                    "text": "&&"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "HomeSale",
-                "type": "HomeSale.Container15.Container_Director_1.Container_Chart_Director_1.Container_Order_Director_1.LineChart2_Order_Director_1"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Filter"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Chart_Director_1.Container_Order_Director_1.LineChart2_Order_Director_1.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Chart_Director_1.Container_Order_Director_1.LineChart2_Order_Director_1.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 17,
-                  "charOffset": 3163,
-                  "snippet": {
                     "text": "Month(quote_Date)"
                   }
                 }
@@ -1581,7 +1501,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 3181,
+                  "charOffset": 2934,
                   "snippet": {
                     "text": "="
                   }
@@ -1621,48 +1541,48 @@
                 },
                 "region": {
                   "charLength": 2,
+                  "charOffset": 2939,
+                  "snippet": {
+                    "text": "&&"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Items",
+                "module": "HomeSale",
+                "type": "HomeSale.Container15.Container_Director_1.Container_Chart_Director_1.Container_Order_Director_1.LineChart2_Order_Director_1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Chart_Director_1.Container_Order_Director_1.LineChart2_Order_Director_1.Items"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Chart_Director_1.Container_Order_Director_1.LineChart2_Order_Director_1.Items",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 17,
                   "charOffset": 3186,
                   "snippet": {
-                    "text": "&&"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "HomeSale",
-                "type": "HomeSale.Container15.Container_Director_1.Container_Chart_Director_1.Container_Order_Director_1.LineChart2_Order_Director_1"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Filter"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Chart_Director_1.Container_Order_Director_1.LineChart2_Order_Director_1.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Chart_Director_1.Container_Order_Director_1.LineChart2_Order_Director_1.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 17,
-                  "charOffset": 3449,
-                  "snippet": {
                     "text": "Month(quote_Date)"
                   }
                 }
@@ -1701,7 +1621,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 3467,
+                  "charOffset": 3204,
                   "snippet": {
                     "text": "="
                   }
@@ -1741,47 +1661,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 3471,
-                  "snippet": {
-                    "text": "&&"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "HomeSale",
-                "type": "HomeSale.Container15.Container_Director_1.Container_Chart_Director_1.Container_Order_Director_1.LineChart2_Order_Director_1"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Filter"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Chart_Director_1.Container_Order_Director_1.LineChart2_Order_Director_1.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Chart_Director_1.Container_Order_Director_1.LineChart2_Order_Director_1.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 2,
-                  "charOffset": 3533,
+                  "charOffset": 3209,
                   "snippet": {
                     "text": "&&"
                   }
@@ -1821,7 +1701,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 3768,
+                  "charOffset": 3472,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -1861,7 +1741,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 3786,
+                  "charOffset": 3490,
                   "snippet": {
                     "text": "="
                   }
@@ -1901,7 +1781,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 3790,
+                  "charOffset": 3494,
                   "snippet": {
                     "text": "&&"
                   }
@@ -1941,7 +1821,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 3852,
+                  "charOffset": 3556,
                   "snippet": {
                     "text": "&&"
                   }
@@ -1981,7 +1861,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 4087,
+                  "charOffset": 3791,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -2021,7 +1901,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 4105,
+                  "charOffset": 3809,
                   "snippet": {
                     "text": "="
                   }
@@ -2061,7 +1941,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 4109,
+                  "charOffset": 3813,
                   "snippet": {
                     "text": "&&"
                   }
@@ -2101,7 +1981,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 4171,
+                  "charOffset": 3875,
                   "snippet": {
                     "text": "&&"
                   }
@@ -2141,7 +2021,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 4406,
+                  "charOffset": 4110,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -2181,7 +2061,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 4424,
+                  "charOffset": 4128,
                   "snippet": {
                     "text": "="
                   }
@@ -2221,7 +2101,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 4428,
+                  "charOffset": 4132,
                   "snippet": {
                     "text": "&&"
                   }
@@ -2261,7 +2141,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 4490,
+                  "charOffset": 4194,
                   "snippet": {
                     "text": "&&"
                   }
@@ -2301,7 +2181,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 4725,
+                  "charOffset": 4429,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -2341,7 +2221,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 4743,
+                  "charOffset": 4447,
                   "snippet": {
                     "text": "="
                   }
@@ -2381,7 +2261,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 4747,
+                  "charOffset": 4451,
                   "snippet": {
                     "text": "&&"
                   }
@@ -2421,7 +2301,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 4809,
+                  "charOffset": 4513,
                   "snippet": {
                     "text": "&&"
                   }
@@ -2461,7 +2341,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 5044,
+                  "charOffset": 4748,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -2501,7 +2381,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 5062,
+                  "charOffset": 4766,
                   "snippet": {
                     "text": "="
                   }
@@ -2541,7 +2421,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 5066,
+                  "charOffset": 4770,
                   "snippet": {
                     "text": "&&"
                   }
@@ -2581,7 +2461,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 5128,
+                  "charOffset": 4832,
                   "snippet": {
                     "text": "&&"
                   }
@@ -2621,7 +2501,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 5363,
+                  "charOffset": 5067,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -2661,7 +2541,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 5381,
+                  "charOffset": 5085,
                   "snippet": {
                     "text": "="
                   }
@@ -2701,7 +2581,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 5385,
+                  "charOffset": 5089,
                   "snippet": {
                     "text": "&&"
                   }
@@ -2741,7 +2621,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 5447,
+                  "charOffset": 5151,
                   "snippet": {
                     "text": "&&"
                   }
@@ -2781,7 +2661,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 5682,
+                  "charOffset": 5386,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -2821,7 +2701,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 5700,
+                  "charOffset": 5404,
                   "snippet": {
                     "text": "="
                   }
@@ -2861,7 +2741,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 5704,
+                  "charOffset": 5408,
                   "snippet": {
                     "text": "&&"
                   }
@@ -2901,7 +2781,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 5766,
+                  "charOffset": 5470,
                   "snippet": {
                     "text": "&&"
                   }
@@ -2941,7 +2821,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 6001,
+                  "charOffset": 5705,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -2981,7 +2861,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 6019,
+                  "charOffset": 5723,
                   "snippet": {
                     "text": "="
                   }
@@ -3021,7 +2901,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 6023,
+                  "charOffset": 5727,
                   "snippet": {
                     "text": "&&"
                   }
@@ -3061,7 +2941,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 6085,
+                  "charOffset": 5789,
                   "snippet": {
                     "text": "&&"
                   }
@@ -3101,7 +2981,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 6321,
+                  "charOffset": 6024,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -3141,7 +3021,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 6339,
+                  "charOffset": 6042,
                   "snippet": {
                     "text": "="
                   }
@@ -3181,88 +3061,88 @@
                 },
                 "region": {
                   "charLength": 2,
+                  "charOffset": 6046,
+                  "snippet": {
+                    "text": "&&"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Items",
+                "module": "HomeSale",
+                "type": "HomeSale.Container15.Container_Director_1.Container_Chart_Director_1.Container_Order_Director_1.LineChart2_Order_Director_1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Chart_Director_1.Container_Order_Director_1.LineChart2_Order_Director_1.Items"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Chart_Director_1.Container_Order_Director_1.LineChart2_Order_Director_1.Items",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
+                  "charOffset": 6108,
+                  "snippet": {
+                    "text": "&&"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Items",
+                "module": "HomeSale",
+                "type": "HomeSale.Container15.Container_Director_1.Container_Chart_Director_1.Container_Order_Director_1.LineChart2_Order_Director_1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Chart_Director_1.Container_Order_Director_1.LineChart2_Order_Director_1.Items"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Chart_Director_1.Container_Order_Director_1.LineChart2_Order_Director_1.Items",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 17,
                   "charOffset": 6344,
                   "snippet": {
-                    "text": "&&"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "HomeSale",
-                "type": "HomeSale.Container15.Container_Director_1.Container_Chart_Director_1.Container_Order_Director_1.LineChart2_Order_Director_1"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Filter"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Chart_Director_1.Container_Order_Director_1.LineChart2_Order_Director_1.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Chart_Director_1.Container_Order_Director_1.LineChart2_Order_Director_1.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 2,
-                  "charOffset": 6406,
-                  "snippet": {
-                    "text": "&&"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "HomeSale",
-                "type": "HomeSale.Container15.Container_Director_1.Container_Chart_Director_1.Container_Order_Director_1.LineChart2_Order_Director_1"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Filter"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Chart_Director_1.Container_Order_Director_1.LineChart2_Order_Director_1.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Chart_Director_1.Container_Order_Director_1.LineChart2_Order_Director_1.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 17,
-                  "charOffset": 6642,
-                  "snippet": {
                     "text": "Month(quote_Date)"
                   }
                 }
@@ -3301,7 +3181,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 6660,
+                  "charOffset": 6362,
                   "snippet": {
                     "text": "="
                   }
@@ -3341,88 +3221,88 @@
                 },
                 "region": {
                   "charLength": 2,
+                  "charOffset": 6367,
+                  "snippet": {
+                    "text": "&&"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Items",
+                "module": "HomeSale",
+                "type": "HomeSale.Container15.Container_Director_1.Container_Chart_Director_1.Container_Order_Director_1.LineChart2_Order_Director_1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Chart_Director_1.Container_Order_Director_1.LineChart2_Order_Director_1.Items"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Chart_Director_1.Container_Order_Director_1.LineChart2_Order_Director_1.Items",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
+                  "charOffset": 6429,
+                  "snippet": {
+                    "text": "&&"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Items",
+                "module": "HomeSale",
+                "type": "HomeSale.Container15.Container_Director_1.Container_Chart_Director_1.Container_Order_Director_1.LineChart2_Order_Director_1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Chart_Director_1.Container_Order_Director_1.LineChart2_Order_Director_1.Items"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Chart_Director_1.Container_Order_Director_1.LineChart2_Order_Director_1.Items",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 17,
                   "charOffset": 6665,
                   "snippet": {
-                    "text": "&&"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "HomeSale",
-                "type": "HomeSale.Container15.Container_Director_1.Container_Chart_Director_1.Container_Order_Director_1.LineChart2_Order_Director_1"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Filter"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Chart_Director_1.Container_Order_Director_1.LineChart2_Order_Director_1.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Chart_Director_1.Container_Order_Director_1.LineChart2_Order_Director_1.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 2,
-                  "charOffset": 6727,
-                  "snippet": {
-                    "text": "&&"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "HomeSale",
-                "type": "HomeSale.Container15.Container_Director_1.Container_Chart_Director_1.Container_Order_Director_1.LineChart2_Order_Director_1"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Filter"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Chart_Director_1.Container_Order_Director_1.LineChart2_Order_Director_1.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Chart_Director_1.Container_Order_Director_1.LineChart2_Order_Director_1.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 17,
-                  "charOffset": 6963,
-                  "snippet": {
                     "text": "Month(quote_Date)"
                   }
                 }
@@ -3461,7 +3341,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 6981,
+                  "charOffset": 6683,
                   "snippet": {
                     "text": "="
                   }
@@ -3501,7 +3381,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 6986,
+                  "charOffset": 6688,
                   "snippet": {
                     "text": "&&"
                   }
@@ -3541,7 +3421,207 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 7048,
+                  "charOffset": 6750,
+                  "snippet": {
+                    "text": "&&"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Items",
+                "module": "HomeSale",
+                "type": "HomeSale.Container15.Container_Director_1.Container_Chart_Director_1.Container_Order_Director_1.LineChart2_Order_Director_1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Chart_Director_1.Container_Order_Director_1.LineChart2_Order_Director_1.Items"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Chart_Director_1.Container_Order_Director_1.LineChart2_Order_Director_1.Items",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 17,
+                  "charOffset": 6986,
+                  "snippet": {
+                    "text": "Month(quote_Date)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Items",
+                "module": "HomeSale",
+                "type": "HomeSale.Container15.Container_Director_1.Container_Chart_Director_1.Container_Order_Director_1.LineChart2_Order_Director_1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Month"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Chart_Director_1.Container_Order_Director_1.LineChart2_Order_Director_1.Items"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Chart_Director_1.Container_Order_Director_1.LineChart2_Order_Director_1.Items",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 7004,
+                  "snippet": {
+                    "text": "="
+                  }
+                }
+              },
+              "properties": {
+                "member": "Items",
+                "module": "HomeSale",
+                "type": "HomeSale.Container15.Container_Director_1.Container_Chart_Director_1.Container_Order_Director_1.LineChart2_Order_Director_1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Chart_Director_1.Container_Order_Director_1.LineChart2_Order_Director_1.Items"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Chart_Director_1.Container_Order_Director_1.LineChart2_Order_Director_1.Items",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
+                  "charOffset": 7009,
+                  "snippet": {
+                    "text": "&&"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Items",
+                "module": "HomeSale",
+                "type": "HomeSale.Container15.Container_Director_1.Container_Chart_Director_1.Container_Order_Director_1.LineChart2_Order_Director_1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Chart_Director_1.Container_Order_Director_1.LineChart2_Order_Director_1.Items"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Chart_Director_1.Container_Order_Director_1.LineChart2_Order_Director_1.Items",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
+                  "charOffset": 7071,
+                  "snippet": {
+                    "text": "&&"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Items",
+                "module": "HomeSale",
+                "type": "HomeSale.Container15.Container_Director_1.Container_Chart_Director_1.Container_Order_Director_1.LineChart2_Order_Director_1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Chart_Director_1.Container_Order_Director_1.LineChart2_Order_Director_1.Items"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Chart_Director_1.Container_Order_Director_1.LineChart2_Order_Director_1.Items",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
+                  "charOffset": 7122,
                   "snippet": {
                     "text": "&&"
                   }

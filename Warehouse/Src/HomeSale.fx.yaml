@@ -164,7 +164,7 @@ HomeSale As screen:
             ZIndex: =16
 
             btnTransaction_HomeSale As button:
-                Color: =If(btnFunctionSelection_Value_HomeSale = 5,Color.White,Color.Black)
+                Color: =If(btnFunctionSelection_Value_HomeSale = 5,Color.White,Color.Gray)
                 Fill: =If(btnFunctionSelection_Value_HomeSale = 5,Color.Blue,RGBA(241,244,249,1))
                 Height: =50
                 OnSelect: |-
@@ -179,7 +179,7 @@ HomeSale As screen:
                 ZIndex: =1
 
             btnPurchaseRequest_HomeSale As button:
-                Color: =If(btnFunctionSelection_Value_HomeSale = 4,Color.White,Color.Black)
+                Color: =If(btnFunctionSelection_Value_HomeSale = 4,Color.White,Color.Gray)
                 Fill: =If(btnFunctionSelection_Value_HomeSale = 4,Color.Blue,RGBA(241,244,249,1))
                 Height: =50
                 OnSelect: =Set(btnFunctionSelection_Value_HomeSale,4)
@@ -190,7 +190,7 @@ HomeSale As screen:
                 ZIndex: =2
 
             btnQuote_HomeSale As button:
-                Color: =If(btnFunctionSelection_Value_HomeSale = 3,Color.White,Color.Black)
+                Color: =If(btnFunctionSelection_Value_HomeSale = 3,Color.White,Color.Gray)
                 Fill: =If(btnFunctionSelection_Value_HomeSale = 3,Color.Blue,RGBA(241,244,249,1))
                 Height: =50
                 OnSelect: |-
@@ -203,7 +203,7 @@ HomeSale As screen:
                 ZIndex: =3
 
             btnCustomer_HomSale As button:
-                Color: =If(btnFunctionSelection_Value_HomeSale = 2,Color.White,Color.Black)
+                Color: =If(btnFunctionSelection_Value_HomeSale = 2,Color.White,Color.Gray)
                 Fill: =If(btnFunctionSelection_Value_HomeSale = 2,Color.Blue,RGBA(241,244,249,1))
                 Height: =50
                 OnSelect: =Set(btnFunctionSelection_Value_HomeSale,2);
@@ -214,7 +214,7 @@ HomeSale As screen:
                 ZIndex: =4
 
             btnService_HomeSale As button:
-                Color: =If(btnFunctionSelection_Value_HomeSale = 1,Color.White,Color.Black)
+                Color: =If(btnFunctionSelection_Value_HomeSale = 1,Color.White,Color.Gray)
                 Fill: =If(btnFunctionSelection_Value_HomeSale = 1,Color.Blue,RGBA(241,244,249,1))
                 Height: =50
                 OnSelect: =Set(btnFunctionSelection_Value_HomeSale,1);
@@ -3021,9 +3021,17 @@ HomeSale As screen:
 
                 ComboBox_Sales_Director_1 As combobox:
                     DisplayFields: =["user_Name"]
-                    Items: =Filter(User,id_Role=LookUp(Role,name_Role="Sales").ID)
+                    Items: |-
+                        =Filter(
+                            User,
+                            id_Role = 1 &&  activity = true
+                        )
                     SearchFields: =["user_Name"]
-                    SearchItems: =Search(Filter(User,id_Role=LookUp(Role,name_Role="Sales").ID),ComboBox_Sales_Director_1.SearchText,"user_Name")
+                    SearchItems: |-
+                        =Search(Filter(
+                            User,
+                            id_Role = 1 &&  activity = true
+                        ),ComboBox_Sales_Director_1.SearchText,"user_Name")
                     SelectMultiple: =false
                     Width: =300
                     X: =135
@@ -3353,7 +3361,7 @@ HomeSale As screen:
                                             Value: CountRows(
                                                 Filter(
                                                     Quote,
-                                                    Month(quote_Date) = 1 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value
+                                                    Month(quote_Date) = 1 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && quote_Status = true
                                                 )
                                             )
                                         },
@@ -3562,7 +3570,7 @@ HomeSale As screen:
                                             Value: CountRows(
                                                 Filter(
                                                     Quote,
-                                                    Month(quote_Date) = 12 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID
+                                                    Month(quote_Date) = 12 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID && quote_Status = true
                                                 )
                                             )
                                         }
