@@ -584,10 +584,23 @@ DetailQuote_Screen As screen:
                             ).quantity_Product - Temp.quantity_Quote_Product
                         }
                     );
-                    Notify("asd: "& LookUp(
-                                Product,
-                                id_Product = Temp.id_Product
-                            ).quantity_Product)
+                    If(
+                        LookUp(
+                            Product,
+                            id_Product = Temp.id_Product
+                        ).quantity_Product = 0,
+                        ForAll(
+                            User As TempUser,
+                            If(
+                                TempUser.id_Role = 3,
+                                Warehouse_Manager_SendEmailRole.Run(
+                                    TempUser.email_User,
+                                    "Sản phẩm hết hàng",
+                                    "Sản phẩm có mã: " & Temp.id_Product & " .Vừa có khách hàng đặt hàng và số lượng sản phẩm đã hết"
+                                )
+                            )
+                        )
+                    )
                 );
                 Notify(
                     "Chuyển sang đơn hàng thành công",
