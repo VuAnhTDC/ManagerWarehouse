@@ -20101,7 +20101,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 529,
+                  "charOffset": 471,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -20141,7 +20141,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 547,
+                  "charOffset": 489,
                   "snippet": {
                     "text": "="
                   }
@@ -20181,7 +20181,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 551,
+                  "charOffset": 493,
                   "snippet": {
                     "text": "&&"
                   }
@@ -20221,7 +20221,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 611,
+                  "charOffset": 553,
                   "snippet": {
                     "text": "&&"
                   }
@@ -20261,7 +20261,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 816,
+                  "charOffset": 792,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -20301,7 +20301,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 834,
+                  "charOffset": 810,
                   "snippet": {
                     "text": "="
                   }
@@ -20341,7 +20341,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 838,
+                  "charOffset": 814,
                   "snippet": {
                     "text": "&&"
                   }
@@ -20381,7 +20381,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 898,
+                  "charOffset": 874,
                   "snippet": {
                     "text": "&&"
                   }
@@ -20421,7 +20421,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 1103,
+                  "charOffset": 1079,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -20461,7 +20461,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 1121,
+                  "charOffset": 1097,
                   "snippet": {
                     "text": "="
                   }
@@ -20501,7 +20501,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 1125,
+                  "charOffset": 1101,
                   "snippet": {
                     "text": "&&"
                   }
@@ -20541,7 +20541,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 1185,
+                  "charOffset": 1161,
                   "snippet": {
                     "text": "&&"
                   }
@@ -20581,88 +20581,88 @@
                 },
                 "region": {
                   "charLength": 17,
+                  "charOffset": 1366,
+                  "snippet": {
+                    "text": "Month(quote_Date)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "Director",
+                "type": "Director.Container_Director.Container_Chart_Director.Container_Order_Director.Button_Export_Order_Director"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Month"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Order_Director.Button_Export_Order_Director.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Order_Director.Button_Export_Order_Director.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 1384,
+                  "snippet": {
+                    "text": "="
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "Director",
+                "type": "Director.Container_Director.Container_Chart_Director.Container_Order_Director.Button_Export_Order_Director"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Order_Director.Button_Export_Order_Director.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Order_Director.Button_Export_Order_Director.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
                   "charOffset": 1388,
                   "snippet": {
-                    "text": "Month(quote_Date)"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "Director",
-                "type": "Director.Container_Director.Container_Chart_Director.Container_Order_Director.Button_Export_Order_Director"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Month"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Order_Director.Button_Export_Order_Director.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Order_Director.Button_Export_Order_Director.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 1406,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "Director",
-                "type": "Director.Container_Director.Container_Chart_Director.Container_Order_Director.Button_Export_Order_Director"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Filter"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Order_Director.Button_Export_Order_Director.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Order_Director.Button_Export_Order_Director.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 2,
-                  "charOffset": 1410,
-                  "snippet": {
                     "text": "&&"
                   }
                 }
@@ -20701,7 +20701,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 1470,
+                  "charOffset": 1448,
                   "snippet": {
                     "text": "&&"
                   }
@@ -20741,7 +20741,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 1674,
+                  "charOffset": 1651,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -20781,7 +20781,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 1692,
+                  "charOffset": 1669,
                   "snippet": {
                     "text": "="
                   }
@@ -20821,7 +20821,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 1696,
+                  "charOffset": 1673,
                   "snippet": {
                     "text": "&&"
                   }
@@ -20861,7 +20861,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 1756,
+                  "charOffset": 1733,
                   "snippet": {
                     "text": "&&"
                   }
@@ -20901,7 +20901,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 1960,
+                  "charOffset": 1937,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -20941,7 +20941,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 1978,
+                  "charOffset": 1955,
                   "snippet": {
                     "text": "="
                   }
@@ -20981,7 +20981,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 1982,
+                  "charOffset": 1959,
                   "snippet": {
                     "text": "&&"
                   }
@@ -21021,7 +21021,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 2042,
+                  "charOffset": 2019,
                   "snippet": {
                     "text": "&&"
                   }
@@ -21061,7 +21061,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 2248,
+                  "charOffset": 2223,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -21101,7 +21101,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 2266,
+                  "charOffset": 2241,
                   "snippet": {
                     "text": "="
                   }
@@ -21141,7 +21141,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 2270,
+                  "charOffset": 2245,
                   "snippet": {
                     "text": "&&"
                   }
@@ -21181,7 +21181,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 2330,
+                  "charOffset": 2305,
                   "snippet": {
                     "text": "&&"
                   }
@@ -21221,7 +21221,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 2539,
+                  "charOffset": 2511,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -21261,7 +21261,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 2557,
+                  "charOffset": 2529,
                   "snippet": {
                     "text": "="
                   }
@@ -21301,7 +21301,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 2561,
+                  "charOffset": 2533,
                   "snippet": {
                     "text": "&&"
                   }
@@ -21341,7 +21341,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 2621,
+                  "charOffset": 2593,
                   "snippet": {
                     "text": "&&"
                   }
@@ -21381,7 +21381,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 2828,
+                  "charOffset": 2802,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -21421,7 +21421,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 2846,
+                  "charOffset": 2820,
                   "snippet": {
                     "text": "="
                   }
@@ -21461,7 +21461,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 2851,
+                  "charOffset": 2824,
                   "snippet": {
                     "text": "&&"
                   }
@@ -21501,7 +21501,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 2911,
+                  "charOffset": 2884,
                   "snippet": {
                     "text": "&&"
                   }
@@ -21541,7 +21541,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 3119,
+                  "charOffset": 3091,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -21581,7 +21581,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 3137,
+                  "charOffset": 3109,
                   "snippet": {
                     "text": "="
                   }
@@ -21621,7 +21621,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 3142,
+                  "charOffset": 3114,
                   "snippet": {
                     "text": "&&"
                   }
@@ -21661,7 +21661,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 3202,
+                  "charOffset": 3174,
                   "snippet": {
                     "text": "&&"
                   }
@@ -21701,7 +21701,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 3410,
+                  "charOffset": 3382,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -21741,7 +21741,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 3428,
+                  "charOffset": 3400,
                   "snippet": {
                     "text": "="
                   }
@@ -21781,7 +21781,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 3433,
+                  "charOffset": 3405,
                   "snippet": {
                     "text": "&&"
                   }
@@ -21821,7 +21821,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 3493,
+                  "charOffset": 3465,
                   "snippet": {
                     "text": "&&"
                   }
@@ -21861,7 +21861,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 4105,
+                  "charOffset": 3673,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -21901,7 +21901,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 4123,
+                  "charOffset": 3691,
                   "snippet": {
                     "text": "="
                   }
@@ -21941,7 +21941,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 4127,
+                  "charOffset": 3696,
                   "snippet": {
                     "text": "&&"
                   }
@@ -21981,7 +21981,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 4187,
+                  "charOffset": 3756,
                   "snippet": {
                     "text": "&&"
                   }
@@ -22020,8 +22020,88 @@
                   "relativeAddress": 0
                 },
                 "region": {
+                  "charLength": 16,
+                  "charOffset": 3961,
+                  "snippet": {
+                    "text": "Year(quote_Date)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "Director",
+                "type": "Director.Container_Director.Container_Chart_Director.Container_Order_Director.Button_Export_Order_Director"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Year"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Order_Director.Button_Export_Order_Director.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Order_Director.Button_Export_Order_Director.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 3978,
+                  "snippet": {
+                    "text": "="
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "Director",
+                "type": "Director.Container_Director.Container_Chart_Director.Container_Order_Director.Button_Export_Order_Director"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Order_Director.Button_Export_Order_Director.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Order_Director.Button_Export_Order_Director.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
                   "charLength": 2,
-                  "charOffset": 4236,
+                  "charOffset": 4018,
                   "snippet": {
                     "text": "&&"
                   }
@@ -22061,7 +22141,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 4444,
+                  "charOffset": 4630,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -22101,7 +22181,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 4462,
+                  "charOffset": 4648,
                   "snippet": {
                     "text": "="
                   }
@@ -22141,7 +22221,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 4466,
+                  "charOffset": 4652,
                   "snippet": {
                     "text": "&&"
                   }
@@ -22181,7 +22261,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 4526,
+                  "charOffset": 4712,
                   "snippet": {
                     "text": "&&"
                   }
@@ -22221,7 +22301,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 4575,
+                  "charOffset": 4761,
                   "snippet": {
                     "text": "&&"
                   }
@@ -22261,7 +22341,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 4780,
+                  "charOffset": 4969,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -22301,7 +22381,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 4798,
+                  "charOffset": 4987,
                   "snippet": {
                     "text": "="
                   }
@@ -22341,7 +22421,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 4802,
+                  "charOffset": 4991,
                   "snippet": {
                     "text": "&&"
                   }
@@ -22381,7 +22461,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 4862,
+                  "charOffset": 5051,
                   "snippet": {
                     "text": "&&"
                   }
@@ -22421,7 +22501,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 4911,
+                  "charOffset": 5100,
                   "snippet": {
                     "text": "&&"
                   }
@@ -22461,7 +22541,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 5116,
+                  "charOffset": 5305,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -22501,7 +22581,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 5134,
+                  "charOffset": 5323,
                   "snippet": {
                     "text": "="
                   }
@@ -22541,7 +22621,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 5138,
+                  "charOffset": 5327,
                   "snippet": {
                     "text": "&&"
                   }
@@ -22581,7 +22661,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 5198,
+                  "charOffset": 5387,
                   "snippet": {
                     "text": "&&"
                   }
@@ -22621,7 +22701,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 5247,
+                  "charOffset": 5436,
                   "snippet": {
                     "text": "&&"
                   }
@@ -22661,7 +22741,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 5450,
+                  "charOffset": 5641,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -22701,7 +22781,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 5468,
+                  "charOffset": 5659,
                   "snippet": {
                     "text": "="
                   }
@@ -22741,7 +22821,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 5472,
+                  "charOffset": 5663,
                   "snippet": {
                     "text": "&&"
                   }
@@ -22781,7 +22861,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 5532,
+                  "charOffset": 5723,
                   "snippet": {
                     "text": "&&"
                   }
@@ -22821,7 +22901,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 5581,
+                  "charOffset": 5772,
                   "snippet": {
                     "text": "&&"
                   }
@@ -22861,7 +22941,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 5785,
+                  "charOffset": 5975,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -22901,7 +22981,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 5803,
+                  "charOffset": 5993,
                   "snippet": {
                     "text": "="
                   }
@@ -22941,7 +23021,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 5807,
+                  "charOffset": 5997,
                   "snippet": {
                     "text": "&&"
                   }
@@ -22981,7 +23061,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 5867,
+                  "charOffset": 6057,
                   "snippet": {
                     "text": "&&"
                   }
@@ -23021,7 +23101,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 5916,
+                  "charOffset": 6106,
                   "snippet": {
                     "text": "&&"
                   }
@@ -23061,7 +23141,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 6120,
+                  "charOffset": 6310,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -23101,7 +23181,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 6138,
+                  "charOffset": 6328,
                   "snippet": {
                     "text": "="
                   }
@@ -23141,7 +23221,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 6142,
+                  "charOffset": 6332,
                   "snippet": {
                     "text": "&&"
                   }
@@ -23181,7 +23261,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 6202,
+                  "charOffset": 6392,
                   "snippet": {
                     "text": "&&"
                   }
@@ -23221,7 +23301,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 6251,
+                  "charOffset": 6441,
                   "snippet": {
                     "text": "&&"
                   }
@@ -23261,7 +23341,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 6457,
+                  "charOffset": 6645,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -23301,7 +23381,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 6475,
+                  "charOffset": 6663,
                   "snippet": {
                     "text": "="
                   }
@@ -23341,7 +23421,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 6479,
+                  "charOffset": 6667,
                   "snippet": {
                     "text": "&&"
                   }
@@ -23381,7 +23461,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 6539,
+                  "charOffset": 6727,
                   "snippet": {
                     "text": "&&"
                   }
@@ -23421,7 +23501,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 6588,
+                  "charOffset": 6776,
                   "snippet": {
                     "text": "&&"
                   }
@@ -23461,7 +23541,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 6797,
+                  "charOffset": 6982,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -23501,7 +23581,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 6815,
+                  "charOffset": 7000,
                   "snippet": {
                     "text": "="
                   }
@@ -23541,7 +23621,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 6819,
+                  "charOffset": 7004,
                   "snippet": {
                     "text": "&&"
                   }
@@ -23581,7 +23661,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 6879,
+                  "charOffset": 7064,
                   "snippet": {
                     "text": "&&"
                   }
@@ -23621,7 +23701,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 6928,
+                  "charOffset": 7113,
                   "snippet": {
                     "text": "&&"
                   }
@@ -23661,7 +23741,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 7135,
+                  "charOffset": 7322,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -23701,7 +23781,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 7153,
+                  "charOffset": 7340,
                   "snippet": {
                     "text": "="
                   }
@@ -23741,7 +23821,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 7158,
+                  "charOffset": 7344,
                   "snippet": {
                     "text": "&&"
                   }
@@ -23781,7 +23861,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 7218,
+                  "charOffset": 7404,
                   "snippet": {
                     "text": "&&"
                   }
@@ -23821,7 +23901,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 7267,
+                  "charOffset": 7453,
                   "snippet": {
                     "text": "&&"
                   }
@@ -23861,7 +23941,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 7475,
+                  "charOffset": 7660,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -23901,7 +23981,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 7493,
+                  "charOffset": 7678,
                   "snippet": {
                     "text": "="
                   }
@@ -23941,7 +24021,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 7498,
+                  "charOffset": 7683,
                   "snippet": {
                     "text": "&&"
                   }
@@ -23981,7 +24061,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 7558,
+                  "charOffset": 7743,
                   "snippet": {
                     "text": "&&"
                   }
@@ -24021,7 +24101,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 7607,
+                  "charOffset": 7792,
                   "snippet": {
                     "text": "&&"
                   }
@@ -24061,7 +24141,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 7815,
+                  "charOffset": 8000,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -24101,7 +24181,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 7833,
+                  "charOffset": 8018,
                   "snippet": {
                     "text": "="
                   }
@@ -24141,7 +24221,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 7838,
+                  "charOffset": 8023,
                   "snippet": {
                     "text": "&&"
                   }
@@ -24181,7 +24261,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 7898,
+                  "charOffset": 8083,
                   "snippet": {
                     "text": "&&"
                   }
@@ -24221,7 +24301,367 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 7947,
+                  "charOffset": 8132,
+                  "snippet": {
+                    "text": "&&"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "Director",
+                "type": "Director.Container_Director.Container_Chart_Director.Container_Order_Director.Button_Export_Order_Director"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Order_Director.Button_Export_Order_Director.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Order_Director.Button_Export_Order_Director.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 17,
+                  "charOffset": 8340,
+                  "snippet": {
+                    "text": "Month(quote_Date)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "Director",
+                "type": "Director.Container_Director.Container_Chart_Director.Container_Order_Director.Button_Export_Order_Director"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Month"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Order_Director.Button_Export_Order_Director.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Order_Director.Button_Export_Order_Director.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 8358,
+                  "snippet": {
+                    "text": "="
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "Director",
+                "type": "Director.Container_Director.Container_Chart_Director.Container_Order_Director.Button_Export_Order_Director"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Order_Director.Button_Export_Order_Director.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Order_Director.Button_Export_Order_Director.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
+                  "charOffset": 8363,
+                  "snippet": {
+                    "text": "&&"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "Director",
+                "type": "Director.Container_Director.Container_Chart_Director.Container_Order_Director.Button_Export_Order_Director"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Order_Director.Button_Export_Order_Director.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Order_Director.Button_Export_Order_Director.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
+                  "charOffset": 8423,
+                  "snippet": {
+                    "text": "&&"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "Director",
+                "type": "Director.Container_Director.Container_Chart_Director.Container_Order_Director.Button_Export_Order_Director"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Order_Director.Button_Export_Order_Director.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Order_Director.Button_Export_Order_Director.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
+                  "charOffset": 8472,
+                  "snippet": {
+                    "text": "&&"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "Director",
+                "type": "Director.Container_Director.Container_Chart_Director.Container_Order_Director.Button_Export_Order_Director"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Order_Director.Button_Export_Order_Director.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Order_Director.Button_Export_Order_Director.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 16,
+                  "charOffset": 8677,
+                  "snippet": {
+                    "text": "Year(quote_Date)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "Director",
+                "type": "Director.Container_Director.Container_Chart_Director.Container_Order_Director.Button_Export_Order_Director"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Year"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Order_Director.Button_Export_Order_Director.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Order_Director.Button_Export_Order_Director.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 8694,
+                  "snippet": {
+                    "text": "="
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "Director",
+                "type": "Director.Container_Director.Container_Chart_Director.Container_Order_Director.Button_Export_Order_Director"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Order_Director.Button_Export_Order_Director.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Order_Director.Button_Export_Order_Director.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
+                  "charOffset": 8734,
+                  "snippet": {
+                    "text": "&&"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "Director",
+                "type": "Director.Container_Director.Container_Chart_Director.Container_Order_Director.Button_Export_Order_Director"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Order_Director.Button_Export_Order_Director.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Order_Director.Button_Export_Order_Director.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
+                  "charOffset": 8783,
                   "snippet": {
                     "text": "&&"
                   }
@@ -30500,10 +30940,10 @@
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 17,
-                  "charOffset": 4401,
+                  "charLength": 16,
+                  "charOffset": 3992,
                   "snippet": {
-                    "text": "Month(quote_Date)"
+                    "text": "Year(quote_Date)"
                   }
                 }
               },
@@ -30516,7 +30956,7 @@
           ],
           "message": {
             "arguments": [
-              "Month"
+              "Year"
             ],
             "id": "issue"
           },
@@ -30541,7 +30981,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 4419,
+                  "charOffset": 4009,
                   "snippet": {
                     "text": "="
                   }
@@ -30581,87 +31021,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 4423,
-                  "snippet": {
-                    "text": "&&"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "Director",
-                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.Button_Export_Turnover_Director"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Filter"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.Button_Export_Turnover_Director.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.Button_Export_Turnover_Director.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 2,
-                  "charOffset": 4483,
-                  "snippet": {
-                    "text": "&&"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "Director",
-                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.Button_Export_Turnover_Director"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Filter"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.Button_Export_Turnover_Director.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.Button_Export_Turnover_Director.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 2,
-                  "charOffset": 4532,
+                  "charOffset": 4049,
                   "snippet": {
                     "text": "&&"
                   }
@@ -30701,7 +31061,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 4765,
+                  "charOffset": 4688,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -30741,7 +31101,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 4783,
+                  "charOffset": 4706,
                   "snippet": {
                     "text": "="
                   }
@@ -30781,7 +31141,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 4787,
+                  "charOffset": 4710,
                   "snippet": {
                     "text": "&&"
                   }
@@ -30821,7 +31181,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 4847,
+                  "charOffset": 4770,
                   "snippet": {
                     "text": "&&"
                   }
@@ -30861,7 +31221,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 4896,
+                  "charOffset": 4819,
                   "snippet": {
                     "text": "&&"
                   }
@@ -30901,7 +31261,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 5126,
+                  "charOffset": 5052,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -30941,7 +31301,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 5144,
+                  "charOffset": 5070,
                   "snippet": {
                     "text": "="
                   }
@@ -30981,7 +31341,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 5148,
+                  "charOffset": 5074,
                   "snippet": {
                     "text": "&&"
                   }
@@ -31021,7 +31381,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 5208,
+                  "charOffset": 5134,
                   "snippet": {
                     "text": "&&"
                   }
@@ -31061,7 +31421,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 5257,
+                  "charOffset": 5183,
                   "snippet": {
                     "text": "&&"
                   }
@@ -31101,7 +31461,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 5487,
+                  "charOffset": 5413,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -31141,7 +31501,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 5505,
+                  "charOffset": 5431,
                   "snippet": {
                     "text": "="
                   }
@@ -31181,7 +31541,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 5509,
+                  "charOffset": 5435,
                   "snippet": {
                     "text": "&&"
                   }
@@ -31221,7 +31581,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 5569,
+                  "charOffset": 5495,
                   "snippet": {
                     "text": "&&"
                   }
@@ -31261,7 +31621,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 5618,
+                  "charOffset": 5544,
                   "snippet": {
                     "text": "&&"
                   }
@@ -31301,7 +31661,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 5846,
+                  "charOffset": 5774,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -31341,7 +31701,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 5864,
+                  "charOffset": 5792,
                   "snippet": {
                     "text": "="
                   }
@@ -31381,7 +31741,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 5868,
+                  "charOffset": 5796,
                   "snippet": {
                     "text": "&&"
                   }
@@ -31421,7 +31781,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 5928,
+                  "charOffset": 5856,
                   "snippet": {
                     "text": "&&"
                   }
@@ -31461,7 +31821,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 5977,
+                  "charOffset": 5905,
                   "snippet": {
                     "text": "&&"
                   }
@@ -31501,7 +31861,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 6206,
+                  "charOffset": 6133,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -31541,7 +31901,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 6224,
+                  "charOffset": 6151,
                   "snippet": {
                     "text": "="
                   }
@@ -31581,7 +31941,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 6228,
+                  "charOffset": 6155,
                   "snippet": {
                     "text": "&&"
                   }
@@ -31621,7 +31981,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 6288,
+                  "charOffset": 6215,
                   "snippet": {
                     "text": "&&"
                   }
@@ -31661,7 +32021,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 6337,
+                  "charOffset": 6264,
                   "snippet": {
                     "text": "&&"
                   }
@@ -31701,7 +32061,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 6566,
+                  "charOffset": 6493,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -31741,7 +32101,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 6584,
+                  "charOffset": 6511,
                   "snippet": {
                     "text": "="
                   }
@@ -31781,7 +32141,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 6588,
+                  "charOffset": 6515,
                   "snippet": {
                     "text": "&&"
                   }
@@ -31821,7 +32181,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 6648,
+                  "charOffset": 6575,
                   "snippet": {
                     "text": "&&"
                   }
@@ -31861,7 +32221,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 6697,
+                  "charOffset": 6624,
                   "snippet": {
                     "text": "&&"
                   }
@@ -31901,7 +32261,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 6928,
+                  "charOffset": 6853,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -31941,7 +32301,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 6946,
+                  "charOffset": 6871,
                   "snippet": {
                     "text": "="
                   }
@@ -31981,7 +32341,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 6950,
+                  "charOffset": 6875,
                   "snippet": {
                     "text": "&&"
                   }
@@ -32021,7 +32381,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 7010,
+                  "charOffset": 6935,
                   "snippet": {
                     "text": "&&"
                   }
@@ -32061,7 +32421,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 7059,
+                  "charOffset": 6984,
                   "snippet": {
                     "text": "&&"
                   }
@@ -32101,7 +32461,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 7293,
+                  "charOffset": 7215,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -32141,7 +32501,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 7311,
+                  "charOffset": 7233,
                   "snippet": {
                     "text": "="
                   }
@@ -32181,7 +32541,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 7315,
+                  "charOffset": 7237,
                   "snippet": {
                     "text": "&&"
                   }
@@ -32221,7 +32581,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 7375,
+                  "charOffset": 7297,
                   "snippet": {
                     "text": "&&"
                   }
@@ -32261,7 +32621,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 7424,
+                  "charOffset": 7346,
                   "snippet": {
                     "text": "&&"
                   }
@@ -32301,7 +32661,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 7656,
+                  "charOffset": 7580,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -32341,7 +32701,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 7674,
+                  "charOffset": 7598,
                   "snippet": {
                     "text": "="
                   }
@@ -32381,7 +32741,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 7679,
+                  "charOffset": 7602,
                   "snippet": {
                     "text": "&&"
                   }
@@ -32421,7 +32781,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 7739,
+                  "charOffset": 7662,
                   "snippet": {
                     "text": "&&"
                   }
@@ -32461,7 +32821,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 7788,
+                  "charOffset": 7711,
                   "snippet": {
                     "text": "&&"
                   }
@@ -32501,7 +32861,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 8021,
+                  "charOffset": 7943,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -32541,7 +32901,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 8039,
+                  "charOffset": 7961,
                   "snippet": {
                     "text": "="
                   }
@@ -32581,7 +32941,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 8044,
+                  "charOffset": 7966,
                   "snippet": {
                     "text": "&&"
                   }
@@ -32621,7 +32981,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 8104,
+                  "charOffset": 8026,
                   "snippet": {
                     "text": "&&"
                   }
@@ -32661,7 +33021,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 8153,
+                  "charOffset": 8075,
                   "snippet": {
                     "text": "&&"
                   }
@@ -32701,7 +33061,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 8386,
+                  "charOffset": 8308,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -32741,7 +33101,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 8404,
+                  "charOffset": 8326,
                   "snippet": {
                     "text": "="
                   }
@@ -32781,7 +33141,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 8409,
+                  "charOffset": 8331,
                   "snippet": {
                     "text": "&&"
                   }
@@ -32821,7 +33181,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 8469,
+                  "charOffset": 8391,
                   "snippet": {
                     "text": "&&"
                   }
@@ -32861,7 +33221,367 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 8518,
+                  "charOffset": 8440,
+                  "snippet": {
+                    "text": "&&"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "Director",
+                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.Button_Export_Turnover_Director"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.Button_Export_Turnover_Director.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.Button_Export_Turnover_Director.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 17,
+                  "charOffset": 8673,
+                  "snippet": {
+                    "text": "Month(quote_Date)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "Director",
+                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.Button_Export_Turnover_Director"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Month"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.Button_Export_Turnover_Director.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.Button_Export_Turnover_Director.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 8691,
+                  "snippet": {
+                    "text": "="
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "Director",
+                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.Button_Export_Turnover_Director"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.Button_Export_Turnover_Director.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.Button_Export_Turnover_Director.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
+                  "charOffset": 8696,
+                  "snippet": {
+                    "text": "&&"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "Director",
+                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.Button_Export_Turnover_Director"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.Button_Export_Turnover_Director.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.Button_Export_Turnover_Director.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
+                  "charOffset": 8756,
+                  "snippet": {
+                    "text": "&&"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "Director",
+                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.Button_Export_Turnover_Director"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.Button_Export_Turnover_Director.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.Button_Export_Turnover_Director.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
+                  "charOffset": 8805,
+                  "snippet": {
+                    "text": "&&"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "Director",
+                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.Button_Export_Turnover_Director"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.Button_Export_Turnover_Director.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.Button_Export_Turnover_Director.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 16,
+                  "charOffset": 9035,
+                  "snippet": {
+                    "text": "Year(quote_Date)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "Director",
+                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.Button_Export_Turnover_Director"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Year"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.Button_Export_Turnover_Director.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.Button_Export_Turnover_Director.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 9052,
+                  "snippet": {
+                    "text": "="
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "Director",
+                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.Button_Export_Turnover_Director"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.Button_Export_Turnover_Director.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.Button_Export_Turnover_Director.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
+                  "charOffset": 9092,
+                  "snippet": {
+                    "text": "&&"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "Director",
+                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.Button_Export_Turnover_Director"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.Button_Export_Turnover_Director.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.Button_Export_Turnover_Director.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
+                  "charOffset": 9141,
                   "snippet": {
                     "text": "&&"
                   }

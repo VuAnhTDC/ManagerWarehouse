@@ -106,11 +106,18 @@ Director As screen:
                                 Collect_Report,
                                 {
                                     Month: "January",
-                                    Value: CountRows(
+                                    Order: CountRows(
                                         Filter(
                                             Quote,
                                             Month(quote_Date) = 1 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
                                         )
+                                    ),
+                                    Price:Sum(
+                                        Filter(
+                                            Quote,
+                                            Month(quote_Date) = 1 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                        ),
+                                        sumPriceQuote
                                     )
                                 },
                                 {
@@ -209,6 +216,15 @@ Director As screen:
                                         Filter(
                                             Quote,
                                             Month(quote_Date) = 12 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                        )
+                                    )
+                                };
+                                {
+                                    Month: "Total",
+                                    Value: CountRows(
+                                        Filter(
+                                            Quote,
+                                            Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
                                         )
                                     )
                                 }
@@ -332,6 +348,15 @@ Director As screen:
                                         Filter(
                                             Quote,
                                             Month(quote_Date) = 12 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                        )
+                                    )
+                                };
+                                {
+                                    Month: "Total",
+                                    Value: CountRows(
+                                        Filter(
+                                            Quote,
+                                            Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
                                         )
                                     )
                                 }
@@ -747,6 +772,16 @@ Director As screen:
                                         ),
                                         sumPriceQuote
                                     )
+                                };
+                                {
+                                    Month: "Total",
+                                    Value: Sum(
+                                        Filter(
+                                            Quote,
+                                            Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                        ),
+                                        sumPriceQuote
+                                    )
                                 }
                             );
                             Export_CSV_Warehouse_Manager.Run(
@@ -879,6 +914,16 @@ Director As screen:
                                         Filter(
                                             Quote,
                                             Month(quote_Date) = 12 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                        ),
+                                        sumPriceQuote
+                                    )
+                                };
+                                {
+                                    Month: "Total",
+                                    Value: Sum(
+                                        Filter(
+                                            Quote,
+                                            Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
                                         ),
                                         sumPriceQuote
                                     )
