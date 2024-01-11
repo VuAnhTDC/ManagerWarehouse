@@ -549,7 +549,13 @@ DetailQuote_Screen As screen:
                                 Warehouse_Manager_SendEmailRole.Run(
                                     TempUser.email_User,
                                     "Sản phẩm có số lượng không đáp ứng nhu cầu khách hàng",
-                                    "Sản phẩm có mã: " & Temp.idData & " .Hiện tại không đáp ứng nhu cầu đơn hàng của khách hàng. Khách hàng yêu cầu số lượng: " & LookUp(Quote_Product, id_Product = Temp.idData).quantity_Quote_Product & " .Nhưng số lượng chỉ còn là: " & LookUp(Product,id_Product = Temp.idData).quantity_Product
+                                    "Sản phẩm có mã: " & Temp.idData & " .Hiện tại không đáp ứng nhu cầu đơn hàng của khách hàng. Khách hàng yêu cầu số lượng: " & LookUp(
+                                        Quote_Product,
+                                        id_Product = Temp.idData
+                                    ).quantity_Quote_Product & " .Nhưng số lượng chỉ còn là: " & LookUp(
+                                        Product,
+                                        id_Product = Temp.idData
+                                    ).quantity_Product
                                 )
                             )
                         )
@@ -562,6 +568,22 @@ DetailQuote_Screen As screen:
                         id_Quote = TextInput1.Text
                     ),
                     {quote_Status: true}
+                );
+                ForAll(
+                    dataProductQuoteByIdCustomer As Temp,
+                    Patch(
+                        Product,
+                        LookUp(
+                            Product,
+                            id_Product = Temp.id_Product
+                        ),
+                        {
+                            quantity_Product: LookUp(
+                                Product,
+                                id_Product = Temp.id_Product
+                            ).quantity_Product - Temp.quantity_Quote_Product
+                        }
+                    )
                 );
                 Notify(
                     "Chuyển sang đơn hàng thành công",
