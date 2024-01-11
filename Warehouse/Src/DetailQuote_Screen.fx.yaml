@@ -587,7 +587,7 @@ DetailQuote_Screen As screen:
                 );
                 Notify(
                     "Chuyển sang đơn hàng thành công",
-                    NotificationType.Information
+                    NotificationType.Success
                 )
             )
         Text: ="Chuyển sang đơn hàng"
