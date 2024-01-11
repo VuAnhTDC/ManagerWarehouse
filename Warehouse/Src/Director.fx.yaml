@@ -42,7 +42,7 @@ Director As screen:
                 DisplayFields: =["user_Name"]
                 Items: =Filter(User,id_Role=LookUp(Role,name_Role="Sales").ID&&activity=true)
                 SearchFields: =["user_Name"]
-                SearchItems: =Search(Filter(User,id_Role=LookUp(Role,name_Role="Sales").ID&&activity),ComboBox_Sales_Director.SearchText,"user_Name")
+                SearchItems: =Search(Filter(User,id_Role=LookUp(Role,name_Role="Sales").ID&&activity=true),ComboBox_Sales_Director.SearchText,"user_Name")
                 SelectMultiple: =false
                 Width: =300
                 X: =712

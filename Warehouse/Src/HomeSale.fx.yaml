@@ -3354,14 +3354,14 @@ HomeSale As screen:
                         LineChart2_Order_Director_1 As lineChart:
                             Items: |-
                                 =If(
-                                    IsEmpty(ComboBox_Sales_Director_1.SelectedItems),
+                                    IsEmpty(ComboBox_Sales_Director.SelectedItems),
                                     Table(
                                         {
                                             Month: "Tháng 1",
                                             Value: CountRows(
                                                 Filter(
                                                     Quote,
-                                                    Month(quote_Date) = 1 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && quote_Status = true
+                                                    Month(quote_Date) = 1 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
                                                 )
                                             )
                                         },
@@ -3370,7 +3370,7 @@ HomeSale As screen:
                                             Value: CountRows(
                                                 Filter(
                                                     Quote,
-                                                    Month(quote_Date) = 2 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value
+                                                    Month(quote_Date) = 2 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
                                                 )
                                             )
                                         },
@@ -3379,7 +3379,7 @@ HomeSale As screen:
                                             Value: CountRows(
                                                 Filter(
                                                     Quote,
-                                                    Month(quote_Date) = 3 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value
+                                                    Month(quote_Date) = 3 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
                                                 )
                                             )
                                         },
@@ -3388,7 +3388,7 @@ HomeSale As screen:
                                             Value: CountRows(
                                                 Filter(
                                                     Quote,
-                                                    Month(quote_Date) = 4 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value
+                                                    Month(quote_Date) = 4 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
                                                 )
                                             )
                                         },
@@ -3397,7 +3397,7 @@ HomeSale As screen:
                                             Value: CountRows(
                                                 Filter(
                                                     Quote,
-                                                    Month(quote_Date) = 5 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value
+                                                    Month(quote_Date) = 5 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
                                                 )
                                             )
                                         },
@@ -3406,7 +3406,7 @@ HomeSale As screen:
                                             Value: CountRows(
                                                 Filter(
                                                     Quote,
-                                                    Month(quote_Date) = 6 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value
+                                                    Month(quote_Date) = 6 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
                                                 )
                                             )
                                         },
@@ -3415,7 +3415,7 @@ HomeSale As screen:
                                             Value: CountRows(
                                                 Filter(
                                                     Quote,
-                                                    Month(quote_Date) = 7 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value
+                                                    Month(quote_Date) = 7 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
                                                 )
                                             )
                                         },
@@ -3424,7 +3424,7 @@ HomeSale As screen:
                                             Value: CountRows(
                                                 Filter(
                                                     Quote,
-                                                    Month(quote_Date) = 8 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value
+                                                    Month(quote_Date) = 8 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
                                                 )
                                             )
                                         },
@@ -3433,7 +3433,7 @@ HomeSale As screen:
                                             Value: CountRows(
                                                 Filter(
                                                     Quote,
-                                                    Month(quote_Date) = 9 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value
+                                                    Month(quote_Date) = 9 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
                                                 )
                                             )
                                         },
@@ -3442,7 +3442,7 @@ HomeSale As screen:
                                             Value: CountRows(
                                                 Filter(
                                                     Quote,
-                                                    Month(quote_Date) = 10 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value
+                                                    Month(quote_Date) = 10 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
                                                 )
                                             )
                                         },
@@ -3451,7 +3451,7 @@ HomeSale As screen:
                                             Value: CountRows(
                                                 Filter(
                                                     Quote,
-                                                    Month(quote_Date) = 11 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value
+                                                    Month(quote_Date) = 11 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
                                                 )
                                             )
                                         },
@@ -3460,7 +3460,7 @@ HomeSale As screen:
                                             Value: CountRows(
                                                 Filter(
                                                     Quote,
-                                                    Month(quote_Date) = 12 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value
+                                                    Month(quote_Date) = 12 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
                                                 )
                                             )
                                         }
@@ -3471,7 +3471,7 @@ HomeSale As screen:
                                             Value: CountRows(
                                                 Filter(
                                                     Quote,
-                                                    Month(quote_Date) = 1 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID
+                                                    Month(quote_Date) = 1 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
                                                 )
                                             )
                                         },
@@ -3480,7 +3480,7 @@ HomeSale As screen:
                                             Value: CountRows(
                                                 Filter(
                                                     Quote,
-                                                    Month(quote_Date) = 2 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID
+                                                    Month(quote_Date) = 2 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
                                                 )
                                             )
                                         },
@@ -3489,7 +3489,7 @@ HomeSale As screen:
                                             Value: CountRows(
                                                 Filter(
                                                     Quote,
-                                                    Month(quote_Date) = 3 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID
+                                                    Month(quote_Date) = 3 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
                                                 )
                                             )
                                         },
@@ -3498,7 +3498,7 @@ HomeSale As screen:
                                             Value: CountRows(
                                                 Filter(
                                                     Quote,
-                                                    Month(quote_Date) = 4 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID
+                                                    Month(quote_Date) = 4 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
                                                 )
                                             )
                                         },
@@ -3507,7 +3507,7 @@ HomeSale As screen:
                                             Value: CountRows(
                                                 Filter(
                                                     Quote,
-                                                    Month(quote_Date) = 5 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID
+                                                    Month(quote_Date) = 5 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
                                                 )
                                             )
                                         },
@@ -3516,7 +3516,7 @@ HomeSale As screen:
                                             Value: CountRows(
                                                 Filter(
                                                     Quote,
-                                                    Month(quote_Date) = 6 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID
+                                                    Month(quote_Date) = 6 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
                                                 )
                                             )
                                         },
@@ -3525,7 +3525,7 @@ HomeSale As screen:
                                             Value: CountRows(
                                                 Filter(
                                                     Quote,
-                                                    Month(quote_Date) = 7 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID
+                                                    Month(quote_Date) = 7 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
                                                 )
                                             )
                                         },
@@ -3534,7 +3534,7 @@ HomeSale As screen:
                                             Value: CountRows(
                                                 Filter(
                                                     Quote,
-                                                    Month(quote_Date) = 8 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID
+                                                    Month(quote_Date) = 8 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
                                                 )
                                             )
                                         },
@@ -3543,7 +3543,7 @@ HomeSale As screen:
                                             Value: CountRows(
                                                 Filter(
                                                     Quote,
-                                                    Month(quote_Date) = 9 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID
+                                                    Month(quote_Date) = 9 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
                                                 )
                                             )
                                         },
@@ -3552,7 +3552,7 @@ HomeSale As screen:
                                             Value: CountRows(
                                                 Filter(
                                                     Quote,
-                                                    Month(quote_Date) = 10 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID
+                                                    Month(quote_Date) = 10 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
                                                 )
                                             )
                                         },
@@ -3561,7 +3561,7 @@ HomeSale As screen:
                                             Value: CountRows(
                                                 Filter(
                                                     Quote,
-                                                    Month(quote_Date) = 11 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID
+                                                    Month(quote_Date) = 11 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
                                                 )
                                             )
                                         },
@@ -3570,7 +3570,7 @@ HomeSale As screen:
                                             Value: CountRows(
                                                 Filter(
                                                     Quote,
-                                                    Month(quote_Date) = 12 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID && quote_Status = true
+                                                    Month(quote_Date) = 12 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
                                                 )
                                             )
                                         }
@@ -3902,14 +3902,14 @@ HomeSale As screen:
                         LineChart3_Turnover_Director_1 As lineChart:
                             Items: |-
                                 =If(
-                                    IsEmpty(ComboBox_Sales_Director_1.SelectedItems),
+                                    IsEmpty(ComboBox_Sales_Director.SelectedItems),
                                     Table(
                                         {
                                             Month: "Tháng 1",
                                             Value: Sum(
                                                 Filter(
                                                     Quote,
-                                                    Month(quote_Date) = 1 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value
+                                                    Month(quote_Date) = 1 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
                                                 ),
                                                 sumPriceQuote
                                             )
@@ -3919,7 +3919,7 @@ HomeSale As screen:
                                             Value: Sum(
                                                 Filter(
                                                     Quote,
-                                                    Month(quote_Date) = 2 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value
+                                                    Month(quote_Date) = 2 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
                                                 ),
                                                 sumPriceQuote
                                             )
@@ -3929,7 +3929,7 @@ HomeSale As screen:
                                             Value: Sum(
                                                 Filter(
                                                     Quote,
-                                                    Month(quote_Date) = 3 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value
+                                                    Month(quote_Date) = 3 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
                                                 ),
                                                 sumPriceQuote
                                             )
@@ -3939,7 +3939,7 @@ HomeSale As screen:
                                             Value: Sum(
                                                 Filter(
                                                     Quote,
-                                                    Month(quote_Date) = 4 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value
+                                                    Month(quote_Date) = 4 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
                                                 ),
                                                 sumPriceQuote
                                             )
@@ -3949,7 +3949,7 @@ HomeSale As screen:
                                             Value: Sum(
                                                 Filter(
                                                     Quote,
-                                                    Month(quote_Date) = 5 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value
+                                                    Month(quote_Date) = 5 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
                                                 ),
                                                 sumPriceQuote
                                             )
@@ -3959,7 +3959,7 @@ HomeSale As screen:
                                             Value: Sum(
                                                 Filter(
                                                     Quote,
-                                                    Month(quote_Date) = 6 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value
+                                                    Month(quote_Date) = 6 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
                                                 ),
                                                 sumPriceQuote
                                             )
@@ -3969,7 +3969,7 @@ HomeSale As screen:
                                             Value: Sum(
                                                 Filter(
                                                     Quote,
-                                                    Month(quote_Date) = 7 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value
+                                                    Month(quote_Date) = 7 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
                                                 ),
                                                 sumPriceQuote
                                             )
@@ -3979,7 +3979,7 @@ HomeSale As screen:
                                             Value: Sum(
                                                 Filter(
                                                     Quote,
-                                                    Month(quote_Date) = 8 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value
+                                                    Month(quote_Date) = 8 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
                                                 ),
                                                 sumPriceQuote
                                             )
@@ -3989,7 +3989,7 @@ HomeSale As screen:
                                             Value: Sum(
                                                 Filter(
                                                     Quote,
-                                                    Month(quote_Date) = 9 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value
+                                                    Month(quote_Date) = 9 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
                                                 ),
                                                 sumPriceQuote
                                             )
@@ -3999,7 +3999,7 @@ HomeSale As screen:
                                             Value: Sum(
                                                 Filter(
                                                     Quote,
-                                                    Month(quote_Date) = 10 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value
+                                                    Month(quote_Date) = 10 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
                                                 ),
                                                 sumPriceQuote
                                             )
@@ -4009,7 +4009,7 @@ HomeSale As screen:
                                             Value: Sum(
                                                 Filter(
                                                     Quote,
-                                                    Month(quote_Date) = 11 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value
+                                                    Month(quote_Date) = 11 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
                                                 ),
                                                 sumPriceQuote
                                             )
@@ -4019,7 +4019,7 @@ HomeSale As screen:
                                             Value: Sum(
                                                 Filter(
                                                     Quote,
-                                                    Month(quote_Date) = 12 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value
+                                                    Month(quote_Date) = 12 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
                                                 ),
                                                 sumPriceQuote
                                             )
@@ -4031,7 +4031,7 @@ HomeSale As screen:
                                             Value: Sum(
                                                 Filter(
                                                     Quote,
-                                                    Month(quote_Date) = 1 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID
+                                                    Month(quote_Date) = 1 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
                                                 ),
                                                 sumPriceQuote
                                             )
@@ -4041,7 +4041,7 @@ HomeSale As screen:
                                             Value: Sum(
                                                 Filter(
                                                     Quote,
-                                                    Month(quote_Date) = 2 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID
+                                                    Month(quote_Date) = 2 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
                                                 ),
                                                 sumPriceQuote
                                             )
@@ -4051,7 +4051,7 @@ HomeSale As screen:
                                             Value: Sum(
                                                 Filter(
                                                     Quote,
-                                                    Month(quote_Date) = 3 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID
+                                                    Month(quote_Date) = 3 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
                                                 ),
                                                 sumPriceQuote
                                             )
@@ -4061,7 +4061,7 @@ HomeSale As screen:
                                             Value: Sum(
                                                 Filter(
                                                     Quote,
-                                                    Month(quote_Date) = 4 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID
+                                                    Month(quote_Date) = 4 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
                                                 ),
                                                 sumPriceQuote
                                             )
@@ -4071,7 +4071,7 @@ HomeSale As screen:
                                             Value: Sum(
                                                 Filter(
                                                     Quote,
-                                                    Month(quote_Date) = 5 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID
+                                                    Month(quote_Date) = 5 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
                                                 ),
                                                 sumPriceQuote
                                             )
@@ -4081,7 +4081,7 @@ HomeSale As screen:
                                             Value: Sum(
                                                 Filter(
                                                     Quote,
-                                                    Month(quote_Date) = 6 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID
+                                                    Month(quote_Date) = 6 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
                                                 ),
                                                 sumPriceQuote
                                             )
@@ -4091,7 +4091,7 @@ HomeSale As screen:
                                             Value: Sum(
                                                 Filter(
                                                     Quote,
-                                                    Month(quote_Date) = 7 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID
+                                                    Month(quote_Date) = 7 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
                                                 ),
                                                 sumPriceQuote
                                             )
@@ -4101,7 +4101,7 @@ HomeSale As screen:
                                             Value: Sum(
                                                 Filter(
                                                     Quote,
-                                                    Month(quote_Date) = 8 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID
+                                                    Month(quote_Date) = 8 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
                                                 ),
                                                 sumPriceQuote
                                             )
@@ -4111,7 +4111,7 @@ HomeSale As screen:
                                             Value: Sum(
                                                 Filter(
                                                     Quote,
-                                                    Month(quote_Date) = 9 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID
+                                                    Month(quote_Date) = 9 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
                                                 ),
                                                 sumPriceQuote
                                             )
@@ -4121,7 +4121,7 @@ HomeSale As screen:
                                             Value: Sum(
                                                 Filter(
                                                     Quote,
-                                                    Month(quote_Date) = 10 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID
+                                                    Month(quote_Date) = 10 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
                                                 ),
                                                 sumPriceQuote
                                             )
@@ -4131,7 +4131,7 @@ HomeSale As screen:
                                             Value: Sum(
                                                 Filter(
                                                     Quote,
-                                                    Month(quote_Date) = 11 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID
+                                                    Month(quote_Date) = 11 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
                                                 ),
                                                 sumPriceQuote
                                             )
@@ -4141,7 +4141,7 @@ HomeSale As screen:
                                             Value: Sum(
                                                 Filter(
                                                     Quote,
-                                                    Month(quote_Date) = 12 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID
+                                                    Month(quote_Date) = 12 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
                                                 ),
                                                 sumPriceQuote
                                             )
