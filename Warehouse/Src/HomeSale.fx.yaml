@@ -413,7 +413,7 @@ HomeSale As screen:
                         Service,
                         Defaults(Service),
                         {
-                            id_Serivce: "DV_" & Text(Now(),"ddmmyyhhmmss"),
+                            id_Serivce: "DV_" & Text(Now(),"ddmmyyhhmmss") & informationUser.ID,
                             service_Name:edtNameSerVice_containerAdd_HomeSale_1.Text,
                             service_Decription:edtDescriptionService_containerAdd_HomeSale_1.Text,
                             service_Price: Value(edtPriceService_containerAdd_HomeSale_1.Text)
