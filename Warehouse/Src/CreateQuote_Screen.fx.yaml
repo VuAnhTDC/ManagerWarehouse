@@ -307,8 +307,10 @@ CreateQuote_Screen As screen:
 
         lblTitleAddService_CreateQuoteScreen As label:
             BorderThickness: =1
-            FontWeight: =FontWeight.Bold
+            Fill: =RGBA(237, 237, 237, 1)
+            FontWeight: =FontWeight.Lighter
             Height: =29
+            Italic: =true
             Size: =15
             Text: ="Dịch vụ"
             Width: =172
