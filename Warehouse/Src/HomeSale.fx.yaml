@@ -3452,6 +3452,185 @@ HomeSale As screen:
                 ComboBox_Sales_Director_1 As combobox:
                     DisplayFields: =["user_Name"]
                     Items: =Filter(User,id_Role=LookUp(Role,name_Role="Sales").ID&&activity=true)
+                    OnChange: |-
+                        =// Tính toán ngày cuối cùng của tháng
+                        Set(
+                            ngayCuoiThang,
+                            DateAdd(
+                                DateValue(
+                                    Value(
+                                        Mid(
+                                            Dropdown2_1.Selected.Value,
+                                            7,
+                                            2
+                                        )
+                                    ) & "/1/" & Dropdown_Year_Director_1.Selected.Value
+                                ),
+                                1,
+                                TimeUnit.Months
+                            ) - 1
+                        );
+                        ClearCollect(
+                            statictialOrder,
+                            []
+                        );
+                        ClearCollect(
+                            statictialPrice,
+                            []
+                        );
+                        If(
+                            IsBlank(ComboBox_Sales_Director_1.Selected),
+                            ForAll(
+                                Sequence(
+                                    Value(
+                                        Day(
+                                            Text(
+                                                ngayCuoiThang,
+                                                "mm/dd/yyyy"
+                                            )
+                                        )
+                                    )
+                                ),
+                                Collect(
+                                    statictialOrder,
+                                    {
+                                        Month: CountRows(statictialOrder) + 1 & "/" & Value(
+                                            Mid(
+                                                Dropdown2_1.Selected.Value,
+                                                7,
+                                                2
+                                            )
+                                        ) & "/" & Dropdown_Year_Director_1.Selected.Value,
+                                        Value: CountRows(
+                                            Filter(
+                                                Quote,
+                                                Day(quote_Date) = CountRows(statictialOrder) + 1 && Month(quote_Date) = Value(
+                                                    Mid(
+                                                        Dropdown2_1.Selected.Value,
+                                                        7,
+                                                        2
+                                                    )
+                                                ) && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && quote_Status = true
+                                            )
+                                        )
+                                    }
+                                )
+                            ),
+                            ForAll(
+                                Sequence(
+                                    Value(
+                                        Day(
+                                            Text(
+                                                ngayCuoiThang,
+                                                "mm/dd/yyyy"
+                                            )
+                                        )
+                                    )
+                                ),
+                                Collect(
+                                    statictialOrder,
+                                    {
+                                        Month: CountRows(statictialOrder) + 1 & "/" & Value(
+                                            Mid(
+                                                Dropdown2_1.Selected.Value,
+                                                7,
+                                                2
+                                            )
+                                        ) & "/" & Dropdown_Year_Director_1.Selected.Value,
+                                        Value: CountRows(
+                                            Filter(
+                                                Quote,
+                                                Day(quote_Date) = CountRows(statictialOrder) + 1 && Month(quote_Date) = Value(
+                                                    Mid(
+                                                        Dropdown2_1.Selected.Value,
+                                                        7,
+                                                        2
+                                                    )
+                                                ) && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && quote_Status = true && id_User = ComboBox_Sales_Director_1.Selected.ID
+                                            )
+                                        )
+                                    }
+                                )
+                            )
+                        );
+                        If(
+                            IsBlank(ComboBox_Sales_Director_1.Selected),
+                            ForAll(
+                                Sequence(
+                                    Value(
+                                        Day(
+                                            Text(
+                                                ngayCuoiThang,
+                                                "mm/dd/yyyy"
+                                            )
+                                        )
+                                    )
+                                ),
+                                Collect(
+                                    statictialPrice,
+                                    {
+                                        Month: CountRows(statictialPrice) + 1 & "/" & Value(
+                                            Mid(
+                                                Dropdown2_1.Selected.Value,
+                                                7,
+                                                2
+                                            )
+                                        ) & "/" & Dropdown_Year_Director_1.Selected.Value,
+                                        Value: Sum(
+                                            Filter(
+                                                Quote,
+                                                Day(quote_Date) = CountRows(statictialPrice) + 1 && Month(quote_Date) = Value(
+                                                    Mid(
+                                                        Dropdown2_1.Selected.Value,
+                                                        7,
+                                                        2
+                                                    )
+                                                ) && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && quote_Status = true
+                                            ),
+                                            sumPriceQuote
+                                        )
+                                    }
+                                )
+                            ),
+                            ForAll(
+                                Sequence(
+                                    Value(
+                                        Day(
+                                            Text(
+                                                ngayCuoiThang,
+                                                "mm/dd/yyyy"
+                                            )
+                                        )
+                                    )
+                                ),
+                                Collect(
+                                    statictialPrice,
+                                    {
+                                        Month: CountRows(statictialPrice) + 1 & "/" & Value(
+                                            Mid(
+                                                Dropdown2_1.Selected.Value,
+                                                7,
+                                                2
+                                            )
+                                        ) & "/" & Dropdown_Year_Director_1.Selected.Value,
+                                        Value: Sum(
+                                            Filter(
+                                                Quote,
+                                                Day(quote_Date) = CountRows(statictialPrice) + 1 && Month(quote_Date) = Value(
+                                                    Mid(
+                                                        Dropdown2_1.Selected.Value,
+                                                        7,
+                                                        2
+                                                    )
+                                                ) && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && quote_Status = true && id_User = ComboBox_Sales_Director_1.Selected.ID
+                                            ),
+                                            sumPriceQuote
+                                        )
+                                    }
+                                )
+                            );
+                            
+                        )
                     SearchFields: =["user_Name"]
                     SearchItems: =Search(Filter(User,id_Role=LookUp(Role,name_Role="Sales").ID&&activity=true),ComboBox_Sales_Director_1.SearchText,"user_Name")
                     SelectMultiple: =false
