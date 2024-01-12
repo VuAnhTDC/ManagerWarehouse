@@ -183,8 +183,10 @@ CreateQuote_Screen As screen:
 
         lblTitlePRoductListAdd_SCreateQuoteScreen As label:
             BorderThickness: =1
-            FontWeight: =FontWeight.Bold
+            Fill: =RGBA(237, 237, 237, 1)
+            FontWeight: =FontWeight.Lighter
             Height: =29
+            Italic: =true
             Size: =15
             Text: ="Sản phẩm"
             Width: =172
@@ -309,9 +311,9 @@ CreateQuote_Screen As screen:
             Height: =29
             Size: =15
             Text: ="Dịch vụ"
-            Width: =237
-            X: =6
-            Y: =6
+            Width: =172
+            X: =62
+            Y: =8
             ZIndex: =1
 
         btnAddService_CreateQuoteScreen As button:
@@ -391,6 +393,19 @@ CreateQuote_Screen As screen:
                 X: =363
                 Y: =16
                 ZIndex: =9
+
+        Image9 As image:
+            BorderThickness: =1
+            Height: =40
+            Image: =iconservice
+            RadiusBottomLeft: =10
+            RadiusBottomRight: =10
+            RadiusTopLeft: =10
+            RadiusTopRight: =10
+            Width: =40
+            X: =11
+            Y: =2
+            ZIndex: =4
 
     containerContentAdd_CreateQuoteScreen As groupContainer.manualLayoutContainer:
         Fill: =RGBA(0, 0, 0, 0.41)
