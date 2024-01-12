@@ -364,7 +364,7 @@ CreateQuote_Screen As screen:
                 Italic: =true
                 OnSelect: =Select(Parent)
                 Text: |-
-                    =Text(Value(ThisItem.price_Quote_Service), "[$-en-US]#,### đ")
+                    =If(ThisItem.price_Quote_Service = 0, "0 đ",Text(Value(ThisItem.price_Quote_Service), "[$-en-US]#,### đ"))
                 Width: =275
                 X: =88
                 Y: =57
