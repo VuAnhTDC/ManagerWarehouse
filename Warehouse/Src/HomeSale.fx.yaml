@@ -584,17 +584,6 @@ HomeSale As screen:
             Width: =997
             ZIndex: =2
 
-            lblTitleServiceList_HomeSale_1 As label:
-                Align: =Align.Center
-                Fill: =RGBA(130, 191, 169, 1)
-                FontWeight: =FontWeight.Bold
-                Height: =31
-                Text: ="Danh sách dịch vụ"
-                Width: =278
-                X: =40
-                Y: =38
-                ZIndex: =1
-
             "galleryServiceList_HomeSale_1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
                 BorderThickness: =1
                 DelayItemLoading: =true
@@ -608,7 +597,7 @@ HomeSale As screen:
                 TemplateSize: =84
                 Width: =324
                 X: =16
-                Y: =81
+                Y: =94
                 ZIndex: =2
 
                 lblServiceNameItem_HomeSale_1 As label:
@@ -655,6 +644,16 @@ HomeSale As screen:
                     Y: =50
                     ZIndex: =7
 
+                Image3 As image:
+                    Height: =40
+                    Image: =iconservice
+                    ImagePosition: =ImagePosition.Fill
+                    OnSelect: =Select(Parent)
+                    Width: =40
+                    X: =13
+                    Y: =22
+                    ZIndex: =8
+
             containerInformationService_HomeSale_1 As groupContainer.manualLayoutContainer:
                 BorderThickness: =1
                 Height: =705
@@ -682,7 +681,7 @@ HomeSale As screen:
                     FontWeight: =FontWeight.Bold
                     Text: ="Mã dịch vụ"
                     X: =29
-                    Y: =82
+                    Y: =91
                     ZIndex: =2
 
                 edtIdService_HomeSale_1 As text:
@@ -690,7 +689,7 @@ HomeSale As screen:
                     DisplayMode: =DisplayMode.Disabled
                     Width: =400
                     X: =198
-                    Y: =82
+                    Y: =91
                     ZIndex: =3
 
                 lblServicecName_HomeSale_1 As label:
@@ -698,16 +697,18 @@ HomeSale As screen:
                     FontWeight: =FontWeight.Bold
                     Text: ="Tên dịch vụ"
                     X: =29
-                    Y: =135
+                    Y: =153
                     ZIndex: =4
 
                 edtSerViceName_HomeSale_1 As text:
                     BorderThickness: =1
                     Default: =galleryServiceList_HomeSale_1.Selected.service_Name
+                    Height: =90
+                    Mode: =TextMode.MultiLine
                     OnChange: =Set(isDisableBtnUpdateService,true)
                     Width: =400
                     X: =198
-                    Y: =135
+                    Y: =153
                     ZIndex: =5
 
                 lblDescriptionService_HomeSale_1 As label:
@@ -715,7 +716,7 @@ HomeSale As screen:
                     FontWeight: =FontWeight.Bold
                     Text: ="Mô tả"
                     X: =29
-                    Y: =189
+                    Y: =261
                     ZIndex: =6
 
                 edtDescriptionService_HomeSale_1 As text:
@@ -726,7 +727,7 @@ HomeSale As screen:
                     OnChange: =Set(isDisableBtnUpdateService,true)
                     Width: =400
                     X: =198
-                    Y: =189
+                    Y: =261
                     ZIndex: =7
 
                 lblPriceService_HomeSale_1 As label:
@@ -734,7 +735,7 @@ HomeSale As screen:
                     FontWeight: =FontWeight.Bold
                     Text: ="Giá"
                     X: =29
-                    Y: =447
+                    Y: =519
                     ZIndex: =8
 
                 edtPridceService_HomeSale_1 As text:
@@ -744,7 +745,7 @@ HomeSale As screen:
                     OnChange: =Set(isDisableBtnUpdateService,true)
                     Width: =400
                     X: =198
-                    Y: =447
+                    Y: =519
                     ZIndex: =9
 
                 btnUpdateService_HomeSale_1 As button:
@@ -766,7 +767,7 @@ HomeSale As screen:
                     Text: ="Sửa"
                     Width: =232
                     X: =93
-                    Y: =546
+                    Y: =618
                     ZIndex: =10
 
                 btnDeleteService_HomeSale_1 As button:
@@ -780,7 +781,7 @@ HomeSale As screen:
                     Text: ="Xóa"
                     Width: =232
                     X: =339
-                    Y: =546
+                    Y: =618
                     ZIndex: =11
 
             btnAddServiceNew_HomeSale_1 As button:
@@ -798,6 +799,34 @@ HomeSale As screen:
                 X: =16
                 Y: =662
                 ZIndex: =4
+
+            Container7 As groupContainer.manualLayoutContainer:
+                Fill: =RGBA(237, 237, 237, 1)
+                Height: =68
+                Width: =324
+                X: =16
+                Y: =21
+                ZIndex: =5
+
+                Label56 As label:
+                    Align: =Align.Center
+                    FontWeight: =FontWeight.Bold
+                    Height: =41
+                    Size: =15
+                    Text: ="Danh sách dịch vụ"
+                    Width: =220
+                    X: =41
+                    Y: =11
+                    ZIndex: =1
+
+                Icon9 As icon.Reload:
+                    Height: =40
+                    Icon: =Icon.Reload
+                    OnSelect: =Refresh(Service)
+                    Width: =40
+                    X: =270
+                    Y: =12
+                    ZIndex: =2
 
     containerDialogService_HomeSale As groupContainer.manualLayoutContainer:
         Fill: =RGBA(36, 31, 31, 0.35)
@@ -982,8 +1011,8 @@ HomeSale As screen:
                         ZIndex: =2
 
                     lblTaxCode_Item_HomeSale As label:
-                        FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
-                        Height: =Self.Size * 1.8
+                        FontWeight: = FontWeight.Semibold
+                        Height: =21
                         OnSelect: =Select(Parent)
                         PaddingBottom: =0
                         PaddingLeft: =0
@@ -992,8 +1021,8 @@ HomeSale As screen:
                         Text: |-
                             ="MST: " & ThisItem.taxCode
                         VerticalAlign: =VerticalAlign.Top
-                        Width: =Title2_1.Width
-                        X: =19
+                        Width: =263
+                        X: =51
                         Y: =7
                         ZIndex: =3
 
@@ -1015,21 +1044,22 @@ HomeSale As screen:
                         ZIndex: =6
 
                     lblCustomerName_item_HomeSale As label:
-                        Height: =24
+                        Height: =46
                         OnSelect: =Select(Parent)
                         Text: =ThisItem.customer_Name
+                        VerticalAlign: =VerticalAlign.Top
                         Width: =264
-                        X: =36
-                        Y: =36
+                        X: =55
+                        Y: =28
                         ZIndex: =7
 
                     lblAddressCustomer_item_HomeSale As label:
-                        Height: =18
+                        Height: =27
                         OnSelect: =Select(Parent)
                         Text: =ThisItem.customer_Address
-                        Width: =264
-                        X: =36
-                        Y: =62
+                        Width: =213
+                        X: =99
+                        Y: =76
                         ZIndex: =8
 
                 containerCustomerList_HomeSale As groupContainer.manualLayoutContainer:
@@ -1933,7 +1963,7 @@ HomeSale As screen:
                     Layout: =Layout.Vertical
                     LoadingSpinner: =LoadingSpinner.Data
                     TemplatePadding: =0
-                    TemplateSize: =104
+                    TemplateSize: =126
                     Width: =350
                     Y: =160
                     ZIndex: =2
@@ -1955,9 +1985,8 @@ HomeSale As screen:
 
                     Subtitle4 As label:
                         FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
-                        Height: =34
+                        Height: =60
                         OnSelect: =Select(Parent)
-                        Overflow: =Overflow.Scroll
                         PaddingBottom: =0
                         PaddingLeft: =0
                         PaddingRight: =0
@@ -1991,8 +2020,8 @@ HomeSale As screen:
                         Text: |-
                             = "SL: "&ThisItem.quantity_Product
                         Width: =134
-                        X: =210
-                        Y: =75
+                        X: =207
+                        Y: =85
                         ZIndex: =7
 
                     Label15_1 As label:
@@ -2003,8 +2032,8 @@ HomeSale As screen:
                         Text: |-
                             = "Giá: "&If(ThisItem.price_Product = 0, "0 đ",Text(Value(ThisItem.price_Product), "[$-en-US]#,### đ"))
                         Width: =195
-                        X: =4
-                        Y: =75
+                        X: =12
+                        Y: =85
                         ZIndex: =8
 
             Container10 As groupContainer.manualLayoutContainer:
