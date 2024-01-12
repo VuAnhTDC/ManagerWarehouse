@@ -2782,7 +2782,7 @@ HomeSale As screen:
         "Gallery1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
             BorderThickness: =1
             DelayItemLoading: =true
-            Height: =578
+            Height: =588
             Items: |-
                 =If(IsBlank(TextInput2.Text),Filter(
                     dataCustomer,ID in data.id_Customer
@@ -2795,8 +2795,8 @@ HomeSale As screen:
             TemplatePadding: =0
             TemplateSize: =104
             Width: =978
-            X: =11
-            Y: =148
+            X: =9
+            Y: =142
             ZIndex: =3
 
             Separator1 As rectangle:
