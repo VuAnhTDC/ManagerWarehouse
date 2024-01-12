@@ -1950,7 +1950,7 @@ HomeSale As screen:
                 "Gallery4 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
                     BorderThickness: =1
                     DelayItemLoading: =true
-                    Height: =477
+                    Height: =457
                     Items: |-
                         =If(
                             IsBlank(TextInput3.Text),
@@ -1971,7 +1971,7 @@ HomeSale As screen:
                     TemplatePadding: =0
                     TemplateSize: =126
                     Width: =350
-                    Y: =160
+                    Y: =179
                     ZIndex: =2
 
                     Title4 As label:
@@ -2042,6 +2042,15 @@ HomeSale As screen:
                         X: =12
                         Y: =85
                         ZIndex: =8
+
+                Icon11 As icon.Sync:
+                    Height: =30
+                    Icon: =Icon.Sync
+                    Rotation: =300
+                    Width: =30
+                    X: =305
+                    Y: =138
+                    ZIndex: =3
 
             Container10 As groupContainer.manualLayoutContainer:
                 BorderThickness: =1
