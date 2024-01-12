@@ -249,7 +249,7 @@ Warehouse_Manager As screen:
     Container_Warehouse As groupContainer.horizontalAutoLayoutContainer:
         Height: =768
         LayoutMode: =LayoutMode.Auto
-        Visible: =!category_management
+        Visible: =If(!category_management&&!show_import_product_history,true,false)
         Width: =1366
         ZIndex: =2
 
@@ -1859,11 +1859,12 @@ Warehouse_Manager As screen:
                         Y: =7
                         ZIndex: =2
 
-                    Icon7 As icon.History:
+                    Icon_History_Import_Product_Warehouse As icon.History:
                         Color: =RGBA(255, 255, 255, 1)
                         Fill: =RGBA(56, 96, 178, 1)
                         Height: =35
                         Icon: =Icon.History
+                        OnSelect: =Set(show_import_product_history,true)
                         Width: =35
                         X: =40
                         Y: =7
@@ -3661,6 +3662,297 @@ Warehouse_Manager As screen:
             X: =718
             Y: =442
             ZIndex: =63
+
+    Container_Category_Warehouse_1 As groupContainer.verticalAutoLayoutContainer:
+        Height: =768
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutMode: =LayoutMode.Auto
+        Visible: =show_import_product_history
+        Width: =1366
+        ZIndex: =71
+
+        Container5_Title_Category_Warehouse_1 As groupContainer.manualLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            Fill: =RGBA(56, 96, 178, 1)
+            FillPortions: =0
+            Height: =100
+            LayoutMinHeight: =50
+            LayoutMinWidth: =250
+            Width: =Parent.Width
+            ZIndex: =1
+
+            Label1_Category_Warehouse_1 As label:
+                Align: =Align.Center
+                Color: =RGBA(255, 255, 255, 1)
+                FontWeight: =FontWeight.Semibold
+                Height: =Parent.Height
+                Size: =30
+                Text: ="Lịch sử nhập hàng"
+                Width: =1366
+                ZIndex: =1
+
+            Icon5_Back_Category_Warehouse_1 As icon.BackArrow:
+                Color: =RGBA(255, 255, 255, 1)
+                Icon: =Icon.BackArrow
+                OnSelect: =Set(show_import_product_history,false)
+                X: =42
+                Y: =14
+                ZIndex: =2
+
+        Container5_1_Category_Warehouse_1 As groupContainer.manualLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            FillPortions: =2.5
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            Width: =Parent.Width
+            ZIndex: =2
+
+            Container6_Category_Warehouse_1 As groupContainer.manualLayoutContainer:
+                Height: =Parent.Height-50
+                RadiusBottomLeft: =10
+                RadiusBottomRight: =10
+                RadiusTopLeft: =10
+                RadiusTopRight: =10
+                Width: =409
+                X: =27
+                Y: =21
+                ZIndex: =1
+
+                Label2_Category_Warehouse_1 As label:
+                    Align: =Align.Center
+                    Color: =RGBA(255, 255, 255, 1)
+                    Fill: =RGBA(56, 96, 178, 1)
+                    FontWeight: =FontWeight.Semibold
+                    Height: =49
+                    Size: =25
+                    Text: ="Sản phẩm"
+                    Width: =409
+                    ZIndex: =1
+
+                "Gallery_Import_Product_History_Warehouse As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver5.0'":
+                    DelayItemLoading: =true
+                    Height: =508
+                    Items: =Import_Product_History
+                    Layout: =Layout.Vertical
+                    LoadingSpinner: =LoadingSpinner.Data
+                    TemplatePadding: =0
+                    TemplateSize: =116
+                    Width: =Parent.Width
+                    Y: =49
+                    ZIndex: =3
+
+                    Title2_4 As label:
+                        AutoHeight: =true
+                        FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                        Height: =26
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =15
+                        Text: |-
+                            ="Mã sản phẩm: "&ThisItem.id_Product
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =306
+                        X: =16
+                        Y: =(Parent.TemplateHeight - (Self.Size*1.8 + Subtitle2_3.Size*1.8 + 2 + Body1_3.Size*1.8)) / 2
+                        ZIndex: =1
+
+                    Subtitle2_3 As label:
+                        FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                        Height: =Self.Size * 1.8
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =15
+                        Text: |-
+                            ="Số lượng nhập: "&ThisItem.Import_Product_Quantity
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =Title2_4.Width
+                        X: =Title2_4.X
+                        Y: =Title2_4.Y + Title2_4.Height
+                        ZIndex: =2
+
+                    Body1_3 As label:
+                        FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                        Height: =Self.Size * 1.8
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =15
+                        Text: |-
+                            ="Thời gian nhập: "& Text(ThisItem.Created_at,"dd/mm/yyyy")
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =Title2_4.Width
+                        X: =Title2_4.X
+                        Y: =Subtitle2_3.Y + Subtitle2_3.Height
+                        ZIndex: =3
+
+                    NextArrow2_3 As icon.ChevronRight:
+                        AccessibleLabel: =Self.Tooltip
+                        Color: =RGBA(166, 166, 166, 1)
+                        Height: =50
+                        Icon: =Icon.ChevronRight
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =16
+                        PaddingLeft: =16
+                        PaddingRight: =16
+                        PaddingTop: =16
+                        Tooltip: ="View item details"
+                        Width: =50
+                        X: =Parent.TemplateWidth - Self.Width - 12
+                        Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+                        ZIndex: =4
+
+                    Separator2_6 As rectangle:
+                        Height: =8
+                        OnSelect: =Select(Parent)
+                        Width: =Parent.TemplateWidth
+                        Y: =Parent.TemplateHeight - Self.Height
+                        ZIndex: =5
+
+                    Rectangle2_5 As rectangle:
+                        Height: =Parent.TemplateHeight - Separator2_6.Height
+                        OnSelect: =Select(Parent)
+                        Visible: =ThisItem.IsSelected
+                        Width: =4
+                        ZIndex: =6
+
+            Container6_Information_Category_Warehouse_1 As groupContainer.manualLayoutContainer:
+                Height: =Parent.Height-50
+                RadiusBottomLeft: =10
+                RadiusBottomRight: =10
+                RadiusTopLeft: =10
+                RadiusTopRight: =10
+                Width: =880
+                X: =459
+                Y: =21
+                ZIndex: =2
+
+                Label2_1_Category_Warehouse_1 As label:
+                    Align: =Align.Center
+                    Color: =RGBA(255, 255, 255, 1)
+                    Fill: =RGBA(56, 96, 178, 1)
+                    FontWeight: =FontWeight.Semibold
+                    Height: =64
+                    Size: =25
+                    Text: ="Thông tin nhập hàng"
+                    Width: =880
+                    ZIndex: =1
+
+                Label5_1_Category_Warehouse_1 As label:
+                    FontWeight: =FontWeight.Semibold
+                    Height: =36
+                    Size: =20
+                    Text: |-
+                        ="ID sản phẩm: "&Gallery_Import_Product_History_Warehouse.Selected.id_Product
+                    Width: =793
+                    X: =58
+                    Y: =80
+                    ZIndex: =4
+
+                Button_Thêm_Category_Warehouse_1 As button:
+                    OnSelect: =Set(confirm_category_warehouse,"Add")
+                    Text: ="Thêm"
+                    Visible: =If(add_category=true,true,false)
+                    Width: =166
+                    X: =667
+                    Y: =192
+                    ZIndex: =12
+
+                Icon2_4 As icon.BackArrow:
+                    Color: =RGBA(255, 255, 255, 1)
+                    Height: =35
+                    Icon: =Icon.CancelBadge
+                    OnSelect: =Set(add_category,false)
+                    Visible: =If(add_category=true,true,false)
+                    Width: =35
+                    X: =795
+                    Y: =14
+                    ZIndex: =14
+
+                Label5_1_Category_Warehouse_2 As label:
+                    FontWeight: =FontWeight.Semibold
+                    Height: =36
+                    Size: =20
+                    Text: |-
+                        ="Tên sản phẩm: " & LookUp(
+                            Product,
+                            id_Product = Gallery_Import_Product_History_Warehouse.Selected.id_Product
+                        ).name_Product
+                    Width: =793
+                    X: =58
+                    Y: =124
+                    ZIndex: =15
+
+                Label5_1_Category_Warehouse_3 As label:
+                    FontWeight: =FontWeight.Semibold
+                    Height: =36
+                    Size: =20
+                    Text: |-
+                        ="Số lượng: "&Gallery_Import_Product_History_Warehouse.Selected.Import_Product_Quantity
+                    Width: =793
+                    X: =58
+                    Y: =168
+                    ZIndex: =16
+
+                Label5_1_Category_Warehouse_4 As label:
+                    FontWeight: =FontWeight.Semibold
+                    Height: =36
+                    Size: =20
+                    Text: |-
+                        ="Giá: "&Text(
+                            Gallery_Import_Product_History_Warehouse.Selected.Import_Product_Price,
+                            "[$-en-US]#,###đ"
+                        )
+                    Width: =793
+                    X: =58
+                    Y: =206
+                    ZIndex: =17
+
+                Label5_1_Category_Warehouse_5 As label:
+                    FontWeight: =FontWeight.Semibold
+                    Height: =36
+                    Size: =20
+                    Text: |-
+                        ="Nhà cung cấp: "&LookUp(
+                            Supplier,
+                            taxCode = Gallery_Import_Product_History_Warehouse.Selected.id_Supplier
+                        ).name_Supplier
+                    Width: =793
+                    X: =58
+                    Y: =242
+                    ZIndex: =18
+
+                Label5_1_Category_Warehouse_6 As label:
+                    FontWeight: =FontWeight.Semibold
+                    Height: =36
+                    Size: =20
+                    Text: |-
+                        ="Thời gian nhập: "& Text(Gallery_Import_Product_History_Warehouse.Selected.Created_at,"dd/mm/yyyy")
+                    Width: =793
+                    X: =58
+                    Y: =286
+                    ZIndex: =19
+
+                Label5_1_Category_Warehouse_7 As label:
+                    FontWeight: =FontWeight.Semibold
+                    Height: =36
+                    Size: =20
+                    Text: |-
+                        ="Tổng tiền: " & Text(
+                            Gallery_Import_Product_History_Warehouse.Selected.Import_Product_Quantity * Gallery_Import_Product_History_Warehouse.Selected.Import_Product_Price,
+                            "[$-en-US]#,###đ"
+                        )
+                    Width: =793
+                    X: =58
+                    Y: =330
+                    ZIndex: =20
 
     Confirm_Decline_Request_Warehouse As group:
         Height: =5

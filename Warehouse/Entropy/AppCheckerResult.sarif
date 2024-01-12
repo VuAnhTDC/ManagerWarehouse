@@ -42141,6 +42141,246 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "Warehouse_Manager.Container_Warehouse.Container_Import_Product_Manager_Warehouse.Container6_1.Container15_1.Icon_History_Import_Product_Warehouse.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Warehouse_Manager.Container_Warehouse.Container_Import_Product_Manager_Warehouse.Container6_1.Container15_1.Icon_History_Import_Product_Warehouse.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Warehouse_Manager",
+                "type": "Warehouse_Manager.Container_Warehouse.Container_Import_Product_Manager_Warehouse.Container6_1.Container15_1.Icon_History_Import_Product_Warehouse"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Warehouse_Manager.Container_Warehouse.Container_Import_Product_Manager_Warehouse.Container6_1.Container15_1.Icon_History_Import_Product_Warehouse.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Warehouse_Manager.Container_Warehouse.Container_Import_Product_Manager_Warehouse.Container6_1.Container15_1.Icon_History_Import_Product_Warehouse.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Warehouse_Manager",
+                "type": "Warehouse_Manager.Container_Warehouse.Container_Import_Product_Manager_Warehouse.Container6_1.Container15_1.Icon_History_Import_Product_Warehouse"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Warehouse_Manager.Container_Category_Warehouse_1.Container5_Title_Category_Warehouse_1.Icon5_Back_Category_Warehouse_1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Warehouse_Manager.Container_Category_Warehouse_1.Container5_Title_Category_Warehouse_1.Icon5_Back_Category_Warehouse_1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Warehouse_Manager",
+                "type": "Warehouse_Manager.Container_Category_Warehouse_1.Container5_Title_Category_Warehouse_1.Icon5_Back_Category_Warehouse_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Warehouse_Manager.Container_Category_Warehouse_1.Container5_Title_Category_Warehouse_1.Icon5_Back_Category_Warehouse_1.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Warehouse_Manager.Container_Category_Warehouse_1.Container5_Title_Category_Warehouse_1.Icon5_Back_Category_Warehouse_1.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Warehouse_Manager",
+                "type": "Warehouse_Manager.Container_Category_Warehouse_1.Container5_Title_Category_Warehouse_1.Icon5_Back_Category_Warehouse_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Warehouse_Manager.Container_Category_Warehouse_1.Container5_1_Category_Warehouse_1.Container6_Category_Warehouse_1.Gallery_Import_Product_History_Warehouse.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Warehouse_Manager.Container_Category_Warehouse_1.Container5_1_Category_Warehouse_1.Container6_Category_Warehouse_1.Gallery_Import_Product_History_Warehouse.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Warehouse_Manager",
+                "type": "Warehouse_Manager.Container_Category_Warehouse_1.Container5_1_Category_Warehouse_1.Container6_Category_Warehouse_1.Gallery_Import_Product_History_Warehouse"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Warehouse_Manager.Container_Category_Warehouse_1.Container5_1_Category_Warehouse_1.Container6_Category_Warehouse_1.Gallery_Import_Product_History_Warehouse.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Warehouse_Manager.Container_Category_Warehouse_1.Container5_1_Category_Warehouse_1.Container6_Category_Warehouse_1.Gallery_Import_Product_History_Warehouse.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Warehouse_Manager",
+                "type": "Warehouse_Manager.Container_Category_Warehouse_1.Container5_1_Category_Warehouse_1.Container6_Category_Warehouse_1.Gallery_Import_Product_History_Warehouse"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Warehouse_Manager.Container_Category_Warehouse_1.Container5_1_Category_Warehouse_1.Container6_Information_Category_Warehouse_1.Icon2_4.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Warehouse_Manager.Container_Category_Warehouse_1.Container5_1_Category_Warehouse_1.Container6_Information_Category_Warehouse_1.Icon2_4.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Warehouse_Manager",
+                "type": "Warehouse_Manager.Container_Category_Warehouse_1.Container5_1_Category_Warehouse_1.Container6_Information_Category_Warehouse_1.Icon2_4"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Warehouse_Manager.Container_Category_Warehouse_1.Container5_1_Category_Warehouse_1.Container6_Information_Category_Warehouse_1.Icon2_4.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Warehouse_Manager.Container_Category_Warehouse_1.Container5_1_Category_Warehouse_1.Container6_Information_Category_Warehouse_1.Icon2_4.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Warehouse_Manager",
+                "type": "Warehouse_Manager.Container_Category_Warehouse_1.Container5_1_Category_Warehouse_1.Container6_Information_Category_Warehouse_1.Icon2_4"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "App.icons8-username-48_2"
                 }
               ],
