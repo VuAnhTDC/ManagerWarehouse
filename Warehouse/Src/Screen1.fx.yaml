@@ -1,20 +1,20 @@
-Director As screen:
+Screen1 As screen:
 
-    Container_Director As groupContainer.verticalAutoLayoutContainer:
+    Container_Director_2 As groupContainer.verticalAutoLayoutContainer:
         Height: =768
         LayoutDirection: =LayoutDirection.Vertical
         LayoutMode: =LayoutMode.Auto
         Width: =1366
         ZIndex: =1
 
-        Container_Title_Director As groupContainer.manualLayoutContainer:
+        Container_Title_Director_2 As groupContainer.manualLayoutContainer:
             AlignInContainer: =AlignInContainer.SetByContainer
             LayoutMinHeight: =100
             LayoutMinWidth: =250
             Width: =Parent.Width
             ZIndex: =1
 
-            Image2_Icon_Director As image:
+            Image2_Icon_Director_1 As image:
                 Height: =80
                 Image: ='icons8-username-48'
                 Width: =80
@@ -22,7 +22,7 @@ Director As screen:
                 Y: =40
                 ZIndex: =2
 
-            Label_Hello_Director As label:
+            Label_Hello_Director_1 As label:
                 FontWeight: =FontWeight.Bold
                 Size: =20
                 Text: ="Xin chào, Giám đốc"
@@ -31,25 +31,25 @@ Director As screen:
                 Y: =60
                 ZIndex: =3
 
-            "'Dropdown_Type of statistics_Director' As dropdown":
+            "'Dropdown_Type of statistics_Director_2' As dropdown":
                 Items: =["Thống kê theo tháng","Thống kê theo năm"]
                 Width: =300
                 X: =1042
                 Y: =60
                 ZIndex: =4
 
-            ComboBox_Sales_Director As combobox:
+            ComboBox_Sales_Director_2 As combobox:
                 DisplayFields: =["user_Name"]
                 Items: =Filter(User,id_Role=LookUp(Role,name_Role="Sales").ID&&activity=true)
                 SearchFields: =["user_Name"]
-                SearchItems: =Search(Filter(User,id_Role=LookUp(Role,name_Role="Sales").ID&&activity=true),ComboBox_Sales_Director.SearchText,"user_Name")
+                SearchItems: =Search(Filter(User,id_Role=LookUp(Role,name_Role="Sales").ID&&activity=true),ComboBox_Sales_Director_2.SearchText,"user_Name")
                 SelectMultiple: =false
                 Width: =300
                 X: =712
                 Y: =60
                 ZIndex: =5
 
-            Label1_Filter_Director As label:
+            Label1_Filter_Director_2 As label:
                 FontWeight: =FontWeight.Bold
                 Size: =20
                 Text: |-
@@ -59,19 +59,19 @@ Director As screen:
                 Y: =60
                 ZIndex: =6
 
-            Dropdown_Year_Director As dropdown:
+            Dropdown_Year_Director_2 As dropdown:
                 Items: =Distinct(Quote,Year(quote_Date))
-                Visible: =If('Dropdown_Type of statistics_Director'.Selected.Value="Thống kê theo năm",true,false)
+                Visible: =If('Dropdown_Type of statistics_Director_2'.Selected.Value="Thống kê theo năm",true,false)
                 Width: =300
                 X: =712
                 Y: =105
                 ZIndex: =8
 
-            Button_Export_Order_Director As button:
+            Button_Export_Order_Director_2 As button:
                 FontWeight: =FontWeight.Bold
                 OnSelect: |-
                     =If(
-                        IsEmpty(ComboBox_Sales_Director.SelectedItems),
+                        IsEmpty(ComboBox_Sales_Director_2.SelectedItems),
                         ClearCollect(
                             Collect_Report,
                             {
@@ -79,13 +79,13 @@ Director As screen:
                                 Order: CountRows(
                                     Filter(
                                         Quote,
-                                        Month(quote_Date) = 1 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                        Month(quote_Date) = 1 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status = true
                                     )
                                 ),
                                 Price: Sum(
                                     Filter(
                                         Quote,
-                                        Month(quote_Date) = 1 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                        Month(quote_Date) = 1 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status = true
                                     ),
                                     sumPriceQuote
                                 )
@@ -95,13 +95,13 @@ Director As screen:
                                 Order: CountRows(
                                     Filter(
                                         Quote,
-                                        Month(quote_Date) = 2 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                        Month(quote_Date) = 2 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status = true
                                     )
                                 ),
                                 Price: Sum(
                                     Filter(
                                         Quote,
-                                        Month(quote_Date) = 2 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                        Month(quote_Date) = 2 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status = true
                                     ),
                                     sumPriceQuote
                                 )
@@ -111,13 +111,13 @@ Director As screen:
                                 Order: CountRows(
                                     Filter(
                                         Quote,
-                                        Month(quote_Date) = 3 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                        Month(quote_Date) = 3 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status = true
                                     )
                                 ),
                                 Price: Sum(
                                     Filter(
                                         Quote,
-                                        Month(quote_Date) = 3 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                        Month(quote_Date) = 3 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status = true
                                     ),
                                     sumPriceQuote
                                 )
@@ -127,13 +127,13 @@ Director As screen:
                                 Order: CountRows(
                                     Filter(
                                         Quote,
-                                        Month(quote_Date) = 4 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                        Month(quote_Date) = 4 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status = true
                                     )
                                 ),
                                 Price: Sum(
                                     Filter(
                                         Quote,
-                                        Month(quote_Date) = 4 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                        Month(quote_Date) = 4 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status = true
                                     ),
                                     sumPriceQuote
                                 )
@@ -143,13 +143,13 @@ Director As screen:
                                 Order: CountRows(
                                     Filter(
                                         Quote,
-                                        Month(quote_Date) = 5 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                        Month(quote_Date) = 5 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status = true
                                     )
                                 ),
                                 Price: Sum(
                                     Filter(
                                         Quote,
-                                        Month(quote_Date) = 5 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                        Month(quote_Date) = 5 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status = true
                                     ),
                                     sumPriceQuote
                                 )
@@ -159,13 +159,13 @@ Director As screen:
                                 Order: CountRows(
                                     Filter(
                                         Quote,
-                                        Month(quote_Date) = 6 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                        Month(quote_Date) = 6 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status = true
                                     )
                                 ),
                                 Price: Sum(
                                     Filter(
                                         Quote,
-                                        Month(quote_Date) = 6 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                        Month(quote_Date) = 6 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status = true
                                     ),
                                     sumPriceQuote
                                 )
@@ -175,13 +175,13 @@ Director As screen:
                                 Order: CountRows(
                                     Filter(
                                         Quote,
-                                        Month(quote_Date) = 7 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                        Month(quote_Date) = 7 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status = true
                                     )
                                 ),
                                 Price: Sum(
                                     Filter(
                                         Quote,
-                                        Month(quote_Date) = 7 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                        Month(quote_Date) = 7 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status = true
                                     ),
                                     sumPriceQuote
                                 )
@@ -191,13 +191,13 @@ Director As screen:
                                 Order: CountRows(
                                     Filter(
                                         Quote,
-                                        Month(quote_Date) = 8 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                        Month(quote_Date) = 8 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status = true
                                     )
                                 ),
                                 Price: Sum(
                                     Filter(
                                         Quote,
-                                        Month(quote_Date) = 8 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                        Month(quote_Date) = 8 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status = true
                                     ),
                                     sumPriceQuote
                                 )
@@ -207,13 +207,13 @@ Director As screen:
                                 Order: CountRows(
                                     Filter(
                                         Quote,
-                                        Month(quote_Date) = 9 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                        Month(quote_Date) = 9 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status = true
                                     )
                                 ),
                                 Price: Sum(
                                     Filter(
                                         Quote,
-                                        Month(quote_Date) = 9 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                        Month(quote_Date) = 9 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status = true
                                     ),
                                     sumPriceQuote
                                 )
@@ -223,13 +223,13 @@ Director As screen:
                                 Order: CountRows(
                                     Filter(
                                         Quote,
-                                        Month(quote_Date) = 10 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                        Month(quote_Date) = 10 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status = true
                                     )
                                 ),
                                 Price: Sum(
                                     Filter(
                                         Quote,
-                                        Month(quote_Date) = 10 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                        Month(quote_Date) = 10 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status = true
                                     ),
                                     sumPriceQuote
                                 )
@@ -239,13 +239,13 @@ Director As screen:
                                 Order: CountRows(
                                     Filter(
                                         Quote,
-                                        Month(quote_Date) = 11 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                        Month(quote_Date) = 11 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status = true
                                     )
                                 ),
                                 Price: Sum(
                                     Filter(
                                         Quote,
-                                        Month(quote_Date) = 11 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                        Month(quote_Date) = 11 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status = true
                                     ),
                                     sumPriceQuote
                                 )
@@ -255,13 +255,13 @@ Director As screen:
                                 Order: CountRows(
                                     Filter(
                                         Quote,
-                                        Month(quote_Date) = 12 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                        Month(quote_Date) = 12 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status = true
                                     )
                                 ),
                                 Price: Sum(
                                     Filter(
                                         Quote,
-                                        Month(quote_Date) = 12 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                        Month(quote_Date) = 12 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status = true
                                     ),
                                     sumPriceQuote
                                 )
@@ -271,13 +271,13 @@ Director As screen:
                                 Order: CountRows(
                                     Filter(
                                         Quote,
-                                        Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                        Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status = true
                                     )
                                 ),
                                 Price: Sum(
                                     Filter(
                                         Quote,
-                                        Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                        Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status = true
                                     ),
                                     sumPriceQuote
                                 )
@@ -288,7 +288,7 @@ Director As screen:
                                 Collect_Report,
                                 JSONFormat.IncludeBinaryData & JSONFormat.IgnoreUnsupportedTypes
                             ),
-                            "Báo cáo_" & Dropdown_Year_Director.Selected.Value
+                            "Báo cáo_" & Dropdown_Year_Director_2.Selected.Value
                         ).url;
                         Notify(
                             "Xuất file đơn hàng thành công!!!",
@@ -302,13 +302,13 @@ Director As screen:
                                 Order: CountRows(
                                     Filter(
                                         Quote,
-                                        Month(quote_Date) = 1 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                        Month(quote_Date) = 1 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status = true
                                     )
                                 ),
                                 Price: Sum(
                                     Filter(
                                         Quote,
-                                        Month(quote_Date) = 1 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                        Month(quote_Date) = 1 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status = true
                                     ),
                                     sumPriceQuote
                                 )
@@ -318,13 +318,13 @@ Director As screen:
                                 Order: CountRows(
                                     Filter(
                                         Quote,
-                                        Month(quote_Date) = 2 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                        Month(quote_Date) = 2 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status = true
                                     )
                                 ),
                                 Price: Sum(
                                     Filter(
                                         Quote,
-                                        Month(quote_Date) = 2 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                        Month(quote_Date) = 2 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status = true
                                     ),
                                     sumPriceQuote
                                 )
@@ -334,13 +334,13 @@ Director As screen:
                                 Order: CountRows(
                                     Filter(
                                         Quote,
-                                        Month(quote_Date) = 3 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                        Month(quote_Date) = 3 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status = true
                                     )
                                 ),
                                 Price: Sum(
                                     Filter(
                                         Quote,
-                                        Month(quote_Date) = 3 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                        Month(quote_Date) = 3 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status = true
                                     ),
                                     sumPriceQuote
                                 )
@@ -350,13 +350,13 @@ Director As screen:
                                 Order: CountRows(
                                     Filter(
                                         Quote,
-                                        Month(quote_Date) = 4 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                        Month(quote_Date) = 4 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status = true
                                     )
                                 ),
                                 Price: Sum(
                                     Filter(
                                         Quote,
-                                        Month(quote_Date) = 4 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                        Month(quote_Date) = 4 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status = true
                                     ),
                                     sumPriceQuote
                                 )
@@ -366,13 +366,13 @@ Director As screen:
                                 Order: CountRows(
                                     Filter(
                                         Quote,
-                                        Month(quote_Date) = 5 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                        Month(quote_Date) = 5 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status = true
                                     )
                                 ),
                                 Price: Sum(
                                     Filter(
                                         Quote,
-                                        Month(quote_Date) = 5 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                        Month(quote_Date) = 5 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status = true
                                     ),
                                     sumPriceQuote
                                 )
@@ -382,13 +382,13 @@ Director As screen:
                                 Order: CountRows(
                                     Filter(
                                         Quote,
-                                        Month(quote_Date) = 6 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                        Month(quote_Date) = 6 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status = true
                                     )
                                 ),
                                 Price: Sum(
                                     Filter(
                                         Quote,
-                                        Month(quote_Date) = 6 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                        Month(quote_Date) = 6 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status = true
                                     ),
                                     sumPriceQuote
                                 )
@@ -398,13 +398,13 @@ Director As screen:
                                 Order: CountRows(
                                     Filter(
                                         Quote,
-                                        Month(quote_Date) = 7 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                        Month(quote_Date) = 7 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status = true
                                     )
                                 ),
                                 Price: Sum(
                                     Filter(
                                         Quote,
-                                        Month(quote_Date) = 7 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                        Month(quote_Date) = 7 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status = true
                                     ),
                                     sumPriceQuote
                                 )
@@ -414,13 +414,13 @@ Director As screen:
                                 Order: CountRows(
                                     Filter(
                                         Quote,
-                                        Month(quote_Date) = 8 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                        Month(quote_Date) = 8 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status = true
                                     )
                                 ),
                                 Price: Sum(
                                     Filter(
                                         Quote,
-                                        Month(quote_Date) = 8 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                        Month(quote_Date) = 8 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status = true
                                     ),
                                     sumPriceQuote
                                 )
@@ -430,13 +430,13 @@ Director As screen:
                                 Order: CountRows(
                                     Filter(
                                         Quote,
-                                        Month(quote_Date) = 9 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                        Month(quote_Date) = 9 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status = true
                                     )
                                 ),
                                 Price: Sum(
                                     Filter(
                                         Quote,
-                                        Month(quote_Date) = 9 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                        Month(quote_Date) = 9 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status = true
                                     ),
                                     sumPriceQuote
                                 )
@@ -446,13 +446,13 @@ Director As screen:
                                 Order: CountRows(
                                     Filter(
                                         Quote,
-                                        Month(quote_Date) = 10 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                        Month(quote_Date) = 10 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status = true
                                     )
                                 ),
                                 Price: Sum(
                                     Filter(
                                         Quote,
-                                        Month(quote_Date) = 10 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                        Month(quote_Date) = 10 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status = true
                                     ),
                                     sumPriceQuote
                                 )
@@ -462,13 +462,13 @@ Director As screen:
                                 Order: CountRows(
                                     Filter(
                                         Quote,
-                                        Month(quote_Date) = 11 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                        Month(quote_Date) = 11 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status = true
                                     )
                                 ),
                                 Price: Sum(
                                     Filter(
                                         Quote,
-                                        Month(quote_Date) = 11 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                        Month(quote_Date) = 11 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status = true
                                     ),
                                     sumPriceQuote
                                 )
@@ -478,13 +478,13 @@ Director As screen:
                                 Order: CountRows(
                                     Filter(
                                         Quote,
-                                        Month(quote_Date) = 12 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                        Month(quote_Date) = 12 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status = true
                                     )
                                 ),
                                 Price: Sum(
                                     Filter(
                                         Quote,
-                                        Month(quote_Date) = 12 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                        Month(quote_Date) = 12 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status = true
                                     ),
                                     sumPriceQuote
                                 )
@@ -494,13 +494,13 @@ Director As screen:
                                 Order: CountRows(
                                     Filter(
                                         Quote,
-                                        Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                        Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status = true
                                     )
                                 ),
                                 Price: Sum(
                                     Filter(
                                         Quote,
-                                        Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                        Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status = true
                                     ),
                                     sumPriceQuote
                                 )
@@ -511,7 +511,7 @@ Director As screen:
                                 Collect_Report,
                                 JSONFormat.IncludeBinaryData & JSONFormat.IgnoreUnsupportedTypes
                             ),
-                            "Báo cáo_" & ComboBox_Sales_Director.Selected.user_Name & "_" & Dropdown_Year_Director.Selected.Value
+                            "Báo cáo_" & ComboBox_Sales_Director_2.Selected.user_Name & "_" & Dropdown_Year_Director_2.Selected.Value
                         ).url;
                         Notify(
                             "Xuất file thành công!!!",
@@ -525,7 +525,7 @@ Director As screen:
                 Y: =105
                 ZIndex: =9
 
-        Container_Chart_Director As groupContainer.horizontalAutoLayoutContainer:
+        Container_Chart_Director_2 As groupContainer.horizontalAutoLayoutContainer:
             AlignInContainer: =AlignInContainer.SetByContainer
             FillPortions: =4
             Height: =768
@@ -535,7 +535,7 @@ Director As screen:
             Width: =1366
             ZIndex: =2
 
-            Container_Order_Director As groupContainer.verticalAutoLayoutContainer:
+            Container_Order_Director_2 As groupContainer.verticalAutoLayoutContainer:
                 AlignInContainer: =AlignInContainer.SetByContainer
                 Height: =Parent.Height
                 LayoutDirection: =LayoutDirection.Vertical
@@ -548,32 +548,22 @@ Director As screen:
                 Y: =40
                 ZIndex: =1
 
-                Label_Order_Director As label:
+                Label_Order_Director_2 As label:
                     FontWeight: =FontWeight.Semibold
                     Size: =20
                     Text: ="Đơn hàng"
                     ZIndex: =1
 
-                CompositeColumnChart3 As group:
+                CompositeLineChart_Order_Director_2 As group:
                     Height: =5
                     LayoutMinHeight: =5
                     LayoutMinWidth: =5
                     Width: =5
-                    X: =40
-                    Y: =40
-                    ZIndex: =2
+                    X: =60
+                    Y: =60
+                    ZIndex: =7
 
-                    Title6 As label:
-                        Align: =Align.Center
-                        Height: =25
-                        Text: ="Chart Title"
-                        Width: =Parent.Width
-                        X: =40
-                        Y: =40
-                        ZIndex: =3
-
-                    ColumnChart3 As barChart:
-                        GridStyle: =GridStyle.All
+                    LineChart2_Order_Director_2 As lineChart:
                         Items: |-
                             =If(
                                 IsEmpty(ComboBox_Sales_Director_2.SelectedItems),
@@ -799,20 +789,20 @@ Director As screen:
                                 )
                             )
                         Width: =Parent.Width
-                        X: =40
-                        Y: =70
+                        X: =60
+                        Y: =90
+                        ZIndex: =3
+
+                    Legend3_Order_Director_2 As legend:
+                        Height: =80
+                        ItemColorSet: =LineChart2_Order_Director_2.ItemColorSet
+                        Items: =LineChart2_Order_Director_2.SeriesLabels
+                        Width: =Parent.Width
+                        X: =100
+                        Y: =500
                         ZIndex: =4
 
-                    Legend3 As legend:
-                        Height: =80
-                        ItemColorSet: =ColumnChart3.ItemColorSet
-                        Items: =ColumnChart3.SeriesLabels
-                        Width: =Parent.Width
-                        X: =80
-                        Y: =480
-                        ZIndex: =5
-
-            Container_Turnover_Director As groupContainer.verticalAutoLayoutContainer:
+            Container_Turnover_Director_2 As groupContainer.verticalAutoLayoutContainer:
                 AlignInContainer: =AlignInContainer.SetByContainer
                 Height: =Parent.Height
                 LayoutDirection: =LayoutDirection.Vertical
@@ -825,41 +815,32 @@ Director As screen:
                 Y: =40
                 ZIndex: =2
 
-                Label2__Turnover_Director As label:
+                Label2__Turnover_Director_2 As label:
                     FontWeight: =FontWeight.Semibold
                     Size: =20
                     Text: ="Doanh thu"
                     ZIndex: =1
 
-                CompositeColumnChart4 As group:
+                CompositeLineChart3_Turnover_Director_2 As group:
                     Height: =5
                     LayoutMinHeight: =5
                     LayoutMinWidth: =5
                     Width: =5
-                    X: =40
-                    Y: =40
-                    ZIndex: =2
+                    X: =60
+                    Y: =60
+                    ZIndex: =7
 
-                    Title7 As label:
-                        Align: =Align.Center
-                        Height: =25
-                        Text: ="Chart Title"
-                        Width: =Parent.Width
-                        X: =40
-                        Y: =40
-                        ZIndex: =3
-
-                    ColumnChart4 As barChart:
+                    LineChart3_Turnover_Director_2 As lineChart:
                         Items: |-
                             =If(
-                                IsEmpty(ComboBox_Sales_Director.SelectedItems),
+                                IsEmpty(ComboBox_Sales_Director_2.SelectedItems),
                                 Table(
                                     {
                                         Month: "Tháng 1",
                                         Value: Sum(
                                             Filter(
                                                 Quote,
-                                                Month(quote_Date) = 1 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                                Month(quote_Date) = 1 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status = true
                                             ),
                                             sumPriceQuote
                                         )
@@ -869,7 +850,7 @@ Director As screen:
                                         Value: Sum(
                                             Filter(
                                                 Quote,
-                                                Month(quote_Date) = 2 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                                Month(quote_Date) = 2 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status = true
                                             ),
                                             sumPriceQuote
                                         )
@@ -879,7 +860,7 @@ Director As screen:
                                         Value: Sum(
                                             Filter(
                                                 Quote,
-                                                Month(quote_Date) = 3 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                                Month(quote_Date) = 3 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status = true
                                             ),
                                             sumPriceQuote
                                         )
@@ -889,7 +870,7 @@ Director As screen:
                                         Value: Sum(
                                             Filter(
                                                 Quote,
-                                                Month(quote_Date) = 4 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                                Month(quote_Date) = 4 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status = true
                                             ),
                                             sumPriceQuote
                                         )
@@ -899,7 +880,7 @@ Director As screen:
                                         Value: Sum(
                                             Filter(
                                                 Quote,
-                                                Month(quote_Date) = 5 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                                Month(quote_Date) = 5 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status = true
                                             ),
                                             sumPriceQuote
                                         )
@@ -909,7 +890,7 @@ Director As screen:
                                         Value: Sum(
                                             Filter(
                                                 Quote,
-                                                Month(quote_Date) = 6 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                                Month(quote_Date) = 6 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status = true
                                             ),
                                             sumPriceQuote
                                         )
@@ -919,7 +900,7 @@ Director As screen:
                                         Value: Sum(
                                             Filter(
                                                 Quote,
-                                                Month(quote_Date) = 7 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                                Month(quote_Date) = 7 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status = true
                                             ),
                                             sumPriceQuote
                                         )
@@ -929,7 +910,7 @@ Director As screen:
                                         Value: Sum(
                                             Filter(
                                                 Quote,
-                                                Month(quote_Date) = 8 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                                Month(quote_Date) = 8 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status = true
                                             ),
                                             sumPriceQuote
                                         )
@@ -939,7 +920,7 @@ Director As screen:
                                         Value: Sum(
                                             Filter(
                                                 Quote,
-                                                Month(quote_Date) = 9 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                                Month(quote_Date) = 9 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status = true
                                             ),
                                             sumPriceQuote
                                         )
@@ -949,7 +930,7 @@ Director As screen:
                                         Value: Sum(
                                             Filter(
                                                 Quote,
-                                                Month(quote_Date) = 10 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                                Month(quote_Date) = 10 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status = true
                                             ),
                                             sumPriceQuote
                                         )
@@ -959,7 +940,7 @@ Director As screen:
                                         Value: Sum(
                                             Filter(
                                                 Quote,
-                                                Month(quote_Date) = 11 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                                Month(quote_Date) = 11 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status = true
                                             ),
                                             sumPriceQuote
                                         )
@@ -969,7 +950,7 @@ Director As screen:
                                         Value: Sum(
                                             Filter(
                                                 Quote,
-                                                Month(quote_Date) = 12 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                                Month(quote_Date) = 12 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status = true
                                             ),
                                             sumPriceQuote
                                         )
@@ -981,7 +962,7 @@ Director As screen:
                                         Value: Sum(
                                             Filter(
                                                 Quote,
-                                                Month(quote_Date) = 1 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                                Month(quote_Date) = 1 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status = true
                                             ),
                                             sumPriceQuote
                                         )
@@ -991,7 +972,7 @@ Director As screen:
                                         Value: Sum(
                                             Filter(
                                                 Quote,
-                                                Month(quote_Date) = 2 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                                Month(quote_Date) = 2 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status = true
                                             ),
                                             sumPriceQuote
                                         )
@@ -1001,7 +982,7 @@ Director As screen:
                                         Value: Sum(
                                             Filter(
                                                 Quote,
-                                                Month(quote_Date) = 3 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                                Month(quote_Date) = 3 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status = true
                                             ),
                                             sumPriceQuote
                                         )
@@ -1011,7 +992,7 @@ Director As screen:
                                         Value: Sum(
                                             Filter(
                                                 Quote,
-                                                Month(quote_Date) = 4 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                                Month(quote_Date) = 4 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status = true
                                             ),
                                             sumPriceQuote
                                         )
@@ -1021,7 +1002,7 @@ Director As screen:
                                         Value: Sum(
                                             Filter(
                                                 Quote,
-                                                Month(quote_Date) = 5 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                                Month(quote_Date) = 5 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status = true
                                             ),
                                             sumPriceQuote
                                         )
@@ -1031,7 +1012,7 @@ Director As screen:
                                         Value: Sum(
                                             Filter(
                                                 Quote,
-                                                Month(quote_Date) = 6 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                                Month(quote_Date) = 6 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status = true
                                             ),
                                             sumPriceQuote
                                         )
@@ -1041,7 +1022,7 @@ Director As screen:
                                         Value: Sum(
                                             Filter(
                                                 Quote,
-                                                Month(quote_Date) = 7 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                                Month(quote_Date) = 7 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status = true
                                             ),
                                             sumPriceQuote
                                         )
@@ -1051,7 +1032,7 @@ Director As screen:
                                         Value: Sum(
                                             Filter(
                                                 Quote,
-                                                Month(quote_Date) = 8 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                                Month(quote_Date) = 8 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status = true
                                             ),
                                             sumPriceQuote
                                         )
@@ -1061,7 +1042,7 @@ Director As screen:
                                         Value: Sum(
                                             Filter(
                                                 Quote,
-                                                Month(quote_Date) = 9 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                                Month(quote_Date) = 9 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status = true
                                             ),
                                             sumPriceQuote
                                         )
@@ -1071,7 +1052,7 @@ Director As screen:
                                         Value: Sum(
                                             Filter(
                                                 Quote,
-                                                Month(quote_Date) = 10 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                                Month(quote_Date) = 10 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status = true
                                             ),
                                             sumPriceQuote
                                         )
@@ -1081,7 +1062,7 @@ Director As screen:
                                         Value: Sum(
                                             Filter(
                                                 Quote,
-                                                Month(quote_Date) = 11 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                                Month(quote_Date) = 11 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status = true
                                             ),
                                             sumPriceQuote
                                         )
@@ -1091,7 +1072,7 @@ Director As screen:
                                         Value: Sum(
                                             Filter(
                                                 Quote,
-                                                Month(quote_Date) = 12 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                                Month(quote_Date) = 12 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status = true
                                             ),
                                             sumPriceQuote
                                         )
@@ -1099,16 +1080,16 @@ Director As screen:
                                 )
                             )
                         Width: =Parent.Width
-                        X: =40
-                        Y: =70
-                        ZIndex: =4
+                        X: =60
+                        Y: =90
+                        ZIndex: =3
 
-                    Legend4 As legend:
+                    Legend_Turnover_Director_2 As legend:
                         Height: =80
-                        ItemColorSet: =ColumnChart4.ItemColorSet
-                        Items: =ColumnChart4.SeriesLabels
+                        ItemColorSet: =LineChart3_Turnover_Director_2.ItemColorSet
+                        Items: =LineChart3_Turnover_Director_2.SeriesLabels
                         Width: =Parent.Width
-                        X: =80
-                        Y: =480
-                        ZIndex: =5
+                        X: =100
+                        Y: =500
+                        ZIndex: =4
 
