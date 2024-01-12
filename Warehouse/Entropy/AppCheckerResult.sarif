@@ -17501,7 +17501,7 @@
                 },
                 "region": {
                   "charLength": 15,
-                  "charOffset": 2437,
+                  "charOffset": 2176,
                   "snippet": {
                     "text": "Day(quote_Date)"
                   }
@@ -17541,7 +17541,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 2453,
+                  "charOffset": 2192,
                   "snippet": {
                     "text": "="
                   }
@@ -17581,7 +17581,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 2486,
+                  "charOffset": 2225,
                   "snippet": {
                     "text": "&&"
                   }
@@ -17621,7 +17621,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 2738,
+                  "charOffset": 2477,
                   "snippet": {
                     "text": "&&"
                   }
@@ -17661,47 +17661,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 2798,
-                  "snippet": {
-                    "text": "&&"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnChange",
-                "module": "Director",
-                "type": "Director.Container_Director.Container_Title_Director.ComboBox_Sales_Director"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Filter"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Title_Director.ComboBox_Sales_Director.OnChange"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Title_Director.ComboBox_Sales_Director.OnChange",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 2,
-                  "charOffset": 2821,
+                  "charOffset": 2537,
                   "snippet": {
                     "text": "&&"
                   }
@@ -17741,7 +17701,7 @@
                 },
                 "region": {
                   "charLength": 15,
-                  "charOffset": 3719,
+                  "charOffset": 3395,
                   "snippet": {
                     "text": "Day(quote_Date)"
                   }
@@ -17781,7 +17741,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 3735,
+                  "charOffset": 3411,
                   "snippet": {
                     "text": "="
                   }
@@ -17821,7 +17781,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 3768,
+                  "charOffset": 3444,
                   "snippet": {
                     "text": "&&"
                   }
@@ -17861,7 +17821,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 4020,
+                  "charOffset": 3696,
                   "snippet": {
                     "text": "&&"
                   }
@@ -17901,7 +17861,47 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 4080,
+                  "charOffset": 3756,
+                  "snippet": {
+                    "text": "&&"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnChange",
+                "module": "Director",
+                "type": "Director.Container_Director.Container_Title_Director.ComboBox_Sales_Director"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Title_Director.ComboBox_Sales_Director.OnChange"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Title_Director.ComboBox_Sales_Director.OnChange",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
+                  "charOffset": 3779,
                   "snippet": {
                     "text": "&&"
                   }
@@ -17941,7 +17941,7 @@
                 },
                 "region": {
                   "charLength": 15,
-                  "charOffset": 4932,
+                  "charOffset": 4356,
                   "snippet": {
                     "text": "Day(quote_Date)"
                   }
@@ -17981,7 +17981,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 4948,
+                  "charOffset": 4372,
                   "snippet": {
                     "text": "="
                   }
@@ -18021,7 +18021,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 4981,
+                  "charOffset": 4405,
                   "snippet": {
                     "text": "&&"
                   }
@@ -18061,7 +18061,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 5233,
+                  "charOffset": 4657,
                   "snippet": {
                     "text": "&&"
                   }
@@ -18101,7 +18101,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 5293,
+                  "charOffset": 4717,
                   "snippet": {
                     "text": "&&"
                   }
@@ -18141,7 +18141,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 5316,
+                  "charOffset": 4740,
                   "snippet": {
                     "text": "&&"
                   }
