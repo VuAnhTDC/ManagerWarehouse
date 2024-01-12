@@ -53,7 +53,11 @@ Director As screen:
                         ) - 1
                     );
                     ClearCollect(
-                        as,
+                        statictialOrder,
+                        []
+                    );
+                    ClearCollect(
+                        statictialPrice,
                         []
                     );
                     ForAll(
@@ -68,9 +72,9 @@ Director As screen:
                             )
                         ),
                         Collect(
-                            as,
+                            statictialOrder,
                             {
-                                Month: CountRows(as) + 1 & "/" & Value(
+                                Month: CountRows(statictialOrder) + 1 & "/" & Value(
                                     Mid(
                                         Dropdown2.Selected.Value,
                                         7,
@@ -80,7 +84,7 @@ Director As screen:
                                 Value: CountRows(
                                     Filter(
                                         Quote,
-                                        Day(quote_Date) =CountRows(as) + 1  && Month(quote_Date) = Value(
+                                        Day(quote_Date) =CountRows(statictialOrder) + 1  && Month(quote_Date) = Value(
                                             Mid(
                                                 Dropdown2.Selected.Value,
                                                 7,
@@ -92,6 +96,44 @@ Director As screen:
                             }
                         )
                     );
+                    ForAll(
+                        Sequence(
+                            Value(
+                                Day(
+                                    Text(
+                                        ngayCuoiThang,
+                                        "mm/dd/yyyy"
+                                    )
+                                )
+                            )
+                        ),
+                        Collect(
+                            statictialPrice,
+                            {
+                                Month: CountRows(statictialPrice) + 1 & "/" & Value(
+                                    Mid(
+                                        Dropdown2.Selected.Value,
+                                        7,
+                                        2
+                                    )
+                                ) & "/" & Dropdown_Year_Director.Selected.Value,
+                                Value: Sum(
+                                    Filter(
+                                        Quote,
+                                      Day(quote_Date) =CountRows(statictialPrice) + 1  && Month(quote_Date) = Value(
+                                            Mid(
+                                                Dropdown2.Selected.Value,
+                                                7,
+                                                2
+                                            )
+                                        ) && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true && id_User = ComboBox_Sales_Director.Selected.ID
+                                    ),
+                                    sumPriceQuote
+                                )
+                            }
+                        )
+                    );
+                    
                     )
                 Width: =300
                 X: =1042
@@ -140,7 +182,11 @@ Director As screen:
                         ) - 1
                     );
                     ClearCollect(
-                        as,
+                        statictialOrder,
+                        []
+                    );
+                    ClearCollect(
+                        statictialPrice,
                         []
                     );
                     ForAll(
@@ -155,9 +201,9 @@ Director As screen:
                             )
                         ),
                         Collect(
-                            as,
+                            statictialOrder,
                             {
-                                Month: CountRows(as) + 1 & "/" & Value(
+                                Month: CountRows(statictialOrder) + 1 & "/" & Value(
                                     Mid(
                                         Dropdown2.Selected.Value,
                                         7,
@@ -167,7 +213,7 @@ Director As screen:
                                 Value: CountRows(
                                     Filter(
                                         Quote,
-                                        Day(quote_Date) =CountRows(as) + 1  && Month(quote_Date) = Value(
+                                        Day(quote_Date) =CountRows(statictialOrder) + 1  && Month(quote_Date) = Value(
                                             Mid(
                                                 Dropdown2.Selected.Value,
                                                 7,
@@ -175,6 +221,43 @@ Director As screen:
                                             )
                                         ) && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true && id_User = ComboBox_Sales_Director.Selected.ID
                                     )
+                                )
+                            }
+                        )
+                    );
+                    ForAll(
+                        Sequence(
+                            Value(
+                                Day(
+                                    Text(
+                                        ngayCuoiThang,
+                                        "mm/dd/yyyy"
+                                    )
+                                )
+                            )
+                        ),
+                        Collect(
+                            statictialPrice,
+                            {
+                                Month: CountRows(statictialPrice) + 1 & "/" & Value(
+                                    Mid(
+                                        Dropdown2.Selected.Value,
+                                        7,
+                                        2
+                                    )
+                                ) & "/" & Dropdown_Year_Director.Selected.Value,
+                                Value: Sum(
+                                    Filter(
+                                        Quote,
+                                      Day(quote_Date) =CountRows(statictialPrice) + 1  && Month(quote_Date) = Value(
+                                            Mid(
+                                                Dropdown2.Selected.Value,
+                                                7,
+                                                2
+                                            )
+                                        ) && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true && id_User = ComboBox_Sales_Director.Selected.ID
+                                    ),
+                                    sumPriceQuote
                                 )
                             }
                         )
@@ -665,7 +748,11 @@ Director As screen:
                         ) - 1
                     );
                     ClearCollect(
-                        as,
+                        statictialOrder,
+                        []
+                    );
+                    ClearCollect(
+                        statictialPrice,
                         []
                     );
                     ForAll(
@@ -680,9 +767,9 @@ Director As screen:
                             )
                         ),
                         Collect(
-                            as,
+                            statictialOrder,
                             {
-                                Month: CountRows(as) + 1 & "/" & Value(
+                                Month: CountRows(statictialOrder) + 1 & "/" & Value(
                                     Mid(
                                         Dropdown2.Selected.Value,
                                         7,
@@ -692,7 +779,7 @@ Director As screen:
                                 Value: CountRows(
                                     Filter(
                                         Quote,
-                                        Day(quote_Date) =CountRows(as) + 1  && Month(quote_Date) = Value(
+                                        Day(quote_Date) =CountRows(statictialOrder) + 1  && Month(quote_Date) = Value(
                                             Mid(
                                                 Dropdown2.Selected.Value,
                                                 7,
@@ -700,6 +787,43 @@ Director As screen:
                                             )
                                         ) && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true && id_User = ComboBox_Sales_Director.Selected.ID
                                     )
+                                )
+                            }
+                        )
+                    );
+                    ForAll(
+                        Sequence(
+                            Value(
+                                Day(
+                                    Text(
+                                        ngayCuoiThang,
+                                        "mm/dd/yyyy"
+                                    )
+                                )
+                            )
+                        ),
+                        Collect(
+                            statictialPrice,
+                            {
+                                Month: CountRows(statictialPrice) + 1 & "/" & Value(
+                                    Mid(
+                                        Dropdown2.Selected.Value,
+                                        7,
+                                        2
+                                    )
+                                ) & "/" & Dropdown_Year_Director.Selected.Value,
+                                Value: Sum(
+                                    Filter(
+                                        Quote,
+                                      Day(quote_Date) =CountRows(statictialPrice) + 1  && Month(quote_Date) = Value(
+                                            Mid(
+                                                Dropdown2.Selected.Value,
+                                                7,
+                                                2
+                                            )
+                                        ) && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true && id_User = ComboBox_Sales_Director.Selected.ID
+                                    ),
+                                    sumPriceQuote
                                 )
                             }
                         )
@@ -979,7 +1103,7 @@ Director As screen:
                                             )
                                         }
                                     )
-                                ),as 
+                                ),statictialOrder
                             )
                         ItemsGap: =20
                         Width: =Parent.Width
@@ -1032,7 +1156,7 @@ Director As screen:
                     ColumnChart4 As barChart:
                         GridStyle: =GridStyle.All
                         Items: |-
-                            =If(
+                            =If(Dropdown2.Visible = false,If(
                                 IsEmpty(ComboBox_Sales_Director.SelectedItems),
                                 Table(
                                     {
@@ -1278,7 +1402,7 @@ Director As screen:
                                         )
                                     }
                                 )
-                            )
+                            ),statictialPrice)
                         Width: =Parent.Width
                         X: =40
                         Y: =70
