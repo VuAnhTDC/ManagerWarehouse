@@ -262,7 +262,7 @@ HomeSale As screen:
                                     );
                                     ClearCollect(
                                         data,
-                                        Quote
+                                        Filter(Quote, quote_Status = true)
                                     );
                                     ClearCollect(
                                         dataCustomer,
