@@ -307,21 +307,21 @@ HomeSale As screen:
                         Menu_Name: "Dịch vụ",
                         Screen: "dichvu"
                     },{
-                        Menu_Icon: quote,
+                        Menu_Icon: customer,
+                        Menu_Name: "Khách hàng",
+                        Screen: "khach_hang"
+                    },{
+                         Menu_Icon: quote,
                         Menu_Name: "Báo giá, đơn hàng",
                         Screen: "baogia_donhang"
                     },{
-                        Menu_Icon: buyproduct,
+                       Menu_Icon: buyproduct,
                         Menu_Name: "Yêu cầu mua hàng",
                         Screen: "yeucaumuahang"
                     },{
                         Menu_Icon: historytransaction,
                         Menu_Name: "Lịch sử giao dịch",
                         Screen: "lichsugiaodich"
-                    },{
-                        Menu_Icon: statistial,
-                        Menu_Name: "Thống kê đơn hàng, doanh thu",
-                        Screen: "thongke"
                     }
                 )
             Layout: =Layout.Vertical
@@ -380,7 +380,7 @@ HomeSale As screen:
                         );
                         Set(
                             functionClick,
-                            "khachhang"
+                            "khach_hang"
                         ),
                         If(
                             ThisItem.Menu_Name = "Báo giá, đơn hàng",
