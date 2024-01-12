@@ -1753,6 +1753,7 @@ HomeSale As screen:
                     )
                 Layout: =Layout.Vertical
                 LoadingSpinner: =LoadingSpinner.Data
+                OnSelect: =Navigate(DetailQuote_Screen,ScreenTransition.Fade)
                 TemplatePadding: =0
                 TemplateSize: =104
                 Width: =979
@@ -1786,13 +1787,6 @@ HomeSale As screen:
                     X: =54
                     Y: =Parent.TemplateHeight - Self.Height
                     ZIndex: =5
-
-                ratnagleLeft_ItemQuoteList_HomeSale As rectangle:
-                    Height: =Parent.TemplateHeight - borderLine_ItemQuoteList_HomeSale.Height
-                    OnSelect: =Select(Parent)
-                    Visible: =ThisItem.IsSelected
-                    Width: =4
-                    ZIndex: =6
 
                 lblRequestQuote_HomeSale As label:
                     Align: =Align.Center
