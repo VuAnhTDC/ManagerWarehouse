@@ -1,0 +1,15 @@
+Screen1 As screen:
+
+    DatePicker2 As datepicker:
+        ContentLanguage: ="vi-VN"
+        Format: =DateTimeFormat.LongDate
+        OnChange: |
+            =// Tính toán ngày cuối cùng của tháng
+            Set(ngayCuoiThang, DateAdd(DateValue(5 & "/1/" & 2024), 1, TimeUnit.Months) - 1);
+            
+            // Hiển thị ngày cuối cùng của tháng
+            Notify("Ngày cuối cùng của tháng: " & Text(ngayCuoiThang, "dd/mm/yyyy"))
+        X: =544
+        Y: =86
+        ZIndex: =1
+

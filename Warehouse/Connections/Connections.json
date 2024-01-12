@@ -1,26 +1,11 @@
 {
-  "52f89f35-1744-40b3-9099-0d2a94b2740a": {
-    "connectionRef": {
-      "displayName": "OneDrive for Business",
-      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1669/1.0.1669.3520/onedriveforbusiness/icon.png",
-      "id": "/providers/microsoft.powerapps/apis/shared_onedriveforbusiness"
-    },
-    "datasets": {},
-    "dataSources": [],
-    "dependencies": {},
-    "dependents": [
-      "7dbd58d5-94a1-46c1-8285-116a33e02b75",
-      "edfdbc8e-f3dc-46d9-b456-264893d25823"
-    ],
-    "id": "52f89f35-1744-40b3-9099-0d2a94b2740a"
-  },
-  "6f001e06-35d1-4ebe-8e96-ac3384bea11b": {
+  "2a8971b5-f7fe-481c-b64a-189e5dffc33f": {
     "connectionRef": {
       "displayName": "Logic flows",
       "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1664/1.0.1664.3477/logicflows/icon.png",
       "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
       "parameterHints": {
-        "a1d75f9e-ae8f-4aab-a345-e5a004f58f86": {
+        "48c558ca-60bb-4c2a-8918-4b185763d8e4": {
           "value": "shared_excelonlinebusiness"
         },
         "c9efb40e-e2c4-4d94-9da5-241348de59ed": {
@@ -33,7 +18,7 @@
       },
       "parameterHintsV2": {
         "shared_excelonlinebusiness": {
-          "value": "a1d75f9e-ae8f-4aab-a345-e5a004f58f86"
+          "value": "48c558ca-60bb-4c2a-8918-4b185763d8e4"
         },
         "shared_sharepointonline": {
           "value": "c9efb40e-e2c4-4d94-9da5-241348de59ed"
@@ -49,11 +34,40 @@
       "Import_Product_Warehouse_Manager"
     ],
     "dependencies": {
-      "shared_excelonlinebusiness": "a1d75f9e-ae8f-4aab-a345-e5a004f58f86",
+      "shared_excelonlinebusiness": "48c558ca-60bb-4c2a-8918-4b185763d8e4",
       "shared_sharepointonline": "c9efb40e-e2c4-4d94-9da5-241348de59ed"
     },
     "dependents": [],
-    "id": "6f001e06-35d1-4ebe-8e96-ac3384bea11b"
+    "id": "2a8971b5-f7fe-481c-b64a-189e5dffc33f"
+  },
+  "48c558ca-60bb-4c2a-8918-4b185763d8e4": {
+    "connectionRef": {
+      "displayName": "Excel Online (Business)",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1658/1.0.1658.3452/excelonlinebusiness/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_excelonlinebusiness"
+    },
+    "datasets": {},
+    "dataSources": [],
+    "dependencies": {},
+    "dependents": [
+      "2a8971b5-f7fe-481c-b64a-189e5dffc33f"
+    ],
+    "id": "48c558ca-60bb-4c2a-8918-4b185763d8e4"
+  },
+  "52f89f35-1744-40b3-9099-0d2a94b2740a": {
+    "connectionRef": {
+      "displayName": "OneDrive for Business",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1669/1.0.1669.3520/onedriveforbusiness/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_onedriveforbusiness"
+    },
+    "datasets": {},
+    "dataSources": [],
+    "dependencies": {},
+    "dependents": [
+      "7dbd58d5-94a1-46c1-8285-116a33e02b75",
+      "edfdbc8e-f3dc-46d9-b456-264893d25823"
+    ],
+    "id": "52f89f35-1744-40b3-9099-0d2a94b2740a"
   },
   "7dbd58d5-94a1-46c1-8285-116a33e02b75": {
     "connectionRef": {
@@ -136,20 +150,6 @@
     },
     "dependents": [],
     "id": "9b75e626-8745-40a9-b655-ea85905c6448"
-  },
-  "a1d75f9e-ae8f-4aab-a345-e5a004f58f86": {
-    "connectionRef": {
-      "displayName": "Excel Online (Business)",
-      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1658/1.0.1658.3452/excelonlinebusiness/icon.png",
-      "id": "/providers/microsoft.powerapps/apis/shared_excelonlinebusiness"
-    },
-    "datasets": {},
-    "dataSources": [],
-    "dependencies": {},
-    "dependents": [
-      "6f001e06-35d1-4ebe-8e96-ac3384bea11b"
-    ],
-    "id": "a1d75f9e-ae8f-4aab-a345-e5a004f58f86"
   },
   "c9efb40e-e2c4-4d94-9da5-241348de59ed": {
     "connectionRef": {
@@ -243,7 +243,7 @@
     ],
     "dependencies": {},
     "dependents": [
-      "6f001e06-35d1-4ebe-8e96-ac3384bea11b"
+      "2a8971b5-f7fe-481c-b64a-189e5dffc33f"
     ],
     "id": "c9efb40e-e2c4-4d94-9da5-241348de59ed"
   },
