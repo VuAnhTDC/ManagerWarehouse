@@ -39321,36 +39321,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "HomeSale.containerContentService_HomeSale.containerContentFunctionService_HomeSale_1.galleryServiceList_HomeSale_1.chartDetailItemService_HomeSale_1.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "HomeSale.containerContentService_HomeSale.containerContentFunctionService_HomeSale_1.galleryServiceList_HomeSale_1.chartDetailItemService_HomeSale_1.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "HomeSale",
-                "type": "HomeSale.containerContentService_HomeSale.containerContentFunctionService_HomeSale_1.galleryServiceList_HomeSale_1.chartDetailItemService_HomeSale_1"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 4
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "HomeSale.containerContentCustomer_HomeSale.containeCostumerList_HomeSale.containerCustomerControl_HomeSale.containerSearch_HomeSale.edtKeySearchCustomer_HomeSale.AccessibleLabel"
                 }
               ],

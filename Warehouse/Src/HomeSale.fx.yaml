@@ -604,6 +604,7 @@ HomeSale As screen:
                 Layout: =Layout.Vertical
                 LoadingSpinner: =LoadingSpinner.Data
                 OnSelect: =Set(isDisableBtnUpdateService,false)
+                ShowNavigation: =true
                 TemplateSize: =84
                 Width: =324
                 X: =16
@@ -612,7 +613,7 @@ HomeSale As screen:
 
                 lblServiceNameItem_HomeSale_1 As label:
                     FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
-                    Height: =26
+                    Height: =21
                     OnSelect: =Select(Parent)
                     PaddingBottom: =0
                     PaddingLeft: =0
@@ -620,29 +621,10 @@ HomeSale As screen:
                     PaddingTop: =0
                     Size: =15
                     Text: =ThisItem.service_Name
-                    VerticalAlign: =VerticalAlign.Top
-                    Width: =242
-                    X: =14
+                    Width: =251
+                    X: =62
                     Y: =16
                     ZIndex: =3
-
-                chartDetailItemService_HomeSale_1 As icon.ChevronRight:
-                    AccessibleLabel: =Self.Tooltip
-                    Color: =RGBA(166, 166, 166, 1)
-                    Height: =50
-                    Icon: =Icon.ChevronRight
-                    OnSelect: |-
-                        =Select(Parent);
-                        Set(isDisableBtnUpdateService,false);
-                    PaddingBottom: =16
-                    PaddingLeft: =16
-                    PaddingRight: =16
-                    PaddingTop: =16
-                    Tooltip: ="View item details"
-                    Width: =50
-                    X: =Parent.TemplateWidth - Self.Width - 12
-                    Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
-                    ZIndex: =4
 
                 chartItemSerwvice_HomeSale_1 As rectangle:
                     BorderStyle: =BorderStyle.Dotted
@@ -661,13 +643,15 @@ HomeSale As screen:
                     ZIndex: =6
 
                 lblPriceServiceItem_HomeSale_1 As label:
+                    Align: =Align.Right
+                    Color: =RGBA(255, 0, 0, 1)
                     Height: =26
                     Italic: =true
                     OnSelect: =Select(Parent)
                     Text: |-
                         =Text(ThisItem.service_Price, "#,##0", "en-US")
                     Width: =216
-                    X: =27
+                    X: =98
                     Y: =50
                     ZIndex: =7
 
