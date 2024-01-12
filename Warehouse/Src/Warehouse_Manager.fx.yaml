@@ -3708,7 +3708,7 @@ Warehouse_Manager As screen:
             ZIndex: =2
 
             Container6_Category_Warehouse_1 As groupContainer.manualLayoutContainer:
-                Height: =Parent.Height-50
+                Height: =Parent.Height-100
                 RadiusBottomLeft: =10
                 RadiusBottomRight: =10
                 RadiusTopLeft: =10
@@ -3724,7 +3724,7 @@ Warehouse_Manager As screen:
                     Fill: =RGBA(56, 96, 178, 1)
                     FontWeight: =FontWeight.Semibold
                     Height: =49
-                    Size: =25
+                    Size: =20
                     Text: ="Sản phẩm"
                     Width: =409
                     ZIndex: =1
@@ -3824,7 +3824,7 @@ Warehouse_Manager As screen:
                         ZIndex: =6
 
             Container6_Information_Category_Warehouse_1 As groupContainer.manualLayoutContainer:
-                Height: =Parent.Height-50
+                Height: =Parent.Height-100
                 RadiusBottomLeft: =10
                 RadiusBottomRight: =10
                 RadiusTopLeft: =10
@@ -3840,7 +3840,7 @@ Warehouse_Manager As screen:
                     Fill: =RGBA(56, 96, 178, 1)
                     FontWeight: =FontWeight.Semibold
                     Height: =64
-                    Size: =25
+                    Size: =20
                     Text: ="Thông tin nhập hàng"
                     Width: =880
                     ZIndex: =1
@@ -3848,7 +3848,7 @@ Warehouse_Manager As screen:
                 Label5_1_Category_Warehouse_1 As label:
                     FontWeight: =FontWeight.Semibold
                     Height: =36
-                    Size: =20
+                    Size: =15
                     Text: |-
                         ="ID sản phẩm: "&Gallery_Import_Product_History_Warehouse.Selected.id_Product
                     Width: =793
@@ -3879,7 +3879,7 @@ Warehouse_Manager As screen:
                 Label5_1_Category_Warehouse_2 As label:
                     FontWeight: =FontWeight.Semibold
                     Height: =36
-                    Size: =20
+                    Size: =15
                     Text: |-
                         ="Tên sản phẩm: " & LookUp(
                             Product,
@@ -3893,7 +3893,7 @@ Warehouse_Manager As screen:
                 Label5_1_Category_Warehouse_3 As label:
                     FontWeight: =FontWeight.Semibold
                     Height: =36
-                    Size: =20
+                    Size: =15
                     Text: |-
                         ="Số lượng: "&Gallery_Import_Product_History_Warehouse.Selected.Import_Product_Quantity
                     Width: =793
@@ -3904,7 +3904,7 @@ Warehouse_Manager As screen:
                 Label5_1_Category_Warehouse_4 As label:
                     FontWeight: =FontWeight.Semibold
                     Height: =36
-                    Size: =20
+                    Size: =15
                     Text: |-
                         ="Giá: "&Text(
                             Gallery_Import_Product_History_Warehouse.Selected.Import_Product_Price,
@@ -3918,7 +3918,7 @@ Warehouse_Manager As screen:
                 Label5_1_Category_Warehouse_5 As label:
                     FontWeight: =FontWeight.Semibold
                     Height: =36
-                    Size: =20
+                    Size: =15
                     Text: |-
                         ="Nhà cung cấp: "&LookUp(
                             Supplier,
@@ -3932,7 +3932,7 @@ Warehouse_Manager As screen:
                 Label5_1_Category_Warehouse_6 As label:
                     FontWeight: =FontWeight.Semibold
                     Height: =36
-                    Size: =20
+                    Size: =15
                     Text: |-
                         ="Thời gian nhập: "& Text(Gallery_Import_Product_History_Warehouse.Selected.Created_at,"dd/mm/yyyy")
                     Width: =793
@@ -3943,7 +3943,7 @@ Warehouse_Manager As screen:
                 Label5_1_Category_Warehouse_7 As label:
                     FontWeight: =FontWeight.Semibold
                     Height: =36
-                    Size: =20
+                    Size: =15
                     Text: |-
                         ="Tổng tiền: " & Text(
                             Gallery_Import_Product_History_Warehouse.Selected.Import_Product_Quantity * Gallery_Import_Product_History_Warehouse.Selected.Import_Product_Price,
