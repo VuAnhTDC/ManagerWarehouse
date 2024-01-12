@@ -136,7 +136,7 @@ Director As screen:
                     
                     )
                 Width: =300
-                X: =1042
+                X: =873
                 Y: =60
                 ZIndex: =4
 
@@ -147,7 +147,7 @@ Director As screen:
                 SearchItems: =Search(Filter(User,id_Role=LookUp(Role,name_Role="Sales").ID&&activity=true),ComboBox_Sales_Director.SearchText,"user_Name")
                 SelectMultiple: =false
                 Width: =300
-                X: =712
+                X: =543
                 Y: =60
                 ZIndex: =5
 
@@ -157,7 +157,7 @@ Director As screen:
                 Text: |-
                     ="Bộ lọc:"
                 Width: =113
-                X: =599
+                X: =430
                 Y: =60
                 ZIndex: =6
 
@@ -265,7 +265,7 @@ Director As screen:
                     )
                 OnSelect: =
                 Width: =300
-                X: =712
+                X: =803
                 Y: =105
                 ZIndex: =8
 
@@ -829,7 +829,7 @@ Director As screen:
                         )
                     );
                 Visible: =If('Dropdown_Type of statistics_Director'.SelectedText.Value = "Thống kê theo tháng",true,false)
-                X: =362
+                X: =453
                 Y: =105
                 ZIndex: =10
 
