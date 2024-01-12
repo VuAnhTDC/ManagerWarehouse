@@ -428,58 +428,7 @@ Director As screen:
                                         )
                                     )
                                 }
-                            )
-                        ),
-                        ForAll(
-                            Sequence(
-                                Value(
-                                    Day(
-                                        Text(
-                                            ngayCuoiThang,
-                                            "mm/dd/yyyy"
-                                        )
-                                    )
-                                )
-                            ),
-                            Collect(
-                                statictialOrder,
-                                {
-                                    Month: CountRows(statictialOrder) + 1 & "/" & Value(
-                                        Mid(
-                                            Dropdown2.Selected.Value,
-                                            7,
-                                            2
-                                        )
-                                    ) & "/" & Dropdown_Year_Director.Selected.Value,
-                                    Value: CountRows(
-                                        Filter(
-                                            Quote,
-                                            Day(quote_Date) = CountRows(statictialOrder) + 1 && Month(quote_Date) = Value(
-                                                Mid(
-                                                    Dropdown2.Selected.Value,
-                                                    7,
-                                                    2
-                                                )
-                                            ) && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true && id_User = ComboBox_Sales_Director.Selected.ID
-                                        )
-                                    )
-                                }
-                            )
-                        )
-                    );
-                    If(
-                        IsBlank(ComboBox_Sales_Director.Selected),
-                        ForAll(
-                            Sequence(
-                                Value(
-                                    Day(
-                                        Text(
-                                            ngayCuoiThang,
-                                            "mm/dd/yyyy"
-                                        )
-                                    )
-                                )
-                            ),
+                            );
                             Collect(
                                 statictialPrice,
                                 {
@@ -518,6 +467,29 @@ Director As screen:
                                 )
                             ),
                             Collect(
+                                statictialOrder,
+                                {
+                                    Month: CountRows(statictialOrder) + 1 & "/" & Value(
+                                        Mid(
+                                            Dropdown2.Selected.Value,
+                                            7,
+                                            2
+                                        )
+                                    ) & "/" & Dropdown_Year_Director.Selected.Value,
+                                    Value: CountRows(
+                                        Filter(
+                                            Quote,
+                                            Day(quote_Date) = CountRows(statictialOrder) + 1 && Month(quote_Date) = Value(
+                                                Mid(
+                                                    Dropdown2.Selected.Value,
+                                                    7,
+                                                    2
+                                                )
+                                            ) && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true && id_User = ComboBox_Sales_Director.Selected.ID
+                                        )
+                                    )
+                                }
+                            );Collect(
                                 statictialPrice,
                                 {
                                     Month: CountRows(statictialPrice) + 1 & "/" & Value(
@@ -542,9 +514,8 @@ Director As screen:
                                     )
                                 }
                             )
-                        );
-                        
-                    )
+                        )
+                    );
                     )
                 OnSelect: =
                 Width: =300

@@ -19261,7 +19261,7 @@
                 },
                 "region": {
                   "charLength": 15,
-                  "charOffset": 2418,
+                  "charOffset": 2169,
                   "snippet": {
                     "text": "Day(quote_Date)"
                   }
@@ -19301,7 +19301,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 2434,
+                  "charOffset": 2185,
                   "snippet": {
                     "text": "="
                   }
@@ -19341,7 +19341,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 2467,
+                  "charOffset": 2218,
                   "snippet": {
                     "text": "&&"
                   }
@@ -19381,7 +19381,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 2713,
+                  "charOffset": 2464,
                   "snippet": {
                     "text": "&&"
                   }
@@ -19421,47 +19421,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 2773,
-                  "snippet": {
-                    "text": "&&"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnChange",
-                "module": "Director",
-                "type": "Director.Container_Director.Container_Title_Director.Dropdown_Year_Director"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Filter"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Title_Director.Dropdown_Year_Director.OnChange"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Title_Director.Dropdown_Year_Director.OnChange",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 2,
-                  "charOffset": 2796,
+                  "charOffset": 2524,
                   "snippet": {
                     "text": "&&"
                   }
@@ -19501,7 +19461,7 @@
                 },
                 "region": {
                   "charLength": 15,
-                  "charOffset": 3661,
+                  "charOffset": 3351,
                   "snippet": {
                     "text": "Day(quote_Date)"
                   }
@@ -19541,7 +19501,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 3677,
+                  "charOffset": 3367,
                   "snippet": {
                     "text": "="
                   }
@@ -19581,7 +19541,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 3710,
+                  "charOffset": 3400,
                   "snippet": {
                     "text": "&&"
                   }
@@ -19621,7 +19581,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 3956,
+                  "charOffset": 3646,
                   "snippet": {
                     "text": "&&"
                   }
@@ -19661,7 +19621,47 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 4016,
+                  "charOffset": 3706,
+                  "snippet": {
+                    "text": "&&"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnChange",
+                "module": "Director",
+                "type": "Director.Container_Director.Container_Title_Director.Dropdown_Year_Director"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Title_Director.Dropdown_Year_Director.OnChange"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Title_Director.Dropdown_Year_Director.OnChange",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
+                  "charOffset": 3729,
                   "snippet": {
                     "text": "&&"
                   }
@@ -19701,7 +19701,7 @@
                 },
                 "region": {
                   "charLength": 15,
-                  "charOffset": 4837,
+                  "charOffset": 4289,
                   "snippet": {
                     "text": "Day(quote_Date)"
                   }
@@ -19741,7 +19741,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 4853,
+                  "charOffset": 4305,
                   "snippet": {
                     "text": "="
                   }
@@ -19781,7 +19781,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 4886,
+                  "charOffset": 4338,
                   "snippet": {
                     "text": "&&"
                   }
@@ -19821,7 +19821,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 5132,
+                  "charOffset": 4584,
                   "snippet": {
                     "text": "&&"
                   }
@@ -19861,7 +19861,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 5192,
+                  "charOffset": 4644,
                   "snippet": {
                     "text": "&&"
                   }
@@ -19901,7 +19901,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 5215,
+                  "charOffset": 4667,
                   "snippet": {
                     "text": "&&"
                   }
