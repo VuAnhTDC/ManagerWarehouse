@@ -1012,12 +1012,13 @@ HomeSale As screen:
 
                     lblTaxCode_Item_HomeSale As label:
                         FontWeight: = FontWeight.Semibold
-                        Height: =21
+                        Height: =27
                         OnSelect: =Select(Parent)
                         PaddingBottom: =0
                         PaddingLeft: =0
                         PaddingRight: =0
                         PaddingTop: =0
+                        Size: =15
                         Text: |-
                             ="MST: " & ThisItem.taxCode
                         VerticalAlign: =VerticalAlign.Top
@@ -1044,23 +1045,34 @@ HomeSale As screen:
                         ZIndex: =6
 
                     lblCustomerName_item_HomeSale As label:
-                        Height: =46
                         OnSelect: =Select(Parent)
                         Text: =ThisItem.customer_Name
                         VerticalAlign: =VerticalAlign.Top
                         Width: =264
                         X: =55
-                        Y: =28
+                        Y: =34
                         ZIndex: =7
 
                     lblAddressCustomer_item_HomeSale As label:
+                        Align: =Align.Right
                         Height: =27
+                        Italic: =true
                         OnSelect: =Select(Parent)
                         Text: =ThisItem.customer_Address
+                        VerticalAlign: =VerticalAlign.Top
                         Width: =213
                         X: =99
                         Y: =76
                         ZIndex: =8
+
+                    Image4 As image:
+                        Height: =40
+                        Image: =customer
+                        OnSelect: =Select(Parent)
+                        Width: =40
+                        X: =7
+                        Y: =34
+                        ZIndex: =9
 
                 containerCustomerList_HomeSale As groupContainer.manualLayoutContainer:
                     BorderThickness: =1
@@ -1800,7 +1812,7 @@ HomeSale As screen:
                     Height: =47
                     OnSelect: =Select(Parent)
                     Size: =15
-                    Text: =ThisItem.quote_Date
+                    Text: =Text(ThisItem.quote_Date,"dd/mm/yyyy")
                     Width: =123
                     X: =368
                     Y: =27
