@@ -1,45 +1,4 @@
 {
-  "152a7824-4f6d-4777-8d1b-47e2290b6055": {
-    "connectionRef": {
-      "displayName": "Logic flows",
-      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1664/1.0.1664.3477/logicflows/icon.png",
-      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
-      "parameterHints": {
-        "7c1561d1-35aa-4bec-b475-8b762d4a6d67": {
-          "value": "shared_excelonlinebusiness"
-        },
-        "c9efb40e-e2c4-4d94-9da5-241348de59ed": {
-          "value": "shared_sharepointonline"
-        },
-        "workflowEntityId": {},
-        "workflowName": {
-          "value": "21f2a8f3-cb7d-4daa-a3a0-adde59828e21"
-        }
-      },
-      "parameterHintsV2": {
-        "shared_excelonlinebusiness": {
-          "value": "7c1561d1-35aa-4bec-b475-8b762d4a6d67"
-        },
-        "shared_sharepointonline": {
-          "value": "c9efb40e-e2c4-4d94-9da5-241348de59ed"
-        },
-        "workflowEntityId": {},
-        "workflowName": {
-          "value": "21f2a8f3-cb7d-4daa-a3a0-adde59828e21"
-        }
-      }
-    },
-    "datasets": {},
-    "dataSources": [
-      "Import_Product_Warehouse_Manager"
-    ],
-    "dependencies": {
-      "shared_excelonlinebusiness": "7c1561d1-35aa-4bec-b475-8b762d4a6d67",
-      "shared_sharepointonline": "c9efb40e-e2c4-4d94-9da5-241348de59ed"
-    },
-    "dependents": [],
-    "id": "152a7824-4f6d-4777-8d1b-47e2290b6055"
-  },
   "52f89f35-1744-40b3-9099-0d2a94b2740a": {
     "connectionRef": {
       "displayName": "OneDrive for Business",
@@ -55,19 +14,46 @@
     ],
     "id": "52f89f35-1744-40b3-9099-0d2a94b2740a"
   },
-  "7c1561d1-35aa-4bec-b475-8b762d4a6d67": {
+  "6f001e06-35d1-4ebe-8e96-ac3384bea11b": {
     "connectionRef": {
-      "displayName": "Excel Online (Business)",
-      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1658/1.0.1658.3452/excelonlinebusiness/icon.png",
-      "id": "/providers/microsoft.powerapps/apis/shared_excelonlinebusiness"
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1664/1.0.1664.3477/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "a1d75f9e-ae8f-4aab-a345-e5a004f58f86": {
+          "value": "shared_excelonlinebusiness"
+        },
+        "c9efb40e-e2c4-4d94-9da5-241348de59ed": {
+          "value": "shared_sharepointonline"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "21f2a8f3-cb7d-4daa-a3a0-adde59828e21"
+        }
+      },
+      "parameterHintsV2": {
+        "shared_excelonlinebusiness": {
+          "value": "a1d75f9e-ae8f-4aab-a345-e5a004f58f86"
+        },
+        "shared_sharepointonline": {
+          "value": "c9efb40e-e2c4-4d94-9da5-241348de59ed"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "21f2a8f3-cb7d-4daa-a3a0-adde59828e21"
+        }
+      }
     },
     "datasets": {},
-    "dataSources": [],
-    "dependencies": {},
-    "dependents": [
-      "152a7824-4f6d-4777-8d1b-47e2290b6055"
+    "dataSources": [
+      "Import_Product_Warehouse_Manager"
     ],
-    "id": "7c1561d1-35aa-4bec-b475-8b762d4a6d67"
+    "dependencies": {
+      "shared_excelonlinebusiness": "a1d75f9e-ae8f-4aab-a345-e5a004f58f86",
+      "shared_sharepointonline": "c9efb40e-e2c4-4d94-9da5-241348de59ed"
+    },
+    "dependents": [],
+    "id": "6f001e06-35d1-4ebe-8e96-ac3384bea11b"
   },
   "7dbd58d5-94a1-46c1-8285-116a33e02b75": {
     "connectionRef": {
@@ -150,6 +136,20 @@
     },
     "dependents": [],
     "id": "9b75e626-8745-40a9-b655-ea85905c6448"
+  },
+  "a1d75f9e-ae8f-4aab-a345-e5a004f58f86": {
+    "connectionRef": {
+      "displayName": "Excel Online (Business)",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1658/1.0.1658.3452/excelonlinebusiness/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_excelonlinebusiness"
+    },
+    "datasets": {},
+    "dataSources": [],
+    "dependencies": {},
+    "dependents": [
+      "6f001e06-35d1-4ebe-8e96-ac3384bea11b"
+    ],
+    "id": "a1d75f9e-ae8f-4aab-a345-e5a004f58f86"
   },
   "c9efb40e-e2c4-4d94-9da5-241348de59ed": {
     "connectionRef": {
@@ -243,7 +243,7 @@
     ],
     "dependencies": {},
     "dependents": [
-      "152a7824-4f6d-4777-8d1b-47e2290b6055"
+      "6f001e06-35d1-4ebe-8e96-ac3384bea11b"
     ],
     "id": "c9efb40e-e2c4-4d94-9da5-241348de59ed"
   },

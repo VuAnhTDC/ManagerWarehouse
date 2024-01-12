@@ -414,7 +414,7 @@ HomeSale As screen:
                                     );
                                     ClearCollect(
                                         data,
-                                        Quote
+                                        Filter(Quote,quote_Status = true)
                                     );
                                     ClearCollect(
                                         dataCustomer,
@@ -2777,11 +2777,20 @@ HomeSale As screen:
             DelayItemLoading: =true
             Height: =588
             Items: |-
-                =If(IsBlank(TextInput2.Text),Filter(
-                    dataCustomer,ID in data.id_Customer
-                ),Filter(
-                    dataCustomer,StartsWith(taxCode,TextInput2.Text)
-                ))
+                =If(
+                    IsBlank(TextInput2.Text),
+                    Filter(
+                        dataCustomer As Temp,
+                        Temp.ID in data.id_Customer
+                    ),
+                    Filter(
+                        dataCustomer,
+                        StartsWith(
+                            taxCode,
+                            TextInput2.Text
+                        )
+                    )
+                )
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             OnSelect: =If(CountRows(Filter(data,id_Customer = ThisItem.ID && quote_Status = true)) > 0 ,Set(isVisibleContentDialogDetailQuoteCustomer,true),Notify("Khách hàng chưa có đơn đặt hàng nào"))
@@ -3207,14 +3216,24 @@ HomeSale As screen:
                 Label30 As label:
                     Align: =Align.Right
                     FontWeight: =FontWeight.Bold
-                    Height: =34
+                    Height: =25
                     Italic: =true
                     OnSelect: =Select(Parent)
                     Text: =Text(ThisItem.quote_Date,"dd/mm/yyyy") & " --" & Text(ThisItem.quote_Expire ,"dd/mm/yyyy")
-                    Width: =250
-                    X: =27
+                    Width: =211
+                    X: =88
                     Y: =105
                     ZIndex: =8
+
+                Image6 As image:
+                    Height: =35
+                    Image: =hourglass
+                    ImagePosition: =ImagePosition.Fill
+                    OnSelect: =Select(Parent)
+                    Width: =35
+                    X: =48
+                    Y: =97
+                    ZIndex: =9
 
     Container15 As groupContainer.manualLayoutContainer:
         BorderThickness: =1
