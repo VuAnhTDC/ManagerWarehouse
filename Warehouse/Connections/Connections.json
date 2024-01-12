@@ -169,6 +169,9 @@
           "Customer_1": {
             "tableName": "5489a516-bf85-4059-ab9a-347313e45a2f"
           },
+          "Import_Product_History": {
+            "tableName": "df72eb11-9adc-4b09-a4ad-1213c82fa2dd"
+          },
           "Product": {
             "tableName": "0a5f6ca4-73e1-4525-b7f0-9522ce22c151"
           },
@@ -235,7 +238,8 @@
       "Quote_Service",
       "Supplier",
       "Warehouse_1",
-      "Product_Supplier"
+      "Product_Supplier",
+      "Import_Product_History"
     ],
     "dependencies": {},
     "dependents": [
