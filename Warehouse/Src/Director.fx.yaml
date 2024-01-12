@@ -548,12 +548,6 @@ Director As screen:
                 Y: =40
                 ZIndex: =1
 
-                Label_Order_Director As label:
-                    FontWeight: =FontWeight.Semibold
-                    Size: =20
-                    Text: ="Đơn hàng"
-                    ZIndex: =1
-
                 CompositeColumnChart3 As group:
                     Height: =5
                     LayoutMinHeight: =5
@@ -565,8 +559,10 @@ Director As screen:
 
                     Title6 As label:
                         Align: =Align.Center
+                        FontWeight: =FontWeight.Bold
                         Height: =25
-                        Text: ="Chart Title"
+                        Size: =18
+                        Text: ="Đơn hàng"
                         Width: =Parent.Width
                         X: =40
                         Y: =40
@@ -576,14 +572,14 @@ Director As screen:
                         GridStyle: =GridStyle.All
                         Items: |-
                             =If(
-                                IsEmpty(ComboBox_Sales_Director_2.SelectedItems),
+                                IsEmpty(ComboBox_Sales_Director.SelectedItems),
                                 Table(
                                     {
                                         Month: "Tháng 1",
                                         Value: CountRows(
                                             Filter(
                                                 Quote,
-                                                Month(quote_Date) = 1 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status = true
+                                                Month(quote_Date) = 1 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
                                             )
                                         )
                                     },
@@ -592,7 +588,7 @@ Director As screen:
                                         Value: CountRows(
                                             Filter(
                                                 Quote,
-                                                Month(quote_Date) = 2 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status = true
+                                                Month(quote_Date) = 2 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
                                             )
                                         )
                                     },
@@ -601,7 +597,7 @@ Director As screen:
                                         Value: CountRows(
                                             Filter(
                                                 Quote,
-                                                Month(quote_Date) = 3 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status = true
+                                                Month(quote_Date) = 3 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
                                             )
                                         )
                                     },
@@ -610,7 +606,7 @@ Director As screen:
                                         Value: CountRows(
                                             Filter(
                                                 Quote,
-                                                Month(quote_Date) = 4 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status = true
+                                                Month(quote_Date) = 4 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
                                             )
                                         )
                                     },
@@ -619,7 +615,7 @@ Director As screen:
                                         Value: CountRows(
                                             Filter(
                                                 Quote,
-                                                Month(quote_Date) = 5 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status = true
+                                                Month(quote_Date) = 5 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
                                             )
                                         )
                                     },
@@ -628,7 +624,7 @@ Director As screen:
                                         Value: CountRows(
                                             Filter(
                                                 Quote,
-                                                Month(quote_Date) = 6 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status = true
+                                                Month(quote_Date) = 6 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
                                             )
                                         )
                                     },
@@ -637,7 +633,7 @@ Director As screen:
                                         Value: CountRows(
                                             Filter(
                                                 Quote,
-                                                Month(quote_Date) = 7 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status = true
+                                                Month(quote_Date) = 7 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
                                             )
                                         )
                                     },
@@ -646,7 +642,7 @@ Director As screen:
                                         Value: CountRows(
                                             Filter(
                                                 Quote,
-                                                Month(quote_Date) = 8 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status = true
+                                                Month(quote_Date) = 8 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
                                             )
                                         )
                                     },
@@ -655,7 +651,7 @@ Director As screen:
                                         Value: CountRows(
                                             Filter(
                                                 Quote,
-                                                Month(quote_Date) = 9 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status = true
+                                                Month(quote_Date) = 9 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
                                             )
                                         )
                                     },
@@ -664,7 +660,7 @@ Director As screen:
                                         Value: CountRows(
                                             Filter(
                                                 Quote,
-                                                Month(quote_Date) = 10 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status = true
+                                                Month(quote_Date) = 10 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
                                             )
                                         )
                                     },
@@ -673,7 +669,7 @@ Director As screen:
                                         Value: CountRows(
                                             Filter(
                                                 Quote,
-                                                Month(quote_Date) = 11 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status = true
+                                                Month(quote_Date) = 11 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
                                             )
                                         )
                                     },
@@ -682,7 +678,7 @@ Director As screen:
                                         Value: CountRows(
                                             Filter(
                                                 Quote,
-                                                Month(quote_Date) = 12 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status = true
+                                                Month(quote_Date) = 12 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
                                             )
                                         )
                                     }
@@ -693,7 +689,7 @@ Director As screen:
                                         Value: CountRows(
                                             Filter(
                                                 Quote,
-                                                Month(quote_Date) = 1 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status = true
+                                                Month(quote_Date) = 1 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
                                             )
                                         )
                                     },
@@ -702,7 +698,7 @@ Director As screen:
                                         Value: CountRows(
                                             Filter(
                                                 Quote,
-                                                Month(quote_Date) = 2 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status = true
+                                                Month(quote_Date) = 2 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
                                             )
                                         )
                                     },
@@ -711,7 +707,7 @@ Director As screen:
                                         Value: CountRows(
                                             Filter(
                                                 Quote,
-                                                Month(quote_Date) = 3 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status = true
+                                                Month(quote_Date) = 3 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
                                             )
                                         )
                                     },
@@ -720,7 +716,7 @@ Director As screen:
                                         Value: CountRows(
                                             Filter(
                                                 Quote,
-                                                Month(quote_Date) = 4 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status = true
+                                                Month(quote_Date) = 4 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
                                             )
                                         )
                                     },
@@ -729,7 +725,7 @@ Director As screen:
                                         Value: CountRows(
                                             Filter(
                                                 Quote,
-                                                Month(quote_Date) = 5 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status = true
+                                                Month(quote_Date) = 5 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
                                             )
                                         )
                                     },
@@ -738,7 +734,7 @@ Director As screen:
                                         Value: CountRows(
                                             Filter(
                                                 Quote,
-                                                Month(quote_Date) = 6 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status = true
+                                                Month(quote_Date) = 6 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
                                             )
                                         )
                                     },
@@ -747,7 +743,7 @@ Director As screen:
                                         Value: CountRows(
                                             Filter(
                                                 Quote,
-                                                Month(quote_Date) = 7 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status = true
+                                                Month(quote_Date) = 7 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
                                             )
                                         )
                                     },
@@ -756,7 +752,7 @@ Director As screen:
                                         Value: CountRows(
                                             Filter(
                                                 Quote,
-                                                Month(quote_Date) = 8 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status = true
+                                                Month(quote_Date) = 8 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
                                             )
                                         )
                                     },
@@ -765,7 +761,7 @@ Director As screen:
                                         Value: CountRows(
                                             Filter(
                                                 Quote,
-                                                Month(quote_Date) = 9 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status = true
+                                                Month(quote_Date) = 9 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
                                             )
                                         )
                                     },
@@ -774,7 +770,7 @@ Director As screen:
                                         Value: CountRows(
                                             Filter(
                                                 Quote,
-                                                Month(quote_Date) = 10 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status = true
+                                                Month(quote_Date) = 10 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
                                             )
                                         )
                                     },
@@ -783,7 +779,7 @@ Director As screen:
                                         Value: CountRows(
                                             Filter(
                                                 Quote,
-                                                Month(quote_Date) = 11 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status = true
+                                                Month(quote_Date) = 11 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
                                             )
                                         )
                                     },
@@ -792,7 +788,7 @@ Director As screen:
                                         Value: CountRows(
                                             Filter(
                                                 Quote,
-                                                Month(quote_Date) = 12 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status = true
+                                                Month(quote_Date) = 12 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
                                             )
                                         )
                                     }
@@ -825,12 +821,6 @@ Director As screen:
                 Y: =40
                 ZIndex: =2
 
-                Label2__Turnover_Director As label:
-                    FontWeight: =FontWeight.Semibold
-                    Size: =20
-                    Text: ="Doanh thu"
-                    ZIndex: =1
-
                 CompositeColumnChart4 As group:
                     Height: =5
                     LayoutMinHeight: =5
@@ -842,14 +832,17 @@ Director As screen:
 
                     Title7 As label:
                         Align: =Align.Center
+                        FontWeight: =FontWeight.Bold
                         Height: =25
-                        Text: ="Chart Title"
+                        Size: =18
+                        Text: ="Doanh thu"
                         Width: =Parent.Width
                         X: =40
                         Y: =40
                         ZIndex: =3
 
                     ColumnChart4 As barChart:
+                        GridStyle: =GridStyle.All
                         Items: |-
                             =If(
                                 IsEmpty(ComboBox_Sales_Director.SelectedItems),
