@@ -18181,7 +18181,7 @@
                 },
                 "region": {
                   "charLength": 15,
-                  "charOffset": 1535,
+                  "charOffset": 1291,
                   "snippet": {
                     "text": "Day(quote_Date)"
                   }
@@ -18221,7 +18221,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 1551,
+                  "charOffset": 1307,
                   "snippet": {
                     "text": "="
                   }
@@ -18261,7 +18261,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 1584,
+                  "charOffset": 1340,
                   "snippet": {
                     "text": "&&"
                   }
@@ -18301,7 +18301,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 1854,
+                  "charOffset": 1586,
                   "snippet": {
                     "text": "&&"
                   }
@@ -18341,7 +18341,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 1914,
+                  "charOffset": 1646,
                   "snippet": {
                     "text": "&&"
                   }
@@ -18381,7 +18381,7 @@
                 },
                 "region": {
                   "charLength": 15,
-                  "charOffset": 2826,
+                  "charOffset": 2189,
                   "snippet": {
                     "text": "Day(quote_Date)"
                   }
@@ -18421,7 +18421,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 2842,
+                  "charOffset": 2205,
                   "snippet": {
                     "text": "="
                   }
@@ -18461,7 +18461,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 2875,
+                  "charOffset": 2238,
                   "snippet": {
                     "text": "&&"
                   }
@@ -18501,7 +18501,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 3145,
+                  "charOffset": 2484,
                   "snippet": {
                     "text": "&&"
                   }
@@ -18541,47 +18541,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 3205,
-                  "snippet": {
-                    "text": "&&"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnChange",
-                "module": "Director",
-                "type": "Director.Container_Director.Container_Title_Director.'Dropdown_Type of statistics_Director'"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Filter"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Title_Director.'Dropdown_Type of statistics_Director'.OnChange"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Title_Director.'Dropdown_Type of statistics_Director'.OnChange",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 2,
-                  "charOffset": 3228,
+                  "charOffset": 2544,
                   "snippet": {
                     "text": "&&"
                   }
@@ -18621,7 +18581,7 @@
                 },
                 "region": {
                   "charLength": 15,
-                  "charOffset": 4225,
+                  "charOffset": 3371,
                   "snippet": {
                     "text": "Day(quote_Date)"
                   }
@@ -18661,7 +18621,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 4241,
+                  "charOffset": 3387,
                   "snippet": {
                     "text": "="
                   }
@@ -18701,7 +18661,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 4274,
+                  "charOffset": 3420,
                   "snippet": {
                     "text": "&&"
                   }
@@ -18741,7 +18701,207 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 4544,
+                  "charOffset": 3666,
+                  "snippet": {
+                    "text": "&&"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnChange",
+                "module": "Director",
+                "type": "Director.Container_Director.Container_Title_Director.'Dropdown_Type of statistics_Director'"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Title_Director.'Dropdown_Type of statistics_Director'.OnChange"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Title_Director.'Dropdown_Type of statistics_Director'.OnChange",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
+                  "charOffset": 3726,
+                  "snippet": {
+                    "text": "&&"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnChange",
+                "module": "Director",
+                "type": "Director.Container_Director.Container_Title_Director.'Dropdown_Type of statistics_Director'"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Title_Director.'Dropdown_Type of statistics_Director'.OnChange"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Title_Director.'Dropdown_Type of statistics_Director'.OnChange",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
+                  "charOffset": 3749,
+                  "snippet": {
+                    "text": "&&"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnChange",
+                "module": "Director",
+                "type": "Director.Container_Director.Container_Title_Director.'Dropdown_Type of statistics_Director'"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Title_Director.'Dropdown_Type of statistics_Director'.OnChange"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Title_Director.'Dropdown_Type of statistics_Director'.OnChange",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 15,
+                  "charOffset": 4309,
+                  "snippet": {
+                    "text": "Day(quote_Date)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnChange",
+                "module": "Director",
+                "type": "Director.Container_Director.Container_Title_Director.'Dropdown_Type of statistics_Director'"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Day"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Title_Director.'Dropdown_Type of statistics_Director'.OnChange"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Title_Director.'Dropdown_Type of statistics_Director'.OnChange",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 4325,
+                  "snippet": {
+                    "text": "="
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnChange",
+                "module": "Director",
+                "type": "Director.Container_Director.Container_Title_Director.'Dropdown_Type of statistics_Director'"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Title_Director.'Dropdown_Type of statistics_Director'.OnChange"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Title_Director.'Dropdown_Type of statistics_Director'.OnChange",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
+                  "charOffset": 4358,
                   "snippet": {
                     "text": "&&"
                   }
@@ -18820,88 +18980,8 @@
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 15,
-                  "charOffset": 5549,
-                  "snippet": {
-                    "text": "Day(quote_Date)"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnChange",
-                "module": "Director",
-                "type": "Director.Container_Director.Container_Title_Director.'Dropdown_Type of statistics_Director'"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Day"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Title_Director.'Dropdown_Type of statistics_Director'.OnChange"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Title_Director.'Dropdown_Type of statistics_Director'.OnChange",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 5565,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnChange",
-                "module": "Director",
-                "type": "Director.Container_Director.Container_Title_Director.'Dropdown_Type of statistics_Director'"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Filter"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Title_Director.'Dropdown_Type of statistics_Director'.OnChange"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Title_Director.'Dropdown_Type of statistics_Director'.OnChange",
-                  "relativeAddress": 0
-                },
-                "region": {
                   "charLength": 2,
-                  "charOffset": 5598,
+                  "charOffset": 4664,
                   "snippet": {
                     "text": "&&"
                   }
@@ -18941,87 +19021,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 5868,
-                  "snippet": {
-                    "text": "&&"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnChange",
-                "module": "Director",
-                "type": "Director.Container_Director.Container_Title_Director.'Dropdown_Type of statistics_Director'"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Filter"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Title_Director.'Dropdown_Type of statistics_Director'.OnChange"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Title_Director.'Dropdown_Type of statistics_Director'.OnChange",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 2,
-                  "charOffset": 5928,
-                  "snippet": {
-                    "text": "&&"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnChange",
-                "module": "Director",
-                "type": "Director.Container_Director.Container_Title_Director.'Dropdown_Type of statistics_Director'"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Filter"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Title_Director.'Dropdown_Type of statistics_Director'.OnChange"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Title_Director.'Dropdown_Type of statistics_Director'.OnChange",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 2,
-                  "charOffset": 5951,
+                  "charOffset": 4687,
                   "snippet": {
                     "text": "&&"
                   }
