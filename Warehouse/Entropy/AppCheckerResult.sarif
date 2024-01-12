@@ -42471,6 +42471,36 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "App.hourglass"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.hourglass",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "hourglass",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedMediaResources",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "HomeSale.containerInformationUser_HomeSale.Gallery8.Button7.OnSelect"
                 }
               ],
