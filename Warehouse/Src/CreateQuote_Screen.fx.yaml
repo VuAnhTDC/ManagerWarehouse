@@ -187,8 +187,8 @@ CreateQuote_Screen As screen:
             Height: =29
             Size: =15
             Text: ="Sản phẩm"
-            Width: =237
-            X: =6
+            Width: =172
+            X: =62
             Y: =8
             ZIndex: =1
 
@@ -281,6 +281,19 @@ CreateQuote_Screen As screen:
                 X: =363
                 Y: =18
                 ZIndex: =10
+
+        Image8 As image:
+            BorderThickness: =1
+            Height: =40
+            Image: =iconproduct
+            RadiusBottomLeft: =10
+            RadiusBottomRight: =10
+            RadiusTopLeft: =10
+            RadiusTopRight: =10
+            Width: =40
+            X: =11
+            Y: =2
+            ZIndex: =4
 
     containerServiceListSelectedAddQuote_CreateQuoteScreen As groupContainer.manualLayoutContainer:
         BorderThickness: =1
