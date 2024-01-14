@@ -17,12 +17,13 @@ HomeSale As screen:
         );
         If(
             IsBlank(functionClick),
-            If(
+            /*If(
                 informationUser.id_Role = 1,
-                Set(functionClick,"");,
+                Set(functionClick,"dichvu");,
                 informationUser.id_Role = 2,
                 Set(functionClick,"khach_hang");
-            )
+            )*/
+            Set(functionClick,"dichvu");
         );
         Set(
             isVisibaleAddServiceNew_HomeSale,
@@ -150,6 +151,11 @@ HomeSale As screen:
             Height: =532
             Items: |-
                 =Table(
+                    {
+                        Menu_Icon: iconservice,
+                        Menu_Name: "Dịch vụ",
+                        Screen: "dichvu"
+                    },
                    {
                         Menu_Icon: customer,
                         Menu_Name: "Khách hàng",
@@ -285,7 +291,17 @@ HomeSale As screen:
                                         Set(
                                             functionClick,
                                             "thongke"
+                                        ),If(
+                                        ThisItem.Menu_Name = "Dịch vụ",
+                                        Set(
+                                            btnFunctionSelection_Value_HomeSale,
+                                            1
+                                        );
+                                        Set(
+                                            functionClick,
+                                            "dichvu"
                                         )
+                                    )
                                     )
                                 )
                             )
