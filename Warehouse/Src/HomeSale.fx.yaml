@@ -24,6 +24,7 @@ HomeSale As screen:
                 Set(functionClick,"khach_hang");
             )*/
             Set(functionClick,"dichvu");
+            Set(btnFunctionSelection_Value_HomeSale , 1);
         );
         Set(
             isVisibaleAddServiceNew_HomeSale,
