@@ -57,10 +57,10 @@ DetailQuote_Screen As screen:
                     ForAll(
                         dataProductQuoteByIdCustomer As Temp,
                         If(
-                            IsBlank(
+                            !IsBlank(
                                 LookUp(
                                     Quote_Product,
-                                    id_Quote = Temp.id_Quote && id_Product = Temp.id_Product && quantity_Quote_Product <> Temp.quantity_Quote_Product
+                                    id_Quote = Temp.id_Quote && id_Product = Temp.id_Product 
                                 )
                             ),
                             Patch(
@@ -84,7 +84,40 @@ DetailQuote_Screen As screen:
                                 }
                             )
                         )
+                    );
+                    If(
+                        CountRows(dataSerivceQuoteByIdCustomer) <> CountRows(
+                            Filter(
+                                Quote_Service,
+                                id_Quote = TextInput1.Text
+                            )
+                        ),
+                        ForAll(
+                            dataSerivceQuoteByIdCustomer As Temp,
+                            If(
+                                IsBlank(
+                                    LookUp(
+                                        Quote_Service,
+                                        id_Quote = Temp.id_Quote && id_Service = Temp.id_Service
+                                    )
+                                ),
+                                Patch(
+                                    Quote_Service,
+                                    Defaults(Quote_Service),
+                                    {
+                                        id_Quote: Temp.id_Quote,
+                                        id_Service: Temp.id_Service,
+                                        quote_Service_Note: Temp.quote_Service_Note,
+                                        price_Quote_Service: Temp.price_Quote_Service
+                                    }
+                                )
+                            )
+                        )
                     )
+                );
+                Notify(
+                    "Thay đổi thông tin báo giá thành công",
+                    NotificationType.Success
                 )
             Visible: =isChangeQuote
             Width: =50
