@@ -8904,7 +8904,7 @@
                 },
                 "region": {
                   "charLength": 15,
-                  "charOffset": 2176,
+                  "charOffset": 2187,
                   "snippet": {
                     "text": "Day(quote_Date)"
                   }
@@ -8944,7 +8944,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 2192,
+                  "charOffset": 2203,
                   "snippet": {
                     "text": "="
                   }
@@ -8984,7 +8984,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 2225,
+                  "charOffset": 2236,
                   "snippet": {
                     "text": "&&"
                   }
@@ -9024,7 +9024,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 2473,
+                  "charOffset": 2484,
                   "snippet": {
                     "text": "&&"
                   }
@@ -9064,7 +9064,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 2535,
+                  "charOffset": 2546,
                   "snippet": {
                     "text": "&&"
                   }
@@ -9104,7 +9104,7 @@
                 },
                 "region": {
                   "charLength": 15,
-                  "charOffset": 3418,
+                  "charOffset": 2735,
                   "snippet": {
                     "text": "Day(quote_Date)"
                   }
@@ -9144,7 +9144,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 3434,
+                  "charOffset": 2751,
                   "snippet": {
                     "text": "="
                   }
@@ -9184,7 +9184,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 3467,
+                  "charOffset": 2784,
                   "snippet": {
                     "text": "&&"
                   }
@@ -9224,7 +9224,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 3715,
+                  "charOffset": 3032,
                   "snippet": {
                     "text": "&&"
                   }
@@ -9264,47 +9264,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 3777,
-                  "snippet": {
-                    "text": "&&"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnChange",
-                "module": "HomeSale",
-                "type": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.ComboBox_Sales_Director_1"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Filter"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.ComboBox_Sales_Director_1.OnChange"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.ComboBox_Sales_Director_1.OnChange",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 2,
-                  "charOffset": 3800,
+                  "charOffset": 3094,
                   "snippet": {
                     "text": "&&"
                   }
@@ -9344,7 +9304,7 @@
                 },
                 "region": {
                   "charLength": 15,
-                  "charOffset": 4418,
+                  "charOffset": 3979,
                   "snippet": {
                     "text": "Day(quote_Date)"
                   }
@@ -9384,7 +9344,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 4434,
+                  "charOffset": 3995,
                   "snippet": {
                     "text": "="
                   }
@@ -9424,7 +9384,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 4467,
+                  "charOffset": 4028,
                   "snippet": {
                     "text": "&&"
                   }
@@ -9464,7 +9424,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 4715,
+                  "charOffset": 4276,
                   "snippet": {
                     "text": "&&"
                   }
@@ -9504,7 +9464,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 4777,
+                  "charOffset": 4338,
                   "snippet": {
                     "text": "&&"
                   }
@@ -9544,7 +9504,407 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 4800,
+                  "charOffset": 4361,
+                  "snippet": {
+                    "text": "&&"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnChange",
+                "module": "HomeSale",
+                "type": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.ComboBox_Sales_Director_1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.ComboBox_Sales_Director_1.OnChange"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.ComboBox_Sales_Director_1.OnChange",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 15,
+                  "charOffset": 4990,
+                  "snippet": {
+                    "text": "Day(quote_Date)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnChange",
+                "module": "HomeSale",
+                "type": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.ComboBox_Sales_Director_1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Day"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.ComboBox_Sales_Director_1.OnChange"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.ComboBox_Sales_Director_1.OnChange",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 5006,
+                  "snippet": {
+                    "text": "="
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnChange",
+                "module": "HomeSale",
+                "type": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.ComboBox_Sales_Director_1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.ComboBox_Sales_Director_1.OnChange"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.ComboBox_Sales_Director_1.OnChange",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
+                  "charOffset": 5039,
+                  "snippet": {
+                    "text": "&&"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnChange",
+                "module": "HomeSale",
+                "type": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.ComboBox_Sales_Director_1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.ComboBox_Sales_Director_1.OnChange"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.ComboBox_Sales_Director_1.OnChange",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
+                  "charOffset": 5287,
+                  "snippet": {
+                    "text": "&&"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnChange",
+                "module": "HomeSale",
+                "type": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.ComboBox_Sales_Director_1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.ComboBox_Sales_Director_1.OnChange"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.ComboBox_Sales_Director_1.OnChange",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
+                  "charOffset": 5349,
+                  "snippet": {
+                    "text": "&&"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnChange",
+                "module": "HomeSale",
+                "type": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.ComboBox_Sales_Director_1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.ComboBox_Sales_Director_1.OnChange"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.ComboBox_Sales_Director_1.OnChange",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 15,
+                  "charOffset": 5538,
+                  "snippet": {
+                    "text": "Day(quote_Date)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnChange",
+                "module": "HomeSale",
+                "type": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.ComboBox_Sales_Director_1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Day"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.ComboBox_Sales_Director_1.OnChange"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.ComboBox_Sales_Director_1.OnChange",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 5554,
+                  "snippet": {
+                    "text": "="
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnChange",
+                "module": "HomeSale",
+                "type": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.ComboBox_Sales_Director_1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.ComboBox_Sales_Director_1.OnChange"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.ComboBox_Sales_Director_1.OnChange",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
+                  "charOffset": 5587,
+                  "snippet": {
+                    "text": "&&"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnChange",
+                "module": "HomeSale",
+                "type": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.ComboBox_Sales_Director_1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.ComboBox_Sales_Director_1.OnChange"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.ComboBox_Sales_Director_1.OnChange",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
+                  "charOffset": 5835,
+                  "snippet": {
+                    "text": "&&"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnChange",
+                "module": "HomeSale",
+                "type": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.ComboBox_Sales_Director_1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.ComboBox_Sales_Director_1.OnChange"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.ComboBox_Sales_Director_1.OnChange",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
+                  "charOffset": 5897,
                   "snippet": {
                     "text": "&&"
                   }
@@ -9784,7 +10144,7 @@
                 },
                 "region": {
                   "charLength": 15,
-                  "charOffset": 2320,
+                  "charOffset": 2331,
                   "snippet": {
                     "text": "Day(quote_Date)"
                   }
@@ -9824,7 +10184,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 2336,
+                  "charOffset": 2347,
                   "snippet": {
                     "text": "="
                   }
@@ -9864,7 +10224,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 2369,
+                  "charOffset": 2380,
                   "snippet": {
                     "text": "&&"
                   }
@@ -9904,7 +10264,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 2617,
+                  "charOffset": 2628,
                   "snippet": {
                     "text": "&&"
                   }
@@ -9944,7 +10304,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 2679,
+                  "charOffset": 2690,
                   "snippet": {
                     "text": "&&"
                   }
@@ -9984,7 +10344,7 @@
                 },
                 "region": {
                   "charLength": 15,
-                  "charOffset": 3562,
+                  "charOffset": 2879,
                   "snippet": {
                     "text": "Day(quote_Date)"
                   }
@@ -10024,7 +10384,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 3578,
+                  "charOffset": 2895,
                   "snippet": {
                     "text": "="
                   }
@@ -10064,7 +10424,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 3611,
+                  "charOffset": 2928,
                   "snippet": {
                     "text": "&&"
                   }
@@ -10104,7 +10464,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 3859,
+                  "charOffset": 3176,
                   "snippet": {
                     "text": "&&"
                   }
@@ -10144,47 +10504,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 3921,
-                  "snippet": {
-                    "text": "&&"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnChange",
-                "module": "HomeSale",
-                "type": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.'Dropdown_Type of statistics_Director_1'"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Filter"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.'Dropdown_Type of statistics_Director_1'.OnChange"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.'Dropdown_Type of statistics_Director_1'.OnChange",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 2,
-                  "charOffset": 3944,
+                  "charOffset": 3238,
                   "snippet": {
                     "text": "&&"
                   }
@@ -10224,7 +10544,7 @@
                 },
                 "region": {
                   "charLength": 15,
-                  "charOffset": 4562,
+                  "charOffset": 4123,
                   "snippet": {
                     "text": "Day(quote_Date)"
                   }
@@ -10264,7 +10584,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 4578,
+                  "charOffset": 4139,
                   "snippet": {
                     "text": "="
                   }
@@ -10304,7 +10624,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 4611,
+                  "charOffset": 4172,
                   "snippet": {
                     "text": "&&"
                   }
@@ -10344,7 +10664,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 4859,
+                  "charOffset": 4420,
                   "snippet": {
                     "text": "&&"
                   }
@@ -10384,7 +10704,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 4921,
+                  "charOffset": 4482,
                   "snippet": {
                     "text": "&&"
                   }
@@ -10424,7 +10744,407 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 4944,
+                  "charOffset": 4505,
+                  "snippet": {
+                    "text": "&&"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnChange",
+                "module": "HomeSale",
+                "type": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.'Dropdown_Type of statistics_Director_1'"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.'Dropdown_Type of statistics_Director_1'.OnChange"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.'Dropdown_Type of statistics_Director_1'.OnChange",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 15,
+                  "charOffset": 5134,
+                  "snippet": {
+                    "text": "Day(quote_Date)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnChange",
+                "module": "HomeSale",
+                "type": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.'Dropdown_Type of statistics_Director_1'"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Day"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.'Dropdown_Type of statistics_Director_1'.OnChange"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.'Dropdown_Type of statistics_Director_1'.OnChange",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 5150,
+                  "snippet": {
+                    "text": "="
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnChange",
+                "module": "HomeSale",
+                "type": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.'Dropdown_Type of statistics_Director_1'"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.'Dropdown_Type of statistics_Director_1'.OnChange"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.'Dropdown_Type of statistics_Director_1'.OnChange",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
+                  "charOffset": 5183,
+                  "snippet": {
+                    "text": "&&"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnChange",
+                "module": "HomeSale",
+                "type": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.'Dropdown_Type of statistics_Director_1'"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.'Dropdown_Type of statistics_Director_1'.OnChange"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.'Dropdown_Type of statistics_Director_1'.OnChange",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
+                  "charOffset": 5431,
+                  "snippet": {
+                    "text": "&&"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnChange",
+                "module": "HomeSale",
+                "type": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.'Dropdown_Type of statistics_Director_1'"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.'Dropdown_Type of statistics_Director_1'.OnChange"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.'Dropdown_Type of statistics_Director_1'.OnChange",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
+                  "charOffset": 5493,
+                  "snippet": {
+                    "text": "&&"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnChange",
+                "module": "HomeSale",
+                "type": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.'Dropdown_Type of statistics_Director_1'"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.'Dropdown_Type of statistics_Director_1'.OnChange"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.'Dropdown_Type of statistics_Director_1'.OnChange",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 15,
+                  "charOffset": 5682,
+                  "snippet": {
+                    "text": "Day(quote_Date)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnChange",
+                "module": "HomeSale",
+                "type": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.'Dropdown_Type of statistics_Director_1'"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Day"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.'Dropdown_Type of statistics_Director_1'.OnChange"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.'Dropdown_Type of statistics_Director_1'.OnChange",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 5698,
+                  "snippet": {
+                    "text": "="
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnChange",
+                "module": "HomeSale",
+                "type": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.'Dropdown_Type of statistics_Director_1'"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.'Dropdown_Type of statistics_Director_1'.OnChange"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.'Dropdown_Type of statistics_Director_1'.OnChange",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
+                  "charOffset": 5731,
+                  "snippet": {
+                    "text": "&&"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnChange",
+                "module": "HomeSale",
+                "type": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.'Dropdown_Type of statistics_Director_1'"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.'Dropdown_Type of statistics_Director_1'.OnChange"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.'Dropdown_Type of statistics_Director_1'.OnChange",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
+                  "charOffset": 5979,
+                  "snippet": {
+                    "text": "&&"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnChange",
+                "module": "HomeSale",
+                "type": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.'Dropdown_Type of statistics_Director_1'"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.'Dropdown_Type of statistics_Director_1'.OnChange"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.'Dropdown_Type of statistics_Director_1'.OnChange",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
+                  "charOffset": 6041,
                   "snippet": {
                     "text": "&&"
                   }
@@ -11744,7 +12464,7 @@
                 },
                 "region": {
                   "charLength": 15,
-                  "charOffset": 2282,
+                  "charOffset": 2293,
                   "snippet": {
                     "text": "Day(quote_Date)"
                   }
@@ -11784,7 +12504,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 2298,
+                  "charOffset": 2309,
                   "snippet": {
                     "text": "="
                   }
@@ -11824,7 +12544,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 2331,
+                  "charOffset": 2342,
                   "snippet": {
                     "text": "&&"
                   }
@@ -11864,7 +12584,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 2579,
+                  "charOffset": 2590,
                   "snippet": {
                     "text": "&&"
                   }
@@ -11904,7 +12624,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 2641,
+                  "charOffset": 2652,
                   "snippet": {
                     "text": "&&"
                   }
@@ -11944,7 +12664,7 @@
                 },
                 "region": {
                   "charLength": 15,
-                  "charOffset": 3524,
+                  "charOffset": 2841,
                   "snippet": {
                     "text": "Day(quote_Date)"
                   }
@@ -11984,7 +12704,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 3540,
+                  "charOffset": 2857,
                   "snippet": {
                     "text": "="
                   }
@@ -12024,7 +12744,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 3573,
+                  "charOffset": 2890,
                   "snippet": {
                     "text": "&&"
                   }
@@ -12064,7 +12784,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 3821,
+                  "charOffset": 3138,
                   "snippet": {
                     "text": "&&"
                   }
@@ -12104,47 +12824,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 3883,
-                  "snippet": {
-                    "text": "&&"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnChange",
-                "module": "HomeSale",
-                "type": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.Dropdown_Year_Director_1"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Filter"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.Dropdown_Year_Director_1.OnChange"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.Dropdown_Year_Director_1.OnChange",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 2,
-                  "charOffset": 3906,
+                  "charOffset": 3200,
                   "snippet": {
                     "text": "&&"
                   }
@@ -12184,7 +12864,7 @@
                 },
                 "region": {
                   "charLength": 15,
-                  "charOffset": 4524,
+                  "charOffset": 4085,
                   "snippet": {
                     "text": "Day(quote_Date)"
                   }
@@ -12224,7 +12904,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 4540,
+                  "charOffset": 4101,
                   "snippet": {
                     "text": "="
                   }
@@ -12264,7 +12944,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 4573,
+                  "charOffset": 4134,
                   "snippet": {
                     "text": "&&"
                   }
@@ -12304,7 +12984,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 4821,
+                  "charOffset": 4382,
                   "snippet": {
                     "text": "&&"
                   }
@@ -12344,7 +13024,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 4883,
+                  "charOffset": 4444,
                   "snippet": {
                     "text": "&&"
                   }
@@ -12384,7 +13064,407 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 4906,
+                  "charOffset": 4467,
+                  "snippet": {
+                    "text": "&&"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnChange",
+                "module": "HomeSale",
+                "type": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.Dropdown_Year_Director_1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.Dropdown_Year_Director_1.OnChange"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.Dropdown_Year_Director_1.OnChange",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 15,
+                  "charOffset": 5096,
+                  "snippet": {
+                    "text": "Day(quote_Date)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnChange",
+                "module": "HomeSale",
+                "type": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.Dropdown_Year_Director_1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Day"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.Dropdown_Year_Director_1.OnChange"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.Dropdown_Year_Director_1.OnChange",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 5112,
+                  "snippet": {
+                    "text": "="
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnChange",
+                "module": "HomeSale",
+                "type": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.Dropdown_Year_Director_1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.Dropdown_Year_Director_1.OnChange"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.Dropdown_Year_Director_1.OnChange",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
+                  "charOffset": 5145,
+                  "snippet": {
+                    "text": "&&"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnChange",
+                "module": "HomeSale",
+                "type": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.Dropdown_Year_Director_1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.Dropdown_Year_Director_1.OnChange"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.Dropdown_Year_Director_1.OnChange",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
+                  "charOffset": 5393,
+                  "snippet": {
+                    "text": "&&"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnChange",
+                "module": "HomeSale",
+                "type": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.Dropdown_Year_Director_1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.Dropdown_Year_Director_1.OnChange"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.Dropdown_Year_Director_1.OnChange",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
+                  "charOffset": 5455,
+                  "snippet": {
+                    "text": "&&"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnChange",
+                "module": "HomeSale",
+                "type": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.Dropdown_Year_Director_1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.Dropdown_Year_Director_1.OnChange"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.Dropdown_Year_Director_1.OnChange",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 15,
+                  "charOffset": 5644,
+                  "snippet": {
+                    "text": "Day(quote_Date)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnChange",
+                "module": "HomeSale",
+                "type": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.Dropdown_Year_Director_1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Day"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.Dropdown_Year_Director_1.OnChange"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.Dropdown_Year_Director_1.OnChange",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 5660,
+                  "snippet": {
+                    "text": "="
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnChange",
+                "module": "HomeSale",
+                "type": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.Dropdown_Year_Director_1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.Dropdown_Year_Director_1.OnChange"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.Dropdown_Year_Director_1.OnChange",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
+                  "charOffset": 5693,
+                  "snippet": {
+                    "text": "&&"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnChange",
+                "module": "HomeSale",
+                "type": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.Dropdown_Year_Director_1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.Dropdown_Year_Director_1.OnChange"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.Dropdown_Year_Director_1.OnChange",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
+                  "charOffset": 5941,
+                  "snippet": {
+                    "text": "&&"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnChange",
+                "module": "HomeSale",
+                "type": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.Dropdown_Year_Director_1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.Dropdown_Year_Director_1.OnChange"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "HomeSale.Container15.Container_Director_1.Container_Title_Director_1.Dropdown_Year_Director_1.OnChange",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
+                  "charOffset": 6003,
                   "snippet": {
                     "text": "&&"
                   }
