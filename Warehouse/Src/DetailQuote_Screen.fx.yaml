@@ -18,6 +18,7 @@ DetailQuote_Screen As screen:
                 id_Quote = quoteList_HomeSale.Selected.id_Quote
             )
         );
+        Set(isChangeQuote, false)
 
     Container1 As groupContainer.manualLayoutContainer:
         Fill: =RGBA(109, 49, 162, 1)
@@ -42,6 +43,16 @@ DetailQuote_Screen As screen:
             Width: =667
             X: =351
             ZIndex: =2
+
+        Icon10 As icon.Save:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =50
+            Icon: =Icon.Save
+            Visible: =isChangeQuote
+            Width: =50
+            X: =1297
+            Y: =6
+            ZIndex: =3
 
     Container2 As groupContainer.manualLayoutContainer:
         BorderThickness: =1
@@ -229,9 +240,9 @@ DetailQuote_Screen As screen:
                 OnSelect: =Select(Parent)
                 Size: =15
                 Text: |-
-                    =Text(Value(ThisItem.price_Quote_Product * ThisItem.quantity_Quote_Product + (ThisItem.price_Quote_Product * ThisItem.quantity_Quote_Product * ThisItem.vat%)), "[$-en-US]#,### đ")
-                Width: =365
-                X: =328
+                    =If(Value(ThisItem.price_Quote_Product * ThisItem.quantity_Quote_Product + (ThisItem.price_Quote_Product * ThisItem.quantity_Quote_Product * ThisItem.vat%)) >0, Text(Value(ThisItem.price_Quote_Product * ThisItem.quantity_Quote_Product + (ThisItem.price_Quote_Product * ThisItem.quantity_Quote_Product * ThisItem.vat%)), "[$-en-US]#,### đ"),"0 đ")
+                Width: =247
+                X: =380
                 Y: =51
                 ZIndex: =8
 
@@ -251,12 +262,41 @@ DetailQuote_Screen As screen:
                 ZIndex: =9
 
             Label55 As label:
+                Height: =38
                 Italic: =true
                 OnSelect: =Select(Parent)
                 Text: |-
                     ="SL: " &ThisItem.quantity_Quote_Product
-                X: =623
+                Width: =111
+                X: =567
                 ZIndex: =10
+
+            Icon7 As icon.CancelBadge:
+                Color: =RGBA(26, 26, 26, 1)
+                Height: =40
+                Icon: =Icon.CancelBadge
+                OnSelect: |-
+                    =ClearCollect(
+                        dataProductQuoteByIdCustomer,
+                        Filter(
+                            dataProductQuoteByIdCustomer,
+                            Not(id_Quote = Gallery3.Selected.id_Quote && id_Product = Gallery3.Selected.id_Product)
+                        )
+                    );
+                    Set(isChangeQuote, true)
+                Width: =40
+                X: =712
+                Y: =24
+                ZIndex: =11
+
+        Label57 As label:
+            Color: =RGBA(56, 96, 178, 1)
+            FontWeight: =FontWeight.Lighter
+            Text: ="Thêm sản phẩm báo giá"
+            Underline: =true
+            Width: =332
+            X: =195
+            ZIndex: =3
 
     Container3_1 As groupContainer.manualLayoutContainer:
         BorderThickness: =1
@@ -298,11 +338,11 @@ DetailQuote_Screen As screen:
 
             Label19 As label:
                 FontWeight: =FontWeight.Semibold
-                Height: =47
+                Height: =35
                 OnSelect: =Select(Parent)
                 Size: =20
                 Text: =LookUp(Service,id_Serivce = ThisItem.id_Service).service_Name
-                Width: =707
+                Width: =637
                 X: =4
                 ZIndex: =7
 
@@ -317,8 +357,8 @@ DetailQuote_Screen As screen:
                 Text: |-
                     =If(ThisItem.price_Quote_Service < 1,"0 đ",Text(Value(ThisItem.price_Quote_Service), "[$-en-US]#,### đ"))
                 Width: =269
-                X: =439
-                Y: =60
+                X: =372
+                Y: =61
                 ZIndex: =8
 
             Label54 As label:
@@ -334,6 +374,33 @@ DetailQuote_Screen As screen:
                 X: =34
                 Y: =54
                 ZIndex: =9
+
+            Icon8 As icon.CancelBadge:
+                Color: =RGBA(0, 0, 0, 1)
+                Height: =40
+                Icon: =Icon.CancelBadge
+                OnSelect: |-
+                    =ClearCollect(
+                        dataSerivceQuoteByIdCustomer,
+                        Filter(
+                            dataSerivceQuoteByIdCustomer,
+                            Not(id_Quote = Gallery3_1.Selected.id_Quote && id_Service = Gallery3_1.Selected.id_Service)
+                        )
+                    );
+                    Set(isChangeQuote,true)
+                Width: =40
+                X: =711
+                Y: =35
+                ZIndex: =10
+
+        Label57_1 As label:
+            Color: =RGBA(56, 96, 178, 1)
+            FontWeight: =FontWeight.Lighter
+            Text: ="Thêm dịch vụ báo giá"
+            Underline: =true
+            Width: =332
+            X: =195
+            ZIndex: =3
 
     Button2 As button:
         FontWeight: =FontWeight.Bold
