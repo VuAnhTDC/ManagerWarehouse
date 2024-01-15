@@ -4236,6 +4236,7 @@ HomeSale As screen:
                                 reportOrder_Month,
                                 []
                             );
+                            Notify("as: " & JSON(statictialOrder));
                             ForAll(
                                 Sequence(CountRows(statictialOrder)),
                                 Collect(
