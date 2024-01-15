@@ -4427,6 +4427,7 @@ HomeSale As screen:
                                 Collect(
                                     statictialOrder,
                                     {
+                                        Id: CountRows(statictialPrice) + 1,
                                         Month: CountRows(statictialOrder) + 1 & "/" & Value(
                                             Mid(
                                                 Dropdown2_1.Selected.Value,
@@ -4450,6 +4451,7 @@ HomeSale As screen:
                                 );Collect(
                                     statictialPrice,
                                     {
+                                        Id: CountRows(statictialPrice) + 1,
                                         Month: CountRows(statictialPrice) + 1 & "/" & Value(
                                             Mid(
                                                 Dropdown2_1.Selected.Value,
