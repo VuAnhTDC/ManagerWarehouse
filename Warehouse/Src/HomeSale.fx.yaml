@@ -4216,7 +4216,11 @@ HomeSale As screen:
                                 Collect(
                                     reportOrder_Month,
                                     {
-                                        Date: "Tháng " & (CountRows(reportOrder_Month) + 1),
+                                        Date:Text(  Mid(
+                                                Dropdown2_1.Selected.Value,
+                                                7,
+                                                2
+                                            ) & "/" &(CountRows(reportOrder_Month) + 1) &"/" &Dropdown_Year_Director_1.Selected.Value,"dd/mm/yyyy"),
                                         Order: LookUp(
                                             statictialOrder,
                                             Id = CountRows(reportOrder_Month) + 1
