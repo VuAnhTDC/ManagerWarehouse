@@ -1187,7 +1187,7 @@ Director As screen:
                             =If(
                                 Dropdown2.Visible = false,
                                 If(
-                                    IsEmpty(ComboBox_Sales_Director.SelectedItems),
+                                    IsBlank(ComboBox_Sales_Director.SelectedItems),
                                     Table(
                                         {
                                             Month: "Tháng 1",
