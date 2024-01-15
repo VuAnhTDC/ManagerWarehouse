@@ -4181,7 +4181,7 @@ HomeSale As screen:
                                     reportOrder_Month,
                                     JSONFormat.IncludeBinaryData & JSONFormat.IgnoreUnsupportedTypes
                                 ),
-                                "Báo cáo_" & ComboBox_Sales_Director_1.Selected.user_Name & "_" & Dropdown_Year_Director_1.Selected.Value
+                                "Báo cáo_" & ComboBox_Sales_Director_1.Selected.user_Name & "_" & Dropdown2_1.Selected.Value
                             ).url;
                             Notify(
                                 "Xuất file thành công!!!",
