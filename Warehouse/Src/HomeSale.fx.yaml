@@ -4118,7 +4118,7 @@ HomeSale As screen:
                                         Collect_Report,
                                         JSONFormat.IncludeBinaryData & JSONFormat.IgnoreUnsupportedTypes
                                     ),
-                                    "Báo cáo_" & Dropdown_Year_Director_1.Selected.Value
+                                    "Báo cáo_Năm " & Dropdown_Year_Director_1.Selected.Value
                                 ).url;
                                 Notify(
                                     "Xuất file đơn hàng thành công!!!",
@@ -4199,7 +4199,7 @@ HomeSale As screen:
                                         Collect_Report,
                                         JSONFormat.IncludeBinaryData & JSONFormat.IgnoreUnsupportedTypes
                                     ),
-                                    "Báo cáo_" & ComboBox_Sales_Director_1.Selected.user_Name & "_" & Dropdown_Year_Director_1.Selected.Value
+                                    "Báo cáo_" & ComboBox_Sales_Director_1.Selected.user_Name & "_Năm " & Dropdown_Year_Director_1.Selected.Value
                                 ).url;
                                 Notify(
                                     "Xuất file thành công!!!",
