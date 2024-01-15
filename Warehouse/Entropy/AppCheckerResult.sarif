@@ -47879,36 +47879,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "DetailQuote_Screen.Container2.Label21.Text"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "DetailQuote_Screen.Container2.Label21.Text",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "Text",
-                "module": "DetailQuote_Screen",
-                "type": "DetailQuote_Screen.Container2.Label21"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 11
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "DetailQuote_Screen.Button2_1.Visible"
                 }
               ],
