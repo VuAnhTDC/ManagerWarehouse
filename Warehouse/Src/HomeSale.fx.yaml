@@ -4313,7 +4313,7 @@ HomeSale As screen:
                                 reportOrder_Month,
                                 []
                             );
-                            
+                            Notify("asd: " & LookUp(statictialOrder,Id = 10).Value)
                         )
                     Text: ="Xuất file"
                     Width: =200
