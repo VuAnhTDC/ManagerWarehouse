@@ -526,7 +526,7 @@ Director As screen:
             Button_Export_Order_Director As button:
                 FontWeight: =FontWeight.Bold
                 OnSelect: |-
-                    =If(
+                    =/*If(
                         IsEmpty(ComboBox_Sales_Director.SelectedItems),
                         ClearCollect(
                             Collect_Report,
@@ -974,7 +974,7 @@ Director As screen:
                             NotificationType.Success,
                             1500
                         )
-                    )
+                    )*/
                 Text: ="Xuất file"
                 Width: =200
                 X: =1142

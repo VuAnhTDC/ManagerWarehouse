@@ -3785,17 +3785,20 @@ HomeSale As screen:
                             Dropdown2_1.Visible = false,
                             If(
                                 IsEmpty(ComboBox_Sales_Director_1.SelectedItems),
-                                ClearCollect(Collect_Report,[]);
+                                ClearCollect(
+                                    Collect_Report,
+                                    []
+                                );
                                 ForAll(
                                     Sequence(12),
                                     Collect(
                                         Collect_Report,
                                         {
-                                            Month: CountRows(Collect_Report)+1,
+                                            Month: CountRows(Collect_Report) + 1,
                                             Order: CountRows(
                                                 Filter(
                                                     Quote,
-                                                    Month(quote_Date) = 1 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && quote_Status = true
+                                                    Month(quote_Date) = CountRows(Collect_Report) + 1 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && quote_Status = true
                                                 )
                                             ),
                                             Price: If(
@@ -3803,7 +3806,7 @@ HomeSale As screen:
                                                     Sum(
                                                         Filter(
                                                             Quote,
-                                                            Month(quote_Date) = 1 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && quote_Status = true
+                                                            Month(quote_Date) = CountRows(Collect_Report) + 1 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && quote_Status = true
                                                         ),
                                                         sumPriceQuote
                                                     )
@@ -3812,7 +3815,7 @@ HomeSale As screen:
                                                 Sum(
                                                     Filter(
                                                         Quote,
-                                                        Month(quote_Date) = 1 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && quote_Status = true
+                                                        Month(quote_Date) = CountRows(Collect_Report) + 1 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && quote_Status = true
                                                     ),
                                                     sumPriceQuote
                                                 )
@@ -3834,36 +3837,42 @@ HomeSale As screen:
                                 ),
                                 ClearCollect(
                                     Collect_Report,
-                                    {
-                                        Month: "January",
-                                        Order: CountRows(
-                                            Filter(
-                                                Quote,
-                                                Month(quote_Date) = 1 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID && quote_Status = true
-                                            )
-                                        ),
-                                        Price: If(
-                                            IsBlank(
+                                    []
+                                );
+                                ForAll(
+                                    Sequence(12),
+                                    Collect(
+                                        Collect_Report,
+                                        {
+                                            Month: CountRows(Collect_Report) + 1,
+                                            Order: CountRows(
+                                                Filter(
+                                                    Quote,
+                                                    Month(quote_Date) = CountRows(Collect_Report) + 1 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID && quote_Status = true
+                                                )
+                                            ),
+                                            Price: If(
+                                                IsBlank(
+                                                    Sum(
+                                                        Filter(
+                                                            Quote,
+                                                            Month(quote_Date) = CountRows(Collect_Report) + 1 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID && quote_Status = true
+                                                        ),
+                                                        sumPriceQuote
+                                                    )
+                                                ),
+                                                0,
                                                 Sum(
                                                     Filter(
                                                         Quote,
-                                                        Month(quote_Date) = 1 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID && quote_Status = true
+                                                        Month(quote_Date) = CountRows(Collect_Report) + 1 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID && quote_Status = true
                                                     ),
                                                     sumPriceQuote
                                                 )
-                                            ),
-                                            0,
-                                            Sum(
-                                                Filter(
-                                                    Quote,
-                                                    Month(quote_Date) = 1 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID && quote_Status = true
-                                                ),
-                                                sumPriceQuote
                                             )
-                                        )
-                                    }
+                                        }
+                                    )
                                 );
-                        
                                 Export_CSV_Warehouse_Manager.Run(
                                     JSON(
                                         Collect_Report,
