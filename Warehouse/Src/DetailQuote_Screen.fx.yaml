@@ -315,7 +315,7 @@ DetailQuote_Screen As screen:
                 OnSelect: =Select(Parent)
                 Size: =15
                 Text: |-
-                    =Text(Value(ThisItem.price_Quote_Service), "[$-en-US]#,### đ")
+                    =If(ThisItem.price_Quote_Service < 1,"0 đ",Text(Value(ThisItem.price_Quote_Service), "[$-en-US]#,### đ"))
                 Width: =269
                 X: =439
                 Y: =60
