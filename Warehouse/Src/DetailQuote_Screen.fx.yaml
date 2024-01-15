@@ -412,6 +412,7 @@ DetailQuote_Screen As screen:
                         isChangeQuote,
                         true
                     );
+                Visible: =!LookUp(Quote,id_Quote = TextInput1.Text).quote_Status
                 Width: =40
                 X: =712
                 Y: =24
@@ -426,6 +427,7 @@ DetailQuote_Screen As screen:
                 Set(isDialogAddProductQuote_DetailQuote, true)
             Text: ="Thêm sản phẩm báo giá"
             Underline: =true
+            Visible: =!LookUp(Quote,id_Quote = TextInput1.Text).quote_Status
             Width: =332
             X: =195
             ZIndex: =3
@@ -530,6 +532,7 @@ DetailQuote_Screen As screen:
                         isChangeQuote,
                         true
                     )
+                Visible: =!LookUp(Quote,id_Quote = TextInput1.Text).quote_Status
                 Width: =40
                 X: =711
                 Y: =35
@@ -544,6 +547,7 @@ DetailQuote_Screen As screen:
                 Set(isDialogAddServiceQuote_DetailQuote,true)
             Text: ="Thêm dịch vụ báo giá"
             Underline: =true
+            Visible: =!LookUp(Quote,id_Quote = TextInput1.Text).quote_Status
             Width: =332
             X: =195
             ZIndex: =3
