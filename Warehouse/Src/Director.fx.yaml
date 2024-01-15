@@ -965,8 +965,6 @@ Director As screen:
                 LayoutMinHeight: =100
                 LayoutMinWidth: =250
                 LayoutMode: =LayoutMode.Auto
-                PaddingLeft: =10
-                PaddingRight: =10
                 X: =40
                 Y: =40
                 ZIndex: =1
@@ -997,7 +995,7 @@ Director As screen:
                             =If(
                                 Dropdown2.Visible = false,
                                 If(
-                                    IsBlank(ComboBox_Sales_Director.SelectedItems),
+                                    IsBlank(ComboBox_Sales_Director.Selected),
                                     Table(
                                         {
                                             Month: "Tháng 1",
@@ -1242,8 +1240,6 @@ Director As screen:
                 LayoutMinHeight: =100
                 LayoutMinWidth: =250
                 LayoutMode: =LayoutMode.Auto
-                PaddingLeft: =10
-                PaddingRight: =10
                 X: =40
                 Y: =40
                 ZIndex: =2
@@ -1274,248 +1270,536 @@ Director As screen:
                             =If(
                                 Dropdown2.Visible = false,
                                 If(
-                                    IsBlank(ComboBox_Sales_Director.SelectedItems),
+                                    IsBlank(ComboBox_Sales_Director.Selected),
                                     Table(
                                         {
                                             Month: "Tháng 1",
-                                            Value: Sum(
-                                                Filter(
-                                                    Quote,
-                                                    Month(quote_Date) = 1 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                            Value: If(
+                                                IsBlank(
+                                                    Sum(
+                                                        Filter(
+                                                            Quote,
+                                                            Month(quote_Date) = 1 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                                        ),
+                                                        sumPriceQuote
+                                                    )
                                                 ),
-                                                sumPriceQuote
+                                                0,
+                                                Sum(
+                                                    Filter(
+                                                        Quote,
+                                                        Month(quote_Date) = 1 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                                    ),
+                                                    sumPriceQuote
+                                                )
                                             )
                                         },
                                         {
                                             Month: "Tháng 2",
-                                            Value: Sum(
-                                                Filter(
-                                                    Quote,
-                                                    Month(quote_Date) = 2 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                            Value: If(
+                                                IsBlank(
+                                                    Sum(
+                                                        Filter(
+                                                            Quote,
+                                                            Month(quote_Date) = 2 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                                        ),
+                                                        sumPriceQuote
+                                                    )
                                                 ),
-                                                sumPriceQuote
+                                                0,
+                                                Sum(
+                                                    Filter(
+                                                        Quote,
+                                                        Month(quote_Date) = 2 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                                    ),
+                                                    sumPriceQuote
+                                                )
                                             )
                                         },
                                         {
                                             Month: "Tháng 3",
-                                            Value: Sum(
-                                                Filter(
-                                                    Quote,
-                                                    Month(quote_Date) = 3 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                            Value: If(
+                                                IsBlank(
+                                                    Sum(
+                                                        Filter(
+                                                            Quote,
+                                                            Month(quote_Date) = 3 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                                        ),
+                                                        sumPriceQuote
+                                                    )
                                                 ),
-                                                sumPriceQuote
+                                                0,
+                                                Sum(
+                                                    Filter(
+                                                        Quote,
+                                                        Month(quote_Date) = 3 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                                    ),
+                                                    sumPriceQuote
+                                                )
                                             )
                                         },
                                         {
                                             Month: "Tháng 4",
-                                            Value: Sum(
-                                                Filter(
-                                                    Quote,
-                                                    Month(quote_Date) = 4 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                            Value: If(
+                                                IsBlank(
+                                                    Sum(
+                                                        Filter(
+                                                            Quote,
+                                                            Month(quote_Date) = 4 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                                        ),
+                                                        sumPriceQuote
+                                                    )
                                                 ),
-                                                sumPriceQuote
+                                                0,
+                                                Sum(
+                                                    Filter(
+                                                        Quote,
+                                                        Month(quote_Date) = 4 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                                    ),
+                                                    sumPriceQuote
+                                                )
                                             )
                                         },
                                         {
                                             Month: "Tháng 5",
-                                            Value: Sum(
-                                                Filter(
-                                                    Quote,
-                                                    Month(quote_Date) = 5 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                            Value: If(
+                                                IsBlank(
+                                                    Sum(
+                                                        Filter(
+                                                            Quote,
+                                                            Month(quote_Date) = 5 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                                        ),
+                                                        sumPriceQuote
+                                                    )
                                                 ),
-                                                sumPriceQuote
+                                                0,
+                                                Sum(
+                                                    Filter(
+                                                        Quote,
+                                                        Month(quote_Date) = 5 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                                    ),
+                                                    sumPriceQuote
+                                                )
                                             )
                                         },
                                         {
                                             Month: "Tháng 6",
-                                            Value: Sum(
-                                                Filter(
-                                                    Quote,
-                                                    Month(quote_Date) = 6 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                            Value: If(
+                                                IsBlank(
+                                                    Sum(
+                                                        Filter(
+                                                            Quote,
+                                                            Month(quote_Date) = 6 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                                        ),
+                                                        sumPriceQuote
+                                                    )
                                                 ),
-                                                sumPriceQuote
+                                                0,
+                                                Sum(
+                                                    Filter(
+                                                        Quote,
+                                                        Month(quote_Date) = 6 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                                    ),
+                                                    sumPriceQuote
+                                                )
                                             )
                                         },
                                         {
                                             Month: "Tháng 7",
-                                            Value: Sum(
-                                                Filter(
-                                                    Quote,
-                                                    Month(quote_Date) = 7 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                            Value: If(
+                                                IsBlank(
+                                                    Sum(
+                                                        Filter(
+                                                            Quote,
+                                                            Month(quote_Date) = 7 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                                        ),
+                                                        sumPriceQuote
+                                                    )
                                                 ),
-                                                sumPriceQuote
+                                                0,
+                                                Sum(
+                                                    Filter(
+                                                        Quote,
+                                                        Month(quote_Date) = 7 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                                    ),
+                                                    sumPriceQuote
+                                                )
                                             )
                                         },
                                         {
                                             Month: "Tháng 8",
-                                            Value: Sum(
-                                                Filter(
-                                                    Quote,
-                                                    Month(quote_Date) = 8 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                            Value: If(
+                                                IsBlank(
+                                                    Sum(
+                                                        Filter(
+                                                            Quote,
+                                                            Month(quote_Date) = 8 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                                        ),
+                                                        sumPriceQuote
+                                                    )
                                                 ),
-                                                sumPriceQuote
+                                                0,
+                                                Sum(
+                                                    Filter(
+                                                        Quote,
+                                                        Month(quote_Date) = 8 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                                    ),
+                                                    sumPriceQuote
+                                                )
                                             )
                                         },
                                         {
                                             Month: "Tháng 9",
-                                            Value: Sum(
-                                                Filter(
-                                                    Quote,
-                                                    Month(quote_Date) = 9 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                            Value: If(
+                                                IsBlank(
+                                                    Sum(
+                                                        Filter(
+                                                            Quote,
+                                                            Month(quote_Date) = 9 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                                        ),
+                                                        sumPriceQuote
+                                                    )
                                                 ),
-                                                sumPriceQuote
+                                                0,
+                                                Sum(
+                                                    Filter(
+                                                        Quote,
+                                                        Month(quote_Date) = 9 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                                    ),
+                                                    sumPriceQuote
+                                                )
                                             )
                                         },
                                         {
                                             Month: "Tháng 10",
-                                            Value: Sum(
-                                                Filter(
-                                                    Quote,
-                                                    Month(quote_Date) = 10 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                            Value: If(
+                                                IsBlank(
+                                                    Sum(
+                                                        Filter(
+                                                            Quote,
+                                                            Month(quote_Date) = 10 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                                        ),
+                                                        sumPriceQuote
+                                                    )
                                                 ),
-                                                sumPriceQuote
+                                                0,
+                                                Sum(
+                                                    Filter(
+                                                        Quote,
+                                                        Month(quote_Date) = 10 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                                    ),
+                                                    sumPriceQuote
+                                                )
                                             )
                                         },
                                         {
                                             Month: "Tháng 11",
-                                            Value: Sum(
-                                                Filter(
-                                                    Quote,
-                                                    Month(quote_Date) = 11 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                            Value: If(
+                                                IsBlank(
+                                                    Sum(
+                                                        Filter(
+                                                            Quote,
+                                                            Month(quote_Date) = 11 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                                        ),
+                                                        sumPriceQuote
+                                                    )
                                                 ),
-                                                sumPriceQuote
+                                                0,
+                                                Sum(
+                                                    Filter(
+                                                        Quote,
+                                                        Month(quote_Date) = 11 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                                    ),
+                                                    sumPriceQuote
+                                                )
                                             )
                                         },
                                         {
                                             Month: "Tháng 12",
-                                            Value: Sum(
-                                                Filter(
-                                                    Quote,
-                                                    Month(quote_Date) = 12 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                            Value: If(
+                                                IsBlank(
+                                                    Sum(
+                                                        Filter(
+                                                            Quote,
+                                                            Month(quote_Date) = 12 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                                        ),
+                                                        sumPriceQuote
+                                                    )
                                                 ),
-                                                sumPriceQuote
+                                                0,
+                                                Sum(
+                                                    Filter(
+                                                        Quote,
+                                                        Month(quote_Date) = 12 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                                    ),
+                                                    sumPriceQuote
+                                                )
                                             )
                                         }
                                     ),
                                     Table(
                                         {
                                             Month: "Tháng 1",
-                                            Value: Sum(
-                                                Filter(
-                                                    Quote,
-                                                    Month(quote_Date) = 1 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                            Value: If(
+                                                IsBlank(
+                                                    Sum(
+                                                        Filter(
+                                                            Quote,
+                                                            Month(quote_Date) = 1 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                                        ),
+                                                        sumPriceQuote
+                                                    )
                                                 ),
-                                                sumPriceQuote
+                                                0,
+                                                Sum(
+                                                    Filter(
+                                                        Quote,
+                                                        Month(quote_Date) = 1 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                                    ),
+                                                    sumPriceQuote
+                                                )
                                             )
                                         },
                                         {
                                             Month: "Tháng 2",
-                                            Value: Sum(
-                                                Filter(
-                                                    Quote,
-                                                    Month(quote_Date) = 2 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                            Value: If(
+                                                IsBlank(
+                                                    Sum(
+                                                        Filter(
+                                                            Quote,
+                                                            Month(quote_Date) = 2 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                                        ),
+                                                        sumPriceQuote
+                                                    )
                                                 ),
-                                                sumPriceQuote
+                                                0,
+                                                Sum(
+                                                    Filter(
+                                                        Quote,
+                                                        Month(quote_Date) = 2 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                                    ),
+                                                    sumPriceQuote
+                                                )
                                             )
                                         },
                                         {
                                             Month: "Tháng 3",
-                                            Value: Sum(
-                                                Filter(
-                                                    Quote,
-                                                    Month(quote_Date) = 3 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                            Value: If(
+                                                IsBlank(
+                                                    Sum(
+                                                        Filter(
+                                                            Quote,
+                                                            Month(quote_Date) = 3 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                                        ),
+                                                        sumPriceQuote
+                                                    )
                                                 ),
-                                                sumPriceQuote
+                                                0,
+                                                Sum(
+                                                    Filter(
+                                                        Quote,
+                                                        Month(quote_Date) = 3 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                                    ),
+                                                    sumPriceQuote
+                                                )
                                             )
                                         },
                                         {
                                             Month: "Tháng 4",
-                                            Value: Sum(
-                                                Filter(
-                                                    Quote,
-                                                    Month(quote_Date) = 4 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                            Value: If(
+                                                IsBlank(
+                                                    Sum(
+                                                        Filter(
+                                                            Quote,
+                                                            Month(quote_Date) = 4 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                                        ),
+                                                        sumPriceQuote
+                                                    )
                                                 ),
-                                                sumPriceQuote
+                                                0,
+                                                Sum(
+                                                    Filter(
+                                                        Quote,
+                                                        Month(quote_Date) = 4 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                                    ),
+                                                    sumPriceQuote
+                                                )
                                             )
                                         },
                                         {
                                             Month: "Tháng 5",
-                                            Value: Sum(
-                                                Filter(
-                                                    Quote,
-                                                    Month(quote_Date) = 5 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                            Value: If(
+                                                IsBlank(
+                                                    Sum(
+                                                        Filter(
+                                                            Quote,
+                                                            Month(quote_Date) = 5 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                                        ),
+                                                        sumPriceQuote
+                                                    )
                                                 ),
-                                                sumPriceQuote
+                                                0,
+                                                Sum(
+                                                    Filter(
+                                                        Quote,
+                                                        Month(quote_Date) = 5 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                                    ),
+                                                    sumPriceQuote
+                                                )
                                             )
                                         },
                                         {
                                             Month: "Tháng 6",
-                                            Value: Sum(
-                                                Filter(
-                                                    Quote,
-                                                    Month(quote_Date) = 6 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                            Value: If(
+                                                IsBlank(
+                                                    Sum(
+                                                        Filter(
+                                                            Quote,
+                                                            Month(quote_Date) = 6 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                                        ),
+                                                        sumPriceQuote
+                                                    )
                                                 ),
-                                                sumPriceQuote
+                                                0,
+                                                Sum(
+                                                    Filter(
+                                                        Quote,
+                                                        Month(quote_Date) = 6 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                                    ),
+                                                    sumPriceQuote
+                                                )
                                             )
                                         },
                                         {
                                             Month: "Tháng 7",
-                                            Value: Sum(
-                                                Filter(
-                                                    Quote,
-                                                    Month(quote_Date) = 7 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                            Value: If(
+                                                IsBlank(
+                                                    Sum(
+                                                        Filter(
+                                                            Quote,
+                                                            Month(quote_Date) = 7 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                                        ),
+                                                        sumPriceQuote
+                                                    )
                                                 ),
-                                                sumPriceQuote
+                                                0,
+                                                Sum(
+                                                    Filter(
+                                                        Quote,
+                                                        Month(quote_Date) = 7 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                                    ),
+                                                    sumPriceQuote
+                                                )
                                             )
                                         },
                                         {
                                             Month: "Tháng 8",
-                                            Value: Sum(
-                                                Filter(
-                                                    Quote,
-                                                    Month(quote_Date) = 8 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                            Value: If(
+                                                IsBlank(
+                                                    Sum(
+                                                        Filter(
+                                                            Quote,
+                                                            Month(quote_Date) = 8 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                                        ),
+                                                        sumPriceQuote
+                                                    )
                                                 ),
-                                                sumPriceQuote
+                                                0,
+                                                Sum(
+                                                    Filter(
+                                                        Quote,
+                                                        Month(quote_Date) = 8 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                                    ),
+                                                    sumPriceQuote
+                                                )
                                             )
                                         },
                                         {
                                             Month: "Tháng 9",
-                                            Value: Sum(
-                                                Filter(
-                                                    Quote,
-                                                    Month(quote_Date) = 9 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                            Value: If(
+                                                IsBlank(
+                                                    Sum(
+                                                        Filter(
+                                                            Quote,
+                                                            Month(quote_Date) = 9 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                                        ),
+                                                        sumPriceQuote
+                                                    )
                                                 ),
-                                                sumPriceQuote
+                                                0,
+                                                Sum(
+                                                    Filter(
+                                                        Quote,
+                                                        Month(quote_Date) = 9 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                                    ),
+                                                    sumPriceQuote
+                                                )
                                             )
                                         },
                                         {
                                             Month: "Tháng 10",
-                                            Value: Sum(
-                                                Filter(
-                                                    Quote,
-                                                    Month(quote_Date) = 10 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                            Value: If(
+                                                IsBlank(
+                                                    Sum(
+                                                        Filter(
+                                                            Quote,
+                                                            Month(quote_Date) = 10 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                                        ),
+                                                        sumPriceQuote
+                                                    )
                                                 ),
-                                                sumPriceQuote
+                                                0,
+                                                Sum(
+                                                    Filter(
+                                                        Quote,
+                                                        Month(quote_Date) = 10 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                                    ),
+                                                    sumPriceQuote
+                                                )
                                             )
                                         },
                                         {
                                             Month: "Tháng 11",
-                                            Value: Sum(
-                                                Filter(
-                                                    Quote,
-                                                    Month(quote_Date) = 11 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                            Value: If(
+                                                IsBlank(
+                                                    Sum(
+                                                        Filter(
+                                                            Quote,
+                                                            Month(quote_Date) = 11 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                                        ),
+                                                        sumPriceQuote
+                                                    )
                                                 ),
-                                                sumPriceQuote
+                                                0,
+                                                Sum(
+                                                    Filter(
+                                                        Quote,
+                                                        Month(quote_Date) = 11 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                                    ),
+                                                    sumPriceQuote
+                                                )
                                             )
                                         },
                                         {
                                             Month: "Tháng 12",
-                                            Value: Sum(
-                                                Filter(
-                                                    Quote,
-                                                    Month(quote_Date) = 12 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                            Value: If(
+                                                IsBlank(
+                                                    Sum(
+                                                        Filter(
+                                                            Quote,
+                                                            Month(quote_Date) = 12 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                                        ),
+                                                        sumPriceQuote
+                                                    )
                                                 ),
-                                                sumPriceQuote
+                                                0,
+                                                Sum(
+                                                    Filter(
+                                                        Quote,
+                                                        Month(quote_Date) = 12 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                                    ),
+                                                    sumPriceQuote
+                                                )
                                             )
                                         }
                                     )
