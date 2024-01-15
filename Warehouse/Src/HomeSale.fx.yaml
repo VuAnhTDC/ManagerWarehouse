@@ -4106,7 +4106,7 @@ HomeSale As screen:
                                             Sum(
                                                 Filter(
                                                     Quote,
-                                                    Month(quote_Date) = CountRows(Collect_Report) + 1 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && quote_Status = true
+                                                    Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && quote_Status = true
                                                 ),
                                                 sumPriceQuote
                                             )
@@ -4187,7 +4187,7 @@ HomeSale As screen:
                                             Sum(
                                                 Filter(
                                                     Quote,
-                                                    Month(quote_Date) = CountRows(Collect_Report) + 1 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && quote_Status = true&& id_User = ComboBox_Sales_Director_1.Selected.ID
+                                                    Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && quote_Status = true && id_User = ComboBox_Sales_Director_1.Selected.ID
                                                 ),
                                                 sumPriceQuote
                                             )
