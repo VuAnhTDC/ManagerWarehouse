@@ -601,7 +601,7 @@ Director As screen:
                     )
                 OnSelect: =
                 Width: =300
-                X: =803
+                X: =873
                 Y: =105
                 ZIndex: =8
 
@@ -785,7 +785,8 @@ Director As screen:
                         )
                     );
                 Visible: =If('Dropdown_Type of statistics_Director'.SelectedText.Value = "Thống kê theo tháng",true,false)
-                X: =453
+                Width: =300
+                X: =543
                 Y: =105
                 ZIndex: =10
 
@@ -942,9 +943,9 @@ Director As screen:
                         )
                     )
                 Text: ="Xuất file"
-                Width: =200
-                X: =1157
-                Y: =100
+                Width: =150
+                X: =1200
+                Y: =105
                 ZIndex: =11
 
         Container_Chart_Director As groupContainer.horizontalAutoLayoutContainer:
