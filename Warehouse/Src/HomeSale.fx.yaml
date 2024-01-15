@@ -2046,8 +2046,10 @@ HomeSale As screen:
                         ZIndex: =8
 
                 Icon11 As icon.Sync:
+                    Color: =RGBA(0, 0, 0, 1)
                     Height: =20
                     Icon: =Icon.Sync
+                    OnSelect: =Refresh(Product)
                     Width: =20
                     X: =324
                     Y: =138

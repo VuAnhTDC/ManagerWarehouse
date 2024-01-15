@@ -39940,10 +39940,10 @@
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 128,
-                  "charOffset": 1155,
+                  "charLength": 148,
+                  "charOffset": 1390,
                   "snippet": {
-                    "text": "CountRows(\n            Filter(\n                Quote_Service,\n                id_Quote = TextInput1.Text\n            )\n        )"
+                    "text": "CountRows(\n                Filter(\n                    Quote_Service,\n                    id_Quote = TextInput1.Text\n                )\n            )"
                   }
                 }
               },
@@ -46235,6 +46235,66 @@
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
           "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "HomeSale.containerContentPurchaseProduct_HomeSale.contentPurchaseProduct_Home_HomeSale.Container8.Icon11.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "HomeSale.containerContentPurchaseProduct_HomeSale.contentPurchaseProduct_Home_HomeSale.Container8.Icon11.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "HomeSale",
+                "type": "HomeSale.containerContentPurchaseProduct_HomeSale.contentPurchaseProduct_Home_HomeSale.Container8.Icon11"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "HomeSale.containerContentPurchaseProduct_HomeSale.contentPurchaseProduct_Home_HomeSale.Container8.Icon11.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "HomeSale.containerContentPurchaseProduct_HomeSale.contentPurchaseProduct_Home_HomeSale.Container8.Icon11.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "HomeSale",
+                "type": "HomeSale.containerContentPurchaseProduct_HomeSale.contentPurchaseProduct_Home_HomeSale.Container8.Icon11"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 3
         },
         {
           "locations": [
