@@ -18,7 +18,8 @@ DetailQuote_Screen As screen:
                 id_Quote = quoteList_HomeSale.Selected.id_Quote
             )
         );
-        Set(isChangeQuote, false)
+        Set(isChangeQuote, false);
+        Set(isVisibleDialogDetailQuote, false)
 
     Container1 As groupContainer.manualLayoutContainer:
         Fill: =RGBA(109, 49, 162, 1)
@@ -48,6 +49,7 @@ DetailQuote_Screen As screen:
             Color: =RGBA(255, 255, 255, 1)
             Height: =50
             Icon: =Icon.Save
+            OnSelect: =Set(isVisibleDialogDetailQuote,true)
             Visible: =isChangeQuote
             Width: =50
             X: =1297
@@ -292,6 +294,7 @@ DetailQuote_Screen As screen:
         Label57 As label:
             Color: =RGBA(56, 96, 178, 1)
             FontWeight: =FontWeight.Lighter
+            OnSelect: =Set(isVisibleDialogDetailQuote,true)
             Text: ="Thêm sản phẩm báo giá"
             Underline: =true
             Width: =332
@@ -681,28 +684,202 @@ DetailQuote_Screen As screen:
         Y: =708
         ZIndex: =6
 
-    containerContentFilePDF_DetailQuote As groupContainer.manualLayoutContainer:
+    contentDialogDetailQuote As groupContainer.manualLayoutContainer:
         Fill: =RGBA(0, 0, 0, 0.31)
         Height: =768
-        Visible: =isVisibleContentFilePDF
+        Visible: =isVisibleDialogDetailQuote
         Width: =1366
         ZIndex: =7
 
-        Icon3 As icon.CancelBadge:
-            Color: =RGBA(255, 255, 255, 1)
-            Icon: =Icon.CancelBadge
-            OnSelect: =Set(isVisibleContentFilePDF, false)
-            X: =1284
-            Y: =4
+        containerContentAdd_AddProduct_CreateQuoteScreen_1 As groupContainer.manualLayoutContainer:
+            Fill: =RGBA(241, 244, 249, 1)
+            Height: =515
+            Visible: =If(isConTentDialogAddQuote =1,true,false)
+            Width: =1058
+            X: =180
+            Y: =116
             ZIndex: =1
 
-    PdfViewer3 As pdfViewer:
-        BorderColor: =RGBA(0, 0, 0, 1)
-        Document: =
-        Fill: =RGBA(0, 0, 0, 0.5)
-        Height: =690
-        Visible: =isVisibleContentFilePDF
-        Width: =1366
-        Y: =78
-        ZIndex: =8
+            Rectangle4_1 As rectangle:
+                Height: =60
+                Width: =1058
+                ZIndex: =2
+
+            lblTitleAddProductQuote_CreateQuoteScreen_1 As label:
+                Align: =Align.Center
+                FontWeight: =FontWeight.Bold
+                Height: =60
+                Size: =25
+                Text: ="Chọn sản phẩm báo giá"
+                Width: =458
+                X: =300
+                ZIndex: =3
+
+            containerContent_CreateQuoteScvreen_1 As groupContainer.manualLayoutContainer:
+                BorderThickness: =1
+                Height: =411
+                RadiusBottomLeft: =10
+                RadiusBottomRight: =10
+                RadiusTopLeft: =10
+                RadiusTopRight: =10
+                Width: =991
+                X: =33
+                Y: =71
+                ZIndex: =4
+
+                lblProductQuote_CreateQuoteScreen_1 As label:
+                    Align: =Align.Right
+                    FontWeight: =FontWeight.Bold
+                    Text: ="Sản phẩm"
+                    X: =24
+                    Y: =15
+                    ZIndex: =1
+
+                dropdowProductQuote_CreateQuoteScreen_1 As dropdown:
+                    Items: =Filter(Product,activity = true)
+                    Width: =349
+                    X: =208
+                    Y: =15
+                    ZIndex: =2
+
+                lblPriceAddProductQuote_CreateQuoteScreen_1 As label:
+                    Align: =Align.Right
+                    FontWeight: =FontWeight.Bold
+                    Text: ="Giá sản phẩm"
+                    X: =24
+                    Y: =73
+                    ZIndex: =3
+
+                edtPriceAddPRoductQuote_CreateQuoteScreen_1 As text:
+                    Default: =dropdowProductQuote_CreateQuoteScreen_1.SelectedText.price_Product
+                    DisplayMode: =DisplayMode.Disabled
+                    Width: =349
+                    X: =208
+                    Y: =73
+                    ZIndex: =4
+
+                lblQuantityAddProductQuote_CreateQuoteScreen_1 As label:
+                    Align: =Align.Right
+                    FontWeight: =FontWeight.Bold
+                    Text: ="Số lượng"
+                    X: =24
+                    Y: =130
+                    ZIndex: =5
+
+                edtQuantityAddProductQuote_CreateQuoteScreen_1 As text:
+                    Default: =""
+                    Format: =TextFormat.Number
+                    HintText: ="Vui lòng nhập số lượng..."
+                    Width: =349
+                    X: =208
+                    Y: =130
+                    ZIndex: =6
+
+                lblNodeAddProductQuote_CreateQuoteScreen_1 As label:
+                    Align: =Align.Right
+                    FontWeight: =FontWeight.Bold
+                    Text: ="Ghi chú"
+                    X: =24
+                    Y: =183
+                    ZIndex: =7
+
+                edtNoteAddProductQuote_CreateQuoteScreen_1 As text:
+                    Default: =""
+                    Height: =200
+                    HintText: ="Vui lòng nhập ghi chú ..."
+                    Mode: =TextMode.MultiLine
+                    Width: =349
+                    X: =208
+                    Y: =183
+                    ZIndex: =8
+
+                lblTitleVatAddproductQuote_CreateQuote_1 As label:
+                    Align: =Align.Right
+                    FontWeight: =FontWeight.Bold
+                    Text: ="VAT"
+                    Width: =45
+                    X: =604
+                    Y: =15
+                    ZIndex: =9
+
+                edtVATAddProductQuote_CreatQuoteScreen_1 As text:
+                    Align: =Align.Right
+                    Default: ="10"
+                    Format: =TextFormat.Number
+                    Height: =38
+                    HintText: ="%"
+                    OnChange: =
+                    Width: =175
+                    X: =669
+                    Y: =15
+                    ZIndex: =10
+
+                containerSumpriceAddProduct_CreateQuoteScreen_1 As groupContainer.manualLayoutContainer:
+                    BorderThickness: =1
+                    Height: =143
+                    Width: =360
+                    X: =604
+                    Y: =80
+                    ZIndex: =11
+
+                    lblTitleSumpriceAddProduct_CreateQuoteScreen_1 As label:
+                        FontWeight: =FontWeight.Bold
+                        Size: =15
+                        Text: ="Tổng tiền"
+                        X: =9
+                        Y: =9
+                        ZIndex: =1
+
+                    lblSumpriceAddProduct_CreateQuoteScreen_1 As label:
+                        Color: =RGBA(168, 0, 0, 1)
+                        Fill: =RGBA(215, 223, 240, 1)
+                        FontWeight: =FontWeight.Semibold
+                        Height: =46
+                        Italic: =true
+                        Text: |-
+                            =If(
+                                !IsBlank(edtQuantityAddProductQuote_CreateQuoteScreen_1.Text) || !IsBlank(edtVATAddProductQuote_CreatQuoteScreen_1.Text),
+                                dropdowProductQuote_CreateQuoteScreen_1.SelectedText.price_Product * Value(edtQuantityAddProductQuote_CreateQuoteScreen_1.Text)
+                            ) + (Value(
+                                 If(
+                                    IsBlank(edtVATAddProductQuote_CreatQuoteScreen_1.Text),
+                                    dropdowProductQuote_CreateQuoteScreen_1.SelectedText.price_Product * Value(edtQuantityAddProductQuote_CreateQuoteScreen_1.Text) * 10%,
+                                    dropdowProductQuote_CreateQuoteScreen_1.SelectedText.price_Product * Value(edtQuantityAddProductQuote_CreateQuoteScreen_1.Text) * Value(edtVATAddProductQuote_CreatQuoteScreen_1.Text)%
+                                )
+                            ))
+                        Width: =306
+                        X: =32
+                        Y: =49
+                        ZIndex: =2
+
+                btnConfirmAddProductQuote_CreateQuoteScreen_1 As button:
+                    DisplayMode: =If(IsBlank(edtPriceAddPRoductQuote_CreateQuoteScreen_1.Text)||IsBlank(edtQuantityAddProductQuote_CreateQuoteScreen_1.Text)||IsBlank(edtNoteAddProductQuote_CreateQuoteScreen_1.Text)||IsBlank(edtVATAddProductQuote_CreatQuoteScreen_1.Text),DisplayMode.Disabled,DisplayMode.Edit)
+                    FontWeight: =FontWeight.Bold
+                    Height: =43
+                    OnSelect: |-
+                        =Collect(dataProductQuoteByIdCustomer,{
+                            id_Quote: TextInput1.Text,
+                            id_Product:dropdowProductQuote_CreateQuoteScreen_1.SelectedText.'data-ADB4D7A662F548B49FAC2B986E348A1Bid_Product',
+                            price_Quote_Product:dropdowProductQuote_CreateQuoteScreen_1.SelectedText.price_Product,
+                            quantity_Quote_Product:Value(edtQuantityAddProductQuote_CreateQuoteScreen_1.Text),
+                            quote_Note:edtNoteAddProductQuote_CreateQuoteScreen_1.Text,
+                            sumPrice_Quote_Product:lblSumpriceAddProduct_CreateQuoteScreen_1.Text,
+                            vat: edtVATAddProductQuote_CreatQuoteScreen_1.Text
+                        });
+                        Set(isVisibleDialogDetailQuote,false)
+                    Size: =20
+                    Text: ="Xác nhận"
+                    Width: =240
+                    X: =738
+                    Y: =279
+                    ZIndex: =12
+
+            cancelAddProduct_CreateQuoteScreen_1 As icon.CancelBadge:
+                Height: =50
+                Icon: =Icon.CancelBadge
+                OnSelect: =Set(isVisibleDialogDetailQuote,false)
+                Width: =50
+                X: =995
+                Y: =5
+                ZIndex: =5
 
