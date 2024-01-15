@@ -4053,7 +4053,7 @@ HomeSale As screen:
                                     Collect(
                                         Collect_Report,
                                         {
-                                            Month: CountRows(Collect_Report) + 1,
+                                            Month: Text(CountRows(Collect_Report) + 1),
                                             Order: CountRows(
                                                 Filter(
                                                     Quote,
@@ -4081,6 +4081,37 @@ HomeSale As screen:
                                             )
                                         }
                                     )
+                                );
+                                Collect(
+                                    Collect_Report,
+                                    {
+                                        Month: "Total",
+                                        Order: CountRows(
+                                            Filter(
+                                                Quote,
+                                                Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && quote_Status = true
+                                            )
+                                        ),
+                                        Price: If(
+                                            IsBlank(
+                                                Sum(
+                                                    Filter(
+                                                        Quote,
+                                                        Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && quote_Status = true
+                                                    ),
+                                                    sumPriceQuote
+                                                )
+                                            ),
+                                            0,
+                                            Sum(
+                                                Filter(
+                                                    Quote,
+                                                    Month(quote_Date) = CountRows(Collect_Report) + 1 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && quote_Status = true
+                                                ),
+                                                sumPriceQuote
+                                            )
+                                        )
+                                    }
                                 );
                                 Export_CSV_Warehouse_Manager.Run(
                                     JSON(
