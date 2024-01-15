@@ -4241,11 +4241,6 @@ HomeSale As screen:
                                     }
                                 )
                             );
-                            Collect(reportOrder_Month,{
-                                Date: "Total",
-                                Order: Concat(reportOrder_Month,Order),
-                                Value: Concat(reportOrder_Month,Value)
-                            });
                             Export_CSV_Warehouse_Manager.Run(
                                 JSON(
                                     reportOrder_Month,
