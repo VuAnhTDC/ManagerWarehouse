@@ -4517,7 +4517,7 @@ HomeSale As screen:
                             GridStyle: =GridStyle.All
                             Items: |-
                                 =If(
-                                    Dropdown2_1.Visible = false,
+                                    'Dropdown_Type of statistics_Director_1'.Selected.Value = "Thống kê theo năm",
                                     If(
                                         IsEmpty(ComboBox_Sales_Director_1.SelectedItems),
                                         Table(
