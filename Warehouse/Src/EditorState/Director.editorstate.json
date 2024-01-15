@@ -1,6 +1,6 @@
 {
   "ControlStates": {
-    "Button_Export_Order_Director": {
+    "Button_Export_Order_Director_3": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
         {
@@ -37,7 +37,14 @@
         },
         "Align",
         "VerticalAlign",
-        "X",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "1142",
+          "InvariantPropertyName": "X",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "Y",
         {
           "AFDDataSourceName": "",
@@ -77,9 +84,9 @@
       "IsLocked": false,
       "LayoutName": "",
       "MetaDataIDKey": "",
-      "Name": "Button_Export_Order_Director",
+      "Name": "Button_Export_Order_Director_3",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 7,
+      "ParentIndex": 5,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -2677,7 +2684,7 @@
       "MetaDataIDKey": "",
       "Name": "Dropdown_Year_Director",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 6,
+      "ParentIndex": 7,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -2984,7 +2991,7 @@
       "MetaDataIDKey": "",
       "Name": "Dropdown2",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 5,
+      "ParentIndex": 6,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {

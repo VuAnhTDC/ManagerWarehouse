@@ -36,7 +36,7 @@ Director As screen:
                 Items: =["Thống kê theo năm","Thống kê theo tháng"]
                 OnChange: |-
                     =If(
-                        'Dropdown_Type of statistics_Director_1'.Selected.Value = "Thống kê theo tháng",// Tính toán ngày cuối cùng của tháng
+                        'Dropdown_Type of statistics_Director_1'.Selected.Value = "Thống kê theo tháng",// Tính toán ngày // Tính toán ngày cuối cùng của tháng
                     Set(
                         ngayCuoiThang,
                         DateAdd(
@@ -77,6 +77,7 @@ Director As screen:
                             Collect(
                                 statictialOrder,
                                 {
+                                    Id: CountRows(statictialOrder) + 1,
                                     Month: CountRows(statictialOrder) + 1 & "/" & Value(
                                         Mid(
                                             Dropdown2.Selected.Value,
@@ -97,10 +98,10 @@ Director As screen:
                                         )
                                     )
                                 }
-                            );
-                            Collect(
+                            );Collect(
                                 statictialPrice,
                                 {
+                                    Id: CountRows(statictialPrice) + 1,
                                     Month: CountRows(statictialPrice) + 1 & "/" & Value(
                                         Mid(
                                             Dropdown2.Selected.Value,
@@ -138,6 +139,7 @@ Director As screen:
                             Collect(
                                 statictialOrder,
                                 {
+                                    Id: CountRows(statictialPrice) + 1,
                                     Month: CountRows(statictialOrder) + 1 & "/" & Value(
                                         Mid(
                                             Dropdown2.Selected.Value,
@@ -161,6 +163,7 @@ Director As screen:
                             );Collect(
                                 statictialPrice,
                                 {
+                                    Id: CountRows(statictialPrice) + 1,
                                     Month: CountRows(statictialPrice) + 1 & "/" & Value(
                                         Mid(
                                             Dropdown2.Selected.Value,
@@ -185,7 +188,6 @@ Director As screen:
                             )
                         )
                     );
-                    
                     )
                 Width: =300
                 X: =873
@@ -195,9 +197,8 @@ Director As screen:
             ComboBox_Sales_Director As combobox:
                 DisplayFields: =["user_Name"]
                 Items: =Filter(User,id_Role=LookUp(Role,name_Role="Sales").ID&&activity=true)
-                OnChange: |
-                    =// Tính toán ngày cuối cùng của tháng
-                    Set(
+                OnChange: |-
+                    =Set(
                         ngayCuoiThang,
                         DateAdd(
                             DateValue(
@@ -237,6 +238,7 @@ Director As screen:
                             Collect(
                                 statictialOrder,
                                 {
+                                    Id: CountRows(statictialOrder) + 1,
                                     Month: CountRows(statictialOrder) + 1 & "/" & Value(
                                         Mid(
                                             Dropdown2.Selected.Value,
@@ -257,10 +259,10 @@ Director As screen:
                                         )
                                     )
                                 }
-                            );
-                            Collect(
+                            );Collect(
                                 statictialPrice,
                                 {
+                                    Id: CountRows(statictialPrice) + 1,
                                     Month: CountRows(statictialPrice) + 1 & "/" & Value(
                                         Mid(
                                             Dropdown2.Selected.Value,
@@ -298,6 +300,7 @@ Director As screen:
                             Collect(
                                 statictialOrder,
                                 {
+                                    Id: CountRows(statictialPrice) + 1,
                                     Month: CountRows(statictialOrder) + 1 & "/" & Value(
                                         Mid(
                                             Dropdown2.Selected.Value,
@@ -321,6 +324,7 @@ Director As screen:
                             );Collect(
                                 statictialPrice,
                                 {
+                                    Id: CountRows(statictialPrice) + 1,
                                     Month: CountRows(statictialPrice) + 1 & "/" & Value(
                                         Mid(
                                             Dropdown2.Selected.Value,
@@ -366,7 +370,7 @@ Director As screen:
             Dropdown_Year_Director As dropdown:
                 Items: =Distinct(Quote,Year(quote_Date))
                 OnChange: |-
-                    =If(Dropdown2_1.Visible = true,// Tính toán ngày cuối cùng của tháng
+                    =If(Dropdown2.Visible = true,// Tính toán ngày cuối cùng của tháng
                     // Tính toán ngày cuối cùng của tháng
                     Set(
                         ngayCuoiThang,
@@ -408,6 +412,7 @@ Director As screen:
                             Collect(
                                 statictialOrder,
                                 {
+                                    Id: CountRows(statictialOrder) + 1,
                                     Month: CountRows(statictialOrder) + 1 & "/" & Value(
                                         Mid(
                                             Dropdown2.Selected.Value,
@@ -428,10 +433,10 @@ Director As screen:
                                         )
                                     )
                                 }
-                            );
-                            Collect(
+                            );Collect(
                                 statictialPrice,
                                 {
+                                    Id: CountRows(statictialPrice) + 1,
                                     Month: CountRows(statictialPrice) + 1 & "/" & Value(
                                         Mid(
                                             Dropdown2.Selected.Value,
@@ -469,6 +474,7 @@ Director As screen:
                             Collect(
                                 statictialOrder,
                                 {
+                                    Id: CountRows(statictialPrice) + 1,
                                     Month: CountRows(statictialOrder) + 1 & "/" & Value(
                                         Mid(
                                             Dropdown2.Selected.Value,
@@ -492,6 +498,7 @@ Director As screen:
                             );Collect(
                                 statictialPrice,
                                 {
+                                    Id: CountRows(statictialPrice) + 1,
                                     Month: CountRows(statictialPrice) + 1 & "/" & Value(
                                         Mid(
                                             Dropdown2.Selected.Value,
@@ -523,469 +530,10 @@ Director As screen:
                 Y: =105
                 ZIndex: =8
 
-            Button_Export_Order_Director As button:
-                FontWeight: =FontWeight.Bold
-                OnSelect: |-
-                    =/*If(
-                        IsEmpty(ComboBox_Sales_Director.SelectedItems),
-                        ClearCollect(
-                            Collect_Report,
-                            {
-                                Month: "January",
-                                Order: CountRows(
-                                    Filter(
-                                        Quote,
-                                        Month(quote_Date) = 1 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
-                                    )
-                                ),
-                                Price: Sum(
-                                    Filter(
-                                        Quote,
-                                        Month(quote_Date) = 1 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
-                                    ),
-                                    sumPriceQuote
-                                )
-                            },
-                            {
-                                Month: "February",
-                                Order: CountRows(
-                                    Filter(
-                                        Quote,
-                                        Month(quote_Date) = 2 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
-                                    )
-                                ),
-                                Price: Sum(
-                                    Filter(
-                                        Quote,
-                                        Month(quote_Date) = 2 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
-                                    ),
-                                    sumPriceQuote
-                                )
-                            },
-                            {
-                                Month: "March",
-                                Order: CountRows(
-                                    Filter(
-                                        Quote,
-                                        Month(quote_Date) = 3 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
-                                    )
-                                ),
-                                Price: Sum(
-                                    Filter(
-                                        Quote,
-                                        Month(quote_Date) = 3 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
-                                    ),
-                                    sumPriceQuote
-                                )
-                            },
-                            {
-                                Month: "April",
-                                Order: CountRows(
-                                    Filter(
-                                        Quote,
-                                        Month(quote_Date) = 4 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
-                                    )
-                                ),
-                                Price: Sum(
-                                    Filter(
-                                        Quote,
-                                        Month(quote_Date) = 4 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
-                                    ),
-                                    sumPriceQuote
-                                )
-                            },
-                            {
-                                Month: "May",
-                                Order: CountRows(
-                                    Filter(
-                                        Quote,
-                                        Month(quote_Date) = 5 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
-                                    )
-                                ),
-                                Price: Sum(
-                                    Filter(
-                                        Quote,
-                                        Month(quote_Date) = 5 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
-                                    ),
-                                    sumPriceQuote
-                                )
-                            },
-                            {
-                                Month: "June",
-                                Order: CountRows(
-                                    Filter(
-                                        Quote,
-                                        Month(quote_Date) = 6 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
-                                    )
-                                ),
-                                Price: Sum(
-                                    Filter(
-                                        Quote,
-                                        Month(quote_Date) = 6 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
-                                    ),
-                                    sumPriceQuote
-                                )
-                            },
-                            {
-                                Month: "July",
-                                Order: CountRows(
-                                    Filter(
-                                        Quote,
-                                        Month(quote_Date) = 7 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
-                                    )
-                                ),
-                                Price: Sum(
-                                    Filter(
-                                        Quote,
-                                        Month(quote_Date) = 7 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
-                                    ),
-                                    sumPriceQuote
-                                )
-                            },
-                            {
-                                Month: "August",
-                                Order: CountRows(
-                                    Filter(
-                                        Quote,
-                                        Month(quote_Date) = 8 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
-                                    )
-                                ),
-                                Price: Sum(
-                                    Filter(
-                                        Quote,
-                                        Month(quote_Date) = 8 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
-                                    ),
-                                    sumPriceQuote
-                                )
-                            },
-                            {
-                                Month: "September",
-                                Order: CountRows(
-                                    Filter(
-                                        Quote,
-                                        Month(quote_Date) = 9 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
-                                    )
-                                ),
-                                Price: Sum(
-                                    Filter(
-                                        Quote,
-                                        Month(quote_Date) = 9 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
-                                    ),
-                                    sumPriceQuote
-                                )
-                            },
-                            {
-                                Month: "October",
-                                Order: CountRows(
-                                    Filter(
-                                        Quote,
-                                        Month(quote_Date) = 10 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
-                                    )
-                                ),
-                                Price: Sum(
-                                    Filter(
-                                        Quote,
-                                        Month(quote_Date) = 10 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
-                                    ),
-                                    sumPriceQuote
-                                )
-                            },
-                            {
-                                Month: "November",
-                                Order: CountRows(
-                                    Filter(
-                                        Quote,
-                                        Month(quote_Date) = 11 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
-                                    )
-                                ),
-                                Price: Sum(
-                                    Filter(
-                                        Quote,
-                                        Month(quote_Date) = 11 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
-                                    ),
-                                    sumPriceQuote
-                                )
-                            },
-                            {
-                                Month: "December",
-                                Order: CountRows(
-                                    Filter(
-                                        Quote,
-                                        Month(quote_Date) = 12 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
-                                    )
-                                ),
-                                Price: Sum(
-                                    Filter(
-                                        Quote,
-                                        Month(quote_Date) = 12 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
-                                    ),
-                                    sumPriceQuote
-                                )
-                            };
-                            {
-                                Month: "Total",
-                                Order: CountRows(
-                                    Filter(
-                                        Quote,
-                                        Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
-                                    )
-                                ),
-                                Price: Sum(
-                                    Filter(
-                                        Quote,
-                                        Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
-                                    ),
-                                    sumPriceQuote
-                                )
-                            }
-                        );
-                        Export_CSV_Warehouse_Manager.Run(
-                            JSON(
-                                Collect_Report,
-                                JSONFormat.IncludeBinaryData & JSONFormat.IgnoreUnsupportedTypes
-                            ),
-                            "Báo cáo_" & Dropdown_Year_Director.Selected.Value
-                        ).url;
-                        Notify(
-                            "Xuất file đơn hàng thành công!!!",
-                            NotificationType.Success,
-                            1500
-                        ),
-                        ClearCollect(
-                            Collect_Report,
-                            {
-                                Month: "January",
-                                Order: CountRows(
-                                    Filter(
-                                        Quote,
-                                        Month(quote_Date) = 1 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
-                                    )
-                                ),
-                                Price: Sum(
-                                    Filter(
-                                        Quote,
-                                        Month(quote_Date) = 1 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
-                                    ),
-                                    sumPriceQuote
-                                )
-                            },
-                            {
-                                Month: "February",
-                                Order: CountRows(
-                                    Filter(
-                                        Quote,
-                                        Month(quote_Date) = 2 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
-                                    )
-                                ),
-                                Price: Sum(
-                                    Filter(
-                                        Quote,
-                                        Month(quote_Date) = 2 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
-                                    ),
-                                    sumPriceQuote
-                                )
-                            },
-                            {
-                                Month: "March",
-                                Order: CountRows(
-                                    Filter(
-                                        Quote,
-                                        Month(quote_Date) = 3 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
-                                    )
-                                ),
-                                Price: Sum(
-                                    Filter(
-                                        Quote,
-                                        Month(quote_Date) = 3 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
-                                    ),
-                                    sumPriceQuote
-                                )
-                            },
-                            {
-                                Month: "April",
-                                Order: CountRows(
-                                    Filter(
-                                        Quote,
-                                        Month(quote_Date) = 4 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
-                                    )
-                                ),
-                                Price: Sum(
-                                    Filter(
-                                        Quote,
-                                        Month(quote_Date) = 4 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
-                                    ),
-                                    sumPriceQuote
-                                )
-                            },
-                            {
-                                Month: "May",
-                                Order: CountRows(
-                                    Filter(
-                                        Quote,
-                                        Month(quote_Date) = 5 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
-                                    )
-                                ),
-                                Price: Sum(
-                                    Filter(
-                                        Quote,
-                                        Month(quote_Date) = 5 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
-                                    ),
-                                    sumPriceQuote
-                                )
-                            },
-                            {
-                                Month: "June",
-                                Order: CountRows(
-                                    Filter(
-                                        Quote,
-                                        Month(quote_Date) = 6 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
-                                    )
-                                ),
-                                Price: Sum(
-                                    Filter(
-                                        Quote,
-                                        Month(quote_Date) = 6 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
-                                    ),
-                                    sumPriceQuote
-                                )
-                            },
-                            {
-                                Month: "July",
-                                Order: CountRows(
-                                    Filter(
-                                        Quote,
-                                        Month(quote_Date) = 7 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
-                                    )
-                                ),
-                                Price: Sum(
-                                    Filter(
-                                        Quote,
-                                        Month(quote_Date) = 7 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
-                                    ),
-                                    sumPriceQuote
-                                )
-                            },
-                            {
-                                Month: "August",
-                                Order: CountRows(
-                                    Filter(
-                                        Quote,
-                                        Month(quote_Date) = 8 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
-                                    )
-                                ),
-                                Price: Sum(
-                                    Filter(
-                                        Quote,
-                                        Month(quote_Date) = 8 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
-                                    ),
-                                    sumPriceQuote
-                                )
-                            },
-                            {
-                                Month: "September",
-                                Order: CountRows(
-                                    Filter(
-                                        Quote,
-                                        Month(quote_Date) = 9 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
-                                    )
-                                ),
-                                Price: Sum(
-                                    Filter(
-                                        Quote,
-                                        Month(quote_Date) = 9 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
-                                    ),
-                                    sumPriceQuote
-                                )
-                            },
-                            {
-                                Month: "October",
-                                Order: CountRows(
-                                    Filter(
-                                        Quote,
-                                        Month(quote_Date) = 10 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
-                                    )
-                                ),
-                                Price: Sum(
-                                    Filter(
-                                        Quote,
-                                        Month(quote_Date) = 10 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
-                                    ),
-                                    sumPriceQuote
-                                )
-                            },
-                            {
-                                Month: "November",
-                                Order: CountRows(
-                                    Filter(
-                                        Quote,
-                                        Month(quote_Date) = 11 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
-                                    )
-                                ),
-                                Price: Sum(
-                                    Filter(
-                                        Quote,
-                                        Month(quote_Date) = 11 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
-                                    ),
-                                    sumPriceQuote
-                                )
-                            },
-                            {
-                                Month: "December",
-                                Order: CountRows(
-                                    Filter(
-                                        Quote,
-                                        Month(quote_Date) = 12 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
-                                    )
-                                ),
-                                Price: Sum(
-                                    Filter(
-                                        Quote,
-                                        Month(quote_Date) = 12 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
-                                    ),
-                                    sumPriceQuote
-                                )
-                            };
-                            {
-                                Month: "Total",
-                                Order: CountRows(
-                                    Filter(
-                                        Quote,
-                                        Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
-                                    )
-                                ),
-                                Price: Sum(
-                                    Filter(
-                                        Quote,
-                                        Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
-                                    ),
-                                    sumPriceQuote
-                                )
-                            }
-                        );
-                        Export_CSV_Warehouse_Manager.Run(
-                            JSON(
-                                Collect_Report,
-                                JSONFormat.IncludeBinaryData & JSONFormat.IgnoreUnsupportedTypes
-                            ),
-                            "Báo cáo_" & ComboBox_Sales_Director.Selected.user_Name & "_" & Dropdown_Year_Director.Selected.Value
-                        ).url;
-                        Notify(
-                            "Xuất file thành công!!!",
-                            NotificationType.Success,
-                            1500
-                        )
-                    )*/
-                Text: ="Xuất file"
-                Width: =200
-                X: =1142
-                Y: =105
-                ZIndex: =9
-
             Dropdown2 As dropdown:
                 Items: =["Tháng 1","Tháng 2","Tháng 3","Tháng 4","Tháng 5","Tháng 6","Tháng 7","Tháng 8","Tháng 9","Tháng 10","Tháng 11","Tháng 12"]
-                OnChange: |
-                    =// Tính toán ngày cuối cùng của tháng
-                    Set(
+                OnChange: |-
+                    =Set(
                         ngayCuoiThang,
                         DateAdd(
                             DateValue(
@@ -1025,6 +573,7 @@ Director As screen:
                             Collect(
                                 statictialOrder,
                                 {
+                                    Id: CountRows(statictialOrder) + 1,
                                     Month: CountRows(statictialOrder) + 1 & "/" & Value(
                                         Mid(
                                             Dropdown2.Selected.Value,
@@ -1045,10 +594,10 @@ Director As screen:
                                         )
                                     )
                                 }
-                            );
-                            Collect(
+                            );Collect(
                                 statictialPrice,
                                 {
+                                    Id: CountRows(statictialPrice) + 1,
                                     Month: CountRows(statictialPrice) + 1 & "/" & Value(
                                         Mid(
                                             Dropdown2.Selected.Value,
@@ -1086,6 +635,7 @@ Director As screen:
                             Collect(
                                 statictialOrder,
                                 {
+                                    Id: CountRows(statictialPrice) + 1,
                                     Month: CountRows(statictialOrder) + 1 & "/" & Value(
                                         Mid(
                                             Dropdown2.Selected.Value,
@@ -1109,6 +659,7 @@ Director As screen:
                             );Collect(
                                 statictialPrice,
                                 {
+                                    Id: CountRows(statictialPrice) + 1,
                                     Month: CountRows(statictialPrice) + 1 & "/" & Value(
                                         Mid(
                                             Dropdown2.Selected.Value,
@@ -1137,6 +688,164 @@ Director As screen:
                 X: =453
                 Y: =105
                 ZIndex: =10
+
+            Button_Export_Order_Director_3 As button:
+                FontWeight: =FontWeight.Bold
+                OnSelect: |-
+                    =If(
+                        Dropdown2.Visible = false,
+                        If(
+                            IsEmpty(ComboBox_Sales_Director.SelectedItems),
+                            ClearCollect(
+                                Collect_Report,
+                                []
+                            );
+                            ForAll(
+                                Sequence(12),
+                                Collect(
+                                    Collect_Report,
+                                    {
+                                        Month: CountRows(Collect_Report) + 1,
+                                        Order: CountRows(
+                                            Filter(
+                                                Quote,
+                                                Month(quote_Date) = CountRows(Collect_Report) + 1 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                            )
+                                        ),
+                                        Price: If(
+                                            IsBlank(
+                                                Sum(
+                                                    Filter(
+                                                        Quote,
+                                                        Month(quote_Date) = CountRows(Collect_Report) + 1 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                                    ),
+                                                    sumPriceQuote
+                                                )
+                                            ),
+                                            0,
+                                            Sum(
+                                                Filter(
+                                                    Quote,
+                                                    Month(quote_Date) = CountRows(Collect_Report) + 1 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && quote_Status = true
+                                                ),
+                                                sumPriceQuote
+                                            )
+                                        )
+                                    }
+                                )
+                            );
+                            Export_CSV_Warehouse_Manager.Run(
+                                JSON(
+                                    Collect_Report,
+                                    JSONFormat.IncludeBinaryData & JSONFormat.IgnoreUnsupportedTypes
+                                ),
+                                "Báo cáo_" & Dropdown_Year_Director.Selected.Value
+                            ).url;
+                            Notify(
+                                "Xuất file đơn hàng thành công!!!",
+                                NotificationType.Success,
+                                1500
+                            ),
+                            ClearCollect(
+                                Collect_Report,
+                                []
+                            );
+                            ForAll(
+                                Sequence(12),
+                                Collect(
+                                    Collect_Report,
+                                    {
+                                        Month: CountRows(Collect_Report) + 1,
+                                        Order: CountRows(
+                                            Filter(
+                                                Quote,
+                                                Month(quote_Date) = CountRows(Collect_Report) + 1 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                            )
+                                        ),
+                                        Price: If(
+                                            IsBlank(
+                                                Sum(
+                                                    Filter(
+                                                        Quote,
+                                                        Month(quote_Date) = CountRows(Collect_Report) + 1 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                                    ),
+                                                    sumPriceQuote
+                                                )
+                                            ),
+                                            0,
+                                            Sum(
+                                                Filter(
+                                                    Quote,
+                                                    Month(quote_Date) = CountRows(Collect_Report) + 1 && Year(quote_Date) = Dropdown_Year_Director.Selected.Value && id_User = ComboBox_Sales_Director.Selected.ID && quote_Status = true
+                                                ),
+                                                sumPriceQuote
+                                            )
+                                        )
+                                    }
+                                )
+                            );
+                            Export_CSV_Warehouse_Manager.Run(
+                                JSON(
+                                    Collect_Report,
+                                    JSONFormat.IncludeBinaryData & JSONFormat.IgnoreUnsupportedTypes
+                                ),
+                                "Báo cáo_" & ComboBox_Sales_Director.Selected.user_Name & "_" & Dropdown_Year_Director.Selected.Value
+                            ).url;
+                            Notify(
+                                "Xuất file thành công!!!",
+                                NotificationType.Success,
+                                1500
+                            )
+                        ),
+                        ClearCollect(
+                            reportOrder_Month,
+                            []
+                        );
+                        Notify("as: " & JSON(statictialOrder));
+                        ForAll(
+                            Sequence(CountRows(statictialOrder)),
+                            Collect(
+                                reportOrder_Month,
+                                {
+                                    Date: "Tháng " & (CountRows(reportOrder_Month) + 1),
+                                    Order: LookUp(
+                                        statictialOrder,
+                                        Id = CountRows(reportOrder_Month) + 1
+                                    ).Value,
+                                    Value: If(
+                                        !IsBlank(
+                                            LookUp(
+                                                statictialPrice,
+                                                Id = CountRows(reportOrder_Month) + 1
+                                            ).Value
+                                        ),
+                                        LookUp(
+                                            statictialPrice,
+                                            Id = CountRows(reportOrder_Month) + 1
+                                        ).Value,
+                                        0
+                                    )
+                                }
+                            )
+                        );
+                        Export_CSV_Warehouse_Manager.Run(
+                            JSON(
+                                reportOrder_Month,
+                                JSONFormat.IncludeBinaryData & JSONFormat.IgnoreUnsupportedTypes
+                            ),
+                            "Báo cáo_" & ComboBox_Sales_Director.Selected.user_Name & "_" & Dropdown_Year_Director.Selected.Value
+                        ).url;
+                        Notify(
+                            "Xuất file thành công!!!",
+                            NotificationType.Success,
+                            1500
+                        )
+                    )
+                Text: ="Xuất file"
+                Width: =200
+                X: =1157
+                Y: =100
+                ZIndex: =11
 
         Container_Chart_Director As groupContainer.horizontalAutoLayoutContainer:
             AlignInContainer: =AlignInContainer.SetByContainer
