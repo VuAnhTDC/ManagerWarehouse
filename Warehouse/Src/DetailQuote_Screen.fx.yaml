@@ -18,6 +18,8 @@ DetailQuote_Screen As screen:
                 id_Quote = quoteList_HomeSale.Selected.id_Quote
             )
         );
+        ClearCollect(dataProductDelete,[]);
+        ClearCollect(dataServiceDelete,[]);
         Set(isChangeQuote, false);
         Set(isVisibleDialogDetailQuote, false);
         Set(isDialogAddProductQuote_DetailQuote, false);
@@ -60,7 +62,7 @@ DetailQuote_Screen As screen:
                             !IsBlank(
                                 LookUp(
                                     Quote_Product,
-                                    id_Quote = Temp.id_Quote && id_Product = Temp.id_Product 
+                                    id_Quote = Temp.id_Quote && id_Product = Temp.id_Product
                                 )
                             ),
                             Patch(
@@ -111,6 +113,27 @@ DetailQuote_Screen As screen:
                                         price_Quote_Service: Temp.price_Quote_Service
                                     }
                                 )
+                            )
+                        )
+                    );
+                    If(
+                        CountRows(dataProductDelete) > 0,
+                        ForAll(
+                            dataProductDelete,
+                            RemoveIf(
+                                Quote_Product,
+                                id_Quote = idQuote && id_Product = idProduct
+                            )
+                        )
+                    );
+                    If(
+                        CountRows(dataServiceDelete) > 0,
+                        ForAll(
+                            dataServiceDelete,
+                            RemoveIf(
+                                Quote_Service,
+                                id_Quote = idQuote,
+                                id_Service = idService
                             )
                         )
                     )
@@ -366,15 +389,25 @@ DetailQuote_Screen As screen:
                 Color: =RGBA(26, 26, 26, 1)
                 Height: =40
                 Icon: =Icon.CancelBadge
-                OnSelect: |-
-                    =ClearCollect(
+                OnSelect: |
+                    =Collect(
+                        dataProductDelete,
+                        {
+                            idQuote: Gallery3.Selected.id_Quote,
+                            idProduct: Gallery3.Selected.id_Product
+                        }
+                    );
+                    ClearCollect(
                         dataProductQuoteByIdCustomer,
                         Filter(
                             dataProductQuoteByIdCustomer,
                             Not(id_Quote = Gallery3.Selected.id_Quote && id_Product = Gallery3.Selected.id_Product)
                         )
                     );
-                    Set(isChangeQuote, true)
+                    Set(
+                        isChangeQuote,
+                        true
+                    );
                 Width: =40
                 X: =712
                 Y: =24
@@ -474,14 +507,24 @@ DetailQuote_Screen As screen:
                 Height: =40
                 Icon: =Icon.CancelBadge
                 OnSelect: |-
-                    =ClearCollect(
+                    =Collect(
+                        dataServiceDelete,
+                        {
+                            idQuote: Gallery3_1.Selected.id_Quote,
+                            idService: Gallery3_1.Selected.id_Service
+                        }
+                    );
+                    ClearCollect(
                         dataSerivceQuoteByIdCustomer,
                         Filter(
                             dataSerivceQuoteByIdCustomer,
                             Not(id_Quote = Gallery3_1.Selected.id_Quote && id_Service = Gallery3_1.Selected.id_Service)
                         )
                     );
-                    Set(isChangeQuote,true)
+                    Set(
+                        isChangeQuote,
+                        true
+                    )
                 Width: =40
                 X: =711
                 Y: =35
@@ -1120,7 +1163,7 @@ DetailQuote_Screen As screen:
                                 {
                                     id_Quote: TextInput1.Text,
                                     id_Service: drwService_CreateQuoteScreen_1.SelectedText.'data-ADB4D7A662F548B49FAC2B986E348A1Bid_Serivce',
-                                    quote_Service_Not: edtNoteService_CreateQuoteScreen_1.Text,
+                                    quote_Service_Note: edtNoteService_CreateQuoteScreen_1.Text,
                                     price_Quote_Service: If(
                                         IsBlank(edtPriceService_CreateQuoteScreen_1.Text),
                                         0,
