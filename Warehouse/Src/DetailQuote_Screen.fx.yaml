@@ -51,7 +51,41 @@ DetailQuote_Screen As screen:
             Color: =RGBA(255, 255, 255, 1)
             Height: =50
             Icon: =Icon.Save
-            OnSelect: =Set(isVisibleDialogDetailQuote,true)
+            OnSelect: |-
+                =If(
+                    Icon10.Visible = true,
+                    ForAll(
+                        dataProductQuoteByIdCustomer As Temp,
+                        If(
+                            IsBlank(
+                                LookUp(
+                                    Quote_Product,
+                                    id_Quote = Temp.id_Quote && id_Product = Temp.id_Product && quantity_Quote_Product <> Temp.quantity_Quote_Product
+                                )
+                            ),
+                            Patch(
+                                Quote_Product,
+                                LookUp(
+                                    Quote_Product,
+                                    id_Quote = Temp.id_Quote && id_Product = Temp.id_Product
+                                ),
+                                {quantity_Quote_Product: Temp.quantity_Quote_Product}
+                            ),
+                            Patch(
+                                Quote_Product,
+                                Defaults(Quote_Product),
+                                {
+                                    id_Quote: TextInput1.Text,
+                                    id_Product: Temp.id_Product,
+                                    price_Quote_Product: Value(Temp.price_Quote_Product),
+                                    quantity_Quote_Product: Value(Temp.quantity_Quote_Product),
+                                    quote_Product_Note: Temp.quote_Product_Note,
+                                    vat: Value(Temp.vat)
+                                }
+                            )
+                        )
+                    )
+                )
             Visible: =isChangeQuote
             Width: =50
             X: =1297
@@ -178,16 +212,26 @@ DetailQuote_Screen As screen:
             Size: =20
             Text: |-
                 =/*"Tổng tiền: " & Text(Value(quoteList_HomeSale.Selected.sumPriceQuote), "[$-en-US]#,### đ")*/
-                "Tổng tiền: " & If(Sum(
-                        dataProductQuoteByIdCustomer,
-                        ((price_Quote_Product * quantity_Quote_Product) + (price_Quote_Product * quantity_Quote_Product * vat%))
-                    ) + Sum(dataSerivceQuoteByIdCustomer,price_Quote_Service) > 0,Text(
+                "Tổng tiền: " & If(
                     Sum(
                         dataProductQuoteByIdCustomer,
                         ((price_Quote_Product * quantity_Quote_Product) + (price_Quote_Product * quantity_Quote_Product * vat%))
-                    ) + Sum(dataSerivceQuoteByIdCustomer,price_Quote_Service),
-                    "[$-en-US]#,### đ"
-                ),"0 đ")
+                    ) + Sum(
+                        dataSerivceQuoteByIdCustomer,
+                        price_Quote_Service
+                    ) > 0,
+                    Text(
+                        Sum(
+                            dataProductQuoteByIdCustomer,
+                            ((price_Quote_Product * quantity_Quote_Product) + (price_Quote_Product * quantity_Quote_Product * vat%))
+                        ) + Sum(
+                            dataSerivceQuoteByIdCustomer,
+                            price_Quote_Service
+                        ),
+                        "[$-en-US]#,### đ"
+                    ),
+                    "0 đ"
+                )
             Width: =515
             X: =12
             Y: =600
@@ -910,6 +954,7 @@ DetailQuote_Screen As screen:
                                 isVisibleDialogDetailQuote,
                                 false
                             );
+                            Set(isDialogAddProductQuote_DetailQuote,false);
                             Set(isChangeQuote, true)
                     Size: =20
                     Text: ="Xác nhận"
