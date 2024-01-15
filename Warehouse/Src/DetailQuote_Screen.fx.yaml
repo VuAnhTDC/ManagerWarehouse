@@ -717,7 +717,7 @@ DetailQuote_Screen As screen:
                 FontWeight: =FontWeight.Bold
                 Height: =60
                 Size: =25
-                Text: ="Chọn sản phẩm báo giá"
+                Text: ="Thêm sản phẩm báo giá"
                 Width: =458
                 X: =300
                 ZIndex: =3
@@ -899,7 +899,8 @@ DetailQuote_Screen As screen:
                             Set(
                                 isVisibleDialogDetailQuote,
                                 false
-                            )
+                            );
+                            Set(isChangeQuote, true)
                     Size: =20
                     Text: ="Xác nhận"
                     Width: =240
@@ -1014,21 +1015,42 @@ DetailQuote_Screen As screen:
                 Height: =53
                 OnSelect: |-
                     =If(
-                        IsBlank(edtNoteService_CreateQuoteScreen_1.Text),
-                        Notify(
-                            "Vui lòng nhập ghi chú",
-                            NotificationType.Error
+                        IsBlank(
+                            LookUp(
+                                dataSerivceQuoteByIdCustomer,
+                                id_Quote = TextInput1.Text && id_Service = drwService_CreateQuoteScreen_1.Selected.id_Serivce
+                            )
                         ),
-                        Collect(
-                            serviceAddQuoteList,
-                            {
-                                id_Service: drwService_CreateQuoteScreen_1.SelectedText.'data-ADB4D7A662F548B49FAC2B986E348A1Bid_Serivce',
-                                quote_Service_Not:edtNoteService_CreateQuoteScreen_1.Text,
-                                price_Quote_Service: If(IsBlank(edtPriceService_CreateQuoteScreen_1.Text), 0,Value(edtPriceService_CreateQuoteScreen_1.Text))
-                            }
-                        );
-                        Set(isVisibleDialogAddQuote_CreateQuoteScreen,!isVisibleDialogAddQuote_CreateQuoteScreen)
+                        If(
+                            IsBlank(edtNoteService_CreateQuoteScreen_1.Text),
+                            Notify(
+                                "Vui lòng nhập ghi chú",
+                                NotificationType.Error
+                            ),
+                            Collect(
+                                dataSerivceQuoteByIdCustomer,
+                                {
+                                    id_Quote: TextInput1.Text,
+                                    id_Service: drwService_CreateQuoteScreen_1.SelectedText.'data-ADB4D7A662F548B49FAC2B986E348A1Bid_Serivce',
+                                    quote_Service_Not: edtNoteService_CreateQuoteScreen_1.Text,
+                                    price_Quote_Service: If(
+                                        IsBlank(edtPriceService_CreateQuoteScreen_1.Text),
+                                        0,
+                                        Value(edtPriceService_CreateQuoteScreen_1.Text)
+                                    )
+                                }
+                            );
+                            Set(
+                                isVisibleDialogDetailQuote,
+                                false
+                            );
+                            Set(
+                                isDialogAddServiceQuote_DetailQuote,
+                                false
+                            );  Set(isChangeQuote, true)
+                        ),Notify("Dịch vụ đã được thêm vào trong báo giá",NotificationType.Error)
                     )
+                     
                 Text: ="Xác nhận"
                 Width: =304
                 X: =331
@@ -1038,7 +1060,9 @@ DetailQuote_Screen As screen:
             exitAddQuoteService_CreateQuoteScreen_1 As icon.CancelBadge:
                 Height: =50
                 Icon: =Icon.CancelBadge
-                OnSelect: =Set(isVisibleDialogAddQuote_CreateQuoteScreen,!isVisibleDialogAddQuote_CreateQuoteScreen)
+                OnSelect: |-
+                    =Set(isVisibleDialogDetailQuote,false);
+                    Set(isDialogAddServiceQuote_DetailQuote,false)
                 Width: =50
                 X: =902
                 ZIndex: =11
