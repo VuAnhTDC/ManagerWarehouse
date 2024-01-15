@@ -15141,7 +15141,7 @@
                 },
                 "region": {
                   "charLength": 15,
-                  "charOffset": 2158,
+                  "charOffset": 2169,
                   "snippet": {
                     "text": "Day(quote_Date)"
                   }
@@ -15181,7 +15181,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 2174,
+                  "charOffset": 2185,
                   "snippet": {
                     "text": "="
                   }
@@ -15221,7 +15221,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 2207,
+                  "charOffset": 2218,
                   "snippet": {
                     "text": "&&"
                   }
@@ -15261,7 +15261,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 2453,
+                  "charOffset": 2464,
                   "snippet": {
                     "text": "&&"
                   }
@@ -15301,7 +15301,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 2513,
+                  "charOffset": 2524,
                   "snippet": {
                     "text": "&&"
                   }
@@ -15341,7 +15341,7 @@
                 },
                 "region": {
                   "charLength": 15,
-                  "charOffset": 3392,
+                  "charOffset": 2713,
                   "snippet": {
                     "text": "Day(quote_Date)"
                   }
@@ -15381,7 +15381,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 3408,
+                  "charOffset": 2729,
                   "snippet": {
                     "text": "="
                   }
@@ -15421,7 +15421,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 3441,
+                  "charOffset": 2762,
                   "snippet": {
                     "text": "&&"
                   }
@@ -15461,7 +15461,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 3687,
+                  "charOffset": 3008,
                   "snippet": {
                     "text": "&&"
                   }
@@ -15501,47 +15501,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 3747,
-                  "snippet": {
-                    "text": "&&"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnChange",
-                "module": "Director",
-                "type": "Director.Container_Director.Container_Title_Director.ComboBox_Sales_Director"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Filter"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Title_Director.ComboBox_Sales_Director.OnChange"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Title_Director.ComboBox_Sales_Director.OnChange",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 2,
-                  "charOffset": 3770,
+                  "charOffset": 3068,
                   "snippet": {
                     "text": "&&"
                   }
@@ -15581,7 +15541,7 @@
                 },
                 "region": {
                   "charLength": 15,
-                  "charOffset": 4382,
+                  "charOffset": 3949,
                   "snippet": {
                     "text": "Day(quote_Date)"
                   }
@@ -15621,7 +15581,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 4398,
+                  "charOffset": 3965,
                   "snippet": {
                     "text": "="
                   }
@@ -15661,7 +15621,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 4431,
+                  "charOffset": 3998,
                   "snippet": {
                     "text": "&&"
                   }
@@ -15701,7 +15661,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 4677,
+                  "charOffset": 4244,
                   "snippet": {
                     "text": "&&"
                   }
@@ -15741,7 +15701,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 4737,
+                  "charOffset": 4304,
                   "snippet": {
                     "text": "&&"
                   }
@@ -15781,7 +15741,407 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 4760,
+                  "charOffset": 4327,
+                  "snippet": {
+                    "text": "&&"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnChange",
+                "module": "Director",
+                "type": "Director.Container_Director.Container_Title_Director.ComboBox_Sales_Director"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Title_Director.ComboBox_Sales_Director.OnChange"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Title_Director.ComboBox_Sales_Director.OnChange",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 15,
+                  "charOffset": 4950,
+                  "snippet": {
+                    "text": "Day(quote_Date)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnChange",
+                "module": "Director",
+                "type": "Director.Container_Director.Container_Title_Director.ComboBox_Sales_Director"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Day"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Title_Director.ComboBox_Sales_Director.OnChange"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Title_Director.ComboBox_Sales_Director.OnChange",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 4966,
+                  "snippet": {
+                    "text": "="
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnChange",
+                "module": "Director",
+                "type": "Director.Container_Director.Container_Title_Director.ComboBox_Sales_Director"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Title_Director.ComboBox_Sales_Director.OnChange"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Title_Director.ComboBox_Sales_Director.OnChange",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
+                  "charOffset": 4999,
+                  "snippet": {
+                    "text": "&&"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnChange",
+                "module": "Director",
+                "type": "Director.Container_Director.Container_Title_Director.ComboBox_Sales_Director"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Title_Director.ComboBox_Sales_Director.OnChange"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Title_Director.ComboBox_Sales_Director.OnChange",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
+                  "charOffset": 5245,
+                  "snippet": {
+                    "text": "&&"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnChange",
+                "module": "Director",
+                "type": "Director.Container_Director.Container_Title_Director.ComboBox_Sales_Director"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Title_Director.ComboBox_Sales_Director.OnChange"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Title_Director.ComboBox_Sales_Director.OnChange",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
+                  "charOffset": 5305,
+                  "snippet": {
+                    "text": "&&"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnChange",
+                "module": "Director",
+                "type": "Director.Container_Director.Container_Title_Director.ComboBox_Sales_Director"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Title_Director.ComboBox_Sales_Director.OnChange"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Title_Director.ComboBox_Sales_Director.OnChange",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 15,
+                  "charOffset": 5494,
+                  "snippet": {
+                    "text": "Day(quote_Date)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnChange",
+                "module": "Director",
+                "type": "Director.Container_Director.Container_Title_Director.ComboBox_Sales_Director"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Day"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Title_Director.ComboBox_Sales_Director.OnChange"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Title_Director.ComboBox_Sales_Director.OnChange",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 5510,
+                  "snippet": {
+                    "text": "="
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnChange",
+                "module": "Director",
+                "type": "Director.Container_Director.Container_Title_Director.ComboBox_Sales_Director"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Title_Director.ComboBox_Sales_Director.OnChange"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Title_Director.ComboBox_Sales_Director.OnChange",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
+                  "charOffset": 5543,
+                  "snippet": {
+                    "text": "&&"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnChange",
+                "module": "Director",
+                "type": "Director.Container_Director.Container_Title_Director.ComboBox_Sales_Director"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Title_Director.ComboBox_Sales_Director.OnChange"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Title_Director.ComboBox_Sales_Director.OnChange",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
+                  "charOffset": 5789,
+                  "snippet": {
+                    "text": "&&"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnChange",
+                "module": "Director",
+                "type": "Director.Container_Director.Container_Title_Director.ComboBox_Sales_Director"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Title_Director.ComboBox_Sales_Director.OnChange"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Title_Director.ComboBox_Sales_Director.OnChange",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
+                  "charOffset": 5849,
                   "snippet": {
                     "text": "&&"
                   }
