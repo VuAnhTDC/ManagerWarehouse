@@ -3732,7 +3732,7 @@ Warehouse_Manager As screen:
                 "Gallery_Import_Product_History_Warehouse As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver5.0'":
                     DelayItemLoading: =true
                     Height: =508
-                    Items: =Import_Product_History
+                    Items: =SortByColumns(Import_Product_History,"Created_at", SortOrder.Descending)
                     Layout: =Layout.Vertical
                     LoadingSpinner: =LoadingSpinner.Data
                     TemplatePadding: =0
