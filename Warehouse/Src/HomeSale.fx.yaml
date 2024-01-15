@@ -3215,7 +3215,7 @@ HomeSale As screen:
 
                 Label28 As label:
                     FontWeight: =FontWeight.Bold
-                    Height: =51
+                    Height: =36
                     OnSelect: =Select(Parent)
                     Size: =15
                     Text: =ThisItem.id_Quote
@@ -3224,12 +3224,12 @@ HomeSale As screen:
                     ZIndex: =6
 
                 Label29 As label:
-                    Height: =36
+                    Height: =51
                     OnSelect: =Select(Parent)
                     Overflow: =Overflow.Scroll
                     Text: =ThisItem.quote_Decription
                     Width: =304
-                    Y: =57
+                    Y: =42
                     ZIndex: =7
 
                 Label30 As label:
