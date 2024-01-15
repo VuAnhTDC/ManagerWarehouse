@@ -812,7 +812,7 @@ DetailQuote_Screen As screen:
                     ZIndex: =3
 
                 edtPriceAddPRoductQuote_CreateQuoteScreen_1 As text:
-                    Default: =dropdowProductQuote_CreateQuoteScreen_1.SelectedText.price_Product
+                    Default: =If(!IsBlank(LookUp(dataProductQuoteByIdCustomer,id_Product = dropdowProductQuote_CreateQuoteScreen_1.Selected.id_Product)),LookUp(dataProductQuoteByIdCustomer,id_Product = dropdowProductQuote_CreateQuoteScreen_1.Selected.id_Product).price_Quote_Product,dropdowProductQuote_CreateQuoteScreen_1.SelectedText.price_Product)
                     DisplayMode: =DisplayMode.Disabled
                     Width: =349
                     X: =208
@@ -900,12 +900,12 @@ DetailQuote_Screen As screen:
                         Text: |-
                             =If(
                                 !IsBlank(edtQuantityAddProductQuote_CreateQuoteScreen_1.Text) || !IsBlank(edtVATAddProductQuote_CreatQuoteScreen_1.Text),
-                                dropdowProductQuote_CreateQuoteScreen_1.SelectedText.price_Product * Value(edtQuantityAddProductQuote_CreateQuoteScreen_1.Text)
+                                Value(edtPriceAddPRoductQuote_CreateQuoteScreen_1.Text) * Value(edtQuantityAddProductQuote_CreateQuoteScreen_1.Text)
                             ) + (Value(
                                  If(
                                     IsBlank(edtVATAddProductQuote_CreatQuoteScreen_1.Text),
-                                    dropdowProductQuote_CreateQuoteScreen_1.SelectedText.price_Product * Value(edtQuantityAddProductQuote_CreateQuoteScreen_1.Text) * 10%,
-                                    dropdowProductQuote_CreateQuoteScreen_1.SelectedText.price_Product * Value(edtQuantityAddProductQuote_CreateQuoteScreen_1.Text) * Value(edtVATAddProductQuote_CreatQuoteScreen_1.Text)%
+                                     Value(edtPriceAddPRoductQuote_CreateQuoteScreen_1.Text) * Value(edtQuantityAddProductQuote_CreateQuoteScreen_1.Text) * 10%,
+                                     Value(edtPriceAddPRoductQuote_CreateQuoteScreen_1.Text) * Value(edtQuantityAddProductQuote_CreateQuoteScreen_1.Text) * Value(edtVATAddProductQuote_CreatQuoteScreen_1.Text)%
                                 )
                             ))
                         Width: =306
