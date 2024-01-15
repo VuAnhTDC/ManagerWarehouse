@@ -33,7 +33,7 @@ Director As screen:
                 ZIndex: =3
 
             "'Dropdown_Type of statistics_Director' As dropdown":
-                Items: =["Thống kê theo tháng","Thống kê theo năm"]
+                Items: =["Thống kê theo năm","Thống kê theo tháng"]
                 OnChange: |-
                     =If(
                         'Dropdown_Type of statistics_Director_1'.Selected.Value = "Thống kê theo tháng",// Tính toán ngày cuối cùng của tháng
