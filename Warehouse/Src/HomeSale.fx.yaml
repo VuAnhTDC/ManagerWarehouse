@@ -3795,12 +3795,24 @@ HomeSale As screen:
                                                 Month(quote_Date) = 1 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && quote_Status = true
                                             )
                                         ),
-                                        Price: Sum(
-                                            Filter(
-                                                Quote,
-                                                Month(quote_Date) = 1 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && quote_Status = true
+                                        Price: If(
+                                            IsBlank(
+                                                Sum(
+                                                    Filter(
+                                                        Quote,
+                                                        Month(quote_Date) = 1 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && quote_Status = true
+                                                    ),
+                                                    sumPriceQuote
+                                                )
                                             ),
-                                            sumPriceQuote
+                                            0,
+                                            Sum(
+                                                Filter(
+                                                    Quote,
+                                                    Month(quote_Date) = 1 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && quote_Status = true
+                                                ),
+                                                sumPriceQuote
+                                            )
                                         )
                                     },
                                     {
@@ -3811,12 +3823,24 @@ HomeSale As screen:
                                                 Month(quote_Date) = 2 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && quote_Status = true
                                             )
                                         ),
-                                        Price: Sum(
-                                            Filter(
-                                                Quote,
-                                                Month(quote_Date) = 2 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && quote_Status = true
+                                        Price: If(
+                                            IsBlank(
+                                                Sum(
+                                                    Filter(
+                                                        Quote,
+                                                        Month(quote_Date) = 2 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && quote_Status = true
+                                                    ),
+                                                    sumPriceQuote
+                                                )
                                             ),
-                                            sumPriceQuote
+                                            0,
+                                            Sum(
+                                                Filter(
+                                                    Quote,
+                                                    Month(quote_Date) = 2 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && quote_Status = true
+                                                ),
+                                                sumPriceQuote
+                                            )
                                         )
                                     },
                                     {
@@ -3827,12 +3851,24 @@ HomeSale As screen:
                                                 Month(quote_Date) = 3 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && quote_Status = true
                                             )
                                         ),
-                                        Price: Sum(
-                                            Filter(
-                                                Quote,
-                                                Month(quote_Date) = 3 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && quote_Status = true
+                                        Price: If(
+                                            IsBlank(
+                                                Sum(
+                                                    Filter(
+                                                        Quote,
+                                                        Month(quote_Date) = 3 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && quote_Status = true
+                                                    ),
+                                                    sumPriceQuote
+                                                )
                                             ),
-                                            sumPriceQuote
+                                            0,
+                                            Sum(
+                                                Filter(
+                                                    Quote,
+                                                    Month(quote_Date) = 3 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && quote_Status = true
+                                                ),
+                                                sumPriceQuote
+                                            )
                                         )
                                     },
                                     {
@@ -3843,12 +3879,24 @@ HomeSale As screen:
                                                 Month(quote_Date) = 4 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && quote_Status = true
                                             )
                                         ),
-                                        Price: Sum(
-                                            Filter(
-                                                Quote,
-                                                Month(quote_Date) = 4 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && quote_Status = true
+                                        Price: If(
+                                            IsBlank(
+                                                Sum(
+                                                    Filter(
+                                                        Quote,
+                                                        Month(quote_Date) = 4 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && quote_Status = true
+                                                    ),
+                                                    sumPriceQuote
+                                                )
                                             ),
-                                            sumPriceQuote
+                                            0,
+                                            Sum(
+                                                Filter(
+                                                    Quote,
+                                                    Month(quote_Date) = 4 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && quote_Status = true
+                                                ),
+                                                sumPriceQuote
+                                            )
                                         )
                                     },
                                     {
@@ -3859,12 +3907,24 @@ HomeSale As screen:
                                                 Month(quote_Date) = 5 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && quote_Status = true
                                             )
                                         ),
-                                        Price: Sum(
-                                            Filter(
-                                                Quote,
-                                                Month(quote_Date) = 5 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && quote_Status = true
+                                        Price: If(
+                                            IsBlank(
+                                                Sum(
+                                                    Filter(
+                                                        Quote,
+                                                        Month(quote_Date) = 5 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && quote_Status = true
+                                                    ),
+                                                    sumPriceQuote
+                                                )
                                             ),
-                                            sumPriceQuote
+                                            0,
+                                            Sum(
+                                                Filter(
+                                                    Quote,
+                                                    Month(quote_Date) = 5 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && quote_Status = true
+                                                ),
+                                                sumPriceQuote
+                                            )
                                         )
                                     },
                                     {
@@ -3875,12 +3935,24 @@ HomeSale As screen:
                                                 Month(quote_Date) = 6 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && quote_Status = true
                                             )
                                         ),
-                                        Price: Sum(
-                                            Filter(
-                                                Quote,
-                                                Month(quote_Date) = 6 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && quote_Status = true
+                                        Price: If(
+                                            IsBlank(
+                                                Sum(
+                                                    Filter(
+                                                        Quote,
+                                                        Month(quote_Date) = 6 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && quote_Status = true
+                                                    ),
+                                                    sumPriceQuote
+                                                )
                                             ),
-                                            sumPriceQuote
+                                            0,
+                                            Sum(
+                                                Filter(
+                                                    Quote,
+                                                    Month(quote_Date) = 6 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && quote_Status = true
+                                                ),
+                                                sumPriceQuote
+                                            )
                                         )
                                     },
                                     {
@@ -3891,12 +3963,24 @@ HomeSale As screen:
                                                 Month(quote_Date) = 7 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && quote_Status = true
                                             )
                                         ),
-                                        Price: Sum(
-                                            Filter(
-                                                Quote,
-                                                Month(quote_Date) = 7 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && quote_Status = true
+                                        Price: If(
+                                            IsBlank(
+                                                Sum(
+                                                    Filter(
+                                                        Quote,
+                                                        Month(quote_Date) = 7 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && quote_Status = true
+                                                    ),
+                                                    sumPriceQuote
+                                                )
                                             ),
-                                            sumPriceQuote
+                                            0,
+                                            Sum(
+                                                Filter(
+                                                    Quote,
+                                                    Month(quote_Date) = 7 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && quote_Status = true
+                                                ),
+                                                sumPriceQuote
+                                            )
                                         )
                                     },
                                     {
@@ -3907,12 +3991,24 @@ HomeSale As screen:
                                                 Month(quote_Date) = 8 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && quote_Status = true
                                             )
                                         ),
-                                        Price: Sum(
-                                            Filter(
-                                                Quote,
-                                                Month(quote_Date) = 8 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && quote_Status = true
+                                        Price: If(
+                                            IsBlank(
+                                                Sum(
+                                                    Filter(
+                                                        Quote,
+                                                        Month(quote_Date) = 8 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && quote_Status = true
+                                                    ),
+                                                    sumPriceQuote
+                                                )
                                             ),
-                                            sumPriceQuote
+                                            0,
+                                            Sum(
+                                                Filter(
+                                                    Quote,
+                                                    Month(quote_Date) = 8 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && quote_Status = true
+                                                ),
+                                                sumPriceQuote
+                                            )
                                         )
                                     },
                                     {
@@ -3923,12 +4019,24 @@ HomeSale As screen:
                                                 Month(quote_Date) = 9 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && quote_Status = true
                                             )
                                         ),
-                                        Price: Sum(
-                                            Filter(
-                                                Quote,
-                                                Month(quote_Date) = 9 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && quote_Status = true
+                                        Price: If(
+                                            IsBlank(
+                                                Sum(
+                                                    Filter(
+                                                        Quote,
+                                                        Month(quote_Date) = 9 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && quote_Status = true
+                                                    ),
+                                                    sumPriceQuote
+                                                )
                                             ),
-                                            sumPriceQuote
+                                            0,
+                                            Sum(
+                                                Filter(
+                                                    Quote,
+                                                    Month(quote_Date) = 9 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && quote_Status = true
+                                                ),
+                                                sumPriceQuote
+                                            )
                                         )
                                     },
                                     {
@@ -3939,12 +4047,24 @@ HomeSale As screen:
                                                 Month(quote_Date) = 10 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && quote_Status = true
                                             )
                                         ),
-                                        Price: Sum(
-                                            Filter(
-                                                Quote,
-                                                Month(quote_Date) = 10 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && quote_Status = true
+                                        Price: If(
+                                            IsBlank(
+                                                Sum(
+                                                    Filter(
+                                                        Quote,
+                                                        Month(quote_Date) = 10 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && quote_Status = true
+                                                    ),
+                                                    sumPriceQuote
+                                                )
                                             ),
-                                            sumPriceQuote
+                                            0,
+                                            Sum(
+                                                Filter(
+                                                    Quote,
+                                                    Month(quote_Date) = 10 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && quote_Status = true
+                                                ),
+                                                sumPriceQuote
+                                            )
                                         )
                                     },
                                     {
@@ -3955,12 +4075,24 @@ HomeSale As screen:
                                                 Month(quote_Date) = 11 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && quote_Status = true
                                             )
                                         ),
-                                        Price: Sum(
-                                            Filter(
-                                                Quote,
-                                                Month(quote_Date) = 11 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && quote_Status = true
+                                        Price: If(
+                                            IsBlank(
+                                                Sum(
+                                                    Filter(
+                                                        Quote,
+                                                        Month(quote_Date) = 11 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && quote_Status = true
+                                                    ),
+                                                    sumPriceQuote
+                                                )
                                             ),
-                                            sumPriceQuote
+                                            0,
+                                            Sum(
+                                                Filter(
+                                                    Quote,
+                                                    Month(quote_Date) = 11 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && quote_Status = true
+                                                ),
+                                                sumPriceQuote
+                                            )
                                         )
                                     },
                                     {
@@ -3971,12 +4103,24 @@ HomeSale As screen:
                                                 Month(quote_Date) = 12 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && quote_Status = true
                                             )
                                         ),
-                                        Price: Sum(
-                                            Filter(
-                                                Quote,
-                                                Month(quote_Date) = 12 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && quote_Status = true
+                                        Price: If(
+                                            IsBlank(
+                                                Sum(
+                                                    Filter(
+                                                        Quote,
+                                                        Month(quote_Date) = 12 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && quote_Status = true
+                                                    ),
+                                                    sumPriceQuote
+                                                )
                                             ),
-                                            sumPriceQuote
+                                            0,
+                                            Sum(
+                                                Filter(
+                                                    Quote,
+                                                    Month(quote_Date) = 12 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && quote_Status = true
+                                                ),
+                                                sumPriceQuote
+                                            )
                                         )
                                     };
                                     {
@@ -3987,12 +4131,24 @@ HomeSale As screen:
                                                 Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && quote_Status = true
                                             )
                                         ),
-                                        Price: Sum(
-                                            Filter(
-                                                Quote,
-                                                Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && quote_Status = true
+                                        Price: If(
+                                            IsBlank(
+                                                Sum(
+                                                    Filter(
+                                                        Quote,
+                                                        Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && quote_Status = true
+                                                    ),
+                                                    sumPriceQuote
+                                                )
                                             ),
-                                            sumPriceQuote
+                                            0,
+                                            Sum(
+                                                Filter(
+                                                    Quote,
+                                                    Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && quote_Status = true
+                                                ),
+                                                sumPriceQuote
+                                            )
                                         )
                                     }
                                 );
@@ -4018,12 +4174,24 @@ HomeSale As screen:
                                                 Month(quote_Date) = 1 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID && quote_Status = true
                                             )
                                         ),
-                                        Price: Sum(
-                                            Filter(
-                                                Quote,
-                                                Month(quote_Date) = 1 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID && quote_Status = true
+                                        Price: If(
+                                            IsBlank(
+                                                Sum(
+                                                    Filter(
+                                                        Quote,
+                                                        Month(quote_Date) = 1 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID && quote_Status = true
+                                                    ),
+                                                    sumPriceQuote
+                                                )
                                             ),
-                                            sumPriceQuote
+                                            0,
+                                            Sum(
+                                                Filter(
+                                                    Quote,
+                                                    Month(quote_Date) = 1 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID && quote_Status = true
+                                                ),
+                                                sumPriceQuote
+                                            )
                                         )
                                     },
                                     {
@@ -4034,12 +4202,24 @@ HomeSale As screen:
                                                 Month(quote_Date) = 2 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID && quote_Status = true
                                             )
                                         ),
-                                        Price: Sum(
-                                            Filter(
-                                                Quote,
-                                                Month(quote_Date) = 2 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID && quote_Status = true
+                                        Price: If(
+                                            IsBlank(
+                                                Sum(
+                                                    Filter(
+                                                        Quote,
+                                                        Month(quote_Date) = 2 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID && quote_Status = true
+                                                    ),
+                                                    sumPriceQuote
+                                                )
                                             ),
-                                            sumPriceQuote
+                                            0,
+                                            Sum(
+                                                Filter(
+                                                    Quote,
+                                                    Month(quote_Date) = 2 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID && quote_Status = true
+                                                ),
+                                                sumPriceQuote
+                                            )
                                         )
                                     },
                                     {
@@ -4050,12 +4230,24 @@ HomeSale As screen:
                                                 Month(quote_Date) = 3 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID && quote_Status = true
                                             )
                                         ),
-                                        Price: Sum(
-                                            Filter(
-                                                Quote,
-                                                Month(quote_Date) = 3 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID && quote_Status = true
+                                        Price: If(
+                                            IsBlank(
+                                                Sum(
+                                                    Filter(
+                                                        Quote,
+                                                        Month(quote_Date) = 3 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID && quote_Status = true
+                                                    ),
+                                                    sumPriceQuote
+                                                )
                                             ),
-                                            sumPriceQuote
+                                            0,
+                                            Sum(
+                                                Filter(
+                                                    Quote,
+                                                    Month(quote_Date) = 3 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID && quote_Status = true
+                                                ),
+                                                sumPriceQuote
+                                            )
                                         )
                                     },
                                     {
@@ -4066,12 +4258,24 @@ HomeSale As screen:
                                                 Month(quote_Date) = 4 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID && quote_Status = true
                                             )
                                         ),
-                                        Price: Sum(
-                                            Filter(
-                                                Quote,
-                                                Month(quote_Date) = 4 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID && quote_Status = true
+                                        Price: If(
+                                            IsBlank(
+                                                Sum(
+                                                    Filter(
+                                                        Quote,
+                                                        Month(quote_Date) = 4 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID && quote_Status = true
+                                                    ),
+                                                    sumPriceQuote
+                                                )
                                             ),
-                                            sumPriceQuote
+                                            0,
+                                            Sum(
+                                                Filter(
+                                                    Quote,
+                                                    Month(quote_Date) = 4 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID && quote_Status = true
+                                                ),
+                                                sumPriceQuote
+                                            )
                                         )
                                     },
                                     {
@@ -4082,12 +4286,24 @@ HomeSale As screen:
                                                 Month(quote_Date) = 5 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID && quote_Status = true
                                             )
                                         ),
-                                        Price: Sum(
-                                            Filter(
-                                                Quote,
-                                                Month(quote_Date) = 5 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID && quote_Status = true
+                                        Price: If(
+                                            IsBlank(
+                                                Sum(
+                                                    Filter(
+                                                        Quote,
+                                                        Month(quote_Date) = 5 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID && quote_Status = true
+                                                    ),
+                                                    sumPriceQuote
+                                                )
                                             ),
-                                            sumPriceQuote
+                                            0,
+                                            Sum(
+                                                Filter(
+                                                    Quote,
+                                                    Month(quote_Date) = 5 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID && quote_Status = true
+                                                ),
+                                                sumPriceQuote
+                                            )
                                         )
                                     },
                                     {
@@ -4098,12 +4314,24 @@ HomeSale As screen:
                                                 Month(quote_Date) = 6 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID && quote_Status = true
                                             )
                                         ),
-                                        Price: Sum(
-                                            Filter(
-                                                Quote,
-                                                Month(quote_Date) = 6 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID && quote_Status = true
+                                        Price: If(
+                                            IsBlank(
+                                                Sum(
+                                                    Filter(
+                                                        Quote,
+                                                        Month(quote_Date) = 6 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID && quote_Status = true
+                                                    ),
+                                                    sumPriceQuote
+                                                )
                                             ),
-                                            sumPriceQuote
+                                            0,
+                                            Sum(
+                                                Filter(
+                                                    Quote,
+                                                    Month(quote_Date) = 6 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID && quote_Status = true
+                                                ),
+                                                sumPriceQuote
+                                            )
                                         )
                                     },
                                     {
@@ -4114,12 +4342,24 @@ HomeSale As screen:
                                                 Month(quote_Date) = 7 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID && quote_Status = true
                                             )
                                         ),
-                                        Price: Sum(
-                                            Filter(
-                                                Quote,
-                                                Month(quote_Date) = 7 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID && quote_Status = true
+                                        Price: If(
+                                            IsBlank(
+                                                Sum(
+                                                    Filter(
+                                                        Quote,
+                                                        Month(quote_Date) = 7 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID && quote_Status = true
+                                                    ),
+                                                    sumPriceQuote
+                                                )
                                             ),
-                                            sumPriceQuote
+                                            0,
+                                            Sum(
+                                                Filter(
+                                                    Quote,
+                                                    Month(quote_Date) = 7 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID && quote_Status = true
+                                                ),
+                                                sumPriceQuote
+                                            )
                                         )
                                     },
                                     {
@@ -4130,12 +4370,24 @@ HomeSale As screen:
                                                 Month(quote_Date) = 8 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID && quote_Status = true
                                             )
                                         ),
-                                        Price: Sum(
-                                            Filter(
-                                                Quote,
-                                                Month(quote_Date) = 8 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID && quote_Status = true
+                                        Price: If(
+                                            IsBlank(
+                                                Sum(
+                                                    Filter(
+                                                        Quote,
+                                                        Month(quote_Date) = 8 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID && quote_Status = true
+                                                    ),
+                                                    sumPriceQuote
+                                                )
                                             ),
-                                            sumPriceQuote
+                                            0,
+                                            Sum(
+                                                Filter(
+                                                    Quote,
+                                                    Month(quote_Date) = 8 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID && quote_Status = true
+                                                ),
+                                                sumPriceQuote
+                                            )
                                         )
                                     },
                                     {
@@ -4146,12 +4398,24 @@ HomeSale As screen:
                                                 Month(quote_Date) = 9 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID && quote_Status = true
                                             )
                                         ),
-                                        Price: Sum(
-                                            Filter(
-                                                Quote,
-                                                Month(quote_Date) = 9 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID && quote_Status = true
+                                        Price: If(
+                                            IsBlank(
+                                                Sum(
+                                                    Filter(
+                                                        Quote,
+                                                        Month(quote_Date) = 9 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID && quote_Status = true
+                                                    ),
+                                                    sumPriceQuote
+                                                )
                                             ),
-                                            sumPriceQuote
+                                            0,
+                                            Sum(
+                                                Filter(
+                                                    Quote,
+                                                    Month(quote_Date) = 9 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID && quote_Status = true
+                                                ),
+                                                sumPriceQuote
+                                            )
                                         )
                                     },
                                     {
@@ -4162,12 +4426,24 @@ HomeSale As screen:
                                                 Month(quote_Date) = 10 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID && quote_Status = true
                                             )
                                         ),
-                                        Price: Sum(
-                                            Filter(
-                                                Quote,
-                                                Month(quote_Date) = 10 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID && quote_Status = true
+                                        Price: If(
+                                            IsBlank(
+                                                Sum(
+                                                    Filter(
+                                                        Quote,
+                                                        Month(quote_Date) = 10 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID && quote_Status = true
+                                                    ),
+                                                    sumPriceQuote
+                                                )
                                             ),
-                                            sumPriceQuote
+                                            0,
+                                            Sum(
+                                                Filter(
+                                                    Quote,
+                                                    Month(quote_Date) = 10 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID && quote_Status = true
+                                                ),
+                                                sumPriceQuote
+                                            )
                                         )
                                     },
                                     {
@@ -4178,12 +4454,24 @@ HomeSale As screen:
                                                 Month(quote_Date) = 11 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID && quote_Status = true
                                             )
                                         ),
-                                        Price: Sum(
-                                            Filter(
-                                                Quote,
-                                                Month(quote_Date) = 11 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID && quote_Status = true
+                                        Price: If(
+                                            IsBlank(
+                                                Sum(
+                                                    Filter(
+                                                        Quote,
+                                                        Month(quote_Date) = 11 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID && quote_Status = true
+                                                    ),
+                                                    sumPriceQuote
+                                                )
                                             ),
-                                            sumPriceQuote
+                                            0,
+                                            Sum(
+                                                Filter(
+                                                    Quote,
+                                                    Month(quote_Date) = 11 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID && quote_Status = true
+                                                ),
+                                                sumPriceQuote
+                                            )
                                         )
                                     },
                                     {
@@ -4194,12 +4482,24 @@ HomeSale As screen:
                                                 Month(quote_Date) = 12 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID && quote_Status = true
                                             )
                                         ),
-                                        Price: Sum(
-                                            Filter(
-                                                Quote,
-                                                Month(quote_Date) = 12 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID && quote_Status = true
+                                        Price: If(
+                                            IsBlank(
+                                                Sum(
+                                                    Filter(
+                                                        Quote,
+                                                        Month(quote_Date) = 12 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID && quote_Status = true
+                                                    ),
+                                                    sumPriceQuote
+                                                )
                                             ),
-                                            sumPriceQuote
+                                            0,
+                                            Sum(
+                                                Filter(
+                                                    Quote,
+                                                    Month(quote_Date) = 12 && Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID && quote_Status = true
+                                                ),
+                                                sumPriceQuote
+                                            )
                                         )
                                     };
                                     {
@@ -4210,12 +4510,24 @@ HomeSale As screen:
                                                 Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID && quote_Status = true
                                             )
                                         ),
-                                        Price: Sum(
-                                            Filter(
-                                                Quote,
-                                                Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID && quote_Status = true
+                                        Price: If(
+                                            IsBlank(
+                                                Sum(
+                                                    Filter(
+                                                        Quote,
+                                                        Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID && quote_Status = true
+                                                    ),
+                                                    sumPriceQuote
+                                                )
                                             ),
-                                            sumPriceQuote
+                                            0,
+                                            Sum(
+                                                Filter(
+                                                    Quote,
+                                                    Year(quote_Date) = Dropdown_Year_Director_1.Selected.Value && id_User = ComboBox_Sales_Director_1.Selected.ID && quote_Status = true
+                                                ),
+                                                sumPriceQuote
+                                            )
                                         )
                                     }
                                 );
