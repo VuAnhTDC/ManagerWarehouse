@@ -329,7 +329,7 @@ HomeSale As screen:
                         Screen: "khach_hang"
                     },{
                          Menu_Icon: quote,
-                        Menu_Name: "Báo giá, đơn hàng",
+                        Menu_Name: "Báo giá - đơn hàng",
                         Screen: "baogia_donhang"
                     },{
                        Menu_Icon: buyproduct,
@@ -400,7 +400,7 @@ HomeSale As screen:
                             "khach_hang"
                         ),
                         If(
-                            ThisItem.Menu_Name = "Báo giá, đơn hàng",
+                            ThisItem.Menu_Name = "Báo giá - đơn hàng",
                             Set(
                                 btnFunctionSelection_Value_HomeSale,
                                 3
