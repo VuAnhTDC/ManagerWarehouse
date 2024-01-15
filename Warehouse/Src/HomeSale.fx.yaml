@@ -4236,8 +4236,7 @@ HomeSale As screen:
                                 reportOrder_Month,
                                 []
                             );
-                            Notify("asd: " & JSON(statictialOrder));
-                            /*ForAll(
+                            ForAll(
                                 Sequence(CountRows(statictialOrder)),
                                 Collect(
                                     reportOrder_Month,
@@ -4274,7 +4273,7 @@ HomeSale As screen:
                                 "Xuất file thành công!!!",
                                 NotificationType.Success,
                                 1500
-                            )*/
+                            )
                         )
                     Text: ="Xuất file"
                     Width: =200
