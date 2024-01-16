@@ -2,6 +2,7 @@ SaleVertion2 As screen:
     OnVisible: |-
         =Set(btnFunctionSaleVertion2, "btnQuoteSale");
         Set(idCheckStatusFuntionQuote,-1);
+        Set(isVisibleDialogAddQuoteNew_SaleVertion2, false);
 
     Container17 As groupContainer.manualLayoutContainer:
         Fill: =RGBA(56, 96, 178, 1)
@@ -233,17 +234,34 @@ SaleVertion2 As screen:
                 X: =2
                 ZIndex: =2
 
+            Rectangle13 As rectangle:
+                Fill: =RGBA(56, 96, 178, 0)
+                Height: =25
+                OnSelect: =Set(isVisibleDialogAddQuoteNew_SaleVertion2,true)
+                Width: =111
+                ZIndex: =3
+
         "Gallery16 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
             DelayItemLoading: =true
-            Height: =572
-            Items: =CustomGallerySample
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =515
+            Items: |-
+                =If(
+                    IsBlank(TextInput5.Text),
+                    If(
+                        idCheckStatusFuntionQuote = -1,
+                        Quote,
+                       If(idCheckStatusFuntionQuote = 0,Filter(Quote, quote_Status = false),Filter(Quote, quote_Status = true))
+                    ),
+                    Filter(Quote,StartsWith(id_Quote,TextInput5.Text))
+                )
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             TemplatePadding: =0
-            TemplateSize: =104
+            TemplateSize: =76
             Width: =1014
             X: =6
-            Y: =116
+            Y: =172
             ZIndex: =3
 
             Separator13 As rectangle:
@@ -261,11 +279,108 @@ SaleVertion2 As screen:
                 ZIndex: =6
 
             Label65 As label:
-                Height: =36
+                Align: =Align.Center
+                FontWeight: =FontWeight.Semibold
+                Height: =31
                 OnSelect: =Select(Parent)
-                Text: =ThisItem.SampleHeading
-                Width: =328
-                X: =15
-                Y: =12
+                Text: =ThisItem.id_Quote
+                Width: =238
+                X: =4
+                Y: =19
                 ZIndex: =7
+
+            Label65_1 As label:
+                Align: =Align.Center
+                FontWeight: =FontWeight.Lighter
+                Height: =31
+                OnSelect: =Select(Parent)
+                Text: |-
+                    =LookUp(
+                        Customer,ID = ThisItem.id_Customer
+                    ).customer_Name
+                Width: =238
+                X: =242
+                Y: =19
+                ZIndex: =8
+
+            Label65_2 As label:
+                Align: =Align.Center
+                FontWeight: =FontWeight.Lighter
+                Height: =31
+                OnSelect: =Select(Parent)
+                Text: =LookUp(User,ID = ThisItem.id_User).user_Name
+                Width: =238
+                X: =480
+                Y: =19
+                ZIndex: =9
+
+            Label65_3 As label:
+                Align: =Align.Center
+                FontWeight: =FontWeight.Lighter
+                Height: =31
+                OnSelect: =Select(Parent)
+                Text: =Text(ThisItem.quote_Date,"dd/mm/yyyy")
+                Width: =161
+                X: =744
+                Y: =19
+                ZIndex: =10
+
+            Image17 As image:
+                Height: =50
+                Image: =iconorder
+                OnSelect: =Select(Parent)
+                Visible: =ThisItem.quote_Status
+                Width: =50
+                X: =922
+                Y: =9
+                ZIndex: =11
+
+        "Gallery17 As gallery.'BrowseLayout_Horizontal_TwoTextOneImageVariant_ver5.0'":
+            DelayItemLoading: =true
+            Fill: =RGBA(217, 240, 252, 1)
+            Height: =52
+            Items: |-
+                =Table({name: "Mã bóa giá - đơn hàng"},{name: "Khách hàng"},{name: "Nhân viên"},{name: "Ngày tạo"})
+            LoadingSpinner: =LoadingSpinner.Data
+            TemplatePadding: =0
+            TemplateSize: =235
+            Width: =991
+            WrapCount: =0
+            X: =19
+            Y: =104
+            ZIndex: =4
+
+            Label66 As label:
+                Align: =Align.Center
+                FontWeight: =FontWeight.Bold
+                Height: =52
+                OnSelect: =Select(Parent)
+                Text: =ThisItem.name
+                Width: =235
+                ZIndex: =1
+
+    containerAddQuoteNew_SaleVersion2 As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(0, 0, 0, 0.31)
+        Height: =768
+        Visible: =isVisibleDialogAddQuoteNew_SaleVertion2
+        Width: =1366
+        ZIndex: =4
+
+        Container28 As groupContainer.manualLayoutContainer:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =629
+            Width: =1286
+            X: =46
+            Y: =70
+            ZIndex: =1
+
+            Label67 As label:
+                Color: =RGBA(54, 176, 75, 1)
+                FontWeight: =FontWeight.Semibold
+                Size: =20
+                Text: ="Tạo báo giá"
+                Width: =273
+                X: =12
+                Y: =9
+                ZIndex: =1
 
