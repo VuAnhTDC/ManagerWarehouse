@@ -597,16 +597,64 @@ SaleVertion2 As screen:
                     Layout: =Layout.Vertical
                     LoadingSpinner: =LoadingSpinner.Data
                     TemplatePadding: =0
-                    TemplateSize: =104
+                    TemplateSize: =81
                     Width: =547
                     ZIndex: =1
 
                     Separator15 As rectangle:
-                        Height: =8
+                        BorderThickness: =1
+                        Height: |
+                            =0.1
                         OnSelect: =Select(Parent)
-                        Width: =Parent.TemplateWidth
+                        Width: =518
+                        X: =13
                         Y: =Parent.TemplateHeight - Self.Height
                         ZIndex: =5
+
+                    Label78_1 As label:
+                        FontWeight: =FontWeight.Semibold
+                        Height: =38
+                        OnSelect: =Select(Parent)
+                        Size: =16
+                        Text: =LookUp(Service,id_Serivce = ThisItem.id_Service).service_Name
+                        Width: =494
+                        ZIndex: =6
+
+                    Label79_2 As label:
+                        Height: =19
+                        Italic: =true
+                        OnSelect: =Select(Parent)
+                        Text: |-
+                            =If(ThisItem.price_Quote_Service < 1, "Giá: 0 đ","Giá: " & Text(ThisItem.price_Quote_Service,"#,### đ"))
+                        Width: =256
+                        X: =40
+                        Y: =40
+                        ZIndex: =7
+
+                    Container38_1 As groupContainer.manualLayoutContainer:
+                        Height: =25
+                        Width: =101
+                        X: =430
+                        Y: =46
+                        ZIndex: =8
+
+                        Label80_1 As label:
+                            Align: =Align.Center
+                            Color: =RGBA(255, 255, 255, 1)
+                            Fill: =RGBA(232, 190, 174, 1)
+                            FontWeight: =FontWeight.Semibold
+                            Height: =Parent.Height
+                            OnSelect: |-
+                                =ClearCollect(
+                                    arrServiceAddQuoteNew_SaleVertion2,
+                                    Filter(
+                                        arrServiceAddQuoteNew_SaleVertion2,
+                                        Not(id_Service = ThisItem.id_Service)
+                                    )
+                                )
+                            Text: ="Xóa"
+                            Width: =Parent.Width
+                            ZIndex: =1
 
             Container30 As groupContainer.manualLayoutContainer:
                 Height: =40
@@ -662,7 +710,7 @@ SaleVertion2 As screen:
                     Italic: =true
                     Size: =25
                     Text: |-
-                        ="Tổng tiền: "
+                        ="Tổng tiền: " & If(Value(Concat(arrProductAddQuoteNew_SaleVertion2,price_Quote_Product * quantity_Quote_Product) + Concat(arrServiceAddQuoteNew_SaleVertion2,price_Quote_Service)) > 0 ,Text(Value(Concat(arrProductAddQuoteNew_SaleVertion2,price_Quote_Product * quantity_Quote_Product) + Concat(arrServiceAddQuoteNew_SaleVertion2,price_Quote_Service)),"#,### đ"),"0 đ")
                     Width: =622
                     ZIndex: =1
 
@@ -725,7 +773,6 @@ SaleVertion2 As screen:
                 Color: =RGBA(0, 18, 107, 1)
                 Height: =26
                 Italic: =true
-                Size: =10
                 Text: ="Thêm khách hàng"
                 Underline: =true
                 Width: =163
@@ -734,7 +781,7 @@ SaleVertion2 As screen:
                 ZIndex: =22
 
         containerSelectionProductAdd_SaleVertion2 As groupContainer.manualLayoutContainer:
-            Fill: =RGBA(77, 72, 72, 0.5)
+            Fill: =RGBA(77, 72, 72, 0.22)
             Height: =722
             Visible: =isVisibleDialogAddProductQuoteNew_SaleVertion2
             Width: =1299
@@ -746,9 +793,13 @@ SaleVertion2 As screen:
                 BorderThickness: =1
                 Fill: =RGBA(255, 255, 255, 1)
                 Height: =688
+                RadiusBottomLeft: =10
+                RadiusBottomRight: =10
+                RadiusTopLeft: =10
+                RadiusTopRight: =10
                 Visible: =If(positionDialogAddDataQuoteNew_SaleVertion2 = 0, true, false)
                 Width: =574
-                X: =684
+                X: =695
                 Y: =12
                 ZIndex: =1
 
@@ -1006,12 +1057,13 @@ SaleVertion2 As screen:
                 ZIndex: =2
 
                 Label81 As label:
-                    FontWeight: =FontWeight.Bold
+                    Color: =RGBA(54, 176, 75, 1)
+                    FontWeight: =FontWeight.Semibold
                     Height: =57
-                    Size: =20
+                    Size: =18
                     Text: ="Thêm dịch vụ - báo giá"
                     Width: =352
-                    X: =2
+                    X: =15
                     Y: =2
                     ZIndex: =1
 
@@ -1070,7 +1122,7 @@ SaleVertion2 As screen:
                 Checkbox5 As checkbox:
                     FontWeight: =FontWeight.Semibold
                     Height: =46
-                    Text: ="Lấy giá củ"
+                    Text: ="Lấy giá gốc"
                     Width: =166
                     X: =205
                     Y: =484
@@ -1099,20 +1151,35 @@ SaleVertion2 As screen:
                                     "Vui lòng nhập ghi chú",
                                     NotificationType.Error
                                 ),
-                                Collect(
-                                    arrServiceAddQuoteNew_SaleVertion2,
-                                    {
-                                        id_Service: Dropdown4.Selected.id_Serivce,
-                                        quote_Service_Not: TextInput9.Text,
-                                        price_Quote_Service: If(
-                                            IsBlank(TextInput10.Text),
-                                            0,
-                                            Value(TextInput10.Text)
+                                If(
+                                    IsBlank(
+                                        LookUp(
+                                            arrServiceAddQuoteNew_SaleVertion2,
+                                            id_Service = Dropdown4.Selected.id_Serivce
                                         )
-                                    }
-                                );
-                                Notify("Thêm dịch vụ vào báo giá thành công", NotificationType.Success);
-                                Set(isVisibleDialogAddQuoteNew_SaleVertion2,false);
+                                    ),
+                                    Collect(
+                                        arrServiceAddQuoteNew_SaleVertion2,
+                                        {
+                                            id_Service: Dropdown4.Selected.id_Serivce,
+                                            quote_Service_Not: TextInput9.Text,
+                                            price_Quote_Service: If(
+                                                IsBlank(TextInput10.Text),
+                                                0,
+                                                Value(TextInput10.Text)
+                                            )
+                                        }
+                                    );
+                                    Notify(
+                                        "Thêm dịch vụ vào báo giá thành công",
+                                        NotificationType.Success
+                                    );
+                                    Set(
+                                        isVisibleDialogAddProductQuoteNew_SaleVertion2,
+                                        false
+                                    ),
+                                    Notify("Dịch vụ đã tồn tại",NotificationType.Error)
+                                )
                             )
                         Size: =16
                         Text: ="Thêm"
