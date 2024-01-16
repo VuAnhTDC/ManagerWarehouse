@@ -499,6 +499,10 @@ HomeSale As screen:
             ZIndex: =19
 
             Button13 As button:
+                Color: =If(ThisItem.IsSelected,RGBA(255, 255, 255, 1),RGBA(128, 128, 128, 1))
+                Fill: =If(ThisItem.IsSelected,RGBA(56, 96, 178, 1),RGBA(242, 235, 235, 0.77))
+                HoverBorderColor: =
+                HoverFill: =
                 OnSelect: =Set(btnSelectionFuntionSale,ThisItem.id);
                 Text: =ThisItem.name
                 Width: =307
@@ -558,15 +562,13 @@ HomeSale As screen:
                 ShowScrollbar: =false
                 TemplatePadding: =0
                 TemplateSize: =37
-                Visible: |-
-                    =/*If(btnSelectionFuntionSale = "btnQuoteSale",true, false)*/
-                    If(ThisItem.IsSelected,true, false)
                 Width: =310
                 Y: =40
                 ZIndex: =2
 
                 Title10 As label:
                     Align: =Align.Center
+                    Color: =If(ThisItem.IsSelected,RGBA(0, 0,0, 1),RGBA(128, 128, 128, 1))
                     FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
                     Height: =44
                     OnSelect: =Select(Parent)
