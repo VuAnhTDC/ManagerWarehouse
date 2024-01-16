@@ -1,6 +1,14 @@
 SaleVertion2 As screen:
-    OnVisible: |-
-        =Set(btnFunctionSaleVertion2, "btnQuoteSale");
+    OnVisible: |
+        =/* Thong tin nguoi dung*/
+        Set(
+            informationUser,
+            LookUp(
+                User,
+                email_User = User().Email
+            )
+        );
+        Set(btnFunctionSaleVertion2, "btnQuoteSale");
         Set(idCheckStatusFuntionQuote,-1);
         Set(isVisibleDialogAddQuoteNew_SaleVertion2, false);
         Set(isVisibleDialogAddProductQuoteNew_SaleVertion2, false);
@@ -330,11 +338,11 @@ SaleVertion2 As screen:
                 ZIndex: =10
 
             Image17 As image:
-                Height: =50
+                Height: =45
                 Image: =iconorder
                 OnSelect: =Select(Parent)
                 Visible: =ThisItem.quote_Status
-                Width: =50
+                Width: =45
                 X: =922
                 Y: =9
                 ZIndex: =11
@@ -451,9 +459,10 @@ SaleVertion2 As screen:
             ComboBox1_1 As combobox:
                 DisplayFields: =["user_Name"]
                 InputTextPlaceholder: ="Chọn nhân viên"
-                Items: =User
+                IsSearchable: =false
+                Items: =Filter(User,ID <> informationUser.ID)
                 SearchFields: =["user_Name"]
-                SearchItems: =Search(User,ComboBox1_1.SearchText,"user_Name")
+                SearchItems: =[]
                 SelectMultiple: =false
                 Width: =280
                 X: =957
@@ -734,6 +743,8 @@ SaleVertion2 As screen:
                     OnSelect: |-
                         =Set(isVisibleDialogAddProductQuoteNew_SaleVertion2,true);
                         Set(positionDialogAddDataQuoteNew_SaleVertion2,0);
+                        Reset(TextInput8_2);
+                        Reset(TextInput8_1);
                     PaddingBottom: =5
                     PaddingLeft: =5
                     PaddingRight: =5
@@ -761,6 +772,8 @@ SaleVertion2 As screen:
                     OnSelect: |-
                         =Set(isVisibleDialogAddProductQuoteNew_SaleVertion2,true);
                         Set(positionDialogAddDataQuoteNew_SaleVertion2,1);
+                        Reset(TextInput9);
+                        Reset(TextInput10)
                     PaddingBottom: =5
                     PaddingLeft: =5
                     PaddingRight: =5
@@ -776,7 +789,13 @@ SaleVertion2 As screen:
                 OnSelect: |-
                     =Set(isVisibleDialogAddProductQuoteNew_SaleVertion2,true);
                     Set(positionDialogAddDataQuoteNew_SaleVertion2,2);
-                Text: ="Thêm khách hàng"
+                    Reset(TextInput11);
+                    Reset(TextInput11_1);
+                    Reset(TextInput11_2);
+                    Reset(TextInput11_3);
+                    Reset(TextInput11_4);
+                    Reset(TextInput11_5);
+                Text: ="Tạo khách hàng"
                 Underline: =true
                 Width: =163
                 X: =724
@@ -791,6 +810,9 @@ SaleVertion2 As screen:
                 OnSelect: |-
                     =Set(isVisibleDialogAddProductQuoteNew_SaleVertion2,true);
                     Set(positionDialogAddDataQuoteNew_SaleVertion2,3);
+                    Reset(TextInput12);
+                    Reset(TextInput12_1);
+                    Reset(TextInput12_2);
                 Text: ="Tạo dịch vụ mới"
                 Underline: =true
                 Width: =200
@@ -828,7 +850,7 @@ SaleVertion2 As screen:
                     Size: =18
                     Text: ="Thêm sản phẩm - Báo giá"
                     Width: =370
-                    X: =3
+                    X: =35
                     ZIndex: =1
 
                 Label74 As label:
@@ -872,7 +894,6 @@ SaleVertion2 As screen:
                     ZIndex: =6
 
                 TextInput8_1 As text:
-                    Align: =Align.Right
                     Default: =
                     Format: =TextFormat.Number
                     HintText: ="Vui lòng nhập số lượng"
@@ -996,28 +1017,6 @@ SaleVertion2 As screen:
                         Width: =Parent.Width
                         ZIndex: =1
 
-                Container36_1 As groupContainer.manualLayoutContainer:
-                    Height: =40
-                    RadiusBottomLeft: =10
-                    RadiusBottomRight: =10
-                    RadiusTopLeft: =10
-                    RadiusTopRight: =10
-                    Width: =170
-                    X: =389
-                    Y: =622
-                    ZIndex: =13
-
-                    Label75_1 As label:
-                        Align: =Align.Center
-                        Fill: =RGBA(232, 190, 174, 1)
-                        FontWeight: =FontWeight.Bold
-                        Height: =Parent.Height
-                        OnSelect: =Set(isVisibleDialogAddProductQuoteNew_SaleVertion2,false)
-                        Size: =16
-                        Text: ="Đóng"
-                        Width: =Parent.Width
-                        ZIndex: =1
-
                 Container37 As groupContainer.manualLayoutContainer:
                     Height: =70
                     X: =51
@@ -1060,6 +1059,16 @@ SaleVertion2 As screen:
                         Width: =Parent.Width
                         ZIndex: =1
 
+                Icon14 As icon.Cancel:
+                    Color: =RGBA(255, 0, 0, 1)
+                    Height: =35
+                    Icon: =Icon.Cancel
+                    OnSelect: =Set(isVisibleDialogAddProductQuoteNew_SaleVertion2,false)
+                    Width: =35
+                    X: =521
+                    Y: =10
+                    ZIndex: =15
+
             Container39 As groupContainer.manualLayoutContainer:
                 BorderThickness: =1
                 Fill: =RGBA(255, 255, 255, 1)
@@ -1070,8 +1079,8 @@ SaleVertion2 As screen:
                 RadiusTopRight: =5
                 Visible: =If(positionDialogAddDataQuoteNew_SaleVertion2 = 1, true,false)
                 Width: =570
-                X: =100
-                Y: =12
+                X: =697
+                Y: =18
                 ZIndex: =2
 
                 Label81 As label:
@@ -1081,7 +1090,7 @@ SaleVertion2 As screen:
                     Size: =18
                     Text: ="Thêm dịch vụ - báo giá"
                     Width: =352
-                    X: =15
+                    X: =41
                     Y: =2
                     ZIndex: =1
 
@@ -1125,7 +1134,6 @@ SaleVertion2 As screen:
                     ZIndex: =6
 
                 TextInput10 As text:
-                    Align: =Align.Right
                     Default: |-
                         =If(Checkbox5.Value = true, Text(Value(LookUp(Service,id_Serivce = Dropdown4.Selected.id_Serivce).service_Price),"#,###"))
                     DisplayMode: =If(Checkbox5.Value = true, DisplayMode.Disabled,DisplayMode.Edit)
@@ -1204,27 +1212,15 @@ SaleVertion2 As screen:
                         Width: =Parent.Width
                         ZIndex: =1
 
-                Container36_3 As groupContainer.manualLayoutContainer:
-                    Height: =40
-                    RadiusBottomLeft: =10
-                    RadiusBottomRight: =10
-                    RadiusTopLeft: =10
-                    RadiusTopRight: =10
-                    Width: =170
-                    X: =393
-                    Y: =615
+                Icon16 As icon.Cancel:
+                    Color: =RGBA(255, 0, 0, 1)
+                    Height: =35
+                    Icon: =Icon.Cancel
+                    OnSelect: =Set(isVisibleDialogAddProductQuoteNew_SaleVertion2,false)
+                    Width: =35
+                    X: =522
+                    Y: =13
                     ZIndex: =10
-
-                    Label75_3 As label:
-                        Align: =Align.Center
-                        Fill: =RGBA(232, 190, 174, 1)
-                        FontWeight: =FontWeight.Bold
-                        Height: =Parent.Height
-                        OnSelect: =Set(isVisibleDialogAddProductQuoteNew_SaleVertion2,false)
-                        Size: =16
-                        Text: ="Đóng"
-                        Width: =Parent.Width
-                        ZIndex: =1
 
             Container40 As groupContainer.manualLayoutContainer:
                 Fill: =RGBA(255, 255, 255, 1)
@@ -1240,13 +1236,14 @@ SaleVertion2 As screen:
                 ZIndex: =3
 
                 Label84 As label:
+                    Color: =RGBA(54, 176, 75, 1)
                     FontWeight: =FontWeight.Semibold
                     Height: =62
-                    Size: =24
-                    Text: ="Thêm khách hàng"
+                    Size: =18
+                    Text: ="Tạo khách hàng"
                     Width: =392
-                    X: =44
-                    Y: =10
+                    X: =29
+                    Y: =9
                     ZIndex: =1
 
                 Icon17 As icon.Cancel:
@@ -1412,4 +1409,119 @@ SaleVertion2 As screen:
                     X: =440
                     Y: =598
                     ZIndex: =15
+
+            Container21 As groupContainer.manualLayoutContainer:
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =660
+                RadiusBottomLeft: =10
+                RadiusBottomRight: =10
+                RadiusTopLeft: =10
+                RadiusTopRight: =10
+                Visible: =positionDialogAddDataQuoteNew_SaleVertion2 = 3
+                Width: =546
+                X: =358
+                Y: =27
+                ZIndex: =4
+
+                Label60 As label:
+                    Color: =RGBA(54, 176, 75, 1)
+                    FontWeight: =FontWeight.Semibold
+                    Size: =18
+                    Text: ="Tạo dịch vụ"
+                    X: =53
+                    Y: =6
+                    ZIndex: =1
+
+                Icon13 As icon.Cancel:
+                    Color: =RGBA(255, 0, 0, 1)
+                    Height: =35
+                    Icon: =Icon.Cancel
+                    OnSelect: =Set(isVisibleDialogAddProductQuoteNew_SaleVertion2,false)
+                    Width: =35
+                    X: =499
+                    Y: =11
+                    ZIndex: =2
+
+                Label61 As label:
+                    FontWeight: =FontWeight.Semibold
+                    Text: ="Tên dịch vụ"
+                    X: =76
+                    Y: =68
+                    ZIndex: =3
+
+                TextInput12 As text:
+                    Default: =""
+                    HintText: ="Vui lòng nhập tên dịch vụ ..."
+                    Width: =400
+                    X: =76
+                    Y: =108
+                    ZIndex: =4
+
+                Label61_1 As label:
+                    FontWeight: =FontWeight.Semibold
+                    Text: ="Mô tả"
+                    X: =76
+                    Y: =148
+                    ZIndex: =5
+
+                TextInput12_1 As text:
+                    Default: =""
+                    Height: =172
+                    HintText: ="Vui lòng nhập mô tả dịch vụ ..."
+                    Mode: =TextMode.MultiLine
+                    Width: =400
+                    X: =76
+                    Y: =188
+                    ZIndex: =6
+
+                Label61_2 As label:
+                    FontWeight: =FontWeight.Semibold
+                    Text: ="Giá"
+                    X: =76
+                    Y: =360
+                    ZIndex: =7
+
+                TextInput12_2 As text:
+                    Default: =""
+                    Format: =TextFormat.Number
+                    HintText: ="Vui lòng nhập giá dịch vụ ..."
+                    Width: =400
+                    X: =76
+                    Y: =400
+                    ZIndex: =8
+
+                Button3 As button:
+                    Color: =RGBA(0, 0, 0, 1)
+                    Fill: =RGBA(189, 240, 194, 1)
+                    HoverFill: =RGBA(117, 240, 130, 1)
+                    OnSelect: |-
+                        =If(
+                            IsBlank(TextInput12.Text) || IsBlank(TextInput12_1.Text) || IsBlank(TextInput12_2.Text),
+                            Notify("Vui lòng nhập đầy đủ thông tin"),
+                            Patch(
+                                Service,
+                                Defaults(Service),
+                                {
+                                    id_Serivce: "DV_" & Text(
+                                        Now(),
+                                        "ddmmyyhhmmss"
+                                    ) & informationUser.ID,
+                                    service_Name: TextInput12.Text,
+                                    service_Decription: TextInput12_1.Text,
+                                    service_Price: Value(TextInput12_2.Text)
+                                }
+                            );
+                            Notify(
+                                "Thêm dữ liệu thành công",
+                                NotificationType.Success
+                            );
+                            Set(isVisibleDialogAddProductQuoteNew_SaleVertion2,false)
+                            
+                        )
+                    PressedFill: =RGBA(135, 199, 142, 1)
+                    Text: ="Lưu lại"
+                    Width: =182
+                    X: =185
+                    Y: =472
+                    ZIndex: =9
 
