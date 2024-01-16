@@ -502,23 +502,76 @@ SaleVertion2 As screen:
                     Layout: =Layout.Vertical
                     LoadingSpinner: =LoadingSpinner.Data
                     TemplatePadding: =0
-                    TemplateSize: =104
+                    TemplateSize: =92
                     Width: =595
                     ZIndex: =1
 
                     Separator14 As rectangle:
-                        Height: =8
+                        BorderThickness: =1
+                        Height: =0.1
                         OnSelect: =Select(Parent)
-                        Width: =Parent.TemplateWidth
+                        Width: |
+                            =Parent.TemplateWidth -30
+                        X: =9
                         Y: =Parent.TemplateHeight - Self.Height
                         ZIndex: =5
 
-                    Rectangle14 As rectangle:
-                        Height: =Parent.TemplateHeight - Separator14.Height
+                    Label78 As label:
+                        FontWeight: =FontWeight.Semibold
+                        Height: =38
                         OnSelect: =Select(Parent)
-                        Visible: =ThisItem.IsSelected
-                        Width: =4
-                        ZIndex: =6
+                        Size: =16
+                        Text: =LookUp(Product,id_Product = ThisItem.id_Product).name_Product
+                        Width: =494
+                        X: =16
+                        ZIndex: =7
+
+                    Label79 As label:
+                        Height: =19
+                        Italic: =true
+                        OnSelect: =Select(Parent)
+                        Text: |-
+                            =If(IsBlank(ThisItem.price_Quote_Product), "Giá: 0 đ","Giá: " & Text(ThisItem.price_Quote_Product,"#,### đ"))
+                        Width: =256
+                        X: =35
+                        Y: =38
+                        ZIndex: =8
+
+                    Label79_1 As label:
+                        Height: =27
+                        Italic: =true
+                        OnSelect: =Select(Parent)
+                        Text: |-
+                            ="Số lượng: " & ThisItem.quantity_Quote_Product
+                        Width: =256
+                        X: =35
+                        Y: =57
+                        ZIndex: =9
+
+                    Container38 As groupContainer.manualLayoutContainer:
+                        Height: =25
+                        Width: =101
+                        X: =481
+                        Y: =57
+                        ZIndex: =10
+
+                        Label80 As label:
+                            Align: =Align.Center
+                            Color: =RGBA(255, 255, 255, 1)
+                            Fill: =RGBA(232, 190, 174, 1)
+                            FontWeight: =FontWeight.Semibold
+                            Height: =Parent.Height
+                            OnSelect: |-
+                                =ClearCollect(
+                                    arrProductAddQuoteNew_SaleVertion2,
+                                    Filter(
+                                        arrProductAddQuoteNew_SaleVertion2,
+                                        Not(id_Product = ThisItem.id_Product)
+                                    )
+                                )
+                            Text: ="Xóa"
+                            Width: =Parent.Width
+                            ZIndex: =1
 
             Label68_5 As label:
                 FontWeight: =FontWeight.Semibold
@@ -784,6 +837,66 @@ SaleVertion2 As screen:
                         Fill: =RGBA(189, 240, 194, 1)
                         FontWeight: =FontWeight.Bold
                         Height: =Parent.Height
+                        OnSelect: |
+                            =If(
+                                IsBlank(TextInput8_1.Text) || IsBlank(TextInput8_2.Text) || IsBlank(TextInput8_3.Text),
+                                Notify("Vui lòng nhập đầy đủ thông tin bắt buộc"),
+                                If(
+                                    IsBlank(
+                                        LookUp(
+                                            arrProductAddQuoteNew_SaleVertion2,
+                                            id_Product = Dropdown3.Selected.id_Product
+                                        )
+                                    ),
+                                    Collect(
+                                        arrProductAddQuoteNew_SaleVertion2,
+                                        {
+                                            id_Quote: "",
+                                            id_Product: Dropdown3.Selected.id_Product,
+                                            price_Quote_Product: Value(TextInput8.Text),
+                                            quantity_Quote_Product: Value(TextInput8_1.Text),
+                                            quote_Product_Note: TextInput8_2.Text,
+                                            vat: Value(TextInput8_3.Text)
+                                        }
+                                    )
+                                   ,
+                                    Patch(
+                                        arrProductAddQuoteNew_SaleVertion2,
+                                        LookUp(
+                                            arrProductAddQuoteNew_SaleVertion2,
+                                            id_Product = Dropdown3.Selected.id_Product
+                                        ),
+                                        {
+                                            quantity_Quote_Product: LookUp(
+                                                arrProductAddQuoteNew_SaleVertion2,
+                                                id_Product = Dropdown3.Selected.id_Product
+                                            ).quantity_Quote_Product + Value(TextInput8_1.Text)
+                                        }
+                                    )
+                                );
+                                 Notify(
+                                        "Thêm sản phẩm vào báo giá thành công",
+                                        NotificationType.Success
+                                    );
+                                    Set(
+                                        isVisibleDialogAddProductQuoteNew_SaleVertion2,
+                                        false
+                                    )
+                            );
+                            
+                            /*Collect(
+                                arrProductAddQuoteNew_SaleVertion2,
+                                {
+                                    id_Quote: "",
+                                    id_Product: Dropdown3.Selected.id_Product,
+                                    price_Quote_Product: Value(TextInput8.Text),
+                                    quantity_Quote_Product: Value(TextInput8_1.Text),
+                                    quote_Product_Note: TextInput8_2.Text,
+                                    vat: Value(TextInput8_3.Text)
+                                }
+                            );
+                            Notify("Thêm sản phẩm vào báo giá thành công",NotificationType.Success);
+                            Set(isVisibleDialogAddProductQuoteNew_SaleVertion2,false)*/
                         Size: =16
                         Text: ="Thêm"
                         Width: =Parent.Width
@@ -823,7 +936,23 @@ SaleVertion2 As screen:
                         Italic: =true
                         Size: =20
                         Text: |-
-                            ="Tổng tiền: " & (LookUp(
+                            =/*"Tổng tiền: " & Text(
+                                Value(
+                                    (LookUp(
+                                        Product,
+                                        id_Product = Dropdown3.Selected.id_Product
+                                    ).price_Product * Value(TextInput8_1.Text) + (LookUp(
+                                        Product,
+                                        id_Product = Dropdown3.Selected.id_Product
+                                    ).price_Product * Value(TextInput8_1.Text) * If(
+                                        IsBlank(TextInput8_3.Text),
+                                        10%,
+                                        Value(TextInput8_3.Text)%
+                                    )))
+                                ),
+                                "#,###"
+                            )*/
+                            "Tổng tiền: " & (LookUp(
                                 Product,
                                 id_Product = Dropdown3.Selected.id_Product
                             ).price_Product * Value(TextInput8_1.Text) + (LookUp(
@@ -833,7 +962,7 @@ SaleVertion2 As screen:
                                 IsBlank(TextInput8_3.Text),
                                 10%,
                                 Value(TextInput8_3.Text)%
-                            )))
+                            ))) 
                         Width: =Parent.Width
                         ZIndex: =1
 
