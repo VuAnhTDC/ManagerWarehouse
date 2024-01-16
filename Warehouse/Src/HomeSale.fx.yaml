@@ -1,5 +1,5 @@
 HomeSale As screen:
-    OnVisible: |
+    OnVisible: |-
         =Set(
             informationUser,
             LookUp(
@@ -94,6 +94,9 @@ HomeSale As screen:
             isVisibleRequestBuyProductHaveNotWarehouse,
             false
         );
+        
+        /* nút giữ sự kiện nhấn vào version2 sale*/
+        Set(btnSelectionFuntionSale, "btnQuote");
 
     containerInformationUser_HomeSale As groupContainer.manualLayoutContainer:
         Fill: =RGBA(255, 255, 255, 1)
@@ -319,7 +322,7 @@ HomeSale As screen:
             Height: =532
             Items: |-
                 =Table(
-                   {
+                   /*{
                         Menu_Icon: iconservice,
                         Menu_Name: "Dịch vụ",
                         Screen: "dichvu"
@@ -327,7 +330,7 @@ HomeSale As screen:
                         Menu_Icon: customer,
                         Menu_Name: "Khách hàng",
                         Screen: "khach_hang"
-                    },{
+                    },*/{
                          Menu_Icon: quote,
                         Menu_Name: "Báo giá - đơn hàng",
                         Screen: "baogia_donhang"
@@ -344,14 +347,16 @@ HomeSale As screen:
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             TemplatePadding: =0
-            TemplateSize: =100
-            Visible: =If(informationUser.id_Role =1,true,false)
+            TemplateSize: =46
+            Visible: |-
+                =//If(informationUser.id_Role =1,true,false)
+                false
             Width: =317
             Y: =162
             ZIndex: =18
 
             Image2_1 As image:
-                Height: =60
+                Height: =45
                 Image: =ThisItem.Menu_Icon
                 ImagePosition: =ImagePosition.Fill
                 OnSelect: =Select(Parent)
@@ -359,13 +364,12 @@ HomeSale As screen:
                 RadiusBottomRight: =8
                 RadiusTopLeft: =8
                 RadiusTopRight: =8
-                Width: =60
-                X: =16
-                Y: =16
+                Width: =45
+                X: =45
                 ZIndex: =1
 
             Separator9_1 As rectangle:
-                Height: =8
+                Height: =0
                 OnSelect: =Select(Parent)
                 Width: =Parent.TemplateWidth
                 Y: =Parent.TemplateHeight - Self.Height
@@ -374,18 +378,17 @@ HomeSale As screen:
             Label45_1 As label:
                 Align: =Align.Center
                 FontWeight: =FontWeight.Bold
-                Height: =50
+                Height: =41
                 OnSelect: =Select(Parent)
                 Text: =ThisItem.Menu_Name
                 Width: =213
-                X: =88
-                Y: =26
+                X: =90
                 ZIndex: =7
 
             Button7_1 As button:
                 DisabledFill: =RGBA(56, 96, 178, 0)
                 Fill: =If(ThisItem.Screen = functionClick,RGBA(210, 105, 30, 0.21),RGBA(38, 123, 235, 0.21))
-                Height: =92
+                Height: =46
                 HoverFill: =ColorFade(RGBA(56, 96, 178, 0.25), -20%)
                 OnSelect: |-
                     =Select(Parent);
@@ -462,9 +465,100 @@ HomeSale As screen:
                     )
                 PressedColor: =ColorFade(RGBA(56, 96, 178, 0.25), -20%)
                 PressedFill: =ColorFade(RGBA(56, 96, 178, 0.25), -20%)
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
                 Text: =""
                 Width: =317
                 ZIndex: =8
+
+        Gallery13 As gallery.variableTemplateHeightGallery:
+            DelayItemLoading: =true
+            Height: =532
+            Items: |-
+                =Table(
+                    {
+                        id: "btnQuoteSale",
+                        name: "Báo giá - đơn hàng"
+                    },
+                    {
+                        id: "btnPurchase",
+                        name: "Yêu cầu mua hàng"
+                    },
+                    {
+                        id: "btnHistoryTransaction",
+                        name: "Lịch sử giao dịch"
+                    }
+                )
+            Layout: =Layout.Vertical
+            LoadingSpinner: =LoadingSpinner.Data
+            TemplateSize: =120
+            Width: =320
+            Y: =162
+            ZIndex: =19
+
+            Button13 As button:
+                OnSelect: =Set(btnSelectionFuntionSale,ThisItem.id);
+                Text: =ThisItem.name
+                Width: =307
+                X: =3
+                ZIndex: =1
+
+            "Gallery15 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+                DelayItemLoading: =true
+                Height: =If(btnSelectionFuntionSale = ThisItem.id,80,0)
+                Items: |-
+                    =If(
+                        btnSelectionFuntionSale = "btnQuoteSale" && ThisItem.IsSelected,
+                        Table(
+                            {
+                                id: 0,
+                                name: "Danh sách báo giá - đơn hàng",
+                                btnSelectionFuntion: "btnQuoteSale"
+                            },
+                            {
+                                id: 1,
+                                name: "Tạo báo giá",
+                                 btnSelectionFuntion: "btnQuoteSale"
+                            },
+                             {
+                                id: 2,
+                                name: "Khách hàng",
+                                 btnSelectionFuntion: "btnQuoteSale"
+                            },
+                             {
+                                id: 3,
+                                name: "Dịch vụ",
+                                 btnSelectionFuntion: "btnQuoteSale"
+                            }
+                        )
+                    )
+                Layout: =Layout.Vertical
+                LoadingSpinner: =LoadingSpinner.Data
+                ShowScrollbar: =false
+                TemplatePadding: =0
+                TemplateSize: =37
+                Visible: =If(btnSelectionFuntionSale = "btnQuoteSale",true, false)
+                Width: =310
+                Y: =40
+                ZIndex: =2
+
+                Title10 As label:
+                    Align: =Align.Center
+                    FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                    Height: =46
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =ThisItem.name
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =263
+                    X: =21
+                    Y: =6
+                    ZIndex: =2
 
     containerContentService_HomeSale As groupContainer.manualLayoutContainer:
         Height: =735
@@ -1472,10 +1566,8 @@ HomeSale As screen:
 
             retangleHeader_AddCustomerNew_HomeSale As rectangle:
                 Fill: =RGBA(175, 191, 224, 1)
-                Height: =61
-                Width: =973
-                X: =13
-                Y: =12
+                Height: =67
+                Width: =997
                 ZIndex: =15
 
             back_AddCustomerNew_HomeSale As arrow.backArrow:

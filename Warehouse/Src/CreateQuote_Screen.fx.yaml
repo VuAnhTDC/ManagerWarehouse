@@ -6,22 +6,24 @@ CreateQuote_Screen As screen:
         ClearCollect(serviceAddQuoteList,[]);
 
     retangleHeader_CreateQuoteScreen As rectangle:
-        Fill: =RGBA(175, 191, 224, 1)
         Height: =58
         Width: =1366
         ZIndex: =1
 
     back_CreateQuoteScreen As arrow.backArrow:
-        Fill: =RGBA(0, 0, 0, 1)
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =47
         OnSelect: |-
             =Back();
             Set(btnFunctionSelection_Value_HomeSale,3);
+        Width: =47
         X: =32
         Y: =4
         ZIndex: =2
 
     lblTitle_CreateQuoteScreen As label:
         Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
         FontWeight: =FontWeight.Bold
         Height: =58
         Size: =25
@@ -172,6 +174,18 @@ CreateQuote_Screen As screen:
             X: =81
             Y: =407
             ZIndex: =7
+
+        Label58 As label:
+            Align: =Align.Right
+            Color: =RGBA(0, 18, 107, 1)
+            Italic: =true
+            OnSelect: =Set(isVisibaleAddCustomer_HomeSale,true)
+            Text: ="Thêm mới"
+            Underline: =true
+            Width: =238
+            X: =141
+            Y: =129
+            ZIndex: =8
 
     containerProductListSelectedAddQuote_CreateQuoteScreen As groupContainer.manualLayoutContainer:
         BorderThickness: =1
@@ -734,4 +748,336 @@ CreateQuote_Screen As screen:
                 Width: =50
                 X: =902
                 ZIndex: =11
+
+    Container14 As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(0, 0, 0, 0.31)
+        Height: =768
+        Visible: =isVisibaleAddCustomer_HomeSale
+        Width: =1366
+        ZIndex: =14
+
+        containerAddCustomerNew_HomeSale_1 As groupContainer.manualLayoutContainer:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =638
+            Visible: =isVisibaleAddCustomer_HomeSale
+            Width: =997
+            X: =214
+            Y: =48
+            ZIndex: =1
+
+            lblTaxCode_AddCustomerNew_HomeSale_1 As label:
+                Align: =Align.Right
+                FontWeight: =FontWeight.Semibold
+                Size: =15
+                Text: ="Mã số thuế"
+                Width: =187
+                X: =163
+                Y: =112
+                ZIndex: =2
+
+            edtTaxCode_AddCustomerNew_HomeSale_1 As text:
+                Clear: =true
+                Default: =""
+                HintText: ="Vui lòng nhập mã số thuế ...."
+                MaxLength: =10
+                Width: =508
+                X: =367
+                Y: =112
+                ZIndex: =3
+
+            lblCustomerName_AddCustomerNew_HomeSale_1 As label:
+                Align: =Align.Right
+                FontWeight: =FontWeight.Semibold
+                Size: =15
+                Text: ="Tên khách hàng"
+                Width: =187
+                X: =163
+                Y: =168
+                ZIndex: =4
+
+            edtCustomerName_AddCustomerNew_HomeSale_1 As text:
+                Clear: =true
+                Default: =""
+                HintText: ="Vui lòng nhập tên khách hàng..."
+                Width: =508
+                X: =367
+                Y: =168
+                ZIndex: =5
+
+            lblCustomerAddress_AddCustomerNew_HomeSale_1 As label:
+                Align: =Align.Right
+                FontWeight: =FontWeight.Semibold
+                Size: =15
+                Text: ="Địa chỉ"
+                Width: =187
+                X: =163
+                Y: =226
+                ZIndex: =6
+
+            edtCustomerAddress_AddCustomerNew_HomeSale_1 As text:
+                Clear: =true
+                Default: =""
+                Height: =103
+                HintText: ="Vui lòng nhập địa chỉ khách hàng ...."
+                Mode: =TextMode.MultiLine
+                Width: =508
+                X: =367
+                Y: =226
+                ZIndex: =7
+
+            lblContactNamePerson_AddCustomerNew_HomeSale_1 As label:
+                Align: =Align.Right
+                FontWeight: =FontWeight.Semibold
+                Size: =15
+                Text: ="Tên người liên hệ"
+                Width: =187
+                X: =163
+                Y: =346
+                ZIndex: =8
+
+            edtContactNamePerson_AddCustomerNew_HomeSale_1 As text:
+                Default: =""
+                HintText: ="Vui lòng nhập tên người liên hệ ..."
+                Width: =508
+                X: =367
+                Y: =346
+                ZIndex: =9
+
+            lblContactPhonenumberPersoin_AddCustomerNew_HomeSale_1 As label:
+                Align: =Align.Right
+                FontWeight: =FontWeight.Semibold
+                Size: =15
+                Text: ="SDT người liên hệ"
+                Width: =187
+                X: =163
+                Y: =403
+                ZIndex: =10
+
+            edtContactPhonenumberPerson_AddCustomerNew_HomeSale_1 As text:
+                Default: =""
+                HintText: ="Vui lòng nhập số điện thoại người liên hệ ..."
+                MaxLength: =10
+                Width: =508
+                X: =367
+                Y: =403
+                ZIndex: =11
+
+            lblContactEmailPerson_AddCustomerNew_HomeSale_1 As label:
+                Align: =Align.Right
+                FontWeight: =FontWeight.Semibold
+                Size: =15
+                Text: ="Email người liên hệ"
+                Width: =214
+                X: =135
+                Y: =462
+                ZIndex: =12
+
+            edtContactEmailPerson_AddCustomerNew_HomeSale_1 As text:
+                Default: =""
+                HintText: ="Vui lòng nhập email người liên hệ ..."
+                Width: =508
+                X: =367
+                Y: =462
+                ZIndex: =13
+
+            btnAddCustomer_AddCostumerNew_HomeSale_1 As button:
+                FontWeight: =FontWeight.Bold
+                Height: =41
+                OnSelect: |
+                    =If(
+                        (!IsMatch(
+                            edtTaxCode_AddCustomerNew_HomeSale_1.Text,
+                            "^(0|3)\d{9}$"
+                        ) || IsBlank(edtCustomerName_AddCustomerNew_HomeSale_1.Text) || IsBlank(edtCustomerAddress_AddCustomerNew_HomeSale_1.Text) || IsBlank(edtContactNamePerson_AddCustomerNew_HomeSale_1.Text) || !IsMatch(
+                            edtContactPhonenumberPerson_AddCustomerNew_HomeSale_1.Text,
+                            "^0\d{9}$"
+                        ) || !IsMatch(
+                            edtContactEmailPerson_AddCustomerNew_HomeSale_1.Text,
+                            "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                        )),
+                        Notify(
+                            "Vui lòng nhập thông tin hợp lệ",
+                            NotificationType.Error
+                        ),
+                        Set(
+                            showDialogUpdateCustomer,
+                            true
+                        );
+                        Set(
+                            positionDialogCustomer,
+                            3
+                        );
+                        Set(
+                            contentDialogCustomer,
+                            "Bạn chắc chắn muốn thêm khách hàng này không ?"
+                        );
+                    )
+                Text: ="Thêm khách hàng"
+                Width: =284
+                X: =382
+                Y: =562
+                ZIndex: =14
+
+            retangleHeader_AddCustomerNew_HomeSale_1 As rectangle:
+                Height: =67
+                Width: =997
+                ZIndex: =15
+
+            lblTitle_AddCustomerNew_HomeSale_1 As label:
+                Align: =Align.Center
+                FontWeight: =FontWeight.Bold
+                Height: =45
+                Size: =25
+                Text: ="Thêm khách hàng"
+                Width: =397
+                X: =325
+                Y: =11
+                ZIndex: =17
+
+            Icon12 As icon.CancelBadge:
+                Color: =RGBA(255, 255, 255, 1)
+                Height: =50
+                Icon: =Icon.CancelBadge
+                OnSelect: =Set(isVisibaleAddCustomer_HomeSale,false)
+                Width: =50
+                X: =932
+                Y: =8
+                ZIndex: =18
+
+    containerDialogCustomer_HomeSale_1 As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(36, 31, 31, 0.35)
+        Height: =768
+        Visible: =showDialogUpdateCustomer
+        Width: =1366
+        ZIndex: =15
+
+        containerContentDialogCustomer_HomeSale_1 As groupContainer.manualLayoutContainer:
+            Fill: =RGBA(241, 244, 249, 1)
+            Height: =420
+            Width: =846
+            X: =290
+            Y: =120
+            ZIndex: =1
+
+            lblTitleDialogCustomer_HomeSale_1 As label:
+                FontWeight: =FontWeight.Bold
+                Height: =60
+                Size: =25
+                Text: ="Thông báo"
+                Width: =247
+                X: =30
+                Y: =12
+                ZIndex: =1
+
+            lblContentDialogCustomer_HomeSale_1 As label:
+                Align: =Align.Center
+                Height: =165
+                Size: =20
+                Text: =contentDialogCustomer
+                Width: =566
+                X: =144
+                Y: =84
+                ZIndex: =2
+
+            btnYesDialogCustomer_HomeSale_1 As button:
+                FontWeight: =FontWeight.Bold
+                Height: =48
+                OnSelect: |-
+                    =If(
+                        positionDialogCustomer = 1,
+                        Patch(
+                            Customer,
+                            LookUp(
+                                Customer,
+                                taxCode = edtTaxCode_HomeSale.Text
+                            ),
+                            {
+                                customer_Name: edtCustomerName_HomeSale.Text,
+                                customer_Address: edtCustomerAddress_HomeSale.Text,
+                                contactPersonName_Customer: edtcontactNamePerson_CustomerList_HomeSale.Text,
+                                contactPersonEmail_Customer: edtContactEmailPerson_CustomerList_HomeSale.Text,
+                                contactPersonPhoneNumber_Customer: edtContactPhonenumberPerson_CustomerList_HomeSale.Text
+                            }
+                        );
+                        Notify(
+                            "Sửa thông tin khách hàng thành công",
+                            NotificationType.Success
+                        );
+                        Set(
+                            showDialogUpdateCustomer,
+                            false
+                        );
+                        
+                    );
+                    If(
+                        positionDialogCustomer = 2,
+                        Patch(
+                            Customer,
+                            LookUp(Customer, taxCode = galleryCustomerList_HomeSale.Selected.taxCode),{activity: false}
+                        );
+                        Notify(
+                            "Xóa khách hàng thành công",
+                            NotificationType.Success
+                        );
+                        Set(
+                            showDialogUpdateCustomer,
+                            false
+                        )
+                    );
+                    If(
+                        positionDialogCustomer = 3,
+                        If(
+                            !IsBlank(
+                                LookUp(
+                                    Customer,
+                                    taxCode = edtTaxCode_AddCustomerNew_HomeSale.Text
+                                )
+                            ),
+                            Notify("Mã số thuế đã tồn tại. Vui lòng kiểm tra lại",NotificationType.Error);
+                            Set(showDialogUpdateCustomer,false)
+                            ,
+                            Patch(
+                                Customer,
+                                Defaults(Customer),
+                                {
+                                    taxCode: edtTaxCode_AddCustomerNew_HomeSale_1.Text,
+                                    customer_Name: edtCustomerName_AddCustomerNew_HomeSale_1.Text,
+                                    customer_Address: edtCustomerAddress_AddCustomerNew_HomeSale_1.Text,
+                                    contactPersonName_Customer: edtContactNamePerson_AddCustomerNew_HomeSale_1.Text,
+                                    contactPersonPhoneNumber_Customer: edtContactPhonenumberPerson_AddCustomerNew_HomeSale_1.Text,
+                                    contactPersonEmail_Customer: edtContactEmailPerson_AddCustomerNew_HomeSale_1.Text,
+                                    activity:true
+                                }
+                            );
+                            Set(
+                                showDialogUpdateCustomer,
+                                false
+                            );
+                            Set(
+                                isVisibaleCustomerList_HomeSale,
+                                !isVisibaleCustomerList_HomeSale
+                            );
+                            Set(
+                                isVisibaleAddCustomer_HomeSale,
+                                !isVisibaleAddCustomer_HomeSale
+                            )
+                        )
+                    )
+                Size: =20
+                Text: ="Có"
+                Width: =270
+                X: =145
+                Y: =302
+                ZIndex: =3
+
+            btnNoDialogCustomer_HomeSale_1 As button:
+                FontWeight: =FontWeight.Bold
+                Height: =48
+                OnSelect: =Set(showDialogUpdateCustomer,false)
+                Size: =20
+                Text: ="Không"
+                Width: =270
+                X: =438
+                Y: =302
+                ZIndex: =4
 
