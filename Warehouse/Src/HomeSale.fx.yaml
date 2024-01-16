@@ -349,7 +349,7 @@ HomeSale As screen:
             TemplatePadding: =0
             TemplateSize: =46
             Visible: |-
-                =//If(informationUser.id_Role =1,true,false)
+                =//If(informationUser.id_Role =1,true
                 false
             Width: =317
             Y: =162
@@ -494,6 +494,7 @@ HomeSale As screen:
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             TemplateSize: =224
+            Visible: =false
             Width: =320
             Y: =167
             ZIndex: =19
