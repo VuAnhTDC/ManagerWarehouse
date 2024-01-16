@@ -3,6 +3,7 @@ SaleVertion2 As screen:
         =Set(btnFunctionSaleVertion2, "btnQuoteSale");
         Set(idCheckStatusFuntionQuote,-1);
         Set(isVisibleDialogAddQuoteNew_SaleVertion2, false);
+        Set(isVisibleDialogAddProductQuoteNew_SaleVertion2, false);
 
     Container17 As groupContainer.manualLayoutContainer:
         Fill: =RGBA(56, 96, 178, 1)
@@ -237,7 +238,9 @@ SaleVertion2 As screen:
             Rectangle13 As rectangle:
                 Fill: =RGBA(56, 96, 178, 0)
                 Height: =25
-                OnSelect: =Set(isVisibleDialogAddQuoteNew_SaleVertion2,true)
+                OnSelect: |-
+                    =Set(isVisibleDialogAddQuoteNew_SaleVertion2,true);
+                    ClearCollect(arrProductAddQuoteNew_SaleVertion2,[])
                 Width: =111
                 ZIndex: =3
 
@@ -367,20 +370,470 @@ SaleVertion2 As screen:
         ZIndex: =4
 
         Container28 As groupContainer.manualLayoutContainer:
+            ContentLanguage: ="vi-VN"
             Fill: =RGBA(255, 255, 255, 1)
-            Height: =629
-            Width: =1286
-            X: =46
-            Y: =70
+            Height: =722
+            Width: =1299
+            X: =33
+            Y: =18
             ZIndex: =1
 
             Label67 As label:
                 Color: =RGBA(54, 176, 75, 1)
                 FontWeight: =FontWeight.Semibold
-                Size: =20
+                Size: =24
                 Text: ="Tạo báo giá"
                 Width: =273
                 X: =12
                 Y: =9
                 ZIndex: =1
+
+            Label68 As label:
+                FontWeight: =FontWeight.Semibold
+                Height: =26
+                Text: ="Thời gian tạo - hết hạn"
+                Width: =225
+                X: =40
+                Y: =72
+                ZIndex: =2
+
+            TextInput6 As text:
+                Default: |-
+                    =Text(Now(), "dd/mm/yyyy hh:mm:ss")
+                DisplayMode: =DisplayMode.Disabled
+                Height: =46
+                Width: =211
+                X: =54
+                Y: =98
+                ZIndex: =3
+
+            DatePicker2 As datepicker:
+                ContentLanguage: ="vi-VN"
+                Height: =46
+                Language: ="vi-VN"
+                Width: =228
+                X: =296
+                Y: =98
+                ZIndex: =4
+
+            Label68_1 As label:
+                FontWeight: =FontWeight.Semibold
+                Height: =26
+                Text: ="Khách hàng"
+                Width: =225
+                X: =580
+                Y: =72
+                ZIndex: =5
+
+            ComboBox1 As combobox:
+                DefaultSelectedItems: =
+                DisplayFields: =["customer_Name"]
+                InputTextPlaceholder: ="Chọn khách hàng"
+                Items: =Customer
+                SearchFields: =["customer_Name"]
+                SearchItems: =Search(Customer,ComboBox1.SearchText,"customer_Name")
+                SelectMultiple: =false
+                Width: =280
+                X: =607
+                Y: =98
+                ZIndex: =6
+
+            Label68_2 As label:
+                FontWeight: =FontWeight.Semibold
+                Height: =26
+                Text: ="Nhân viên"
+                Width: =225
+                X: =936
+                Y: =72
+                ZIndex: =7
+
+            ComboBox1_1 As combobox:
+                DisplayFields: =["user_Name"]
+                InputTextPlaceholder: ="Chọn nhân viên"
+                Items: =User
+                SearchFields: =["user_Name"]
+                SearchItems: =Search(User,ComboBox1_1.SearchText,"user_Name")
+                SelectMultiple: =false
+                Width: =280
+                X: =957
+                Y: =104
+                ZIndex: =8
+
+            Label68_3 As label:
+                FontWeight: =FontWeight.Semibold
+                Height: =26
+                Text: ="Mô tả"
+                Width: =225
+                X: =40
+                Y: =149
+                ZIndex: =9
+
+            TextInput7 As text:
+                Clear: =true
+                Default: =""
+                Height: =126
+                HintText: ="Vui lòng nhập mô tả"
+                Mode: =TextMode.MultiLine
+                Width: =1183
+                X: =54
+                Y: =175
+                ZIndex: =10
+
+            Label68_4 As label:
+                FontWeight: =FontWeight.Semibold
+                Height: =25
+                Text: ="Sản phẩm"
+                Width: =97
+                X: =40
+                Y: =312
+                ZIndex: =11
+
+            Container29 As groupContainer.manualLayoutContainer:
+                Height: =235
+                Width: =595
+                X: =67
+                Y: =347
+                ZIndex: =12
+
+                "Gallery18 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+                    DelayItemLoading: =true
+                    Height: =235
+                    Items: =arrProductAddQuoteNew_SaleVertion2
+                    Layout: =Layout.Vertical
+                    LoadingSpinner: =LoadingSpinner.Data
+                    TemplatePadding: =0
+                    TemplateSize: =104
+                    Width: =595
+                    ZIndex: =1
+
+                    Separator14 As rectangle:
+                        Height: =8
+                        OnSelect: =Select(Parent)
+                        Width: =Parent.TemplateWidth
+                        Y: =Parent.TemplateHeight - Self.Height
+                        ZIndex: =5
+
+                    Rectangle14 As rectangle:
+                        Height: =Parent.TemplateHeight - Separator14.Height
+                        OnSelect: =Select(Parent)
+                        Visible: =ThisItem.IsSelected
+                        Width: =4
+                        ZIndex: =6
+
+            Label68_5 As label:
+                FontWeight: =FontWeight.Semibold
+                Height: =26
+                Text: ="Dịch vụ"
+                Width: =100
+                X: =684
+                Y: =311
+                ZIndex: =13
+
+            Container29_1 As groupContainer.manualLayoutContainer:
+                Height: =235
+                Width: =547
+                X: =690
+                Y: =347
+                ZIndex: =14
+
+            Container30 As groupContainer.manualLayoutContainer:
+                Height: =40
+                RadiusBottomLeft: =10
+                RadiusBottomRight: =10
+                RadiusTopLeft: =10
+                RadiusTopRight: =10
+                Width: =173
+                X: =913
+                Y: =667
+                ZIndex: =15
+
+                Label69 As label:
+                    Align: =Align.Center
+                    Fill: =RGBA(189, 240, 194, 1)
+                    FontWeight: =FontWeight.Semibold
+                    Size: =18
+                    Text: ="Lưu lại"
+                    Width: =173
+                    ZIndex: =1
+
+            Container30_1 As groupContainer.manualLayoutContainer:
+                Height: =40
+                RadiusBottomLeft: =10
+                RadiusBottomRight: =10
+                RadiusTopLeft: =10
+                RadiusTopRight: =10
+                Width: =173
+                X: =1107
+                Y: =667
+                ZIndex: =16
+
+                Label69_1 As label:
+                    Align: =Align.Center
+                    Fill: =RGBA(232, 190, 174, 1)
+                    FontWeight: =FontWeight.Semibold
+                    OnSelect: =Set(isVisibleDialogAddQuoteNew_SaleVertion2,false)
+                    Size: =18
+                    Text: ="Hủy bỏ"
+                    Width: =173
+                    ZIndex: =1
+
+            Container31 As groupContainer.manualLayoutContainer:
+                Height: =63
+                Width: =622
+                X: =40
+                Y: =604
+                ZIndex: =17
+
+                Label71 As label:
+                    FontWeight: =FontWeight.Semibold
+                    Height: =63
+                    Italic: =true
+                    Size: =25
+                    Text: |-
+                        ="Tổng tiền: "
+                    Width: =622
+                    ZIndex: =1
+
+            Container33 As groupContainer.manualLayoutContainer:
+                BorderThickness: =2
+                Fill: =RGBA(247, 242, 242, 0)
+                Height: =30
+                RadiusBottomLeft: =30
+                RadiusBottomRight: =30
+                RadiusTopLeft: =30
+                RadiusTopRight: =30
+                Width: =30
+                X: =620
+                Y: =540
+                ZIndex: =20
+
+                Icon15 As icon.Add:
+                    Fill: =RGBA(222, 215, 215, 0.05)
+                    Height: =Parent.Height
+                    Icon: =Icon.Add
+                    OnSelect: =Set(isVisibleDialogAddProductQuoteNew_SaleVertion2,true)
+                    PaddingBottom: =5
+                    PaddingLeft: =5
+                    PaddingRight: =5
+                    PaddingTop: =5
+                    Width: =Parent.Width
+                    ZIndex: =1
+
+            Container33_1 As groupContainer.manualLayoutContainer:
+                BorderThickness: =2
+                Fill: =RGBA(247, 242, 242, 0)
+                Height: =30
+                RadiusBottomLeft: =30
+                RadiusBottomRight: =30
+                RadiusTopLeft: =30
+                RadiusTopRight: =30
+                Width: =30
+                X: =1195
+                Y: =540
+                ZIndex: =21
+
+                Icon15_1 As icon.Add:
+                    Fill: =RGBA(222, 215, 215, 0.05)
+                    Height: =Parent.Height
+                    Icon: =Icon.Add
+                    PaddingBottom: =5
+                    PaddingLeft: =5
+                    PaddingRight: =5
+                    PaddingTop: =5
+                    Width: =Parent.Width
+                    ZIndex: =1
+
+            Label76 As label:
+                Align: =Align.Right
+                Color: =RGBA(0, 18, 107, 1)
+                Height: =26
+                Italic: =true
+                Size: =10
+                Text: ="Thêm khách hàng"
+                Underline: =true
+                Width: =163
+                X: =724
+                Y: =72
+                ZIndex: =22
+
+        containerSelectionProductAdd_SaleVertion2 As groupContainer.manualLayoutContainer:
+            Fill: =RGBA(77, 72, 72, 0.5)
+            Height: =722
+            Visible: =isVisibleDialogAddProductQuoteNew_SaleVertion2
+            Width: =1299
+            X: =33
+            Y: =18
+            ZIndex: =2
+
+            Container35 As groupContainer.manualLayoutContainer:
+                BorderThickness: =1
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =688
+                Width: =574
+                X: =684
+                Y: =12
+                ZIndex: =1
+
+                Label73 As label:
+                    Color: =RGBA(54, 176, 75, 1)
+                    FontWeight: =FontWeight.Semibold
+                    Height: =56
+                    Size: =18
+                    Text: ="Thêm sản phẩm - Báo giá"
+                    Width: =370
+                    X: =3
+                    ZIndex: =1
+
+                Label74 As label:
+                    FontWeight: =FontWeight.Semibold
+                    Text: ="Sản phẩm"
+                    X: =51
+                    Y: =56
+                    ZIndex: =2
+
+                Dropdown3 As dropdown:
+                    FocusedBorderThickness: =2
+                    Items: =Product
+                    Width: =436
+                    X: =85
+                    Y: =96
+                    ZIndex: =3
+
+                Label74_1 As label:
+                    FontWeight: =FontWeight.Semibold
+                    Text: ="Giá"
+                    X: =51
+                    Y: =136
+                    ZIndex: =4
+
+                TextInput8 As text:
+                    Align: =Align.Right
+                    Default: |-
+                        =Text(Value(LookUp(Product,id_Product = Dropdown3.Selected.id_Product).price_Product),"#,###")
+                    DisplayMode: =DisplayMode.Disabled
+                    Format: =TextFormat.Number
+                    Width: =436
+                    X: =85
+                    Y: =176
+                    ZIndex: =5
+
+                Label74_2 As label:
+                    FontWeight: =FontWeight.Semibold
+                    Text: ="Số lượng"
+                    X: =51
+                    Y: =216
+                    ZIndex: =6
+
+                TextInput8_1 As text:
+                    Align: =Align.Right
+                    Default: =
+                    Format: =TextFormat.Number
+                    HintText: ="Vui lòng nhập số lượng"
+                    Width: =436
+                    X: =85
+                    Y: =256
+                    ZIndex: =7
+
+                Label74_3 As label:
+                    FontWeight: =FontWeight.Semibold
+                    Text: ="Ghi chú"
+                    X: =51
+                    Y: =296
+                    ZIndex: =8
+
+                TextInput8_2 As text:
+                    Default: =
+                    Height: =114
+                    HintText: ="Vui lòng nhập ghi chú"
+                    Mode: =TextMode.MultiLine
+                    Width: =436
+                    X: =85
+                    Y: =336
+                    ZIndex: =9
+
+                Label74_4 As label:
+                    FontWeight: =FontWeight.Semibold
+                    Text: ="VAT"
+                    X: =51
+                    Y: =450
+                    ZIndex: =10
+
+                TextInput8_3 As text:
+                    Align: =Align.Right
+                    Default: =10
+                    Format: =TextFormat.Number
+                    HintText: ="%"
+                    Width: =436
+                    X: =85
+                    Y: =490
+                    ZIndex: =11
+
+                Container36 As groupContainer.manualLayoutContainer:
+                    Height: =40
+                    RadiusBottomLeft: =10
+                    RadiusBottomRight: =10
+                    RadiusTopLeft: =10
+                    RadiusTopRight: =10
+                    Width: =170
+                    X: =201
+                    Y: =622
+                    ZIndex: =12
+
+                    Label75 As label:
+                        Align: =Align.Center
+                        Fill: =RGBA(189, 240, 194, 1)
+                        FontWeight: =FontWeight.Bold
+                        Height: =Parent.Height
+                        Size: =16
+                        Text: ="Thêm"
+                        Width: =Parent.Width
+                        ZIndex: =1
+
+                Container36_1 As groupContainer.manualLayoutContainer:
+                    Height: =40
+                    RadiusBottomLeft: =10
+                    RadiusBottomRight: =10
+                    RadiusTopLeft: =10
+                    RadiusTopRight: =10
+                    Width: =170
+                    X: =389
+                    Y: =622
+                    ZIndex: =13
+
+                    Label75_1 As label:
+                        Align: =Align.Center
+                        Fill: =RGBA(232, 190, 174, 1)
+                        FontWeight: =FontWeight.Bold
+                        Height: =Parent.Height
+                        OnSelect: =Set(isVisibleDialogAddProductQuoteNew_SaleVertion2,false)
+                        Size: =16
+                        Text: ="Hủy"
+                        Width: =Parent.Width
+                        ZIndex: =1
+
+                Container37 As groupContainer.manualLayoutContainer:
+                    Height: =70
+                    X: =51
+                    Y: =540
+                    ZIndex: =14
+
+                    Label77 As label:
+                        FontWeight: =FontWeight.Bold
+                        Height: =Parent.Height
+                        Italic: =true
+                        Size: =20
+                        Text: |-
+                            ="Tổng tiền: " & (LookUp(
+                                Product,
+                                id_Product = Dropdown3.Selected.id_Product
+                            ).price_Product * Value(TextInput8_1.Text) + (LookUp(
+                                Product,
+                                id_Product = Dropdown3.Selected.id_Product
+                            ).price_Product * Value(TextInput8_1.Text) * If(
+                                IsBlank(TextInput8_3.Text),
+                                10%,
+                                Value(TextInput8_3.Text)%
+                            )))
+                        Width: =Parent.Width
+                        ZIndex: =1
 
