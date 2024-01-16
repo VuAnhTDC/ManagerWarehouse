@@ -783,6 +783,18 @@ SaleVertion2 As screen:
                 Y: =72
                 ZIndex: =22
 
+            Label88 As label:
+                Align: =Align.Right
+                Color: =RGBA(0, 18, 107, 1)
+                Height: =35
+                Italic: =true
+                Text: ="Tạo dịch vụ mới"
+                Underline: =true
+                Width: =200
+                X: =1037
+                Y: =307
+                ZIndex: =23
+
         containerSelectionProductAdd_SaleVertion2 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(77, 72, 72, 0.22)
             Height: =722
@@ -1214,6 +1226,11 @@ SaleVertion2 As screen:
             Container40 As groupContainer.manualLayoutContainer:
                 Fill: =RGBA(255, 255, 255, 1)
                 Height: =673
+                RadiusBottomLeft: =10
+                RadiusBottomRight: =10
+                RadiusTopLeft: =10
+                RadiusTopRight: =10
+                Visible: =positionDialogAddDataQuoteNew_SaleVertion2 = 2
                 Width: =617
                 X: =287
                 Y: =27
@@ -1352,24 +1369,43 @@ SaleVertion2 As screen:
                                 "Vui lòng nhập thông tin hợp lệ",
                                 NotificationType.Error
                             ),
-                           If(IsBlank(LookUp(Customer,taxCode = TextInput11.Text)), Patch(
-                                Customer,
-                                Defaults(Customer),
-                                {
-                                    taxCode: TextInput11.Text,
-                                    customer_Name: TextInput11_1.Text,
-                                    customer_Address: TextInput11_2.Text,
-                                    contactPersonName_Customer: TextInput11_3.Text,
-                                    contactPersonPhoneNumber_Customer: TextInput11_4.Text,
-                                    contactPersonEmail_Customer: TextInput11_5.Text,
-                                    activity: true
-                                }
-                            );
-                            Notify("Thêm khách hàng thành công",NotificationType.Success,1500);
-                            Set(isVisibleDialogAddProductQuoteNew_SaleVertion2,false),Notify("Mã số thuế đã tồn tại",NotificationType.Error,1500))
-                        
+                            If(
+                                IsBlank(
+                                    LookUp(
+                                        Customer,
+                                        taxCode = TextInput11.Text
+                                    )
+                                ),
+                                Patch(
+                                    Customer,
+                                    Defaults(Customer),
+                                    {
+                                        taxCode: TextInput11.Text,
+                                        customer_Name: TextInput11_1.Text,
+                                        customer_Address: TextInput11_2.Text,
+                                        contactPersonName_Customer: TextInput11_3.Text,
+                                        contactPersonPhoneNumber_Customer: TextInput11_4.Text,
+                                        contactPersonEmail_Customer: TextInput11_5.Text,
+                                        activity: true
+                                    }
+                                );
+                                Notify(
+                                    "Thêm khách hàng thành công",
+                                    NotificationType.Success,
+                                    1500
+                                );
+                                Set(
+                                    isVisibleDialogAddProductQuoteNew_SaleVertion2,
+                                    false
+                                ),
+                                Notify(
+                                    "Mã số thuế đã tồn tại",
+                                    NotificationType.Error,
+                                    1500
+                                )
+                            )
                         )
-                    Text: ="Thêm"
+                    Text: ="Lưu lại"
                     X: =440
                     Y: =598
                     ZIndex: =15
