@@ -788,6 +788,9 @@ SaleVertion2 As screen:
                 Color: =RGBA(0, 18, 107, 1)
                 Height: =35
                 Italic: =true
+                OnSelect: |-
+                    =Set(isVisibleDialogAddProductQuoteNew_SaleVertion2,true);
+                    Set(positionDialogAddDataQuoteNew_SaleVertion2,3);
                 Text: ="Tạo dịch vụ mới"
                 Underline: =true
                 Width: =200
