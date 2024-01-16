@@ -475,7 +475,7 @@ HomeSale As screen:
 
         Gallery13 As gallery.variableTemplateHeightGallery:
             DelayItemLoading: =true
-            Height: =532
+            Height: =522
             Items: |-
                 =Table(
                     {
@@ -493,9 +493,9 @@ HomeSale As screen:
                 )
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
-            TemplateSize: =120
+            TemplateSize: =224
             Width: =320
-            Y: =162
+            Y: =167
             ZIndex: =19
 
             Button13 As button:
@@ -507,7 +507,12 @@ HomeSale As screen:
 
             "Gallery15 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
                 DelayItemLoading: =true
-                Height: =If(btnSelectionFuntionSale = ThisItem.id,80,0)
+                Height: |-
+                    =If(
+                        btnSelectionFuntionSale = "btnQuoteSale" && ThisItem.IsSelected,
+                        180,
+                        If(btnSelectionFuntionSale = "btnPurchase" && ThisItem.IsSelected,80)
+                    )
                 Items: |-
                     =If(
                         btnSelectionFuntionSale = "btnQuoteSale" && ThisItem.IsSelected,
@@ -520,18 +525,32 @@ HomeSale As screen:
                             {
                                 id: 1,
                                 name: "Tạo báo giá",
-                                 btnSelectionFuntion: "btnQuoteSale"
+                                btnSelectionFuntion: "btnQuoteSale"
                             },
-                             {
+                            {
                                 id: 2,
                                 name: "Khách hàng",
-                                 btnSelectionFuntion: "btnQuoteSale"
+                                btnSelectionFuntion: "btnQuoteSale"
                             },
-                             {
+                            {
                                 id: 3,
                                 name: "Dịch vụ",
-                                 btnSelectionFuntion: "btnQuoteSale"
+                                btnSelectionFuntion: "btnQuoteSale"
                             }
+                        ),
+                        If(
+                            ThisItem.IsSelected,
+                            Table(
+                                {
+                                    id: 0,
+                                    name: "Mua sản phẩm mới",
+                                    btnSelectionFuntion: "btnHistoryTransaction"
+                                },{
+                                    id: 1,
+                                    name: "Nhập thêm hàng",
+                                    btnSelectionFuntion: "btnHistoryTransaction"
+                                }
+                            )
                         )
                     )
                 Layout: =Layout.Vertical
@@ -539,7 +558,9 @@ HomeSale As screen:
                 ShowScrollbar: =false
                 TemplatePadding: =0
                 TemplateSize: =37
-                Visible: =If(btnSelectionFuntionSale = "btnQuoteSale",true, false)
+                Visible: |-
+                    =/*If(btnSelectionFuntionSale = "btnQuoteSale",true, false)*/
+                    If(ThisItem.IsSelected,true, false)
                 Width: =310
                 Y: =40
                 ZIndex: =2
@@ -547,14 +568,12 @@ HomeSale As screen:
                 Title10 As label:
                     Align: =Align.Center
                     FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
-                    Height: =46
+                    Height: =44
                     OnSelect: =Select(Parent)
-                    PaddingBottom: =0
                     PaddingLeft: =0
                     PaddingRight: =0
-                    PaddingTop: =0
+                    Size: =13
                     Text: =ThisItem.name
-                    VerticalAlign: =VerticalAlign.Top
                     Width: =263
                     X: =21
                     Y: =6
