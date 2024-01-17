@@ -143,7 +143,7 @@ SaleVertion2 As screen:
                 )
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
-            TemplateSize: =186
+            TemplateSize: =229
             Width: =317
             Y: =5
             ZIndex: =1
@@ -158,7 +158,8 @@ SaleVertion2 As screen:
                 ZIndex: =1
 
             Container25 As groupContainer.manualLayoutContainer:
-                Height: =If(ThisItem.IsSelected && ThisItem.id = 0 && ThisItem.btnFunction = "btnQuoteSale",139,0)
+                Height: =169
+                Visible: =ThisItem.IsSelected && ThisItem.id = 0 && ThisItem.btnFunction = "btnQuoteSale"
                 Width: =307
                 Y: =47
                 ZIndex: =2
@@ -182,8 +183,19 @@ SaleVertion2 As screen:
                     Text: ="Đơn hàng"
                     Width: =244
                     X: =37
-                    Y: =70
+                    Y: =57
                     ZIndex: =2
+
+                Checkbox1 As checkbox:
+                    Default: =If(idCheckStatusFuntionQuote = 2, true,false)
+                    Height: =46
+                    OnCheck: =Set(idCheckStatusFuntionQuote, 2)
+                    OnUncheck: =Set(idCheckStatusFuntionQuote, -1)
+                    Text: ="Đang xử lý"
+                    Width: =225
+                    X: =37
+                    Y: =103
+                    ZIndex: =3
 
     Container23 As groupContainer.manualLayoutContainer:
         Height: =688
@@ -203,8 +215,21 @@ SaleVertion2 As screen:
                 FontWeight: =FontWeight.Semibold
                 Height: =38
                 Size: =15
-                Text: =If(idCheckStatusFuntionQuote = 0, "Báo giá", If(idCheckStatusFuntionQuote = 1, "Đơn hàng", "Báo giá - đơn hàng"))
-                Width: =274
+                Text: |-
+                    =If(
+                        idCheckStatusFuntionQuote = 0,
+                        "Báo giá",
+                        If(
+                            idCheckStatusFuntionQuote = 1,
+                            "Đơn hàng",
+                            If(
+                                idCheckStatusFuntionQuote = 2,
+                                "Đang xử lý",
+                                "Báo giá - Đơn hàng - Đang xử lý"
+                            )
+                        )
+                    )
+                Width: =316
                 X: =9
                 Y: =9
                 ZIndex: =1
@@ -265,9 +290,35 @@ SaleVertion2 As screen:
                     If(
                         idCheckStatusFuntionQuote = -1,
                         Quote,
-                       If(idCheckStatusFuntionQuote = 0,Filter(Quote, quote_Status = false),Filter(Quote, quote_Status = true))
+                        If(
+                            idCheckStatusFuntionQuote = 0,
+                            Filter(
+                                Quote,
+                                quote_Status.Value = "Báo giá"
+                            ),
+                            If(
+                                idCheckStatusFuntionQuote = 1,
+                                Filter(
+                                    Quote,
+                                    quote_Status.Value = "Đơn hàng"
+                                ),
+                                If(
+                                    idCheckStatusFuntionQuote = 2,
+                                    Filter(
+                                        Quote,
+                                        quote_Status.Value = "Đang xử lý"
+                                    )
+                                )
+                            )
+                        )
                     ),
-                    Filter(Quote,StartsWith(id_Quote,TextInput5.Text))
+                    Filter(
+                        Quote,
+                        StartsWith(
+                            id_Quote,
+                            TextInput5.Text
+                        )
+                    )
                 )
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
@@ -293,7 +344,7 @@ SaleVertion2 As screen:
             TemplatePadding: =0
             TemplateSize: =76
             Width: =1020
-            Y: =120
+            Y: =172
             ZIndex: =3
 
             Separator13 As rectangle:
@@ -355,19 +406,19 @@ SaleVertion2 As screen:
                 ZIndex: =10
 
             Icon19 As icon.Check:
-                Color: =RGBA(54, 176, 75, 1)
+                Color: =RGBA(255, 0, 0, 1)
                 Height: =35
                 Icon: |-
                     =If(
-                        ThisItem.quote_Status = "Đang xử lý",
+                        ThisItem.quote_Status.Value = "Đang xử lý",
                         Icon.Warning,
                         If(
-                            ThisItem.quote_Status = "Đơn hàng",
+                            ThisItem.quote_Status.Value = "Đơn hàng",
                             Icon.Check
                         )
                     )
                 OnSelect: =Select(Parent)
-                Visible: =ThisItem.quote_Status
+                Visible: =!(ThisItem.quote_Status.Value = "Báo giá")
                 Width: =35
                 X: =859
                 Y: =24
@@ -391,7 +442,7 @@ SaleVertion2 As screen:
             RadiusTopRight: =10
             Width: =1000
             X: =6
-            Y: =75
+            Y: =114
             ZIndex: =4
 
             Label87 As label:
@@ -442,6 +493,54 @@ SaleVertion2 As screen:
                 Y: =5
                 ZIndex: =5
 
+        Container29 As groupContainer.manualLayoutContainer:
+            Height: =42
+            Width: =168
+            X: =635
+            Y: =65
+            ZIndex: =5
+
+            Icon15 As icon.Warning:
+                Color: =RGBA(255, 0, 0, 1)
+                Height: =40
+                Icon: =Icon.Warning
+                Width: =42
+                X: =15
+                Y: =2
+                ZIndex: =1
+
+            Label66 As label:
+                Italic: =true
+                Text: ="Đang xử lý"
+                Width: =96
+                X: =70
+                Y: =2
+                ZIndex: =2
+
+        Container29_1 As groupContainer.manualLayoutContainer:
+            Height: =42
+            Width: =168
+            X: =817
+            Y: =65
+            ZIndex: =6
+
+            Icon15_1 As icon.Warning:
+                Color: =RGBA(54, 176, 75, 1)
+                Height: =40
+                Icon: =Icon.Check
+                Width: =42
+                X: =15
+                Y: =2
+                ZIndex: =1
+
+            Label66_1 As label:
+                Italic: =true
+                Text: ="Đơn hàng"
+                Width: =96
+                X: =70
+                Y: =2
+                ZIndex: =2
+
     containerAddQuoteNew_SaleVersion2 As groupContainer.manualLayoutContainer:
         Fill: =RGBA(0, 0, 0, 0.31)
         Height: =768
@@ -474,11 +573,12 @@ SaleVertion2 As screen:
 
             Label68 As label:
                 FontWeight: =FontWeight.Semibold
-                Height: =26
+                Height: =37
+                Size: =15
                 Text: ="Thời gian hết hạn"
-                Width: =163
+                Width: =187
                 X: =48
-                Y: =106
+                Y: =95
                 ZIndex: =2
 
             DatePicker2 As datepicker:
@@ -486,16 +586,17 @@ SaleVertion2 As screen:
                 Height: =38
                 Language: ="vi-VN"
                 Width: =300
-                X: =238
-                Y: =100
+                X: =250
+                Y: =94
                 ZIndex: =4
 
             Label68_1 As label:
                 FontWeight: =FontWeight.Semibold
                 Height: =25
+                Size: =15
                 Text: ="Khách hàng"
                 Width: =124
-                X: =681
+                X: =652
                 Y: =107
                 ZIndex: =5
 
@@ -508,8 +609,8 @@ SaleVertion2 As screen:
                 SearchItems: =Search(Customer,ComboBox1.SearchText,"customer_Name")
                 SelectMultiple: =false
                 Width: =300
-                X: =810
-                Y: =100
+                X: =802
+                Y: =99
                 ZIndex: =6
 
             Label68_3 As label:
@@ -635,8 +736,8 @@ SaleVertion2 As screen:
                 Text: ="Tạo khách hàng"
                 Underline: =true
                 Width: =163
-                X: =947
-                Y: =69
+                X: =939
+                Y: =68
                 ZIndex: =22
 
             Icon21 As icon.Cancel:
@@ -648,6 +749,37 @@ SaleVertion2 As screen:
                 X: =1217
                 Y: =9
                 ZIndex: =23
+
+            Container31 As groupContainer.manualLayoutContainer:
+                DropShadow: =DropShadow.ExtraBold
+                Height: =32
+                Width: =171
+                X: =40
+                Y: =172
+                ZIndex: =24
+
+                Label70 As label:
+                    Align: =Align.Center
+                    FontWeight: =FontWeight.Semibold
+                    Height: =32
+                    Text: ="Sản phẩm"
+                    Width: =171
+                    ZIndex: =1
+
+            Container31_1 As groupContainer.manualLayoutContainer:
+                Height: =32
+                Width: =171
+                X: =211
+                Y: =172
+                ZIndex: =25
+
+                Label70_1 As label:
+                    Align: =Align.Center
+                    FontWeight: =FontWeight.Lighter
+                    Height: =32
+                    Text: ="Dịch vụ"
+                    Width: =171
+                    ZIndex: =1
 
         containerSelectionProductAdd_SaleVertion2 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(77, 72, 72, 0.22)
@@ -1455,7 +1587,7 @@ SaleVertion2 As screen:
                             RadiusBottomRight: =0
                             RadiusTopRight: =0
                             Text: ="Báo giá"
-                            Visible: =!Gallery16.Selected.quote_Status
+                            Visible: =Gallery16.Selected.quote_Status.Value = "Báo giá"
                             Width: =150
                             X: =120
                             ZIndex: =2
@@ -1472,13 +1604,13 @@ SaleVertion2 As screen:
                                             Quote,
                                             id_Quote = Gallery16.Selected.id_Quote
                                         ),
-                                        {quote_Status: true}
+                                        {quote_Status: {Value:"Đơn hàng"}}
                                     );
                                     Notify("Chuyển trạng thái từ báo giá sang đơn hàng thành công",NotificationType.Success)
                             RadiusBottomLeft: =0
                             RadiusTopLeft: =0
                             Text: ="Đơn hàng"
-                            Visible: =!Gallery16.Selected.quote_Status
+                            Visible: =Gallery16.Selected.quote_Status.Value = "Báo giá"
                             Width: =150
                             X: =270
                             ZIndex: =3
@@ -1489,7 +1621,7 @@ SaleVertion2 As screen:
                             HoverFill: =RGBA(54, 176, 75, 1)
                             PressedFill: =RGBA(54, 176, 75, 1)
                             Text: ="Đơn hàng"
-                            Visible: =Gallery16.Selected.quote_Status
+                            Visible: =Gallery16.Selected.quote_Status.Value = "Đơn hàng"
                             ZIndex: =5
 
                 Container51 As groupContainer.horizontalAutoLayoutContainer:
@@ -1781,7 +1913,7 @@ SaleVertion2 As screen:
                 Height: =50
                 PaddingTop: =0
                 Size: =24
-                Text: =If(!Gallery16.Selected.quote_Status,"Chi tiết báo giá","Chi tiết đơn hàng")
+                Text: =If(Gallery16.Selected.quote_Status.Value = "Báo giá","Chi tiết báo giá","Chi tiết đơn hàng")
                 Width: =278
                 X: =30
                 Y: =20
@@ -1792,7 +1924,7 @@ SaleVertion2 As screen:
                 Height: =40
                 Icon: =Icon.Download
                 Width: =50
-                X: =If(!Gallery16.Selected.quote_Status,276,308)
+                X: =If(Gallery16.Selected.quote_Status.Value = "Báo giá",276,308)
                 Y: =20
                 ZIndex: =5
 
