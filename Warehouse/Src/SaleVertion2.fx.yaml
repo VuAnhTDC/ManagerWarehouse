@@ -621,7 +621,7 @@ SaleVertion2 As screen:
                 Text: ="Mô tả"
                 Width: =225
                 X: =40
-                Y: =505
+                Y: =553
                 ZIndex: =9
 
             TextInput7 As text:
@@ -633,7 +633,7 @@ SaleVertion2 As screen:
                 Mode: =TextMode.MultiLine
                 Width: =1183
                 X: =44
-                Y: =531
+                Y: =579
                 ZIndex: =10
 
             Container30 As groupContainer.manualLayoutContainer:
@@ -798,14 +798,14 @@ SaleVertion2 As screen:
                     ZIndex: =1
 
             Container33 As groupContainer.manualLayoutContainer:
-                Height: =264
+                Height: =281
                 Width: =1191
                 X: =48
                 Y: =198
                 ZIndex: =26
 
                 containerArrProductNewQuote As groupContainer.manualLayoutContainer:
-                    Height: =264
+                    Height: =281
                     Visible: =positionOptionCreatQuote = 0
                     Width: =1191
                     ZIndex: =1
@@ -957,7 +957,7 @@ SaleVertion2 As screen:
                             ZIndex: =11
 
                 Container47 As groupContainer.manualLayoutContainer:
-                    Height: =264
+                    Height: =281
                     Visible: =positionOptionCreatQuote = 1
                     Width: =1191
                     ZIndex: =2
@@ -1071,6 +1071,7 @@ SaleVertion2 As screen:
 
             Label72 As label:
                 Color: =RGBA(0, 18, 107, 1)
+                Height: =27
                 Italic: =true
                 OnSelect: |-
                     =Set(isVisibleDialogAddProductQuoteNew_SaleVertion2,true);
@@ -1078,7 +1079,7 @@ SaleVertion2 As screen:
                 Text: ="Thêm sản phẩm"
                 Visible: =positionOptionCreatQuote = 0
                 X: =1089
-                Y: =462
+                Y: =479
                 ZIndex: =27
 
             Label79 As label:
@@ -1095,7 +1096,7 @@ SaleVertion2 As screen:
                 Visible: =positionOptionCreatQuote = 1
                 Width: =128
                 X: =999
-                Y: =462
+                Y: =490
                 ZIndex: =28
 
             Label79_1 As label:
@@ -1107,7 +1108,7 @@ SaleVertion2 As screen:
                 Visible: =positionOptionCreatQuote = 1
                 Width: =100
                 X: =1139
-                Y: =462
+                Y: =490
                 ZIndex: =29
 
         containerSelectionProductAdd_SaleVertion2 As groupContainer.manualLayoutContainer:
