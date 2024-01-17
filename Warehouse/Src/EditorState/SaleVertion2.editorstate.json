@@ -4654,10 +4654,38 @@
         "LayoutWrap",
         "DropShadow",
         "ZIndex",
-        "RadiusTopLeft",
-        "RadiusTopRight",
-        "RadiusBottomLeft",
-        "RadiusBottomRight",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "RadiusTopLeft",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "RadiusTopRight",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "RadiusBottomLeft",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "RadiusBottomRight",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         {
           "AFDDataSourceName": "",
           "AutoRuleBindingEnabled": false,
@@ -4837,7 +4865,7 @@
       "MetaDataIDKey": "",
       "Name": "Container29",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 14,
+      "ParentIndex": 15,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -4991,7 +5019,7 @@
       "MetaDataIDKey": "",
       "Name": "Container29_1",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 15,
+      "ParentIndex": 16,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -5734,7 +5762,7 @@
       "MetaDataIDKey": "",
       "Name": "Container33",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 16,
+      "ParentIndex": 14,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -7901,7 +7929,7 @@
         {
           "Category": "Design",
           "PropertyName": "RadiusTopLeft",
-          "RuleProviderType": "User"
+          "RuleProviderType": "Unknown"
         },
         {
           "Category": "Design",
@@ -7916,7 +7944,7 @@
         {
           "Category": "Design",
           "PropertyName": "RadiusBottomRight",
-          "RuleProviderType": "User"
+          "RuleProviderType": "Unknown"
         },
         {
           "Category": "Design",
@@ -13773,7 +13801,7 @@
       "MetaDataIDKey": "",
       "Name": "Icon24",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 1,
+      "ParentIndex": 0,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -17290,7 +17318,14 @@
         "Italic",
         "Underline",
         "Strikethrough",
-        "PaddingTop",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "PaddingTop",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "PaddingRight",
         "PaddingBottom",
         "PaddingLeft"
@@ -17306,7 +17341,7 @@
       "MetaDataIDKey": "",
       "Name": "Label106",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 0,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
