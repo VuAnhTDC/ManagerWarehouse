@@ -13,6 +13,7 @@ SaleVertion2 As screen:
         Set(isVisibleDialogAddQuoteNew_SaleVertion2, false);
         Set(isVisibleDialogAddProductQuoteNew_SaleVertion2, false);
         Set(isVisibleDetailQuote_SaleVertion2,false);
+        Set(positionOptionCreatQuote,0);
 
     Container17 As groupContainer.manualLayoutContainer:
         Fill: =RGBA(56, 96, 178, 1)
@@ -277,7 +278,8 @@ SaleVertion2 As screen:
                     OnSelect: |-
                         =Set(isVisibleDialogAddQuoteNew_SaleVertion2,true);
                         ClearCollect(arrProductAddQuoteNew_SaleVertion2,[]);
-                        ClearCollect(arrServiceAddQuoteNew_SaleVertion2,[])
+                        ClearCollect(arrServiceAddQuoteNew_SaleVertion2,[]);
+                        Set(positionOptionCreatQuote,0)
                     ZIndex: =3
 
         "Gallery16 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
@@ -618,19 +620,20 @@ SaleVertion2 As screen:
                 Height: =26
                 Text: ="Mô tả"
                 Width: =225
-                X: =44
-                Y: =573
+                X: =40
+                Y: =505
                 ZIndex: =9
 
             TextInput7 As text:
+                BorderThickness: =0.5
                 Clear: =true
                 Default: =""
                 Height: =56
                 HintText: ="Vui lòng nhập mô tả"
                 Mode: =TextMode.MultiLine
                 Width: =1183
-                X: =48
-                Y: =599
+                X: =44
+                Y: =531
                 ZIndex: =10
 
             Container30 As groupContainer.manualLayoutContainer:
@@ -751,35 +754,361 @@ SaleVertion2 As screen:
                 ZIndex: =23
 
             Container31 As groupContainer.manualLayoutContainer:
-                DropShadow: =DropShadow.ExtraBold
+                DropShadow: =If(positionOptionCreatQuote = 0, DropShadow.Semibold, DropShadow.Light)
                 Height: =32
+                RadiusBottomLeft: =10
+                RadiusBottomRight: =0
+                RadiusTopLeft: =10
+                RadiusTopRight: =0
                 Width: =171
-                X: =40
-                Y: =172
+                X: =48
+                Y: =154
                 ZIndex: =24
 
                 Label70 As label:
                     Align: =Align.Center
-                    FontWeight: =FontWeight.Semibold
+                    Fill: =If(positionOptionCreatQuote = 0, RGBA(0, 0, 0, 0.05),RGBA(0, 0, 0, 0))
+                    FontWeight: =If(positionOptionCreatQuote = 0,FontWeight.Semibold,FontWeight.Lighter)
                     Height: =32
+                    OnSelect: =Set(positionOptionCreatQuote,0);
                     Text: ="Sản phẩm"
                     Width: =171
                     ZIndex: =1
 
             Container31_1 As groupContainer.manualLayoutContainer:
+                DropShadow: =If(positionOptionCreatQuote = 1,DropShadow.Semibold,DropShadow.Light)
                 Height: =32
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =10
+                RadiusTopLeft: =0
+                RadiusTopRight: =10
                 Width: =171
-                X: =211
-                Y: =172
+                X: =219
+                Y: =154
                 ZIndex: =25
 
                 Label70_1 As label:
                     Align: =Align.Center
-                    FontWeight: =FontWeight.Lighter
+                    Fill: =If(positionOptionCreatQuote = 1, RGBA(0, 0, 0, 0.05),RGBA(0, 0, 0, 0))
+                    FontWeight: =If(positionOptionCreatQuote = 1,FontWeight.Semibold,FontWeight.Lighter)
                     Height: =32
+                    OnSelect: =Set(positionOptionCreatQuote,1)
                     Text: ="Dịch vụ"
                     Width: =171
                     ZIndex: =1
+
+            Container33 As groupContainer.manualLayoutContainer:
+                Height: =264
+                Width: =1191
+                X: =48
+                Y: =198
+                ZIndex: =26
+
+                containerArrProductNewQuote As groupContainer.manualLayoutContainer:
+                    Height: =264
+                    Visible: =positionOptionCreatQuote = 0
+                    Width: =1191
+                    ZIndex: =1
+
+                    Container41 As groupContainer.manualLayoutContainer:
+                        Fill: =RGBA(48, 47, 47, 0.16)
+                        Height: =37
+                        Width: =1180
+                        X: =5
+                        Y: =5
+                        ZIndex: =1
+
+                        Label71 As label:
+                            Align: =Align.Center
+                            FontWeight: =FontWeight.Semibold
+                            Height: =37
+                            Size: =15
+                            Text: ="Sản phẩm"
+                            Width: =296
+                            X: =15
+                            ZIndex: =1
+
+                        Label71_1 As label:
+                            Align: =Align.Center
+                            FontWeight: =FontWeight.Semibold
+                            Height: =37
+                            Size: =15
+                            Text: ="Ghi chú"
+                            Width: =296
+                            X: =331
+                            ZIndex: =2
+
+                        Label71_2 As label:
+                            Align: =Align.Center
+                            FontWeight: =FontWeight.Semibold
+                            Height: =37
+                            Size: =15
+                            Text: ="VAT"
+                            Width: =122
+                            X: =627
+                            ZIndex: =3
+
+                        Label71_3 As label:
+                            Align: =Align.Center
+                            FontWeight: =FontWeight.Semibold
+                            Height: =37
+                            Size: =15
+                            Text: ="Số lượng"
+                            Width: =142
+                            X: =762
+                            ZIndex: =4
+
+                        Label71_4 As label:
+                            Align: =Align.Center
+                            FontWeight: =FontWeight.Semibold
+                            Height: =37
+                            Size: =15
+                            Text: ="Giá/SP"
+                            Width: =204
+                            X: =904
+                            ZIndex: =5
+
+                    "Gallery12 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+                        DelayItemLoading: =true
+                        Fill: =RGBA(241, 244, 249, 1)
+                        Height: =210
+                        Items: =arrProductAddQuoteNew_SaleVertion2
+                        Layout: =Layout.Vertical
+                        LoadingSpinner: =LoadingSpinner.Data
+                        TemplatePadding: =0
+                        TemplateSize: =54
+                        Width: =1186
+                        X: =5
+                        Y: =54
+                        ZIndex: =2
+
+                        Separator11 As rectangle:
+                            Height: =8
+                            OnSelect: =Select(Parent)
+                            Width: =Parent.TemplateWidth
+                            Y: =Parent.TemplateHeight - Self.Height
+                            ZIndex: =5
+
+                        Label78 As label:
+                            Align: =Align.Center
+                            Color: =RGBA(0, 18, 107, 1)
+                            OnSelect: =Select(Parent)
+                            Size: =15
+                            Text: =LookUp(Product,id_Product = ThisItem.id_Product).name_Product
+                            VerticalAlign: =VerticalAlign.Top
+                            Width: =316
+                            X: =4
+                            Y: =6
+                            ZIndex: =6
+
+                        Label78_1 As label:
+                            Align: =Align.Center
+                            OnSelect: =Select(Parent)
+                            Size: =15
+                            Text: =ThisItem.quote_Product_Note
+                            VerticalAlign: =VerticalAlign.Top
+                            Width: =308
+                            X: =320
+                            Y: =6
+                            ZIndex: =7
+
+                        Label78_2 As label:
+                            Align: =Align.Center
+                            OnSelect: =Select(Parent)
+                            Size: =15
+                            Text: =ThisItem.vat & "%"
+                            VerticalAlign: =VerticalAlign.Top
+                            Width: =128
+                            X: =628
+                            Y: =6
+                            ZIndex: =8
+
+                        Label78_3 As label:
+                            Align: =Align.Center
+                            OnSelect: =Select(Parent)
+                            Size: =15
+                            Text: =ThisItem.quantity_Quote_Product
+                            VerticalAlign: =VerticalAlign.Top
+                            Width: =142
+                            X: =756
+                            Y: =6
+                            ZIndex: =9
+
+                        Label78_4 As label:
+                            Align: =Align.Center
+                            OnSelect: =Select(Parent)
+                            Size: =15
+                            Text: |-
+                                =If(ThisItem.price_Quote_Product < 0 , "0",Text(ThisItem.price_Quote_Product,"#,###"))
+                            VerticalAlign: =VerticalAlign.Top
+                            Width: =212
+                            X: =898
+                            Y: =6
+                            ZIndex: =10
+
+                        Icon20 As icon.Trash:
+                            Color: =RGBA(0, 0, 0, 1)
+                            Height: =30
+                            Icon: =Icon.Trash
+                            OnSelect: =ClearCollect(arrProductAddQuoteNew_SaleVertion2,Filter(arrProductAddQuoteNew_SaleVertion2,Not(id_Product = ThisItem.id_Product)))
+                            Width: =30
+                            X: =1139
+                            Y: =6
+                            ZIndex: =11
+
+                Container47 As groupContainer.manualLayoutContainer:
+                    Height: =264
+                    Visible: =positionOptionCreatQuote = 1
+                    Width: =1191
+                    ZIndex: =2
+
+                    Container41_1 As groupContainer.manualLayoutContainer:
+                        Fill: =RGBA(48, 47, 47, 0.16)
+                        Height: =37
+                        Width: =1180
+                        X: =5
+                        Y: =5
+                        ZIndex: =1
+
+                        Label71_5 As label:
+                            Align: =Align.Center
+                            FontWeight: =FontWeight.Semibold
+                            Height: =37
+                            Size: =15
+                            Text: ="Sản phẩm"
+                            Width: =346
+                            X: =15
+                            ZIndex: =1
+
+                        Label71_6 As label:
+                            Align: =Align.Center
+                            FontWeight: =FontWeight.Semibold
+                            Height: =37
+                            Size: =15
+                            Text: ="Ghi chú"
+                            Width: =543
+                            X: =361
+                            ZIndex: =2
+
+                        Label71_9 As label:
+                            Align: =Align.Center
+                            FontWeight: =FontWeight.Semibold
+                            Height: =37
+                            Size: =15
+                            Text: ="Giá/SP"
+                            Width: =204
+                            X: =904
+                            ZIndex: =5
+
+                    "Gallery12_1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+                        DelayItemLoading: =true
+                        Fill: =RGBA(241, 244, 249, 1)
+                        Height: =210
+                        Items: =arrServiceAddQuoteNew_SaleVertion2
+                        Layout: =Layout.Vertical
+                        LoadingSpinner: =LoadingSpinner.Data
+                        TemplatePadding: =0
+                        TemplateSize: =54
+                        Width: =1186
+                        X: =5
+                        Y: =54
+                        ZIndex: =2
+
+                        Separator11_1 As rectangle:
+                            Height: =8
+                            OnSelect: =Select(Parent)
+                            Width: =Parent.TemplateWidth
+                            Y: =Parent.TemplateHeight - Self.Height
+                            ZIndex: =5
+
+                        Label78_5 As label:
+                            Align: =Align.Center
+                            Color: =RGBA(0, 18, 107, 1)
+                            FontWeight: =FontWeight.Lighter
+                            Height: =46
+                            OnSelect: =Select(Parent)
+                            Size: =15
+                            Text: =LookUp(Service, id_Serivce = ThisItem.id_Service).service_Name
+                            VerticalAlign: =VerticalAlign.Top
+                            Width: =346
+                            X: =15
+                            ZIndex: =10
+
+                        Icon20_1 As icon.Trash:
+                            Color: =RGBA(0, 0, 0, 1)
+                            Height: =30
+                            Icon: =Icon.Trash
+                            OnSelect: =ClearCollect(arrServiceAddQuoteNew_SaleVertion2,Filter(arrServiceAddQuoteNew_SaleVertion2,Not( id_Service= ThisItem.id_Service)))
+                            Width: =30
+                            X: =1139
+                            Y: =6
+                            ZIndex: =11
+
+                        Label78_6 As label:
+                            Align: =Align.Center
+                            FontWeight: =FontWeight.Lighter
+                            Height: =46
+                            OnSelect: =Select(Parent)
+                            Size: =15
+                            Text: =ThisItem.quote_Service_Not
+                            VerticalAlign: =VerticalAlign.Top
+                            Width: =543
+                            X: =361
+                            ZIndex: =12
+
+                        Label78_7 As label:
+                            Align: =Align.Center
+                            FontWeight: =FontWeight.Lighter
+                            OnSelect: =Select(Parent)
+                            Size: =15
+                            Text: |-
+                                =Text(ThisItem.price_Quote_Service,"#,###")
+                            VerticalAlign: =VerticalAlign.Top
+                            Width: =204
+                            X: =904
+                            Y: =6
+                            ZIndex: =13
+
+            Label72 As label:
+                Color: =RGBA(0, 18, 107, 1)
+                Italic: =true
+                OnSelect: |-
+                    =Set(isVisibleDialogAddProductQuoteNew_SaleVertion2,true);
+                    Set(positionDialogAddDataQuoteNew_SaleVertion2,0)
+                Text: ="Thêm sản phẩm"
+                Visible: =positionOptionCreatQuote = 0
+                X: =1089
+                Y: =462
+                ZIndex: =27
+
+            Label79 As label:
+                Color: =RGBA(16, 29, 97, 1)
+                Height: =26
+                Italic: =true
+                OnSelect: |-
+                    =Set(isVisibleDialogAddProductQuoteNew_SaleVertion2,true);
+                    Set(positionDialogAddDataQuoteNew_SaleVertion2,1);
+                    Reset(TextInput9);
+                    Reset(Checkbox5)
+                Text: ="Thêm dịch vụ"
+                Underline: =true
+                Visible: =positionOptionCreatQuote = 1
+                Width: =128
+                X: =999
+                Y: =462
+                ZIndex: =28
+
+            Label79_1 As label:
+                Color: =RGBA(16, 29, 97, 1)
+                Height: =26
+                Italic: =true
+                Text: ="Tạo dịch vụ"
+                Underline: =true
+                Visible: =positionOptionCreatQuote = 1
+                Width: =100
+                X: =1139
+                Y: =462
+                ZIndex: =29
 
         containerSelectionProductAdd_SaleVertion2 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(77, 72, 72, 0.22)
@@ -800,8 +1129,8 @@ SaleVertion2 As screen:
                 RadiusTopRight: =10
                 Visible: =If(positionDialogAddDataQuoteNew_SaleVertion2 = 0, true, false)
                 Width: =574
-                X: =695
-                Y: =12
+                X: =343
+                Y: =13
                 ZIndex: =1
 
                 Label73 As label:
@@ -927,6 +1256,7 @@ SaleVertion2 As screen:
                                     Collect(
                                         arrProductAddQuoteNew_SaleVertion2,
                                         {
+                                            ID: CountRows(arrProductAddQuoteNew_SaleVertion2) +1,
                                             id_Quote: "",
                                             id_Product: Dropdown3.Selected.id_Product,
                                             price_Quote_Product: Value(TextInput8.Text),
@@ -1037,8 +1367,8 @@ SaleVertion2 As screen:
                 RadiusTopRight: =5
                 Visible: =If(positionDialogAddDataQuoteNew_SaleVertion2 = 1, true,false)
                 Width: =570
-                X: =697
-                Y: =18
+                X: =345
+                Y: =19
                 ZIndex: =2
 
                 Label81 As label:
