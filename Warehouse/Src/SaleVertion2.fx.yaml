@@ -497,46 +497,46 @@ SaleVertion2 As screen:
                 ZIndex: =5
 
         Container29 As groupContainer.manualLayoutContainer:
-            Height: =42
+            Height: =30
             Width: =168
             X: =635
-            Y: =65
+            Y: =77
             ZIndex: =5
 
             Icon15 As icon.Warning:
                 Color: =RGBA(255, 0, 0, 1)
-                Height: =40
+                Height: =30
                 Icon: =Icon.Warning
-                Width: =42
+                Width: =30
                 X: =15
-                Y: =2
                 ZIndex: =1
 
             Label66 As label:
+                Height: =30
                 Italic: =true
                 Text: ="Đang xử lý"
                 Width: =96
-                X: =70
-                Y: =2
+                X: =61
                 ZIndex: =2
 
         Container29_1 As groupContainer.manualLayoutContainer:
-            Height: =42
+            Height: =31
             Width: =168
             X: =817
-            Y: =65
+            Y: =75
             ZIndex: =6
 
             Icon15_1 As icon.Warning:
                 Color: =RGBA(54, 176, 75, 1)
-                Height: =40
+                Height: =30
                 Icon: =Icon.Check
-                Width: =42
-                X: =15
+                Width: =30
+                X: =9
                 Y: =2
                 ZIndex: =1
 
             Label66_1 As label:
+                Height: =30
                 Italic: =true
                 Text: ="Đơn hàng"
                 Width: =96
@@ -555,10 +555,10 @@ SaleVertion2 As screen:
             ContentLanguage: ="vi-VN"
             Fill: =RGBA(255, 255, 255, 1)
             Height: =722
-            RadiusBottomLeft: =30
-            RadiusBottomRight: =30
-            RadiusTopLeft: =30
-            RadiusTopRight: =30
+            RadiusBottomLeft: =10
+            RadiusBottomRight: =10
+            RadiusTopLeft: =10
+            RadiusTopRight: =10
             Width: =1299
             X: =33
             Y: =18
@@ -622,7 +622,7 @@ SaleVertion2 As screen:
                 Text: ="Mô tả"
                 Width: =225
                 X: =40
-                Y: =553
+                Y: =486
                 ZIndex: =9
 
             TextInput7 As text:
@@ -634,7 +634,7 @@ SaleVertion2 As screen:
                 Mode: =TextMode.MultiLine
                 Width: =1183
                 X: =44
-                Y: =579
+                Y: =512
                 ZIndex: =10
 
             Container30 As groupContainer.manualLayoutContainer:
@@ -653,16 +653,16 @@ SaleVertion2 As screen:
                     Fill: =RGBA(189, 240, 194, 1)
                     FontWeight: =FontWeight.Semibold
                     OnSelect: |-
-                        =/*If(
-                            IsBlank(ComboBox1.Selected) || IsBlank(ComboBox1_1.Selected) || IsBlank(TextInput7.Text),
+                        =If(
+                            IsBlank(ComboBox1.Selected) || IsBlank(ComboBox1.Selected) || IsBlank(TextInput7.Text) || IsBlank(arrProductAddQuoteNew_SaleVertion2),
                             Notify(
                                 "Vui lòng điền đủ thông tin",
                                 NotificationType.Error
                             ),
                             If(
-                                CountRows(arrProductAddQuoteNew_SaleVertion2) < 1 && CountRows(arrServiceAddQuoteNew_SaleVertion2) < 1,
+                                CountRows(arrProductAddQuoteNew_SaleVertion2) < 1 ,
                                 Notify(
-                                    "Báo giá phải có ít nhất 1 sản phẩm (hoặc 1 dịch vụ).Vui lòng chọn sản phẩm (Dịch vụ) ",
+                                    "Báo giá phải có ít nhất 1 sản phẩm.Vui lòng thêm sản phẩm",
                                     NotificationType.Error
                                 ),
                                 Set(
@@ -677,12 +677,12 @@ SaleVertion2 As screen:
                                     Defaults(Quote),
                                     {
                                         id_Quote: idQuote_SaleVertion2,
-                                        quote_Decription: edtDescriptionQuote_CreateQuoteScreen.Text,
+                                        quote_Decription: TextInput7.Text,
                                         quote_Date: Now(),
-                                        quote_Expire: DatePicker1.SelectedDate,
-                                        quote_Status: false,
+                                        quote_Expire: DatePicker2.SelectedDate,
+                                        quote_Status: {Value:"Báo giá"},
                                         id_User: informationUser.ID,
-                                        id_Customer: Dropdown1.SelectedText.ID,
+                                        id_Customer: ComboBox1.Selected.ID,
                                         sumPriceQuote: Value(Concat(arrProductAddQuoteNew_SaleVertion2,price_Quote_Product * quantity_Quote_Product) + Concat(arrServiceAddQuoteNew_SaleVertion2,price_Quote_Service))
                                     }
                                 );
@@ -717,7 +717,7 @@ SaleVertion2 As screen:
                                 Notify("Khởi tạo báo giá thành công",NotificationType.Success);
                                 Set(isVisibleDialogAddQuoteNew_SaleVertion2,false)
                             )
-                        )*/
+                        )
                     Size: =18
                     Text: ="Lưu lại"
                     Width: =173
@@ -1077,9 +1077,11 @@ SaleVertion2 As screen:
                 OnSelect: |-
                     =Set(isVisibleDialogAddProductQuoteNew_SaleVertion2,true);
                     Set(positionDialogAddDataQuoteNew_SaleVertion2,0)
+                Size: =15
                 Text: ="Thêm sản phẩm"
                 Visible: =positionOptionCreatQuote = 0
-                X: =1089
+                Width: =166
+                X: =1073
                 Y: =171
                 ZIndex: =27
 
@@ -1099,6 +1101,24 @@ SaleVertion2 As screen:
                 X: =1111
                 Y: =171
                 ZIndex: =28
+
+            Container57 As groupContainer.manualLayoutContainer:
+                DropShadow: =DropShadow.Semibold
+                Height: =55
+                Width: =397
+                X: =40
+                Y: =581
+                ZIndex: =29
+
+                Label113 As label:
+                    FontWeight: =FontWeight.Semibold
+                    Height: =55
+                    Italic: =true
+                    Size: =20
+                    Text: |-
+                        ="Tổng tiền: " & Text(Value(Concat(arrProductAddQuoteNew_SaleVertion2,price_Quote_Product * quantity_Quote_Product) + Concat(arrServiceAddQuoteNew_SaleVertion2,price_Quote_Service)),"#,###")
+                    Width: =397
+                    ZIndex: =1
 
         containerSelectionProductAdd_SaleVertion2 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(77, 72, 72, 0.22)
@@ -1527,7 +1547,9 @@ SaleVertion2 As screen:
                     Rectangle10 As rectangle:
                         Fill: =RGBA(56, 96, 178, 0)
                         Height: =27
-                        OnSelect: =Set(positionDialogAddDataQuoteNew_SaleVertion2,3)
+                        OnSelect: |-
+                            =Set(positionDialogAddDataQuoteNew_SaleVertion2,3);
+                            ClearCollect(arrServiceNewCreateQuote,[])
                         Width: =137
                         ZIndex: =3
 
@@ -2121,7 +2143,7 @@ SaleVertion2 As screen:
                             HoverFill: =RGBA(54, 176, 75, 1)
                             PressedFill: =RGBA(54, 176, 75, 1)
                             Text: ="Đơn hàng"
-                            Visible: =Gallery16.Selected.quote_Status.Value = "Đơn hàng"
+                            Visible: =LookUp(Quote,id_Quote = Gallery16.Selected.id_Quote).quote_Status.Value = "Đơn hàng"
                             ZIndex: =5
 
                 Container51 As groupContainer.horizontalAutoLayoutContainer:
