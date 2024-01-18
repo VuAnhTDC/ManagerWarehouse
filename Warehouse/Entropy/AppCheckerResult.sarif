@@ -38719,47 +38719,6 @@
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 1,
-                  "charOffset": 447,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "Director",
-                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Record",
-              "Boolean"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
                   "charLength": 17,
                   "charOffset": 349,
                   "snippet": {
@@ -38920,49 +38879,8 @@
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 1,
-                  "charOffset": 817,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "Director",
-                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Record",
-              "Boolean"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
                   "charLength": 17,
-                  "charOffset": 719,
+                  "charOffset": 731,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -39002,7 +38920,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 737,
+                  "charOffset": 749,
                   "snippet": {
                     "text": "="
                   }
@@ -39042,7 +38960,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 741,
+                  "charOffset": 753,
                   "snippet": {
                     "text": "&&"
                   }
@@ -39082,7 +39000,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 801,
+                  "charOffset": 813,
                   "snippet": {
                     "text": "&&"
                   }
@@ -39106,47 +39024,6 @@
           },
           "ruleId": "app-SuggestRemoteExecutionHint",
           "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 1282,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "Director",
-                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Record",
-              "Boolean"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 3
         },
         {
           "locations": [
@@ -39163,7 +39040,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 1184,
+                  "charOffset": 1208,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -39203,7 +39080,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 1202,
+                  "charOffset": 1226,
                   "snippet": {
                     "text": "="
                   }
@@ -39243,7 +39120,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 1206,
+                  "charOffset": 1230,
                   "snippet": {
                     "text": "&&"
                   }
@@ -39283,7 +39160,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 1266,
+                  "charOffset": 1290,
                   "snippet": {
                     "text": "&&"
                   }
@@ -39307,47 +39184,6 @@
           },
           "ruleId": "app-SuggestRemoteExecutionHint",
           "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 1652,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "Director",
-                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Record",
-              "Boolean"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 3
         },
         {
           "locations": [
@@ -39364,7 +39200,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 1554,
+                  "charOffset": 1590,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -39404,7 +39240,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 1572,
+                  "charOffset": 1608,
                   "snippet": {
                     "text": "="
                   }
@@ -39444,7 +39280,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 1576,
+                  "charOffset": 1612,
                   "snippet": {
                     "text": "&&"
                   }
@@ -39484,7 +39320,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 1636,
+                  "charOffset": 1672,
                   "snippet": {
                     "text": "&&"
                   }
@@ -39508,47 +39344,6 @@
           },
           "ruleId": "app-SuggestRemoteExecutionHint",
           "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 2117,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "Director",
-                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Record",
-              "Boolean"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 3
         },
         {
           "locations": [
@@ -39565,7 +39360,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 2019,
+                  "charOffset": 2067,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -39605,7 +39400,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 2037,
+                  "charOffset": 2085,
                   "snippet": {
                     "text": "="
                   }
@@ -39645,7 +39440,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 2041,
+                  "charOffset": 2089,
                   "snippet": {
                     "text": "&&"
                   }
@@ -39685,7 +39480,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 2101,
+                  "charOffset": 2149,
                   "snippet": {
                     "text": "&&"
                   }
@@ -39709,47 +39504,6 @@
           },
           "ruleId": "app-SuggestRemoteExecutionHint",
           "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 2487,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "Director",
-                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Record",
-              "Boolean"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 3
         },
         {
           "locations": [
@@ -39766,7 +39520,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 2389,
+                  "charOffset": 2449,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -39806,49 +39560,9 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 2407,
+                  "charOffset": 2467,
                   "snippet": {
                     "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "Director",
-                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Filter"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 2,
-                  "charOffset": 2411,
-                  "snippet": {
-                    "text": "&&"
                   }
                 }
               },
@@ -39925,10 +39639,10 @@
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 1,
-                  "charOffset": 2952,
+                  "charLength": 2,
+                  "charOffset": 2531,
                   "snippet": {
-                    "text": "="
+                    "text": "&&"
                   }
                 }
               },
@@ -39941,16 +39655,15 @@
           ],
           "message": {
             "arguments": [
-              "Record",
-              "Boolean"
+              "Filter"
             ],
             "id": "issue"
           },
           "properties": {
-            "level": "High"
+            "level": "Medium"
           },
-          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 3
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 2
         },
         {
           "locations": [
@@ -39967,7 +39680,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 2854,
+                  "charOffset": 2926,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -40007,7 +39720,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 2872,
+                  "charOffset": 2944,
                   "snippet": {
                     "text": "="
                   }
@@ -40047,7 +39760,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 2876,
+                  "charOffset": 2948,
                   "snippet": {
                     "text": "&&"
                   }
@@ -40087,7 +39800,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 2936,
+                  "charOffset": 3008,
                   "snippet": {
                     "text": "&&"
                   }
@@ -40111,47 +39824,6 @@
           },
           "ruleId": "app-SuggestRemoteExecutionHint",
           "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 3322,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "Director",
-                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Record",
-              "Boolean"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 3
         },
         {
           "locations": [
@@ -40168,7 +39840,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 3224,
+                  "charOffset": 3308,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -40208,7 +39880,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 3242,
+                  "charOffset": 3326,
                   "snippet": {
                     "text": "="
                   }
@@ -40248,7 +39920,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 3246,
+                  "charOffset": 3330,
                   "snippet": {
                     "text": "&&"
                   }
@@ -40288,7 +39960,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 3306,
+                  "charOffset": 3390,
                   "snippet": {
                     "text": "&&"
                   }
@@ -40312,47 +39984,6 @@
           },
           "ruleId": "app-SuggestRemoteExecutionHint",
           "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 3787,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "Director",
-                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Record",
-              "Boolean"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 3
         },
         {
           "locations": [
@@ -40369,7 +40000,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 3689,
+                  "charOffset": 3785,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -40409,7 +40040,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 3707,
+                  "charOffset": 3803,
                   "snippet": {
                     "text": "="
                   }
@@ -40449,7 +40080,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 3711,
+                  "charOffset": 3807,
                   "snippet": {
                     "text": "&&"
                   }
@@ -40489,7 +40120,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 3771,
+                  "charOffset": 3867,
                   "snippet": {
                     "text": "&&"
                   }
@@ -40513,47 +40144,6 @@
           },
           "ruleId": "app-SuggestRemoteExecutionHint",
           "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 4157,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "Director",
-                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Record",
-              "Boolean"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 3
         },
         {
           "locations": [
@@ -40570,7 +40160,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 4059,
+                  "charOffset": 4167,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -40610,7 +40200,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 4077,
+                  "charOffset": 4185,
                   "snippet": {
                     "text": "="
                   }
@@ -40650,7 +40240,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 4081,
+                  "charOffset": 4189,
                   "snippet": {
                     "text": "&&"
                   }
@@ -40690,7 +40280,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 4141,
+                  "charOffset": 4249,
                   "snippet": {
                     "text": "&&"
                   }
@@ -40714,47 +40304,6 @@
           },
           "ruleId": "app-SuggestRemoteExecutionHint",
           "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 4622,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "Director",
-                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Record",
-              "Boolean"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 3
         },
         {
           "locations": [
@@ -40771,7 +40320,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 4524,
+                  "charOffset": 4644,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -40811,7 +40360,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 4542,
+                  "charOffset": 4662,
                   "snippet": {
                     "text": "="
                   }
@@ -40851,7 +40400,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 4546,
+                  "charOffset": 4666,
                   "snippet": {
                     "text": "&&"
                   }
@@ -40891,7 +40440,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 4606,
+                  "charOffset": 4726,
                   "snippet": {
                     "text": "&&"
                   }
@@ -40915,47 +40464,6 @@
           },
           "ruleId": "app-SuggestRemoteExecutionHint",
           "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 4992,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "Director",
-                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Record",
-              "Boolean"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 3
         },
         {
           "locations": [
@@ -40972,7 +40480,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 4894,
+                  "charOffset": 5026,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -41012,7 +40520,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 4912,
+                  "charOffset": 5044,
                   "snippet": {
                     "text": "="
                   }
@@ -41052,7 +40560,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 4916,
+                  "charOffset": 5048,
                   "snippet": {
                     "text": "&&"
                   }
@@ -41092,7 +40600,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 4976,
+                  "charOffset": 5108,
                   "snippet": {
                     "text": "&&"
                   }
@@ -41116,47 +40624,6 @@
           },
           "ruleId": "app-SuggestRemoteExecutionHint",
           "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 5457,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "Director",
-                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Record",
-              "Boolean"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 3
         },
         {
           "locations": [
@@ -41173,7 +40640,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 5359,
+                  "charOffset": 5503,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -41213,7 +40680,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 5377,
+                  "charOffset": 5521,
                   "snippet": {
                     "text": "="
                   }
@@ -41253,7 +40720,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 5381,
+                  "charOffset": 5525,
                   "snippet": {
                     "text": "&&"
                   }
@@ -41293,7 +40760,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 5441,
+                  "charOffset": 5585,
                   "snippet": {
                     "text": "&&"
                   }
@@ -41317,47 +40784,6 @@
           },
           "ruleId": "app-SuggestRemoteExecutionHint",
           "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 5827,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "Director",
-                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Record",
-              "Boolean"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 3
         },
         {
           "locations": [
@@ -41374,7 +40800,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 5729,
+                  "charOffset": 5885,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -41414,7 +40840,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 5747,
+                  "charOffset": 5903,
                   "snippet": {
                     "text": "="
                   }
@@ -41454,7 +40880,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 5751,
+                  "charOffset": 5907,
                   "snippet": {
                     "text": "&&"
                   }
@@ -41494,7 +40920,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 5811,
+                  "charOffset": 5967,
                   "snippet": {
                     "text": "&&"
                   }
@@ -41518,47 +40944,6 @@
           },
           "ruleId": "app-SuggestRemoteExecutionHint",
           "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 6292,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "Director",
-                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Record",
-              "Boolean"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 3
         },
         {
           "locations": [
@@ -41575,7 +40960,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 6194,
+                  "charOffset": 6362,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -41615,7 +41000,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 6212,
+                  "charOffset": 6380,
                   "snippet": {
                     "text": "="
                   }
@@ -41655,7 +41040,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 6216,
+                  "charOffset": 6384,
                   "snippet": {
                     "text": "&&"
                   }
@@ -41695,7 +41080,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 6276,
+                  "charOffset": 6444,
                   "snippet": {
                     "text": "&&"
                   }
@@ -41719,47 +41104,6 @@
           },
           "ruleId": "app-SuggestRemoteExecutionHint",
           "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 6662,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "Director",
-                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Record",
-              "Boolean"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 3
         },
         {
           "locations": [
@@ -41776,7 +41120,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 6564,
+                  "charOffset": 6744,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -41816,7 +41160,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 6582,
+                  "charOffset": 6762,
                   "snippet": {
                     "text": "="
                   }
@@ -41856,7 +41200,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 6586,
+                  "charOffset": 6766,
                   "snippet": {
                     "text": "&&"
                   }
@@ -41896,7 +41240,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 6646,
+                  "charOffset": 6826,
                   "snippet": {
                     "text": "&&"
                   }
@@ -41920,47 +41264,6 @@
           },
           "ruleId": "app-SuggestRemoteExecutionHint",
           "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 7127,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "Director",
-                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Record",
-              "Boolean"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 3
         },
         {
           "locations": [
@@ -41977,7 +41280,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 7029,
+                  "charOffset": 7221,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -42017,7 +41320,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 7047,
+                  "charOffset": 7239,
                   "snippet": {
                     "text": "="
                   }
@@ -42057,7 +41360,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 7051,
+                  "charOffset": 7243,
                   "snippet": {
                     "text": "&&"
                   }
@@ -42097,7 +41400,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 7111,
+                  "charOffset": 7303,
                   "snippet": {
                     "text": "&&"
                   }
@@ -42121,47 +41424,6 @@
           },
           "ruleId": "app-SuggestRemoteExecutionHint",
           "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 7497,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "Director",
-                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Record",
-              "Boolean"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 3
         },
         {
           "locations": [
@@ -42178,7 +41440,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 7399,
+                  "charOffset": 7603,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -42218,7 +41480,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 7417,
+                  "charOffset": 7621,
                   "snippet": {
                     "text": "="
                   }
@@ -42258,7 +41520,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 7421,
+                  "charOffset": 7625,
                   "snippet": {
                     "text": "&&"
                   }
@@ -42298,7 +41560,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 7481,
+                  "charOffset": 7685,
                   "snippet": {
                     "text": "&&"
                   }
@@ -42322,47 +41584,6 @@
           },
           "ruleId": "app-SuggestRemoteExecutionHint",
           "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 7964,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "Director",
-                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Record",
-              "Boolean"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 3
         },
         {
           "locations": [
@@ -42379,7 +41600,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 7865,
+                  "charOffset": 8081,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -42419,7 +41640,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 7883,
+                  "charOffset": 8099,
                   "snippet": {
                     "text": "="
                   }
@@ -42459,7 +41680,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 7888,
+                  "charOffset": 8104,
                   "snippet": {
                     "text": "&&"
                   }
@@ -42499,7 +41720,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 7948,
+                  "charOffset": 8164,
                   "snippet": {
                     "text": "&&"
                   }
@@ -42523,47 +41744,6 @@
           },
           "ruleId": "app-SuggestRemoteExecutionHint",
           "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 8335,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "Director",
-                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Record",
-              "Boolean"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 3
         },
         {
           "locations": [
@@ -42580,7 +41760,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 8236,
+                  "charOffset": 8464,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -42620,7 +41800,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 8254,
+                  "charOffset": 8482,
                   "snippet": {
                     "text": "="
                   }
@@ -42660,7 +41840,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 8259,
+                  "charOffset": 8487,
                   "snippet": {
                     "text": "&&"
                   }
@@ -42700,7 +41880,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 8319,
+                  "charOffset": 8547,
                   "snippet": {
                     "text": "&&"
                   }
@@ -42724,47 +41904,6 @@
           },
           "ruleId": "app-SuggestRemoteExecutionHint",
           "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 8802,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "Director",
-                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Record",
-              "Boolean"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 3
         },
         {
           "locations": [
@@ -42781,7 +41920,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 8703,
+                  "charOffset": 8943,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -42821,7 +41960,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 8721,
+                  "charOffset": 8961,
                   "snippet": {
                     "text": "="
                   }
@@ -42861,7 +42000,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 8726,
+                  "charOffset": 8966,
                   "snippet": {
                     "text": "&&"
                   }
@@ -42901,7 +42040,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 8786,
+                  "charOffset": 9026,
                   "snippet": {
                     "text": "&&"
                   }
@@ -42925,47 +42064,6 @@
           },
           "ruleId": "app-SuggestRemoteExecutionHint",
           "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 9173,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "Director",
-                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Record",
-              "Boolean"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 3
         },
         {
           "locations": [
@@ -42982,7 +42080,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 9074,
+                  "charOffset": 9326,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -43022,7 +42120,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 9092,
+                  "charOffset": 9344,
                   "snippet": {
                     "text": "="
                   }
@@ -43062,7 +42160,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 9097,
+                  "charOffset": 9349,
                   "snippet": {
                     "text": "&&"
                   }
@@ -43102,7 +42200,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 9157,
+                  "charOffset": 9409,
                   "snippet": {
                     "text": "&&"
                   }
@@ -43126,47 +42224,6 @@
           },
           "ruleId": "app-SuggestRemoteExecutionHint",
           "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 9640,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "Director",
-                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Record",
-              "Boolean"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 3
         },
         {
           "locations": [
@@ -43183,7 +42240,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 9541,
+                  "charOffset": 9805,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -43223,7 +42280,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 9559,
+                  "charOffset": 9823,
                   "snippet": {
                     "text": "="
                   }
@@ -43263,7 +42320,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 9564,
+                  "charOffset": 9828,
                   "snippet": {
                     "text": "&&"
                   }
@@ -43303,7 +42360,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 9624,
+                  "charOffset": 9888,
                   "snippet": {
                     "text": "&&"
                   }
@@ -43327,47 +42384,6 @@
           },
           "ruleId": "app-SuggestRemoteExecutionHint",
           "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 10011,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "Director",
-                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Record",
-              "Boolean"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 3
         },
         {
           "locations": [
@@ -43384,7 +42400,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 9912,
+                  "charOffset": 10188,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -43424,7 +42440,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 9930,
+                  "charOffset": 10206,
                   "snippet": {
                     "text": "="
                   }
@@ -43464,7 +42480,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 9935,
+                  "charOffset": 10211,
                   "snippet": {
                     "text": "&&"
                   }
@@ -43504,7 +42520,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 9995,
+                  "charOffset": 10271,
                   "snippet": {
                     "text": "&&"
                   }
@@ -43528,47 +42544,6 @@
           },
           "ruleId": "app-SuggestRemoteExecutionHint",
           "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 10550,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "Director",
-                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Record",
-              "Boolean"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 3
         },
         {
           "locations": [
@@ -43585,7 +42560,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 10403,
+                  "charOffset": 10691,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -43625,7 +42600,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 10421,
+                  "charOffset": 10709,
                   "snippet": {
                     "text": "="
                   }
@@ -43665,7 +42640,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 10425,
+                  "charOffset": 10713,
                   "snippet": {
                     "text": "&&"
                   }
@@ -43705,7 +42680,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 10485,
+                  "charOffset": 10773,
                   "snippet": {
                     "text": "&&"
                   }
@@ -43745,169 +42720,8 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 10534,
-                  "snippet": {
-                    "text": "&&"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "Director",
-                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Filter"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 10969,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "Director",
-                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Record",
-              "Boolean"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 17,
                   "charOffset": 10822,
                   "snippet": {
-                    "text": "Month(quote_Date)"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "Director",
-                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Month"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 10840,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "Director",
-                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Filter"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 2,
-                  "charOffset": 10844,
-                  "snippet": {
                     "text": "&&"
                   }
                 }
@@ -43930,127 +42744,6 @@
           },
           "ruleId": "app-SuggestRemoteExecutionHint",
           "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 2,
-                  "charOffset": 10904,
-                  "snippet": {
-                    "text": "&&"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "Director",
-                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Filter"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 2,
-                  "charOffset": 10953,
-                  "snippet": {
-                    "text": "&&"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "Director",
-                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Filter"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 11483,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "Director",
-                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Record",
-              "Boolean"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 3
         },
         {
           "locations": [
@@ -44067,7 +42760,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 11336,
+                  "charOffset": 11122,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -44107,7 +42800,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 11354,
+                  "charOffset": 11140,
                   "snippet": {
                     "text": "="
                   }
@@ -44147,7 +42840,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 11358,
+                  "charOffset": 11144,
                   "snippet": {
                     "text": "&&"
                   }
@@ -44187,7 +42880,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 11418,
+                  "charOffset": 11204,
                   "snippet": {
                     "text": "&&"
                   }
@@ -44227,7 +42920,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 11467,
+                  "charOffset": 11253,
                   "snippet": {
                     "text": "&&"
                   }
@@ -44251,47 +42944,6 @@
           },
           "ruleId": "app-SuggestRemoteExecutionHint",
           "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 11902,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "Director",
-                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Record",
-              "Boolean"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 3
         },
         {
           "locations": [
@@ -44308,7 +42960,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 11755,
+                  "charOffset": 11648,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -44348,7 +43000,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 11773,
+                  "charOffset": 11666,
                   "snippet": {
                     "text": "="
                   }
@@ -44388,7 +43040,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 11777,
+                  "charOffset": 11670,
                   "snippet": {
                     "text": "&&"
                   }
@@ -44428,7 +43080,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 11837,
+                  "charOffset": 11730,
                   "snippet": {
                     "text": "&&"
                   }
@@ -44468,7 +43120,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 11886,
+                  "charOffset": 11779,
                   "snippet": {
                     "text": "&&"
                   }
@@ -44492,47 +43144,6 @@
           },
           "ruleId": "app-SuggestRemoteExecutionHint",
           "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 12416,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "Director",
-                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Record",
-              "Boolean"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 3
         },
         {
           "locations": [
@@ -44549,7 +43160,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 12269,
+                  "charOffset": 12079,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -44589,7 +43200,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 12287,
+                  "charOffset": 12097,
                   "snippet": {
                     "text": "="
                   }
@@ -44629,7 +43240,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 12291,
+                  "charOffset": 12101,
                   "snippet": {
                     "text": "&&"
                   }
@@ -44669,7 +43280,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 12351,
+                  "charOffset": 12161,
                   "snippet": {
                     "text": "&&"
                   }
@@ -44709,7 +43320,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 12400,
+                  "charOffset": 12210,
                   "snippet": {
                     "text": "&&"
                   }
@@ -44733,47 +43344,6 @@
           },
           "ruleId": "app-SuggestRemoteExecutionHint",
           "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 12835,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "Director",
-                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Record",
-              "Boolean"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 3
         },
         {
           "locations": [
@@ -44790,7 +43360,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 12688,
+                  "charOffset": 12605,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -44830,7 +43400,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 12706,
+                  "charOffset": 12623,
                   "snippet": {
                     "text": "="
                   }
@@ -44870,7 +43440,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 12710,
+                  "charOffset": 12627,
                   "snippet": {
                     "text": "&&"
                   }
@@ -44910,7 +43480,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 12770,
+                  "charOffset": 12687,
                   "snippet": {
                     "text": "&&"
                   }
@@ -44950,7 +43520,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 12819,
+                  "charOffset": 12736,
                   "snippet": {
                     "text": "&&"
                   }
@@ -44974,47 +43544,6 @@
           },
           "ruleId": "app-SuggestRemoteExecutionHint",
           "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 13349,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "Director",
-                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Record",
-              "Boolean"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 3
         },
         {
           "locations": [
@@ -45031,7 +43560,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 13202,
+                  "charOffset": 13036,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -45071,7 +43600,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 13220,
+                  "charOffset": 13054,
                   "snippet": {
                     "text": "="
                   }
@@ -45111,7 +43640,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 13224,
+                  "charOffset": 13058,
                   "snippet": {
                     "text": "&&"
                   }
@@ -45151,7 +43680,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 13284,
+                  "charOffset": 13118,
                   "snippet": {
                     "text": "&&"
                   }
@@ -45191,7 +43720,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 13333,
+                  "charOffset": 13167,
                   "snippet": {
                     "text": "&&"
                   }
@@ -45215,47 +43744,6 @@
           },
           "ruleId": "app-SuggestRemoteExecutionHint",
           "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 13768,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "Director",
-                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Record",
-              "Boolean"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 3
         },
         {
           "locations": [
@@ -45272,7 +43760,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 13621,
+                  "charOffset": 13562,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -45312,7 +43800,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 13639,
+                  "charOffset": 13580,
                   "snippet": {
                     "text": "="
                   }
@@ -45352,7 +43840,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 13643,
+                  "charOffset": 13584,
                   "snippet": {
                     "text": "&&"
                   }
@@ -45392,7 +43880,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 13703,
+                  "charOffset": 13644,
                   "snippet": {
                     "text": "&&"
                   }
@@ -45432,7 +43920,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 13752,
+                  "charOffset": 13693,
                   "snippet": {
                     "text": "&&"
                   }
@@ -45456,47 +43944,6 @@
           },
           "ruleId": "app-SuggestRemoteExecutionHint",
           "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 14282,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "Director",
-                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Record",
-              "Boolean"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 3
         },
         {
           "locations": [
@@ -45513,7 +43960,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 14135,
+                  "charOffset": 13993,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -45553,7 +44000,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 14153,
+                  "charOffset": 14011,
                   "snippet": {
                     "text": "="
                   }
@@ -45593,7 +44040,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 14157,
+                  "charOffset": 14015,
                   "snippet": {
                     "text": "&&"
                   }
@@ -45633,7 +44080,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 14217,
+                  "charOffset": 14075,
                   "snippet": {
                     "text": "&&"
                   }
@@ -45673,7 +44120,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 14266,
+                  "charOffset": 14124,
                   "snippet": {
                     "text": "&&"
                   }
@@ -45697,47 +44144,6 @@
           },
           "ruleId": "app-SuggestRemoteExecutionHint",
           "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 14701,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "Director",
-                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Record",
-              "Boolean"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 3
         },
         {
           "locations": [
@@ -45754,7 +44160,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 14554,
+                  "charOffset": 14519,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -45794,7 +44200,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 14572,
+                  "charOffset": 14537,
                   "snippet": {
                     "text": "="
                   }
@@ -45834,7 +44240,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 14576,
+                  "charOffset": 14541,
                   "snippet": {
                     "text": "&&"
                   }
@@ -45874,7 +44280,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 14636,
+                  "charOffset": 14601,
                   "snippet": {
                     "text": "&&"
                   }
@@ -45914,7 +44320,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 14685,
+                  "charOffset": 14650,
                   "snippet": {
                     "text": "&&"
                   }
@@ -45938,47 +44344,6 @@
           },
           "ruleId": "app-SuggestRemoteExecutionHint",
           "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 15215,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "Director",
-                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Record",
-              "Boolean"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 3
         },
         {
           "locations": [
@@ -45995,7 +44360,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 15068,
+                  "charOffset": 14950,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -46035,7 +44400,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 15086,
+                  "charOffset": 14968,
                   "snippet": {
                     "text": "="
                   }
@@ -46075,7 +44440,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 15090,
+                  "charOffset": 14972,
                   "snippet": {
                     "text": "&&"
                   }
@@ -46115,7 +44480,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 15150,
+                  "charOffset": 15032,
                   "snippet": {
                     "text": "&&"
                   }
@@ -46155,7 +44520,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 15199,
+                  "charOffset": 15081,
                   "snippet": {
                     "text": "&&"
                   }
@@ -46179,47 +44544,6 @@
           },
           "ruleId": "app-SuggestRemoteExecutionHint",
           "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 15634,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "Director",
-                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Record",
-              "Boolean"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 3
         },
         {
           "locations": [
@@ -46236,7 +44560,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 15487,
+                  "charOffset": 15476,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -46276,7 +44600,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 15505,
+                  "charOffset": 15494,
                   "snippet": {
                     "text": "="
                   }
@@ -46316,7 +44640,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 15509,
+                  "charOffset": 15498,
                   "snippet": {
                     "text": "&&"
                   }
@@ -46356,7 +44680,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 15569,
+                  "charOffset": 15558,
                   "snippet": {
                     "text": "&&"
                   }
@@ -46396,7 +44720,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 15618,
+                  "charOffset": 15607,
                   "snippet": {
                     "text": "&&"
                   }
@@ -46420,47 +44744,6 @@
           },
           "ruleId": "app-SuggestRemoteExecutionHint",
           "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 16148,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "Director",
-                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Record",
-              "Boolean"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 3
         },
         {
           "locations": [
@@ -46477,7 +44760,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 16001,
+                  "charOffset": 15907,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -46517,7 +44800,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 16019,
+                  "charOffset": 15925,
                   "snippet": {
                     "text": "="
                   }
@@ -46557,7 +44840,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 16023,
+                  "charOffset": 15929,
                   "snippet": {
                     "text": "&&"
                   }
@@ -46597,7 +44880,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 16083,
+                  "charOffset": 15989,
                   "snippet": {
                     "text": "&&"
                   }
@@ -46637,7 +44920,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 16132,
+                  "charOffset": 16038,
                   "snippet": {
                     "text": "&&"
                   }
@@ -46661,47 +44944,6 @@
           },
           "ruleId": "app-SuggestRemoteExecutionHint",
           "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 16567,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "Director",
-                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Record",
-              "Boolean"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 3
         },
         {
           "locations": [
@@ -46718,7 +44960,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 16420,
+                  "charOffset": 16433,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -46758,7 +45000,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 16438,
+                  "charOffset": 16451,
                   "snippet": {
                     "text": "="
                   }
@@ -46798,7 +45040,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 16442,
+                  "charOffset": 16455,
                   "snippet": {
                     "text": "&&"
                   }
@@ -46838,7 +45080,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 16502,
+                  "charOffset": 16515,
                   "snippet": {
                     "text": "&&"
                   }
@@ -46878,7 +45120,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 16551,
+                  "charOffset": 16564,
                   "snippet": {
                     "text": "&&"
                   }
@@ -46902,47 +45144,6 @@
           },
           "ruleId": "app-SuggestRemoteExecutionHint",
           "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 17081,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "Director",
-                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Record",
-              "Boolean"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 3
         },
         {
           "locations": [
@@ -46959,7 +45160,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 16934,
+                  "charOffset": 16864,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -46999,7 +45200,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 16952,
+                  "charOffset": 16882,
                   "snippet": {
                     "text": "="
                   }
@@ -47039,7 +45240,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 16956,
+                  "charOffset": 16886,
                   "snippet": {
                     "text": "&&"
                   }
@@ -47079,7 +45280,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 17016,
+                  "charOffset": 16946,
                   "snippet": {
                     "text": "&&"
                   }
@@ -47119,7 +45320,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 17065,
+                  "charOffset": 16995,
                   "snippet": {
                     "text": "&&"
                   }
@@ -47143,47 +45344,6 @@
           },
           "ruleId": "app-SuggestRemoteExecutionHint",
           "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 17500,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "Director",
-                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Record",
-              "Boolean"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 3
         },
         {
           "locations": [
@@ -47200,7 +45360,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 17353,
+                  "charOffset": 17390,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -47240,7 +45400,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 17371,
+                  "charOffset": 17408,
                   "snippet": {
                     "text": "="
                   }
@@ -47280,7 +45440,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 17375,
+                  "charOffset": 17412,
                   "snippet": {
                     "text": "&&"
                   }
@@ -47320,7 +45480,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 17435,
+                  "charOffset": 17472,
                   "snippet": {
                     "text": "&&"
                   }
@@ -47360,7 +45520,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 17484,
+                  "charOffset": 17521,
                   "snippet": {
                     "text": "&&"
                   }
@@ -47384,47 +45544,6 @@
           },
           "ruleId": "app-SuggestRemoteExecutionHint",
           "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 18014,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "Director",
-                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Record",
-              "Boolean"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 3
         },
         {
           "locations": [
@@ -47441,7 +45560,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 17867,
+                  "charOffset": 17821,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -47481,7 +45600,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 17885,
+                  "charOffset": 17839,
                   "snippet": {
                     "text": "="
                   }
@@ -47521,7 +45640,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 17889,
+                  "charOffset": 17843,
                   "snippet": {
                     "text": "&&"
                   }
@@ -47561,7 +45680,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 17949,
+                  "charOffset": 17903,
                   "snippet": {
                     "text": "&&"
                   }
@@ -47601,7 +45720,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 17998,
+                  "charOffset": 17952,
                   "snippet": {
                     "text": "&&"
                   }
@@ -47625,47 +45744,6 @@
           },
           "ruleId": "app-SuggestRemoteExecutionHint",
           "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 18433,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "Director",
-                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Record",
-              "Boolean"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 3
         },
         {
           "locations": [
@@ -47682,7 +45760,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 18286,
+                  "charOffset": 18347,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -47722,7 +45800,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 18304,
+                  "charOffset": 18365,
                   "snippet": {
                     "text": "="
                   }
@@ -47762,7 +45840,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 18308,
+                  "charOffset": 18369,
                   "snippet": {
                     "text": "&&"
                   }
@@ -47802,7 +45880,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 18368,
+                  "charOffset": 18429,
                   "snippet": {
                     "text": "&&"
                   }
@@ -47842,7 +45920,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 18417,
+                  "charOffset": 18478,
                   "snippet": {
                     "text": "&&"
                   }
@@ -47866,47 +45944,6 @@
           },
           "ruleId": "app-SuggestRemoteExecutionHint",
           "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 18949,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "Director",
-                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Record",
-              "Boolean"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 3
         },
         {
           "locations": [
@@ -47923,7 +45960,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 18801,
+                  "charOffset": 18778,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -47963,7 +46000,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 18819,
+                  "charOffset": 18796,
                   "snippet": {
                     "text": "="
                   }
@@ -48003,7 +46040,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 18824,
+                  "charOffset": 18800,
                   "snippet": {
                     "text": "&&"
                   }
@@ -48043,7 +46080,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 18884,
+                  "charOffset": 18860,
                   "snippet": {
                     "text": "&&"
                   }
@@ -48083,7 +46120,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 18933,
+                  "charOffset": 18909,
                   "snippet": {
                     "text": "&&"
                   }
@@ -48107,47 +46144,6 @@
           },
           "ruleId": "app-SuggestRemoteExecutionHint",
           "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 19369,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "Director",
-                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Record",
-              "Boolean"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 3
         },
         {
           "locations": [
@@ -48164,7 +46160,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 19221,
+                  "charOffset": 19305,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -48204,7 +46200,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 19239,
+                  "charOffset": 19323,
                   "snippet": {
                     "text": "="
                   }
@@ -48244,7 +46240,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 19244,
+                  "charOffset": 19328,
                   "snippet": {
                     "text": "&&"
                   }
@@ -48284,7 +46280,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 19304,
+                  "charOffset": 19388,
                   "snippet": {
                     "text": "&&"
                   }
@@ -48324,7 +46320,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 19353,
+                  "charOffset": 19437,
                   "snippet": {
                     "text": "&&"
                   }
@@ -48348,47 +46344,6 @@
           },
           "ruleId": "app-SuggestRemoteExecutionHint",
           "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 19885,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "Director",
-                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Record",
-              "Boolean"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 3
         },
         {
           "locations": [
@@ -48604,49 +46559,8 @@
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 1,
-                  "charOffset": 20305,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "Director",
-                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Record",
-              "Boolean"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
                   "charLength": 17,
-                  "charOffset": 20157,
+                  "charOffset": 20265,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -48686,7 +46600,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 20175,
+                  "charOffset": 20283,
                   "snippet": {
                     "text": "="
                   }
@@ -48726,7 +46640,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 20180,
+                  "charOffset": 20288,
                   "snippet": {
                     "text": "&&"
                   }
@@ -48766,7 +46680,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 20240,
+                  "charOffset": 20348,
                   "snippet": {
                     "text": "&&"
                   }
@@ -48806,7 +46720,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 20289,
+                  "charOffset": 20397,
                   "snippet": {
                     "text": "&&"
                   }
@@ -48830,47 +46744,6 @@
           },
           "ruleId": "app-SuggestRemoteExecutionHint",
           "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 20821,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "Director",
-                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Record",
-              "Boolean"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 3
         },
         {
           "locations": [
@@ -48887,7 +46760,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 20673,
+                  "charOffset": 20697,
                   "snippet": {
                     "text": "Month(quote_Date)"
                   }
@@ -48927,7 +46800,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 20691,
+                  "charOffset": 20715,
                   "snippet": {
                     "text": "="
                   }
@@ -48967,7 +46840,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 20696,
+                  "charOffset": 20720,
                   "snippet": {
                     "text": "&&"
                   }
@@ -49007,7 +46880,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 20756,
+                  "charOffset": 20780,
                   "snippet": {
                     "text": "&&"
                   }
@@ -49047,7 +46920,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 20805,
+                  "charOffset": 20829,
                   "snippet": {
                     "text": "&&"
                   }
@@ -49071,47 +46944,6 @@
           },
           "ruleId": "app-SuggestRemoteExecutionHint",
           "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 21241,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "Director",
-                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Record",
-              "Boolean"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 3
         },
         {
           "locations": [
@@ -49128,167 +46960,367 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 21093,
-                  "snippet": {
-                    "text": "Month(quote_Date)"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "Director",
-                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Month"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 21111,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "Director",
-                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Filter"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 2,
-                  "charOffset": 21116,
-                  "snippet": {
-                    "text": "&&"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "Director",
-                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Filter"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 2,
-                  "charOffset": 21176,
-                  "snippet": {
-                    "text": "&&"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "Director",
-                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Filter"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 2,
                   "charOffset": 21225,
+                  "snippet": {
+                    "text": "Month(quote_Date)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Items",
+                "module": "Director",
+                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Month"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 21243,
+                  "snippet": {
+                    "text": "="
+                  }
+                }
+              },
+              "properties": {
+                "member": "Items",
+                "module": "Director",
+                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
+                  "charOffset": 21248,
+                  "snippet": {
+                    "text": "&&"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Items",
+                "module": "Director",
+                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
+                  "charOffset": 21308,
+                  "snippet": {
+                    "text": "&&"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Items",
+                "module": "Director",
+                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
+                  "charOffset": 21357,
+                  "snippet": {
+                    "text": "&&"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Items",
+                "module": "Director",
+                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 17,
+                  "charOffset": 21657,
+                  "snippet": {
+                    "text": "Month(quote_Date)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Items",
+                "module": "Director",
+                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Month"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 21675,
+                  "snippet": {
+                    "text": "="
+                  }
+                }
+              },
+              "properties": {
+                "member": "Items",
+                "module": "Director",
+                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
+                  "charOffset": 21680,
+                  "snippet": {
+                    "text": "&&"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Items",
+                "module": "Director",
+                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
+                  "charOffset": 21740,
+                  "snippet": {
+                    "text": "&&"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Items",
+                "module": "Director",
+                "type": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Director.Container_Director.Container_Chart_Director.Container_Turnover_Director.ColumnChart4.Items",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
+                  "charOffset": 21789,
                   "snippet": {
                     "text": "&&"
                   }

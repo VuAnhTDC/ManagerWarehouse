@@ -1069,7 +1069,45 @@ SaleVertion2 As screen:
                                     )
                                 )
                             );
-                            
+                            If(
+                                CountRows(arrServiceDelete_Vertion2) > 0,
+                                ForAll(
+                                    arrServiceDelete_Vertion2,
+                                    RemoveIf(
+                                        Quote_Service,
+                                        id_Quote = ThisRecord.id_Quote && id_Service = ThisRecord.id_Service
+                                    )
+                                )
+                            );
+                            ForAll(
+                                arrProductAddQuoteNew_SaleVertion2,
+                                Patch(
+                                    Quote_Product,
+                                    LookUp(
+                                        Quote_Product,
+                                        id_Quote = ThisRecord.id_Quote && id_Product = ThisRecord.id_Product
+                                    ),
+                                    {
+                                        quantity_Quote_Product: ThisRecord.quantity_Quote_Product,
+                                        quote_Product_Note: ThisRecord.quote_Product_Note,
+                                        vat: ThisRecord.vat
+                                    }
+                                )
+                            );
+                            ForAll(
+                                arrServiceAddQuoteNew_SaleVertion2,
+                                Patch(
+                                    Quote_Service,
+                                    LookUp(
+                                        Quote_Service,
+                                        id_Quote = ThisRecord.id_Quote && id_Service = ThisRecord.id_Service
+                                    ),
+                                    {
+                                        quote_Service_Note: ThisRecord.quote_Service_Not,
+                                        price_Quote_Service: ThisRecord.price_Quote_Service
+                                    }
+                                )
+                            )
                         )
                     )
                 Size: =18
@@ -1557,7 +1595,7 @@ SaleVertion2 As screen:
                             FontWeight: =FontWeight.Semibold
                             Height: =37
                             Size: =15
-                            Text: ="Sản phẩm"
+                            Text: ="Dịch vụ"
                             Width: =346
                             X: =15
                             ZIndex: =1
