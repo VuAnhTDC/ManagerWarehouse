@@ -147,7 +147,7 @@ SaleVertion2 As screen:
                 )
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
-            TemplateSize: =229
+            TemplateSize: =162
             Width: =317
             Y: =5
             ZIndex: =1
@@ -162,7 +162,7 @@ SaleVertion2 As screen:
                 ZIndex: =1
 
             Container25 As groupContainer.manualLayoutContainer:
-                Height: =169
+                Height: =115
                 Visible: =ThisItem.IsSelected && ThisItem.id = 0 && ThisItem.btnFunction = "btnQuoteSale"
                 Width: =307
                 Y: =47
@@ -190,17 +190,6 @@ SaleVertion2 As screen:
                     Y: =57
                     ZIndex: =2
 
-                Checkbox1 As checkbox:
-                    Default: =If(idCheckStatusFuntionQuote = 2, true,false)
-                    Height: =46
-                    OnCheck: =Set(idCheckStatusFuntionQuote, 2)
-                    OnUncheck: =Set(idCheckStatusFuntionQuote, -1)
-                    Text: ="Đang xử lý"
-                    Width: =225
-                    X: =37
-                    Y: =103
-                    ZIndex: =3
-
     Container23 As groupContainer.manualLayoutContainer:
         Height: =688
         Width: =1020
@@ -225,12 +214,7 @@ SaleVertion2 As screen:
                         "Báo giá",
                         If(
                             idCheckStatusFuntionQuote = 1,
-                            "Đơn hàng",
-                            If(
-                                idCheckStatusFuntionQuote = 2,
-                                "Đang xử lý",
-                                "Báo giá - Đơn hàng - Đang xử lý"
-                            )
+                            "Đơn hàng","Báo giá - đơn hàng"
                         )
                     )
                 Width: =316
@@ -307,13 +291,6 @@ SaleVertion2 As screen:
                                 Filter(
                                     Quote,
                                     quote_Status.Value = "Đơn hàng"
-                                ),
-                                If(
-                                    idCheckStatusFuntionQuote = 2,
-                                    Filter(
-                                        Quote,
-                                        quote_Status.Value = "Đang xử lý"
-                                    )
                                 )
                             )
                         )
@@ -524,29 +501,6 @@ SaleVertion2 As screen:
                 X: =812
                 Y: =5
                 ZIndex: =5
-
-        Container29 As groupContainer.manualLayoutContainer:
-            Height: =30
-            Width: =168
-            X: =635
-            Y: =77
-            ZIndex: =5
-
-            Icon15 As icon.Warning:
-                Color: =RGBA(255, 0, 0, 1)
-                Height: =30
-                Icon: =Icon.Warning
-                Width: =30
-                X: =15
-                ZIndex: =1
-
-            Label66 As label:
-                Height: =30
-                Italic: =true
-                Text: ="Đang xử lý"
-                Width: =96
-                X: =61
-                ZIndex: =2
 
         Container29_1 As groupContainer.manualLayoutContainer:
             Height: =31
@@ -1270,7 +1224,7 @@ SaleVertion2 As screen:
                     Fill: =RGBA(189, 240, 194, 1)
                     FontWeight: =FontWeight.Semibold
                     OnSelect: |-
-                        =If(
+                        =/*If(
                             IsBlank(ComboBox1.Selected) || IsBlank(ComboBox1.Selected) || IsBlank(TextInput7.Text) || IsBlank(arrProductAddQuoteNew_SaleVertion2),
                             Notify(
                                 "Vui lòng điền đủ thông tin",
@@ -1334,7 +1288,8 @@ SaleVertion2 As screen:
                                 Notify("Khởi tạo báo giá thành công",NotificationType.Success);
                                 Set(isVisibleDialogAddQuoteNew_SaleVertion2,false)
                             )
-                        )
+                        )*/
+                        Create_Import_Product_Warehouse_Manager.Run(JSON( arrProductAddQuoteNew_SaleVertion2,JSONFormat.IncludeBinaryData & JSONFormat.IgnoreUnsupportedTypes))
                     Size: =18
                     Text: ="Lưu lại"
                     Width: =173

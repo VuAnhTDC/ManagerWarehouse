@@ -1,4 +1,30 @@
 {
+  "0519ffc4-2867-4048-951f-2821cb9b1ada": {
+    "connectionRef": {
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1664/1.0.1664.3477/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "07bf04a6-c74f-480b-917d-e5aa1cc220ad"
+        }
+      },
+      "parameterHintsV2": {
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "07bf04a6-c74f-480b-917d-e5aa1cc220ad"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "Create_Import_Product_Warehouse_Manager"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "0519ffc4-2867-4048-951f-2821cb9b1ada"
+  },
   "34641297-713f-461a-9584-a6203e362773": {
     "connectionRef": {
       "displayName": "Excel Online (Business)",
