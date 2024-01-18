@@ -59211,36 +59211,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "SaleVertion2.containerAddQuoteNew_SaleVersion2.containerSelectionProductAdd_SaleVertion2.Container39.Container36_2.Label75_2.FocusedBorderThickness"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "SaleVertion2.containerAddQuoteNew_SaleVersion2.containerSelectionProductAdd_SaleVertion2.Container39.Container36_2.Label75_2.FocusedBorderThickness",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "FocusedBorderThickness",
-                "module": "SaleVertion2",
-                "type": "SaleVertion2.containerAddQuoteNew_SaleVersion2.containerSelectionProductAdd_SaleVertion2.Container39.Container36_2.Label75_2"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-FocusBorderShouldBeVisible",
-          "ruleIndex": 10
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "SaleVertion2.containerAddQuoteNew_SaleVersion2.containerSelectionProductAdd_SaleVertion2.Container39.Container36_2.Label75_2.TabIndex"
                 }
               ],
@@ -59265,6 +59235,36 @@
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
           "ruleIndex": 9
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "SaleVertion2.containerAddQuoteNew_SaleVersion2.containerSelectionProductAdd_SaleVertion2.Container39.Container36_2.Label75_2.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "SaleVertion2.containerAddQuoteNew_SaleVersion2.containerSelectionProductAdd_SaleVertion2.Container39.Container36_2.Label75_2.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "SaleVertion2",
+                "type": "SaleVertion2.containerAddQuoteNew_SaleVersion2.containerSelectionProductAdd_SaleVertion2.Container39.Container36_2.Label75_2"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 10
         },
         {
           "locations": [
@@ -60531,6 +60531,66 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "SaleVertion2.containerAddQuoteNew_SaleVersion2.Container21.Container33_1.Container47_1.Gallery12_3.Icon29.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "SaleVertion2.containerAddQuoteNew_SaleVersion2.Container21.Container33_1.Container47_1.Gallery12_3.Icon29.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "SaleVertion2",
+                "type": "SaleVertion2.containerAddQuoteNew_SaleVersion2.Container21.Container33_1.Container47_1.Gallery12_3.Icon29"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 8
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "SaleVertion2.containerAddQuoteNew_SaleVersion2.Container21.Container33_1.Container47_1.Gallery12_3.Icon29.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "SaleVertion2.containerAddQuoteNew_SaleVersion2.Container21.Container33_1.Container47_1.Gallery12_3.Icon29.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "SaleVertion2",
+                "type": "SaleVertion2.containerAddQuoteNew_SaleVersion2.Container21.Container33_1.Container47_1.Gallery12_3.Icon29"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 9
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "App.isVisibleContentFilePDF"
                 }
               ],
@@ -60542,36 +60602,6 @@
               },
               "properties": {
                 "member": "isVisibleContentFilePDF",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-UnusedVariables",
-          "ruleIndex": 11
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "App.isVisibleUpdateService_Quote_Vertion2"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App.isVisibleUpdateService_Quote_Vertion2",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "isVisibleUpdateService_Quote_Vertion2",
                 "module": "App",
                 "type": "App"
               }

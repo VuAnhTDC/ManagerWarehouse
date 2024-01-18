@@ -970,7 +970,7 @@ SaleVertion2 As screen:
                             Height: =46
                             OnSelect: =Select(Parent)
                             Size: =15
-                            Text: =ThisItem.quote_Service_Not
+                            Text: =ThisItem.quote_Service_Note
                             VerticalAlign: =VerticalAlign.Top
                             Width: =543
                             X: =361
@@ -992,7 +992,12 @@ SaleVertion2 As screen:
                         Icon29 As icon.Edit:
                             Height: =30
                             Icon: =Icon.Edit
-                            OnSelect: =Select(Parent)
+                            OnSelect: |-
+                                =Set(isVisibleUpdateService_Quote_Vertion2,true);
+                                Set(isVisibleDialogAddProductQuoteNew_SaleVertion2,true);
+                                Set(positionDialogAddDataQuoteNew_SaleVertion2,1);
+                                Reset(TextInput9);
+                                Reset(Checkbox5)
                             Width: =30
                             X: =1108
                             Y: =6
@@ -2000,9 +2005,9 @@ SaleVertion2 As screen:
                     FontWeight: =FontWeight.Semibold
                     Height: =57
                     Size: =18
-                    Text: ="Thêm dịch vụ - báo giá"
-                    Width: =352
-                    X: =41
+                    Text: =If(isVisibleUpdateService_Quote_Vertion2, "Sửa dịch vụ - báo giá","Thêm dịch vụ - báo giá")
+                    Width: =297
+                    X: =23
                     Y: =2
                     ZIndex: =1
 
@@ -2014,6 +2019,15 @@ SaleVertion2 As screen:
                     ZIndex: =2
 
                 Dropdown4 As dropdown:
+                    Default: |-
+                        =If(
+                            isVisibleUpdateService_Quote_Vertion2,
+                            LookUp(
+                                Service,
+                                id_Serivce = Gallery12_3.Selected.id_Service
+                            ).service_Name,"1"
+                        )
+                    DisplayMode: =If(isVisibleUpdateService_Quote_Vertion2,DisplayMode.Disabled,DisplayMode.Edit)
                     Height: =41
                     Items: =Service
                     Width: =423
@@ -2029,7 +2043,7 @@ SaleVertion2 As screen:
                     ZIndex: =4
 
                 TextInput9 As text:
-                    Default: =""
+                    Default: =If(isVisibleUpdateService_Quote_Vertion2, Gallery12_3.Selected.quote_Service_Note,"")
                     Height: =205
                     HintText: ="Vui lòng nhập ghi chú ..."
                     Mode: =TextMode.MultiLine
@@ -2047,7 +2061,26 @@ SaleVertion2 As screen:
 
                 TextInput10 As text:
                     Default: |-
-                        =If(Checkbox5.Value = true, Text(Value(LookUp(Service,id_Serivce = Dropdown4.Selected.id_Serivce).service_Price),"#,###"))
+                        =If(
+                            Checkbox5.Value = true,
+                            Text(
+                                Value(
+                                    LookUp(
+                                        Service,
+                                        id_Serivce = Dropdown4.Selected.id_Serivce
+                                    ).service_Price
+                                ),
+                                "#,###"
+                            ),
+                            If(
+                                isVisibleUpdateService_Quote_Vertion2,
+                                Text(
+                                    Gallery12_3.Selected.price_Quote_Service,
+                                    "#,###"
+                                ),
+                                ""
+                            )
+                        )
                     DisplayMode: =If(Checkbox5.Value = true, DisplayMode.Disabled,DisplayMode.Edit)
                     Format: =TextFormat.Number
                     Height: =41
@@ -2090,17 +2123,15 @@ SaleVertion2 As screen:
                                     NotificationType.Error
                                 ),
                                 If(
-                                    IsBlank(
+                                    isVisibleUpdateService_Quote_Vertion2,
+                                    Patch(
+                                        arrServiceAddQuoteNew_SaleVertion2,
                                         LookUp(
                                             arrServiceAddQuoteNew_SaleVertion2,
-                                            id_Service = Dropdown4.Selected.id_Serivce
-                                        )
-                                    ),
-                                    Collect(
-                                        arrServiceAddQuoteNew_SaleVertion2,
+                                            id_Quote = Gallery12_3.Selected.id_Quote && id_Service = Gallery12_3.Selected.id_Service
+                                        ),
                                         {
-                                            id_Service: Dropdown4.Selected.id_Serivce,
-                                            quote_Service_Not: TextInput9.Text,
+                                            quote_Service_Note: TextInput9.Text,
                                             price_Quote_Service: If(
                                                 IsBlank(TextInput10.Text),
                                                 0,
@@ -2108,19 +2139,53 @@ SaleVertion2 As screen:
                                             )
                                         }
                                     );
-                                    Notify(
-                                        "Thêm dịch vụ vào báo giá thành công",
-                                        NotificationType.Success
+                                    If(
+                                        isVisibleUpdateService_Quote_Vertion2,
+                                        Set(
+                                            isVisibleUpdateService_Quote_Vertion2,
+                                            false
+                                        )
                                     );
                                     Set(
                                         isVisibleDialogAddProductQuoteNew_SaleVertion2,
                                         false
                                     ),
-                                    Notify("Dịch vụ đã tồn tại",NotificationType.Error)
+                                    If(
+                                        IsBlank(
+                                            LookUp(
+                                                arrServiceAddQuoteNew_SaleVertion2,
+                                                id_Service = Dropdown4.Selected.id_Serivce
+                                            )
+                                        ),
+                                        Collect(
+                                            arrServiceAddQuoteNew_SaleVertion2,
+                                            {
+                                                id_Service: Dropdown4.Selected.id_Serivce,
+                                                quote_Service_Note: TextInput9.Text,
+                                                price_Quote_Service: If(
+                                                    IsBlank(TextInput10.Text),
+                                                    0,
+                                                    Value(TextInput10.Text)
+                                                )
+                                            }
+                                        );
+                                        Notify(
+                                            "Thêm dịch vụ vào báo giá thành công",
+                                            NotificationType.Success
+                                        );
+                                        Set(
+                                            isVisibleDialogAddProductQuoteNew_SaleVertion2,
+                                            false
+                                        ),
+                                        Notify(
+                                            "Dịch vụ đã tồn tại",
+                                            NotificationType.Error
+                                        )
+                                    )
                                 )
                             )
                         Size: =16
-                        Text: ="Thêm"
+                        Text: =If(isVisibleUpdateService_Quote_Vertion2, "Xác nhận","Thêm")
                         Width: =Parent.Width
                         ZIndex: =1
 
@@ -2128,7 +2193,9 @@ SaleVertion2 As screen:
                     Color: =RGBA(255, 0, 0, 1)
                     Height: =35
                     Icon: =Icon.Cancel
-                    OnSelect: =Set(isVisibleDialogAddProductQuoteNew_SaleVertion2,false)
+                    OnSelect: |-
+                        =If(isVisibleUpdateService_Quote_Vertion2,Set(isVisibleUpdateService_Quote_Vertion2, false));
+                        Set(isVisibleDialogAddProductQuoteNew_SaleVertion2,false)
                     Width: =35
                     X: =522
                     Y: =13
@@ -2138,8 +2205,9 @@ SaleVertion2 As screen:
                     DropShadow: =DropShadow.Regular
                     Fill: =RGBA(241, 244, 249, 1)
                     Height: =27
+                    Visible: =!isVisibleUpdateService_Quote_Vertion2
                     Width: =137
-                    X: =325
+                    X: =320
                     Y: =21
                     ZIndex: =12
 
