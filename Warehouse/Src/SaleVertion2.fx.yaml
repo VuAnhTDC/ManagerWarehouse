@@ -13,6 +13,8 @@ SaleVertion2 As screen:
         Set(isVisibleDialogAddQuoteNew_SaleVertion2, false);
         Set(isVisibleDialogAddProductQuoteNew_SaleVertion2, false);
         Set(isVisibleDetailQuote_SaleVertion2,false);
+        Set(isVisibleCreateQuote_Sertion2, false);
+        Set(isVisibleUpdatQuote_Vertion2, false);
         Set(positionOptionCreatQuote,0);
         ClearCollect(arrServiceNewCreateQuote,[]);
 
@@ -280,6 +282,7 @@ SaleVertion2 As screen:
                         =Set(isVisibleDialogAddQuoteNew_SaleVertion2,true);
                         ClearCollect(arrProductAddQuoteNew_SaleVertion2,[]);
                         ClearCollect(arrServiceAddQuoteNew_SaleVertion2,[]);
+                        Set(isVisibleCreateQuote_Sertion2,true);
                         Set(positionOptionCreatQuote,0)
                     ZIndex: =3
 
@@ -431,8 +434,8 @@ SaleVertion2 As screen:
                 Height: =30
                 Icon: =Icon.Edit
                 OnSelect: |
-                    =Set(isVisibleDialogAddProductQuoteNew_SaleVertion2, true);
-                    Set(positionDialogAddDataQuoteNew_SaleVertion2 ,4);
+                    =Set(isVisibleDialogAddQuoteNew_SaleVertion2,true);
+                    Set(isVisibleUpdatQuote_Vertion2,true);
                 Width: =30
                 X: =951
                 Y: =24
@@ -553,7 +556,7 @@ SaleVertion2 As screen:
         Width: =1366
         ZIndex: =4
 
-        Container28 As groupContainer.manualLayoutContainer:
+        containerCreateQuote_Vertion2 As groupContainer.manualLayoutContainer:
             ContentLanguage: ="vi-VN"
             Fill: =RGBA(255, 255, 255, 1)
             Height: =722
@@ -561,6 +564,7 @@ SaleVertion2 As screen:
             RadiusBottomRight: =10
             RadiusTopLeft: =10
             RadiusTopRight: =10
+            Visible: =isVisibleCreateQuote_Sertion2
             Width: =1299
             X: =33
             Y: =18
@@ -750,7 +754,9 @@ SaleVertion2 As screen:
                 Color: =RGBA(0, 0, 0, 1)
                 Height: =50
                 Icon: =Icon.Cancel
-                OnSelect: =Set(isVisibleDialogAddQuoteNew_SaleVertion2,false)
+                OnSelect: |-
+                    =Set(isVisibleDialogAddQuoteNew_SaleVertion2,false);
+                    Set(isVisibleCreateQuote_Sertion2,false);
                 Width: =50
                 X: =1217
                 Y: =9
@@ -2006,6 +2012,15 @@ SaleVertion2 As screen:
                     X: =945
                     Y: =605
                     ZIndex: =7
+
+        Container21 As groupContainer.manualLayoutContainer:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =722
+            Visible: =isVisibleUpdatQuote_Vertion2
+            Width: =1299
+            X: =33
+            Y: =18
+            ZIndex: =3
 
     Container44 As groupContainer.manualLayoutContainer:
         Fill: =RGBA(0, 0, 0, 0.38)
