@@ -430,7 +430,9 @@ SaleVertion2 As screen:
             Icon22 As icon.Edit:
                 Height: =30
                 Icon: =Icon.Edit
-                OnSelect: =Select(Parent)
+                OnSelect: |
+                    =Set(isVisibleDialogAddProductQuoteNew_SaleVertion2, true);
+                    Set(positionDialogAddDataQuoteNew_SaleVertion2 ,4);
                 Width: =30
                 X: =951
                 Y: =24
