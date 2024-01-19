@@ -26,6 +26,11 @@ SaleVertion2 As screen:
         
         // yêu cầu mua hàng
         Set(positionStatusPurchase_SaleVertion2, -1);
+        Set(styleAddPurchase_SaleVertion2,-1);
+        Set(isVisiblechoiceStyleRequest,false);
+        Set(isVisibleDialogPurchase_SaleVertion2, false);
+        Set(isVisibleDialogPurchaseProduct, false);
+        Set(isVisiblePurchaseProductNew,false);
 
     containerViewQuote As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
@@ -3989,7 +3994,11 @@ SaleVertion2 As screen:
                     ZIndex: =1
 
             Checkbox1 As checkbox:
+                Default: =positionStatusPurchase_SaleVertion2 = 0
                 Height: =34
+                OnCheck: =Set(positionStatusPurchase_SaleVertion2, 0)
+                OnSelect: =
+                OnUncheck: =Set(positionStatusPurchase_SaleVertion2, -1)
                 Text: ="Chờ phê duyệt"
                 Width: =278
                 X: =18
@@ -3997,7 +4006,10 @@ SaleVertion2 As screen:
                 ZIndex: =5
 
             Checkbox1_1 As checkbox:
+                Default: =positionStatusPurchase_SaleVertion2 = 1
                 Height: =34
+                OnCheck: =Set(positionStatusPurchase_SaleVertion2, 1)
+                OnUncheck: =Set(positionStatusPurchase_SaleVertion2, -1)
                 Text: ="Đã phê duyệt"
                 Width: =278
                 X: =18
@@ -4005,58 +4017,15 @@ SaleVertion2 As screen:
                 ZIndex: =6
 
             Checkbox1_2 As checkbox:
+                Default: =positionStatusPurchase_SaleVertion2 = 2
                 Height: =34
+                OnCheck: =Set(positionStatusPurchase_SaleVertion2, 2)
+                OnUncheck: =Set(positionStatusPurchase_SaleVertion2, -1)
                 Text: ="Đã bị hủy"
                 Width: =278
                 X: =18
                 Y: =275
                 ZIndex: =7
-
-            Container73_2 As groupContainer.manualLayoutContainer:
-                DropShadow: =DropShadow.Regular
-                Height: =28
-                Width: =294
-                X: =10
-                Y: =333
-                ZIndex: =8
-
-                Label124_2 As label:
-                    Color: =RGBA(255, 255, 255, 1)
-                    Fill: =RGBA(50, 86, 160, 1)
-                    FontWeight: =FontWeight.Bold
-                    Height: =28
-                    Size: =15
-                    Text: ="Tạo yêu cầu mua hàng"
-                    Width: =294
-                    ZIndex: =1
-
-            Container74 As groupContainer.manualLayoutContainer:
-                Height: =26
-                Width: =238
-                X: =38
-                Y: =376
-                ZIndex: =9
-
-                Label125 As label:
-                    Align: =Align.Center
-                    Height: =26
-                    Text: ="Sản phẩm hết hàng"
-                    Width: =238
-                    ZIndex: =1
-
-            Container74_1 As groupContainer.manualLayoutContainer:
-                Height: =26
-                Width: =238
-                X: =38
-                Y: =416
-                ZIndex: =10
-
-                Label125_1 As label:
-                    Align: =Align.Center
-                    Height: =26
-                    Text: ="Sản phẩm mới"
-                    Width: =238
-                    ZIndex: =1
 
         Container75 As groupContainer.manualLayoutContainer:
             BorderThickness: =0.1
@@ -4069,11 +4038,178 @@ SaleVertion2 As screen:
 
             Label126 As label:
                 FontWeight: =FontWeight.Bold
-                Height: =41
+                Height: =42
                 Size: =24
-                Text: =If(IsBlank(TextInput15.Text) && IsBlank(TextInput15_1.Text),"Danh sách yêu cầu mua hàng")
-                Width: =487
+                Text: ="Danh sách yêu cầu"
+                Width: =632
                 X: =8
                 Y: =8
                 ZIndex: =1
+
+            Container76 As groupContainer.manualLayoutContainer:
+                Height: =34
+                Width: =216
+                X: =778
+                Y: =12
+                ZIndex: =2
+
+                Label127 As label:
+                    Align: =Align.Center
+                    FontWeight: =FontWeight.Semibold
+                    Height: =34
+                    Text: ="Tạo yêu cầu"
+                    Width: =216
+                    ZIndex: =1
+
+                Rectangle18 As rectangle:
+                    Fill: =RGBA(56, 96, 178, 0)
+                    Height: =34
+                    OnSelect: =Set(isVisiblechoiceStyleRequest,!isVisiblechoiceStyleRequest)
+                    Width: =216
+                    ZIndex: =2
+
+            Container79 As groupContainer.manualLayoutContainer:
+                Height: =85
+                Visible: =isVisiblechoiceStyleRequest
+                Width: =252
+                X: =755
+                Y: =46
+                ZIndex: =3
+
+                Icon33 As icon.Cancel:
+                    Color: =RGBA(0, 0, 0, 1)
+                    Height: =25
+                    Icon: =Icon.Cancel
+                    OnSelect: =Set(isVisiblechoiceStyleRequest,false)
+                    Width: =25
+                    X: =227
+                    ZIndex: =3
+
+                "Gallery18 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+                    DelayItemLoading: =true
+                    Height: =60
+                    Items: |-
+                        =Table({id: 0, name: "Sản phẩm hết hàng"},{id: 1, name: "Sản phẩm mới"})
+                    Layout: =Layout.Vertical
+                    LoadingSpinner: =LoadingSpinner.Data
+                    OnSelect: |-
+                        =If(
+                            ThisItem.id = 0,
+                            Set(
+                                isVisibleDialogPurchase_SaleVertion2,
+                                true
+                            );
+                            Set(isVisibleDialogPurchaseProduct,true);
+                            Set(
+                                isVisiblechoiceStyleRequest,
+                                false
+                            );
+                        
+                        )
+                    TemplatePadding: =0
+                    TemplateSize: =25
+                    Transition: =Transition.Push
+                    Width: =252
+                    Y: =25
+                    ZIndex: =4
+
+                    Label129 As label:
+                        Align: =Align.Center
+                        Height: =24
+                        OnSelect: =Select(Parent)
+                        Text: =ThisItem.name
+                        Width: =252
+                        ZIndex: =1
+
+    containerDialogPurchase As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(0, 0, 0, 0.23)
+        Height: =768
+        Visible: =isVisibleDialogPurchase_SaleVertion2
+        Width: =1366
+        ZIndex: =6
+
+        Container78 As groupContainer.manualLayoutContainer:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =677
+            RadiusBottomLeft: =10
+            RadiusBottomRight: =10
+            RadiusTopLeft: =10
+            RadiusTopRight: =10
+            Visible: =isVisibleDialogPurchaseProduct
+            Width: =1274
+            X: =44
+            Y: =40
+            ZIndex: =1
+
+            Icon34 As icon.Cancel:
+                Color: =RGBA(0, 0, 0, 1)
+                Height: =40
+                Icon: =Icon.Cancel
+                OnSelect: |-
+                    =Set(isVisibleDialogPurchaseProduct,false);
+                    Set(isVisibleDialogPurchase_SaleVertion2,false)
+                Width: =40
+                X: =1218
+                Y: =12
+                ZIndex: =1
+
+            Label130 As label:
+                FontWeight: =FontWeight.Semibold
+                Size: =24
+                Text: ="Yêu cầu mua thêm sản phẩm"
+                Width: =680
+                X: =16
+                Y: =12
+                ZIndex: =2
+
+            Container80 As groupContainer.manualLayoutContainer:
+                Height: =304
+                Width: =518
+                X: =16
+                Y: =62
+                ZIndex: =3
+
+                Label131 As label:
+                    FontWeight: =FontWeight.Semibold
+                    Height: =36
+                    Size: =15
+                    Text: ="Sản phẩm"
+                    Width: =108
+                    X: =9
+                    Y: =6
+                    ZIndex: =1
+
+                TextInput16 As text:
+                    Default: =""
+                    Height: =36
+                    HintText: ="Mã sản phẩm"
+                    Width: =390
+                    X: =117
+                    Y: =6
+                    ZIndex: =2
+
+            Container80_1 As groupContainer.manualLayoutContainer:
+                DropShadow: =DropShadow.ExtraBold
+                Height: =304
+                Width: =700
+                X: =558
+                Y: =62
+                ZIndex: =4
+
+                Label131_1 As label:
+                    FontWeight: =FontWeight.Semibold
+                    Height: =36
+                    Size: =15
+                    Text: ="Thiết lập yêu cầu"
+                    Width: =686
+                    X: =9
+                    Y: =6
+                    ZIndex: =1
+
+            Container80_2 As groupContainer.manualLayoutContainer:
+                Height: =280
+                Width: =1242
+                X: =16
+                Y: =381
+                ZIndex: =5
 
