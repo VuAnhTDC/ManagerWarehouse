@@ -4359,6 +4359,11 @@ SaleVertion2 As screen:
 
                 Button16 As button:
                     Height: =23
+                    OnSelect: |-
+                        =Set(isShadowPurchaseProduct_SaleVertion2, false);
+                        Reset(TextInput20);
+                        Reset(TextInput20_1);
+                        Reset(TextInput20_2)
                     Text: ="Xác nhận"
                     Width: =143
                     X: =552
