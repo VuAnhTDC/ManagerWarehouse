@@ -20,6 +20,7 @@ SaleVertion2 As screen:
         Set(isDisableEditInormationCustomer, false);
         Set(isDisablebtnUpdateInformationCustomer, false);
         Set(positionItemFunctionCustomerQuote,-1);
+        Set(isVisibleSaveUpdateCustomer, false)
 
     containerViewQuote As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
@@ -497,7 +498,9 @@ SaleVertion2 As screen:
                     Rectangle9 As rectangle:
                         Fill: =RGBA(56, 96, 178, 0)
                         Height: =Parent.Height
-                        OnSelect: =Set(positionItemFunctionCustomerQuote, 0);
+                        OnSelect: |-
+                            =Set(positionItemFunctionCustomerQuote, 0);
+                            Set(isVisibleSaveUpdateCustomer,false)
                         Width: =Parent.Width
                         ZIndex: =3
 
@@ -529,7 +532,9 @@ SaleVertion2 As screen:
                     Rectangle9_1 As rectangle:
                         Fill: =RGBA(56, 96, 178, 0)
                         Height: =Parent.Height
-                        OnSelect: =Set(positionItemFunctionCustomerQuote, 1);
+                        OnSelect: |-
+                            =Set(positionItemFunctionCustomerQuote, 1);
+                            Set(isVisibleSaveUpdateCustomer,false)
                         Width: =Parent.Width
                         ZIndex: =3
 
@@ -554,7 +559,9 @@ SaleVertion2 As screen:
                     Rectangle9_2 As rectangle:
                         Fill: =RGBA(56, 96, 178, 0)
                         Height: =Parent.Height
-                        OnSelect: =Set(positionItemFunctionCustomerQuote, 2);
+                        OnSelect: |-
+                            =Set(positionItemFunctionCustomerQuote, 2);
+                            Set(isVisibleSaveUpdateCustomer,false)
                         Width: =Parent.Width
                         ZIndex: =3
 
@@ -569,6 +576,35 @@ SaleVertion2 As screen:
                     Color: =RGBA(0, 0, 0, 1)
                     Height: =40
                     Icon: =Icon.Save
+                    OnSelect: |-
+                        =If(
+                            IsBlank(TextInput12_1.Text) || IsBlank(TextInput12_2.Text) || IsBlank(TextInput12_3.Text) || IsBlank(TextInput12_4.Text) || IsBlank(TextInput12_5.Text),
+                            Notify(
+                                "Vui lòng không để trống thông tin.",
+                                NotificationType.Error
+                            ),
+                            Patch(
+                                Customer,
+                                LookUp(
+                                    Customer,
+                                    taxCode = TextInput12.Text
+                                ),
+                                {
+                                    customer_Name: TextInput12_1.Text,
+                                    customer_Address: TextInput12_2.Text,
+                                    contactPersonName_Customer: TextInput12_3.Text,
+                                    contactPersonEmail_Customer: TextInput12_4.Text,
+                                    contactPersonPhoneNumber_Customer: TextInput12_5.Text
+                                }
+                            );
+                            Notify(
+                                "Thay đổi thông tin khách hàng thành công",
+                                NotificationType.Success
+                            );
+                            Set(isVisibleSaveUpdateCustomer,false)
+                            
+                        )
+                    Visible: =isVisibleSaveUpdateCustomer
                     Width: =40
                     X: =498
                     Y: =8
@@ -608,6 +644,7 @@ SaleVertion2 As screen:
                             Container64 As groupContainer.manualLayoutContainer:
                                 Fill: =RGBA(255, 255, 255, 1)
                                 Height: =194
+                                Visible: =positionItemFunctionCustomerQuote = 0 || positionItemFunctionCustomerQuote =1
                                 Width: =982
                                 X: =6
                                 Y: =36
@@ -641,6 +678,7 @@ SaleVertion2 As screen:
                                     BorderThickness: =1
                                     Default: =Gallery17.Selected.customer_Name
                                     DisplayMode: =If(positionItemFunctionCustomerQuote = 1,DisplayMode.Edit,DisplayMode.Disabled)
+                                    OnChange: =Set(isVisibleSaveUpdateCustomer,true)
                                     X: =166
                                     Y: =82
                                     ZIndex: =4
@@ -657,6 +695,7 @@ SaleVertion2 As screen:
                                     BorderThickness: =1
                                     Default: =Gallery17.Selected.customer_Address
                                     DisplayMode: =If(positionItemFunctionCustomerQuote = 1,DisplayMode.Edit,DisplayMode.Disabled)
+                                    OnChange: =Set(isVisibleSaveUpdateCustomer,true)
                                     X: =166
                                     Y: =140
                                     ZIndex: =6
@@ -673,6 +712,7 @@ SaleVertion2 As screen:
                                     BorderThickness: =1
                                     Default: =Gallery17.Selected.contactPersonName_Customer
                                     DisplayMode: =If(positionItemFunctionCustomerQuote = 1,DisplayMode.Edit,DisplayMode.Disabled)
+                                    OnChange: =Set(isVisibleSaveUpdateCustomer,true)
                                     X: =648
                                     Y: =18
                                     ZIndex: =8
@@ -689,6 +729,7 @@ SaleVertion2 As screen:
                                     BorderThickness: =1
                                     Default: =Gallery17.Selected.contactPersonEmail_Customer
                                     DisplayMode: =If(positionItemFunctionCustomerQuote = 1,DisplayMode.Edit,DisplayMode.Disabled)
+                                    OnChange: =Set(isVisibleSaveUpdateCustomer,true)
                                     X: =648
                                     Y: =82
                                     ZIndex: =10
@@ -705,6 +746,7 @@ SaleVertion2 As screen:
                                     BorderThickness: =1
                                     Default: =Gallery17.Selected.contactPersonPhoneNumber_Customer
                                     DisplayMode: =If(positionItemFunctionCustomerQuote = 1,DisplayMode.Edit,DisplayMode.Disabled)
+                                    OnChange: =Set(isVisibleSaveUpdateCustomer,true)
                                     X: =648
                                     Y: =140
                                     ZIndex: =12
@@ -720,12 +762,104 @@ SaleVertion2 As screen:
                                 ZIndex: =2
 
                             Label66 As label:
+                                FontWeight: =FontWeight.Semibold
                                 Height: =36
                                 Size: =17
-                                Text: ="Thông tin khách hàng"
+                                Text: |-
+                                    =If(
+                                        positionItemFunctionCustomerQuote = 0,
+                                        "Thông tin khách hàng",
+                                        If(
+                                            positionItemFunctionCustomerQuote = 1,
+                                            "Sửa khách hàng",
+                                            If(
+                                                positionItemFunctionCustomerQuote = 2,
+                                                "Gửi Email"
+                                            )
+                                        )
+                                    )
                                 Width: =289
                                 X: =6
                                 ZIndex: =3
+
+                            Container66 As groupContainer.manualLayoutContainer:
+                                Fill: =RGBA(255, 255, 255, 1)
+                                Height: =194
+                                Visible: =positionItemFunctionCustomerQuote = 2
+                                Width: =982
+                                X: =6
+                                Y: =36
+                                ZIndex: =4
+
+                                Label117 As label:
+                                    Align: =Align.Right
+                                    FontWeight: =FontWeight.Semibold
+                                    Size: =15
+                                    Text: |-
+                                        ="Tiêu đề:"
+                                    X: =48
+                                    Y: =6
+                                    ZIndex: =1
+
+                                TextInput13 As text:
+                                    BorderThickness: =0.1
+                                    Clear: =true
+                                    Default: =""
+                                    HintText: ="Tiêu đề"
+                                    RadiusBottomLeft: =10
+                                    RadiusBottomRight: =10
+                                    RadiusTopLeft: =10
+                                    RadiusTopRight: =10
+                                    Width: =722
+                                    X: =209
+                                    Y: =6
+                                    ZIndex: =2
+
+                                Label117_1 As label:
+                                    Align: =Align.Right
+                                    FontWeight: =FontWeight.Semibold
+                                    Size: =15
+                                    Text: |-
+                                        ="Nội dung:"
+                                    X: =48
+                                    Y: =58
+                                    ZIndex: =3
+
+                                TextInput13_1 As text:
+                                    BorderThickness: =0.1
+                                    Clear: =true
+                                    Default: =""
+                                    Height: =76
+                                    HintText: ="Nội dung"
+                                    Mode: =TextMode.MultiLine
+                                    RadiusBottomLeft: =10
+                                    RadiusBottomRight: =10
+                                    RadiusTopLeft: =10
+                                    RadiusTopRight: =10
+                                    Width: =722
+                                    X: =209
+                                    Y: =58
+                                    ZIndex: =4
+
+                                Icon32 As icon.Send:
+                                    Height: =35
+                                    Icon: =Icon.Send
+                                    Width: =35
+                                    X: =931
+                                    Y: =146
+                                    ZIndex: =5
+
+                                Label119 As label:
+                                    Align: =Align.Right
+                                    Color: =RGBA(56, 96, 178, 1)
+                                    Height: =35
+                                    Italic: =true
+                                    Text: |-
+                                        ="Email người nhận: " & Gallery17.Selected.contactPersonEmail_Customer
+                                    Width: =500
+                                    X: =414
+                                    Y: =146
+                                    ZIndex: =6
 
                         Label80 As label:
                             AlignInContainer: =AlignInContainer.Stretch
@@ -784,6 +918,7 @@ SaleVertion2 As screen:
                             LayoutMinHeight: =287
                             LayoutMinWidth: =320
                             LoadingSpinner: =LoadingSpinner.Data
+                            OnSelect: =Set(isVisibleSaveUpdateCustomer,false);
                             TemplatePadding: =0
                             TemplateSize: =70
                             ZIndex: =4

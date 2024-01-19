@@ -59103,6 +59103,126 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "SaleVertion2.containerViewQuote.Container49.Container29.Icon31.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "SaleVertion2.containerViewQuote.Container49.Container29.Icon31.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "SaleVertion2",
+                "type": "SaleVertion2.containerViewQuote.Container49.Container29.Icon31"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 8
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "SaleVertion2.containerViewQuote.Container49.Container29.Icon31.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "SaleVertion2.containerViewQuote.Container49.Container29.Icon31.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "SaleVertion2",
+                "type": "SaleVertion2.containerViewQuote.Container49.Container29.Icon31"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 9
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "SaleVertion2.containerViewQuote.Container49.Container62.Container58.Container60.Container63.Container66.TextInput13.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "SaleVertion2.containerViewQuote.Container49.Container62.Container58.Container60.Container63.Container66.TextInput13.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "SaleVertion2",
+                "type": "SaleVertion2.containerViewQuote.Container49.Container62.Container58.Container60.Container63.Container66.TextInput13"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 8
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "SaleVertion2.containerViewQuote.Container49.Container62.Container58.Container60.Container63.Container66.TextInput13_1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "SaleVertion2.containerViewQuote.Container49.Container62.Container58.Container60.Container63.Container66.TextInput13_1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "SaleVertion2",
+                "type": "SaleVertion2.containerViewQuote.Container49.Container62.Container58.Container60.Container63.Container66.TextInput13_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 8
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "App.isVisibleContentFilePDF"
                 }
               ],
@@ -59133,17 +59253,17 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App.isDisableEditInormationCustomer"
+                  "fullyQualifiedName": "App.isDisablebtnUpdateInformationCustomer"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "App.isDisableEditInormationCustomer",
+                  "fullyQualifiedName": "App.isDisablebtnUpdateInformationCustomer",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "member": "isDisableEditInormationCustomer",
+                "member": "isDisablebtnUpdateInformationCustomer",
                 "module": "App",
                 "type": "App"
               }
@@ -59163,17 +59283,17 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App.isDisablebtnUpdateInformationCustomer"
+                  "fullyQualifiedName": "App.isDisableEditInormationCustomer"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "App.isDisablebtnUpdateInformationCustomer",
+                  "fullyQualifiedName": "App.isDisableEditInormationCustomer",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "member": "isDisablebtnUpdateInformationCustomer",
+                "member": "isDisableEditInormationCustomer",
                 "module": "App",
                 "type": "App"
               }
