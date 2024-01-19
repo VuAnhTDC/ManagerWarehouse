@@ -546,7 +546,7 @@ SaleVertion2 As screen:
                         Align: =Align.Center
                         FontWeight: =If(positionItemFunctionCustomerQuote = 2,FontWeight.Bold,FontWeight.Normal)
                         Height: =Parent.Height
-                        Text: ="Lưu"
+                        Text: ="Email"
                         Width: =88
                         X: =40
                         ZIndex: =2
@@ -558,13 +558,21 @@ SaleVertion2 As screen:
                         Width: =Parent.Width
                         ZIndex: =3
 
-                    Icon31 As icon.Save:
-                        Color: =RGBA(0, 0, 0, 1)
+                    Image14 As image:
                         Height: =Parent.Height
-                        Icon: =Icon.Save
-                        Width: =27
-                        X: =13
+                        Image: =iconemail
+                        Width: =30
+                        X: =10
                         ZIndex: =4
+
+                Icon31 As icon.Save:
+                    Color: =RGBA(0, 0, 0, 1)
+                    Height: =40
+                    Icon: =Icon.Save
+                    Width: =40
+                    X: =498
+                    Y: =8
+                    ZIndex: =4
 
             Container62 As groupContainer.verticalAutoLayoutContainer:
                 DropShadow: =DropShadow.None
@@ -591,23 +599,121 @@ SaleVertion2 As screen:
 
                         Container63 As groupContainer.manualLayoutContainer:
                             FillPortions: =0
-                            Height: =300
+                            Height: =230
                             LayoutMinHeight: =100
                             LayoutMinWidth: =250
+                            Visible: =!(positionItemFunctionCustomerQuote = -1)
                             ZIndex: =1
 
                             Container64 As groupContainer.manualLayoutContainer:
                                 Fill: =RGBA(255, 255, 255, 1)
-                                Height: =256
+                                Height: =194
                                 Width: =982
                                 X: =6
                                 Y: =36
                                 ZIndex: =1
 
+                                Label114 As label:
+                                    Align: =Align.Right
+                                    Text: |-
+                                        ="Mã số thuế:"
+                                    X: =4
+                                    Y: =18
+                                    ZIndex: =1
+
+                                TextInput12 As text:
+                                    BorderThickness: =0
+                                    Default: =Gallery17.Selected.taxCode
+                                    DisplayMode: =DisplayMode.Disabled
+                                    X: =166
+                                    Y: =18
+                                    ZIndex: =2
+
+                                Label114_1 As label:
+                                    Align: =Align.Right
+                                    Text: |-
+                                        ="Tên khách hàng:"
+                                    X: =4
+                                    Y: =82
+                                    ZIndex: =3
+
+                                TextInput12_1 As text:
+                                    BorderThickness: =1
+                                    Default: =Gallery17.Selected.customer_Name
+                                    DisplayMode: =If(positionItemFunctionCustomerQuote = 1,DisplayMode.Edit,DisplayMode.Disabled)
+                                    X: =166
+                                    Y: =82
+                                    ZIndex: =4
+
+                                Label114_2 As label:
+                                    Align: =Align.Right
+                                    Text: |-
+                                        ="Địa chỉ:"
+                                    X: =4
+                                    Y: =140
+                                    ZIndex: =5
+
+                                TextInput12_2 As text:
+                                    BorderThickness: =1
+                                    Default: =Gallery17.Selected.customer_Address
+                                    DisplayMode: =If(positionItemFunctionCustomerQuote = 1,DisplayMode.Edit,DisplayMode.Disabled)
+                                    X: =166
+                                    Y: =140
+                                    ZIndex: =6
+
+                                Label114_3 As label:
+                                    Align: =Align.Right
+                                    Text: |-
+                                        ="Người đại diện:"
+                                    X: =486
+                                    Y: =18
+                                    ZIndex: =7
+
+                                TextInput12_3 As text:
+                                    BorderThickness: =1
+                                    Default: =Gallery17.Selected.contactPersonName_Customer
+                                    DisplayMode: =If(positionItemFunctionCustomerQuote = 1,DisplayMode.Edit,DisplayMode.Disabled)
+                                    X: =648
+                                    Y: =18
+                                    ZIndex: =8
+
+                                Label114_4 As label:
+                                    Align: =Align.Right
+                                    Text: |-
+                                        ="Email:"
+                                    X: =486
+                                    Y: =82
+                                    ZIndex: =9
+
+                                TextInput12_4 As text:
+                                    BorderThickness: =1
+                                    Default: =Gallery17.Selected.contactPersonEmail_Customer
+                                    DisplayMode: =If(positionItemFunctionCustomerQuote = 1,DisplayMode.Edit,DisplayMode.Disabled)
+                                    X: =648
+                                    Y: =82
+                                    ZIndex: =10
+
+                                Label114_5 As label:
+                                    Align: =Align.Right
+                                    Text: |-
+                                        ="Số điện thoại:"
+                                    X: =486
+                                    Y: =140
+                                    ZIndex: =11
+
+                                TextInput12_5 As text:
+                                    BorderThickness: =1
+                                    Default: =Gallery17.Selected.contactPersonPhoneNumber_Customer
+                                    DisplayMode: =If(positionItemFunctionCustomerQuote = 1,DisplayMode.Edit,DisplayMode.Disabled)
+                                    X: =648
+                                    Y: =140
+                                    ZIndex: =12
+
                             Icon15 As icon.Cancel:
                                 Color: =RGBA(0, 0, 0, 1)
                                 Height: =35
                                 Icon: =Icon.Cancel
+                                OnSelect: =Set(positionItemFunctionCustomerQuote, -1)
                                 Width: =35
                                 X: =953
                                 Y: =1
@@ -615,7 +721,8 @@ SaleVertion2 As screen:
 
                             Label66 As label:
                                 Height: =36
-                                Text: ="Text"
+                                Size: =17
+                                Text: ="Thông tin khách hàng"
                                 Width: =289
                                 X: =6
                                 ZIndex: =3
@@ -628,38 +735,58 @@ SaleVertion2 As screen:
                             ZIndex: =2
 
                         Container65 As groupContainer.manualLayoutContainer:
+                            Fill: =RGBA(241, 244, 249, 1)
                             FillPortions: =0
                             Height: =40
                             LayoutMinHeight: =100
                             LayoutMinWidth: =250
+                            RadiusBottomLeft: =10
+                            RadiusBottomRight: =10
+                            RadiusTopLeft: =10
+                            RadiusTopRight: =10
                             ZIndex: =3
+
+                            Label116 As label:
+                                Align: =Align.Center
+                                FontWeight: =FontWeight.Semibold
+                                Size: =15
+                                Text: ="Mã số thuế"
+                                Width: =238
+                                X: =21
+                                ZIndex: =1
+
+                            Label116_1 As label:
+                                Align: =Align.Center
+                                FontWeight: =FontWeight.Semibold
+                                Size: =15
+                                Text: ="Tên khách hàng"
+                                Width: =366
+                                X: =259
+                                ZIndex: =2
+
+                            Label116_2 As label:
+                                Align: =Align.Center
+                                FontWeight: =FontWeight.Semibold
+                                Size: =15
+                                Text: |-
+                                    ="Số điện thoại
+                                    "
+                                Width: =276
+                                X: =625
+                                ZIndex: =3
 
                         "Gallery17 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
                             DelayItemLoading: =true
+                            FillPortions: =If(positionItemFunctionCustomerQuote = -1, 1, 0)
+                            Height: =300
                             Items: =Customer
                             Layout: =Layout.Vertical
                             LayoutMinHeight: =287
                             LayoutMinWidth: =320
                             LoadingSpinner: =LoadingSpinner.Data
                             TemplatePadding: =0
-                            TemplateSize: =104
+                            TemplateSize: =70
                             ZIndex: =4
-
-                            NextArrow3 As icon.ChevronRight:
-                                AccessibleLabel: =Self.Tooltip
-                                Color: =RGBA(166, 166, 166, 1)
-                                Height: =50
-                                Icon: =Icon.ChevronRight
-                                OnSelect: =Select(Parent)
-                                PaddingBottom: =16
-                                PaddingLeft: =16
-                                PaddingRight: =16
-                                PaddingTop: =16
-                                Tooltip: ="View item details"
-                                Width: =50
-                                X: =Parent.TemplateWidth - Self.Width - 12
-                                Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
-                                ZIndex: =4
 
                             Separator14 As rectangle:
                                 Height: =8
@@ -674,6 +801,38 @@ SaleVertion2 As screen:
                                 Visible: =ThisItem.IsSelected
                                 Width: =4
                                 ZIndex: =6
+
+                            Label107 As label:
+                                Align: =Align.Center
+                                Color: =RGBA(0, 18, 107, 1)
+                                Height: =62
+                                Italic: =true
+                                OnSelect: =Select(Parent)
+                                Size: =15
+                                Text: =ThisItem.taxCode
+                                Width: =240
+                                X: =21
+                                ZIndex: =7
+
+                            Label107_1 As label:
+                                Align: =Align.Center
+                                Height: =62
+                                OnSelect: =Select(Parent)
+                                Size: =15
+                                Text: =ThisItem.customer_Name
+                                Width: =366
+                                X: =261
+                                ZIndex: =8
+
+                            Label107_2 As label:
+                                Align: =Align.Center
+                                Height: =62
+                                OnSelect: =Select(Parent)
+                                Size: =15
+                                Text: =ThisItem.contactPersonPhoneNumber_Customer
+                                Width: =276
+                                X: =627
+                                ZIndex: =9
 
     Container17 As groupContainer.manualLayoutContainer:
         Fill: =RGBA(56, 96, 178, 1)
