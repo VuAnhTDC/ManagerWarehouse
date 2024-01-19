@@ -23,6 +23,9 @@ SaleVertion2 As screen:
         Set(isVisibleSaveUpdateCustomer, false);
         Set(positionOptionCustomerQuote,0);
         Set(positinInformationcustomerFocus,-1);
+        
+        // yêu cầu mua hàng
+        Set(positionStatusPurchase_SaleVertion2, -1);
 
     containerViewQuote As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
@@ -106,73 +109,6 @@ SaleVertion2 As screen:
                         X: =37
                         Y: =57
                         ZIndex: =2
-
-                containerOptionCustomer As groupContainer.manualLayoutContainer:
-                    Height: =117
-                    Visible: =ThisItem.IsSelected && ThisItem.id = 1 && ThisItem.btnFunction = "btnQuoteSale"
-                    Width: =307
-                    Y: =47
-                    ZIndex: =3
-
-                    Container67 As groupContainer.manualLayoutContainer:
-                        DropShadow: =If(positionOptionCustomerQuote = 0,DropShadow.Semibold,DropShadow.Light)
-                        Fill: =If(positionOptionCustomerQuote = 0, RGBA(237, 237, 237, 1),RGBA(241, 244, 249, 1))
-                        Height: =31
-                        RadiusBottomLeft: =10
-                        RadiusBottomRight: =10
-                        RadiusTopLeft: =10
-                        RadiusTopRight: =10
-                        Width: =257
-                        X: =24
-                        Y: =13
-                        ZIndex: =1
-
-                        Label121 As label:
-                            Align: =Align.Center
-                            FontWeight: =If(positionOptionCustomerQuote = 0,FontWeight.Semibold,FontWeight.Normal)
-                            Height: =31
-                            Text: ="Danh sách khách hàng"
-                            Width: =257
-                            ZIndex: =1
-
-                        Rectangle13 As rectangle:
-                            Fill: =RGBA(56, 96, 178, 0)
-                            Height: =31
-                            OnSelect: |-
-                                =Set(positionOptionCustomerQuote,0);
-                                Set(positionItemFunctionCustomerQuote, 0);
-                                Set(isVisibleSaveUpdateCustomer,false);
-                                Set(positionItemFunctionCustomerQuote, -1)
-                            Width: =257
-                            ZIndex: =2
-
-                    Container67_1 As groupContainer.manualLayoutContainer:
-                        DropShadow: =If(positionOptionCustomerQuote = 1,DropShadow.Semibold,DropShadow.Light)
-                        Fill: =If(positionOptionCustomerQuote = 1, RGBA(237, 237, 237, 1),RGBA(241, 244, 249, 1))
-                        Height: =31
-                        RadiusBottomLeft: =10
-                        RadiusBottomRight: =10
-                        RadiusTopLeft: =10
-                        RadiusTopRight: =10
-                        Width: =257
-                        X: =24
-                        Y: =53
-                        ZIndex: =2
-
-                        Label121_1 As label:
-                            Align: =Align.Center
-                            FontWeight: =If(positionOptionCustomerQuote = 1,FontWeight.Semibold,FontWeight.Normal)
-                            Height: =31
-                            Text: ="Tạo khách hàng"
-                            Width: =257
-                            ZIndex: =1
-
-                        Rectangle14 As rectangle:
-                            Fill: =RGBA(56, 96, 178, 0)
-                            Height: =31
-                            OnSelect: =Set(positionOptionCustomerQuote,1);
-                            Width: =257
-                            ZIndex: =2
 
         Container23 As groupContainer.manualLayoutContainer:
             Height: =688
@@ -527,7 +463,7 @@ SaleVertion2 As screen:
                 RadiusBottomRight: =10
                 RadiusTopLeft: =10
                 RadiusTopRight: =10
-                Width: =556
+                Width: =691
                 X: =12
                 Y: =4
                 ZIndex: =3
@@ -537,7 +473,7 @@ SaleVertion2 As screen:
                     Fill: =If(positionItemFunctionCustomerQuote = 0, RGBA(128, 128, 128, 0.21),RGBA(128, 128, 128, 0))
                     Height: =If(positionItemFunctionCustomerQuote = 0, 51,39)
                     Width: =128
-                    X: =8
+                    X: =179
                     Y: =8
                     ZIndex: =1
 
@@ -571,8 +507,8 @@ SaleVertion2 As screen:
                     Fill: =If(positionItemFunctionCustomerQuote = 1, RGBA(128, 128, 128, 0.21),RGBA(128, 128, 128, 0))
                     Height: =If(positionItemFunctionCustomerQuote = 1, 51,39)
                     Width: =128
-                    X: =155
-                    Y: =8
+                    X: =333
+                    Y: =9
                     ZIndex: =2
 
                     Icon30 As icon.Edit:
@@ -605,8 +541,8 @@ SaleVertion2 As screen:
                     Fill: =If(positionItemFunctionCustomerQuote = 2, RGBA(128, 128, 128, 0.21),RGBA(128, 128, 128, 0))
                     Height: =If(positionItemFunctionCustomerQuote = 2, 51,39)
                     Width: =128
-                    X: =301
-                    Y: =8
+                    X: =483
+                    Y: =9
                     ZIndex: =3
 
                     Label115_2 As label:
@@ -647,32 +583,80 @@ SaleVertion2 As screen:
                                 "Vui lòng không để trống thông tin.",
                                 NotificationType.Error
                             ),
-                            Patch(
-                                Customer,
-                                LookUp(
-                                    Customer,
-                                    taxCode = TextInput12.Text
+                            If(
+                                !IsMatch(
+                                    TextInput12_4.Text,
+                                    "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                                ) || !IsMatch(
+                                    TextInput12_5.Text,
+                                    "^0\d{9}$"
                                 ),
-                                {
-                                    customer_Name: TextInput12_1.Text,
-                                    customer_Address: TextInput12_2.Text,
-                                    contactPersonName_Customer: TextInput12_3.Text,
-                                    contactPersonEmail_Customer: TextInput12_4.Text,
-                                    contactPersonPhoneNumber_Customer: TextInput12_5.Text
-                                }
-                            );
-                            Notify(
-                                "Thay đổi thông tin khách hàng thành công",
-                                NotificationType.Success
-                            );
-                            Set(isVisibleSaveUpdateCustomer,false)
-                            
+                                Notify("Vui lòng nhập đúng định dạng"),
+                                Patch(
+                                    Customer,
+                                    LookUp(
+                                        Customer,
+                                        taxCode = TextInput12.Text
+                                    ),
+                                    {
+                                        customer_Name: TextInput12_1.Text,
+                                        customer_Address: TextInput12_2.Text,
+                                        contactPersonName_Customer: TextInput12_3.Text,
+                                        contactPersonEmail_Customer: TextInput12_4.Text,
+                                        contactPersonPhoneNumber_Customer: TextInput12_5.Text
+                                    }
+                                );
+                                Notify(
+                                    "Thay đổi thông tin khách hàng thành công",
+                                    NotificationType.Success
+                                );
+                                Set(
+                                    isVisibleSaveUpdateCustomer,
+                                    false
+                                )
+                            )
                         )
                     Visible: =isVisibleSaveUpdateCustomer
                     Width: =40
                     X: =498
                     Y: =8
                     ZIndex: =4
+
+                containerSaveEditCustomer_1 As groupContainer.manualLayoutContainer:
+                    DropShadow: =DropShadow.Regular
+                    Fill: =If(positionItemFunctionCustomerQuote = 2, RGBA(128, 128, 128, 0.21),RGBA(128, 128, 128, 0))
+                    Height: =If(positionItemFunctionCustomerQuote = 2, 51,39)
+                    Width: =128
+                    X: =25
+                    Y: =8
+                    ZIndex: =5
+
+                    Label115_3 As label:
+                        Align: =Align.Center
+                        FontWeight: =If(positionItemFunctionCustomerQuote = 2,FontWeight.Bold,FontWeight.Normal)
+                        Height: =Parent.Height
+                        Text: ="Email"
+                        Width: =88
+                        X: =40
+                        ZIndex: =2
+
+                    Rectangle9_3 As rectangle:
+                        Fill: =RGBA(56, 96, 178, 0)
+                        Height: =Parent.Height
+                        OnSelect: |-
+                            =Set(positionItemFunctionCustomerQuote, 2);
+                            Set(isVisibleSaveUpdateCustomer,false);
+                            Reset(TextInput13);
+                            Reset(TextInput13_1)
+                        Width: =Parent.Width
+                        ZIndex: =3
+
+                    Image14_1 As image:
+                        Height: =Parent.Height
+                        Image: =iconemail
+                        Width: =30
+                        X: =10
+                        ZIndex: =4
 
             Container62 As groupContainer.verticalAutoLayoutContainer:
                 DropShadow: =DropShadow.None
@@ -749,16 +733,6 @@ SaleVertion2 As screen:
                                     Y: =18
                                     ZIndex: =7
 
-                                TextInput12_3 As text:
-                                    BorderThickness: =1
-                                    Default: =Gallery17.Selected.contactPersonName_Customer
-                                    DisplayMode: =If(positionItemFunctionCustomerQuote = 1,DisplayMode.Edit,DisplayMode.Disabled)
-                                    OnChange: =Set(isVisibleSaveUpdateCustomer,true)
-                                    OnSelect: =Set(positinInformationcustomerFocus,2);
-                                    X: =648
-                                    Y: =18
-                                    ZIndex: =8
-
                                 Label114_4 As label:
                                     Align: =Align.Right
                                     FontWeight: =FontWeight.Semibold
@@ -768,16 +742,6 @@ SaleVertion2 As screen:
                                     Y: =82
                                     ZIndex: =9
 
-                                TextInput12_4 As text:
-                                    BorderThickness: =1
-                                    Default: =Gallery17.Selected.contactPersonEmail_Customer
-                                    DisplayMode: =If(positionItemFunctionCustomerQuote = 1,DisplayMode.Edit,DisplayMode.Disabled)
-                                    OnChange: =Set(isVisibleSaveUpdateCustomer,true)
-                                    OnSelect: =Set(positinInformationcustomerFocus,3);
-                                    X: =648
-                                    Y: =82
-                                    ZIndex: =10
-
                                 Label114_5 As label:
                                     Align: =Align.Right
                                     FontWeight: =FontWeight.Semibold
@@ -786,16 +750,6 @@ SaleVertion2 As screen:
                                     X: =486
                                     Y: =140
                                     ZIndex: =11
-
-                                TextInput12_5 As text:
-                                    BorderThickness: =1
-                                    Default: =Gallery17.Selected.contactPersonPhoneNumber_Customer
-                                    DisplayMode: =If(positionItemFunctionCustomerQuote = 1,DisplayMode.Edit,DisplayMode.Disabled)
-                                    OnChange: =Set(isVisibleSaveUpdateCustomer,true)
-                                    OnSelect: =Set(positinInformationcustomerFocus,4);
-                                    X: =648
-                                    Y: =140
-                                    ZIndex: =12
 
                                 Label114_1 As label:
                                     Align: =Align.Right
@@ -833,9 +787,61 @@ SaleVertion2 As screen:
 
                                     TextInput12_2 As text:
                                         BorderThickness: =0.1
-                                        Default: =Gallery17.Selected.customer_Name
+                                        Default: =Gallery17.Selected.customer_Address
                                         DisplayMode: =If(positionItemFunctionCustomerQuote = 1,DisplayMode.Edit,DisplayMode.Disabled)
                                         FocusedBorderThickness: =0.1
+                                        OnChange: =Set(isVisibleSaveUpdateCustomer,true)
+                                        OnSelect: =Set(positinInformationcustomerFocus,0);
+                                        ZIndex: =1
+
+                                Container70_2 As groupContainer.manualLayoutContainer:
+                                    DropShadow: =If(positinInformationcustomerFocus = 0,DropShadow.Semibold,DropShadow.Light)
+                                    Height: =40
+                                    Width: =320
+                                    X: =648
+                                    Y: =18
+                                    ZIndex: =16
+
+                                    TextInput12_3 As text:
+                                        BorderThickness: =0.1
+                                        Default: =Gallery17.Selected.contactPersonName_Customer
+                                        DisplayMode: =If(positionItemFunctionCustomerQuote = 1,DisplayMode.Edit,DisplayMode.Disabled)
+                                        FocusedBorderThickness: =0.1
+                                        OnChange: =Set(isVisibleSaveUpdateCustomer,true)
+                                        OnSelect: =Set(positinInformationcustomerFocus,0);
+                                        ZIndex: =1
+
+                                Container70_3 As groupContainer.manualLayoutContainer:
+                                    DropShadow: =If(positinInformationcustomerFocus = 0,DropShadow.Semibold,DropShadow.Light)
+                                    Height: =40
+                                    Width: =320
+                                    X: =648
+                                    Y: =82
+                                    ZIndex: =17
+
+                                    TextInput12_4 As text:
+                                        BorderThickness: =0.1
+                                        Default: =Gallery17.Selected.contactPersonEmail_Customer
+                                        DisplayMode: =If(positionItemFunctionCustomerQuote = 1,DisplayMode.Edit,DisplayMode.Disabled)
+                                        FocusedBorderThickness: =0.1
+                                        OnChange: =Set(isVisibleSaveUpdateCustomer,true)
+                                        OnSelect: =Set(positinInformationcustomerFocus,0);
+                                        ZIndex: =1
+
+                                Container70_4 As groupContainer.manualLayoutContainer:
+                                    DropShadow: =If(positinInformationcustomerFocus = 0,DropShadow.Semibold,DropShadow.Light)
+                                    Height: =40
+                                    Width: =320
+                                    X: =648
+                                    Y: =140
+                                    ZIndex: =18
+
+                                    TextInput12_5 As text:
+                                        BorderThickness: =0.1
+                                        Default: =Gallery17.Selected.contactPersonPhoneNumber_Customer
+                                        DisplayMode: =If(positionItemFunctionCustomerQuote = 1,DisplayMode.Edit,DisplayMode.Disabled)
+                                        FocusedBorderThickness: =0.1
+                                        MaxLength: =10
                                         OnChange: =Set(isVisibleSaveUpdateCustomer,true)
                                         OnSelect: =Set(positinInformationcustomerFocus,0);
                                         ZIndex: =1
@@ -3911,4 +3917,163 @@ SaleVertion2 As screen:
                 X: =If(Gallery16.Selected.quote_Status.Value = "Báo giá",276,308)
                 Y: =20
                 ZIndex: =5
+
+    containerPurchase_Version2 As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.None
+        Height: =701
+        Visible: =btnFunctionSaleVertion2 = "btnPurchase"
+        Width: =1366
+        Y: =67
+        ZIndex: =5
+
+        Container72 As groupContainer.manualLayoutContainer:
+            DropShadow: =DropShadow.Semibold
+            Height: =663
+            Width: =317
+            X: =16
+            Y: =13
+            ZIndex: =1
+
+            Container73 As groupContainer.manualLayoutContainer:
+                DropShadow: =DropShadow.Regular
+                Height: =28
+                Width: =294
+                X: =10
+                Y: =5
+                ZIndex: =1
+
+                Label124 As label:
+                    Color: =RGBA(255, 255, 255, 1)
+                    Fill: =RGBA(50, 86, 160, 1)
+                    FontWeight: =FontWeight.Bold
+                    Height: =28
+                    Size: =15
+                    Text: ="Tìm kiếm"
+                    Width: =294
+                    ZIndex: =1
+
+            TextInput15 As text:
+                Default: =""
+                Height: =30
+                HintText: ="Mã sản phẩm"
+                Width: =278
+                X: =18
+                Y: =37
+                ZIndex: =2
+
+            TextInput15_1 As text:
+                Default: =""
+                Height: =30
+                HintText: ="Mã yêu cầu mua hàng"
+                Width: =278
+                X: =18
+                Y: =80
+                ZIndex: =3
+
+            Container73_1 As groupContainer.manualLayoutContainer:
+                DropShadow: =DropShadow.Regular
+                Height: =28
+                Width: =294
+                X: =10
+                Y: =138
+                ZIndex: =4
+
+                Label124_1 As label:
+                    Color: =RGBA(255, 255, 255, 1)
+                    Fill: =RGBA(50, 86, 160, 1)
+                    FontWeight: =FontWeight.Bold
+                    Height: =28
+                    Size: =15
+                    Text: ="Trạng thái"
+                    Width: =294
+                    ZIndex: =1
+
+            Checkbox1 As checkbox:
+                Height: =34
+                Text: ="Chờ phê duyệt"
+                Width: =278
+                X: =18
+                Y: =177
+                ZIndex: =5
+
+            Checkbox1_1 As checkbox:
+                Height: =34
+                Text: ="Đã phê duyệt"
+                Width: =278
+                X: =18
+                Y: =226
+                ZIndex: =6
+
+            Checkbox1_2 As checkbox:
+                Height: =34
+                Text: ="Đã bị hủy"
+                Width: =278
+                X: =18
+                Y: =275
+                ZIndex: =7
+
+            Container73_2 As groupContainer.manualLayoutContainer:
+                DropShadow: =DropShadow.Regular
+                Height: =28
+                Width: =294
+                X: =10
+                Y: =333
+                ZIndex: =8
+
+                Label124_2 As label:
+                    Color: =RGBA(255, 255, 255, 1)
+                    Fill: =RGBA(50, 86, 160, 1)
+                    FontWeight: =FontWeight.Bold
+                    Height: =28
+                    Size: =15
+                    Text: ="Tạo yêu cầu mua hàng"
+                    Width: =294
+                    ZIndex: =1
+
+            Container74 As groupContainer.manualLayoutContainer:
+                Height: =26
+                Width: =238
+                X: =38
+                Y: =376
+                ZIndex: =9
+
+                Label125 As label:
+                    Align: =Align.Center
+                    Height: =26
+                    Text: ="Sản phẩm hết hàng"
+                    Width: =238
+                    ZIndex: =1
+
+            Container74_1 As groupContainer.manualLayoutContainer:
+                Height: =26
+                Width: =238
+                X: =38
+                Y: =416
+                ZIndex: =10
+
+                Label125_1 As label:
+                    Align: =Align.Center
+                    Height: =26
+                    Text: ="Sản phẩm mới"
+                    Width: =238
+                    ZIndex: =1
+
+        Container75 As groupContainer.manualLayoutContainer:
+            BorderThickness: =0.1
+            DropShadow: =DropShadow.None
+            Height: =675
+            Width: =1020
+            X: =333
+            Y: =13
+            ZIndex: =2
+
+            Label126 As label:
+                FontWeight: =FontWeight.Bold
+                Height: =41
+                Size: =24
+                Text: =If(IsBlank(TextInput15.Text) && IsBlank(TextInput15_1.Text),"Danh sách yêu cầu mua hàng")
+                Width: =487
+                X: =8
+                Y: =8
+                ZIndex: =1
 
