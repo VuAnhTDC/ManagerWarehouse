@@ -4028,7 +4028,6 @@ SaleVertion2 As screen:
                 ZIndex: =7
 
         Container75 As groupContainer.manualLayoutContainer:
-            BorderThickness: =0.1
             DropShadow: =DropShadow.None
             Height: =675
             Width: =1020
@@ -4040,7 +4039,23 @@ SaleVertion2 As screen:
                 FontWeight: =FontWeight.Bold
                 Height: =42
                 Size: =24
-                Text: ="Danh sách yêu cầu"
+                Text: |-
+                    =If(
+                        positionStatusPurchase_SaleVertion2 = -1,
+                        "Danh sách yêu cầu",
+                        If(
+                            positionStatusPurchase_SaleVertion2 = 0,
+                            "Danh sách yêu cầu - Chờ phê duyệt",
+                            If(
+                                positionStatusPurchase_SaleVertion2 = 1,
+                                "Danh sách yêu cầu - Đã duyệt",
+                                If(
+                                    positionStatusPurchase_SaleVertion2 = 2,
+                                    "Danh sách yêu cầu - Đã từ chối"
+                                )
+                            )
+                        )
+                    )
                 Width: =632
                 X: =8
                 Y: =8
@@ -4069,6 +4084,7 @@ SaleVertion2 As screen:
                     ZIndex: =2
 
             Container79 As groupContainer.manualLayoutContainer:
+                Fill: =RGBA(255, 255, 255, 1)
                 Height: =85
                 Visible: =isVisiblechoiceStyleRequest
                 Width: =252
@@ -4130,6 +4146,189 @@ SaleVertion2 As screen:
                         Text: =ThisItem.name
                         Width: =252
                         ZIndex: =1
+
+            "Gallery25 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+                BorderThickness: =0.1
+                DelayItemLoading: =true
+                Fill: =RGBA(241, 244, 249, 1)
+                Height: =544
+                Items: |-
+                    =If(
+                        IsBlank(TextInput15.Text) && IsBlank(TextInput15_1.Text),
+                        If(
+                            positionStatusPurchase_SaleVertion2 = -1,
+                            Filter(Purchase_request,id_User = informationUser.ID),
+                            If(
+                                positionStatusPurchase_SaleVertion2 = 0,
+                                Filter(
+                                    Purchase_request,
+                                    status_PurchaseRequest.Value = "Chưa duyệt" && id_User = informationUser.ID
+                                ),
+                                If(
+                                    positionStatusPurchase_SaleVertion2 = 1,
+                                    Filter(
+                                        Purchase_request,
+                                        status_PurchaseRequest.Value = "Đã duyệt" && id_User = informationUser.ID
+                                    ),
+                                    If(
+                                        positionStatusPurchase_SaleVertion2 = 2,
+                                        Filter(
+                                            Purchase_request,
+                                            status_PurchaseRequest.Value = "Từ chối" && id_User = informationUser.ID
+                                        )
+                                    )
+                                )
+                            )
+                        )
+                    )
+                Layout: =Layout.Vertical
+                LoadingSpinner: =LoadingSpinner.Data
+                TemplatePadding: =0
+                TemplateSize: =50
+                Width: =999
+                X: =8
+                Y: =131
+                ZIndex: =4
+
+                NextArrow8 As icon.ChevronRight:
+                    AccessibleLabel: =Self.Tooltip
+                    Color: =RGBA(166, 166, 166, 1)
+                    Height: =50
+                    Icon: =Icon.ChevronRight
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =16
+                    PaddingLeft: =16
+                    PaddingRight: =16
+                    PaddingTop: =16
+                    Tooltip: ="View item details"
+                    Width: =50
+                    X: =Parent.TemplateWidth - Self.Width - 12
+                    Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+                    ZIndex: =4
+
+                Separator21 As rectangle:
+                    Height: =8
+                    OnSelect: =Select(Parent)
+                    Width: =Parent.TemplateWidth
+                    Y: =Parent.TemplateHeight - Self.Height
+                    ZIndex: =5
+
+                Rectangle17 As rectangle:
+                    Height: =Parent.TemplateHeight - Separator21.Height
+                    OnSelect: =Select(Parent)
+                    Visible: =ThisItem.IsSelected
+                    Width: =4
+                    ZIndex: =6
+
+                Label144 As label:
+                    Align: =Align.Center
+                    Color: =RGBA(56, 96, 178, 1)
+                    OnSelect: =Select(Parent)
+                    Size: =15
+                    Text: =ThisItem.id_Purchase_request
+                    Width: =288
+                    X: =16
+                    ZIndex: =7
+
+                Label145 As label:
+                    Align: =Align.Center
+                    OnSelect: =Select(Parent)
+                    Size: =15
+                    Text: =Text(ThisItem.request_Date, "dd/mm/yyyy")
+                    Width: =177
+                    X: =304
+                    ZIndex: =8
+
+                Label145_1 As label:
+                    Align: =Align.Center
+                    OnSelect: =Select(Parent)
+                    Size: =15
+                    Text: =Text(ThisItem.delivery_Date, "dd/mm/yyyy")
+                    Width: =177
+                    X: =481
+                    ZIndex: =9
+
+                Label145_2 As label:
+                    Align: =Align.Center
+                    OnSelect: =Select(Parent)
+                    Size: =15
+                    Text: =ThisItem.status_PurchaseRequest.Value
+                    Width: =177
+                    X: =658
+                    ZIndex: =10
+
+                Label145_3 As label:
+                    Align: =Align.Center
+                    OnSelect: =Select(Parent)
+                    Size: =15
+                    Text: =CountRows(Filter(Purchase_request_Product,id_Purchase_request = ThisItem.id_Purchase_request))
+                    Width: =115
+                    X: =835
+                    ZIndex: =11
+
+            Container89 As groupContainer.manualLayoutContainer:
+                Fill: =RGBA(128, 128, 128, 0.21)
+                Height: =41
+                RadiusBottomLeft: =10
+                RadiusBottomRight: =10
+                RadiusTopLeft: =10
+                RadiusTopRight: =10
+                Width: =999
+                X: =8
+                Y: =78
+                ZIndex: =5
+
+                Label143 As label:
+                    Align: =Align.Center
+                    FontWeight: =FontWeight.Semibold
+                    Size: =15
+                    Text: ="Mã yêu cầu"
+                    Width: =288
+                    X: =12
+                    Y: =1
+                    ZIndex: =1
+
+                Label143_1 As label:
+                    Align: =Align.Center
+                    FontWeight: =FontWeight.Semibold
+                    Height: =41
+                    Size: =15
+                    Text: |-
+                        ="Ngày tạo
+                        "
+                    Width: =177
+                    X: =300
+                    ZIndex: =2
+
+                Label143_2 As label:
+                    Align: =Align.Center
+                    FontWeight: =FontWeight.Semibold
+                    Height: =41
+                    Size: =15
+                    Text: ="Ngày nhận hàng"
+                    Width: =177
+                    X: =477
+                    ZIndex: =3
+
+                Label143_3 As label:
+                    Align: =Align.Center
+                    FontWeight: =FontWeight.Semibold
+                    Height: =41
+                    Size: =15
+                    Text: ="Trạng thái"
+                    Width: =177
+                    X: =654
+                    ZIndex: =4
+
+                Label143_4 As label:
+                    Align: =Align.Center
+                    FontWeight: =FontWeight.Semibold
+                    Height: =41
+                    Size: =15
+                    Text: ="SLSP"
+                    Width: =114
+                    X: =831
+                    ZIndex: =5
 
     containerDialogPurchase As groupContainer.manualLayoutContainer:
         Fill: =RGBA(0, 0, 0, 0.23)
@@ -4522,7 +4721,7 @@ SaleVertion2 As screen:
                             1500
                         ),
                         Set(
-                            id_Purchase_request,
+                            iD_Purchase_request,
                             "PRQ_" & Text(
                                 Now(),
                                 "ddmmyyyyhhmmss"
@@ -4532,14 +4731,37 @@ SaleVertion2 As screen:
                             Purchase_request,
                             Defaults(Purchase_request),
                             {
-                                id_Purchase_request: id_Purchase_request,
+                                id_Purchase_request: iD_Purchase_request,
                                 request_Date: Now(),
                                 delivery_Date: DatePicker3.SelectedDate,
                                 status_PurchaseRequest: {Value: "Chưa duyệt"},
                                 id_User: informationUser.ID
                             }
                         );
-                        
+                        ForAll(
+                            arrProductPurchase_SaleVertion2,
+                            Patch(
+                                Purchase_request_Product,
+                                Defaults(Purchase_request_Product),
+                                {
+                                    id_Purchase_request: iD_Purchase_request,
+                                    id_Product: ThisRecord.id_Product,
+                                    name_Product: ThisRecord.name_Product,
+                                    request_Quantity: ThisRecord.request_Quantity,
+                                    request_Reason: ThisRecord.request_Reason,
+                                    request_Note: ThisRecord.request_Note
+                                }
+                            )
+                        );
+                        Notify("Tạo yêu cầu mua hàng thành công");
+                        Set(
+                            isVisibleDialogPurchaseProduct,
+                            false
+                        );
+                        Set(
+                            isVisibleDialogPurchase_SaleVertion2,
+                            false
+                        )
                     )
                 Text: ="Xác nhận"
                 Width: =243

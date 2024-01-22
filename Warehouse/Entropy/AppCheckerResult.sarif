@@ -47793,6 +47793,46 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "SaleVertion2.containerPurchase_Version2.Container75.Gallery25.Label145_3.Text"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "SaleVertion2.containerPurchase_Version2.Container75.Gallery25.Label145_3.Text",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 94,
+                  "charOffset": 0,
+                  "snippet": {
+                    "text": "CountRows(Filter(Purchase_request_Product,id_Purchase_request = ThisItem.id_Purchase_request))"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Text",
+                "module": "SaleVertion2",
+                "type": "SaleVertion2.containerPurchase_Version2.Container75.Gallery25.Label145_3"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "CountRows"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByService",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "Warehouse_Manager.Container_Category_Warehouse.Container5_Title_Category_Warehouse.Icon5_Back_Category_Warehouse.AccessibleLabel"
                 }
               ],
@@ -60376,6 +60416,66 @@
                 "member": "TabIndex",
                 "module": "SaleVertion2",
                 "type": "SaleVertion2.containerDialogPurchase.Container78.Container74.Container86.Gallery24.Icon37"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 9
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "SaleVertion2.containerPurchase_Version2.Container75.Gallery25.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "SaleVertion2.containerPurchase_Version2.Container75.Gallery25.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "SaleVertion2",
+                "type": "SaleVertion2.containerPurchase_Version2.Container75.Gallery25"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 8
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "SaleVertion2.containerPurchase_Version2.Container75.Gallery25.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "SaleVertion2.containerPurchase_Version2.Container75.Gallery25.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "SaleVertion2",
+                "type": "SaleVertion2.containerPurchase_Version2.Container75.Gallery25"
               }
             }
           ],
