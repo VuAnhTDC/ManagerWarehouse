@@ -3996,7 +3996,9 @@ SaleVertion2 As screen:
             Checkbox1 As checkbox:
                 Default: =positionStatusPurchase_SaleVertion2 = 0
                 Height: =34
-                OnCheck: =Set(positionStatusPurchase_SaleVertion2, 0)
+                OnCheck: |-
+                    =Set(positionStatusPurchase_SaleVertion2, 0);
+                    Refresh(Purchase_request)
                 OnSelect: =
                 OnUncheck: =Set(positionStatusPurchase_SaleVertion2, -1)
                 Text: ="Chờ phê duyệt"
@@ -4008,7 +4010,9 @@ SaleVertion2 As screen:
             Checkbox1_1 As checkbox:
                 Default: =positionStatusPurchase_SaleVertion2 = 1
                 Height: =34
-                OnCheck: =Set(positionStatusPurchase_SaleVertion2, 1)
+                OnCheck: |-
+                    =Set(positionStatusPurchase_SaleVertion2, 1);
+                    Refresh(Purchase_request)
                 OnUncheck: =Set(positionStatusPurchase_SaleVertion2, -1)
                 Text: ="Đã phê duyệt"
                 Width: =278
@@ -4019,7 +4023,9 @@ SaleVertion2 As screen:
             Checkbox1_2 As checkbox:
                 Default: =positionStatusPurchase_SaleVertion2 = 2
                 Height: =34
-                OnCheck: =Set(positionStatusPurchase_SaleVertion2, 2)
+                OnCheck: |-
+                    =Set(positionStatusPurchase_SaleVertion2, 2);
+                    Refresh(Purchase_request)
                 OnUncheck: =Set(positionStatusPurchase_SaleVertion2, -1)
                 Text: ="Đã bị hủy"
                 Width: =278
@@ -4480,7 +4486,15 @@ SaleVertion2 As screen:
                             AccessibleLabel: =Self.Tooltip
                             Height: =50
                             Icon: =Icon.Export
-                            OnSelect: =Set(isVisibleDialogRequestProductPurchase, true)
+                            OnSelect: |
+                                =Set(
+                                    isVisibleDialogRequestProductPurchase,
+                                    true
+                                );
+                                Reset(TextInput22);
+                                Reset(TextInput22_1);
+                                Reset(TextInput22_2);
+                                Reset(TextInput22_3);
                             PaddingBottom: =16
                             PaddingTop: =16
                             Tooltip: ="View item details"
@@ -4825,7 +4839,7 @@ SaleVertion2 As screen:
                     ZIndex: =5
 
                 TextInput22 As text:
-                    Default: =Gallery24.Selected.request_Quantity
+                    Default: =If(isVisibleEditProductPurchase,Gallery24.Selected.request_Quantity)
                     Format: =TextFormat.Number
                     HintText: ="Số lượng yêu cầu"
                     Width: =446
@@ -4843,7 +4857,7 @@ SaleVertion2 As screen:
                     ZIndex: =7
 
                 TextInput22_1 As text:
-                    Default: =Gallery24.Selected.request_Reason
+                    Default: =If(isVisibleEditProductPurchase,Gallery24.Selected.request_Reason)
                     Height: =66
                     HintText: ="Lý do mua hàng"
                     Mode: =TextMode.MultiLine
@@ -4862,7 +4876,7 @@ SaleVertion2 As screen:
                     ZIndex: =9
 
                 TextInput22_2 As text:
-                    Default: =Gallery24.Selected.request_Note
+                    Default: =If(isVisibleEditProductPurchase,Gallery24.Selected.request_Note)
                     Height: =66
                     HintText: ="Ghi chú"
                     Mode: =TextMode.MultiLine
@@ -4899,7 +4913,8 @@ SaleVertion2 As screen:
                                     "Sửa thông tin sản phẩm yêu cầu thành công",
                                     NotificationType.Success,
                                     1500
-                                ),
+                                );
+                                ,
                                 Collect(
                                     arrProductPurchase_SaleVertion2,
                                     {
@@ -4908,7 +4923,8 @@ SaleVertion2 As screen:
                                         name_Product: Gallery21.Selected.name_Product,
                                         request_Quantity: Value(TextInput22.Text),
                                         request_Reason: TextInput22_1.Text,
-                                        request_Note: TextInput22_2.Text
+                                        request_Note: TextInput22_2.Text,
+                                        unit: TextInput22_3.Text
                                     }
                                 );
                                 Notify(
@@ -4916,9 +4932,6 @@ SaleVertion2 As screen:
                                     NotificationType.Success
                                 );
                             );
-                            Reset(TextInput22);
-                            Reset(TextInput22_1);
-                            Reset(TextInput22_2);
                             Set(
                                 isVisibleDialogRequestProductPurchase,
                                 false
@@ -4932,8 +4945,27 @@ SaleVertion2 As screen:
                     Text: ="Xác nhận"
                     Width: =305
                     X: =110
-                    Y: =462
+                    Y: =558
                     ZIndex: =11
+
+                Label139_4 As label:
+                    FontWeight: =FontWeight.Semibold
+                    Size: =15
+                    Text: ="Đơn vị"
+                    Width: =446
+                    X: =39
+                    Y: =424
+                    ZIndex: =12
+
+                TextInput22_3 As text:
+                    Default: =If(isVisibleEditProductPurchase,Gallery24.Selected.unit)
+                    Height: =66
+                    HintText: ="Đơn vị"
+                    Mode: =TextMode.MultiLine
+                    Width: =446
+                    X: =39
+                    Y: =464
+                    ZIndex: =13
 
         containerDialogRequestBuyProductNewPurchase As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -5321,7 +5353,7 @@ SaleVertion2 As screen:
                         Color: =RGBA(0, 0, 0, 1)
                         Height: =30
                         Icon: =Icon.Edit
-                        OnSelect: =Select(Parent)
+                        OnSelect: =Set(isVisibleEditPurchaseProductNew,true)
                         Width: =30
                         X: =1143
                         Y: =11
@@ -5467,7 +5499,8 @@ SaleVertion2 As screen:
                                         name_Product: ThisRecord.name_Product,
                                         request_Quantity: ThisRecord.request_Quantity,
                                         request_Reason: ThisRecord.request_Reason,
-                                        request_Note: ThisRecord.request_Note
+                                        request_Note: ThisRecord.request_Note,
+                                        unit: ThisRecord.unit
                                     }
                                 )
                             );
@@ -5479,10 +5512,12 @@ SaleVertion2 As screen:
                             Set(
                                 isVisibleDialogPurchase_SaleVertion2,
                                 false
-                            ); Set(
-                                    isVisibleDialogValidateAddProductNewPurchase,
-                                    false
-                                );,
+                            );
+                            Set(
+                                isVisibleDialogValidateAddProductNewPurchase,
+                                false
+                            );
+                            ,
                             If(
                                 positionDialogPurchaseValidate = 1,
                                 Set(
@@ -5513,7 +5548,8 @@ SaleVertion2 As screen:
                                             name_Product: ThisRecord.name_Product,
                                             request_Quantity: ThisRecord.request_Quantity,
                                             request_Reason: ThisRecord.request_Reason,
-                                            request_Note: ThisRecord.request_Note
+                                            request_Note: ThisRecord.request_Note,
+                                            unit: ThisRecord.unit
                                         }
                                     )
                                 );
@@ -5541,4 +5577,50 @@ SaleVertion2 As screen:
                     X: =365
                     Y: =288
                     ZIndex: =8
+
+        containerEditPurchaseProductNew As groupContainer.manualLayoutContainer:
+            Fill: =RGBA(0, 0, 0, 0.16)
+            Height: =768
+            Visible: =isVisibleEditPurchaseProductNew
+            Width: =1366
+            ZIndex: =5
+
+            Container67 As groupContainer.manualLayoutContainer:
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =680
+                RadiusBottomLeft: =10
+                RadiusBottomRight: =10
+                RadiusTopLeft: =10
+                RadiusTopRight: =10
+                X: =429
+                Y: =45
+                ZIndex: =1
+
+                Icon43 As icon.Cancel:
+                    Color: =RGBA(0, 0, 0, 1)
+                    Height: =45
+                    Icon: =Icon.Cancel
+                    OnSelect: =Set(isVisibleEditPurchaseProductNew, false)
+                    Width: =45
+                    X: =441
+                    Y: =9
+                    ZIndex: =1
+
+                Label133 As label:
+                    FontWeight: =FontWeight.Semibold
+                    Height: =45
+                    Size: =20
+                    Text: |-
+                        ="Sửa thông tin sản phẩm
+                        "
+                    Width: =364
+                    X: =16
+                    Y: =9
+                    ZIndex: =2
+
+                Label142 As label:
+                    Text: ="Tên sản phẩm"
+                    X: =44
+                    Y: =54
+                    ZIndex: =3
 
