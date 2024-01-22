@@ -629,18 +629,26 @@ SaleVertion2 As screen:
 
                 containerSaveEditCustomer_1 As groupContainer.manualLayoutContainer:
                     DropShadow: =DropShadow.Regular
-                    Fill: =If(positionItemFunctionCustomerQuote = 2, RGBA(128, 128, 128, 0.21),RGBA(128, 128, 128, 0))
-                    Height: =If(positionItemFunctionCustomerQuote = 2, 51,39)
+                    Fill: =If(positionItemFunctionCustomerQuote = 3, RGBA(128, 128, 128, 0.21),RGBA(128, 128, 128, 0))
+                    Height: =If(positionItemFunctionCustomerQuote = 3, 51,39)
                     Width: =128
                     X: =25
                     Y: =8
                     ZIndex: =5
 
+                    Icon44 As icon.Add:
+                        Height: =Parent.Height
+                        Icon: =Icon.Add
+                        OnSelect: =
+                        Width: =30
+                        X: =10
+                        ZIndex: =1
+
                     Label115_3 As label:
                         Align: =Align.Center
-                        FontWeight: =If(positionItemFunctionCustomerQuote = 2,FontWeight.Bold,FontWeight.Normal)
+                        FontWeight: =If(positionItemFunctionCustomerQuote = 3,FontWeight.Bold,FontWeight.Normal)
                         Height: =Parent.Height
-                        Text: ="Email"
+                        Text: ="Tạo mới"
                         Width: =88
                         X: =40
                         ZIndex: =2
@@ -648,20 +656,11 @@ SaleVertion2 As screen:
                     Rectangle9_3 As rectangle:
                         Fill: =RGBA(56, 96, 178, 0)
                         Height: =Parent.Height
-                        OnSelect: |-
-                            =Set(positionItemFunctionCustomerQuote, 2);
+                        OnSelect: |
+                            =Set(positionItemFunctionCustomerQuote, 3);
                             Set(isVisibleSaveUpdateCustomer,false);
-                            Reset(TextInput13);
-                            Reset(TextInput13_1)
                         Width: =Parent.Width
                         ZIndex: =3
-
-                    Image14_1 As image:
-                        Height: =Parent.Height
-                        Image: =iconemail
-                        Width: =30
-                        X: =10
-                        ZIndex: =4
 
             Container62 As groupContainer.verticalAutoLayoutContainer:
                 DropShadow: =DropShadow.None
@@ -1259,7 +1258,8 @@ SaleVertion2 As screen:
             ZIndex: =1
 
             Container18 As groupContainer.manualLayoutContainer:
-                Fill: =If(ThisItem.IsSelected,RGBA(0, 121, 187, 1),RGBA(225, 225,225, 0))
+                DropShadow: =If(btnFunctionSaleVertion2 = ThisItem.id,DropShadow.ExtraBold,DropShadow.Light)
+                Fill: =If(ThisItem.IsSelected,RGBA(136, 160, 209, 1),RGBA(225, 225,225, 0))
                 Height: =55
                 Width: =242
                 ZIndex: =1
@@ -1299,13 +1299,17 @@ SaleVertion2 As screen:
 
                 Button9 As button:
                     DisabledBorderColor: =RGBA(166, 166, 166, 0)
+                    DisabledColor: =RGBA(215, 223, 240, 1)
                     DisabledFill: =RGBA(244, 244, 244, 0)
-                    Fill: =RGBA(247, 247, 247, 0)
+                    DisplayMode: =
+                    Fill: =RGBA(255, 255, 255, 0)
                     Height: =50
                     HoverBorderColor: =RGBA(255, 255, 255, 0)
+                    HoverColor: =RGBA(128, 128, 128, 1)
                     HoverFill: =/*ColorFade(RGBA(56, 96, 178, 1), -20%)*/
                     OnSelect: =Set(btnFunctionSaleVertion2, ThisItem.id)
                     PressedBorderColor: =/*Self.Fill*/
+                    PressedColor: =RGBA(204, 208, 225, 1)
                     Text: =""
                     Width: =240
                     X: =2
@@ -3957,22 +3961,13 @@ SaleVertion2 As screen:
                     Width: =294
                     ZIndex: =1
 
-            TextInput15 As text:
-                Default: =""
-                Height: =30
-                HintText: ="Mã sản phẩm"
-                Width: =278
-                X: =18
-                Y: =37
-                ZIndex: =2
-
             TextInput15_1 As text:
                 Default: =""
                 Height: =30
                 HintText: ="Mã yêu cầu mua hàng"
                 Width: =278
                 X: =18
-                Y: =80
+                Y: =46
                 ZIndex: =3
 
             Container73_1 As groupContainer.manualLayoutContainer:
@@ -3980,7 +3975,7 @@ SaleVertion2 As screen:
                 Height: =28
                 Width: =294
                 X: =10
-                Y: =138
+                Y: =102
                 ZIndex: =4
 
                 Label124_1 As label:
@@ -4004,7 +3999,7 @@ SaleVertion2 As screen:
                 Text: ="Chờ phê duyệt"
                 Width: =278
                 X: =18
-                Y: =177
+                Y: =145
                 ZIndex: =5
 
             Checkbox1_1 As checkbox:
@@ -4017,7 +4012,7 @@ SaleVertion2 As screen:
                 Text: ="Đã phê duyệt"
                 Width: =278
                 X: =18
-                Y: =226
+                Y: =194
                 ZIndex: =6
 
             Checkbox1_2 As checkbox:
@@ -4030,7 +4025,7 @@ SaleVertion2 As screen:
                 Text: ="Đã bị hủy"
                 Width: =278
                 X: =18
-                Y: =275
+                Y: =243
                 ZIndex: =7
 
         Container75 As groupContainer.manualLayoutContainer:
@@ -4048,10 +4043,13 @@ SaleVertion2 As screen:
                 Height: =544
                 Items: |-
                     =If(
-                        IsBlank(TextInput15.Text) && IsBlank(TextInput15_1.Text),
+                         IsBlank(TextInput15_1.Text),
                         If(
                             positionStatusPurchase_SaleVertion2 = -1,
-                            Filter(Purchase_request,id_User = informationUser.ID),
+                            Filter(
+                                Purchase_request,
+                                id_User = informationUser.ID
+                            ),
                             If(
                                 positionStatusPurchase_SaleVertion2 = 0,
                                 Filter(
@@ -4073,7 +4071,9 @@ SaleVertion2 As screen:
                                     )
                                 )
                             )
-                        )
+                        ),
+                        Filter(Purchase_request,StartsWith(id_Purchase_request, TextInput15_1.Text))
+                       
                     )
                 Layout: =Layout.Vertical
                 LoadingSpinner: =LoadingSpinner.Data
@@ -4083,22 +4083,6 @@ SaleVertion2 As screen:
                 X: =8
                 Y: =131
                 ZIndex: =1
-
-                NextArrow8 As icon.ChevronRight:
-                    AccessibleLabel: =Self.Tooltip
-                    Color: =RGBA(166, 166, 166, 1)
-                    Height: =50
-                    Icon: =Icon.ChevronRight
-                    OnSelect: =Select(Parent)
-                    PaddingBottom: =16
-                    PaddingLeft: =16
-                    PaddingRight: =16
-                    PaddingTop: =16
-                    Tooltip: ="View item details"
-                    Width: =50
-                    X: =Parent.TemplateWidth - Self.Width - 12
-                    Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
-                    ZIndex: =4
 
                 Separator21 As rectangle:
                     Height: =8
@@ -4144,6 +4128,8 @@ SaleVertion2 As screen:
 
                 Label145_2 As label:
                     Align: =Align.Center
+                    Color: =
+                    Italic: =true
                     OnSelect: =Select(Parent)
                     Size: =15
                     Text: =ThisItem.status_PurchaseRequest.Value
@@ -4219,8 +4205,8 @@ SaleVertion2 As screen:
                     FontWeight: =FontWeight.Semibold
                     Height: =41
                     Size: =15
-                    Text: ="SLSP"
-                    Width: =114
+                    Text: ="Số lượng SP"
+                    Width: =168
                     X: =831
                     ZIndex: =5
 
@@ -4251,6 +4237,7 @@ SaleVertion2 As screen:
                 ZIndex: =3
 
             Container76 As groupContainer.manualLayoutContainer:
+                Fill: =RGBA(152, 208, 70, 1)
                 Height: =34
                 Width: =216
                 X: =778
@@ -4259,14 +4246,16 @@ SaleVertion2 As screen:
 
                 Label127 As label:
                     Align: =Align.Center
-                    FontWeight: =FontWeight.Semibold
+                    Color: =RGBA(255, 255, 255, 1)
+                    FontWeight: =FontWeight.Bold
                     Height: =34
+                    Size: =15
                     Text: ="Tạo yêu cầu"
                     Width: =216
                     ZIndex: =1
 
                 Rectangle18 As rectangle:
-                    Fill: =RGBA(56, 96, 178, 0)
+                    Fill: =RGBA(152, 208, 70, 0)
                     Height: =34
                     OnSelect: =Set(isVisiblechoiceStyleRequest,!isVisiblechoiceStyleRequest)
                     Width: =216
@@ -5623,4 +5612,12 @@ SaleVertion2 As screen:
                     X: =44
                     Y: =54
                     ZIndex: =3
+
+    Container69 As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.None
+        Height: =701
+        Visible: =btnFunctionSaleVertion2 = "btnHistoryTransaction"
+        Width: =1366
+        Y: =67
+        ZIndex: =7
 
