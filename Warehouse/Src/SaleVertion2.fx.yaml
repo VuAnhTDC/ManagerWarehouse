@@ -4111,7 +4111,8 @@ SaleVertion2 As screen:
                                 arrProductPurchase_SaleVertion2,
                                 []
                             );
-                            Set(isShadowPurchaseProduct_SaleVertion2, false);
+                            Set(positionChoiceArrayPurchase,0);
+                           
                             
                         )
                     TemplatePadding: =0
@@ -4169,4 +4170,123 @@ SaleVertion2 As screen:
                 X: =16
                 Y: =12
                 ZIndex: =2
+
+            Container71 As groupContainer.manualLayoutContainer:
+                Fill: =If(positionChoiceArrayPurchase = 0,RGBA(128, 128, 128, 0.24),RGBA(128, 128, 128,0))
+                Height: =If(positionChoiceArrayPurchase = 0, 40,33)
+                RadiusBottomLeft: =10
+                RadiusBottomRight: =10
+                RadiusTopLeft: =10
+                RadiusTopRight: =10
+                Width: =195
+                X: =87
+                Y: =69
+                ZIndex: =3
+
+                Label132 As label:
+                    Align: =Align.Center
+                    FontWeight: =If(positionChoiceArrayPurchase =0,FontWeight.Semibold,FontWeight.Normal)
+                    Height: =Parent.Height
+                    OnSelect: =Set(positionChoiceArrayPurchase ,0)
+                    Size: =15
+                    Text: ="Sản phẩm"
+                    Width: =195
+                    ZIndex: =1
+
+            Container71_1 As groupContainer.manualLayoutContainer:
+                Fill: =If(positionChoiceArrayPurchase = 1,RGBA(128, 128, 128, 0.24),RGBA(128, 128, 128,0))
+                Height: =If(positionChoiceArrayPurchase = 1, 40,33)
+                RadiusBottomLeft: =10
+                RadiusBottomRight: =10
+                RadiusTopLeft: =10
+                RadiusTopRight: =10
+                Width: =195
+                X: =285
+                Y: =69
+                ZIndex: =4
+
+                Label132_1 As label:
+                    Align: =Align.Center
+                    FontWeight: =If(positionChoiceArrayPurchase =1,FontWeight.Semibold,FontWeight.Normal)
+                    Height: =Parent.Height
+                    OnSelect: =Set(positionChoiceArrayPurchase,1);
+                    Size: =15
+                    Text: ="Yêu cầu"
+                    Width: =195
+                    ZIndex: =1
+
+            Container74 As groupContainer.manualLayoutContainer:
+                Height: =503
+                Width: =1207
+                X: =34
+                Y: =111
+                ZIndex: =5
+
+                "Gallery21 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+                    DelayItemLoading: =true
+                    Height: =439
+                    Items: =Product
+                    Layout: =Layout.Vertical
+                    LoadingSpinner: =LoadingSpinner.Data
+                    TemplatePadding: =0
+                    TemplateSize: =104
+                    Width: =1207
+                    Y: =63
+                    ZIndex: =1
+
+                    NextArrow6 As icon.ChevronRight:
+                        AccessibleLabel: =Self.Tooltip
+                        Color: =RGBA(166, 166, 166, 1)
+                        Height: =50
+                        Icon: =Icon.ChevronRight
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =16
+                        PaddingLeft: =16
+                        PaddingRight: =16
+                        PaddingTop: =16
+                        Tooltip: ="View item details"
+                        Width: =50
+                        X: =Parent.TemplateWidth - Self.Width - 12
+                        Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+                        ZIndex: =4
+
+                    Separator19 As rectangle:
+                        Height: =8
+                        OnSelect: =Select(Parent)
+                        Width: =Parent.TemplateWidth
+                        Y: =Parent.TemplateHeight - Self.Height
+                        ZIndex: =5
+
+                    Rectangle15 As rectangle:
+                        Height: =Parent.TemplateHeight - Separator19.Height
+                        OnSelect: =Select(Parent)
+                        Visible: =ThisItem.IsSelected
+                        Width: =4
+                        ZIndex: =6
+
+                Container80 As groupContainer.manualLayoutContainer:
+                    Height: =42
+                    RadiusBottomLeft: =10
+                    RadiusBottomRight: =10
+                    RadiusTopLeft: =10
+                    RadiusTopRight: =10
+                    Width: =1186
+                    X: =10
+                    Y: =6
+                    ZIndex: =2
+
+            Label133 As label:
+                Height: =48
+                Size: =15
+                Text: |-
+                    ="Thời hạn nhận hàng:"
+                Width: =210
+                X: =34
+                Y: =620
+                ZIndex: =6
+
+            DatePicker3 As datepicker:
+                X: =244
+                Y: =628
+                ZIndex: =7
 
