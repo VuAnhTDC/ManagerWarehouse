@@ -4513,6 +4513,34 @@ SaleVertion2 As screen:
                 ZIndex: =7
 
             Button19 As button:
+                OnSelect: |-
+                    =If(
+                        CountRows(arrProductPurchase_SaleVertion2) < 1,
+                        Notify(
+                            "Bạn chưa chọn yêu cầu mua bất ký sản phẩm nào hết",
+                            NotificationType.Error,
+                            1500
+                        ),
+                        Set(
+                            id_Purchase_request,
+                            "PRQ_" & Text(
+                                Now(),
+                                "ddmmyyyyhhmmss"
+                            ) & informationUser.ID
+                        );
+                        Patch(
+                            Purchase_request,
+                            Defaults(Purchase_request),
+                            {
+                                id_Purchase_request: id_Purchase_request,
+                                request_Date: Now(),
+                                delivery_Date: DatePicker3.SelectedDate,
+                                status_PurchaseRequest: {Value: "Chưa duyệt"},
+                                id_User: informationUser.ID
+                            }
+                        );
+                        
+                    )
                 Text: ="Xác nhận"
                 Width: =243
                 X: =1014
@@ -4670,6 +4698,7 @@ SaleVertion2 As screen:
                                 Collect(
                                     arrProductPurchase_SaleVertion2,
                                     {
+                                        id_Purchase_request: "",
                                         id_Product: Gallery21.Selected.id_Product,
                                         name_Product: Gallery21.Selected.name_Product,
                                         request_Quantity: Value(TextInput22.Text),
@@ -4682,6 +4711,9 @@ SaleVertion2 As screen:
                                     NotificationType.Success
                                 );
                             );
+                            Reset(TextInput22);
+                            Reset(TextInput22_1);
+                            Reset(TextInput22_2);
                             Set(
                                 isVisibleDialogRequestProductPurchase,
                                 false
@@ -4690,9 +4722,7 @@ SaleVertion2 As screen:
                                 isVisibleEditProductPurchase,
                                 false
                             );
-                            Reset(TextInput22);
-                            Reset(TextInput22_1);
-                            Reset(TextInput22_2)
+                            
                         )
                     Text: ="Xác nhận"
                     Width: =305
