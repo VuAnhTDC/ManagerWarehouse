@@ -4111,6 +4111,7 @@ SaleVertion2 As screen:
                                 arrProductPurchase_SaleVertion2,
                                 []
                             );
+                            ClearCollect(arrProduct, Product);
                             Set(positionChoiceArrayPurchase,0);
                            
                             
@@ -4172,6 +4173,7 @@ SaleVertion2 As screen:
                 ZIndex: =2
 
             Container71 As groupContainer.manualLayoutContainer:
+                DropShadow: =If(positionChoiceArrayPurchase = 0,DropShadow.Semibold,DropShadow.Light)
                 Fill: =If(positionChoiceArrayPurchase = 0,RGBA(128, 128, 128, 0.24),RGBA(128, 128, 128,0))
                 Height: =If(positionChoiceArrayPurchase = 0, 40,33)
                 RadiusBottomLeft: =10
@@ -4194,6 +4196,7 @@ SaleVertion2 As screen:
                     ZIndex: =1
 
             Container71_1 As groupContainer.manualLayoutContainer:
+                DropShadow: =If(positionChoiceArrayPurchase = 1, DropShadow.Semibold,DropShadow.Light)
                 Fill: =If(positionChoiceArrayPurchase = 1,RGBA(128, 128, 128, 0.24),RGBA(128, 128, 128,0))
                 Height: =If(positionChoiceArrayPurchase = 1, 40,33)
                 RadiusBottomLeft: =10
@@ -4222,58 +4225,278 @@ SaleVertion2 As screen:
                 Y: =111
                 ZIndex: =5
 
-                "Gallery21 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
-                    DelayItemLoading: =true
-                    Height: =439
-                    Items: =Product
-                    Layout: =Layout.Vertical
-                    LoadingSpinner: =LoadingSpinner.Data
-                    TemplatePadding: =0
-                    TemplateSize: =104
+                containerArrProductPurchase As groupContainer.manualLayoutContainer:
+                    Height: =503
+                    Visible: =(positionChoiceArrayPurchase = 0)
                     Width: =1207
-                    Y: =63
                     ZIndex: =1
 
-                    NextArrow6 As icon.ChevronRight:
-                        AccessibleLabel: =Self.Tooltip
-                        Color: =RGBA(166, 166, 166, 1)
-                        Height: =50
-                        Icon: =Icon.ChevronRight
-                        OnSelect: =Select(Parent)
-                        PaddingBottom: =16
-                        PaddingLeft: =16
-                        PaddingRight: =16
-                        PaddingTop: =16
-                        Tooltip: ="View item details"
-                        Width: =50
-                        X: =Parent.TemplateWidth - Self.Width - 12
-                        Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
-                        ZIndex: =4
+                    "Gallery21 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+                        DelayItemLoading: =true
+                        Fill: =RGBA(241, 244, 249, 1)
+                        Height: =439
+                        Items: =Filter(arrProduct,Not(id_Product in arrProductPurchase_SaleVertion2.id_Product))
+                        Layout: =Layout.Vertical
+                        LoadingSpinner: =LoadingSpinner.Data
+                        TemplatePadding: =0
+                        TemplateSize: =60
+                        Width: =1207
+                        Y: =64
+                        ZIndex: =1
 
-                    Separator19 As rectangle:
-                        Height: =8
-                        OnSelect: =Select(Parent)
-                        Width: =Parent.TemplateWidth
-                        Y: =Parent.TemplateHeight - Self.Height
-                        ZIndex: =5
+                        NextArrow6 As icon.ChevronRight:
+                            AccessibleLabel: =Self.Tooltip
+                            Color: =RGBA(166, 166, 166, 1)
+                            Height: =50
+                            Icon: =Icon.Export
+                            OnSelect: =Set(isVisibleDialogRequestProductPurchase, true)
+                            PaddingBottom: =16
+                            PaddingLeft: =16
+                            PaddingRight: =16
+                            PaddingTop: =16
+                            Tooltip: ="View item details"
+                            Width: =50
+                            X: =Parent.TemplateWidth - Self.Width - 12
+                            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+                            ZIndex: =4
 
-                    Rectangle15 As rectangle:
-                        Height: =Parent.TemplateHeight - Separator19.Height
-                        OnSelect: =Select(Parent)
-                        Visible: =ThisItem.IsSelected
-                        Width: =4
-                        ZIndex: =6
+                        Separator19 As rectangle:
+                            Height: =8
+                            OnSelect: =Select(Parent)
+                            Width: =Parent.TemplateWidth
+                            Y: =Parent.TemplateHeight - Self.Height
+                            ZIndex: =5
 
-                Container80 As groupContainer.manualLayoutContainer:
-                    Height: =42
-                    RadiusBottomLeft: =10
-                    RadiusBottomRight: =10
-                    RadiusTopLeft: =10
-                    RadiusTopRight: =10
-                    Width: =1186
-                    X: =10
-                    Y: =6
+                        Rectangle15 As rectangle:
+                            Height: =Parent.TemplateHeight - Separator19.Height
+                            OnSelect: =Select(Parent)
+                            Visible: =ThisItem.IsSelected
+                            Width: =4
+                            ZIndex: =6
+
+                        Label135 As label:
+                            Align: =Align.Center
+                            Color: =RGBA(56, 96, 178, 1)
+                            OnSelect: =Select(Parent)
+                            Text: =ThisItem.id_Product
+                            Width: =319
+                            X: =25
+                            Y: =9
+                            ZIndex: =7
+
+                        Label136 As label:
+                            Align: =Align.Center
+                            OnSelect: =Select(Parent)
+                            Text: =ThisItem.name_Product
+                            Width: =575
+                            X: =344
+                            Y: =9
+                            ZIndex: =8
+
+                        Label137 As label:
+                            Align: =Align.Center
+                            OnSelect: =Select(Parent)
+                            Text: =ThisItem.quantity_Product
+                            Width: =226
+                            X: =919
+                            Y: =9
+                            ZIndex: =9
+
+                    Container80 As groupContainer.manualLayoutContainer:
+                        Fill: =RGBA(128, 128, 128, 0.17)
+                        Height: =42
+                        RadiusBottomLeft: =10
+                        RadiusBottomRight: =10
+                        RadiusTopLeft: =10
+                        RadiusTopRight: =10
+                        Width: =1186
+                        X: =10
+                        Y: =7
+                        ZIndex: =2
+
+                        Label134 As label:
+                            Align: =Align.Center
+                            FontWeight: =FontWeight.Semibold
+                            Size: =15
+                            Text: ="Mã sản phẩm"
+                            Width: =319
+                            X: =12
+                            Y: =2
+                            ZIndex: =1
+
+                        Label134_1 As label:
+                            Align: =Align.Center
+                            FontWeight: =FontWeight.Semibold
+                            Size: =15
+                            Text: ="Tên sản phẩm"
+                            Width: =575
+                            X: =331
+                            Y: =2
+                            ZIndex: =2
+
+                        Label134_2 As label:
+                            Align: =Align.Center
+                            FontWeight: =FontWeight.Semibold
+                            Size: =15
+                            Text: ="Trồn kho"
+                            Width: =231
+                            X: =906
+                            Y: =2
+                            ZIndex: =3
+
+                Container86 As groupContainer.manualLayoutContainer:
+                    Height: =503
+                    Visible: =positionChoiceArrayPurchase = 1
+                    Width: =1207
                     ZIndex: =2
+
+                    Container80_1 As groupContainer.manualLayoutContainer:
+                        Fill: =RGBA(128, 128, 128, 0.17)
+                        Height: =42
+                        RadiusBottomLeft: =10
+                        RadiusBottomRight: =10
+                        RadiusTopLeft: =10
+                        RadiusTopRight: =10
+                        Width: =1186
+                        X: =6
+                        Y: =9
+                        ZIndex: =1
+
+                        Label134_3 As label:
+                            Align: =Align.Center
+                            FontWeight: =FontWeight.Semibold
+                            Size: =15
+                            Text: ="Tên sản phẩm"
+                            Width: =407
+                            X: =12
+                            Y: =2
+                            ZIndex: =1
+
+                        Label134_4 As label:
+                            Align: =Align.Center
+                            FontWeight: =FontWeight.Semibold
+                            Size: =15
+                            Text: ="Số lượng yêu cầu"
+                            Width: =179
+                            X: =419
+                            Y: =2
+                            ZIndex: =2
+
+                        Label134_5 As label:
+                            Align: =Align.Center
+                            FontWeight: =FontWeight.Semibold
+                            Size: =15
+                            Text: ="Lý do"
+                            Width: =276
+                            X: =598
+                            Y: =2
+                            ZIndex: =3
+
+                        Label134_6 As label:
+                            Align: =Align.Center
+                            FontWeight: =FontWeight.Semibold
+                            Size: =15
+                            Text: ="Ghi chú"
+                            Width: =259
+                            X: =874
+                            Y: =2
+                            ZIndex: =4
+
+                    "Gallery24 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+                        DelayItemLoading: =true
+                        Fill: =RGBA(241, 244, 249, 1)
+                        Height: =441
+                        Items: =arrProductPurchase_SaleVertion2
+                        Layout: =Layout.Vertical
+                        LoadingSpinner: =LoadingSpinner.Data
+                        TemplatePadding: =0
+                        TemplateSize: =70
+                        Width: =1196
+                        X: =6
+                        Y: =60
+                        ZIndex: =2
+
+                        Separator20 As rectangle:
+                            Height: =8
+                            OnSelect: =Select(Parent)
+                            Width: =Parent.TemplateWidth
+                            Y: =Parent.TemplateHeight - Self.Height
+                            ZIndex: =5
+
+                        Rectangle16 As rectangle:
+                            Height: =Parent.TemplateHeight - Separator20.Height
+                            OnSelect: =Select(Parent)
+                            Visible: =ThisItem.IsSelected
+                            Width: =4
+                            ZIndex: =6
+
+                        Label141 As label:
+                            Align: =Align.Center
+                            Height: =62
+                            OnSelect: =Select(Parent)
+                            PaddingLeft: =10
+                            PaddingRight: =10
+                            Text: =LookUp(Product,id_Product = ThisItem.id_Product).name_Product
+                            Width: =407
+                            Wrap: =false
+                            X: =10
+                            ZIndex: =7
+
+                        Label141_1 As label:
+                            Align: =Align.Center
+                            Height: =62
+                            OnSelect: =Select(Parent)
+                            PaddingLeft: =10
+                            PaddingRight: =10
+                            Text: =ThisItem.request_Quantity
+                            Width: =179
+                            X: =417
+                            ZIndex: =8
+
+                        Label141_2 As label:
+                            Align: =Align.Center
+                            Height: =62
+                            OnSelect: =Select(Parent)
+                            PaddingLeft: =10
+                            PaddingRight: =10
+                            Text: =ThisItem.request_Reason
+                            Width: =276
+                            Wrap: =false
+                            X: =596
+                            ZIndex: =9
+
+                        Label141_3 As label:
+                            Align: =Align.Center
+                            Height: =62
+                            OnSelect: =Select(Parent)
+                            PaddingLeft: =10
+                            PaddingRight: =10
+                            Text: =ThisItem.request_Note
+                            Width: =259
+                            Wrap: =false
+                            X: =872
+                            ZIndex: =10
+
+                        Icon36 As icon.Trash:
+                            Color: =RGBA(0, 0, 0, 1)
+                            Height: =30
+                            Icon: =Icon.Trash
+                            OnSelect: =ClearCollect(arrProductPurchase_SaleVertion2,Filter(arrProductPurchase_SaleVertion2,Not(id_Product = ThisItem.id_Product)))
+                            Width: =30
+                            X: =1166
+                            Y: =16
+                            ZIndex: =11
+
+                        Icon37 As icon.Edit:
+                            Height: =30
+                            Icon: =Icon.Edit
+                            OnSelect: |-
+                                =Set(isVisibleEditProductPurchase, true);
+                                Set(isVisibleDialogRequestProductPurchase, true)
+                            Width: =30
+                            X: =1136
+                            Y: =16
+                            ZIndex: =12
 
             Label133 As label:
                 Height: =48
@@ -4289,4 +4512,185 @@ SaleVertion2 As screen:
                 X: =244
                 Y: =628
                 ZIndex: =7
+
+        containerDialogRequestProductPurchase As groupContainer.manualLayoutContainer:
+            Fill: =RGBA(128, 128, 128, 0.33)
+            Height: =768
+            Visible: =isVisibleDialogRequestProductPurchase
+            Width: =1366
+            ZIndex: =2
+
+            Container83 As groupContainer.manualLayoutContainer:
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =708
+                RadiusBottomLeft: =10
+                RadiusBottomRight: =10
+                RadiusTopLeft: =10
+                RadiusTopRight: =10
+                Width: =531
+                X: =441
+                Y: =33
+                ZIndex: =1
+
+                Label138 As label:
+                    FontWeight: =FontWeight.Semibold
+                    Height: =43
+                    Size: =20
+                    Text: =If(isVisibleEditProductPurchase,"Sửa thông tin yêu cầu","Thông tin yêu cầu")
+                    Width: =410
+                    X: =9
+                    Y: =9
+                    ZIndex: =1
+
+                Icon35 As icon.Cancel:
+                    Color: =RGBA(0, 0, 0, 1)
+                    Height: =35
+                    Icon: =Icon.Cancel
+                    OnSelect: |-
+                        =Set(isVisibleDialogRequestProductPurchase, false);
+                        Set(isVisibleEditProductPurchase,false);
+                    Width: =35
+                    X: =486
+                    Y: =9
+                    ZIndex: =2
+
+                Label139 As label:
+                    FontWeight: =FontWeight.Semibold
+                    Size: =15
+                    Text: ="Tên sản phẩm"
+                    Width: =446
+                    X: =40
+                    Y: =52
+                    ZIndex: =3
+
+                Container85 As groupContainer.manualLayoutContainer:
+                    Height: =40
+                    Width: =446
+                    X: =40
+                    Y: =92
+                    ZIndex: =4
+
+                    Label140 As label:
+                        Text: =If(isVisibleEditProductPurchase,Gallery24.Selected.name_Product,Gallery21.Selected.name_Product)
+                        Width: =446
+                        Wrap: =false
+                        ZIndex: =1
+
+                Label139_1 As label:
+                    FontWeight: =FontWeight.Semibold
+                    Size: =15
+                    Text: ="Số lượng"
+                    Width: =446
+                    X: =40
+                    Y: =132
+                    ZIndex: =5
+
+                TextInput22 As text:
+                    Default: =Gallery24.Selected.request_Quantity
+                    Format: =TextFormat.Number
+                    HintText: ="Số lượng yêu cầu"
+                    Width: =446
+                    X: =40
+                    Y: =172
+                    ZIndex: =6
+
+                Label139_2 As label:
+                    FontWeight: =FontWeight.Semibold
+                    Size: =15
+                    Text: ="Lý do"
+                    Width: =446
+                    X: =40
+                    Y: =212
+                    ZIndex: =7
+
+                TextInput22_1 As text:
+                    Default: =Gallery24.Selected.request_Reason
+                    Height: =66
+                    HintText: ="Lý do mua hàng"
+                    Mode: =TextMode.MultiLine
+                    Width: =446
+                    X: =40
+                    Y: =252
+                    ZIndex: =8
+
+                Label139_3 As label:
+                    FontWeight: =FontWeight.Semibold
+                    Size: =15
+                    Text: ="Ghi chú"
+                    Width: =446
+                    X: =40
+                    Y: =318
+                    ZIndex: =9
+
+                TextInput22_2 As text:
+                    Default: =Gallery24.Selected.request_Note
+                    Height: =66
+                    HintText: ="Ghi chú"
+                    Mode: =TextMode.MultiLine
+                    Width: =446
+                    X: =40
+                    Y: =358
+                    ZIndex: =10
+
+                Button18 As button:
+                    Height: =43
+                    OnSelect: |-
+                        =If(
+                            IsBlank(TextInput22.Text) || IsBlank(TextInput22_1.Text) || IsBlank(TextInput22_2.Text),
+                            Notify(
+                                "Vui lòng điền đẩy đủ thông tin yêu cầu",
+                                NotificationType.Error,
+                                1500
+                            ),
+                            If(
+                                isVisibleEditProductPurchase,
+                                Patch(
+                                    arrProductPurchase_SaleVertion2,
+                                    LookUp(
+                                        arrProductPurchase_SaleVertion2,
+                                        id_Product = Gallery24.Selected.id_Product
+                                    ),
+                                    {
+                                        request_Quantity: Value(TextInput22.Text),
+                                        request_Reason: TextInput22_1.Text,
+                                        request_Note: TextInput22_2.Text
+                                    }
+                                );
+                                Notify(
+                                    "Sửa thông tin sản phẩm yêu cầu thành công",
+                                    NotificationType.Success,
+                                    1500
+                                ),
+                                Collect(
+                                    arrProductPurchase_SaleVertion2,
+                                    {
+                                        id_Product: Gallery21.Selected.id_Product,
+                                        name_Product: Gallery21.Selected.name_Product,
+                                        request_Quantity: Value(TextInput22.Text),
+                                        request_Reason: TextInput22_1.Text,
+                                        request_Note: TextInput22_2.Text
+                                    }
+                                );
+                                Notify(
+                                    "Thêm sản phẩm vào danh sách yêu cầu thành công",
+                                    NotificationType.Success
+                                );
+                            );
+                            Set(
+                                isVisibleDialogRequestProductPurchase,
+                                false
+                            );
+                            Set(
+                                isVisibleEditProductPurchase,
+                                false
+                            );
+                            Reset(TextInput22);
+                            Reset(TextInput22_1);
+                            Reset(TextInput22_2)
+                        )
+                    Text: ="Xác nhận"
+                    Width: =305
+                    X: =110
+                    Y: =462
+                    ZIndex: =11
 
