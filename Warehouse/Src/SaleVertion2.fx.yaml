@@ -322,7 +322,7 @@ SaleVertion2 As screen:
                     ZIndex: =10
 
                 Icon19 As icon.Check:
-                    Color: =RGBA(255, 0, 0, 1)
+                    Color: =RGBA(54, 176, 75, 1)
                     Height: =35
                     Icon: |-
                         =If(
@@ -1831,7 +1831,7 @@ SaleVertion2 As screen:
                 FontWeight: =FontWeight.Semibold
                 OnSelect: |-
                     =If(
-                        IsBlank(ComboBox1.Selected) || IsBlank(ComboBox1.Selected) || IsBlank(TextInput7.Text) || IsBlank(arrProductAddQuoteNew_SaleVertion2),
+                         IsBlank(TextInput7_1.Text) || IsBlank(arrProductAddQuoteNew_SaleVertion2),
                         Notify(
                             "Vui lòng điền đủ thông tin",
                             NotificationType.Error
@@ -2055,7 +2055,7 @@ SaleVertion2 As screen:
                     FontWeight: =FontWeight.Semibold
                     OnSelect: |
                         =If(
-                            IsBlank(ComboBox1.Selected) || IsBlank(ComboBox1.Selected) || IsBlank(TextInput7.Text) || IsBlank(arrProductAddQuoteNew_SaleVertion2),
+                            IsBlank(ComboBox1.Selected) || IsBlank(TextInput7.Text) || IsBlank(arrProductAddQuoteNew_SaleVertion2),
                             Notify(
                                 "Vui lòng điền đủ thông tin",
                                 NotificationType.Error
@@ -2354,7 +2354,14 @@ SaleVertion2 As screen:
                             Color: =RGBA(0, 0, 0, 1)
                             Height: =30
                             Icon: =Icon.Trash
-                            OnSelect: =ClearCollect(arrProductAddQuoteNew_SaleVertion2,Filter(arrProductAddQuoteNew_SaleVertion2,Not(id_Product = ThisItem.id_Product)))
+                            OnSelect: |-
+                                =ClearCollect(
+                                    arrProductAddQuoteNew_SaleVertion2,
+                                    Filter(
+                                        arrProductAddQuoteNew_SaleVertion2,
+                                        Not(id_Product = ThisItem.id_Product)
+                                    )
+                                )
                             Width: =30
                             X: =1139
                             Y: =6
