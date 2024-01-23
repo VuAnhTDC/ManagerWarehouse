@@ -186,7 +186,9 @@ HomeSale As screen:
             LoadingSpinner: =LoadingSpinner.Data
             TemplatePadding: =0
             TemplateSize: =100
-            Visible: =If(informationUser.id_Role =2,true,false)
+            Visible: |-
+                =//If(informationUser.id_Role =2,true,false)
+                true
             Width: =317
             Y: =162
             ZIndex: =17
@@ -584,7 +586,9 @@ HomeSale As screen:
 
     containerContentService_HomeSale As groupContainer.manualLayoutContainer:
         Height: =735
-        Visible: =If(btnFunctionSelection_Value_HomeSale =1,true,false)
+        Visible: |-
+            =//If(btnFunctionSelection_Value_HomeSale =1,true,false)
+            false
         Width: =997
         X: =352
         Y: =18
@@ -2873,7 +2877,9 @@ HomeSale As screen:
     containerTransaction_HomeSale As groupContainer.manualLayoutContainer:
         BorderThickness: =1
         Height: =735
-        Visible: =If(btnFunctionSelection_Value_HomeSale = 5, true, false)
+        Visible: |-
+            =//If(btnFunctionSelection_Value_HomeSale = 5, true, false)
+            true
         Width: =997
         X: =352
         Y: =18
@@ -2993,7 +2999,8 @@ HomeSale As screen:
     containerDialogDetailTransaction_HomeSale As groupContainer.manualLayoutContainer:
         Fill: =RGBA(0, 0, 0, 0.31)
         Height: =768
-        Visible: =isVisibleContentDialogDetailQuoteCustomer
+        Visible: |
+            =isVisibleContentDialogDetailQuoteCustomer
         Width: =1366
         ZIndex: =15
 
