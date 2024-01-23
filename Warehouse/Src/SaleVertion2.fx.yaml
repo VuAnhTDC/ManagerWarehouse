@@ -41,6 +41,7 @@ SaleVertion2 As screen:
         ZIndex: =1
 
         Container20 As groupContainer.manualLayoutContainer:
+            DropShadow: =DropShadow.ExtraBold
             Height: =680
             Width: =317
             X: =16
@@ -116,6 +117,7 @@ SaleVertion2 As screen:
                         ZIndex: =2
 
         Container23 As groupContainer.manualLayoutContainer:
+            DropShadow: =DropShadow.None
             Height: =688
             Visible: =Gallery10.Selected.id = 0 && Gallery10.Selected.btnFunction = "btnQuoteSale"
             Width: =1020
@@ -198,7 +200,7 @@ SaleVertion2 As screen:
 
             "Gallery16 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
                 DelayItemLoading: =true
-                Fill: =RGBA(255, 255, 255, 1)
+                Fill: =RGBA(241, 244, 249, 1)
                 Height: =511
                 Items: |-
                     =If(
@@ -252,7 +254,8 @@ SaleVertion2 As screen:
                     );
                 TemplatePadding: =0
                 TemplateSize: =76
-                Width: =1020
+                Width: =992
+                X: =25
                 Y: =172
                 ZIndex: =3
 
@@ -376,8 +379,8 @@ SaleVertion2 As screen:
                 RadiusBottomRight: =10
                 RadiusTopLeft: =10
                 RadiusTopRight: =10
-                Width: =1000
-                X: =6
+                Width: =981
+                X: =25
                 Y: =114
                 ZIndex: =4
 
@@ -1319,6 +1322,10 @@ SaleVertion2 As screen:
                                 positionfuntionHistoryTransaction,
                                 0
                             );
+                               Refresh(Quote);
+                            Refresh(Quote_Product);
+                            Refresh(Quote_Service);
+                            Refresh(Customer);
                             ClearCollect(dataQuote_HistoryTransaction, Filter(Quote, quote_Status.Value = "Đơn hàng"));
                             ClearCollect(dataCustomer_HistoryTransaction, Customer)
                         )
@@ -3950,7 +3957,7 @@ SaleVertion2 As screen:
         ZIndex: =5
 
         Container72 As groupContainer.manualLayoutContainer:
-            DropShadow: =DropShadow.Semibold
+            DropShadow: =DropShadow.ExtraBold
             Height: =663
             Width: =317
             X: =16
@@ -4051,7 +4058,6 @@ SaleVertion2 As screen:
             ZIndex: =2
 
             "Gallery25 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
-                BorderThickness: =0.1
                 DelayItemLoading: =true
                 Fill: =RGBA(241, 244, 249, 1)
                 Height: =544
@@ -4093,8 +4099,8 @@ SaleVertion2 As screen:
                 LoadingSpinner: =LoadingSpinner.Data
                 TemplatePadding: =0
                 TemplateSize: =50
-                Width: =999
-                X: =8
+                Width: =970
+                X: =36
                 Y: =131
                 ZIndex: =1
 
@@ -4161,14 +4167,14 @@ SaleVertion2 As screen:
                     ZIndex: =11
 
             Container89 As groupContainer.manualLayoutContainer:
-                Fill: =RGBA(128, 128, 128, 0.21)
+                Fill: =RGBA(128, 128, 128, 0.06)
                 Height: =41
                 RadiusBottomLeft: =10
                 RadiusBottomRight: =10
                 RadiusTopLeft: =10
                 RadiusTopRight: =10
-                Width: =999
-                X: =8
+                Width: =971
+                X: =36
                 Y: =78
                 ZIndex: =2
 
@@ -5636,6 +5642,7 @@ SaleVertion2 As screen:
         ZIndex: =7
 
         Container69_1 As groupContainer.manualLayoutContainer:
+            DropShadow: =DropShadow.ExtraBold
             Height: =668
             Width: =317
             X: =19
@@ -5660,15 +5667,6 @@ SaleVertion2 As screen:
                     Width: =294
                     ZIndex: =1
 
-            TextInput15 As text:
-                Default: =""
-                Height: =30
-                HintText: ="Mã đơn hàng"
-                Width: =278
-                X: =18
-                Y: =42
-                ZIndex: =2
-
             Container73_3 As groupContainer.manualLayoutContainer:
                 DropShadow: =DropShadow.Regular
                 Height: =28
@@ -5687,40 +5685,86 @@ SaleVertion2 As screen:
                     Width: =294
                     ZIndex: =1
 
-            Checkbox2 As checkbox:
-                CheckboxSize: =30
-                Default: =positionfuntionHistoryTransaction = 0
+            Container69 As groupContainer.manualLayoutContainer:
+                DropShadow: =If(positionfuntionHistoryTransaction = 0, DropShadow.Semibold,DropShadow.Light)
                 Height: =38
-                OnCheck: =Set(positionfuntionHistoryTransaction,0)
-                OnUncheck: =Set(positionfuntionHistoryTransaction,1)
-                Text: ="Khách hàng"
+                RadiusBottomLeft: =10
+                RadiusBottomRight: =10
+                RadiusTopLeft: =10
+                RadiusTopRight: =10
                 Width: =214
                 X: =50
-                Y: =176
-                ZIndex: =4
+                Y: =169
+                ZIndex: =7
 
-            Checkbox2_1 As checkbox:
-                CheckboxSize: =30
-                Default: =positionfuntionHistoryTransaction = 1
+                Checkbox2 As checkbox:
+                    CheckboxSize: =30
+                    Default: =positionfuntionHistoryTransaction = 0
+                    FocusedBorderThickness: =0
+                    Height: =38
+                    OnCheck: =Set(positionfuntionHistoryTransaction,0)
+                    OnUncheck: =Set(positionfuntionHistoryTransaction,1)
+                    Text: ="Khách hàng"
+                    Width: =214
+                    ZIndex: =1
+
+            Container77 As groupContainer.manualLayoutContainer:
+                DropShadow: =If(positionfuntionHistoryTransaction = 1, DropShadow.Semibold,DropShadow.Light)
                 Height: =38
-                OnCheck: =Set(positionfuntionHistoryTransaction,1)
-                OnUncheck: =Set(positionfuntionHistoryTransaction,0)
-                Text: ="Đơn hàng"
+                RadiusBottomLeft: =10
+                RadiusBottomRight: =10
+                RadiusTopLeft: =10
+                RadiusTopRight: =10
                 Width: =214
                 X: =50
-                Y: =214
-                ZIndex: =5
+                Y: =221
+                ZIndex: =8
 
-            TextInput15_2 As text:
-                Default: =""
+                Checkbox2_1 As checkbox:
+                    CheckboxSize: =30
+                    Default: =positionfuntionHistoryTransaction = 1
+                    FocusedBorderThickness: =0
+                    Height: =38
+                    OnCheck: =Set(positionfuntionHistoryTransaction,1)
+                    OnUncheck: =Set(positionfuntionHistoryTransaction,0)
+                    Text: ="Đơn hàng"
+                    Width: =214
+                    ZIndex: =1
+
+            Container82 As groupContainer.manualLayoutContainer:
+                DropShadow: =If(positionfuntionHistoryTransaction = 1, DropShadow.Semibold,DropShadow.Light)
                 Height: =30
-                HintText: ="Mã khách hàng"
                 Width: =278
                 X: =18
-                Y: =82
-                ZIndex: =6
+                Y: =45
+                ZIndex: =9
+
+                TextInput15 As text:
+                    Default: =""
+                    DisplayMode: =If(positionfuntionHistoryTransaction = 1,DisplayMode.Edit,DisplayMode.Disabled)
+                    Height: =30
+                    HintText: ="Mã đơn hàng"
+                    Width: =278
+                    ZIndex: =1
+
+            Container84 As groupContainer.manualLayoutContainer:
+                DropShadow: =If(positionfuntionHistoryTransaction = 0, DropShadow.Semibold,DropShadow.Light)
+                Height: =30
+                Width: =278
+                X: =18
+                Y: =88
+                ZIndex: =10
+
+                TextInput15_2 As text:
+                    Default: =""
+                    DisplayMode: =If(positionfuntionHistoryTransaction = 0,DisplayMode.Edit,DisplayMode.Disabled)
+                    Height: =30
+                    HintText: ="Mã khách hàng"
+                    Width: =278
+                    ZIndex: =1
 
         Container25 As groupContainer.manualLayoutContainer:
+            DropShadow: =DropShadow.None
             Height: =685
             Visible: =positionfuntionHistoryTransaction = 0
             Width: =1000
@@ -5729,6 +5773,7 @@ SaleVertion2 As screen:
             ZIndex: =4
 
             Container61 As groupContainer.manualLayoutContainer:
+                Fill: =RGBA(128, 128, 128, 0.25)
                 Height: =36
                 RadiusBottomLeft: =10
                 RadiusBottomRight: =10
@@ -5772,32 +5817,31 @@ SaleVertion2 As screen:
             Label149 As label:
                 Align: =Align.Right
                 FontWeight: =FontWeight.Semibold
+                Height: =21
                 Italic: =true
                 Size: =14
-                Text: ="Năm"
-                X: =562
-                Y: =5
+                Text: ="Theo năm"
+                Width: =112
+                X: =633
+                Y: =14
                 ZIndex: =2
 
             Dropdown5 As dropdown:
                 Items: =DropDownSample
                 Width: =216
-                X: =735
+                X: =745
                 Y: =5
                 ZIndex: =3
 
             "Gallery14 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
                 DelayItemLoading: =true
+                Fill: =RGBA(241, 244, 249, 1)
                 Height: =536
-                Items: |-
-                    =Filter(
-                        dataCustomer_HistoryTransaction As tempCustomer,
-                        tempCustomer.ID in dataQuote_HistoryTransaction.id_User
-                    )
+                Items: =Filter(dataCustomer_HistoryTransaction  As tempCustomer , tempCustomer.ID in dataQuote_HistoryTransaction.id_Customer)
                 Layout: =Layout.Vertical
                 LoadingSpinner: =LoadingSpinner.Data
                 TemplatePadding: =0
-                TemplateSize: =80
+                TemplateSize: =42
                 Width: =977
                 X: =12
                 Y: =102
@@ -5819,10 +5863,30 @@ SaleVertion2 As screen:
 
                 Label150 As label:
                     Align: =Align.Center
-                    Height: =72
+                    Color: =RGBA(56, 96, 178, 1)
+                    FontWeight: =FontWeight.Semibold
+                    Height: =42
                     OnSelect: =Select(Parent)
                     Text: =ThisItem.taxCode
                     Width: =175
                     X: =9
                     ZIndex: =7
+
+                Label150_1 As label:
+                    Align: =Align.Center
+                    Height: =42
+                    OnSelect: =Select(Parent)
+                    Text: =ThisItem.customer_Name
+                    Width: =575
+                    X: =184
+                    ZIndex: =8
+
+                Label150_2 As label:
+                    Align: =Align.Center
+                    Height: =42
+                    OnSelect: =Select(Parent)
+                    Text: =CountRows(Filter(dataQuote_HistoryTransaction,id_Customer = ThisItem.ID))
+                    Width: =218
+                    X: =759
+                    ZIndex: =9
 
