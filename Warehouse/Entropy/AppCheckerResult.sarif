@@ -61213,6 +61213,126 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "SaleVertion2.DetailItemHistoryTransaction.Container90.Icon45.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "SaleVertion2.DetailItemHistoryTransaction.Container90.Icon45.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "SaleVertion2",
+                "type": "SaleVertion2.DetailItemHistoryTransaction.Container90.Icon45"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 8
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "SaleVertion2.DetailItemHistoryTransaction.Container90.Icon45.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "SaleVertion2.DetailItemHistoryTransaction.Container90.Icon45.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "SaleVertion2",
+                "type": "SaleVertion2.DetailItemHistoryTransaction.Container90.Icon45"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 9
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "SaleVertion2.DetailItemHistoryTransaction.Container90.Gallery19.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "SaleVertion2.DetailItemHistoryTransaction.Container90.Gallery19.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "SaleVertion2",
+                "type": "SaleVertion2.DetailItemHistoryTransaction.Container90.Gallery19"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 8
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "SaleVertion2.DetailItemHistoryTransaction.Container90.Gallery19.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "SaleVertion2.DetailItemHistoryTransaction.Container90.Gallery19.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "SaleVertion2",
+                "type": "SaleVertion2.DetailItemHistoryTransaction.Container90.Gallery19"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 9
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "App.isVisibleContentFilePDF"
                 }
               ],

@@ -43,6 +43,10 @@ SaleVertion2 As screen:
         Container20 As groupContainer.manualLayoutContainer:
             DropShadow: =DropShadow.ExtraBold
             Height: =680
+            RadiusBottomLeft: =10
+            RadiusBottomRight: =10
+            RadiusTopLeft: =10
+            RadiusTopRight: =10
             Width: =317
             X: =16
             Y: =13
@@ -1351,7 +1355,7 @@ SaleVertion2 As screen:
             ZIndex: =2
 
     containerAddQuoteNew_SaleVersion2 As groupContainer.manualLayoutContainer:
-        Fill: =RGBA(0, 0, 0, 0.31)
+        Fill: =RGBA(255, 255, 255, 1)
         Height: =768
         Visible: =isVisibleDialogAddQuoteNew_SaleVertion2
         Width: =1366
@@ -1946,6 +1950,7 @@ SaleVertion2 As screen:
 
         containerCreateQuote_Vertion2 As groupContainer.manualLayoutContainer:
             ContentLanguage: ="vi-VN"
+            DropShadow: =DropShadow.ExtraBold
             Fill: =RGBA(255, 255, 255, 1)
             Height: =722
             RadiusBottomLeft: =10
@@ -2518,7 +2523,7 @@ SaleVertion2 As screen:
                     ZIndex: =1
 
         containerSelectionProductAdd_SaleVertion2 As groupContainer.manualLayoutContainer:
-            Fill: =RGBA(77, 72, 72, 0.22)
+            Fill: =RGBA(255, 255, 255, 0.67)
             Height: =722
             Visible: =isVisibleDialogAddProductQuoteNew_SaleVertion2
             Width: =1299
@@ -3052,6 +3057,7 @@ SaleVertion2 As screen:
                         ZIndex: =3
 
             Container40 As groupContainer.manualLayoutContainer:
+                DropShadow: =DropShadow.ExtraBold
                 Fill: =RGBA(255, 255, 255, 1)
                 Height: =673
                 RadiusBottomLeft: =10
@@ -3240,6 +3246,7 @@ SaleVertion2 As screen:
                     ZIndex: =15
 
             Container54 As groupContainer.manualLayoutContainer:
+                DropShadow: =DropShadow.ExtraBold
                 Fill: =RGBA(255, 255, 255, 1)
                 Height: =664
                 RadiusBottomLeft: =20
@@ -3959,6 +3966,10 @@ SaleVertion2 As screen:
         Container72 As groupContainer.manualLayoutContainer:
             DropShadow: =DropShadow.ExtraBold
             Height: =663
+            RadiusBottomLeft: =10
+            RadiusBottomRight: =10
+            RadiusTopLeft: =10
+            RadiusTopRight: =10
             Width: =317
             X: =16
             Y: =13
@@ -4379,13 +4390,14 @@ SaleVertion2 As screen:
                         ZIndex: =1
 
     containerDialogPurchase As groupContainer.manualLayoutContainer:
-        Fill: =RGBA(0, 0, 0, 0.23)
+        Fill: =RGBA(255, 255, 255, 1)
         Height: =768
         Visible: =isVisibleDialogPurchase_SaleVertion2
         Width: =1366
         ZIndex: =6
 
         Container78 As groupContainer.manualLayoutContainer:
+            DropShadow: =DropShadow.ExtraBold
             Fill: =RGBA(255, 255, 255, 1)
             Height: =735
             RadiusBottomLeft: =10
@@ -5644,6 +5656,10 @@ SaleVertion2 As screen:
         Container69_1 As groupContainer.manualLayoutContainer:
             DropShadow: =DropShadow.ExtraBold
             Height: =668
+            RadiusBottomLeft: =10
+            RadiusBottomRight: =10
+            RadiusTopLeft: =10
+            RadiusTopRight: =10
             Width: =317
             X: =19
             Y: =16
@@ -5687,6 +5703,7 @@ SaleVertion2 As screen:
 
             Container69 As groupContainer.manualLayoutContainer:
                 DropShadow: =If(positionfuntionHistoryTransaction = 0, DropShadow.Semibold,DropShadow.Light)
+                Fill: =If(positionfuntionHistoryTransaction = 0, RGBA(204, 231, 246, 1),RGBA(204, 231, 246, 0))
                 Height: =38
                 RadiusBottomLeft: =10
                 RadiusBottomRight: =10
@@ -5710,6 +5727,7 @@ SaleVertion2 As screen:
 
             Container77 As groupContainer.manualLayoutContainer:
                 DropShadow: =If(positionfuntionHistoryTransaction = 1, DropShadow.Semibold,DropShadow.Light)
+                Fill: =If(positionfuntionHistoryTransaction = 1, RGBA(204, 231, 246, 1),RGBA(204, 231, 246, 0))
                 Height: =38
                 RadiusBottomLeft: =10
                 RadiusBottomRight: =10
@@ -5773,7 +5791,7 @@ SaleVertion2 As screen:
             ZIndex: =4
 
             Container61 As groupContainer.manualLayoutContainer:
-                Fill: =RGBA(128, 128, 128, 0.25)
+                Fill: =RGBA(128, 128, 128, 0.06)
                 Height: =36
                 RadiusBottomLeft: =10
                 RadiusBottomRight: =10
@@ -5827,19 +5845,21 @@ SaleVertion2 As screen:
                 ZIndex: =2
 
             Dropdown5 As dropdown:
+                Height: =25
                 Items: =DropDownSample
                 Width: =216
                 X: =745
-                Y: =5
+                Y: =15
                 ZIndex: =3
 
             "Gallery14 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
                 DelayItemLoading: =true
                 Fill: =RGBA(241, 244, 249, 1)
-                Height: =536
+                Height: =562
                 Items: =Filter(dataCustomer_HistoryTransaction  As tempCustomer , tempCustomer.ID in dataQuote_HistoryTransaction.id_Customer)
                 Layout: =Layout.Vertical
                 LoadingSpinner: =LoadingSpinner.Data
+                OnSelect: =Set(isVisibleDetailItemHistoryTransaction,true)
                 TemplatePadding: =0
                 TemplateSize: =42
                 Width: =977
@@ -5865,7 +5885,7 @@ SaleVertion2 As screen:
                     Align: =Align.Center
                     Color: =RGBA(56, 96, 178, 1)
                     FontWeight: =FontWeight.Semibold
-                    Height: =42
+                    Height: =34
                     OnSelect: =Select(Parent)
                     Text: =ThisItem.taxCode
                     Width: =175
@@ -5874,19 +5894,199 @@ SaleVertion2 As screen:
 
                 Label150_1 As label:
                     Align: =Align.Center
-                    Height: =42
+                    Height: =34
                     OnSelect: =Select(Parent)
                     Text: =ThisItem.customer_Name
                     Width: =575
+                    Wrap: =false
                     X: =184
                     ZIndex: =8
 
                 Label150_2 As label:
                     Align: =Align.Center
-                    Height: =42
+                    Height: =34
                     OnSelect: =Select(Parent)
                     Text: =CountRows(Filter(dataQuote_HistoryTransaction,id_Customer = ThisItem.ID))
                     Width: =218
                     X: =759
                     ZIndex: =9
+
+    DetailItemHistoryTransaction As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =768
+        Visible: =isVisibleDetailItemHistoryTransaction
+        Width: =1366
+        ZIndex: =8
+
+        Container90 As groupContainer.manualLayoutContainer:
+            DropShadow: =DropShadow.ExtraBold
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =722
+            RadiusBottomLeft: =10
+            RadiusBottomRight: =10
+            RadiusTopLeft: =10
+            RadiusTopRight: =10
+            Width: =1306
+            X: =30
+            Y: =24
+            ZIndex: =1
+
+            Icon45 As icon.Cancel:
+                Color: =RGBA(0, 0, 0, 1)
+                Height: =45
+                Icon: =Icon.Cancel
+                OnSelect: =Set(isVisibleDetailItemHistoryTransaction, false)
+                Width: =45
+                X: =1239
+                Y: =6
+                ZIndex: =1
+
+            Label153 As label:
+                FontWeight: =FontWeight.Bold
+                Size: =20
+                Text: ="Lịch sử mua hàng - " & Gallery14.Selected.customer_Name
+                Width: =686
+                X: =24
+                Y: =11
+                ZIndex: =2
+
+            Container94 As groupContainer.manualLayoutContainer:
+                Fill: =RGBA(128, 128, 128, 0.06)
+                Height: =40
+                RadiusBottomLeft: =20
+                RadiusBottomRight: =20
+                RadiusTopLeft: =20
+                RadiusTopRight: =20
+                Width: =1183
+                X: =57
+                Y: =69
+                ZIndex: =3
+
+                Label154 As label:
+                    Align: =Align.Center
+                    FontWeight: =FontWeight.Semibold
+                    Size: =15
+                    Text: ="Mã đơn hàng"
+                    Width: =207
+                    ZIndex: =1
+
+                Label154_1 As label:
+                    Align: =Align.Center
+                    FontWeight: =FontWeight.Semibold
+                    Size: =15
+                    Text: ="Thời gian tạo"
+                    Width: =151
+                    X: =207
+                    ZIndex: =2
+
+                Label154_2 As label:
+                    Align: =Align.Center
+                    FontWeight: =FontWeight.Semibold
+                    Size: =15
+                    Text: ="Nhân viên tạo"
+                    Width: =207
+                    X: =358
+                    ZIndex: =3
+
+                Label154_3 As label:
+                    Align: =Align.Center
+                    FontWeight: =FontWeight.Semibold
+                    Size: =15
+                    Text: ="Mô tả"
+                    Width: =412
+                    X: =565
+                    ZIndex: =4
+
+                Label154_4 As label:
+                    Align: =Align.Center
+                    FontWeight: =FontWeight.Semibold
+                    Size: =15
+                    Text: ="Tổng tiền"
+                    Width: =205
+                    X: =977
+                    ZIndex: =5
+
+            "Gallery19 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+                DelayItemLoading: =true
+                Fill: =RGBA(241, 244, 249, 1)
+                Height: =549
+                Items: |-
+                    =Filter(
+                        dataQuote_HistoryTransaction,
+                        id_Customer = Gallery14.Selected.ID && quote_Status.Value = "Đơn hàng"
+                    )
+                Layout: =Layout.Vertical
+                LoadingSpinner: =LoadingSpinner.Data
+                TemplatePadding: =0
+                TemplateSize: =66
+                Width: =1183
+                X: =57
+                Y: =121
+                ZIndex: =4
+
+                Separator15 As rectangle:
+                    Height: =8
+                    OnSelect: =Select(Parent)
+                    Width: =Parent.TemplateWidth
+                    Y: =Parent.TemplateHeight - Self.Height
+                    ZIndex: =5
+
+                Rectangle13 As rectangle:
+                    Height: =Parent.TemplateHeight - Separator15.Height
+                    OnSelect: =Select(Parent)
+                    Visible: =ThisItem.IsSelected
+                    Width: =4
+                    ZIndex: =6
+
+                Label155 As label:
+                    Align: =Align.Center
+                    Color: =RGBA(56, 96, 178, 1)
+                    FontWeight: =FontWeight.Semibold
+                    Height: =55
+                    OnSelect: =Select(Parent)
+                    Text: =ThisItem.id_Quote
+                    Width: =207
+                    X: =4
+                    ZIndex: =7
+
+                Label155_1 As label:
+                    Align: =Align.Center
+                    Height: =55
+                    OnSelect: =Select(Parent)
+                    Text: =Text(ThisItem.quote_Date,"dd/mm/yyyy")
+                    Width: =151
+                    X: =211
+                    ZIndex: =8
+
+                Label155_2 As label:
+                    Align: =Align.Center
+                    Height: =55
+                    OnSelect: =Select(Parent)
+                    Text: =LookUp(User, ID = ThisItem.id_User).user_Name
+                    Width: =207
+                    X: =362
+                    ZIndex: =9
+
+                Label155_3 As label:
+                    Align: =Align.Center
+                    Height: =55
+                    OnSelect: =Select(Parent)
+                    Text: =ThisItem.quote_Decription
+                    Width: =412
+                    X: =569
+                    Y: =1
+                    ZIndex: =10
+
+                Label155_4 As label:
+                    Align: =Align.Center
+                    Color: =RGBA(255, 0, 0, 1)
+                    FontWeight: =FontWeight.Semibold
+                    Height: =55
+                    Italic: =true
+                    OnSelect: =Select(Parent)
+                    Text: |-
+                        =Text(ThisItem.sumPriceQuote, "#,###")
+                    Width: =202
+                    X: =981
+                    ZIndex: =11
 
