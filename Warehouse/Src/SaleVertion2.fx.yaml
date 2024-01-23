@@ -5613,11 +5613,18 @@ SaleVertion2 As screen:
                     Y: =54
                     ZIndex: =3
 
-    Container69 As groupContainer.manualLayoutContainer:
+    containerHistoryTransaction As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
         Height: =701
         Visible: =btnFunctionSaleVertion2 = "btnHistoryTransaction"
         Width: =1366
         Y: =67
         ZIndex: =7
+
+        Container69_1 As groupContainer.manualLayoutContainer:
+            Height: =668
+            Width: =324
+            X: =19
+            Y: =16
+            ZIndex: =3
 
