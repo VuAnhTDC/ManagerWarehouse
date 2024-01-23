@@ -1308,9 +1308,20 @@ SaleVertion2 As screen:
                     HoverColor: =RGBA(128, 128, 128, 1)
                     HoverFill: =/*ColorFade(RGBA(56, 96, 178, 1), -20%)*/
                     OnSelect: |-
-                        =Set(btnFunctionSaleVertion2, ThisItem.id);
+                        =Set(
+                            btnFunctionSaleVertion2,
+                            ThisItem.id
+                        );
                         // lịch sử giao dịch
-                        If(btnFunctionSaleVertion2 = "btnHistoryTransaction",Set(positionfuntionHistoryTransaction, 0))
+                        If(
+                            btnFunctionSaleVertion2 = "btnHistoryTransaction",
+                            Set(
+                                positionfuntionHistoryTransaction,
+                                0
+                            );
+                            ClearCollect(dataQuote_HistoryTransaction, Filter(Quote, quote_Status.Value = "Đơn hàng"));
+                            ClearCollect(dataCustomer_HistoryTransaction, Customer)
+                        )
                     PressedBorderColor: =/*Self.Fill*/
                     PressedColor: =RGBA(204, 208, 225, 1)
                     Text: =""
@@ -5777,8 +5788,12 @@ SaleVertion2 As screen:
 
             "Gallery14 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
                 DelayItemLoading: =true
-                Height: =511
-                Items: =CustomGallerySample
+                Height: =536
+                Items: |-
+                    =Filter(
+                        dataCustomer_HistoryTransaction As tempCustomer,
+                        tempCustomer.ID in dataQuote_HistoryTransaction.id_User
+                    )
                 Layout: =Layout.Vertical
                 LoadingSpinner: =LoadingSpinner.Data
                 TemplatePadding: =0
@@ -5801,4 +5816,13 @@ SaleVertion2 As screen:
                     Visible: =ThisItem.IsSelected
                     Width: =4
                     ZIndex: =6
+
+                Label150 As label:
+                    Align: =Align.Center
+                    Height: =72
+                    OnSelect: =Select(Parent)
+                    Text: =ThisItem.taxCode
+                    Width: =175
+                    X: =9
+                    ZIndex: =7
 
