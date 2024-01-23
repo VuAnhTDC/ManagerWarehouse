@@ -5623,8 +5623,35 @@ SaleVertion2 As screen:
 
         Container69_1 As groupContainer.manualLayoutContainer:
             Height: =668
-            Width: =324
+            Width: =317
             X: =19
             Y: =16
             ZIndex: =3
+
+            Container73_2 As groupContainer.manualLayoutContainer:
+                DropShadow: =DropShadow.Regular
+                Height: =28
+                Width: =294
+                X: =10
+                Y: =10
+                ZIndex: =1
+
+                Label124_2 As label:
+                    Color: =RGBA(255, 255, 255, 1)
+                    Fill: =RGBA(50, 86, 160, 1)
+                    FontWeight: =FontWeight.Bold
+                    Height: =28
+                    Size: =15
+                    Text: ="Tìm kiếm"
+                    Width: =294
+                    ZIndex: =1
+
+            TextInput15 As text:
+                Default: =""
+                Height: =30
+                HintText: ="Mã đơn hàng"
+                Width: =278
+                X: =18
+                Y: =42
+                ZIndex: =2
 
