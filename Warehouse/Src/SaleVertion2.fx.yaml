@@ -265,7 +265,7 @@ SaleVertion2 As screen:
                     );
                 TemplatePadding: =0
                 TemplateSize: =37
-                Width: =992
+                Width: =981
                 X: =25
                 Y: =163
                 ZIndex: =3
@@ -326,6 +326,51 @@ SaleVertion2 As screen:
                     X: =662
                     Y: =1
                     ZIndex: =10
+
+                Rectangle13 As rectangle:
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    BorderThickness: =1
+                    Fill: =RGBA(56, 96, 178, 0)
+                    Height: =36
+                    OnSelect: =Select(Parent)
+                    Width: =165
+                    X: =812
+                    Y: =1
+                    ZIndex: =11
+
+                Icon18 As icon.Check:
+                    Color: =RGBA(141, 198, 63, 1)
+                    Height: =35
+                    Icon: =Icon.Check
+                    OnSelect: =Select(Parent)
+                    Visible: =ThisItem.quote_Status.Value = "Đơn hàng"
+                    Width: =35
+                    X: =865
+                    Y: =1
+                    ZIndex: =12
+
+                Icon19 As icon.Edit:
+                    Color: =RGBA(0, 0, 0, 1)
+                    Height: =30
+                    Icon: =Icon.Edit
+                    OnSelect: |-
+                        =// hiển thị giao diện chứa dialog sửa Quote
+                        Set(isVisibleDialogAddQuoteNew_SaleVertion2,true);
+                        //Hiển thị dialog chứa Quote
+                        Set(isVisibleUpdatQuote_Vertion2,true);
+                        // biến truyền đây là edit
+                        Set(statusViewEditQuote,"edit");
+                        // lấy danh sách sản phẩm của idQuote vừa tạo
+                        ClearCollect(arrProductAddQuoteNew_SaleVertion2,Filter(Quote_Product,id_Quote = Gallery16.Selected.id_Quote));
+                        // lấy danh sách dịch vụ của idquote vừa tạo
+                        ClearCollect(arrServiceAddQuoteNew_SaleVertion2,Filter(Quote_Service,id_Quote = Gallery16.Selected.id_Quote));
+                        // thuộc tính danh sách là cho người dùng xem danh sách sản phẩm đầu tiền
+                        Set(positionOptionCreatQuote,0)
+                    Visible: =ThisItem.quote_Status.Value = "Báo giá"
+                    Width: =30
+                    X: =944
+                    Y: =4
+                    ZIndex: =13
 
             Container48 As groupContainer.manualLayoutContainer:
                 Fill: =RGBA(128, 128, 128, 0.06)
@@ -1359,9 +1404,7 @@ SaleVertion2 As screen:
             RadiusBottomRight: =10
             RadiusTopLeft: =10
             RadiusTopRight: =10
-            Visible: |-
-                =//isVisibleUpdatQuote_Vertion2
-                false
+            Visible: =isVisibleUpdatQuote_Vertion2
             Width: =1299
             X: =33
             Y: =18
@@ -1560,22 +1603,26 @@ SaleVertion2 As screen:
                         Label78_8 As label:
                             Align: =Align.Center
                             Color: =RGBA(0, 18, 107, 1)
+                            Height: =30
                             OnSelect: =Select(Parent)
                             Size: =15
                             Text: =LookUp(Product,id_Product = ThisItem.id_Product).name_Product
                             VerticalAlign: =VerticalAlign.Top
                             Width: =316
+                            Wrap: =false
                             X: =4
                             Y: =6
                             ZIndex: =6
 
                         Label78_9 As label:
                             Align: =Align.Center
+                            Height: =30
                             OnSelect: =Select(Parent)
                             Size: =15
                             Text: =ThisItem.quote_Product_Note
                             VerticalAlign: =VerticalAlign.Top
                             Width: =308
+                            Wrap: =false
                             X: =320
                             Y: =6
                             ZIndex: =7
@@ -1657,14 +1704,24 @@ SaleVertion2 As screen:
                             Y: =6
                             ZIndex: =12
 
-                        Rectangle14 As rectangle:
-                            Fill: =RGBA(179, 55, 55, 0.41)
+                        Container22 As groupContainer.manualLayoutContainer:
+                            Fill: =RGBA(255, 0, 0, 0.37)
                             Height: =46
-                            OnSelect: =Select(Parent)
                             Visible: =ThisItem.status = "Delete"
                             Width: =1141
                             X: =4
                             ZIndex: =13
+
+                            Label63 As label:
+                                Align: =Align.Center
+                                Color: =RGBA(255, 255, 255, 1)
+                                FontWeight: =FontWeight.Bold
+                                Height: =45
+                                Size: =20
+                                Text: ="Đã xoá"
+                                Width: =354
+                                X: =335
+                                ZIndex: =1
 
                 Container47_1 As groupContainer.manualLayoutContainer:
                     Height: =281
@@ -5591,7 +5648,7 @@ SaleVertion2 As screen:
                     Height: =52
                     OnSelect: =Select(Parent)
                     Size: =16
-                    Text: =CountRows(Filter(dataQuote_HistoryTransaction,id_Customer = ThisItem.ID))
+                    Text: =ThisItem.countOrder
                     Width: =220
                     X: =759
                     ZIndex: =9
