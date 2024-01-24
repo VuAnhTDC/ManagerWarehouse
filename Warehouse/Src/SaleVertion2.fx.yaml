@@ -101,7 +101,10 @@ SaleVertion2 As screen:
                     Checkbox4 As checkbox:
                         Default: =If(idCheckStatusFuntionQuote = 0, true,false)
                         Height: =46
-                        OnCheck: =Set(idCheckStatusFuntionQuote, 0)
+                        OnCheck: |-
+                            =
+                            Set(idCheckStatusFuntionQuote, 0);
+                            Refresh(Quote)
                         OnUncheck: =Set(idCheckStatusFuntionQuote, -1)
                         Text: ="Báo giá"
                         Width: =244
@@ -112,7 +115,9 @@ SaleVertion2 As screen:
                     Checkbox4_1 As checkbox:
                         Default: =If(idCheckStatusFuntionQuote = 1, true,false)
                         Height: =46
-                        OnCheck: =Set(idCheckStatusFuntionQuote, 1)
+                        OnCheck: |-
+                            =Set(idCheckStatusFuntionQuote, 1);
+                            Refresh(Quote)
                         OnUncheck: =Set(idCheckStatusFuntionQuote, -1)
                         Text: ="Đơn hàng"
                         Width: =244
@@ -6009,4 +6014,107 @@ SaleVertion2 As screen:
         Visible: =isVisibleDetailItemHistoryTransaction
         Width: =1366
         ZIndex: =8
+
+        Container27 As groupContainer.manualLayoutContainer:
+            DropShadow: =DropShadow.ExtraBold
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =693
+            RadiusBottomLeft: =10
+            RadiusBottomRight: =10
+            RadiusTopLeft: =10
+            RadiusTopRight: =10
+            Width: =1223
+            X: =40
+            Y: =40
+            ZIndex: =1
+
+            Icon22 As icon.Cancel:
+                Color: =RGBA(0, 0, 0, 1)
+                Height: =45
+                Icon: =Icon.Cancel
+                OnSelect: =Set(isVisibleDetailItemHistoryTransaction,false)
+                Width: =45
+                X: =1167
+                Y: =12
+                ZIndex: =1
+
+            Label91 As label:
+                FontWeight: =FontWeight.Semibold
+                Height: =45
+                Size: =20
+                Text: ="Lịch sử giao dịch - " & Gallery14.Selected.customer_Name
+                Width: =676
+                X: =19
+                Y: =12
+                ZIndex: =2
+
+            Container32 As groupContainer.manualLayoutContainer:
+                Height: =40
+                Width: =1109
+                X: =57
+                Y: =68
+                ZIndex: =3
+
+                Label92 As label:
+                    Align: =Align.Center
+                    FontWeight: =FontWeight.Semibold
+                    Size: =15
+                    Text: ="Mã đơn hàng"
+                    Width: =208
+                    X: =5
+                    ZIndex: =1
+
+                Label92_1 As label:
+                    Align: =Align.Center
+                    FontWeight: =FontWeight.Semibold
+                    Size: =15
+                    Text: ="Ngày tạo"
+                    Width: =124
+                    X: =213
+                    ZIndex: =2
+
+                Label92_2 As label:
+                    Align: =Align.Center
+                    FontWeight: =FontWeight.Semibold
+                    Size: =15
+                    Text: ="Hạn nhận"
+                    Width: =124
+                    X: =337
+                    ZIndex: =3
+
+                Label92_3 As label:
+                    Align: =Align.Center
+                    FontWeight: =FontWeight.Semibold
+                    Size: =15
+                    Text: ="Mô tả"
+                    Width: =317
+                    X: =461
+                    ZIndex: =4
+
+            "Gallery19 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+                DelayItemLoading: =true
+                Height: =537
+                Items: =Filter(Quote,id_Customer =Gallery14.Selected.ID)
+                Layout: =Layout.Vertical
+                LoadingSpinner: =LoadingSpinner.Data
+                TemplatePadding: =0
+                TemplateSize: =43
+                Width: =1107
+                X: =55
+                Y: =120
+                ZIndex: =4
+
+                Label93 As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    BorderThickness: =1
+                    Color: =RGBA(56, 96, 178, 1)
+                    FontWeight: =FontWeight.Semibold
+                    Italic: =true
+                    OnSelect: =Select(Parent)
+                    Text: =ThisItem.id_Quote
+                    Width: =208
+                    X: =5
+                    Y: =1
+                    ZIndex: =1
 
