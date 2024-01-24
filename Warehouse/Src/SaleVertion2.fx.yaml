@@ -6053,9 +6053,10 @@ SaleVertion2 As screen:
                 Items: =dataQuote_Order_History
                 Layout: =Layout.Vertical
                 LoadingSpinner: =LoadingSpinner.Data
-                OnSelect: |-
+                OnSelect: |
                     =Set(DetailOrderCustomer_HistoryTransaction,true);
                     Set(isVisibleDetailItemHistoryTransaction,true);
+                    Set(positionDetailOrderItem_HistoryTransaction,0);
                 TemplatePadding: =0
                 TemplateSize: =49
                 Width: =982
@@ -6382,7 +6383,7 @@ SaleVertion2 As screen:
 
             "Gallery19 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
                 DelayItemLoading: =true
-                Fill: =RGBA(241, 244, 249, 1)
+                Fill: =RGBA(255, 255, 255, 1)
                 Height: =549
                 Items: |-
                     =SortByColumns(Filter(
@@ -6395,7 +6396,7 @@ SaleVertion2 As screen:
                     =Set(DetailOrderCustomer_HistoryTransaction,true);
                     Set(positionDetailOrderItem_HistoryTransaction,0);
                 TemplatePadding: =0
-                TemplateSize: =55
+                TemplateSize: =52
                 Width: =1183
                 X: =57
                 Y: =114
@@ -6416,7 +6417,7 @@ SaleVertion2 As screen:
                         BorderThickness: =1
                         Color: =RGBA(56, 96, 178, 1)
                         FontWeight: =FontWeight.Semibold
-                        Height: =53
+                        Height: =52
                         OnSelect: =
                         Text: =ThisItem.id_Quote
                         Width: =204
@@ -6426,7 +6427,7 @@ SaleVertion2 As screen:
                     Label155_1 As label:
                         Align: =Align.Center
                         BorderThickness: =1
-                        Height: =53
+                        Height: =52
                         OnSelect: =
                         Text: =Text(ThisItem.quote_Date,"dd/mm/yyyy")
                         Width: =154
@@ -6437,7 +6438,7 @@ SaleVertion2 As screen:
                     Label155_2 As label:
                         Align: =Align.Center
                         BorderThickness: =1
-                        Height: =53
+                        Height: =52
                         OnSelect: =
                         Text: =LookUp(User, ID = ThisItem.id_User).user_Name
                         Width: =207
@@ -6449,7 +6450,7 @@ SaleVertion2 As screen:
                     Label155_3 As label:
                         Align: =Align.Center
                         BorderThickness: =1
-                        Height: =53
+                        Height: =52
                         OnSelect: =
                         Text: =ThisItem.quote_Decription
                         Width: =412
@@ -6463,7 +6464,7 @@ SaleVertion2 As screen:
                         BorderThickness: =1
                         Color: =RGBA(255, 0, 0, 1)
                         FontWeight: =FontWeight.Semibold
-                        Height: =53
+                        Height: =52
                         Italic: =true
                         OnSelect: =
                         Text: |-
@@ -6594,9 +6595,17 @@ SaleVertion2 As screen:
 
                         "Gallery20 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
                             DelayItemLoading: =true
-                            Fill: =RGBA(241, 244, 249, 1)
+                            Fill: =RGBA(255, 255, 255, 1)
                             Height: =470
-                            Items: =Filter(Quote_Product,id_Quote = Gallery19.Selected.id_Quote)
+                            Items: |-
+                                =If(
+                                    positionfuntionHistoryTransaction = 0,
+                                    Filter(
+                                        Quote_Product,
+                                        id_Quote = Gallery19.Selected.id_Quote
+                                    ),
+                                    Filter(Quote_Product,id_Quote = Gallery26.Selected.id_Quote)
+                                )
                             Layout: =Layout.Vertical
                             LoadingSpinner: =LoadingSpinner.Data
                             TemplatePadding: =0
@@ -6736,7 +6745,7 @@ SaleVertion2 As screen:
 
                         "Gallery20_1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
                             DelayItemLoading: =true
-                            Fill: =RGBA(241, 244, 249, 1)
+                            Fill: =RGBA(255, 255, 255, 1)
                             Height: =470
                             Items: =Filter(Quote_Service,id_Quote = Gallery19.Selected.id_Quote)
                             Layout: =Layout.Vertical
@@ -6800,7 +6809,15 @@ SaleVertion2 As screen:
                     Color: =RGBA(0, 0, 0, 1)
                     Height: =45
                     Icon: =Icon.Cancel
-                    OnSelect: =Set(DetailOrderCustomer_HistoryTransaction,false)
+                    OnSelect: |-
+                        =If(
+                            positionfuntionHistoryTransaction = 0,
+                            Set(
+                                DetailOrderCustomer_HistoryTransaction,
+                                false
+                            ),Set(DetailOrderCustomer_HistoryTransaction,false);
+                            Set(isVisibleDetailItemHistoryTransaction,false)
+                        )
                     Width: =45
                     X: =1215
                     Y: =12
@@ -6818,7 +6835,7 @@ SaleVertion2 As screen:
                         FontWeight: =FontWeight.Bold
                         Height: =38
                         Size: =20
-                        Text: =Gallery19.Selected.id_Quote
+                        Text: =If(positionfuntionHistoryTransaction=0,Gallery19.Selected.id_Quote,Gallery26.Selected.id_Quote)
                         Width: =359
                         ZIndex: =1
 
