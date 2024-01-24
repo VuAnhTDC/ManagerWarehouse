@@ -1969,7 +1969,13 @@ SaleVertion2 As screen:
                                 "Báo giá phải có ít nhất 1 sản phẩm.Vui lòng thêm sản phẩm",
                                 NotificationType.Error
                             ),
-                            If(
+                            CRUD_Quote_Product_Warehouse.Run(
+                                JSON(
+                                    arrProductAddQuoteNew_SaleVertion2,
+                                    JSONFormat.IncludeBinaryData & JSONFormat.IgnoreUnsupportedTypes
+                                )
+                            );
+                            /*If(
                                 CountRows(arrProductDelete_Vertion2) > 0,
                                 ForAll(
                                     arrProductDelete_Vertion2,
@@ -2017,7 +2023,7 @@ SaleVertion2 As screen:
                                         price_Quote_Service: ThisRecord.price_Quote_Service
                                     }
                                 )
-                            )
+                            )*/
                         )
                     )
                 Size: =18
