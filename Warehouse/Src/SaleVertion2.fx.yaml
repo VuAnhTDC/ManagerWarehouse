@@ -6015,7 +6015,7 @@ SaleVertion2 As screen:
         Width: =1366
         ZIndex: =8
 
-        Container27 As groupContainer.manualLayoutContainer:
+        containerDetailOrders_Customer As groupContainer.manualLayoutContainer:
             DropShadow: =DropShadow.ExtraBold
             Fill: =RGBA(255, 255, 255, 1)
             Height: =693
@@ -6024,8 +6024,8 @@ SaleVertion2 As screen:
             RadiusTopLeft: =10
             RadiusTopRight: =10
             Width: =1223
-            X: =40
-            Y: =40
+            X: =75
+            Y: =33
             ZIndex: =1
 
             Icon22 As icon.Cancel:
@@ -6049,7 +6049,12 @@ SaleVertion2 As screen:
                 ZIndex: =2
 
             Container32 As groupContainer.manualLayoutContainer:
+                Fill: =RGBA(128, 128, 128, 0.06)
                 Height: =40
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
                 Width: =1109
                 X: =57
                 Y: =68
@@ -6087,21 +6092,42 @@ SaleVertion2 As screen:
                     FontWeight: =FontWeight.Semibold
                     Size: =15
                     Text: ="Mô tả"
-                    Width: =317
+                    Width: =277
                     X: =461
                     ZIndex: =4
 
+                Label92_4 As label:
+                    Align: =Align.Center
+                    FontWeight: =FontWeight.Semibold
+                    Size: =15
+                    Text: ="Nhân viên"
+                    Width: =198
+                    X: =738
+                    ZIndex: =5
+
+                Label92_5 As label:
+                    Align: =Align.Center
+                    FontWeight: =FontWeight.Semibold
+                    Size: =15
+                    Text: ="Nhân viên"
+                    Width: =172
+                    X: =936
+                    ZIndex: =6
+
             "Gallery19 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+                BorderColor: =RGBA(0, 0, 0, 1)
+                BorderThickness: =1
                 DelayItemLoading: =true
                 Height: =537
                 Items: =Filter(Quote,id_Customer =Gallery14.Selected.ID)
                 Layout: =Layout.Vertical
                 LoadingSpinner: =LoadingSpinner.Data
+                OnSelect: =Set(isVisibleDetailOrderHistory_Customer,true)
                 TemplatePadding: =0
                 TemplateSize: =43
-                Width: =1107
+                Width: =1111
                 X: =55
-                Y: =120
+                Y: =110
                 ZIndex: =4
 
                 Label93 As label:
@@ -6113,8 +6139,118 @@ SaleVertion2 As screen:
                     Italic: =true
                     OnSelect: =Select(Parent)
                     Text: =ThisItem.id_Quote
-                    Width: =208
-                    X: =5
+                    Width: =213
                     Y: =1
+                    ZIndex: =1
+
+                Label93_1 As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    BorderThickness: =1
+                    FontWeight: =FontWeight.Lighter
+                    OnSelect: =Select(Parent)
+                    Text: =ThisItem.quote_Date
+                    Width: =124
+                    X: =213
+                    Y: =1
+                    ZIndex: =2
+
+                Label93_2 As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    BorderThickness: =1
+                    FontWeight: =FontWeight.Lighter
+                    OnSelect: =Select(Parent)
+                    Text: =ThisItem.quote_Expire
+                    Width: =124
+                    X: =337
+                    Y: =1
+                    ZIndex: =3
+
+                Label93_3 As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    BorderThickness: =1
+                    FontWeight: =FontWeight.Lighter
+                    OnSelect: =Select(Parent)
+                    Text: =ThisItem.quote_Decription
+                    Width: =277
+                    Wrap: =false
+                    X: =461
+                    Y: =1
+                    ZIndex: =4
+
+                Label93_4 As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    BorderThickness: =1
+                    FontWeight: =FontWeight.Lighter
+                    OnSelect: =Select(Parent)
+                    Text: =LookUp(User,ID = ThisItem.id_User).user_Name
+                    Width: =198
+                    Wrap: =false
+                    X: =738
+                    Y: =1
+                    ZIndex: =5
+
+                Label93_5 As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    BorderThickness: =1
+                    Color: =RGBA(255, 0, 0, 1)
+                    Italic: =true
+                    OnSelect: =Select(Parent)
+                    Text: =Text(ThisItem.sumPriceQuote,"0,000")
+                    Width: =175
+                    Wrap: =false
+                    X: =936
+                    Y: =1
+                    ZIndex: =6
+
+    containerDetailHistoryTransaction_Order_Customer As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(255, 255, 255, 0.72)
+        Height: =768
+        Visible: =isVisibleDetailOrderHistory_Customer
+        Width: =1366
+        ZIndex: =9
+
+        Container42 As groupContainer.manualLayoutContainer:
+            DropShadow: =DropShadow.ExtraBold
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =693
+            RadiusBottomLeft: =10
+            RadiusBottomRight: =10
+            RadiusTopLeft: =10
+            RadiusTopRight: =10
+            Width: =1230
+            X: =51
+            Y: =45
+            ZIndex: =1
+
+            Icon24 As icon.Cancel:
+                Color: =RGBA(0, 0, 0, 1)
+                Height: =45
+                Icon: =Icon.Cancel
+                OnSelect: =Set(isVisibleDetailOrderHistory_Customer,false)
+                Width: =45
+                X: =1174
+                Y: =16
+                ZIndex: =1
+
+            Container43 As groupContainer.manualLayoutContainer:
+                DropShadow: =DropShadow.Semibold
+                Height: =60
+                Width: =392
+                X: =20
+                Y: =16
+                ZIndex: =2
+
+                Label94 As label:
+                    Align: =Align.Center
+                    FontWeight: =FontWeight.Semibold
+                    Height: =60
+                    Size: =20
+                    Text: =Gallery19.Selected.id_Quote
+                    Width: =392
                     ZIndex: =1
 
