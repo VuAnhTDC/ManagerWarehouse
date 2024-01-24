@@ -6050,7 +6050,19 @@ SaleVertion2 As screen:
             "Gallery26 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
                 DelayItemLoading: =true
                 Height: =569
-                Items: =dataQuote_Order_History
+                Items: |-
+                    =If(
+                        positionFlat_Order_HistoryTransaction = 0,
+                        dataQuote_Order_History,
+                        If(
+                            positionFlat_Order_HistoryTransaction = 1,
+                            SortByColumns(
+                                dataQuote_Order_History,
+                                "quote_Expire",
+                                SortOrder.Descending
+                            )
+                        )
+                    )
                 Layout: =Layout.Vertical
                 LoadingSpinner: =LoadingSpinner.Data
                 OnSelect: |
@@ -6152,10 +6164,9 @@ SaleVertion2 As screen:
                             "Bộ lọc - Tất cả",
                             If(
                                 positionFlat_Order_HistoryTransaction = 1,
-                                "Bộ lọc - Số lượng sản phẩm",
+                                "Bộ lọc - Thời gian nhận hàng",
                                 If(
                                     positionFlat_Order_HistoryTransaction = 2,
-                                    "Bộ lọc - Thời gian nhận hàng",
                                     "Bộ lọc - Giá đơn hàng (Tăng dần)"
                                 )
                             )
@@ -6237,7 +6248,7 @@ SaleVertion2 As screen:
             Container88_1 As groupContainer.manualLayoutContainer:
                 DropShadow: =DropShadow.ExtraBold
                 Fill: =RGBA(255, 255, 255, 1)
-                Height: =95
+                Height: =71
                 Visible: =isVisibleSelectionOrder_HistoryTransaction
                 Width: =314
                 X: =651
@@ -6251,7 +6262,7 @@ SaleVertion2 As screen:
                     OnCheck: =Set(positionFlat_Order_HistoryTransaction,1)
                     OnSelect: =Set(isVisibleSelectionOrder_HistoryTransaction,false)
                     OnUncheck: =Set(positionFlat_Order_HistoryTransaction, 0)
-                    Text: ="Theo số lượng sản phẩm(tăng)"
+                    Text: ="Theo thời gian nhận hàng"
                     Width: =285
                     X: =21
                     Y: =9
@@ -6265,25 +6276,11 @@ SaleVertion2 As screen:
                     OnSelect: |
                         =Set(isVisibleSelectionOrder_HistoryTransaction,false)
                     OnUncheck: =Set(positionFlat_Order_HistoryTransaction,0)
-                    Text: ="Theo thời gian nhận hàng"
+                    Text: ="Theo giá hoá đơn (Tăng dần)"
                     Width: =285
                     X: =21
                     Y: =35
                     ZIndex: =2
-
-                Checkbox3_4 As checkbox:
-                    CheckboxSize: =30
-                    Default: =positionFlat_Order_HistoryTransaction = 3
-                    Height: =26
-                    OnCheck: =Set(positionFlat_Order_HistoryTransaction,3)
-                    OnSelect: |
-                        =Set(isVisibleSelectionOrder_HistoryTransaction,false)
-                    OnUncheck: =Set(positionFlat_Order_HistoryTransaction,0)
-                    Text: ="Theo giá (Tăng dần)"
-                    Width: =285
-                    X: =21
-                    Y: =61
-                    ZIndex: =3
 
     DetailItemHistoryTransaction_Customer As groupContainer.manualLayoutContainer:
         Fill: =RGBA(255, 255, 255, 0.71)
