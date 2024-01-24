@@ -207,7 +207,7 @@ SaleVertion2 As screen:
 
             "Gallery16 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
                 DelayItemLoading: =true
-                Fill: =RGBA(241, 244, 249, 1)
+                Fill: =RGBA(255, 255, 255, 1)
                 Height: =511
                 Items: |-
                     =If(
@@ -352,7 +352,7 @@ SaleVertion2 As screen:
                                     Icon.Check
                                 )
                             )
-                        OnSelect: =Select(Parent)
+                        OnSelect: =
                         Visible: =!(ThisItem.quote_Status.Value = "Báo giá")
                         Width: =35
                         X: =40
@@ -363,7 +363,10 @@ SaleVertion2 As screen:
                         Height: =30
                         Icon: =Icon.Edit
                         OnSelect: |-
-                            =Set(statusViewEditQuote, "edit");
+                            =Set(
+                                statusViewEditQuote,
+                                "edit"
+                            );
                             Set(
                                 isVisibleDialogAddQuoteNew_SaleVertion2,
                                 true
@@ -372,6 +375,7 @@ SaleVertion2 As screen:
                                 isVisibleUpdatQuote_Vertion2,
                                 true
                             );
+                            // lấy danh sách sản phẩm có trong báo giá vừa chọn
                             ClearCollect(
                                 arrProductQuote_SaleVertion2,
                                 Filter(
@@ -379,6 +383,16 @@ SaleVertion2 As screen:
                                     id_Quote = Gallery16.Selected.id_Quote
                                 )
                             );
+                            // danh sách sản phẩm vừa lấy về thêm cột status cho từng item
+                            ClearCollect(
+                                arrProductAddQuoteNew_SaleVertion2,
+                                AddColumns(
+                                    arrProductQuote_SaleVertion2,
+                                    "status",
+                                    ""
+                                )
+                            );
+                            // lấy danh sách dịch vụ trong báo giá vừa chọn
                             ClearCollect(
                                 arrServiceQuote_SaleVertion2,
                                 Filter(
@@ -386,11 +400,28 @@ SaleVertion2 As screen:
                                     id_Quote = Gallery16.Selected.id_Quote
                                 )
                             );
-                            ClearCollect(arrProductDelete_Vertion2,[]);
-                            ClearCollect(arrServiceDelete_Vertion2,[]);
-                            Set(isVisibleUpdateProduct_Quote_Vertion2, false);
-                            Set(isVisibleUpdateService_Quote_Vertion2,false);
-                            Set(positionOptionCreatQuote,0)
+                            //Thêm một cột status vào trong dịch vụ
+                            ClearCollect(arrServiceAddQuoteNew_SaleVertion2,AddColumns(arrServiceQuote_SaleVertion2,"status",""));
+                            ClearCollect(
+                                arrProductDelete_Vertion2,
+                                []
+                            );
+                            ClearCollect(
+                                arrServiceDelete_Vertion2,
+                                []
+                            );
+                            Set(
+                                isVisibleUpdateProduct_Quote_Vertion2,
+                                false
+                            );
+                            Set(
+                                isVisibleUpdateService_Quote_Vertion2,
+                                false
+                            );
+                            Set(
+                                positionOptionCreatQuote,
+                                0
+                            )
                         Width: =30
                         X: =116
                         Y: =3
@@ -1607,8 +1638,7 @@ SaleVertion2 As screen:
                         DelayItemLoading: =true
                         Fill: =RGBA(241, 244, 249, 1)
                         Height: =210
-                        Items: |
-                            =arrProductAddQuoteNew_SaleVertion2
+                        Items: =arrProductAddQuoteNew_SaleVertion2
                         Layout: =Layout.Vertical
                         LoadingSpinner: =LoadingSpinner.Data
                         TemplatePadding: =0
@@ -1685,16 +1715,27 @@ SaleVertion2 As screen:
                         Icon20_2 As icon.Trash:
                             Color: =RGBA(0, 0, 0, 1)
                             Height: =30
-                            Icon: =Icon.Trash
+                            Icon: =If(ThisItem.status = "Delete",Icon.Undo,Icon.Trash)
                             OnSelect: |-
-                                =Collect(arrProductDelete_Vertion2,ThisItem);
-                                ClearCollect(
-                                    arrProductAddQuoteNew_SaleVertion2,
-                                    Filter(
+                                =//Collect(arrProductDelete_Vertion2,ThisItem);
+                                If(
+                                    ThisItem.status <> "Delete",
+                                    Patch(
                                         arrProductAddQuoteNew_SaleVertion2,
-                                        Not(id_Product = ThisItem.id_Product)
+                                        LookUp(
+                                            arrProductAddQuoteNew_SaleVertion2,
+                                            id_Product = ThisItem.id_Product
+                                        ),
+                                        {status: "Delete"}
+                                    ), Patch(
+                                        arrProductAddQuoteNew_SaleVertion2,
+                                        LookUp(
+                                            arrProductAddQuoteNew_SaleVertion2,
+                                            id_Product = ThisItem.id_Product
+                                        ),
+                                        {status: "Update"}
                                     )
-                                );
+                                )
                             Visible: =statusViewEditQuote = "edit"
                             Width: =30
                             X: =1148
@@ -1713,6 +1754,15 @@ SaleVertion2 As screen:
                             X: =1115
                             Y: =6
                             ZIndex: =12
+
+                        Rectangle14 As rectangle:
+                            Fill: =RGBA(179, 55, 55, 0.41)
+                            Height: =46
+                            OnSelect: =Select(Parent)
+                            Visible: =ThisItem.status = "Delete"
+                            Width: =1141
+                            X: =4
+                            ZIndex: =13
 
                 Container47_1 As groupContainer.manualLayoutContainer:
                     Height: =281
@@ -1908,7 +1958,7 @@ SaleVertion2 As screen:
                 FontWeight: =FontWeight.Semibold
                 OnSelect: |-
                     =If(
-                         IsBlank(TextInput7_1.Text) || IsBlank(arrProductAddQuoteNew_SaleVertion2),
+                        IsBlank(TextInput7_1.Text) || IsBlank(arrProductAddQuoteNew_SaleVertion2),
                         Notify(
                             "Vui lòng điền đủ thông tin",
                             NotificationType.Error
