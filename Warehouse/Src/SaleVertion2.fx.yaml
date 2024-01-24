@@ -6053,6 +6053,9 @@ SaleVertion2 As screen:
                 Items: =dataQuote_Order_History
                 Layout: =Layout.Vertical
                 LoadingSpinner: =LoadingSpinner.Data
+                OnSelect: |-
+                    =Set(DetailOrderCustomer_HistoryTransaction,true);
+                    Set(isVisibleDetailItemHistoryTransaction,true);
                 TemplatePadding: =0
                 TemplateSize: =49
                 Width: =982
@@ -6281,8 +6284,8 @@ SaleVertion2 As screen:
                     Y: =61
                     ZIndex: =3
 
-    DetailItemHistoryTransaction As groupContainer.manualLayoutContainer:
-        Fill: =RGBA(255, 255, 255, 1)
+    DetailItemHistoryTransaction_Customer As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(255, 255, 255, 0.71)
         Height: =768
         Visible: =isVisibleDetailItemHistoryTransaction
         Width: =1366
@@ -6296,6 +6299,7 @@ SaleVertion2 As screen:
             RadiusBottomRight: =10
             RadiusTopLeft: =10
             RadiusTopRight: =10
+            Visible: =positionfuntionHistoryTransaction = 0
             Width: =1306
             X: =30
             Y: =24
