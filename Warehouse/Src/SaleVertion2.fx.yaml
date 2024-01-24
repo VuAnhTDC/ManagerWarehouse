@@ -5788,7 +5788,10 @@ SaleVertion2 As screen:
                     Default: =positionfuntionHistoryTransaction = 1
                     FocusedBorderThickness: =0
                     Height: =38
-                    OnCheck: =Set(positionfuntionHistoryTransaction,1)
+                    OnCheck: |-
+                        =Set(positionfuntionHistoryTransaction,1);
+                        Set(positionFlat_Order_HistoryTransaction,0);
+                        Set(isVisibleSelectionOrder_HistoryTransaction,false)
                     OnUncheck: =Set(positionfuntionHistoryTransaction,0)
                     Text: ="Đơn hàng"
                     Width: =214
@@ -5883,24 +5886,28 @@ SaleVertion2 As screen:
                 Height: =462
                 Items: |-
                     =If(
-                        positionFlatHistory_Transaction = 0,
-                        dataCustomerCountOrder,
+                        IsBlank(TextInput15_2.Text),
                         If(
-                            positionFlatHistory_Transaction = 1,
-                            SortByColumns(
-                                dataCustomerCountOrder,
-                                "countOrder",
-                                SortOrder.Ascending
-                            ),
+                            positionFlatHistory_Transaction = 0,
+                            dataCustomerCountOrder,
                             If(
-                                positionFlatHistory_Transaction = 2,
+                                positionFlatHistory_Transaction = 1,
                                 SortByColumns(
                                     dataCustomerCountOrder,
-                                    "customer_Name",
+                                    "countOrder",
                                     SortOrder.Ascending
+                                ),
+                                If(
+                                    positionFlatHistory_Transaction = 2,
+                                    SortByColumns(
+                                        dataCustomerCountOrder,
+                                        "customer_Name",
+                                        SortOrder.Ascending
+                                    )
                                 )
                             )
-                        )
+                        ),
+                        Filter(dataCustomerCountOrder,StartsWith(taxCode,TextInput15_2.Text))
                     )
                 Layout: =Layout.Vertical
                 LoadingSpinner: =LoadingSpinner.Data
@@ -5950,32 +5957,11 @@ SaleVertion2 As screen:
                     X: =759
                     ZIndex: =9
 
-            Label149_1 As label:
-                Align: =Align.Right
-                FontWeight: =FontWeight.Semibold
-                Height: =21
-                Italic: =true
-                Size: =14
-                Text: ="Tìm kiếm*"
-                Width: =112
-                X: =515
-                Y: =17
-                ZIndex: =5
-
-            TextInput20 As text:
-                Default: =""
-                Height: =33
-                HintText: ="Mã số thuế"
-                Width: =362
-                X: =627
-                Y: =10
-                ZIndex: =6
-
             Container87 As groupContainer.manualLayoutContainer:
                 DropShadow: =DropShadow.Semilight
                 Height: =32
-                Width: =236
-                X: =277
+                Width: =275
+                X: =686
                 Y: =11
                 ZIndex: =7
 
@@ -5991,8 +5977,16 @@ SaleVertion2 As screen:
                     Fill: =RGBA(255, 255, 255, 1)
                     FontWeight: =FontWeight.Semibold
                     Height: =32
-                    Text: ="Bộ lọc"
-                    Width: =194
+                    Text: |-
+                        =If(
+                            positionFlatHistory_Transaction = 0,
+                            "Bộ lọc - Tất cả",
+                            If(
+                                positionFlatHistory_Transaction = 1,
+                                "Bộ lọc - Số lượng đơn hàng","Bộ lọc - Khách hàng"
+                            )
+                        )
+                    Width: =233
                     X: =42
                     ZIndex: =2
 
@@ -6000,7 +5994,7 @@ SaleVertion2 As screen:
                     Fill: =RGBA(56, 96, 178, 0)
                     Height: =32
                     OnSelect: =Set(isVisibleFlatfilter_HistoryTransaction,!isVisibleFlatfilter_HistoryTransaction)
-                    Width: =236
+                    Width: =275
                     ZIndex: =3
 
             Container88 As groupContainer.manualLayoutContainer:
@@ -6009,8 +6003,8 @@ SaleVertion2 As screen:
                 Height: =69
                 Visible: =isVisibleFlatfilter_HistoryTransaction
                 Width: =314
-                X: =238
-                Y: =55
+                X: =666
+                Y: =46
                 ZIndex: =8
 
                 Checkbox3 As checkbox:
@@ -6018,6 +6012,7 @@ SaleVertion2 As screen:
                     Default: =positionFlatHistory_Transaction = 1
                     Height: =26
                     OnCheck: =Set(positionFlatHistory_Transaction,1)
+                    OnSelect: =Set(isVisibleFlatfilter_HistoryTransaction,false)
                     OnUncheck: =Set(positionFlatHistory_Transaction, 0)
                     Text: ="Theo số lượng đơn hàng(tăng)"
                     Width: =285
@@ -6030,6 +6025,93 @@ SaleVertion2 As screen:
                     Default: =positionFlatHistory_Transaction = 2
                     Height: =26
                     OnCheck: =Set(positionFlatHistory_Transaction,2)
+                    OnSelect: |
+                        =Set(isVisibleFlatfilter_HistoryTransaction,false)
+                    OnUncheck: =Set(positionFlatHistory_Transaction,0)
+                    Text: ="Theo tên khách hàng"
+                    Width: =285
+                    X: =21
+                    Y: =35
+                    ZIndex: =2
+
+        Container81 As groupContainer.manualLayoutContainer:
+            Height: =685
+            Visible: =positionfuntionHistoryTransaction = 1
+            Width: =1000
+            X: =351
+            Y: =16
+            ZIndex: =5
+
+            Container87_1 As groupContainer.manualLayoutContainer:
+                DropShadow: =DropShadow.Semilight
+                Height: =32
+                Width: =275
+                X: =686
+                Y: =11
+                ZIndex: =1
+
+                Icon47_1 As icon.FilterFlat:
+                    Height: =26
+                    Icon: =Icon.FilterFlat
+                    Width: =29
+                    X: =13
+                    Y: =3
+                    ZIndex: =1
+
+                Label149_1 As label:
+                    Fill: =RGBA(255, 255, 255, 1)
+                    FontWeight: =FontWeight.Semibold
+                    Height: =32
+                    Text: |-
+                        =If(
+                            positionFlatHistory_Transaction = 0,
+                            "Bộ lọc - Tất cả",
+                            If(
+                                positionFlatHistory_Transaction = 1,
+                                "Bộ lọc - Số lượng đơn hàng","Bộ lọc - Khách hàng"
+                            )
+                        )
+                    Width: =233
+                    X: =42
+                    ZIndex: =2
+
+                Rectangle11_1 As rectangle:
+                    Fill: =RGBA(56, 96, 178, 0)
+                    Height: =32
+                    OnSelect: =Set(isVisibleSelectionOrder_HistoryTransaction,!isVisibleSelectionOrder_HistoryTransaction)
+                    Width: =275
+                    ZIndex: =3
+
+            Container88_1 As groupContainer.manualLayoutContainer:
+                DropShadow: =DropShadow.ExtraBold
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =69
+                Visible: =isVisibleSelectionOrder_HistoryTransaction
+                Width: =314
+                X: =666
+                Y: =49
+                ZIndex: =2
+
+                Checkbox3_2 As checkbox:
+                    CheckboxSize: =30
+                    Default: =positionFlatHistory_Transaction = 1
+                    Height: =26
+                    OnCheck: =Set(positionFlatHistory_Transaction,1)
+                    OnSelect: =Set(isVisibleFlatfilter_HistoryTransaction,false)
+                    OnUncheck: =Set(positionFlatHistory_Transaction, 0)
+                    Text: ="Theo số lượng đơn hàng(tăng)"
+                    Width: =285
+                    X: =21
+                    Y: =9
+                    ZIndex: =1
+
+                Checkbox3_3 As checkbox:
+                    CheckboxSize: =30
+                    Default: =positionFlatHistory_Transaction = 2
+                    Height: =26
+                    OnCheck: =Set(positionFlatHistory_Transaction,2)
+                    OnSelect: |
+                        =Set(isVisibleFlatfilter_HistoryTransaction,false)
                     OnUncheck: =Set(positionFlatHistory_Transaction,0)
                     Text: ="Theo tên khách hàng"
                     Width: =285
