@@ -5904,7 +5904,9 @@ SaleVertion2 As screen:
                     )
                 Layout: =Layout.Vertical
                 LoadingSpinner: =LoadingSpinner.Data
-                OnSelect: =Set(isVisibleDetailItemHistoryTransaction,true)
+                OnSelect: |-
+                    =Set(isVisibleDetailItemHistoryTransaction,true);
+                    Set(isVisibleFlatfilter_HistoryTransaction,false)
                 TemplatePadding: =0
                 TemplateSize: =52
                 Width: =977
