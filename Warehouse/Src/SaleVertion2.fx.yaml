@@ -1326,13 +1326,49 @@ SaleVertion2 As screen:
                                 positionfuntionHistoryTransaction,
                                 0
                             );
-                               Refresh(Quote);
+                            Refresh(Quote);
                             Refresh(Quote_Product);
                             Refresh(Quote_Service);
                             Refresh(Customer);
-                            ClearCollect(dataQuote_HistoryTransaction, Filter(Quote, quote_Status.Value = "Đơn hàng"));
-                            ClearCollect(dataCustomer_HistoryTransaction, Customer);
-                            Set(isVisibleFlatfilter_HistoryTransaction, false);
+                            //Danh sách báo giá - đơn hàng
+                        ClearCollect(
+                                dataQuote_HistoryTransaction,
+                                Filter(
+                                    Quote,
+                                    quote_Status.Value = "Đơn hàng"
+                                )
+                            );
+                            //Danh sách khách hàng
+                        ClearCollect(
+                                dataCustomer_HistoryTransaction,
+                                Customer
+                            );
+                            Set(
+                                isVisibleFlatfilter_HistoryTransaction,
+                                false
+                            );
+                            Set(positionFlatHistory_Transaction, 0);
+                            //Danh sách khách hàng có đơn hàng
+                        ClearCollect(
+                                dataCustomerHaveOrder,
+                                Filter(
+                                    dataCustomer_HistoryTransaction As tempCustomer_History,
+                                    tempCustomer_History.ID in dataQuote_HistoryTransaction.id_Customer
+                                )
+                            );
+                            ClearCollect(
+                                dataCustomerCountOrder,
+                                AddColumns(
+                                    dataCustomerHaveOrder As temp,
+                                    "countOrder",
+                                    CountRows(
+                                        Filter(
+                                            dataQuote_HistoryTransaction,
+                                            id_Customer = temp.ID
+                                        )
+                                    )
+                                )
+                            )
                         )
                     PressedBorderColor: =/*Self.Fill*/
                     PressedColor: =RGBA(204, 208, 225, 1)
@@ -5845,7 +5881,27 @@ SaleVertion2 As screen:
                 DelayItemLoading: =true
                 Fill: =RGBA(241, 244, 249, 1)
                 Height: =462
-                Items: =Filter(dataCustomer_HistoryTransaction  As tempCustomer , tempCustomer.ID in dataQuote_HistoryTransaction.id_Customer)
+                Items: |-
+                    =If(
+                        positionFlatHistory_Transaction = 0,
+                        dataCustomerCountOrder,
+                        If(
+                            positionFlatHistory_Transaction = 1,
+                            SortByColumns(
+                                dataCustomerCountOrder,
+                                "countOrder",
+                                SortOrder.Ascending
+                            ),
+                            If(
+                                positionFlatHistory_Transaction = 2,
+                                SortByColumns(
+                                    dataCustomerCountOrder,
+                                    "customer_Name",
+                                    SortOrder.Ascending
+                                )
+                            )
+                        )
+                    )
                 Layout: =Layout.Vertical
                 LoadingSpinner: =LoadingSpinner.Data
                 OnSelect: =Set(isVisibleDetailItemHistoryTransaction,true)
@@ -5947,7 +6003,7 @@ SaleVertion2 As screen:
             Container88 As groupContainer.manualLayoutContainer:
                 DropShadow: =DropShadow.ExtraBold
                 Fill: =RGBA(255, 255, 255, 1)
-                Height: =85
+                Height: =69
                 Visible: =isVisibleFlatfilter_HistoryTransaction
                 Width: =314
                 X: =238
@@ -5956,30 +6012,27 @@ SaleVertion2 As screen:
 
                 Checkbox3 As checkbox:
                     CheckboxSize: =30
+                    Default: =positionFlatHistory_Transaction = 1
                     Height: =26
+                    OnCheck: =Set(positionFlatHistory_Transaction,1)
+                    OnUncheck: =Set(positionFlatHistory_Transaction, 0)
                     Text: ="Theo số lượng đơn hàng(tăng)"
                     Width: =285
                     X: =21
-                    Y: =27
+                    Y: =9
                     ZIndex: =1
 
                 Checkbox3_1 As checkbox:
                     CheckboxSize: =30
+                    Default: =positionFlatHistory_Transaction = 2
                     Height: =26
+                    OnCheck: =Set(positionFlatHistory_Transaction,2)
+                    OnUncheck: =Set(positionFlatHistory_Transaction,0)
                     Text: ="Theo tên khách hàng"
                     Width: =285
                     X: =21
-                    Y: =53
+                    Y: =35
                     ZIndex: =2
-
-                Checkbox3_2 As checkbox:
-                    CheckboxSize: =30
-                    Height: =26
-                    Text: ="Tất cả"
-                    Width: =285
-                    X: =21
-                    Y: =1
-                    ZIndex: =3
 
     DetailItemHistoryTransaction As groupContainer.manualLayoutContainer:
         Fill: =RGBA(255, 255, 255, 1)
