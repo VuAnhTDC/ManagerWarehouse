@@ -1351,7 +1351,7 @@ SaleVertion2 As screen:
         Width: =1366
         ZIndex: =3
 
-        Container21 As groupContainer.manualLayoutContainer:
+        containerUpdateQuote_SaleVertion2 As groupContainer.manualLayoutContainer:
             DropShadow: =DropShadow.ExtraBold
             Fill: =RGBA(255, 255, 255, 1)
             Height: =722
@@ -1359,7 +1359,9 @@ SaleVertion2 As screen:
             RadiusBottomRight: =10
             RadiusTopLeft: =10
             RadiusTopRight: =10
-            Visible: =isVisibleUpdatQuote_Vertion2
+            Visible: |-
+                =//isVisibleUpdatQuote_Vertion2
+                false
             Width: =1299
             X: =33
             Y: =18

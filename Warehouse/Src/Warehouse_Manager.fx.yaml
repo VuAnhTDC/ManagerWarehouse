@@ -2306,7 +2306,7 @@ Warehouse_Manager As screen:
                                     price_Product: Value(TextInput_Price_Warehouse.Text),
                                     quantity_Product: Value(TextInput_Quantity_Warehouse.Text),
                                     id_Category: Dropdown_Category_Warehouse.SelectedText.'data-ADB4D7A662F548B49FAC2B986E348A1BID',
-                                    id_Warehouse: Dropdown_Warehouse.SelectedText.'data-ADB4D7A662F548B49FAC2B986E348A1BID',
+                                    id_Warehouse: Dropdown_Warehouse.SelectedText.ID,
                                     activity: true
                                 }
                             );
@@ -2380,7 +2380,7 @@ Warehouse_Manager As screen:
                                 price_Product: Value(TextInput_Price_Warehouse.Text),
                                 quantity_Product: Value(TextInput_Quantity_Warehouse.Text),
                                 id_Category: Dropdown_Category_Warehouse.SelectedText.'data-ADB4D7A662F548B49FAC2B986E348A1BID',
-                                id_Warehouse: Dropdown_Warehouse.SelectedText.'data-ADB4D7A662F548B49FAC2B986E348A1BID'
+                                id_Warehouse: Dropdown_Warehouse.SelectedText.ID
                             }
                         );
                         Reset(TextInput_MaSP_Warehouse);
