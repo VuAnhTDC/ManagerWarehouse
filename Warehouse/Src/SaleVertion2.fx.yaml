@@ -2599,7 +2599,11 @@ SaleVertion2 As screen:
                 Italic: =true
                 OnSelect: |-
                     =Set(isVisibleDialogAddProductQuoteNew_SaleVertion2,true);
-                    Set(positionDialogAddDataQuoteNew_SaleVertion2,0)
+                    Set(positionDialogAddDataQuoteNew_SaleVertion2,0);
+                    Reset(Dropdown3);
+                    Reset(TextInput8_1);
+                    Reset(TextInput8_2);
+                    Reset(TextInput8_3)
                 Size: =15
                 Text: ="Thêm sản phẩm"
                 Visible: =positionOptionCreatQuote = 0
