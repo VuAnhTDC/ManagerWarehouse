@@ -1870,7 +1870,18 @@ SaleVertion2 As screen:
                     Italic: =true
                     Size: =20
                     Text: |-
-                        ="Tổng tiền: " & Text(Value(Sum(arrProductAddQuoteNew_SaleVertion2,price_Quote_Product * quantity_Quote_Product) + Sum(arrServiceAddQuoteNew_SaleVertion2,price_Quote_Service)),"#,###")
+                        ="Tổng tiền: " & Text(
+                            Value(
+                               Sum(
+                                    arrProductAddQuoteNew_SaleVertion2,
+                                    Value((Value(price_Quote_Product) * Value(quantity_Quote_Product)) + (Value(price_Quote_Product) * Value(quantity_Quote_Product) * vat%))
+                                ) + Sum(
+                                    arrServiceAddQuoteNew_SaleVertion2,
+                                    Value(price_Quote_Service)
+                                )
+                            ),
+                            "0,000"
+                        )
                     Width: =397
                     ZIndex: =1
 
