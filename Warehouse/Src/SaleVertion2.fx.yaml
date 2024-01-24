@@ -422,6 +422,7 @@ SaleVertion2 As screen:
                                 positionOptionCreatQuote,
                                 0
                             )
+                        Visible: =ThisItem.quote_Status.Value = "Báo giá"
                         Width: =30
                         X: =116
                         Y: =3
