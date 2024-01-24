@@ -129,34 +129,6 @@
     "dependents": [],
     "id": "7dbd58d5-94a1-46c1-8285-116a33e02b75"
   },
-  "8f0d3c02-3f20-45fc-ae88-7488d8320e3a": {
-    "connectionRef": {
-      "displayName": "Logic flows",
-      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1664/1.0.1664.3477/logicflows/icon.png",
-      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
-      "parameterHints": {
-        "workflowEntityId": {},
-        "workflowName": {
-          "value": "2768b9a1-fead-4d87-89a2-c1920ace69b5"
-        }
-      },
-      "parameterHintsV2": {
-        "workflowEntityId": {},
-        "workflowName": {
-          "value": "2768b9a1-fead-4d87-89a2-c1920ace69b5"
-        }
-      }
-    },
-    "datasets": {},
-    "dataSources": [
-      "CRUD_Quote_Product_Warehouse"
-    ],
-    "dependencies": {
-      "shared_sharepointonline": "c9efb40e-e2c4-4d94-9da5-241348de59ed"
-    },
-    "dependents": [],
-    "id": "8f0d3c02-3f20-45fc-ae88-7488d8320e3a"
-  },
   "9811a996-76d2-419c-ab39-2d731b84d514": {
     "connectionRef": {
       "displayName": "Office 365 Outlook",
@@ -204,6 +176,40 @@
     },
     "dependents": [],
     "id": "9b75e626-8745-40a9-b655-ea85905c6448"
+  },
+  "c98653ea-e7ba-43ae-a0dd-ba26b2d87169": {
+    "connectionRef": {
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1664/1.0.1664.3477/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "c9efb40e-e2c4-4d94-9da5-241348de59ed": {
+          "value": "shared_sharepointonline"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "2768b9a1-fead-4d87-89a2-c1920ace69b5"
+        }
+      },
+      "parameterHintsV2": {
+        "shared_sharepointonline": {
+          "value": "c9efb40e-e2c4-4d94-9da5-241348de59ed"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "2768b9a1-fead-4d87-89a2-c1920ace69b5"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "CRUD_Quote_Product_Warehouse"
+    ],
+    "dependencies": {
+      "shared_sharepointonline": "c9efb40e-e2c4-4d94-9da5-241348de59ed"
+    },
+    "dependents": [],
+    "id": "c98653ea-e7ba-43ae-a0dd-ba26b2d87169"
   },
   "c9efb40e-e2c4-4d94-9da5-241348de59ed": {
     "connectionRef": {
@@ -298,7 +304,7 @@
     "dependencies": {},
     "dependents": [
       "42c16a3f-ef70-4d55-a384-16a841d25e46",
-      "8f0d3c02-3f20-45fc-ae88-7488d8320e3a"
+      "c98653ea-e7ba-43ae-a0dd-ba26b2d87169"
     ],
     "id": "c9efb40e-e2c4-4d94-9da5-241348de59ed"
   },

@@ -2859,6 +2859,7 @@ SaleVertion2 As screen:
                                 IsBlank(TextInput8_1.Text) || IsBlank(TextInput8_2.Text) || IsBlank(TextInput8_3.Text),
                                 Notify("Vui lòng nhập đầy đủ thông tin bắt buộc"),
                                 If(
+                                    // nếu là update
                                     isVisibleUpdateProduct_Quote_Vertion2,
                                     Patch(
                                         arrProductAddQuoteNew_SaleVertion2,
@@ -2869,7 +2870,7 @@ SaleVertion2 As screen:
                                         {
                                             quantity_Quote_Product: Value(TextInput8_1.Text),
                                             quote_Product_Note: TextInput8_2.Text,
-                                            vat: Value(TextInput8_3.Text)
+                                            vat: Value(TextInput8_3.Text),status: "Update"
                                         }
                                     ),
                                     If(
@@ -2882,13 +2883,13 @@ SaleVertion2 As screen:
                                         Collect(
                                             arrProductAddQuoteNew_SaleVertion2,
                                             {
-                                                ID: CountRows(arrProductAddQuoteNew_SaleVertion2) + 1,
                                                 id_Quote: "",
                                                 id_Product: Dropdown3.Selected.id_Product,
                                                 price_Quote_Product: Value(TextInput8.Text),
                                                 quantity_Quote_Product: Value(TextInput8_1.Text),
                                                 quote_Product_Note: TextInput8_2.Text,
-                                                vat: Value(TextInput8_3.Text)
+                                                vat: Value(TextInput8_3.Text),
+                                                status: "Add"
                                             }
                                         ),
                                         Patch(
@@ -2901,7 +2902,7 @@ SaleVertion2 As screen:
                                                 quantity_Quote_Product: LookUp(
                                                     arrProductAddQuoteNew_SaleVertion2,
                                                     id_Product = Dropdown3.Selected.id_Product
-                                                ).quantity_Quote_Product + Value(TextInput8_1.Text)
+                                                ).quantity_Quote_Product + Value(TextInput8_1.Text),status: "Update"
                                             }
                                         )
                                     );

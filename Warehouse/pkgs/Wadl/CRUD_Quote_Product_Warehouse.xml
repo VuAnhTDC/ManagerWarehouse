@@ -6,6 +6,7 @@
       <object name="ManualTriggerInput">
         <property name="text" type="string" />
       </object>
+      <object name="ResponseActionOutput" />
       <object name="Run_responses_default_def" />
     </jsonTypes>
   </grammars>
@@ -24,6 +25,9 @@
             </param>
           </representation>
         </request>
+        <response>
+          <representation mediaType="application/json" element="service:ResponseActionOutput" />
+        </response>
       </method>
     </resource>
   </resources>
