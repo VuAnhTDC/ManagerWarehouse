@@ -264,125 +264,137 @@ SaleVertion2 As screen:
                         )
                     );
                 TemplatePadding: =0
-                TemplateSize: =76
+                TemplateSize: =37
                 Width: =992
                 X: =25
-                Y: =172
+                Y: =163
                 ZIndex: =3
-
-                Separator13 As rectangle:
-                    Height: =8
-                    OnSelect: =Select(Parent)
-                    Width: =Parent.TemplateWidth
-                    Y: =Parent.TemplateHeight - Self.Height
-                    ZIndex: =5
 
                 Label65 As label:
                     Align: =Align.Center
-                    AutoHeight: =true
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    BorderThickness: =1
                     FontWeight: =FontWeight.Semibold
-                    Height: =31
+                    Height: =36
                     OnSelect: =Select(Parent)
                     Size: =15
                     Text: =ThisItem.id_Quote
-                    Width: =220
-                    X: =14
-                    Y: =23
+                    Width: =230
+                    X: =8
+                    Y: =1
                     ZIndex: =7
 
                 Label65_1 As label:
                     AutoHeight: =true
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    BorderThickness: =1
                     FontWeight: =FontWeight.Lighter
-                    Height: =31
+                    Height: =37
                     OnSelect: =Select(Parent)
                     Size: =15
                     Text: |-
                         =LookUp(
                             Customer,ID = ThisItem.id_Customer
                         ).customer_Name
-                    Width: =200
-                    X: =262
-                    Y: =23
+                    Width: =229
+                    X: =238
+                    Y: =1
                     ZIndex: =8
 
                 Label65_2 As label:
                     AutoHeight: =true
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    BorderThickness: =1
                     FontWeight: =FontWeight.Lighter
                     Height: =31
                     OnSelect: =Select(Parent)
                     Size: =15
                     Text: =LookUp(User,ID = ThisItem.id_User).user_Name
-                    Width: =200
-                    X: =470
-                    Y: =23
+                    Width: =195
+                    X: =467
+                    Y: =1
                     ZIndex: =9
 
                 Label65_3 As label:
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    BorderThickness: =1
                     FontWeight: =FontWeight.Lighter
-                    Height: =31
+                    Height: =36
                     OnSelect: =Select(Parent)
                     Size: =15
                     Text: =Text(ThisItem.quote_Date,"dd/mm/yyyy")
-                    Width: =161
-                    X: =675
-                    Y: =23
+                    X: =662
+                    Y: =1
                     ZIndex: =10
 
-                Icon19 As icon.Check:
-                    Color: =RGBA(54, 176, 75, 1)
-                    Height: =35
-                    Icon: |-
-                        =If(
-                            ThisItem.quote_Status.Value = "Đang xử lý",
-                            Icon.Warning,
-                            If(
-                                ThisItem.quote_Status.Value = "Đơn hàng",
-                                Icon.Check
-                            )
-                        )
-                    OnSelect: =Select(Parent)
-                    Visible: =!(ThisItem.quote_Status.Value = "Báo giá")
-                    Width: =35
-                    X: =859
-                    Y: =24
-                    ZIndex: =12
+                Container22 As groupContainer.manualLayoutContainer:
+                    BorderThickness: =1
+                    DropShadow: =DropShadow.None
+                    Height: =36
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Width: =166
+                    X: =812
+                    Y: =1
+                    ZIndex: =11
 
-                Icon22 As icon.Edit:
-                    Height: =30
-                    Icon: =Icon.Edit
-                    OnSelect: |-
-                        =Set(statusViewEditQuote, "edit");
-                        Set(
-                            isVisibleDialogAddQuoteNew_SaleVertion2,
-                            true
-                        );
-                        Set(
-                            isVisibleUpdatQuote_Vertion2,
-                            true
-                        );
-                        ClearCollect(
-                            arrProductQuote_SaleVertion2,
-                            Filter(
-                                Quote_Product,
-                                id_Quote = Gallery16.Selected.id_Quote
+                    Icon19 As icon.Check:
+                        Color: =RGBA(54, 176, 75, 1)
+                        Height: =35
+                        Icon: |-
+                            =If(
+                                ThisItem.quote_Status.Value = "Đang xử lý",
+                                Icon.Warning,
+                                If(
+                                    ThisItem.quote_Status.Value = "Đơn hàng",
+                                    Icon.Check
+                                )
                             )
-                        );
-                        ClearCollect(
-                            arrServiceQuote_SaleVertion2,
-                            Filter(
-                                Quote_Service,
-                                id_Quote = Gallery16.Selected.id_Quote
-                            )
-                        );
-                        ClearCollect(arrProductDelete_Vertion2,[]);
-                        ClearCollect(arrServiceDelete_Vertion2,[]);
-                        Set(isVisibleUpdateProduct_Quote_Vertion2, false);
-                        Set(isVisibleUpdateService_Quote_Vertion2,false);
-                        Set(positionOptionCreatQuote,0)
-                    Width: =30
-                    X: =951
-                    Y: =24
-                    ZIndex: =14
+                        OnSelect: =Select(Parent)
+                        Visible: =!(ThisItem.quote_Status.Value = "Báo giá")
+                        Width: =35
+                        X: =40
+                        Y: =1
+                        ZIndex: =1
+
+                    Icon22 As icon.Edit:
+                        Height: =30
+                        Icon: =Icon.Edit
+                        OnSelect: |-
+                            =Set(statusViewEditQuote, "edit");
+                            Set(
+                                isVisibleDialogAddQuoteNew_SaleVertion2,
+                                true
+                            );
+                            Set(
+                                isVisibleUpdatQuote_Vertion2,
+                                true
+                            );
+                            ClearCollect(
+                                arrProductQuote_SaleVertion2,
+                                Filter(
+                                    Quote_Product,
+                                    id_Quote = Gallery16.Selected.id_Quote
+                                )
+                            );
+                            ClearCollect(
+                                arrServiceQuote_SaleVertion2,
+                                Filter(
+                                    Quote_Service,
+                                    id_Quote = Gallery16.Selected.id_Quote
+                                )
+                            );
+                            ClearCollect(arrProductDelete_Vertion2,[]);
+                            ClearCollect(arrServiceDelete_Vertion2,[]);
+                            Set(isVisibleUpdateProduct_Quote_Vertion2, false);
+                            Set(isVisibleUpdateService_Quote_Vertion2,false);
+                            Set(positionOptionCreatQuote,0)
+                        Width: =30
+                        X: =116
+                        Y: =3
+                        ZIndex: =2
 
             Container48 As groupContainer.manualLayoutContainer:
                 Fill: =RGBA(128, 128, 128, 0.06)
@@ -412,7 +424,8 @@ SaleVertion2 As screen:
                     FontWeight: =FontWeight.Bold
                     Size: =15
                     Text: ="Khách hàng"
-                    X: =257
+                    Width: =229
+                    X: =238
                     Y: =5
                     ZIndex: =2
 
@@ -421,6 +434,7 @@ SaleVertion2 As screen:
                     FontWeight: =FontWeight.Bold
                     Size: =15
                     Text: ="Nhân viên"
+                    Width: =195
                     X: =467
                     Y: =2
                     ZIndex: =3
