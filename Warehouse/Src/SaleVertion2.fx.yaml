@@ -6288,90 +6288,83 @@ SaleVertion2 As screen:
                         Y: =9
                         ZIndex: =1
 
+                        Label100 As label:
+                            Align: =Align.Center
+                            FontWeight: =FontWeight.Semibold
+                            Size: =15
+                            Text: ="Tên sản phẩm"
+                            Width: =385
+                            ZIndex: =1
+
+                        Label100_1 As label:
+                            Align: =Align.Center
+                            FontWeight: =FontWeight.Semibold
+                            Size: =15
+                            Text: ="Số lượng"
+                            Width: =122
+                            X: =385
+                            ZIndex: =2
+
+                        Label100_2 As label:
+                            Align: =Align.Center
+                            FontWeight: =FontWeight.Semibold
+                            Size: =15
+                            Text: ="Giá/Sp"
+                            Width: =189
+                            X: =507
+                            ZIndex: =3
+
+                        Label100_3 As label:
+                            Align: =Align.Center
+                            FontWeight: =FontWeight.Semibold
+                            Size: =15
+                            Text: ="Vat(%)"
+                            Width: =73
+                            X: =696
+                            ZIndex: =4
+
+                        Label100_4 As label:
+                            Align: =Align.Center
+                            FontWeight: =FontWeight.Semibold
+                            Size: =15
+                            Text: ="Mô tả"
+                            Width: =345
+                            X: =769
+                            ZIndex: =5
+
                     "Gallery20 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
                         DelayItemLoading: =true
                         Height: =443
-                        Items: =CustomGallerySample
+                        Items: =Filter(Quote_Product,id_Quote = Gallery19.Selected.id_Quote)
                         Layout: =Layout.Vertical
                         LoadingSpinner: =LoadingSpinner.Data
                         TemplatePadding: =0
-                        TemplateSize: =104
+                        TemplateSize: =41
                         Width: =1114
-                        X: =20
+                        X: =18
                         Y: =49
                         ZIndex: =2
 
-                        Image13 As image:
-                            Height: =72
+                        Label96 As label:
+                            Align: =Align.Center
                             OnSelect: =Select(Parent)
-                            RadiusBottomLeft: =8
-                            RadiusBottomRight: =8
-                            RadiusTopLeft: =8
-                            RadiusTopRight: =8
-                            Width: =72
-                            X: =16
-                            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+                            Size: =15
+                            Text: =LookUp(Product,id_Product = ThisItem.id_Product).name_Product
+                            Width: =385
+                            Wrap: =false
+                            X: =5
                             ZIndex: =1
 
-                        Title3 As label:
-                            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
-                            Height: =Self.Size * 1.8
+                        Label96_1 As label:
+                            Align: =Align.Center
                             OnSelect: =Select(Parent)
-                            PaddingBottom: =0
-                            PaddingLeft: =0
-                            PaddingRight: =0
-                            PaddingTop: =0
-                            Text: =ThisItem.SampleHeading
-                            VerticalAlign: =VerticalAlign.Top
-                            Width: =Parent.TemplateWidth - 173
-                            X: =103
-                            Y: =(Parent.TemplateHeight - (Self.Size * 1.8 + Subtitle3.Size * 1.8)) / 2
+                            Size: =15
+                            Text: =LookUp(Product,id_Product = ThisItem.id_Product).name_Product
+                            Width: =385
+                            Wrap: =false
+                            X: =390
+                            Y: =1
                             ZIndex: =2
-
-                        Subtitle3 As label:
-                            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
-                            Height: =Self.Size * 1.8
-                            OnSelect: =Select(Parent)
-                            PaddingBottom: =0
-                            PaddingLeft: =0
-                            PaddingRight: =0
-                            PaddingTop: =0
-                            Text: =ThisItem.SampleText
-                            VerticalAlign: =VerticalAlign.Top
-                            Width: =Title3.Width
-                            X: =Title3.X
-                            Y: =Title3.Y + Title3.Height
-                            ZIndex: =3
-
-                        NextArrow3 As icon.ChevronRight:
-                            AccessibleLabel: =Self.Tooltip
-                            Color: =RGBA(166, 166, 166, 1)
-                            Height: =50
-                            Icon: =Icon.ChevronRight
-                            OnSelect: =Select(Parent)
-                            PaddingBottom: =16
-                            PaddingLeft: =16
-                            PaddingRight: =16
-                            PaddingTop: =16
-                            Tooltip: ="View item details"
-                            Width: =50
-                            X: =Parent.TemplateWidth - Self.Width - 12
-                            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
-                            ZIndex: =4
-
-                        Separator13 As rectangle:
-                            Height: =8
-                            OnSelect: =Select(Parent)
-                            Width: =Parent.TemplateWidth
-                            Y: =Parent.TemplateHeight - Self.Height
-                            ZIndex: =5
-
-                        Rectangle19 As rectangle:
-                            Height: =Parent.TemplateHeight - Separator13.Height
-                            OnSelect: =Select(Parent)
-                            Visible: =ThisItem.IsSelected
-                            Width: =4
-                            ZIndex: =6
 
             Container46 As groupContainer.manualLayoutContainer:
                 BorderThickness: =If(positionObjViewOrder = 0,1,0)
