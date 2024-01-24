@@ -2870,46 +2870,92 @@ SaleVertion2 As screen:
                                         {
                                             quantity_Quote_Product: Value(TextInput8_1.Text),
                                             quote_Product_Note: TextInput8_2.Text,
-                                            vat: Value(TextInput8_3.Text),status: "Update"
+                                            vat: Value(TextInput8_3.Text),
+                                            status: "Update"
                                         }
                                     ),
+                                    // Nếu là thêm sản phẩm vào danh sách báo giá
                                     If(
-                                        IsBlank(
-                                            LookUp(
-                                                arrProductAddQuoteNew_SaleVertion2,
-                                                id_Product = Dropdown3.Selected.id_Product
-                                            )
-                                        ),
-                                        Collect(
-                                            arrProductAddQuoteNew_SaleVertion2,
-                                            {
-                                                id_Quote: "",
-                                                id_Product: Dropdown3.Selected.id_Product,
-                                                price_Quote_Product: Value(TextInput8.Text),
-                                                quantity_Quote_Product: Value(TextInput8_1.Text),
-                                                quote_Product_Note: TextInput8_2.Text,
-                                                vat: Value(TextInput8_3.Text),
-                                                status: "Add"
-                                            }
-                                        ),
-                                        Patch(
-                                            arrProductAddQuoteNew_SaleVertion2,
-                                            LookUp(
-                                                arrProductAddQuoteNew_SaleVertion2,
-                                                id_Product = Dropdown3.Selected.id_Product
-                                            ),
-                                            {
-                                                quantity_Quote_Product: LookUp(
+                                        isVisibleUpdatQuote_Vertion2,
+                                        // Nếu thêm vào update
+                                        If(
+                                            IsBlank(
+                                                LookUp(
                                                     arrProductAddQuoteNew_SaleVertion2,
                                                     id_Product = Dropdown3.Selected.id_Product
-                                                ).quantity_Quote_Product + Value(TextInput8_1.Text),status: "Update"
-                                            }
-                                        )
-                                    );
-                                    Notify(
-                                        "Thêm sản phẩm vào báo giá thành công",
-                                        NotificationType.Success
-                                    );
+                                                )
+                                            ),
+                                            Collect(
+                                                arrProductAddQuoteNew_SaleVertion2,
+                                                {
+                                                    id_Quote: Gallery16.Selected.id_Quote,
+                                                    id_Product: Dropdown3.Selected.id_Product,
+                                                    price_Quote_Product: Value(TextInput8.Text),
+                                                    quantity_Quote_Product: Value(TextInput8_1.Text),
+                                                    quote_Product_Note: TextInput8_2.Text,
+                                                    vat: Value(TextInput8_3.Text),
+                                                    status: "Add"
+                                                }
+                                            ),
+                                            Patch(
+                                                arrProductAddQuoteNew_SaleVertion2,
+                                                LookUp(
+                                                    arrProductAddQuoteNew_SaleVertion2,
+                                                    id_Product = Dropdown3.Selected.id_Product
+                                                ),
+                                                {
+                                                    quantity_Quote_Product: LookUp(
+                                                        arrProductAddQuoteNew_SaleVertion2,
+                                                        id_Product = Dropdown3.Selected.id_Product
+                                                    ).quantity_Quote_Product + Value(TextInput8_1.Text),
+                                                    status: "Update"
+                                                }
+                                            )
+                                        );
+                                        Notify(
+                                            "Thêm sản phẩm vào báo giá thành công",
+                                            NotificationType.Success
+                                        ),
+                                        //Nếu thêm vào tạo báo giá
+                                        If(
+                                            IsBlank(
+                                                LookUp(
+                                                    arrProductAddQuoteNew_SaleVertion2,
+                                                    id_Product = Dropdown3.Selected.id_Product
+                                                )
+                                            ),
+                                            Collect(
+                                                arrProductAddQuoteNew_SaleVertion2,
+                                                {
+                                                    id_Quote: "",
+                                                    id_Product: Dropdown3.Selected.id_Product,
+                                                    price_Quote_Product: Value(TextInput8.Text),
+                                                    quantity_Quote_Product: Value(TextInput8_1.Text),
+                                                    quote_Product_Note: TextInput8_2.Text,
+                                                    vat: Value(TextInput8_3.Text),
+                                                    status: "Add"
+                                                }
+                                            ),
+                                            Patch(
+                                                arrProductAddQuoteNew_SaleVertion2,
+                                                LookUp(
+                                                    arrProductAddQuoteNew_SaleVertion2,
+                                                    id_Product = Dropdown3.Selected.id_Product
+                                                ),
+                                                {
+                                                    quantity_Quote_Product: LookUp(
+                                                        arrProductAddQuoteNew_SaleVertion2,
+                                                        id_Product = Dropdown3.Selected.id_Product
+                                                    ).quantity_Quote_Product + Value(TextInput8_1.Text),
+                                                    status: "Update"
+                                                }
+                                            )
+                                        );
+                                        Notify(
+                                            "Thêm sản phẩm vào báo giá thành công",
+                                            NotificationType.Success
+                                        );
+                                    )
                                 );
                                 If(
                                     isVisibleUpdateProduct_Quote_Vertion2,
