@@ -5909,8 +5909,8 @@ SaleVertion2 As screen:
                     Set(isVisibleFlatfilter_HistoryTransaction,false)
                 TemplatePadding: =0
                 TemplateSize: =52
-                Width: =977
-                X: =12
+                Width: =982
+                X: =10
                 Y: =103
                 ZIndex: =4
 
@@ -5923,7 +5923,8 @@ SaleVertion2 As screen:
                     OnSelect: =Select(Parent)
                     Size: =16
                     Text: =ThisItem.taxCode
-                    Width: =184
+                    Width: =179
+                    X: =2
                     ZIndex: =7
 
                 Label150_1 As label:
@@ -5945,7 +5946,7 @@ SaleVertion2 As screen:
                     OnSelect: =Select(Parent)
                     Size: =16
                     Text: =CountRows(Filter(dataQuote_HistoryTransaction,id_Customer = ThisItem.ID))
-                    Width: =218
+                    Width: =220
                     X: =759
                     ZIndex: =9
 
