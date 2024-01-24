@@ -6122,7 +6122,9 @@ SaleVertion2 As screen:
                 Items: =Filter(Quote,id_Customer =Gallery14.Selected.ID)
                 Layout: =Layout.Vertical
                 LoadingSpinner: =LoadingSpinner.Data
-                OnSelect: =Set(isVisibleDetailOrderHistory_Customer,true)
+                OnSelect: |-
+                    =Set(isVisibleDetailOrderHistory_Customer,true);
+                    Set(positionObjViewOrder,0);
                 TemplatePadding: =0
                 TemplateSize: =43
                 Width: =1111
@@ -6224,7 +6226,7 @@ SaleVertion2 As screen:
             RadiusTopRight: =10
             Width: =1230
             X: =51
-            Y: =45
+            Y: =48
             ZIndex: =1
 
             Icon24 As icon.Cancel:
@@ -6238,7 +6240,7 @@ SaleVertion2 As screen:
                 ZIndex: =1
 
             Container43 As groupContainer.manualLayoutContainer:
-                DropShadow: =DropShadow.Semibold
+                DropShadow: =DropShadow.Regular
                 Height: =60
                 Width: =392
                 X: =20
@@ -6252,5 +6254,175 @@ SaleVertion2 As screen:
                     Size: =20
                     Text: =Gallery19.Selected.id_Quote
                     Width: =392
+                    ZIndex: =1
+
+            Container44 As groupContainer.manualLayoutContainer:
+                BorderThickness: =1
+                DropShadow: =DropShadow.None
+                Height: =535
+                RadiusBottomLeft: =10
+                RadiusBottomRight: =10
+                RadiusTopLeft: =10
+                RadiusTopRight: =10
+                Width: =1153
+                X: =39
+                Y: =126
+                ZIndex: =3
+
+                Container50 As groupContainer.manualLayoutContainer:
+                    DropShadow: =DropShadow.None
+                    Height: =508
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Visible: =positionObjViewOrder =0
+                    Width: =1153
+                    Y: =27
+                    ZIndex: =1
+
+                    Container51 As groupContainer.manualLayoutContainer:
+                        Height: =40
+                        Width: =1114
+                        X: =20
+                        Y: =9
+                        ZIndex: =1
+
+                    "Gallery20 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+                        DelayItemLoading: =true
+                        Height: =443
+                        Items: =CustomGallerySample
+                        Layout: =Layout.Vertical
+                        LoadingSpinner: =LoadingSpinner.Data
+                        TemplatePadding: =0
+                        TemplateSize: =104
+                        Width: =1114
+                        X: =20
+                        Y: =49
+                        ZIndex: =2
+
+                        Image13 As image:
+                            Height: =72
+                            OnSelect: =Select(Parent)
+                            RadiusBottomLeft: =8
+                            RadiusBottomRight: =8
+                            RadiusTopLeft: =8
+                            RadiusTopRight: =8
+                            Width: =72
+                            X: =16
+                            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+                            ZIndex: =1
+
+                        Title3 As label:
+                            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                            Height: =Self.Size * 1.8
+                            OnSelect: =Select(Parent)
+                            PaddingBottom: =0
+                            PaddingLeft: =0
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            Text: =ThisItem.SampleHeading
+                            VerticalAlign: =VerticalAlign.Top
+                            Width: =Parent.TemplateWidth - 173
+                            X: =103
+                            Y: =(Parent.TemplateHeight - (Self.Size * 1.8 + Subtitle3.Size * 1.8)) / 2
+                            ZIndex: =2
+
+                        Subtitle3 As label:
+                            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                            Height: =Self.Size * 1.8
+                            OnSelect: =Select(Parent)
+                            PaddingBottom: =0
+                            PaddingLeft: =0
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            Text: =ThisItem.SampleText
+                            VerticalAlign: =VerticalAlign.Top
+                            Width: =Title3.Width
+                            X: =Title3.X
+                            Y: =Title3.Y + Title3.Height
+                            ZIndex: =3
+
+                        NextArrow3 As icon.ChevronRight:
+                            AccessibleLabel: =Self.Tooltip
+                            Color: =RGBA(166, 166, 166, 1)
+                            Height: =50
+                            Icon: =Icon.ChevronRight
+                            OnSelect: =Select(Parent)
+                            PaddingBottom: =16
+                            PaddingLeft: =16
+                            PaddingRight: =16
+                            PaddingTop: =16
+                            Tooltip: ="View item details"
+                            Width: =50
+                            X: =Parent.TemplateWidth - Self.Width - 12
+                            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+                            ZIndex: =4
+
+                        Separator13 As rectangle:
+                            Height: =8
+                            OnSelect: =Select(Parent)
+                            Width: =Parent.TemplateWidth
+                            Y: =Parent.TemplateHeight - Self.Height
+                            ZIndex: =5
+
+                        Rectangle19 As rectangle:
+                            Height: =Parent.TemplateHeight - Separator13.Height
+                            OnSelect: =Select(Parent)
+                            Visible: =ThisItem.IsSelected
+                            Width: =4
+                            ZIndex: =6
+
+            Container46 As groupContainer.manualLayoutContainer:
+                BorderThickness: =If(positionObjViewOrder = 0,1,0)
+                DropShadow: =If(positionObjViewOrder = 0,DropShadow.Semibold,DropShadow.Light)
+                Fill: =RGBA(255, 255, 255, 0.99)
+                Height: =46
+                RadiusBottomLeft: =10
+                RadiusBottomRight: =0
+                RadiusTopLeft: =10
+                RadiusTopRight: |
+                    =0
+                Width: =200
+                X: =84
+                Y: =105
+                ZIndex: =4
+
+                Label95 As label:
+                    Align: =Align.Center
+                    Color: =If(positionObjViewOrder =0,RGBA(255, 255, 255, 1),RGBA(0, 0, 0, 1))
+                    Fill: =If(positionObjViewOrder =0,RGBA(128, 128, 128, 1),RGBA(128, 128, 128, 0))
+                    FontWeight: =If(positionObjViewOrder = 0,FontWeight.Semibold,FontWeight.Lighter)
+                    Height: =46
+                    OnSelect: =Set(positionObjViewOrder,0)
+                    Size: =15
+                    Text: ="Sản phẩm"
+                    Width: =200
+                    ZIndex: =1
+
+            Container46_1 As groupContainer.manualLayoutContainer:
+                BorderThickness: =If(positionObjViewOrder = 1,1,0)
+                DropShadow: =If(positionObjViewOrder = 1,DropShadow.Semibold,DropShadow.Light)
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =46
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =10
+                RadiusTopLeft: =0
+                RadiusTopRight: =10
+                Width: =200
+                X: =284
+                Y: =105
+                ZIndex: =5
+
+                Label95_1 As label:
+                    Align: =Align.Center
+                    Color: =If(positionObjViewOrder =1,RGBA(255, 255, 255, 1),RGBA(0, 0, 0, 1))
+                    Fill: =If(positionObjViewOrder =1,RGBA(128, 128, 128, 1),RGBA(128, 128, 128, 0))
+                    FontWeight: =If(positionObjViewOrder = 1,FontWeight.Semibold,FontWeight.Lighter)
+                    Height: =46
+                    OnSelect: =Set(positionObjViewOrder,1)
+                    Size: =15
+                    Text: ="Dịch vụ"
+                    Width: =200
                     ZIndex: =1
 
