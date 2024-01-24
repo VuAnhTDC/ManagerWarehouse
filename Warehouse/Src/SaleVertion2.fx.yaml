@@ -206,6 +206,8 @@ SaleVertion2 As screen:
                         ZIndex: =3
 
             "Gallery16 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+                BorderColor: =RGBA(0, 0, 0, 1)
+                BorderThickness: =1
                 DelayItemLoading: =true
                 Fill: =RGBA(255, 255, 255, 1)
                 Height: =511
@@ -279,8 +281,7 @@ SaleVertion2 As screen:
                     OnSelect: =Select(Parent)
                     Size: =15
                     Text: =ThisItem.id_Quote
-                    Width: =230
-                    X: =8
+                    Width: =237
                     Y: =1
                     ZIndex: =7
 
@@ -333,7 +334,7 @@ SaleVertion2 As screen:
                     Fill: =RGBA(56, 96, 178, 0)
                     Height: =36
                     OnSelect: =Select(Parent)
-                    Width: =165
+                    Width: =169
                     X: =812
                     Y: =1
                     ZIndex: =11
@@ -368,7 +369,7 @@ SaleVertion2 As screen:
                         Set(positionOptionCreatQuote,0)
                     Visible: =ThisItem.quote_Status.Value = "Báo giá"
                     Width: =30
-                    X: =944
+                    X: =949
                     Y: =4
                     ZIndex: =13
 
@@ -1603,7 +1604,6 @@ SaleVertion2 As screen:
                         Label78_8 As label:
                             Align: =Align.Center
                             Color: =RGBA(0, 18, 107, 1)
-                            Height: =30
                             OnSelect: =Select(Parent)
                             Size: =15
                             Text: =LookUp(Product,id_Product = ThisItem.id_Product).name_Product
@@ -1934,6 +1934,14 @@ SaleVertion2 As screen:
                                     JSONFormat.IncludeBinaryData & JSONFormat.IgnoreUnsupportedTypes
                                 )
                             );
+                            Set(
+                                isVisibleDialogAddQuoteNew_SaleVertion2,
+                                false
+                            );
+                            Set(
+                                isVisibleUpdatQuote_Vertion2,
+                                false
+                            )
                             /*If(
                                 CountRows(arrProductDelete_Vertion2) > 0,
                                 ForAll(
