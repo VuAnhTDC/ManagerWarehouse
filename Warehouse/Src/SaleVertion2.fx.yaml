@@ -2089,7 +2089,7 @@ SaleVertion2 As screen:
                     Align: =Align.Center
                     Fill: =RGBA(189, 240, 194, 1)
                     FontWeight: =FontWeight.Semibold
-                    OnSelect: |
+                    OnSelect: |-
                         =If(
                             IsBlank(ComboBox1.Selected) || IsBlank(TextInput7.Text) || IsBlank(arrProductAddQuoteNew_SaleVertion2),
                             Notify(
@@ -2097,7 +2097,7 @@ SaleVertion2 As screen:
                                 NotificationType.Error
                             ),
                             If(
-                                CountRows(arrProductAddQuoteNew_SaleVertion2) < 1 ,
+                                CountRows(arrProductAddQuoteNew_SaleVertion2) < 1,
                                 Notify(
                                     "Báo giá phải có ít nhất 1 sản phẩm.Vui lòng thêm sản phẩm",
                                     NotificationType.Error
@@ -2117,10 +2117,18 @@ SaleVertion2 As screen:
                                         quote_Decription: TextInput7.Text,
                                         quote_Date: Now(),
                                         quote_Expire: DatePicker2.SelectedDate,
-                                        quote_Status: {Value:"Báo giá"},
+                                        quote_Status: {Value: "Báo giá"},
                                         id_User: informationUser.ID,
                                         id_Customer: ComboBox1.Selected.ID,
-                                        sumPriceQuote: Value(Concat(arrProductAddQuoteNew_SaleVertion2,price_Quote_Product * quantity_Quote_Product) + Concat(arrServiceAddQuoteNew_SaleVertion2,price_Quote_Service))
+                                        sumPriceQuote: Value(
+                                            Concat(
+                                                arrProductAddQuoteNew_SaleVertion2,
+                                                (price_Quote_Product * quantity_Quote_Product) + (price_Quote_Product * quantity_Quote_Product * vat)
+                                            ) + Concat(
+                                                arrServiceAddQuoteNew_SaleVertion2,
+                                                price_Quote_Service
+                                            )
+                                        )
                                     }
                                 );
                                 ForAll(
@@ -2151,8 +2159,14 @@ SaleVertion2 As screen:
                                         }
                                     )
                                 );
-                                Notify("Khởi tạo báo giá thành công",NotificationType.Success);
-                                Set(isVisibleDialogAddQuoteNew_SaleVertion2,false)
+                                Notify(
+                                    "Khởi tạo báo giá thành công",
+                                    NotificationType.Success
+                                );
+                                Set(
+                                    isVisibleDialogAddQuoteNew_SaleVertion2,
+                                    false
+                                )
                             )
                         )
                     Size: =18
@@ -6060,6 +6074,11 @@ SaleVertion2 As screen:
                                 dataQuote_Order_History,
                                 "quote_Expire",
                                 SortOrder.Descending
+                            ),
+                            SortByColumns(
+                                dataQuote_Order_History,
+                                "sumPriceQuote",
+                                SortOrder.Ascending
                             )
                         )
                     )
@@ -6744,7 +6763,18 @@ SaleVertion2 As screen:
                             DelayItemLoading: =true
                             Fill: =RGBA(255, 255, 255, 1)
                             Height: =470
-                            Items: =Filter(Quote_Service,id_Quote = Gallery19.Selected.id_Quote)
+                            Items: |-
+                                =If(
+                                    positionfuntionHistoryTransaction = 0,
+                                    Filter(
+                                        Quote_Service,
+                                        id_Quote = Gallery19.Selected.id_Quote
+                                    ),
+                                    Filter(
+                                        Quote_Service,
+                                        id_Quote = Gallery26.Selected.id_Quote
+                                    )
+                                )
                             Layout: =Layout.Vertical
                             LoadingSpinner: =LoadingSpinner.Data
                             TemplatePadding: =0
