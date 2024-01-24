@@ -61723,6 +61723,66 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "SaleVertion2.containerHistoryTransaction.Container81.Gallery26.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "SaleVertion2.containerHistoryTransaction.Container81.Gallery26.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "SaleVertion2",
+                "type": "SaleVertion2.containerHistoryTransaction.Container81.Gallery26"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 8
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "SaleVertion2.containerHistoryTransaction.Container81.Gallery26.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "SaleVertion2.containerHistoryTransaction.Container81.Gallery26.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "SaleVertion2",
+                "type": "SaleVertion2.containerHistoryTransaction.Container81.Gallery26"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 9
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "App.isVisibleContentFilePDF"
                 }
               ],
@@ -61933,36 +61993,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App.positionFlat_Order_HistoryTransaction"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App.positionFlat_Order_HistoryTransaction",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "positionFlat_Order_HistoryTransaction",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-UnusedVariables",
-          "ruleIndex": 11
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "App.icon_Question"
                 }
               ],
@@ -62126,6 +62156,36 @@
                 "member": "OnSelect",
                 "module": "SaleVertion2",
                 "type": "SaleVertion2.Container17.Gallery9.Container18.Button9"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-CollectDelegatableDataSource",
+          "ruleIndex": 13
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "SaleVertion2.containerHistoryTransaction.Container69_1.Container77.Checkbox2_1.OnCheck"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "SaleVertion2.containerHistoryTransaction.Container69_1.Container77.Checkbox2_1.OnCheck",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "OnCheck",
+                "module": "SaleVertion2",
+                "type": "SaleVertion2.containerHistoryTransaction.Container69_1.Container77.Checkbox2_1"
               }
             }
           ],

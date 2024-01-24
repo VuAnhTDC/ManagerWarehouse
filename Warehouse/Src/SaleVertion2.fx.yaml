@@ -5791,7 +5791,9 @@ SaleVertion2 As screen:
                     OnCheck: |-
                         =Set(positionfuntionHistoryTransaction,1);
                         Set(positionFlat_Order_HistoryTransaction,0);
-                        Set(isVisibleSelectionOrder_HistoryTransaction,false)
+                        Set(isVisibleSelectionOrder_HistoryTransaction,false);
+                        Refresh(Quote);
+                        ClearCollect(dataQuote_Order_History, Quote);
                     OnUncheck: =Set(positionfuntionHistoryTransaction,0)
                     Text: ="Đơn hàng"
                     Width: =214
@@ -5882,8 +5884,8 @@ SaleVertion2 As screen:
 
             "Gallery14 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
                 DelayItemLoading: =true
-                Fill: =RGBA(241, 244, 249, 1)
-                Height: =462
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =567
                 Items: |-
                     =If(
                         IsBlank(TextInput15_2.Text),
@@ -5959,10 +5961,10 @@ SaleVertion2 As screen:
 
             Container87 As groupContainer.manualLayoutContainer:
                 DropShadow: =DropShadow.Semilight
-                Height: =32
-                Width: =275
-                X: =686
-                Y: =11
+                Height: =46
+                Width: =310
+                X: =651
+                Y: =3
                 ZIndex: =7
 
                 Icon47 As icon.FilterFlat:
@@ -5970,13 +5972,15 @@ SaleVertion2 As screen:
                     Icon: =Icon.FilterFlat
                     Width: =29
                     X: =13
-                    Y: =3
+                    Y: =10
                     ZIndex: =1
 
                 Label149 As label:
+                    Align: =Align.Center
                     Fill: =RGBA(255, 255, 255, 1)
-                    FontWeight: =FontWeight.Semibold
-                    Height: =32
+                    FontWeight: =If(positionFlatHistory_Transaction = 0,FontWeight.Semibold,FontWeight.Lighter)
+                    Height: =46
+                    Italic: =true
                     Text: |-
                         =If(
                             positionFlatHistory_Transaction = 0,
@@ -5986,15 +5990,15 @@ SaleVertion2 As screen:
                                 "Bộ lọc - Số lượng đơn hàng","Bộ lọc - Khách hàng"
                             )
                         )
-                    Width: =233
+                    Width: =268
                     X: =42
                     ZIndex: =2
 
                 Rectangle11 As rectangle:
                     Fill: =RGBA(56, 96, 178, 0)
-                    Height: =32
+                    Height: =46
                     OnSelect: =Set(isVisibleFlatfilter_HistoryTransaction,!isVisibleFlatfilter_HistoryTransaction)
-                    Width: =275
+                    Width: =310
                     ZIndex: =3
 
             Container88 As groupContainer.manualLayoutContainer:
@@ -6035,6 +6039,7 @@ SaleVertion2 As screen:
                     ZIndex: =2
 
         Container81 As groupContainer.manualLayoutContainer:
+            DropShadow: =DropShadow.None
             Height: =685
             Visible: =positionfuntionHistoryTransaction = 1
             Width: =1000
@@ -6042,64 +6047,207 @@ SaleVertion2 As screen:
             Y: =16
             ZIndex: =5
 
+            "Gallery26 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+                DelayItemLoading: =true
+                Height: =569
+                Items: =dataQuote_Order_History
+                Layout: =Layout.Vertical
+                LoadingSpinner: =LoadingSpinner.Data
+                TemplatePadding: =0
+                TemplateSize: =49
+                Width: =982
+                X: =10
+                Y: =103
+                ZIndex: =1
+
+                Label152 As label:
+                    Align: =Align.Center
+                    BorderThickness: =1
+                    Color: =RGBA(56, 96, 178, 1)
+                    FontWeight: =FontWeight.Semibold
+                    Height: =48
+                    OnSelect: =Select(Parent)
+                    Size: =15
+                    Text: =ThisItem.id_Quote
+                    Width: =256
+                    X: =2
+                    ZIndex: =1
+
+                Label152_1 As label:
+                    Align: =Align.Center
+                    BorderThickness: =1
+                    Height: =48
+                    OnSelect: =Select(Parent)
+                    Size: =15
+                    Text: =ThisItem.quote_Date
+                    Width: =145
+                    X: =258
+                    ZIndex: =2
+
+                Label152_2 As label:
+                    Align: =Align.Center
+                    BorderThickness: =1
+                    Height: =48
+                    OnSelect: =Select(Parent)
+                    Size: =15
+                    Text: =ThisItem.quote_Date
+                    Width: =154
+                    X: =403
+                    ZIndex: =3
+
+                Label152_3 As label:
+                    Align: =Align.Center
+                    BorderThickness: =1
+                    Height: =48
+                    OnSelect: =Select(Parent)
+                    Size: =15
+                    Text: =LookUp(Customer,ID  = ThisItem.id_Customer).customer_Name
+                    Width: =223
+                    Wrap: =false
+                    X: =557
+                    ZIndex: =4
+
+                Label152_4 As label:
+                    Align: =Align.Center
+                    BorderThickness: =1
+                    Color: =RGBA(255, 0, 0, 1)
+                    Height: =48
+                    Italic: =true
+                    OnSelect: =Select(Parent)
+                    Size: =15
+                    Text: =Text(ThisItem.sumPriceQuote, "0,000")
+                    Width: =199
+                    X: =780
+                    ZIndex: =5
+
             Container87_1 As groupContainer.manualLayoutContainer:
                 DropShadow: =DropShadow.Semilight
-                Height: =32
-                Width: =275
-                X: =686
-                Y: =11
-                ZIndex: =1
+                Height: =46
+                Width: =310
+                X: =651
+                Y: =3
+                ZIndex: =2
 
                 Icon47_1 As icon.FilterFlat:
                     Height: =26
                     Icon: =Icon.FilterFlat
                     Width: =29
                     X: =13
-                    Y: =3
+                    Y: =10
                     ZIndex: =1
 
                 Label149_1 As label:
+                    Align: =Align.Center
                     Fill: =RGBA(255, 255, 255, 1)
-                    FontWeight: =FontWeight.Semibold
-                    Height: =32
+                    FontWeight: =If(positionFlat_Order_HistoryTransaction = 0,FontWeight.Semibold,FontWeight.Lighter)
+                    Height: =46
+                    Italic: =true
                     Text: |-
                         =If(
-                            positionFlatHistory_Transaction = 0,
+                            positionFlat_Order_HistoryTransaction = 0,
                             "Bộ lọc - Tất cả",
                             If(
-                                positionFlatHistory_Transaction = 1,
-                                "Bộ lọc - Số lượng đơn hàng","Bộ lọc - Khách hàng"
+                                positionFlat_Order_HistoryTransaction = 1,
+                                "Bộ lọc - Số lượng sản phẩm",
+                                If(
+                                    positionFlat_Order_HistoryTransaction = 2,
+                                    "Bộ lọc - Thời gian nhận hàng",
+                                    "Bộ lọc - Giá đơn hàng (Tăng dần)"
+                                )
                             )
                         )
-                    Width: =233
+                    Width: =268
                     X: =42
                     ZIndex: =2
 
                 Rectangle11_1 As rectangle:
                     Fill: =RGBA(56, 96, 178, 0)
-                    Height: =32
+                    Height: =46
                     OnSelect: =Set(isVisibleSelectionOrder_HistoryTransaction,!isVisibleSelectionOrder_HistoryTransaction)
-                    Width: =275
+                    Width: =310
                     ZIndex: =3
+
+            Container90 As groupContainer.manualLayoutContainer:
+                BorderThickness: =1
+                Fill: =RGBA(128, 128, 128, 0.06)
+                Height: =36
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Width: =977
+                X: =12
+                Y: =67
+                ZIndex: =3
+
+                Label151 As label:
+                    Align: =Align.Center
+                    FontWeight: =FontWeight.Semibold
+                    Height: =36
+                    Size: =15
+                    Text: ="Mã đơn hàng"
+                    Width: =254
+                    X: =4
+                    ZIndex: =1
+
+                Label151_1 As label:
+                    Align: =Align.Center
+                    FontWeight: =FontWeight.Semibold
+                    Height: =36
+                    Size: =15
+                    Text: ="Thời gian tạo"
+                    Width: =145
+                    X: =258
+                    ZIndex: =2
+
+                Label151_2 As label:
+                    Align: =Align.Center
+                    FontWeight: =FontWeight.Semibold
+                    Height: =36
+                    Size: =15
+                    Text: ="Thời gian giao"
+                    Width: =154
+                    X: =403
+                    ZIndex: =3
+
+                Label151_3 As label:
+                    Align: =Align.Center
+                    FontWeight: =FontWeight.Semibold
+                    Height: =36
+                    Size: =15
+                    Text: ="Khách hàng"
+                    Width: =223
+                    X: =559
+                    ZIndex: =4
+
+                Label151_4 As label:
+                    Align: =Align.Center
+                    FontWeight: =FontWeight.Semibold
+                    Height: =36
+                    Size: =15
+                    Text: ="Giá"
+                    Width: =195
+                    X: =782
+                    ZIndex: =5
 
             Container88_1 As groupContainer.manualLayoutContainer:
                 DropShadow: =DropShadow.ExtraBold
                 Fill: =RGBA(255, 255, 255, 1)
-                Height: =69
+                Height: =95
                 Visible: =isVisibleSelectionOrder_HistoryTransaction
                 Width: =314
-                X: =666
-                Y: =49
-                ZIndex: =2
+                X: =651
+                Y: =53
+                ZIndex: =4
 
                 Checkbox3_2 As checkbox:
                     CheckboxSize: =30
-                    Default: =positionFlatHistory_Transaction = 1
+                    Default: =positionFlat_Order_HistoryTransaction = 1
                     Height: =26
-                    OnCheck: =Set(positionFlatHistory_Transaction,1)
-                    OnSelect: =Set(isVisibleFlatfilter_HistoryTransaction,false)
-                    OnUncheck: =Set(positionFlatHistory_Transaction, 0)
-                    Text: ="Theo số lượng đơn hàng(tăng)"
+                    OnCheck: =Set(positionFlat_Order_HistoryTransaction,1)
+                    OnSelect: =Set(isVisibleSelectionOrder_HistoryTransaction,false)
+                    OnUncheck: =Set(positionFlat_Order_HistoryTransaction, 0)
+                    Text: ="Theo số lượng sản phẩm(tăng)"
                     Width: =285
                     X: =21
                     Y: =9
@@ -6107,17 +6255,31 @@ SaleVertion2 As screen:
 
                 Checkbox3_3 As checkbox:
                     CheckboxSize: =30
-                    Default: =positionFlatHistory_Transaction = 2
+                    Default: =positionFlat_Order_HistoryTransaction = 2
                     Height: =26
-                    OnCheck: =Set(positionFlatHistory_Transaction,2)
+                    OnCheck: =Set(positionFlat_Order_HistoryTransaction,2)
                     OnSelect: |
-                        =Set(isVisibleFlatfilter_HistoryTransaction,false)
-                    OnUncheck: =Set(positionFlatHistory_Transaction,0)
-                    Text: ="Theo tên khách hàng"
+                        =Set(isVisibleSelectionOrder_HistoryTransaction,false)
+                    OnUncheck: =Set(positionFlat_Order_HistoryTransaction,0)
+                    Text: ="Theo thời gian nhận hàng"
                     Width: =285
                     X: =21
                     Y: =35
                     ZIndex: =2
+
+                Checkbox3_4 As checkbox:
+                    CheckboxSize: =30
+                    Default: =positionFlat_Order_HistoryTransaction = 3
+                    Height: =26
+                    OnCheck: =Set(positionFlat_Order_HistoryTransaction,3)
+                    OnSelect: |
+                        =Set(isVisibleSelectionOrder_HistoryTransaction,false)
+                    OnUncheck: =Set(positionFlat_Order_HistoryTransaction,0)
+                    Text: ="Theo giá (Tăng dần)"
+                    Width: =285
+                    X: =21
+                    Y: =61
+                    ZIndex: =3
 
     DetailItemHistoryTransaction As groupContainer.manualLayoutContainer:
         Fill: =RGBA(255, 255, 255, 1)
