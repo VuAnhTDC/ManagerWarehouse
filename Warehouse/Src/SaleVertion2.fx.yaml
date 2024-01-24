@@ -199,7 +199,10 @@ SaleVertion2 As screen:
                             ClearCollect(arrProductAddQuoteNew_SaleVertion2,[]);
                             ClearCollect(arrServiceAddQuoteNew_SaleVertion2,[]);
                             Set(isVisibleCreateQuote_Sertion2,true);
-                            Set(positionOptionCreatQuote,0)
+                            Set(positionOptionCreatQuote,0);
+                            Reset(ComboBox1);
+                            Reset(DatePicker2);
+                            Reset(TextInput7)
                         ZIndex: =3
 
             "Gallery16 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
@@ -238,10 +241,13 @@ SaleVertion2 As screen:
                 Layout: =Layout.Vertical
                 LoadingSpinner: =LoadingSpinner.Data
                 OnSelect: |
-                    =Set(
+                    =/*Set(
                         isVisibleDetailQuote_SaleVertion2,
                         true
-                    );
+                    );*/
+                    Set(statusViewEditQuote, "view");
+                    Set(isVisibleDialogAddQuoteNew_SaleVertion2,true);
+                    Set(isVisibleUpdatQuote_Vertion2,true);
                     ClearCollect(
                         arrProductQuote_SaleVertion2,
                         Filter(
@@ -344,7 +350,8 @@ SaleVertion2 As screen:
                     Height: =30
                     Icon: =Icon.Edit
                     OnSelect: |-
-                        =Set(
+                        =Set(statusViewEditQuote, "edit");
+                        Set(
                             isVisibleDialogAddQuoteNew_SaleVertion2,
                             true
                         );
@@ -1417,7 +1424,7 @@ SaleVertion2 As screen:
                 FontWeight: =FontWeight.Semibold
                 Height: =50
                 Size: =24
-                Text: ="Sửa thông tin báo giá"
+                Text: =If(statusViewEditQuote = "view","Chi tiết báo giá - Đơn hàng","Sửa thông tin báo giá")
                 Width: =482
                 X: =42
                 Y: =19
@@ -1447,6 +1454,8 @@ SaleVertion2 As screen:
 
             DatePicker2_1 As datepicker:
                 ContentLanguage: ="vi-VN"
+                DefaultDate: =Gallery16.Selected.quote_Expire
+                DisplayMode: =If(statusViewEditQuote = "view",DisplayMode.Disabled,DisplayMode.Edit)
                 Height: =38
                 Language: ="vi-VN"
                 Width: =300
@@ -1670,6 +1679,7 @@ SaleVertion2 As screen:
                                         Not(id_Product = ThisItem.id_Product)
                                     )
                                 );
+                            Visible: =statusViewEditQuote = "edit"
                             Width: =30
                             X: =1148
                             Y: =6
@@ -1682,6 +1692,7 @@ SaleVertion2 As screen:
                                 =Set(isVisibleUpdateProduct_Quote_Vertion2, true);
                                 Set(isVisibleDialogAddProductQuoteNew_SaleVertion2,true);
                                 Set(positionDialogAddDataQuoteNew_SaleVertion2,0)
+                            Visible: =statusViewEditQuote = "edit"
                             Width: =30
                             X: =1115
                             Y: =6
@@ -1778,6 +1789,7 @@ SaleVertion2 As screen:
                                         Not(id_Service = ThisItem.id_Service)
                                     )
                                 )
+                            Visible: =statusViewEditQuote = "edit"
                             Width: =30
                             X: =1139
                             Y: =6
@@ -1817,6 +1829,7 @@ SaleVertion2 As screen:
                                 Set(positionDialogAddDataQuoteNew_SaleVertion2,1);
                                 Reset(TextInput9);
                                 Reset(Checkbox5)
+                            Visible: =statusViewEditQuote = "edit"
                             Width: =30
                             X: =1108
                             Y: =6
@@ -1857,7 +1870,7 @@ SaleVertion2 As screen:
                     Italic: =true
                     Size: =20
                     Text: |-
-                        ="Tổng tiền: " & Text(Value(Concat(arrProductAddQuoteNew_SaleVertion2,price_Quote_Product * quantity_Quote_Product) + Concat(arrServiceAddQuoteNew_SaleVertion2,price_Quote_Service)),"#,###")
+                        ="Tổng tiền: " & Text(Value(Sum(arrProductAddQuoteNew_SaleVertion2,price_Quote_Product * quantity_Quote_Product) + Sum(arrServiceAddQuoteNew_SaleVertion2,price_Quote_Service)),"#,###")
                     Width: =397
                     ZIndex: =1
 
@@ -1931,6 +1944,7 @@ SaleVertion2 As screen:
                     )
                 Size: =18
                 Text: ="Lưu lại"
+                Visible: =statusViewEditQuote = "edit"
                 Width: =173
                 X: =1075
                 Y: =632
@@ -1947,7 +1961,7 @@ SaleVertion2 As screen:
                 Size: =15
                 Text: ="Thêm sản phẩm"
                 Underline: =true
-                Visible: =positionOptionCreatQuote = 0
+                Visible: =positionOptionCreatQuote = 0 && statusViewEditQuote = "edit"
                 Width: =173
                 X: =1075
                 Y: =148
@@ -1965,7 +1979,7 @@ SaleVertion2 As screen:
                 Size: =15
                 Text: ="Thêm dịch vụ"
                 Underline: =true
-                Visible: =positionOptionCreatQuote = 1
+                Visible: =positionOptionCreatQuote = 1 && statusViewEditQuote = "edit"
                 Width: =128
                 X: =1120
                 Y: =148
@@ -2120,18 +2134,12 @@ SaleVertion2 As screen:
                                         quote_Status: {Value: "Báo giá"},
                                         id_User: informationUser.ID,
                                         id_Customer: ComboBox1.Selected.ID,
-                                        sumPriceQuote: Value(
-                                            Value(
-                                                Concat(
-                                                    arrProductAddQuoteNew_SaleVertion2,
-                                                    (price_Quote_Product * quantity_Quote_Product) + (price_Quote_Product * quantity_Quote_Product * vat%)
-                                                )
-                                            ) + Value(
-                                                Concat(
-                                                    arrServiceAddQuoteNew_SaleVertion2,
-                                                    price_Quote_Service
-                                                )
-                                            )
+                                        sumPriceQuote: Sum(
+                                            arrProductAddQuoteNew_SaleVertion2,
+                                            (price_Quote_Product * quantity_Quote_Product) + (price_Quote_Product * quantity_Quote_Product * vat%)
+                                        ) + Sum(
+                                            arrServiceAddQuoteNew_SaleVertion2,
+                                            price_Quote_Service
                                         )
                                     }
                                 );
@@ -2580,7 +2588,18 @@ SaleVertion2 As screen:
                     Italic: =true
                     Size: =20
                     Text: |-
-                        ="Tổng tiền: " & Text(Value(Concat(arrProductAddQuoteNew_SaleVertion2,price_Quote_Product * quantity_Quote_Product) + Concat(arrServiceAddQuoteNew_SaleVertion2,price_Quote_Service)),"#,###")
+                        ="Tổng tiền: " & Text(
+                            Value(
+                                Sum(
+                                    arrProductAddQuoteNew_SaleVertion2,
+                                    Value((Value(price_Quote_Product) * Value(quantity_Quote_Product)) + (Value(price_Quote_Product) * Value(quantity_Quote_Product) * vat%))
+                                ) + Sum(
+                                    arrServiceAddQuoteNew_SaleVertion2,
+                                    Value(price_Quote_Service)
+                                )
+                            ),
+                            "0,000"
+                        )
                     Width: =397
                     ZIndex: =1
 
@@ -3572,7 +3591,7 @@ SaleVertion2 As screen:
                     Y: =605
                     ZIndex: =7
 
-    Container44 As groupContainer.manualLayoutContainer:
+    containerDetailQuote_SaleVertion2 As groupContainer.manualLayoutContainer:
         Fill: =RGBA(0, 0, 0, 0.38)
         Height: =768
         Visible: =isVisibleDetailQuote_SaleVertion2
@@ -5806,12 +5825,24 @@ SaleVertion2 As screen:
                     Default: =positionfuntionHistoryTransaction = 1
                     FocusedBorderThickness: =0
                     Height: =38
-                    OnCheck: |-
-                        =Set(positionfuntionHistoryTransaction,1);
-                        Set(positionFlat_Order_HistoryTransaction,0);
-                        Set(isVisibleSelectionOrder_HistoryTransaction,false);
+                    OnCheck: |
+                        =Set(
+                            positionfuntionHistoryTransaction,
+                            1
+                        );
+                        Set(
+                            positionFlat_Order_HistoryTransaction,
+                            0
+                        );
+                        Set(
+                            isVisibleSelectionOrder_HistoryTransaction,
+                            false
+                        );
                         Refresh(Quote);
-                        ClearCollect(dataQuote_Order_History, Quote);
+                        ClearCollect(
+                            dataQuote_Order_History,
+                            Filter(Quote,quote_Status.Value = "Đơn hàng")
+                        );
                     OnUncheck: =Set(positionfuntionHistoryTransaction,0)
                     Text: ="Đơn hàng"
                     Width: =214
@@ -6070,19 +6101,29 @@ SaleVertion2 As screen:
                 Height: =569
                 Items: |-
                     =If(
-                        positionFlat_Order_HistoryTransaction = 0,
-                        dataQuote_Order_History,
+                        IsBlank(TextInput15.Text),
                         If(
-                            positionFlat_Order_HistoryTransaction = 1,
-                            SortByColumns(
-                                dataQuote_Order_History,
-                                "quote_Expire",
-                                SortOrder.Descending
-                            ),
-                            SortByColumns(
-                                dataQuote_Order_History,
-                                "sumPriceQuote",
-                                SortOrder.Ascending
+                            positionFlat_Order_HistoryTransaction = 0,
+                            dataQuote_Order_History,
+                            If(
+                                positionFlat_Order_HistoryTransaction = 1,
+                                SortByColumns(
+                                    dataQuote_Order_History,
+                                    "quote_Expire",
+                                    SortOrder.Descending
+                                ),
+                                SortByColumns(
+                                    dataQuote_Order_History,
+                                    "sumPriceQuote",
+                                    SortOrder.Ascending
+                                )
+                            )
+                        ),
+                        Filter(
+                            dataQuote_Order_History,
+                            StartsWith(
+                                id_Quote,
+                                TextInput15.Text
                             )
                         )
                     )
