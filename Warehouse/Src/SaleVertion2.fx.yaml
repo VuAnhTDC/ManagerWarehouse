@@ -249,14 +249,15 @@ SaleVertion2 As screen:
                     Set(isVisibleDialogAddQuoteNew_SaleVertion2,true);
                     Set(isVisibleUpdatQuote_Vertion2,true);
                     ClearCollect(
-                        arrProductQuote_SaleVertion2,
+                        arrProductAddQuoteNew_SaleVertion2
+                    ,
                         Filter(
                             Quote_Product,
                             id_Quote = Gallery16.Selected.id_Quote
                         )
                     );
                     ClearCollect(
-                        arrServiceQuote_SaleVertion2,
+                        arrServiceAddQuoteNew_SaleVertion2,
                         Filter(
                             Quote_Service,
                             id_Quote = Gallery16.Selected.id_Quote
@@ -360,14 +361,14 @@ SaleVertion2 As screen:
                             true
                         );
                         ClearCollect(
-                            arrProductAddQuoteNew_SaleVertion2,
+                            arrProductQuote_SaleVertion2,
                             Filter(
                                 Quote_Product,
                                 id_Quote = Gallery16.Selected.id_Quote
                             )
                         );
                         ClearCollect(
-                            arrServiceAddQuoteNew_SaleVertion2,
+                            arrServiceQuote_SaleVertion2,
                             Filter(
                                 Quote_Service,
                                 id_Quote = Gallery16.Selected.id_Quote
@@ -1592,7 +1593,8 @@ SaleVertion2 As screen:
                         DelayItemLoading: =true
                         Fill: =RGBA(241, 244, 249, 1)
                         Height: =210
-                        Items: =arrProductAddQuoteNew_SaleVertion2
+                        Items: |
+                            =arrProductAddQuoteNew_SaleVertion2
                         Layout: =Layout.Vertical
                         LoadingSpinner: =LoadingSpinner.Data
                         TemplatePadding: =0
@@ -1873,7 +1875,8 @@ SaleVertion2 As screen:
                         ="Tổng tiền: " & Text(
                             Value(
                                Sum(
-                                    arrProductAddQuoteNew_SaleVertion2,
+                                    arrProductAddQuoteNew_SaleVertion2
+                        ,
                                     Value((Value(price_Quote_Product) * Value(quantity_Quote_Product)) + (Value(price_Quote_Product) * Value(quantity_Quote_Product) * vat%))
                                 ) + Sum(
                                     arrServiceAddQuoteNew_SaleVertion2,
