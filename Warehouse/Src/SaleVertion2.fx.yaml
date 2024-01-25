@@ -1296,6 +1296,579 @@ SaleVertion2 As screen:
             Y: =13
             ZIndex: =5
 
+            Container96 As groupContainer.manualLayoutContainer:
+                DropShadow: =DropShadow.None
+                Height: =586
+                Width: =982
+                X: =15
+                Y: =78
+                ZIndex: =2
+
+                Container108 As groupContainer.verticalAutoLayoutContainer:
+                    Height: =586
+                    LayoutDirection: =LayoutDirection.Vertical
+                    LayoutMode: =LayoutMode.Auto
+                    Width: =982
+                    ZIndex: =1
+
+                    Container109 As groupContainer.manualLayoutContainer:
+                        BorderThickness: =1
+                        DropShadow: =DropShadow.None
+                        FillPortions: =0
+                        LayoutMinHeight: =100
+                        LayoutMinWidth: =250
+                        RadiusBottomLeft: =10
+                        RadiusBottomRight: =10
+                        RadiusTopLeft: =10
+                        RadiusTopRight: =10
+                        Visible: =positionOptionService <> "Delete" && !(positionOptionService = "")
+                        ZIndex: =1
+
+                        Label162 As label:
+                            FontWeight: =FontWeight.Semibold
+                            Height: =37
+                            Size: =20
+                            Text: =If(positionOptionService = "Create","Tạo dịch vụ")
+                            Width: =390
+                            X: =8
+                            Y: =4
+                            ZIndex: =1
+
+                        Label163 As label:
+                            Align: =Align.Right
+                            FontWeight: =FontWeight.Semibold
+                            Height: =27
+                            Size: =15
+                            Text: |-
+                                ="Tên dịch vụ:"
+                            X: =8
+                            Y: =53
+                            ZIndex: =2
+
+                        TextInput18 As text:
+                            Default: =""
+                            Height: =34
+                            HintText: ="Tên dịch vụ"
+                            Width: =395
+                            X: =158
+                            Y: =53
+                            ZIndex: =3
+
+                        Label163_1 As label:
+                            Align: =Align.Right
+                            FontWeight: =FontWeight.Semibold
+                            Height: =27
+                            Size: =15
+                            Text: |-
+                                ="Mô tả:"
+                            Width: =88
+                            X: =568
+                            Y: =53
+                            ZIndex: =4
+
+                        TextInput18_1 As text:
+                            Default: =""
+                            Height: =81
+                            HintText: ="Mô tả"
+                            Mode: =TextMode.MultiLine
+                            Width: =299
+                            X: =656
+                            Y: =53
+                            ZIndex: =5
+
+                        Label163_2 As label:
+                            Align: =Align.Right
+                            FontWeight: =FontWeight.Semibold
+                            Height: =27
+                            Size: =15
+                            Text: |-
+                                ="Giá:"
+                            X: =8
+                            Y: =100
+                            ZIndex: =6
+
+                        TextInput18_2 As text:
+                            Default: =""
+                            Format: =TextFormat.Number
+                            Height: =34
+                            HintText: ="Giá"
+                            Width: =395
+                            X: =158
+                            Y: =100
+                            ZIndex: =7
+
+                    Label161 As label:
+                        Color: =RGBA(56, 96, 178, 1)
+                        FontWeight: =FontWeight.Lighter
+                        Height: =27
+                        Italic: =true
+                        OnSelect: |-
+                            =
+                            /*CRUD_Service_Warehouse.Run(
+                                JSON(
+                                    arrDeleteSerViceStatus,
+                                    JSONFormat.IncludeBinaryData & JSONFormat.IgnoreUnsupportedTypes
+                                )
+                            );*/
+                            ForAll(
+                                arrDeleteSerVice,
+                                Patch(
+                                    Service,
+                                    LookUp(
+                                        Service,
+                                        id_Serivce = ThisRecord.id_Serivce
+                                    ),{activity: false}
+                                )
+                            )
+                        Size: =15
+                        Text: ="Xoá tất cả vụ đã chọn"
+                        Underline: =true
+                        Visible: =positionOptionService ="Delete" && CountRows(arrDeleteSerVice) > 0
+                        Width: =202
+                        X: =40
+                        Y: =28
+                        ZIndex: =2
+
+                    Container98 As groupContainer.manualLayoutContainer:
+                        FillPortions: =0
+                        Height: =35
+                        LayoutMinHeight: =100
+                        LayoutMinWidth: =250
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Width: =958
+                        X: =12
+                        Y: =43
+                        ZIndex: =3
+
+                        Label154 As label:
+                            Align: =Align.Center
+                            FontWeight: =FontWeight.Semibold
+                            Height: =35
+                            Text: ="Mã dịch vụ"
+                            Width: =186
+                            X: =If(positionOptionService ="Delete",49,0)
+                            ZIndex: =1
+
+                        Label154_1 As label:
+                            Align: =Align.Center
+                            FontWeight: =FontWeight.Semibold
+                            Height: =35
+                            Text: ="Tên dịch vụ"
+                            Width: =If(positionOptionService = "Delete", 547,595)
+                            X: =If(positionOptionService ="Delete",235,186)
+                            ZIndex: =2
+
+                        Label154_2 As label:
+                            Align: =Align.Center
+                            FontWeight: =FontWeight.Semibold
+                            Height: =35
+                            Text: ="Giá"
+                            Width: =176
+                            X: =782
+                            ZIndex: =3
+
+                    "Gallery23 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+                        BorderThickness: =1
+                        DelayItemLoading: =true
+                        Height: =460
+                        Items: =Filter(Service,activity = true)
+                        Layout: =Layout.Vertical
+                        LayoutMinHeight: =287
+                        LayoutMinWidth: =320
+                        LoadingSpinner: =LoadingSpinner.Data
+                        TemplatePadding: =0
+                        TemplateSize: =40
+                        Width: =958
+                        X: =12
+                        Y: =83
+                        ZIndex: =4
+
+                        Label155 As label:
+                            Align: =Align.Center
+                            BorderColor: =RGBA(56, 96, 178, 1)
+                            BorderThickness: =1
+                            Color: =RGBA(56, 96, 178, 1)
+                            Italic: =true
+                            OnSelect: =Select(Parent)
+                            Text: =ThisItem.id_Serivce
+                            Width: =186
+                            X: =Label154.X
+                            ZIndex: =1
+
+                        Label155_1 As label:
+                            Align: =Align.Center
+                            BorderColor: =RGBA(56, 96, 178, 1)
+                            BorderThickness: =1
+                            OnSelect: =Select(Parent)
+                            Text: =ThisItem.service_Name
+                            Width: =Label154_1.Width
+                            X: =Label154_1.X
+                            ZIndex: =2
+
+                        Label155_2 As label:
+                            Align: =Align.Center
+                            BorderColor: =RGBA(56, 96, 178, 1)
+                            BorderThickness: =1
+                            Color: =RGBA(184, 0, 0, 1)
+                            Italic: =true
+                            OnSelect: =Select(Parent)
+                            Text: =If(ThisItem.service_Price < 1, "0,000", Text(ThisItem.service_Price,"0,000"))
+                            Width: =176
+                            X: =806
+                            ZIndex: =3
+
+                        Rectangle19 As rectangle:
+                            Fill: =RGBA(232, 244, 217, 0.41)
+                            Height: =40
+                            OnSelect: =Select(Parent)
+                            Visible: =ThisItem.IsSelected
+                            Width: =1
+                            ZIndex: =4
+
+                        Checkbox6 As checkbox:
+                            BorderThickness: =1
+                            Default: =!(positionOptionService ="Delete")
+                            Height: =40
+                            OnCheck: =Collect(arrDeleteSerVice,ThisItem)
+                            OnSelect: =Select(Parent)
+                            OnUncheck: =RemoveIf(arrDeleteSerVice,id_Serivce = ThisItem.id_Serivce)
+                            Text: =""
+                            Visible: =positionOptionService ="Delete"
+                            Width: =1
+                            ZIndex: =5
+
+            Container102 As groupContainer.manualLayoutContainer:
+                DropShadow: =DropShadow.ExtraBold
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =634
+                RadiusBottomLeft: =10
+                RadiusBottomRight: =10
+                RadiusTopLeft: =10
+                RadiusTopRight: =10
+                Visible: =isVisibleDetailService
+                Width: =428
+                X: =579
+                Y: =30
+                ZIndex: =3
+
+                Icon46 As icon.Cancel:
+                    Color: =RGBA(0, 0, 0, 1)
+                    Height: =45
+                    Icon: =Icon.Cancel
+                    OnSelect: =Set(isVisibleDetailService,false)
+                    Width: =45
+                    X: =369
+                    Y: =15
+                    ZIndex: =1
+
+                Label156 As label:
+                    FontWeight: =FontWeight.Semibold
+                    Height: =45
+                    Size: =18
+                    Text: ="Chi tiết dịch vụ"
+                    Width: =320
+                    X: =12
+                    Y: =15
+                    ZIndex: =2
+
+                Label157 As label:
+                    FontWeight: =FontWeight.Semibold
+                    Size: =15
+                    Text: ="Mã dịch vụ"
+                    X: =40
+                    Y: =60
+                    ZIndex: =3
+
+                Container103 As groupContainer.manualLayoutContainer:
+                    DropShadow: =DropShadow.Regular
+                    Height: =32
+                    Width: =343
+                    X: =40
+                    Y: =100
+                    ZIndex: =4
+
+                    Label159 As label:
+                        Height: =32
+                        Text: =Gallery23.Selected.id_Serivce
+                        Width: =343
+                        ZIndex: =1
+
+                Label157_1 As label:
+                    FontWeight: =FontWeight.Semibold
+                    Size: =15
+                    Text: ="Tên dịch vụ"
+                    X: =40
+                    Y: =150
+                    ZIndex: =5
+
+                Container103_1 As groupContainer.manualLayoutContainer:
+                    Height: =32
+                    Width: =343
+                    X: =40
+                    Y: =190
+                    ZIndex: =6
+
+                    Label159_1 As label:
+                        Height: =32
+                        Text: =Gallery23.Selected.service_Name
+                        Width: =343
+                        ZIndex: =1
+
+                Label157_2 As label:
+                    FontWeight: =FontWeight.Semibold
+                    Size: =15
+                    Text: ="Mô tả"
+                    X: =40
+                    Y: =248
+                    ZIndex: =7
+
+                Container103_2 As groupContainer.manualLayoutContainer:
+                    Height: =103
+                    Width: =343
+                    X: =40
+                    Y: =288
+                    ZIndex: =8
+
+                    Label159_2 As label:
+                        Height: =103
+                        Overflow: =Overflow.Scroll
+                        Text: =Gallery23.Selected.service_Decription
+                        Width: =343
+                        ZIndex: =1
+
+                Label157_3 As label:
+                    FontWeight: =FontWeight.Semibold
+                    Size: =15
+                    Text: ="Giá"
+                    X: =40
+                    Y: =417
+                    ZIndex: =9
+
+                Container103_3 As groupContainer.manualLayoutContainer:
+                    Height: =32
+                    Width: =343
+                    X: =40
+                    Y: =457
+                    ZIndex: =10
+
+                    Label159_3 As label:
+                        Color: =RGBA(184, 0, 0, 1)
+                        Height: =32
+                        Italic: =true
+                        Text: =If(Gallery23.Selected.service_Price < 1, "0,000",Text(Gallery23.Selected.service_Price,"0,000"))
+                        Width: =343
+                        ZIndex: =1
+
+            Container105 As groupContainer.manualLayoutContainer:
+                Height: =59
+                RadiusBottomLeft: =10
+                RadiusBottomRight: =10
+                RadiusTopLeft: =10
+                RadiusTopRight: =10
+                Width: =768
+                X: =12
+                Y: =4
+                ZIndex: =4
+
+                containerSaveEditCustomer_4 As groupContainer.manualLayoutContainer:
+                    DropShadow: =DropShadow.Regular
+                    Fill: =RGBA(255, 255, 255, 1)
+                    Height: |
+                        =39
+                    Width: =128
+                    X: =316
+                    Y: =8
+                    ZIndex: =3
+
+                    Icon44_3 As icon.Add:
+                        Height: =Parent.Height
+                        Icon: =Icon.Edit
+                        OnSelect: =
+                        Width: =30
+                        X: =10
+                        ZIndex: =1
+
+                    Label115_6 As label:
+                        Align: =Align.Center
+                        FontWeight: =
+                        Height: =Parent.Height
+                        Text: ="Sửa"
+                        Width: =88
+                        X: =40
+                        ZIndex: =2
+
+                    Rectangle9_6 As rectangle:
+                        Fill: =RGBA(56, 96, 178, 0)
+                        Height: =Parent.Height
+                        OnSelect: =If(positionOptionService = "Save",Set(positionOptionService,""),Set(positionOptionService,"Save"))
+                        Width: =Parent.Width
+                        ZIndex: =3
+
+                containerSaveEditCustomer_5 As groupContainer.manualLayoutContainer:
+                    DropShadow: =DropShadow.Regular
+                    Fill: =If(positionOptionService = "Create",RGBA(128, 128, 128, 0.39),RGBA(255, 255, 255, 1))
+                    Height: =If(positionOptionService = "Create",48,39)
+                    Width: =128
+                    X: =16
+                    Y: =8
+                    ZIndex: =4
+
+                    Icon44_4 As icon.Add:
+                        Height: =Parent.Height
+                        Icon: =Icon.Add
+                        OnSelect: =
+                        Width: =30
+                        X: =10
+                        ZIndex: =1
+
+                    Label115_7 As label:
+                        Align: =Align.Center
+                        Color: =If(positionOptionService = "Create",RGBA(255, 255, 255, 1),RGBA(0, 0, 0, 1))
+                        FontWeight: =If(positionOptionService = "Create",FontWeight.Bold,FontWeight.Lighter)
+                        Height: =Parent.Height
+                        Text: ="Tạo mới"
+                        Width: =88
+                        X: =40
+                        ZIndex: =2
+
+                    Rectangle9_7 As rectangle:
+                        Fill: =RGBA(56, 96, 178, 0)
+                        Height: =Parent.Height
+                        OnSelect: =If(positionOptionService = "Create",Set(positionOptionService,""),Set(positionOptionService,"Create"))
+                        Width: =Parent.Width
+                        ZIndex: =3
+
+                containerSaveEditCustomer_6 As groupContainer.manualLayoutContainer:
+                    DropShadow: =DropShadow.Regular
+                    Fill: =RGBA(255, 255, 255, 1)
+                    Height: |
+                        =39
+                    Width: =128
+                    X: =166
+                    Y: =8
+                    ZIndex: =5
+
+                    Icon44_5 As icon.Add:
+                        Height: =Parent.Height
+                        Icon: =Icon.Trash
+                        OnSelect: =
+                        Width: =30
+                        X: =10
+                        ZIndex: =1
+
+                    Label115_8 As label:
+                        Align: =Align.Center
+                        FontWeight: =
+                        Height: =Parent.Height
+                        Text: ="Xoá"
+                        Width: =88
+                        X: =40
+                        ZIndex: =2
+
+                    Rectangle9_8 As rectangle:
+                        Fill: =RGBA(56, 96, 178, 0)
+                        Height: =Parent.Height
+                        OnSelect: |-
+                            =If(positionOptionService ="Delete",Set(positionOptionService,""),Set(positionOptionService,"Delete"));
+                            ClearCollect(arrDeleteSerVice,[]);
+                        Width: =Parent.Width
+                        ZIndex: =3
+
+                containerSaveEditCustomer_7 As groupContainer.manualLayoutContainer:
+                    DropShadow: =DropShadow.Regular
+                    Fill: =RGBA(255, 255, 255, 1)
+                    Height: |
+                        =39
+                    Width: =128
+                    X: =464
+                    Y: =8
+                    ZIndex: =6
+
+                    Icon44_6 As icon.Add:
+                        Height: =Parent.Height
+                        Icon: =Icon.DetailList
+                        OnSelect: =
+                        Width: =30
+                        X: =10
+                        ZIndex: =1
+
+                    Label115_9 As label:
+                        Align: =Align.Center
+                        FontWeight: =
+                        Height: =Parent.Height
+                        Text: ="Chi tiết"
+                        Width: =88
+                        X: =40
+                        ZIndex: =2
+
+                    Rectangle9_9 As rectangle:
+                        Fill: =RGBA(56, 96, 178, 0)
+                        Height: =Parent.Height
+                        OnSelect: =If(positionOptionService = "Detail",Set(positionOptionService,""),Set(positionOptionService,"Detail"))
+                        Width: =Parent.Width
+                        ZIndex: =3
+
+                containerSaveEditCustomer_8 As groupContainer.manualLayoutContainer:
+                    DropShadow: =DropShadow.Regular
+                    Fill: =RGBA(255, 255, 255, 1)
+                    Height: |
+                        =39
+                    Width: =128
+                    X: =612
+                    Y: =8
+                    ZIndex: =7
+
+                    Icon44_7 As icon.Add:
+                        Height: =Parent.Height
+                        Icon: =Icon.Save
+                        OnSelect: =
+                        Width: =30
+                        X: =10
+                        ZIndex: =1
+
+                    Label115_10 As label:
+                        Align: =Align.Center
+                        FontWeight: =
+                        Height: =Parent.Height
+                        Text: ="Lưu"
+                        Width: =88
+                        X: =40
+                        ZIndex: =2
+
+                    Rectangle9_10 As rectangle:
+                        Fill: =RGBA(56, 96, 178, 0)
+                        Height: =Parent.Height
+                        OnSelect: |-
+                            =If(
+                                positionOptionService = "Create",
+                                If(
+                                    IsBlank(TextInput18.Text) || IsBlank(TextInput18_1.Text) || IsBlank(TextInput18_2.Text),
+                                    Notify(
+                                        "Vui lòng điền đủ thông tin",
+                                        NotificationType.Error
+                                    ),
+                                    Patch(
+                                        Service,
+                                        Defaults(Service),
+                                        {
+                                            id_Serivce: "DV_" & Text(
+                                                Now(),
+                                                "ddmmyyhhmmss"
+                                            ) & informationUser.ID,
+                                            service_Name: TextInput18.Text,
+                                            service_Decription: TextInput18_1.Text,
+                                            service_Price: Value(TextInput18_2.Text),
+                                            activity: true
+                                        }
+                                    );Set(positionOptionService,"")
+                                )
+                            )
+                        Width: =Parent.Width
+                        ZIndex: =3
+
     Container17 As groupContainer.manualLayoutContainer:
         Fill: =RGBA(56, 96, 178, 1)
         Height: =67
