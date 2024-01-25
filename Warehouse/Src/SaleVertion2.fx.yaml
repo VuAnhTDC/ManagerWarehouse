@@ -8789,11 +8789,210 @@ SaleVertion2 As screen:
                                 Fill: =RGBA(0, 121, 187, 1)
                                 Height: =35
                                 OnSelect: |-
-                                    =Refresh(Quote);
-                                    Refresh(Quote_Data);
-                                    Refresh(Product);
-                                    Set(Quote_Data,Quote);
-                                    Set(Quote_Product_Data,Quote_Product);
+                                    =If(
+                                        Dropdown2_2.Visible,
+                                        Set(
+                                            ngayCuoiThang,
+                                            DateAdd(
+                                                DateValue(
+                                                    Value(
+                                                        Mid(
+                                                            Dropdown2_2.Selected.Value,
+                                                            7,
+                                                            2
+                                                        )
+                                                    ) & "/1/" & Dropdown_Year_Director_2.Selected.Value
+                                                ),
+                                                1,
+                                                TimeUnit.Months
+                                            ) - 1
+                                        );
+                                        ClearCollect(
+                                            statictialOrder,
+                                            []
+                                        );
+                                        ClearCollect(
+                                            statictialPrice,
+                                            []
+                                        );
+                                        If(
+                                            IsBlank(ComboBox_Sales_Director_2.Selected),
+                                            ForAll(
+                                                Sequence(
+                                                    Value(
+                                                        Day(
+                                                            Text(
+                                                                ngayCuoiThang,
+                                                                "mm/dd/yyyy"
+                                                            )
+                                                        )
+                                                    )
+                                                ),
+                                                Collect(
+                                                    statictialOrder,
+                                                    {
+                                                        Id: CountRows(statictialOrder) + 1,
+                                                        Month: CountRows(statictialOrder) + 1 & "/" & Value(
+                                                            Mid(
+                                                                Dropdown2_2.Selected.Value,
+                                                                7,
+                                                                2
+                                                            )
+                                                        ) & "/" & Dropdown_Year_Director_2.Selected.Value,
+                                                        Value: CountRows(
+                                                            Filter(
+                                                                Quote_Data,
+                                                                Day(quote_Date) = CountRows(statictialOrder) + 1 && Month(quote_Date) = Value(
+                                                                    Mid(
+                                                                        Dropdown2_2.Selected.Value,
+                                                                        7,
+                                                                        2
+                                                                    )
+                                                                ) && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng"
+                                                            )
+                                                        )
+                                                    }
+                                                );
+                                                Collect(
+                                                    statictialPrice,
+                                                    {
+                                                        Id: CountRows(statictialPrice) + 1,
+                                                        Month: CountRows(statictialPrice) + 1 & "/" & Value(
+                                                            Mid(
+                                                                Dropdown2_2.Selected.Value,
+                                                                7,
+                                                                2
+                                                            )
+                                                        ) & "/" & Dropdown_Year_Director_2.Selected.Value,
+                                                        Value: If(
+                                                            IsBlank(
+                                                                Sum(
+                                                                    Filter(
+                                                                        Quote_Data,
+                                                                        Day(quote_Date) = CountRows(statictialPrice) + 1 && Month(quote_Date) = Value(
+                                                                            Mid(
+                                                                                Dropdown2_2.Selected.Value,
+                                                                                7,
+                                                                                2
+                                                                            )
+                                                                        ) && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng"
+                                                                    ),
+                                                                    sumPriceQuote
+                                                                )
+                                                            ),
+                                                            0,
+                                                            Sum(
+                                                                Filter(
+                                                                    Quote_Data,
+                                                                    Day(quote_Date) = CountRows(statictialPrice) + 1 && Month(quote_Date) = Value(
+                                                                        Mid(
+                                                                            Dropdown2_2.Selected.Value,
+                                                                            7,
+                                                                            2
+                                                                        )
+                                                                    ) && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng"
+                                                                ),
+                                                                sumPriceQuote
+                                                            )
+                                                        )
+                                                    }
+                                                )
+                                            ),
+                                            ForAll(
+                                                Sequence(
+                                                    Value(
+                                                        Day(
+                                                            Text(
+                                                                ngayCuoiThang,
+                                                                "mm/dd/yyyy"
+                                                            )
+                                                        )
+                                                    )
+                                                ),
+                                                Collect(
+                                                    statictialOrder,
+                                                    {
+                                                        Id: CountRows(statictialPrice) + 1,
+                                                        Month: CountRows(statictialOrder) + 1 & "/" & Value(
+                                                            Mid(
+                                                                Dropdown2_2.Selected.Value,
+                                                                7,
+                                                                2
+                                                            )
+                                                        ) & "/" & Dropdown_Year_Director_2.Selected.Value,
+                                                        Value: CountRows(
+                                                            Filter(
+                                                                Quote_Data,
+                                                                Day(quote_Date) = CountRows(statictialOrder) + 1 && Month(quote_Date) = Value(
+                                                                    Mid(
+                                                                        Dropdown2_2.Selected.Value,
+                                                                        7,
+                                                                        2
+                                                                    )
+                                                                ) && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng" && id_User = ComboBox_Sales_Director_2.Selected.ID
+                                                            )
+                                                        )
+                                                    }
+                                                );
+                                                Collect(
+                                                    statictialPrice,
+                                                    {
+                                                        Id: CountRows(statictialPrice) + 1,
+                                                        Month: CountRows(statictialPrice) + 1 & "/" & Value(
+                                                            Mid(
+                                                                Dropdown2_2.Selected.Value,
+                                                                7,
+                                                                2
+                                                            )
+                                                        ) & "/" & Dropdown_Year_Director_2.Selected.Value,
+                                                        Value: If(
+                                                            IsBlank(
+                                                                Sum(
+                                                                    Filter(
+                                                                        Quote_Data,
+                                                                        Day(quote_Date) = CountRows(statictialPrice) + 1 && Month(quote_Date) = Value(
+                                                                            Mid(
+                                                                                Dropdown2_2.Selected.Value,
+                                                                                7,
+                                                                                2
+                                                                            )
+                                                                        ) && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng"
+                                                                    ),
+                                                                    sumPriceQuote
+                                                                )
+                                                            ),
+                                                            0,
+                                                            Sum(
+                                                                Filter(
+                                                                    Quote_Data,
+                                                                    Day(quote_Date) = CountRows(statictialPrice) + 1 && Month(quote_Date) = Value(
+                                                                        Mid(
+                                                                            Dropdown2_2.Selected.Value,
+                                                                            7,
+                                                                            2
+                                                                        )
+                                                                    ) && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng"
+                                                                ),
+                                                                sumPriceQuote
+                                                            )
+                                                        )
+                                                    }
+                                                )
+                                            )
+                                        ),
+                                        Refresh(Quote);
+                                        Refresh(Quote_Data);
+                                        Refresh(Product);
+                                        Set(
+                                            Quote_Data,
+                                            Quote
+                                        );
+                                        Set(
+                                            Quote_Product_Data,
+                                            Quote_Product
+                                        );
+                                        
+                                    )
                                 Size: =12
                                 Text: ="Làm mới"
                                 Width: =120
