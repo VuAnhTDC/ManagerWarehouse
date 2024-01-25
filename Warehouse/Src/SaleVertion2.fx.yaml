@@ -3179,6 +3179,7 @@ SaleVertion2 As screen:
                                     NotificationType.Error
                                 ),
                                 If(
+                                    //Nếu là cập nhật dữ liệu
                                     isVisibleUpdateService_Quote_Vertion2,
                                     Patch(
                                         arrServiceAddQuoteNew_SaleVertion2,
@@ -3192,15 +3193,13 @@ SaleVertion2 As screen:
                                                 IsBlank(TextInput10.Text),
                                                 0,
                                                 Value(TextInput10.Text)
-                                            )
+                                            ),
+                                            status: "Update"
                                         }
                                     );
-                                    If(
+                                    Set(
                                         isVisibleUpdateService_Quote_Vertion2,
-                                        Set(
-                                            isVisibleUpdateService_Quote_Vertion2,
-                                            false
-                                        )
+                                        false
                                     );
                                     Set(
                                         isVisibleDialogAddProductQuoteNew_SaleVertion2,
@@ -3213,25 +3212,52 @@ SaleVertion2 As screen:
                                                 id_Service = Dropdown4.Selected.id_Serivce
                                             )
                                         ),
-                                        Collect(
-                                            arrServiceAddQuoteNew_SaleVertion2,
-                                            {
-                                                id_Service: Dropdown4.Selected.id_Serivce,
-                                                quote_Service_Note: TextInput9.Text,
-                                                price_Quote_Service: If(
-                                                    IsBlank(TextInput10.Text),
-                                                    0,
-                                                    Value(TextInput10.Text)
-                                                )
-                                            }
-                                        );
-                                        Notify(
-                                            "Thêm dịch vụ vào báo giá thành công",
-                                            NotificationType.Success
-                                        );
-                                        Set(
-                                            isVisibleDialogAddProductQuoteNew_SaleVertion2,
-                                            false
+                                        If(
+                                            //Nếu đây là edit thì lấy mã báo giá thêm vào -- còn không phải thì phải chờ thêm báo giá thành công thì mới thêm vào
+                                            statusViewEditQuote = "edit",
+                                            Collect(
+                                                arrServiceAddQuoteNew_SaleVertion2,
+                                                {
+                                                    id_Quote:Gallery16.Selected.id_Quote,
+                                                    id_Service: Dropdown4.Selected.id_Serivce,
+                                                    quote_Service_Note: TextInput9.Text,
+                                                    price_Quote_Service: If(
+                                                        IsBlank(TextInput10.Text),
+                                                        0,
+                                                        Value(TextInput10.Text)
+                                                    ),
+                                                    status: "Add"
+                                                }
+                                            );
+                                            Notify(
+                                                "Thêm dịch vụ vào báo giá thành công",
+                                                NotificationType.Success
+                                            );
+                                            Set(
+                                                isVisibleDialogAddProductQuoteNew_SaleVertion2,
+                                                false
+                                            ),
+                                            Collect(
+                                                arrServiceAddQuoteNew_SaleVertion2,
+                                                {
+                                                    id_Service: Dropdown4.Selected.id_Serivce,
+                                                    quote_Service_Note: TextInput9.Text,
+                                                    price_Quote_Service: If(
+                                                        IsBlank(TextInput10.Text),
+                                                        0,
+                                                        Value(TextInput10.Text)
+                                                    ),
+                                                    status: "Add"
+                                                }
+                                            );
+                                            Notify(
+                                                "Thêm dịch vụ vào báo giá thành công",
+                                                NotificationType.Success
+                                            );
+                                            Set(
+                                                isVisibleDialogAddProductQuoteNew_SaleVertion2,
+                                                false
+                                            )
                                         ),
                                         Notify(
                                             "Dịch vụ đã tồn tại",
@@ -3241,7 +3267,7 @@ SaleVertion2 As screen:
                                 )
                             )
                         Size: =16
-                        Text: =If(isVisibleUpdateService_Quote_Vertion2, "Xác nhận","Thêm")
+                        Text: =If(isVisibleUpdateService_Quote_Vertion2, "Cập nhật","Thêm")
                         Width: =Parent.Width
                         ZIndex: =1
 
@@ -3596,7 +3622,8 @@ SaleVertion2 As screen:
                                 ),
                                 Collect(
                                     arrServiceNewCreateQuote,
-                                    { id_Serivce: "DV_" & Text(
+                                    {
+                                        id_Serivce: "DV_" & Text(
                                             Now(),
                                             "ddmmyyhhmmss"
                                         ) & informationUser.ID,
@@ -3716,21 +3743,37 @@ SaleVertion2 As screen:
                     OnSelect: |-
                         =If(
                             CountRows(arrServiceNewCreateQuote) < 1,
-                            Notify("Bạn chưa thêm dịch vụ nào. Vui lòng thêm dịch vụ",NotificationType.Error,1500),
-                            ForAll(
-                                arrServiceNewCreateQuote As Temp,
-                                Patch(
-                                    Service,
-                                    Defaults(Service),
-                                    Temp
-                                );
-                                Collect(
-                                    arrServiceAddQuoteNew_SaleVertion2,
-                                    {
-                                        id_Service: Temp.id_Serivce,
-                                        quote_Service_Not: Temp.service_Decription,
-                                        price_Quote_Service: Temp.service_Price
-                                    }
+                            Notify(
+                                "Bạn chưa thêm dịch vụ nào. Vui lòng thêm dịch vụ",
+                                NotificationType.Error,
+                                1500
+                            ),
+                            If(
+                                    // nếu thêm tạo dịch vụ trong lúc sửa báo giá -> gán mã báo giá thành mã báo giá đó --- còn nếu không phải thì chờ khi nào tạo báo giá thành công thì mới gán
+                                statusViewEditQuote = "edit",
+                                ForAll(
+                                    arrServiceNewCreateQuote As Temp,
+                                    Collect(
+                                        arrServiceAddQuoteNew_SaleVertion2,
+                                        {
+                                            id_Quote: Gallery16.Selected.id_Quote,
+                                            id_Service: Temp.id_Serivce,
+                                            quote_Service_Note: Temp.service_Decription,
+                                            price_Quote_Service: Temp.service_Price,
+                                            status: "Add"
+                                        }
+                                    )
+                                ),
+                                ForAll(
+                                    arrServiceNewCreateQuote As Temp,
+                                    Collect(
+                                        arrServiceAddQuoteNew_SaleVertion2,
+                                        {
+                                            id_Service: Temp.id_Serivce,
+                                            quote_Service_Not: Temp.service_Decription,
+                                            price_Quote_Service: Temp.service_Price
+                                        }
+                                    )
                                 )
                             );
                             Set(
