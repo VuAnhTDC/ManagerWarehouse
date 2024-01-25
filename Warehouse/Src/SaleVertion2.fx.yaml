@@ -271,6 +271,7 @@ SaleVertion2 As screen:
                             id_Quote = Gallery16.Selected.id_Quote
                         )
                     );
+                    Reset(Toggle1)
                 TemplatePadding: =0
                 TemplateSize: =37
                 Width: =981
@@ -388,7 +389,8 @@ SaleVertion2 As screen:
                         Set(positionOptionCreatQuote,0);
                         Refresh(Quote);
                         Refresh(Quote_Service);
-                        Refresh(Quote_Product)
+                        Refresh(Quote_Product);
+                        Reset(Toggle1)
                     Visible: =ThisItem.quote_Status.Value = "Báo giá"
                     Width: =30
                     X: =949
@@ -1405,7 +1407,7 @@ SaleVertion2 As screen:
                         FontWeight: =FontWeight.Lighter
                         Height: =27
                         Italic: =true
-                        OnSelect: |-
+                        OnSelect: |
                             =
                             /*CRUD_Service_Warehouse.Run(
                                 JSON(
@@ -1414,15 +1416,16 @@ SaleVertion2 As screen:
                                 )
                             );*/
                             ForAll(
-                                arrDeleteSerVice,
+                                arrDeleteSerVice As Temp,
                                 Patch(
                                     Service,
                                     LookUp(
-                                        Service,
-                                        id_Serivce = ThisRecord.id_Serivce
+                                        Service,id_Serivce = Temp.id_SV
                                     ),{activity: false}
                                 )
-                            )
+                            );
+                            ClearCollect(arrDeleteSerVice,[]);
+                            Set(positionOptionService,"")
                         Size: =15
                         Text: ="Xoá tất cả vụ đã chọn"
                         Underline: =true
@@ -1433,6 +1436,7 @@ SaleVertion2 As screen:
                         ZIndex: =2
 
                     Container98 As groupContainer.manualLayoutContainer:
+                        Fill: =RGBA(128, 128, 128, 0.06)
                         FillPortions: =0
                         Height: =35
                         LayoutMinHeight: =100
@@ -1535,12 +1539,15 @@ SaleVertion2 As screen:
                             BorderThickness: =1
                             Default: =!(positionOptionService ="Delete")
                             Height: =40
-                            OnCheck: =Collect(arrDeleteSerVice,ThisItem)
+                            OnCheck: |-
+                                =Notify("ád " & ThisItem.id_Serivce,NotificationType.Success,1000);
+                                Collect(arrDeleteSerVice,{id_SV:ThisItem.id_Serivce});
                             OnSelect: =Select(Parent)
-                            OnUncheck: =RemoveIf(arrDeleteSerVice,id_Serivce = ThisItem.id_Serivce)
+                            OnUncheck: =RemoveIf(arrDeleteSerVice,id_SV = ThisItem.id_Serivce);
                             Text: =""
                             Visible: =positionOptionService ="Delete"
-                            Width: =1
+                            Width: =48
+                            X: =1
                             ZIndex: =5
 
                         Rectangle14 As rectangle:
@@ -1549,6 +1556,7 @@ SaleVertion2 As screen:
                             OnSelect: =Select(Parent)
                             Visible: =ThisItem.IsSelected
                             Width: =982
+                            X: =If(positionOptionService = "Delete",49,0)
                             ZIndex: =6
 
             Container102 As groupContainer.manualLayoutContainer:
@@ -1841,6 +1849,7 @@ SaleVertion2 As screen:
                     Fill: =RGBA(255, 255, 255, 1)
                     Height: |
                         =39
+                    Visible: =positionOptionService = "Create" || positionOptionService = "Edit"
                     Width: =128
                     X: =612
                     Y: =8
@@ -1864,17 +1873,18 @@ SaleVertion2 As screen:
                         ZIndex: =2
 
                     Rectangle9_10 As rectangle:
+                        DisplayMode: =If(positionOptionService = "Create" || positionOptionService = "Edit",DisplayMode.Edit,DisplayMode.Disabled)
                         Fill: =RGBA(56, 96, 178, 0)
                         Height: =Parent.Height
                         OnSelect: |-
                             =If(
-                                positionOptionService = "Create",
+                                IsBlank(TextInput18.Text) || IsBlank(TextInput18_1.Text) || IsBlank(TextInput18_2.Text),
+                                Notify(
+                                    "Vui lòng điền đủ thông tin",
+                                    NotificationType.Error
+                                ),
                                 If(
-                                    IsBlank(TextInput18.Text) || IsBlank(TextInput18_1.Text) || IsBlank(TextInput18_2.Text),
-                                    Notify(
-                                        "Vui lòng điền đủ thông tin",
-                                        NotificationType.Error
-                                    ),
+                                    positionOptionService = "Create",
                                     Patch(
                                         Service,
                                         Defaults(Service),
@@ -1888,7 +1898,39 @@ SaleVertion2 As screen:
                                             service_Price: Value(TextInput18_2.Text),
                                             activity: true
                                         }
-                                    );Set(positionOptionService,"")
+                                    );
+                                    Set(
+                                        positionOptionService,
+                                        ""
+                                    );
+                                    Notify(
+                                        "Thêm dịch vụ thành công",
+                                        NotificationType.Success,
+                                        1000
+                                    ),
+                                    If(
+                                        positionOptionService = "Edit",
+                                        Patch(
+                                            Service,
+                                            LookUp(
+                                                Service,
+                                                id_Serivce = Gallery23.Selected.id_Serivce
+                                            ),
+                                            {
+                                                service_Name: TextInput18.Text,
+                                                service_Decription: TextInput18_1.Text,
+                                                service_Price: Value(TextInput18_2.Text)
+                                            }
+                                        );
+                                        Notify(
+                                            "Sửa dịch vụ thành công",
+                                            NotificationType.Success,
+                                            1000
+                                        );
+                                        Reset(TextInput18);
+                                        Reset(TextInput18_1);
+                                        Reset(TextInput18_2)
+                                    )
                                 )
                             )
                         Width: =Parent.Width
@@ -2392,6 +2434,25 @@ SaleVertion2 As screen:
                                 X: =335
                                 ZIndex: =1
 
+                        Container100 As groupContainer.manualLayoutContainer:
+                            Fill: =RGBA(175, 191, 224, 0.7)
+                            Height: =46
+                            Visible: =(LookUp(Product,id_Product = ThisItem.id_Product).activity = false && ThisItem.status <>  "Delete")
+                            Width: =1145
+                            ZIndex: =14
+
+                            Label153 As label:
+                                Align: =Align.Center
+                                Color: =RGBA(255, 255, 255, 1)
+                                FontWeight: =FontWeight.Semibold
+                                Height: =43
+                                Size: =20
+                                Text: ="Sản phẩm ngừng kinh doanh"
+                                Width: =536
+                                X: =357
+                                Y: =3
+                                ZIndex: =1
+
                 Container47_1 As groupContainer.manualLayoutContainer:
                     Height: =281
                     Visible: =positionOptionCreatQuote = 1
@@ -2557,6 +2618,25 @@ SaleVertion2 As screen:
                                 X: =335
                                 ZIndex: =1
 
+                        Container100_1 As groupContainer.manualLayoutContainer:
+                            Fill: =RGBA(175, 191, 224, 0.7)
+                            Height: =46
+                            Visible: =LookUp(Service,id_Serivce = ThisItem.id_Service).activity = false && ThisItem.status <> "Delete"
+                            Width: =1138
+                            ZIndex: =16
+
+                            Label153_1 As label:
+                                Align: =Align.Center
+                                Color: =RGBA(255, 255, 255, 1)
+                                FontWeight: =FontWeight.Semibold
+                                Height: =43
+                                Size: =20
+                                Text: ="Dịch vụ không hổ trợ"
+                                Width: =536
+                                X: =357
+                                Y: =3
+                                ZIndex: =1
+
             Label68_5 As label:
                 FontWeight: =FontWeight.Semibold
                 Height: =26
@@ -2595,11 +2675,11 @@ SaleVertion2 As screen:
                         ="Tổng tiền: " & Text(
                             Value(
                                Sum(
-                                    arrProductAddQuoteNew_SaleVertion2
+                                    Filter(arrProductAddQuoteNew_SaleVertion2,status <> "Delete")
                         ,
                                     Value((Value(price_Quote_Product) * Value(quantity_Quote_Product)) + (Value(price_Quote_Product) * Value(quantity_Quote_Product) * vat%))
                                 ) + Sum(
-                                    arrServiceAddQuoteNew_SaleVertion2,
+                                    Filter(arrServiceAddQuoteNew_SaleVertion2,status <> "Delete"),
                                     Value(price_Quote_Service)
                                 )
                             ),
@@ -2752,6 +2832,44 @@ SaleVertion2 As screen:
                     Width: =300
                     ZIndex: =1
 
+            Icon45 As icon.Edit:
+                Color: =RGBA(0, 0, 0, 1)
+                Height: =50
+                Icon: =Icon.Edit
+                OnSelect: =Set(statusViewEditQuote,"edit")
+                Visible: =statusViewEditQuote = "view"
+                Width: =50
+                X: =524
+                Y: =19
+                ZIndex: =17
+
+            Container106 As groupContainer.manualLayoutContainer:
+                DropShadow: =DropShadow.Semibold
+                Height: =60
+                Visible: =Gallery16.Selected.quote_Status.Value = "Báo giá" && statusViewEditQuote = "view"
+                Width: =332
+                X: =908
+                Y: =632
+                ZIndex: =18
+
+                Toggle1 As toggleSwitch:
+                    Color: =RGBA(128, 128, 128, 1)
+                    DisplayMode: =If(Container100.Visible ||Container100_1.Visible,DisplayMode.Disabled,DisplayMode.Edit)
+                    FalseFill: =RGBA(56, 96, 178, 1)
+                    FalseText: ="Chuyển sang đơn hàng"
+                    FontWeight: =FontWeight.Semibold
+                    Height: =47
+                    Italic: =true
+                    OnCheck: |
+                        =ClearCollect(arrProductCheck, Filter(Product,activity = true));
+                    Size: =15
+                    TextPosition: =TextPosition.Left
+                    TrueText: ="Chuyển sang đơn hàng"
+                    Width: =316
+                    X: =5
+                    Y: =5
+                    ZIndex: =1
+
         containerCreateQuote_Vertion2 As groupContainer.manualLayoutContainer:
             ContentLanguage: ="vi-VN"
             DropShadow: =DropShadow.ExtraBold
@@ -2810,9 +2928,10 @@ SaleVertion2 As screen:
                 DefaultSelectedItems: =
                 DisplayFields: =["customer_Name"]
                 InputTextPlaceholder: ="Chọn khách hàng"
-                Items: =Customer
+                IsSearchable: =false
+                Items: =Filter(Customer,activity = true)
                 SearchFields: =["customer_Name"]
-                SearchItems: =Search(Customer,ComboBox1.SearchText,"customer_Name")
+                SearchItems: =[]
                 SelectMultiple: =false
                 Width: =300
                 X: =802
@@ -3296,7 +3415,7 @@ SaleVertion2 As screen:
                             ZIndex: =13
 
             Label72 As label:
-                Color: =RGBA(0, 18, 107, 1)
+                Color: =RGBA(56, 96, 178, 1)
                 Height: =27
                 Italic: =true
                 OnSelect: |-
@@ -3308,6 +3427,7 @@ SaleVertion2 As screen:
                     Reset(TextInput8_3)
                 Size: =15
                 Text: ="Thêm sản phẩm"
+                Underline: =true
                 Visible: =positionOptionCreatQuote = 0
                 Width: =166
                 X: =1073
@@ -3315,7 +3435,7 @@ SaleVertion2 As screen:
                 ZIndex: =27
 
             Label79 As label:
-                Color: =RGBA(16, 29, 97, 1)
+                Color: =RGBA(56, 96, 178, 1)
                 Height: =26
                 Italic: =true
                 OnSelect: |-
@@ -3323,6 +3443,7 @@ SaleVertion2 As screen:
                     Set(positionDialogAddDataQuoteNew_SaleVertion2,1);
                     Reset(TextInput9);
                     Reset(Checkbox5)
+                Size: =15
                 Text: ="Thêm dịch vụ"
                 Underline: =true
                 Visible: =positionOptionCreatQuote = 1
@@ -3411,7 +3532,7 @@ SaleVertion2 As screen:
                         )
                     DisplayMode: =If(isVisibleUpdateProduct_Quote_Vertion2,DisplayMode.Disabled,DisplayMode.Edit)
                     FocusedBorderThickness: =2
-                    Items: =Product
+                    Items: =Filter(Product,activity = true)
                     Width: =436
                     X: =85
                     Y: =96
@@ -3735,7 +3856,7 @@ SaleVertion2 As screen:
                         )
                     DisplayMode: =If(isVisibleUpdateService_Quote_Vertion2,DisplayMode.Disabled,DisplayMode.Edit)
                     Height: =41
-                    Items: =Service
+                    Items: =Filter(Service,activity = true)
                     Width: =423
                     X: =77
                     Y: =99

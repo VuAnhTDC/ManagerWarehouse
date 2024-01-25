@@ -25885,46 +25885,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "SaleVertion2.containerAddQuoteNew_SaleVersion2.containerCreateQuote_Vertion2.ComboBox1.SearchItems"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "SaleVertion2.containerAddQuoteNew_SaleVersion2.containerCreateQuote_Vertion2.ComboBox1.SearchItems",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 15,
-                  "charOffset": 37,
-                  "snippet": {
-                    "text": "\"customer_Name\""
-                  }
-                }
-              },
-              "properties": {
-                "member": "SearchItems",
-                "module": "SaleVertion2",
-                "type": "SaleVertion2.containerAddQuoteNew_SaleVersion2.containerCreateQuote_Vertion2.ComboBox1"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Search"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 5
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "SaleVertion2.containerPurchase_Version2.Container75.Gallery25.Label145_3.Text"
                 }
               ],
@@ -40875,36 +40835,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "SaleVertion2.containerViewQuote.Container21.Container105.containerSaveEditCustomer_8.Rectangle9_10.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "SaleVertion2.containerViewQuote.Container21.Container105.containerSaveEditCustomer_8.Rectangle9_10.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "SaleVertion2",
-                "type": "SaleVertion2.containerViewQuote.Container21.Container105.containerSaveEditCustomer_8.Rectangle9_10"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 10
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "SaleVertion2.containerViewQuote.Container21.Container105.containerSaveEditCustomer_8.Rectangle9_10.TabIndex"
                 }
               ],
@@ -40929,6 +40859,36 @@
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
           "ruleIndex": 11
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "SaleVertion2.containerViewQuote.Container21.Container105.containerSaveEditCustomer_8.Rectangle9_10.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "SaleVertion2.containerViewQuote.Container21.Container105.containerSaveEditCustomer_8.Rectangle9_10.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "SaleVertion2",
+                "type": "SaleVertion2.containerViewQuote.Container21.Container105.containerSaveEditCustomer_8.Rectangle9_10"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 10
         },
         {
           "locations": [
@@ -41085,36 +41045,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "SaleVertion2.containerViewQuote.Container21.Container96.Container108.Label161.FocusedBorderThickness"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "SaleVertion2.containerViewQuote.Container21.Container96.Container108.Label161.FocusedBorderThickness",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "FocusedBorderThickness",
-                "module": "SaleVertion2",
-                "type": "SaleVertion2.containerViewQuote.Container21.Container96.Container108.Label161"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-FocusBorderShouldBeVisible",
-          "ruleIndex": 12
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "SaleVertion2.containerViewQuote.Container21.Container96.Container108.Label161.TabIndex"
                 }
               ],
@@ -41139,6 +41069,36 @@
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
           "ruleIndex": 11
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "SaleVertion2.containerViewQuote.Container21.Container96.Container108.Label161.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "SaleVertion2.containerViewQuote.Container21.Container96.Container108.Label161.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "SaleVertion2",
+                "type": "SaleVertion2.containerViewQuote.Container21.Container96.Container108.Label161"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 12
         },
         {
           "locations": [
@@ -41829,6 +41789,96 @@
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
           "ruleIndex": 11
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "SaleVertion2.containerAddQuoteNew_SaleVersion2.containerUpdateQuote_SaleVertion2.Icon45.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "SaleVertion2.containerAddQuoteNew_SaleVersion2.containerUpdateQuote_SaleVertion2.Icon45.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "SaleVertion2",
+                "type": "SaleVertion2.containerAddQuoteNew_SaleVersion2.containerUpdateQuote_SaleVertion2.Icon45"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 10
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "SaleVertion2.containerAddQuoteNew_SaleVersion2.containerUpdateQuote_SaleVertion2.Icon45.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "SaleVertion2.containerAddQuoteNew_SaleVersion2.containerUpdateQuote_SaleVertion2.Icon45.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "SaleVertion2",
+                "type": "SaleVertion2.containerAddQuoteNew_SaleVersion2.containerUpdateQuote_SaleVertion2.Icon45"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 11
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "SaleVertion2.containerAddQuoteNew_SaleVersion2.containerUpdateQuote_SaleVertion2.Container106.Toggle1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "SaleVertion2.containerAddQuoteNew_SaleVersion2.containerUpdateQuote_SaleVertion2.Container106.Toggle1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "SaleVertion2",
+                "type": "SaleVertion2.containerAddQuoteNew_SaleVersion2.containerUpdateQuote_SaleVertion2.Container106.Toggle1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 10
         },
         {
           "locations": [
