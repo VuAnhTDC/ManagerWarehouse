@@ -1346,7 +1346,8 @@ SaleVertion2 As screen:
                             ZIndex: =2
 
                         TextInput18 As text:
-                            Default: =""
+                            Default: =If(positionOptionService = "Create", "",If(positionOptionService = "Detail" || positionOptionService = "Edit",Gallery23.Selected.service_Name))
+                            DisplayMode: =If(positionOptionService = "Create"|| positionOptionService = "Edit",DisplayMode.Edit, If(positionOptionService = "Detail" ,DisplayMode.Disabled))
                             Height: =34
                             HintText: ="Tên dịch vụ"
                             Width: =395
@@ -1367,7 +1368,8 @@ SaleVertion2 As screen:
                             ZIndex: =4
 
                         TextInput18_1 As text:
-                            Default: =""
+                            Default: =If(positionOptionService = "Create", "",If(positionOptionService = "Detail" || positionOptionService = "Edit",Gallery23.Selected.service_Decription))
+                            DisplayMode: =If(positionOptionService = "Create", "",If(positionOptionService = "Detail" || positionOptionService = "Edit",Gallery23.Selected.service_Decription))
                             Height: =81
                             HintText: ="Mô tả"
                             Mode: =TextMode.MultiLine
@@ -1388,7 +1390,19 @@ SaleVertion2 As screen:
                             ZIndex: =6
 
                         TextInput18_2 As text:
-                            Default: =""
+                            Default: =If(positionOptionService = "Create", "",If(positionOptionService = "Detail" || positionOptionService = "Edit",Gallery23.Selected.service_Price))
+                            DisplayMode: |-
+                                =If(
+                                    positionOptionService = "Create",
+                                    "",
+                                    If(
+                                        positionOptionService = "Detail" || positionOptionService = "Edit",
+                                        Text(
+                                            Gallery23.Selected.service_Price,
+                                            "0,000"
+                                        )
+                                    )
+                                )
                             Format: =TextFormat.Number
                             Height: =34
                             HintText: ="Giá"
@@ -1516,8 +1530,8 @@ SaleVertion2 As screen:
                             Italic: =true
                             OnSelect: =Select(Parent)
                             Text: =If(ThisItem.service_Price < 1, "0,000", Text(ThisItem.service_Price,"0,000"))
-                            Width: =176
-                            X: =806
+                            Width: =201
+                            X: =781
                             ZIndex: =3
 
                         Rectangle19 As rectangle:
@@ -1539,6 +1553,14 @@ SaleVertion2 As screen:
                             Visible: =positionOptionService ="Delete"
                             Width: =1
                             ZIndex: =5
+
+                        Rectangle14 As rectangle:
+                            Fill: =RGBA(232, 244, 217, 0.43)
+                            Height: =40
+                            OnSelect: =Select(Parent)
+                            Visible: =ThisItem.IsSelected
+                            Width: =982
+                            ZIndex: =6
 
             Container102 As groupContainer.manualLayoutContainer:
                 DropShadow: =DropShadow.ExtraBold
@@ -1737,7 +1759,21 @@ SaleVertion2 As screen:
                     Rectangle9_7 As rectangle:
                         Fill: =RGBA(56, 96, 178, 0)
                         Height: =Parent.Height
-                        OnSelect: =If(positionOptionService = "Create",Set(positionOptionService,""),Set(positionOptionService,"Create"))
+                        OnSelect: |-
+                            =If(
+                                positionOptionService = "Create",
+                                Set(
+                                    positionOptionService,
+                                    ""
+                                ),
+                                Set(
+                                    positionOptionService,
+                                    "Create"
+                                );
+                                Reset(TextInput18);
+                                Reset(TextInput18_1);
+                                Reset(TextInput18_2)
+                            )
                         Width: =Parent.Width
                         ZIndex: =3
 
