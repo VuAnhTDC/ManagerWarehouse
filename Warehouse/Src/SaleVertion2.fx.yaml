@@ -3757,7 +3757,7 @@ SaleVertion2 As screen:
                                         arrServiceAddQuoteNew_SaleVertion2,
                                         {
                                             id_Quote: Gallery16.Selected.id_Quote,
-                                            id_Service: Temp.id_Serivce,
+                                            service_Name: Temp.service_Name,
                                             quote_Service_Note: Temp.service_Decription,
                                             price_Quote_Service: Temp.service_Price,
                                             status: "Add"
