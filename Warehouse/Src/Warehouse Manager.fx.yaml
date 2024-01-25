@@ -772,7 +772,7 @@
                         Size: =20
                         Text: ="Sản phẩm yêu cầu"
                         Width: =305
-                        X: =20
+                        X: =11
                         ZIndex: =1
 
                     TextInput_Search_Import_Product_Request As text:
@@ -1003,7 +1003,7 @@
                         Size: =20
                         Text: ="Danh sách nhập hàng"
                         Width: =350
-                        X: =20
+                        X: =11
                         ZIndex: =1
 
                     TextInput1_6 As text:
@@ -1020,7 +1020,6 @@
                     FillPortions: =8
                     Height: =Parent.Height-Container14_2.Height
                     LayoutDirection: =LayoutDirection.Vertical
-                    LayoutGap: =5
                     LayoutMinHeight: =100
                     LayoutMinWidth: =250
                     LayoutMode: =LayoutMode.Auto
@@ -1141,13 +1140,16 @@
                         Fill: =RGBA(227, 234, 243, 1)
                         FillPortions: =0
                         Height: =40
+                        LayoutGap: =5
                         LayoutMinHeight: =100
                         LayoutMinWidth: =250
                         LayoutMode: =LayoutMode.Auto
+                        PaddingLeft: =10
+                        PaddingRight: =10
                         ZIndex: =2
 
                         Label_Table_Id_Product_Import_Product_Request_1 As label:
-                            FillPortions: =1
+                            FillPortions: =2
                             FontWeight: =FontWeight.Semibold
                             LayoutMinWidth: =0
                             OnSelect: =
@@ -1158,7 +1160,7 @@
                             ZIndex: =1
 
                         Label_Table_Name_Product_Import_Product_Request_1 As label:
-                            FillPortions: =1
+                            FillPortions: =3
                             FontWeight: =FontWeight.Semibold
                             LayoutMinWidth: =0
                             OnSelect: =
@@ -1175,12 +1177,12 @@
                             LayoutMinWidth: =0
                             OnSelect: =
                             Size: =15
-                            Text: ="Số lượng nhập"
+                            Text: ="SL nhập"
                             X: =465
                             ZIndex: =3
 
                         Label_Table_Request_Import_Product_Request_2 As label:
-                            FillPortions: =1
+                            FillPortions: =1.5
                             FontWeight: =FontWeight.Semibold
                             LayoutMinWidth: =0
                             OnSelect: =
@@ -1190,7 +1192,7 @@
                             ZIndex: =4
 
                         Label_Table_Request_Import_Product_Request_3 As label:
-                            FillPortions: =1
+                            FillPortions: =2.5
                             FontWeight: =FontWeight.Semibold
                             OnSelect: =
                             Size: =15
@@ -1200,7 +1202,7 @@
                             ZIndex: =5
 
                         Label_Table_Id_Product_Import_Product_Request_5 As label:
-                            FillPortions: =1
+                            FillPortions: =0.25
                             FontWeight: =FontWeight.Semibold
                             LayoutMinWidth: =0
                             OnSelect: =
@@ -1239,13 +1241,18 @@
                         ZIndex: =3
 
                         Container107 As groupContainer.horizontalAutoLayoutContainer:
-                            Height: =50
+                            BorderThickness: =1
+                            DropShadow: =DropShadow.None
+                            Height: =Gallery_Import_Product_No_Request_Warehouse.TemplateHeight
+                            LayoutGap: =5
                             LayoutMode: =LayoutMode.Auto
+                            PaddingLeft: =10
+                            PaddingRight: =10
                             Width: =1116
                             ZIndex: =1
 
                             Label_Child_Table_Id_Product_Import_Product_Request_1 As label:
-                                FillPortions: =1
+                                FillPortions: =2
                                 Height: =Gallery_Import_Product_No_Request_Warehouse.TemplateHeight
                                 LayoutMinWidth: =0
                                 Size: =15
@@ -1253,7 +1260,7 @@
                                 ZIndex: =1
 
                             Label_Child_Table_Name_Product_Import_Product_Request_1 As label:
-                                FillPortions: =1
+                                FillPortions: =3
                                 Height: =Gallery_Import_Product_No_Request_Warehouse.TemplateHeight
                                 LayoutMinWidth: =0
                                 Size: =15
@@ -1271,7 +1278,7 @@
 
                             Label_Child_Table_Quantity_Product_Import_Product_Request_2 As label:
                                 AlignInContainer: =AlignInContainer.Start
-                                FillPortions: =1
+                                FillPortions: =1.5
                                 Height: =Gallery_Import_Product_No_Request_Warehouse.TemplateHeight
                                 LayoutMinWidth: =0
                                 Size: =15
@@ -1280,7 +1287,7 @@
                                 ZIndex: =4
 
                             Label_Child_Table_Quantity_Product_Import_Product_Request_3 As label:
-                                FillPortions: =1
+                                FillPortions: =2.5
                                 Height: =Gallery_Import_Product_No_Request_Warehouse.TemplateHeight
                                 LayoutMinWidth: =0
                                 Size: =15
@@ -1290,7 +1297,7 @@
 
                             Icon_Child_Table_Import_Product_Request_1 As icon.Publish:
                                 Color: =RGBA(255, 0, 0, 1)
-                                FillPortions: =1
+                                FillPortions: =0.25
                                 Height: =Gallery_Import_Product_No_Request_Warehouse.TemplateHeight
                                 Icon: =Icon.Cancel
                                 LayoutMinWidth: =0
@@ -1336,7 +1343,7 @@
                         Size: =20
                         Text: ="Lịch sử nhập hàng"
                         Width: =350
-                        X: =20
+                        X: =11
                         ZIndex: =1
 
                     TextInput1_7 As text:
@@ -1374,7 +1381,6 @@
                     FillPortions: =8
                     Height: =Parent.Height-Container14_3.Height
                     LayoutDirection: =LayoutDirection.Vertical
-                    LayoutGap: =5
                     LayoutMinHeight: =100
                     LayoutMinWidth: =250
                     LayoutMode: =LayoutMode.Auto
@@ -1434,64 +1440,92 @@
                             X: =186
                             ZIndex: =3
 
-                    Container34_4 As groupContainer.manualLayoutContainer:
-                        Fill: =RGBA(56, 96, 178, 0.1)
+                    Container110 As groupContainer.horizontalAutoLayoutContainer:
+                        Fill: =RGBA(227, 234, 243, 1)
                         FillPortions: =0
                         Height: =40
+                        LayoutGap: =5
                         LayoutMinHeight: =100
                         LayoutMinWidth: =250
+                        LayoutMode: =LayoutMode.Auto
+                        PaddingLeft: =10
+                        PaddingRight: =10
                         ZIndex: =2
 
                         Label_Table_Name_Product_Import_Product_Request_2 As label:
+                            FillPortions: =3
                             FontWeight: =FontWeight.Semibold
+                            LayoutMinWidth: =0
                             OnSelect: =
                             Size: =15
                             Text: ="Tên sản phẩm"
                             Width: =250
                             X: =20
                             Y: =
-                            ZIndex: =3
+                            ZIndex: =1
 
                         Label_Table_Request_Import_Product_Request_4 As label:
+                            FillPortions: =1
                             FontWeight: =FontWeight.Semibold
+                            LayoutMinWidth: =0
                             OnSelect: =
                             Size: =15
-                            Text: ="Số lượng nhập"
-                            X: =290
-                            ZIndex: =4
+                            Text: ="SL nhập"
+                            X: =270
+                            ZIndex: =2
 
                         Label_Table_Request_Import_Product_Request_5 As label:
+                            FillPortions: =2
                             FontWeight: =FontWeight.Semibold
+                            LayoutMinWidth: =0
                             OnSelect: =
                             Size: =15
                             Text: ="Giá"
-                            X: =478
-                            ZIndex: =5
+                            X: =458
+                            ZIndex: =3
 
                         Label_Table_Request_Import_Product_Request_6 As label:
+                            FillPortions: =2.5
                             FontWeight: =FontWeight.Semibold
+                            LayoutMinWidth: =0
                             OnSelect: =
                             Size: =15
                             Text: ="Nhà cung cấp"
-                            X: =628
-                            ZIndex: =6
+                            X: =608
+                            ZIndex: =4
 
                         Label_Table_Request_Import_Product_Request_7 As label:
+                            FillPortions: =2
                             FontWeight: =FontWeight.Semibold
+                            LayoutMinWidth: =0
                             OnSelect: =
                             Size: =15
                             Text: ="Ngày nhập"
-                            X: =841
-                            ZIndex: =7
+                            X: =821
+                            ZIndex: =5
 
                         Label_Table_Request_Import_Product_Request_8 As label:
+                            FillPortions: =1
                             FontWeight: =FontWeight.Semibold
+                            LayoutMinWidth: =0
                             OnSelect: =
                             Size: =15
                             Text: ="Loại"
                             Width: =88
-                            X: =1026
-                            ZIndex: =8
+                            X: =1006
+                            ZIndex: =6
+
+                        Label_Table_Name_Product_Import_Product_Request_8 As label:
+                            FillPortions: =0.5
+                            FontWeight: =FontWeight.Semibold
+                            LayoutMinWidth: =0
+                            OnSelect: =
+                            Size: =15
+                            Text: =""
+                            Width: =250
+                            X: =20
+                            Y: =
+                            ZIndex: =7
 
                     "Gallery_Import_Product_No_Request_Warehouse_1 As gallery.'BrowseLayout_Vertical_OneTextVariant_ver5.0'":
                         DelayItemLoading: =true
@@ -1582,48 +1616,54 @@
                         Width: =Parent.Width
                         ZIndex: =3
 
-                        Label_Child_Table_Name_Product_Import_Product_Request_2 As label:
-                            Height: =Gallery_Import_Product_No_Request_Warehouse_1.TemplateHeight
-                            Size: =15
-                            Text: =LookUp(Product,id_Product=ThisItem.id_Product).name_Product
-                            Width: =250
-                            ZIndex: =3
+                        Container112 As groupContainer.horizontalAutoLayoutContainer:
+                            Height: =50
+                            LayoutMode: =LayoutMode.Auto
+                            Width: =1116
+                            ZIndex: =1
 
-                        Label_Child_Table_Quantity_Product_Import_Product_Request_4 As label:
-                            Height: =Gallery_Import_Product_No_Request_Warehouse_1.TemplateHeight
-                            Size: =15
-                            Text: =ThisItem.Import_Product_Quantity&" "&ThisItem.Import_Product_Unit
-                            ZIndex: =4
+                            Label_Child_Table_Name_Product_Import_Product_Request_2 As label:
+                                Height: =Gallery_Import_Product_No_Request_Warehouse_1.TemplateHeight
+                                Size: =15
+                                Text: =LookUp(Product,id_Product=ThisItem.id_Product).name_Product
+                                Width: =250
+                                ZIndex: =1
 
-                        Icon_Child_Table_Import_Product_Request_2 As icon.Publish:
-                            Color: =RGBA(54, 176, 75, 1)
-                            Height: =Gallery_Import_Product_No_Request_Warehouse_1.TemplateHeight
-                            Icon: =Icon.DockCheckProperties
-                            OnSelect: =
-                            Visible: =!IsBlank(ThisItem.id_Purchase_request)
-                            Width: =35
-                            ZIndex: =5
+                            Label_Child_Table_Quantity_Product_Import_Product_Request_4 As label:
+                                Height: =Gallery_Import_Product_No_Request_Warehouse_1.TemplateHeight
+                                Size: =15
+                                Text: =ThisItem.Import_Product_Quantity&" "&ThisItem.Import_Product_Unit
+                                ZIndex: =2
 
-                        Label_Child_Table_Quantity_Product_Import_Product_Request_5 As label:
-                            Height: =Gallery_Import_Product_No_Request_Warehouse_1.TemplateHeight
-                            Size: =15
-                            Text: |-
-                                =Text(ThisItem.Import_Product_Price, "[$-en-US]#,###đ")
-                            ZIndex: =6
+                            Label_Child_Table_Quantity_Product_Import_Product_Request_5 As label:
+                                Height: =Gallery_Import_Product_No_Request_Warehouse_1.TemplateHeight
+                                Size: =15
+                                Text: |-
+                                    =Text(ThisItem.Import_Product_Price, "[$-en-US]#,###đ")
+                                ZIndex: =3
 
-                        Label_Child_Table_Quantity_Product_Import_Product_Request_6 As label:
-                            Height: =Gallery_Import_Product_No_Request_Warehouse_1.TemplateHeight
-                            Size: =15
-                            Text: =LookUp(Supplier,taxCode=ThisItem.id_Supplier).name_Supplier
-                            Width: =190
-                            ZIndex: =7
+                            Label_Child_Table_Quantity_Product_Import_Product_Request_6 As label:
+                                Height: =Gallery_Import_Product_No_Request_Warehouse_1.TemplateHeight
+                                Size: =15
+                                Text: =LookUp(Supplier,taxCode=ThisItem.id_Supplier).name_Supplier
+                                Width: =190
+                                ZIndex: =4
 
-                        Label_Child_Table_Quantity_Product_Import_Product_Request_7 As label:
-                            Height: =Gallery_Import_Product_No_Request_Warehouse_1.TemplateHeight
-                            Size: =15
-                            Text: =ThisItem.Created_at
-                            Width: =190
-                            ZIndex: =8
+                            Label_Child_Table_Quantity_Product_Import_Product_Request_7 As label:
+                                Height: =Gallery_Import_Product_No_Request_Warehouse_1.TemplateHeight
+                                Size: =15
+                                Text: =ThisItem.Created_at
+                                Width: =190
+                                ZIndex: =5
+
+                            Icon_Child_Table_Import_Product_Request_2 As icon.Publish:
+                                Color: =RGBA(54, 176, 75, 1)
+                                Height: =Gallery_Import_Product_No_Request_Warehouse_1.TemplateHeight
+                                Icon: =Icon.DockCheckProperties
+                                OnSelect: =
+                                Visible: =!IsBlank(ThisItem.id_Purchase_request)
+                                Width: =35
+                                ZIndex: =6
 
                     Label4_4 As label:
                         Align: =Align.Right
