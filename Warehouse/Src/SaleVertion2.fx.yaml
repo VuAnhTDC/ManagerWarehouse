@@ -611,7 +611,7 @@ SaleVertion2 As screen:
                     Icon: =Icon.Save
                     OnSelect: |-
                         =If(
-                            IsBlank(TextInput12_1.Text) || IsBlank(TextInput12_2.Text) || IsBlank(TextInput12_3.Text) || IsBlank(TextInput12_4.Text) || IsBlank(TextInput12_5.Text),
+                            IsBlank(TextInput12_1.Text) || IsBlank(TextInput12_2.Text) || IsBlank(TextInput12_3.Text) || IsBlank(TextInput12_4.Text) || IsBlank(TextInput12_5.Text) ||IsBlank(TextInput12.Text),
                             Notify(
                                 "Vui lòng không để trống thông tin.",
                                 NotificationType.Error
@@ -649,10 +649,10 @@ SaleVertion2 As screen:
                                 )
                             )
                         )
-                    Visible: =isVisibleSaveUpdateCustomer
+                    Visible: =isVisibleSaveUpdateCustomer || positionItemFunctionCustomerQuote =3
                     Width: =40
-                    X: =498
-                    Y: =8
+                    X: =642
+                    Y: =9
                     ZIndex: =4
 
                 containerSaveEditCustomer_1 As groupContainer.manualLayoutContainer:
@@ -724,7 +724,7 @@ SaleVertion2 As screen:
                             Container64 As groupContainer.manualLayoutContainer:
                                 Fill: =RGBA(255, 255, 255, 1)
                                 Height: =194
-                                Visible: =positionItemFunctionCustomerQuote = 0 || positionItemFunctionCustomerQuote =1
+                                Visible: =positionItemFunctionCustomerQuote = 0 || positionItemFunctionCustomerQuote =1 ||positionItemFunctionCustomerQuote =3
                                 Width: =982
                                 X: =6
                                 Y: =36
@@ -740,9 +740,10 @@ SaleVertion2 As screen:
                                     ZIndex: =1
 
                                 TextInput12 As text:
-                                    BorderThickness: =0
-                                    Default: =Gallery17.Selected.taxCode
-                                    DisplayMode: =DisplayMode.Disabled
+                                    BorderThickness: =1
+                                    Default: =If(positionItemFunctionCustomerQuote =3,"",Gallery17.Selected.taxCode)
+                                    DisplayMode: =If(positionItemFunctionCustomerQuote =3,DisplayMode.Edit,DisplayMode.Disabled)
+                                    HintText: =If(positionItemFunctionCustomerQuote =3,"Mã số thuế")
                                     X: =166
                                     Y: =18
                                     ZIndex: =2
@@ -802,9 +803,10 @@ SaleVertion2 As screen:
 
                                     TextInput12_1 As text:
                                         BorderThickness: =0.1
-                                        Default: =Gallery17.Selected.customer_Name
-                                        DisplayMode: =If(positionItemFunctionCustomerQuote = 1,DisplayMode.Edit,DisplayMode.Disabled)
+                                        Default: =If(positionItemFunctionCustomerQuote =3,"",Gallery17.Selected.customer_Name)
+                                        DisplayMode: =If(positionItemFunctionCustomerQuote = 1 ||positionItemFunctionCustomerQuote =3,DisplayMode.Edit,DisplayMode.Disabled)
                                         FocusedBorderThickness: =0.1
+                                        HintText: ="Tên khách hàng"
                                         OnChange: =Set(isVisibleSaveUpdateCustomer,true)
                                         OnSelect: =Set(positinInformationcustomerFocus,0);
                                         ZIndex: =1
@@ -819,9 +821,10 @@ SaleVertion2 As screen:
 
                                     TextInput12_2 As text:
                                         BorderThickness: =0.1
-                                        Default: =Gallery17.Selected.customer_Address
-                                        DisplayMode: =If(positionItemFunctionCustomerQuote = 1,DisplayMode.Edit,DisplayMode.Disabled)
+                                        Default: =If(positionItemFunctionCustomerQuote = 3,"",Gallery17.Selected.customer_Address)
+                                        DisplayMode: =If(positionItemFunctionCustomerQuote = 1 || positionItemFunctionCustomerQuote =3,DisplayMode.Edit,DisplayMode.Disabled)
                                         FocusedBorderThickness: =0.1
+                                        HintText: ="Địa chỉ khách hàng"
                                         OnChange: =Set(isVisibleSaveUpdateCustomer,true)
                                         OnSelect: =Set(positinInformationcustomerFocus,0);
                                         ZIndex: =1
@@ -836,9 +839,10 @@ SaleVertion2 As screen:
 
                                     TextInput12_3 As text:
                                         BorderThickness: =0.1
-                                        Default: =Gallery17.Selected.contactPersonName_Customer
-                                        DisplayMode: =If(positionItemFunctionCustomerQuote = 1,DisplayMode.Edit,DisplayMode.Disabled)
+                                        Default: =If(positionItemFunctionCustomerQuote =3,"",Gallery17.Selected.contactPersonName_Customer)
+                                        DisplayMode: =If(positionItemFunctionCustomerQuote = 1 || positionItemFunctionCustomerQuote =3,DisplayMode.Edit,DisplayMode.Disabled)
                                         FocusedBorderThickness: =0.1
+                                        HintText: ="Tên người đại diện"
                                         OnChange: =Set(isVisibleSaveUpdateCustomer,true)
                                         OnSelect: =Set(positinInformationcustomerFocus,0);
                                         ZIndex: =1
@@ -853,9 +857,10 @@ SaleVertion2 As screen:
 
                                     TextInput12_4 As text:
                                         BorderThickness: =0.1
-                                        Default: =Gallery17.Selected.contactPersonEmail_Customer
-                                        DisplayMode: =If(positionItemFunctionCustomerQuote = 1,DisplayMode.Edit,DisplayMode.Disabled)
+                                        Default: =If(positionItemFunctionCustomerQuote =3,"",Gallery17.Selected.contactPersonEmail_Customer)
+                                        DisplayMode: =If(positionItemFunctionCustomerQuote = 1 || positionItemFunctionCustomerQuote =3,DisplayMode.Edit,DisplayMode.Disabled)
                                         FocusedBorderThickness: =0.1
+                                        HintText: ="Email"
                                         OnChange: =Set(isVisibleSaveUpdateCustomer,true)
                                         OnSelect: =Set(positinInformationcustomerFocus,0);
                                         ZIndex: =1
@@ -870,9 +875,10 @@ SaleVertion2 As screen:
 
                                     TextInput12_5 As text:
                                         BorderThickness: =0.1
-                                        Default: =Gallery17.Selected.contactPersonPhoneNumber_Customer
-                                        DisplayMode: =If(positionItemFunctionCustomerQuote = 1,DisplayMode.Edit,DisplayMode.Disabled)
+                                        Default: =If(positionItemFunctionCustomerQuote =3,"",Gallery17.Selected.contactPersonPhoneNumber_Customer)
+                                        DisplayMode: =If(positionItemFunctionCustomerQuote = 1 ||positionItemFunctionCustomerQuote =3,DisplayMode.Edit,DisplayMode.Disabled)
                                         FocusedBorderThickness: =0.1
+                                        HintText: ="Số điện thoại"
                                         MaxLength: =10
                                         OnChange: =Set(isVisibleSaveUpdateCustomer,true)
                                         OnSelect: =Set(positinInformationcustomerFocus,0);
@@ -1368,7 +1374,10 @@ SaleVertion2 As screen:
                                 isVisibleFlatfilter_HistoryTransaction,
                                 false
                             );
-                            Set(positionFlatHistory_Transaction, 0);
+                            Set(
+                                positionFlatHistory_Transaction,
+                                0
+                            );
                             //Danh sách khách hàng có đơn hàng
                         ClearCollect(
                                 dataCustomerHaveOrder,
@@ -1389,6 +1398,11 @@ SaleVertion2 As screen:
                                         )
                                     )
                                 )
+                            ),
+                            If(
+                                btnFunctionSaleVertion2 = "btnPurchase",
+                                Refresh(Purchase_request);
+                                Refresh(Purchase_request_Product)
                             )
                         )
                     PressedBorderColor: =/*Self.Fill*/
@@ -4083,7 +4097,7 @@ SaleVertion2 As screen:
                     Height: =41
                     Size: =15
                     Text: ="Số lượng SP"
-                    Width: =168
+                    Width: =140
                     X: =831
                     ZIndex: =5
 
@@ -6765,6 +6779,7 @@ SaleVertion2 As screen:
                 ZIndex: =7
 
                 Container53 As groupContainer.manualLayoutContainer:
+                    Fill: =RGBA(128, 128, 128, 0.06)
                     Height: =40
                     Width: =1034
                     X: =40
@@ -6829,7 +6844,7 @@ SaleVertion2 As screen:
                         Height: =50
                         OnSelect: =Select(Parent)
                         Size: =15
-                        Text: =LookUp(Product,id_Product = ThisItem.id_Product).name_Product
+                        Text: =ThisItem.name_Product
                         Width: =457
                         Wrap: =false
                         ZIndex: =1
@@ -6890,6 +6905,7 @@ SaleVertion2 As screen:
 
                 Label105 As label:
                     Align: =Align.Center
+                    Fill: =RGBA(237, 237, 237, 1)
                     FontWeight: =FontWeight.Semibold
                     Height: =46
                     Size: =18
