@@ -1966,18 +1966,22 @@ Director As screen:
                         Text: ="Chi tiết sản phẩm đã bán"
                         ZIndex: =1
 
-                    Container34_6 As groupContainer.manualLayoutContainer:
-                        AlignInContainer: =AlignInContainer.SetByContainer
-                        Fill: =RGBA(56, 96, 178, 0.1)
+                    Container116 As groupContainer.horizontalAutoLayoutContainer:
+                        Fill: =RGBA(214, 223, 238, 1)
                         FillPortions: =0
                         Height: =40
-                        LayoutMinHeight: =0
+                        LayoutGap: =5
+                        LayoutMinHeight: =100
                         LayoutMinWidth: =250
-                        Width: =Parent.Width
+                        LayoutMode: =LayoutMode.Auto
+                        PaddingLeft: =10
+                        PaddingRight: =10
                         ZIndex: =2
 
                         Label_Table_Request_Code_Import_Product_Request_3 As label:
+                            FillPortions: =2
                             FontWeight: =FontWeight.Semibold
+                            LayoutMinWidth: =0
                             OnSelect: =
                             Size: =15
                             Text: ="Mã sản phẩm"
@@ -1986,58 +1990,70 @@ Director As screen:
                             ZIndex: =1
 
                         Label_Table_Id_Product_Import_Product_Request_4 As label:
+                            FillPortions: =3
                             FontWeight: =FontWeight.Semibold
+                            LayoutMinWidth: =0
                             OnSelect: =
                             Size: =15
                             Text: ="Tên sản phẩm"
                             Width: =250
-                            X: =236
+                            X: =216
                             Y: =Label_Table_Request_Code_Import_Product_Request_3.Y
                             ZIndex: =2
 
                         Label_Table_Name_Product_Import_Product_Request_7 As label:
+                            FillPortions: =1
                             FontWeight: =FontWeight.Semibold
+                            LayoutMinWidth: =0
                             OnSelect: =
                             Size: =15
                             Text: ="Loại"
-                            X: =696
+                            X: =676
                             Y: =Label_Table_Request_Code_Import_Product_Request_3.Y
                             ZIndex: =3
 
-                        Label_Table_Request_Import_Product_Request_17 As label:
+                        Label_Table_Request_Import_Product_Request_16 As label:
+                            FillPortions: =1
                             FontWeight: =FontWeight.Semibold
+                            LayoutMinWidth: =0
+                            OnSelect: =
+                            Size: =15
+                            Text: ="Kho"
+                            X: =800
+                            ZIndex: =4
+
+                        Label_Table_Request_Import_Product_Request_17 As label:
+                            FillPortions: =1
+                            FontWeight: =FontWeight.Semibold
+                            LayoutMinWidth: =0
                             OnSelect: =
                             Size: =15
                             Text: ="Đã bán"
                             Width: =80
-                            X: =970
-                            ZIndex: =4
+                            X: =950
+                            ZIndex: =5
+
+                        Label_Table_Name_Product_Import_Product_Request_6 As label:
+                            FillPortions: =1
+                            FontWeight: =FontWeight.Semibold
+                            LayoutMinWidth: =0
+                            OnSelect: =
+                            Size: =15
+                            Text: ="Đơn giá"
+                            X: =516
+                            Y: =Label_Table_Request_Code_Import_Product_Request_3.Y
+                            ZIndex: =6
 
                         Label_Table_Request_Import_Product_Request_20 As label:
+                            FillPortions: =1
                             FontWeight: =FontWeight.Semibold
+                            LayoutMinWidth: =0
                             OnSelect: =
                             Size: =15
                             Text: ="Doanh thu"
                             Width: =173
-                            X: =1129
+                            X: =1109
                             ZIndex: =7
-
-                        Label_Table_Request_Import_Product_Request_16 As label:
-                            FontWeight: =FontWeight.Semibold
-                            OnSelect: =
-                            Size: =15
-                            Text: ="Kho"
-                            X: =820
-                            ZIndex: =8
-
-                        Label_Table_Name_Product_Import_Product_Request_6 As label:
-                            FontWeight: =FontWeight.Semibold
-                            OnSelect: =
-                            Size: =15
-                            Text: ="Đơn giá"
-                            X: =536
-                            Y: =Label_Table_Request_Code_Import_Product_Request_3.Y
-                            ZIndex: =9
 
                     "Gallery_Request_Import_Product_Warehouse_3 As gallery.'BrowseLayout_Vertical_OneTextVariant_ver5.0'":
                         AlignInContainer: =AlignInContainer.SetByContainer
@@ -2058,59 +2074,85 @@ Director As screen:
                         Width: =Parent.Width
                         ZIndex: =3
 
-                        Label_Child_Table_Request_Code_Import_Product_11 As label:
+                        Container117 As groupContainer.horizontalAutoLayoutContainer:
+                            BorderThickness: =1
+                            DropShadow: =DropShadow.None
                             Height: =50
-                            Size: =15
-                            Text: =ThisItem.id_Product
-                            Width: =200
-                            X: =Label_Table_Request_Code_Import_Product_Request_3.X
+                            LayoutGap: =5
+                            LayoutMode: =LayoutMode.Auto
+                            PaddingLeft: =10
+                            PaddingRight: =10
+                            Width: =1366
                             ZIndex: =1
 
-                        Label_Child_Table_Request_Code_Import_Product_12 As label:
-                            Height: =50
-                            Size: =15
-                            Text: =ThisItem.name_Product
-                            Width: =250
-                            X: =Label_Table_Id_Product_Import_Product_Request_4.X
-                            ZIndex: =2
+                            Label_Child_Table_Request_Code_Import_Product_11 As label:
+                                FillPortions: =2
+                                Height: =50
+                                Size: =15
+                                Text: =ThisItem.id_Product
+                                Width: =200
+                                X: =Label_Table_Request_Code_Import_Product_Request_3.X
+                                ZIndex: =1
 
-                        Label_Child_Table_Request_Code_Import_Product_13 As label:
-                            Height: =50
-                            Size: =15
-                            Text: |-
-                                =If(ThisItem.price_Product=0,"0đ",Text(
-                                    ThisItem.price_Product,
-                                    "[$-en-US]#,###đ"
-                                ))
-                            X: =350
-                            ZIndex: =3
+                            Label_Child_Table_Request_Code_Import_Product_12 As label:
+                                FillPortions: =3
+                                Height: =50
+                                LayoutMinWidth: =0
+                                Size: =15
+                                Text: =ThisItem.name_Product
+                                Width: =250
+                                X: =Label_Table_Id_Product_Import_Product_Request_4.X
+                                ZIndex: =2
 
-                        Label_Child_Table_Request_Code_Import_Product_14 As label:
-                            Height: =50
-                            Size: =15
-                            Text: =LookUp(Category,ID=ThisItem.id_Category).name_Category
-                            X: =350
-                            ZIndex: =4
+                            Label_Child_Table_Request_Code_Import_Product_14 As label:
+                                FillPortions: =1
+                                Height: =50
+                                LayoutMinWidth: =0
+                                Size: =15
+                                Text: =LookUp(Category,ID=ThisItem.id_Category).name_Category
+                                X: =23
+                                ZIndex: =3
 
-                        Label_Child_Table_Request_Code_Import_Product_15 As label:
-                            Height: =50
-                            Size: =15
-                            Text: =LookUp(Warehouse,ID=ThisItem.id_Warehouse).name_Warehouse
-                            X: =350
-                            ZIndex: =5
+                            Label_Child_Table_Request_Code_Import_Product_15 As label:
+                                FillPortions: =1
+                                Height: =50
+                                LayoutMinWidth: =0
+                                Size: =15
+                                Text: =LookUp(Warehouse,ID=ThisItem.id_Warehouse).name_Warehouse
+                                X: =23
+                                ZIndex: =4
 
-                        Label_Child_Table_Request_Code_Import_Product_16 As label:
-                            Height: =50
-                            Size: =15
-                            Text: |-
-                                =If(
-                                    //Thống kê theo năm
-                                    Dropdown2.Visible = false,
-                                    If(
-                                        //Thống kê toàn bộ nhân viên
-                                        IsBlank(ComboBox_Sales_Director.Selected),
+                            Label_Child_Table_Request_Code_Import_Product_16 As label:
+                                FillPortions: =1
+                                Height: =50
+                                LayoutMinWidth: =0
+                                Size: =15
+                                Text: |-
+                                    =If(
+                                        //Thống kê theo năm
+                                        Dropdown2.Visible = false,
                                         If(
-                                            IsBlank(
+                                            //Thống kê toàn bộ nhân viên
+                                            IsBlank(ComboBox_Sales_Director.Selected),
+                                            If(
+                                                IsBlank(
+                                                    Sum(
+                                                        Filter(
+                                                            Quote_Product_Data As a,
+                                                            a.id_Product = ThisItem.id_Product && LookUp(
+                                                                Quote_Data,
+                                                                id_Quote = a.id_Quote
+                                                            ).quote_Status.Value = "Đơn hàng" && Year(
+                                                                LookUp(
+                                                                    Quote_Data,
+                                                                    id_Quote = a.id_Quote
+                                                                ).quote_Date
+                                                            ) = Dropdown_Year_Director.Selected.Value
+                                                        ),
+                                                        quantity_Quote_Product
+                                                    )
+                                                ),
+                                                0,
                                                 Sum(
                                                     Filter(
                                                         Quote_Product_Data As a,
@@ -2127,26 +2169,29 @@ Director As screen:
                                                     quantity_Quote_Product
                                                 )
                                             ),
-                                            0,
-                                            Sum(
-                                                Filter(
-                                                    Quote_Product_Data As a,
-                                                    a.id_Product = ThisItem.id_Product && LookUp(
-                                                        Quote_Data,
-                                                        id_Quote = a.id_Quote
-                                                    ).quote_Status.Value = "Đơn hàng" && Year(
-                                                        LookUp(
-                                                            Quote_Data,
-                                                            id_Quote = a.id_Quote
-                                                        ).quote_Date
-                                                    ) = Dropdown_Year_Director.Selected.Value
+                                            //Thống kê nhân viên được chọn
+                                            If(
+                                                IsBlank(
+                                                    Sum(
+                                                        Filter(
+                                                            Quote_Product_Data As a,
+                                                            a.id_Product = ThisItem.id_Product && LookUp(
+                                                                Quote_Data,
+                                                                id_Quote = a.id_Quote
+                                                            ).quote_Status.Value = "Đơn hàng" && Year(
+                                                                LookUp(
+                                                                    Quote_Data,
+                                                                    id_Quote = a.id_Quote
+                                                                ).quote_Date
+                                                            ) = Dropdown_Year_Director.Selected.Value && LookUp(
+                                                                Quote_Data,
+                                                                id_Quote = a.id_Quote
+                                                            ).id_User = ComboBox_Sales_Director.Selected.ID
+                                                        ),
+                                                        quantity_Quote_Product
+                                                    )
                                                 ),
-                                                quantity_Quote_Product
-                                            )
-                                        ),
-                                        //Thống kê nhân viên được chọn
-                                        If(
-                                            IsBlank(
+                                                0,
                                                 Sum(
                                                     Filter(
                                                         Quote_Product_Data As a,
@@ -2165,34 +2210,42 @@ Director As screen:
                                                     ),
                                                     quantity_Quote_Product
                                                 )
-                                            ),
-                                            0,
-                                            Sum(
-                                                Filter(
-                                                    Quote_Product_Data As a,
-                                                    a.id_Product = ThisItem.id_Product && LookUp(
-                                                        Quote_Data,
-                                                        id_Quote = a.id_Quote
-                                                    ).quote_Status.Value = "Đơn hàng" && Year(
-                                                        LookUp(
-                                                            Quote_Data,
-                                                            id_Quote = a.id_Quote
-                                                        ).quote_Date
-                                                    ) = Dropdown_Year_Director.Selected.Value && LookUp(
-                                                        Quote_Data,
-                                                        id_Quote = a.id_Quote
-                                                    ).id_User = ComboBox_Sales_Director.Selected.ID
-                                                ),
-                                                quantity_Quote_Product
                                             )
-                                        )
-                                    ),
-                                    //Thông kê theo tháng
-                                    If(
-                                        IsBlank(ComboBox_Sales_Director.Selected),
-                                        //Thống kê toàn bộ nhân viên
+                                        ),
+                                        //Thông kê theo tháng
                                         If(
-                                            IsBlank(
+                                            IsBlank(ComboBox_Sales_Director.Selected),
+                                            //Thống kê toàn bộ nhân viên
+                                            If(
+                                                IsBlank(
+                                                    Sum(
+                                                        Filter(
+                                                            Quote_Product_Data As a,
+                                                            a.id_Product = ThisItem.id_Product && LookUp(
+                                                                Quote_Data,
+                                                                id_Quote = a.id_Quote
+                                                            ).quote_Status.Value = "Đơn hàng" && Year(
+                                                                LookUp(
+                                                                    Quote_Data,
+                                                                    id_Quote = a.id_Quote
+                                                                ).quote_Date
+                                                            ) = Dropdown_Year_Director.Selected.Value && Month(
+                                                                LookUp(
+                                                                    Quote_Data,
+                                                                    id_Quote = a.id_Quote
+                                                                ).quote_Date
+                                                            ) = Value(
+                                                                Mid(
+                                                                    Dropdown2.Selected.Value,
+                                                                    7,
+                                                                    2
+                                                                )
+                                                            )
+                                                        ),
+                                                        quantity_Quote_Product
+                                                    )
+                                                ),
+                                                0,
                                                 Sum(
                                                     Filter(
                                                         Quote_Product_Data As a,
@@ -2220,37 +2273,40 @@ Director As screen:
                                                     quantity_Quote_Product
                                                 )
                                             ),
-                                            0,
-                                            Sum(
-                                                Filter(
-                                                    Quote_Product_Data As a,
-                                                    a.id_Product = ThisItem.id_Product && LookUp(
-                                                        Quote_Data,
-                                                        id_Quote = a.id_Quote
-                                                    ).quote_Status.Value = "Đơn hàng" && Year(
-                                                        LookUp(
-                                                            Quote_Data,
-                                                            id_Quote = a.id_Quote
-                                                        ).quote_Date
-                                                    ) = Dropdown_Year_Director.Selected.Value && Month(
-                                                        LookUp(
-                                                            Quote_Data,
-                                                            id_Quote = a.id_Quote
-                                                        ).quote_Date
-                                                    ) = Value(
-                                                        Mid(
-                                                            Dropdown2.Selected.Value,
-                                                            7,
-                                                            2
-                                                        )
+                                            //Thống kê theo nhân viên được chọn
+                                            If(
+                                                IsBlank(
+                                                    Sum(
+                                                        Filter(
+                                                            Quote_Product_Data As a,
+                                                            a.id_Product = ThisItem.id_Product && LookUp(
+                                                                Quote_Data,
+                                                                id_Quote = a.id_Quote
+                                                            ).quote_Status.Value = "Đơn hàng" && Year(
+                                                                LookUp(
+                                                                    Quote_Data,
+                                                                    id_Quote = a.id_Quote
+                                                                ).quote_Date
+                                                            ) = Dropdown_Year_Director.Selected.Value && Month(
+                                                                LookUp(
+                                                                    Quote_Data,
+                                                                    id_Quote = a.id_Quote
+                                                                ).quote_Date
+                                                            ) = Value(
+                                                                Mid(
+                                                                    Dropdown2.Selected.Value,
+                                                                    7,
+                                                                    2
+                                                                )
+                                                            )&& LookUp(
+                                                                Quote_Data,
+                                                                id_Quote = a.id_Quote
+                                                            ).id_User = ComboBox_Sales_Director.Selected.ID
+                                                        ),
+                                                        quantity_Quote_Product
                                                     )
                                                 ),
-                                                quantity_Quote_Product
-                                            )
-                                        ),
-                                        //Thống kê theo nhân viên được chọn
-                                        If(
-                                            IsBlank(
+                                                0,
                                                 Sum(
                                                     Filter(
                                                         Quote_Product_Data As a,
@@ -2274,278 +2330,262 @@ Director As screen:
                                                                 2
                                                             )
                                                         )&& LookUp(
-                                                            Quote_Data,
-                                                            id_Quote = a.id_Quote
-                                                        ).id_User = ComboBox_Sales_Director.Selected.ID
+                                                                Quote_Data,
+                                                                id_Quote = a.id_Quote
+                                                            ).id_User = ComboBox_Sales_Director.Selected.ID
                                                     ),
                                                     quantity_Quote_Product
                                                 )
-                                            ),
-                                            0,
-                                            Sum(
-                                                Filter(
-                                                    Quote_Product_Data As a,
-                                                    a.id_Product = ThisItem.id_Product && LookUp(
-                                                        Quote_Data,
-                                                        id_Quote = a.id_Quote
-                                                    ).quote_Status.Value = "Đơn hàng" && Year(
-                                                        LookUp(
-                                                            Quote_Data,
-                                                            id_Quote = a.id_Quote
-                                                        ).quote_Date
-                                                    ) = Dropdown_Year_Director.Selected.Value && Month(
-                                                        LookUp(
-                                                            Quote_Data,
-                                                            id_Quote = a.id_Quote
-                                                        ).quote_Date
-                                                    ) = Value(
-                                                        Mid(
-                                                            Dropdown2.Selected.Value,
-                                                            7,
-                                                            2
-                                                        )
-                                                    )&& LookUp(
-                                                            Quote_Data,
-                                                            id_Quote = a.id_Quote
-                                                        ).id_User = ComboBox_Sales_Director.Selected.ID
-                                                ),
-                                                quantity_Quote_Product
                                             )
                                         )
                                     )
-                                )
-                            Width: =80
-                            X: =420
-                            ZIndex: =6
+                                Width: =80
+                                X: =93
+                                ZIndex: =5
 
-                        Label_Child_Table_Request_Code_Import_Product_19 As label:
-                            Height: =50
-                            Size: =15
-                            Text: |-
-                                =If(
-                                    //Thống kê theo năm
-                                    Dropdown2.Visible = false,
-                                    If(
-                                        //Thống kê toàn bộ nhân viên
-                                        IsBlank(ComboBox_Sales_Director.Selected),
+                            Label_Child_Table_Request_Code_Import_Product_13 As label:
+                                FillPortions: =1
+                                Height: =50
+                                LayoutMinWidth: =0
+                                Size: =15
+                                Text: |-
+                                    =If(ThisItem.price_Product=0,"0đ",Text(
+                                        ThisItem.price_Product,
+                                        "[$-en-US]#,###đ"
+                                    ))
+                                X: =23
+                                ZIndex: =6
+
+                            Label_Child_Table_Request_Code_Import_Product_19 As label:
+                                FillPortions: =1
+                                Height: =50
+                                LayoutMinWidth: =0
+                                Size: =15
+                                Text: |-
+                                    =If(
+                                        //Thống kê theo năm
+                                        Dropdown2.Visible = false,
                                         If(
-                                            IsBlank(
-                                                Sum(
-                                                    Filter(
-                                                        Quote_Product_Data As a,
-                                                        a.id_Product = ThisItem.id_Product && LookUp(
-                                                            Quote_Data,
-                                                            id_Quote = a.id_Quote
-                                                        ).quote_Status.Value = "Đơn hàng" && Year(
-                                                            LookUp(
+                                            //Thống kê toàn bộ nhân viên
+                                            IsBlank(ComboBox_Sales_Director.Selected),
+                                            If(
+                                                IsBlank(
+                                                    Sum(
+                                                        Filter(
+                                                            Quote_Product_Data As a,
+                                                            a.id_Product = ThisItem.id_Product && LookUp(
                                                                 Quote_Data,
                                                                 id_Quote = a.id_Quote
-                                                            ).quote_Date
-                                                        ) = Dropdown_Year_Director.Selected.Value
+                                                            ).quote_Status.Value = "Đơn hàng" && Year(
+                                                                LookUp(
+                                                                    Quote_Data,
+                                                                    id_Quote = a.id_Quote
+                                                                ).quote_Date
+                                                            ) = Dropdown_Year_Director.Selected.Value
+                                                        ),
+                                                        quantity_Quote_Product * price_Quote_Product
+                                                    )
+                                                ),
+                                                "0đ",
+                                                Text(
+                                                    Sum(
+                                                        Filter(
+                                                            Quote_Product_Data As a,
+                                                            a.id_Product = ThisItem.id_Product && LookUp(
+                                                                Quote_Data,
+                                                                id_Quote = a.id_Quote
+                                                            ).quote_Status.Value = "Đơn hàng" && Year(
+                                                                LookUp(
+                                                                    Quote_Data,
+                                                                    id_Quote = a.id_Quote
+                                                                ).quote_Date
+                                                            ) = Dropdown_Year_Director.Selected.Value
+                                                        ),
+                                                        quantity_Quote_Product * price_Quote_Product
                                                     ),
-                                                    quantity_Quote_Product * price_Quote_Product
+                                                    "[$-en-US]#,###đ"
                                                 )
                                             ),
-                                            "0đ",
-                                            Text(
-                                                Sum(
-                                                    Filter(
-                                                        Quote_Product_Data As a,
-                                                        a.id_Product = ThisItem.id_Product && LookUp(
-                                                            Quote_Data,
-                                                            id_Quote = a.id_Quote
-                                                        ).quote_Status.Value = "Đơn hàng" && Year(
-                                                            LookUp(
+                                            //Thống kê nhân viên được chọn
+                                            If(
+                                                IsBlank(
+                                                    Sum(
+                                                        Filter(
+                                                            Quote_Product_Data As a,
+                                                            a.id_Product = ThisItem.id_Product && LookUp(
                                                                 Quote_Data,
                                                                 id_Quote = a.id_Quote
-                                                            ).quote_Date
-                                                        ) = Dropdown_Year_Director.Selected.Value
-                                                    ),
-                                                    quantity_Quote_Product * price_Quote_Product
+                                                            ).quote_Status.Value = "Đơn hàng" && Year(
+                                                                LookUp(
+                                                                    Quote_Data,
+                                                                    id_Quote = a.id_Quote
+                                                                ).quote_Date
+                                                            ) = Dropdown_Year_Director.Selected.Value && LookUp(
+                                                                Quote_Data,
+                                                                id_Quote = a.id_Quote
+                                                            ).id_User = ComboBox_Sales_Director.Selected.ID
+                                                        ),
+                                                        quantity_Quote_Product * price_Quote_Product
+                                                    )
                                                 ),
-                                                "[$-en-US]#,###đ"
+                                                "0đ",
+                                                Text(
+                                                    Sum(
+                                                        Filter(
+                                                            Quote_Product_Data As a,
+                                                            a.id_Product = ThisItem.id_Product && LookUp(
+                                                                Quote_Data,
+                                                                id_Quote = a.id_Quote
+                                                            ).quote_Status.Value = "Đơn hàng" && Year(
+                                                                LookUp(
+                                                                    Quote_Data,
+                                                                    id_Quote = a.id_Quote
+                                                                ).quote_Date
+                                                            ) = Dropdown_Year_Director.Selected.Value && LookUp(
+                                                                Quote_Data,
+                                                                id_Quote = a.id_Quote
+                                                            ).id_User = ComboBox_Sales_Director.Selected.ID
+                                                        ),
+                                                        quantity_Quote_Product * price_Quote_Product
+                                                    ),
+                                                    "[$-en-US]#,###đ"
+                                                )
                                             )
                                         ),
-                                        //Thống kê nhân viên được chọn
+                                        //Thống kê theo tháng
                                         If(
-                                            IsBlank(
-                                                Sum(
-                                                    Filter(
-                                                        Quote_Product_Data As a,
-                                                        a.id_Product = ThisItem.id_Product && LookUp(
-                                                            Quote_Data,
-                                                            id_Quote = a.id_Quote
-                                                        ).quote_Status.Value = "Đơn hàng" && Year(
-                                                            LookUp(
+                                            IsBlank(ComboBox_Sales_Director.Selected),
+                                            //Thống kê toàn bộ nhân viên
+                                            If(
+                                                IsBlank(
+                                                    Sum(
+                                                        Filter(
+                                                            Quote_Product_Data As a,
+                                                            a.id_Product = ThisItem.id_Product && LookUp(
                                                                 Quote_Data,
                                                                 id_Quote = a.id_Quote
-                                                            ).quote_Date
-                                                        ) = Dropdown_Year_Director.Selected.Value && LookUp(
-                                                            Quote_Data,
-                                                            id_Quote = a.id_Quote
-                                                        ).id_User = ComboBox_Sales_Director.Selected.ID
+                                                            ).quote_Status.Value = "Đơn hàng" && Year(
+                                                                LookUp(
+                                                                    Quote_Data,
+                                                                    id_Quote = a.id_Quote
+                                                                ).quote_Date
+                                                            ) = Dropdown_Year_Director.Selected.Value && Month(
+                                                                LookUp(
+                                                                    Quote_Data,
+                                                                    id_Quote = a.id_Quote
+                                                                ).quote_Date
+                                                            ) = Value(
+                                                                Mid(
+                                                                    Dropdown2.Selected.Value,
+                                                                    7,
+                                                                    2
+                                                                )
+                                                            )
+                                                        ),
+                                                        quantity_Quote_Product * price_Quote_Product
+                                                    )
+                                                ),
+                                                "0đ",
+                                                Text(
+                                                    Sum(
+                                                        Filter(
+                                                            Quote_Product_Data As a,
+                                                            a.id_Product = ThisItem.id_Product && LookUp(
+                                                                Quote_Data,
+                                                                id_Quote = a.id_Quote
+                                                            ).quote_Status.Value = "Đơn hàng" && Year(
+                                                                LookUp(
+                                                                    Quote_Data,
+                                                                    id_Quote = a.id_Quote
+                                                                ).quote_Date
+                                                            ) = Dropdown_Year_Director.Selected.Value && Month(
+                                                                LookUp(
+                                                                    Quote_Data,
+                                                                    id_Quote = a.id_Quote
+                                                                ).quote_Date
+                                                            ) = Value(
+                                                                Mid(
+                                                                    Dropdown2.Selected.Value,
+                                                                    7,
+                                                                    2
+                                                                )
+                                                            )
+                                                        ),
+                                                        quantity_Quote_Product * price_Quote_Product
                                                     ),
-                                                    quantity_Quote_Product * price_Quote_Product
+                                                    "[$-en-US]#,###đ"
                                                 )
                                             ),
-                                            "0đ",
-                                            Text(
-                                                Sum(
-                                                    Filter(
-                                                        Quote_Product_Data As a,
-                                                        a.id_Product = ThisItem.id_Product && LookUp(
-                                                            Quote_Data,
-                                                            id_Quote = a.id_Quote
-                                                        ).quote_Status.Value = "Đơn hàng" && Year(
-                                                            LookUp(
+                                            //Thống kê theo nhân viên được chọn
+                                            If(
+                                                IsBlank(
+                                                    Sum(
+                                                        Filter(
+                                                            Quote_Product_Data As a,
+                                                            a.id_Product = ThisItem.id_Product && LookUp(
                                                                 Quote_Data,
                                                                 id_Quote = a.id_Quote
-                                                            ).quote_Date
-                                                        ) = Dropdown_Year_Director.Selected.Value && LookUp(
-                                                            Quote_Data,
-                                                            id_Quote = a.id_Quote
-                                                        ).id_User = ComboBox_Sales_Director.Selected.ID
-                                                    ),
-                                                    quantity_Quote_Product * price_Quote_Product
+                                                            ).quote_Status.Value = "Đơn hàng" && Year(
+                                                                LookUp(
+                                                                    Quote_Data,
+                                                                    id_Quote = a.id_Quote
+                                                                ).quote_Date
+                                                            ) = Dropdown_Year_Director.Selected.Value && Month(
+                                                                LookUp(
+                                                                    Quote_Data,
+                                                                    id_Quote = a.id_Quote
+                                                                ).quote_Date
+                                                            ) = Value(
+                                                                Mid(
+                                                                    Dropdown2.Selected.Value,
+                                                                    7,
+                                                                    2
+                                                                )
+                                                            ) && LookUp(
+                                                                Quote_Data,
+                                                                id_Quote = a.id_Quote
+                                                            ).id_User = ComboBox_Sales_Director.Selected.ID
+                                                        ),
+                                                        quantity_Quote_Product * price_Quote_Product
+                                                    )
                                                 ),
-                                                "[$-en-US]#,###đ"
-                                            )
-                                        )
-                                    ),
-                                    //Thống kê theo tháng
-                                    If(
-                                        IsBlank(ComboBox_Sales_Director.Selected),
-                                        //Thống kê toàn bộ nhân viên
-                                        If(
-                                            IsBlank(
-                                                Sum(
-                                                    Filter(
-                                                        Quote_Product_Data As a,
-                                                        a.id_Product = ThisItem.id_Product && LookUp(
-                                                            Quote_Data,
-                                                            id_Quote = a.id_Quote
-                                                        ).quote_Status.Value = "Đơn hàng" && Year(
-                                                            LookUp(
+                                                "0đ",
+                                                Text(
+                                                    Sum(
+                                                        Filter(
+                                                            Quote_Product_Data As a,
+                                                            a.id_Product = ThisItem.id_Product && LookUp(
                                                                 Quote_Data,
                                                                 id_Quote = a.id_Quote
-                                                            ).quote_Date
-                                                        ) = Dropdown_Year_Director.Selected.Value && Month(
-                                                            LookUp(
+                                                            ).quote_Status.Value = "Đơn hàng" && Year(
+                                                                LookUp(
+                                                                    Quote_Data,
+                                                                    id_Quote = a.id_Quote
+                                                                ).quote_Date
+                                                            ) = Dropdown_Year_Director.Selected.Value && Month(
+                                                                LookUp(
+                                                                    Quote_Data,
+                                                                    id_Quote = a.id_Quote
+                                                                ).quote_Date
+                                                            ) = Value(
+                                                                Mid(
+                                                                    Dropdown2.Selected.Value,
+                                                                    7,
+                                                                    2
+                                                                )
+                                                            ) && LookUp(
                                                                 Quote_Data,
                                                                 id_Quote = a.id_Quote
-                                                            ).quote_Date
-                                                        ) = Value(
-                                                            Mid(
-                                                                Dropdown2.Selected.Value,
-                                                                7,
-                                                                2
-                                                            )
-                                                        )
+                                                            ).id_User = ComboBox_Sales_Director.Selected.ID
+                                                        ),
+                                                        quantity_Quote_Product * price_Quote_Product
                                                     ),
-                                                    quantity_Quote_Product * price_Quote_Product
+                                                    "[$-en-US]#,###đ"
                                                 )
-                                            ),
-                                            "0đ",
-                                            Text(
-                                                Sum(
-                                                    Filter(
-                                                        Quote_Product_Data As a,
-                                                        a.id_Product = ThisItem.id_Product && LookUp(
-                                                            Quote_Data,
-                                                            id_Quote = a.id_Quote
-                                                        ).quote_Status.Value = "Đơn hàng" && Year(
-                                                            LookUp(
-                                                                Quote_Data,
-                                                                id_Quote = a.id_Quote
-                                                            ).quote_Date
-                                                        ) = Dropdown_Year_Director.Selected.Value && Month(
-                                                            LookUp(
-                                                                Quote_Data,
-                                                                id_Quote = a.id_Quote
-                                                            ).quote_Date
-                                                        ) = Value(
-                                                            Mid(
-                                                                Dropdown2.Selected.Value,
-                                                                7,
-                                                                2
-                                                            )
-                                                        )
-                                                    ),
-                                                    quantity_Quote_Product * price_Quote_Product
-                                                ),
-                                                "[$-en-US]#,###đ"
-                                            )
-                                        ),
-                                        //Thống kê theo nhân viên được chọn
-                                        If(
-                                            IsBlank(
-                                                Sum(
-                                                    Filter(
-                                                        Quote_Product_Data As a,
-                                                        a.id_Product = ThisItem.id_Product && LookUp(
-                                                            Quote_Data,
-                                                            id_Quote = a.id_Quote
-                                                        ).quote_Status.Value = "Đơn hàng" && Year(
-                                                            LookUp(
-                                                                Quote_Data,
-                                                                id_Quote = a.id_Quote
-                                                            ).quote_Date
-                                                        ) = Dropdown_Year_Director.Selected.Value && Month(
-                                                            LookUp(
-                                                                Quote_Data,
-                                                                id_Quote = a.id_Quote
-                                                            ).quote_Date
-                                                        ) = Value(
-                                                            Mid(
-                                                                Dropdown2.Selected.Value,
-                                                                7,
-                                                                2
-                                                            )
-                                                        ) && LookUp(
-                                                            Quote_Data,
-                                                            id_Quote = a.id_Quote
-                                                        ).id_User = ComboBox_Sales_Director.Selected.ID
-                                                    ),
-                                                    quantity_Quote_Product * price_Quote_Product
-                                                )
-                                            ),
-                                            "0đ",
-                                            Text(
-                                                Sum(
-                                                    Filter(
-                                                        Quote_Product_Data As a,
-                                                        a.id_Product = ThisItem.id_Product && LookUp(
-                                                            Quote_Data,
-                                                            id_Quote = a.id_Quote
-                                                        ).quote_Status.Value = "Đơn hàng" && Year(
-                                                            LookUp(
-                                                                Quote_Data,
-                                                                id_Quote = a.id_Quote
-                                                            ).quote_Date
-                                                        ) = Dropdown_Year_Director.Selected.Value && Month(
-                                                            LookUp(
-                                                                Quote_Data,
-                                                                id_Quote = a.id_Quote
-                                                            ).quote_Date
-                                                        ) = Value(
-                                                            Mid(
-                                                                Dropdown2.Selected.Value,
-                                                                7,
-                                                                2
-                                                            )
-                                                        ) && LookUp(
-                                                            Quote_Data,
-                                                            id_Quote = a.id_Quote
-                                                        ).id_User = ComboBox_Sales_Director.Selected.ID
-                                                    ),
-                                                    quantity_Quote_Product * price_Quote_Product
-                                                ),
-                                                "[$-en-US]#,###đ"
                                             )
                                         )
                                     )
-                                )
-                            Width: =173
-                            X: =327
-                            ZIndex: =10
+                                Width: =173
+                                X: =327
+                                ZIndex: =7
 

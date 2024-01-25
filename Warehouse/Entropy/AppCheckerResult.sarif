@@ -29535,49 +29535,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "'Warehouse Manager'.Container_Warehouse.Container_Approve_Warehouse.Container11_2.Container12_2.Gallery_Request_Import_Product_Warehouse_2.Icon5_1.AccessibleLabel"
+                  "fullyQualifiedName": "'Warehouse Manager'.Container_Warehouse.Container_Approve_Warehouse.Container11_2.Container12_2.Gallery_Request_Import_Product_Warehouse_2.Container115.Icon5_1.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "'Warehouse Manager'.Container_Warehouse.Container_Approve_Warehouse.Container11_2.Container12_2.Gallery_Request_Import_Product_Warehouse_2.Icon5_1.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Warehouse Manager",
-                "type": "'Warehouse Manager'.Container_Warehouse.Container_Approve_Warehouse.Container11_2.Container12_2.Gallery_Request_Import_Product_Warehouse_2.Icon5_1"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 10
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "'Warehouse Manager'.Container_Warehouse.Container_Approve_Warehouse.Container11_2.Container12_2.Gallery_Request_Import_Product_Warehouse_2.Icon5_1.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'Warehouse Manager'.Container_Warehouse.Container_Approve_Warehouse.Container11_2.Container12_2.Gallery_Request_Import_Product_Warehouse_2.Icon5_1.TabIndex",
+                  "fullyQualifiedName": "'Warehouse Manager'.Container_Warehouse.Container_Approve_Warehouse.Container11_2.Container12_2.Gallery_Request_Import_Product_Warehouse_2.Container115.Icon5_1.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "Warehouse Manager",
-                "type": "'Warehouse Manager'.Container_Warehouse.Container_Approve_Warehouse.Container11_2.Container12_2.Gallery_Request_Import_Product_Warehouse_2.Icon5_1"
+                "type": "'Warehouse Manager'.Container_Warehouse.Container_Approve_Warehouse.Container11_2.Container12_2.Gallery_Request_Import_Product_Warehouse_2.Container115.Icon5_1"
               }
             }
           ],
@@ -29589,6 +29559,36 @@
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
           "ruleIndex": 11
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Warehouse Manager'.Container_Warehouse.Container_Approve_Warehouse.Container11_2.Container12_2.Gallery_Request_Import_Product_Warehouse_2.Container115.Icon5_1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Warehouse Manager'.Container_Warehouse.Container_Approve_Warehouse.Container11_2.Container12_2.Gallery_Request_Import_Product_Warehouse_2.Container115.Icon5_1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Warehouse Manager",
+                "type": "'Warehouse Manager'.Container_Warehouse.Container_Approve_Warehouse.Container11_2.Container12_2.Gallery_Request_Import_Product_Warehouse_2.Container115.Icon5_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 10
         },
         {
           "locations": [
@@ -43177,7 +43177,7 @@
                 ],
                 "level": "Medium",
                 "primaryCategory": "performance",
-                "whyFix": "Each control consumes resources, and an app may become slow or unresponsive if a screen has too many controls. The estimated complexity of \"Warehouse Manager\" is 741, which exceeds the maximum threshold recommended (300)."
+                "whyFix": "Each control consumes resources, and an app may become slow or unresponsive if a screen has too many controls. The estimated complexity of \"Warehouse Manager\" is 746, which exceeds the maximum threshold recommended (300)."
               }
             }
           ],
