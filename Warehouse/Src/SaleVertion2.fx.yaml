@@ -54,7 +54,7 @@ SaleVertion2 As screen:
 
             Gallery10 As gallery.variableTemplateHeightGallery:
                 DelayItemLoading: =true
-                Height: =670
+                Height: =665
                 Items: |-
                     =If(
                         btnFunctionSaleVertion2 = "btnQuoteSale",
@@ -77,53 +77,64 @@ SaleVertion2 As screen:
                     )
                 Layout: =Layout.Vertical
                 LoadingSpinner: =LoadingSpinner.Data
-                TemplateSize: =164
-                Width: =317
-                Y: =5
+                TemplateSize: =80
+                Width: =305
+                X: =4
+                Y: =11
                 ZIndex: =1
 
                 Button8 As button:
                     Color: =If(ThisItem.IsSelected,RGBA(225, 225, 225, 1),RGBA(212, 201, 201, 1))
                     Fill: =If(ThisItem.IsSelected,RGBA(56, 96, 178, 1),RGBA(242, 237, 237, 1))
-                    Height: =28
+                    Height: =65
                     OnSelect: =Select(Parent)
                     Text: =ThisItem.name
+                    Visible: =false
                     Width: =Parent.Width -10
                     ZIndex: =1
 
-                containerOptionStatus As groupContainer.manualLayoutContainer:
-                    Height: =115
-                    Visible: =ThisItem.IsSelected && ThisItem.id = 0 && ThisItem.btnFunction = "btnQuoteSale"
-                    Width: =307
-                    Y: =47
+                Container111 As groupContainer.manualLayoutContainer:
+                    Height: =77
+                    Width: =295
                     ZIndex: =2
 
-                    Checkbox4 As checkbox:
-                        Default: =If(idCheckStatusFuntionQuote = 0, true,false)
-                        Height: =46
-                        OnCheck: |-
-                            =
-                            Set(idCheckStatusFuntionQuote, 0);
-                            Refresh(Quote)
-                        OnUncheck: =Set(idCheckStatusFuntionQuote, -1)
-                        Text: ="Báo giá"
-                        Width: =244
-                        X: =37
+                    Image13 As image:
+                        Height: =59
+                        Image: =If(ThisItem.id = 0,iconQuote_Order,If(ThisItem.id  =1,customer,iconservice))
+                        ImagePosition: =ImagePosition.Fill
+                        Width: =69
+                        X: =18
                         Y: =9
                         ZIndex: =1
 
-                    Checkbox4_1 As checkbox:
-                        Default: =If(idCheckStatusFuntionQuote = 1, true,false)
-                        Height: =46
-                        OnCheck: |-
-                            =Set(idCheckStatusFuntionQuote, 1);
-                            Refresh(Quote)
-                        OnUncheck: =Set(idCheckStatusFuntionQuote, -1)
-                        Text: ="Đơn hàng"
-                        Width: =244
-                        X: =37
-                        Y: =57
+                    Label160 As label:
+                        Align: =Align.Center
+                        Height: =77
+                        Size: =20
+                        Text: =ThisItem.name
+                        Width: =208
+                        X: =87
                         ZIndex: =2
+
+                    Button8_1 As button:
+                        Color: =If(ThisItem.IsSelected,RGBA(225, 225, 225, 1),RGBA(212, 201, 201, 1))
+                        DisabledFill: =RGBA(186, 202, 226, 0.33)
+                        Fill: =If(ThisItem.IsSelected,RGBA(56, 96, 178, 0.3),RGBA(242, 237, 237, 0.3))
+                        Height: =77
+                        HoverFill: =ColorFade(RGBA(56, 96, 178, 0.3), -20%)
+                        OnSelect: |-
+                            =//nếu người dùng tab vào dich vu
+                            If(
+                                ThisItem.id = 2,
+                                Set(
+                                    positionOptionService,
+                                    ""
+                                )
+                            )
+                        PressedFill: =RGBA(186, 202, 226, 0.29)
+                        Text: =
+                        Width: =295
+                        ZIndex: =3
 
         Container23 As groupContainer.manualLayoutContainer:
             DropShadow: =DropShadow.None
@@ -384,6 +395,7 @@ SaleVertion2 As screen:
                     OnSelect: =Select(Parent)
                     Text: =ThisItem.quote_Status.Value
                     Width: =117
+                    Wrap: =false
                     X: =812
                     ZIndex: =7
 
@@ -448,6 +460,33 @@ SaleVertion2 As screen:
                     X: =812
                     Y: =5
                     ZIndex: =5
+
+            Checkbox4 As checkbox:
+                Default: =If(idCheckStatusFuntionQuote = 0, true,false)
+                Height: =46
+                OnCheck: |-
+                    =
+                    Set(idCheckStatusFuntionQuote, 0);
+                    Refresh(Quote)
+                OnUncheck: =Set(idCheckStatusFuntionQuote, -1)
+                Text: ="Báo giá"
+                Width: =135
+                X: =734
+                Y: =60
+                ZIndex: =5
+
+            Checkbox4_1 As checkbox:
+                Default: =If(idCheckStatusFuntionQuote = 1, true,false)
+                Height: =46
+                OnCheck: |-
+                    =Set(idCheckStatusFuntionQuote, 1);
+                    Refresh(Quote)
+                OnUncheck: =Set(idCheckStatusFuntionQuote, -1)
+                Text: ="Đơn hàng"
+                Width: =137
+                X: =869
+                Y: =60
+                ZIndex: =6
 
         Container49 As groupContainer.manualLayoutContainer:
             DropShadow: =DropShadow.None
@@ -1919,21 +1958,25 @@ SaleVertion2 As screen:
                     {
                         id: "btnPurchase",
                         name: "Yêu cầu mua hàng"
+                    },
+                    {
+                        id: "btnHistoryTransaction",
+                        name: "Lịch sử giao dịch"
                     },{
-                    id: "btnHistoryTransaction",
-                    name: "Lịch sử giao dịch"
-                   
-                }
+                        id: "btnStatictical",
+                        name: "Thống kê doanh thu"
+                    }
                 )
             LoadingSpinner: =LoadingSpinner.Data
             TemplateSize: =242
-            Width: =844
+            Width: =1017
             ZIndex: =1
 
             Container18 As groupContainer.manualLayoutContainer:
                 DropShadow: =If(btnFunctionSaleVertion2 = ThisItem.id,DropShadow.ExtraBold,DropShadow.Light)
                 Fill: =If(ThisItem.IsSelected,RGBA(136, 160, 209, 1),RGBA(225, 225,225, 0))
                 Height: =55
+                Visible: =If(ThisItem.id <> "btnStatictical",true,informationUser.id_Role = 2)
                 Width: =242
                 ZIndex: =1
 
@@ -1960,7 +2003,7 @@ SaleVertion2 As screen:
                                 icontransaction,
                                 If(
                                     ThisItem.id = "btnHistoryTransaction",
-                                    historytransaction
+                                    historytransaction,statistial
                                 )
                             )
                         )
@@ -2055,14 +2098,14 @@ SaleVertion2 As screen:
         Container19 As groupContainer.manualLayoutContainer:
             BorderThickness: =2
             Fill: =RGBA(136, 160, 209, 1)
-            Height: =52
+            Height: =59
             RadiusBottomLeft: =5
             RadiusBottomRight: =5
             RadiusTopLeft: =5
             RadiusTopRight: =5
-            Width: =352
-            X: =996
-            Y: =6
+            Width: =77
+            X: =1285
+            Y: =3
             ZIndex: =2
 
     containerAddQuoteNew_SaleVersion2 As groupContainer.manualLayoutContainer:
@@ -2414,7 +2457,7 @@ SaleVertion2 As screen:
                             Image: =iconhethang
                             ImagePosition: =ImagePosition.Fill
                             OnSelect: =Select(Parent)
-                            Visible: =ThisItem.quantity_Quote_Product > LookUp(Product,id_Product = ThisItem.id_Product).quantity_Product
+                            Visible: =ThisItem.quantity_Quote_Product > LookUp(Product,id_Product = ThisItem.id_Product).quantity_Product && Gallery16.Selected.quote_Status.Value = "Báo giá"
                             Width: =87
                             X: =1028
                             ZIndex: =15
@@ -2803,7 +2846,7 @@ SaleVertion2 As screen:
                 Height: =50
                 Icon: =Icon.Edit
                 OnSelect: =Set(statusViewEditQuote,"edit")
-                Visible: =statusViewEditQuote = "view"
+                Visible: =statusViewEditQuote = "view" && Gallery16.Selected.quote_Status.Value = "Báo giá"
                 Width: =50
                 X: =524
                 Y: =19
@@ -2849,7 +2892,19 @@ SaleVertion2 As screen:
                                         id_Product = temp.id_Product
                                     ).quantity_Product - temp.quantity_Quote_Product
                                 }
-                            )
+                            );
+                            If(LookUp(Product,id_Product = temp.id_Product).quantity_Product =0,ForAll(
+                                    Filter(
+                                        User,
+                                        id_Role = 3
+                                    ) As tempUser,
+                                    Warehouse_Manager_SendEmailRole.Run(
+                                        tempUser.email_User,
+                                        "Sản phẩm hết hàng",
+                                        "Sản phẩm có mã: " & temp.id_Product & " đã được đặt hết"
+                                    )
+                                ))
+                            
                         );
                         Set(
                             isVisibleDialogAddQuoteNew_SaleVertion2,
@@ -7663,4 +7718,2568 @@ SaleVertion2 As screen:
                     Text: ="Sản phẩm đã yêu cầu"
                     Width: =296
                     ZIndex: =1
+
+    containerstatictical As groupContainer.manualLayoutContainer:
+        Height: =688
+        Visible: =btnFunctionSaleVertion2 = "btnStatictical"
+        Width: =1366
+        Y: =80
+        ZIndex: =11
+
+        Container16_1 As groupContainer.verticalAutoLayoutContainer:
+            Height: =688
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutMode: =LayoutMode.Auto
+            Width: =1366
+            ZIndex: =1
+
+            Container26_2 As groupContainer.manualLayoutContainer:
+                FillPortions: =0
+                Height: =100
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                X: =866
+                ZIndex: =1
+
+                Label14_6 As label:
+                    FontWeight: =FontWeight.Semibold
+                    PaddingLeft: =0
+                    PaddingRight: =20
+                    Size: =15
+                    Text: |-
+                        ="Bộ lọc:"
+                    Width: =116
+                    X: =497
+                    Y: =3
+                    ZIndex: =1
+
+                "'Dropdown_Type of statistics_Director_2' As dropdown":
+                    Items: =["Thống kê theo năm","Thống kê theo tháng"]
+                    OnChange: |-
+                        =If(
+                            'Dropdown_Type of statistics_Director_2'.Selected.Value = "Thống kê theo tháng",// Tính toán ngày // Tính toán ngày cuối cùng của tháng
+                        Set(
+                            ngayCuoiThang,
+                            DateAdd(
+                                DateValue(
+                                    Value(
+                                        Mid(
+                                            Dropdown2_2.Selected.Value,
+                                            7,
+                                            2
+                                        )
+                                    ) & "/1/" & Dropdown_Year_Director_2.Selected.Value
+                                ),
+                                1,
+                                TimeUnit.Months
+                            ) - 1
+                        );
+                        ClearCollect(
+                            statictialOrder,
+                            []
+                        );
+                        ClearCollect(
+                            statictialPrice,
+                            []
+                        );
+                        If(
+                            IsBlank(ComboBox_Sales_Director_2.Selected),
+                            ForAll(
+                                Sequence(
+                                    Value(
+                                        Day(
+                                            Text(
+                                                ngayCuoiThang,
+                                                "mm/dd/yyyy"
+                                            )
+                                        )
+                                    )
+                                ),
+                                Collect(
+                                    statictialOrder,
+                                    {
+                                        Id: CountRows(statictialOrder) + 1,
+                                        Month: CountRows(statictialOrder) + 1 & "/" & Value(
+                                            Mid(
+                                                Dropdown2_2.Selected.Value,
+                                                7,
+                                                2
+                                            )
+                                        ) & "/" & Dropdown_Year_Director_2.Selected.Value,
+                                        Value: CountRows(
+                                            Filter(
+                                                Quote_Data,
+                                                Day(quote_Date) = CountRows(statictialOrder) + 1 && Month(quote_Date) = Value(
+                                                    Mid(
+                                                        Dropdown2_2.Selected.Value,
+                                                        7,
+                                                        2
+                                                    )
+                                                ) && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng"
+                                            )
+                                        )
+                                    }
+                                );Collect(
+                                    statictialPrice,
+                                    {
+                                        Id: CountRows(statictialPrice) + 1,
+                                        Month: CountRows(statictialPrice) + 1 & "/" & Value(
+                                            Mid(
+                                                Dropdown2_2.Selected.Value,
+                                                7,
+                                                2
+                                            )
+                                        ) & "/" & Dropdown_Year_Director_2.Selected.Value,
+                                        Value: If(IsBlank(Sum(
+                                            Filter(
+                                                Quote_Data,
+                                                Day(quote_Date) = CountRows(statictialPrice) + 1 && Month(quote_Date) = Value(
+                                                    Mid(
+                                                        Dropdown2_2.Selected.Value,
+                                                        7,
+                                                        2
+                                                    )
+                                                ) && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng"
+                                            ),
+                                            sumPriceQuote
+                                        )),0,Sum(
+                                            Filter(
+                                                Quote_Data,
+                                                Day(quote_Date) = CountRows(statictialPrice) + 1 && Month(quote_Date) = Value(
+                                                    Mid(
+                                                        Dropdown2_2.Selected.Value,
+                                                        7,
+                                                        2
+                                                    )
+                                                ) && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng"
+                                            ),
+                                            sumPriceQuote
+                                        ))
+                        
+                                    }
+                                )
+                            ),
+                            ForAll(
+                                Sequence(
+                                    Value(
+                                        Day(
+                                            Text(
+                                                ngayCuoiThang,
+                                                "mm/dd/yyyy"
+                                            )
+                                        )
+                                    )
+                                ),
+                                Collect(
+                                    statictialOrder,
+                                    {
+                                        Id: CountRows(statictialPrice) + 1,
+                                        Month: CountRows(statictialOrder) + 1 & "/" & Value(
+                                            Mid(
+                                                Dropdown2_2.Selected.Value,
+                                                7,
+                                                2
+                                            )
+                                        ) & "/" & Dropdown_Year_Director_2.Selected.Value,
+                                        Value: CountRows(
+                                            Filter(
+                                                Quote_Data,
+                                                Day(quote_Date) = CountRows(statictialOrder) + 1 && Month(quote_Date) = Value(
+                                                    Mid(
+                                                        Dropdown2_2.Selected.Value,
+                                                        7,
+                                                        2
+                                                    )
+                                                ) && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng" && id_User = ComboBox_Sales_Director_2.Selected.ID
+                                            )
+                                        )
+                                    }
+                                );Collect(
+                                    statictialPrice,
+                                    {
+                                        Id: CountRows(statictialPrice) + 1,
+                                        Month: CountRows(statictialPrice) + 1 & "/" & Value(
+                                            Mid(
+                                                Dropdown2_2.Selected.Value,
+                                                7,
+                                                2
+                                            )
+                                        ) & "/" & Dropdown_Year_Director_2.Selected.Value,
+                                        Value: If(IsBlank(Sum(
+                                            Filter(
+                                                Quote_Data,
+                                                Day(quote_Date) = CountRows(statictialPrice) + 1 && Month(quote_Date) = Value(
+                                                    Mid(
+                                                        Dropdown2_2.Selected.Value,
+                                                        7,
+                                                        2
+                                                    )
+                                                ) && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng"
+                                            ),
+                                            sumPriceQuote
+                                        )),0,Sum(
+                                            Filter(
+                                                Quote_Data,
+                                                Day(quote_Date) = CountRows(statictialPrice) + 1 && Month(quote_Date) = Value(
+                                                    Mid(
+                                                        Dropdown2_2.Selected.Value,
+                                                        7,
+                                                        2
+                                                    )
+                                                ) && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng"
+                                            ),
+                                            sumPriceQuote
+                                        ))
+                                    }
+                                )
+                            )
+                        );
+                        )
+                    Width: =250
+                    X: =963
+                    Y: =3
+                    ZIndex: =2
+
+                ComboBox_Sales_Director_2 As combobox:
+                    DisplayFields: =["user_Name"]
+                    Items: =Filter(User,id_Role=LookUp(Role,name_Role="Sales").ID&&activity=true)
+                    OnChange: |-
+                        =Set(
+                            ngayCuoiThang,
+                            DateAdd(
+                                DateValue(
+                                    Value(
+                                        Mid(
+                                            Dropdown2_2.Selected.Value,
+                                            7,
+                                            2
+                                        )
+                                    ) & "/1/" & Dropdown_Year_Director_2.Selected.Value
+                                ),
+                                1,
+                                TimeUnit.Months
+                            ) - 1
+                        );
+                        ClearCollect(
+                            statictialOrder,
+                            []
+                        );
+                        ClearCollect(
+                            statictialPrice,
+                            []
+                        );
+                        If(
+                            IsBlank(ComboBox_Sales_Director_2.Selected),
+                            ForAll(
+                                Sequence(
+                                    Value(
+                                        Day(
+                                            Text(
+                                                ngayCuoiThang,
+                                                "mm/dd/yyyy"
+                                            )
+                                        )
+                                    )
+                                ),
+                                Collect(
+                                    statictialOrder,
+                                    {
+                                        Id: CountRows(statictialOrder) + 1,
+                                        Month: CountRows(statictialOrder) + 1 & "/" & Value(
+                                            Mid(
+                                                Dropdown2_2.Selected.Value,
+                                                7,
+                                                2
+                                            )
+                                        ) & "/" & Dropdown_Year_Director_2.Selected.Value,
+                                        Value: CountRows(
+                                            Filter(
+                                                Quote_Data,
+                                                Day(quote_Date) = CountRows(statictialOrder) + 1 && Month(quote_Date) = Value(
+                                                    Mid(
+                                                        Dropdown2_2.Selected.Value,
+                                                        7,
+                                                        2
+                                                    )
+                                                ) && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng"
+                                            )
+                                        )
+                                    }
+                                );Collect(
+                                    statictialPrice,
+                                    {
+                                        Id: CountRows(statictialPrice) + 1,
+                                        Month: CountRows(statictialPrice) + 1 & "/" & Value(
+                                            Mid(
+                                                Dropdown2_2.Selected.Value,
+                                                7,
+                                                2
+                                            )
+                                        ) & "/" & Dropdown_Year_Director_2.Selected.Value,
+                                        Value: If(IsBlank(Sum(
+                                            Filter(
+                                                Quote_Data,
+                                                Day(quote_Date) = CountRows(statictialPrice) + 1 && Month(quote_Date) = Value(
+                                                    Mid(
+                                                        Dropdown2_2.Selected.Value,
+                                                        7,
+                                                        2
+                                                    )
+                                                ) && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng"
+                                            ),
+                                            sumPriceQuote
+                                        )),0,Sum(
+                                            Filter(
+                                                Quote_Data,
+                                                Day(quote_Date) = CountRows(statictialPrice) + 1 && Month(quote_Date) = Value(
+                                                    Mid(
+                                                        Dropdown2_2.Selected.Value,
+                                                        7,
+                                                        2
+                                                    )
+                                                ) && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng"
+                                            ),
+                                            sumPriceQuote
+                                        ))
+                        
+                                    }
+                                )
+                            ),
+                            ForAll(
+                                Sequence(
+                                    Value(
+                                        Day(
+                                            Text(
+                                                ngayCuoiThang,
+                                                "mm/dd/yyyy"
+                                            )
+                                        )
+                                    )
+                                ),
+                                Collect(
+                                    statictialOrder,
+                                    {
+                                        Id: CountRows(statictialPrice) + 1,
+                                        Month: CountRows(statictialOrder) + 1 & "/" & Value(
+                                            Mid(
+                                                Dropdown2_2.Selected.Value,
+                                                7,
+                                                2
+                                            )
+                                        ) & "/" & Dropdown_Year_Director_2.Selected.Value,
+                                        Value: CountRows(
+                                            Filter(
+                                                Quote_Data,
+                                                Day(quote_Date) = CountRows(statictialOrder) + 1 && Month(quote_Date) = Value(
+                                                    Mid(
+                                                        Dropdown2_2.Selected.Value,
+                                                        7,
+                                                        2
+                                                    )
+                                                ) && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng" && id_User = ComboBox_Sales_Director_2.Selected.ID
+                                            )
+                                        )
+                                    }
+                                );Collect(
+                                    statictialPrice,
+                                    {
+                                        Id: CountRows(statictialPrice) + 1,
+                                        Month: CountRows(statictialPrice) + 1 & "/" & Value(
+                                            Mid(
+                                                Dropdown2_2.Selected.Value,
+                                                7,
+                                                2
+                                            )
+                                        ) & "/" & Dropdown_Year_Director_2.Selected.Value,
+                                        Value: If(IsBlank(Sum(
+                                            Filter(
+                                                Quote_Data,
+                                                Day(quote_Date) = CountRows(statictialPrice) + 1 && Month(quote_Date) = Value(
+                                                    Mid(
+                                                        Dropdown2_2.Selected.Value,
+                                                        7,
+                                                        2
+                                                    )
+                                                ) && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng"
+                                            ),
+                                            sumPriceQuote
+                                        )),0,Sum(
+                                            Filter(
+                                                Quote_Data,
+                                                Day(quote_Date) = CountRows(statictialPrice) + 1 && Month(quote_Date) = Value(
+                                                    Mid(
+                                                        Dropdown2_2.Selected.Value,
+                                                        7,
+                                                        2
+                                                    )
+                                                ) && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng"
+                                            ),
+                                            sumPriceQuote
+                                        ))
+                                    }
+                                )
+                            )
+                        );
+                    SearchFields: =["user_Name"]
+                    SearchItems: =Search(Filter(User,id_Role=LookUp(Role,name_Role="Sales").ID&&activity=true),ComboBox_Sales_Director_2.SearchText,"user_Name")
+                    SelectMultiple: =false
+                    Width: =250
+                    X: =671
+                    Y: =3
+                    ZIndex: =3
+
+                Dropdown_Year_Director_2 As dropdown:
+                    Items: =Distinct(Quote,Year(quote_Date))
+                    OnChange: |-
+                        =If(Dropdown2_2.Visible = true,// Tính toán ngày cuối cùng của tháng
+                        // Tính toán ngày cuối cùng của tháng
+                        Set(
+                            ngayCuoiThang,
+                            DateAdd(
+                                DateValue(
+                                    Value(
+                                        Mid(
+                                            Dropdown2_2.Selected.Value,
+                                            7,
+                                            2
+                                        )
+                                    ) & "/1/" & Dropdown_Year_Director_2.Selected.Value
+                                ),
+                                1,
+                                TimeUnit.Months
+                            ) - 1
+                        );
+                        ClearCollect(
+                            statictialOrder,
+                            []
+                        );
+                        ClearCollect(
+                            statictialPrice,
+                            []
+                        );
+                        If(
+                            IsBlank(ComboBox_Sales_Director_2.Selected),
+                            ForAll(
+                                Sequence(
+                                    Value(
+                                        Day(
+                                            Text(
+                                                ngayCuoiThang,
+                                                "mm/dd/yyyy"
+                                            )
+                                        )
+                                    )
+                                ),
+                                Collect(
+                                    statictialOrder,
+                                    {
+                                        Id: CountRows(statictialOrder) + 1,
+                                        Month: CountRows(statictialOrder) + 1 & "/" & Value(
+                                            Mid(
+                                                Dropdown2_2.Selected.Value,
+                                                7,
+                                                2
+                                            )
+                                        ) & "/" & Dropdown_Year_Director_2.Selected.Value,
+                                        Value: CountRows(
+                                            Filter(
+                                                Quote_Data,
+                                                Day(quote_Date) = CountRows(statictialOrder) + 1 && Month(quote_Date) = Value(
+                                                    Mid(
+                                                        Dropdown2_2.Selected.Value,
+                                                        7,
+                                                        2
+                                                    )
+                                                ) && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng"
+                                            )
+                                        )
+                                    }
+                                );Collect(
+                                    statictialPrice,
+                                    {
+                                        Id: CountRows(statictialPrice) + 1,
+                                        Month: CountRows(statictialPrice) + 1 & "/" & Value(
+                                            Mid(
+                                                Dropdown2_2.Selected.Value,
+                                                7,
+                                                2
+                                            )
+                                        ) & "/" & Dropdown_Year_Director_2.Selected.Value,
+                                        Value: If(IsBlank(Sum(
+                                            Filter(
+                                                Quote_Data,
+                                                Day(quote_Date) = CountRows(statictialPrice) + 1 && Month(quote_Date) = Value(
+                                                    Mid(
+                                                        Dropdown2_2.Selected.Value,
+                                                        7,
+                                                        2
+                                                    )
+                                                ) && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng"
+                                            ),
+                                            sumPriceQuote
+                                        )),0,Sum(
+                                            Filter(
+                                                Quote_Data,
+                                                Day(quote_Date) = CountRows(statictialPrice) + 1 && Month(quote_Date) = Value(
+                                                    Mid(
+                                                        Dropdown2_2.Selected.Value,
+                                                        7,
+                                                        2
+                                                    )
+                                                ) && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng"
+                                            ),
+                                            sumPriceQuote
+                                        ))
+                        
+                                    }
+                                )
+                            ),
+                            ForAll(
+                                Sequence(
+                                    Value(
+                                        Day(
+                                            Text(
+                                                ngayCuoiThang,
+                                                "mm/dd/yyyy"
+                                            )
+                                        )
+                                    )
+                                ),
+                                Collect(
+                                    statictialOrder,
+                                    {
+                                        Id: CountRows(statictialPrice) + 1,
+                                        Month: CountRows(statictialOrder) + 1 & "/" & Value(
+                                            Mid(
+                                                Dropdown2_2.Selected.Value,
+                                                7,
+                                                2
+                                            )
+                                        ) & "/" & Dropdown_Year_Director_2.Selected.Value,
+                                        Value: CountRows(
+                                            Filter(
+                                                Quote_Data,
+                                                Day(quote_Date) = CountRows(statictialOrder) + 1 && Month(quote_Date) = Value(
+                                                    Mid(
+                                                        Dropdown2_2.Selected.Value,
+                                                        7,
+                                                        2
+                                                    )
+                                                ) && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng" && id_User = ComboBox_Sales_Director_2.Selected.ID
+                                            )
+                                        )
+                                    }
+                                );Collect(
+                                    statictialPrice,
+                                    {
+                                        Id: CountRows(statictialPrice) + 1,
+                                        Month: CountRows(statictialPrice) + 1 & "/" & Value(
+                                            Mid(
+                                                Dropdown2_2.Selected.Value,
+                                                7,
+                                                2
+                                            )
+                                        ) & "/" & Dropdown_Year_Director_2.Selected.Value,
+                                        Value: If(IsBlank(Sum(
+                                            Filter(
+                                                Quote_Data,
+                                                Day(quote_Date) = CountRows(statictialPrice) + 1 && Month(quote_Date) = Value(
+                                                    Mid(
+                                                        Dropdown2_2.Selected.Value,
+                                                        7,
+                                                        2
+                                                    )
+                                                ) && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng"
+                                            ),
+                                            sumPriceQuote
+                                        )),0,Sum(
+                                            Filter(
+                                                Quote_Data,
+                                                Day(quote_Date) = CountRows(statictialPrice) + 1 && Month(quote_Date) = Value(
+                                                    Mid(
+                                                        Dropdown2_2.Selected.Value,
+                                                        7,
+                                                        2
+                                                    )
+                                                ) && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng"
+                                            ),
+                                            sumPriceQuote
+                                        ))
+                                    }
+                                )
+                            )
+                        );
+                        )
+                    OnSelect: =
+                    Width: =100
+                    X: =1244
+                    Y: =3
+                    ZIndex: =4
+
+                Dropdown2_2 As dropdown:
+                    Items: =["Tháng 1","Tháng 2","Tháng 3","Tháng 4","Tháng 5","Tháng 6","Tháng 7","Tháng 8","Tháng 9","Tháng 10","Tháng 11","Tháng 12"]
+                    OnChange: |-
+                        =Set(
+                            ngayCuoiThang,
+                            DateAdd(
+                                DateValue(
+                                    Value(
+                                        Mid(
+                                            Dropdown2_2.Selected.Value,
+                                            7,
+                                            2
+                                        )
+                                    ) & "/1/" & Dropdown_Year_Director_2.Selected.Value
+                                ),
+                                1,
+                                TimeUnit.Months
+                            ) - 1
+                        );
+                        ClearCollect(
+                            statictialOrder,
+                            []
+                        );
+                        ClearCollect(
+                            statictialPrice,
+                            []
+                        );
+                        If(
+                            IsBlank(ComboBox_Sales_Director_2.Selected),
+                            ForAll(
+                                Sequence(
+                                    Value(
+                                        Day(
+                                            Text(
+                                                ngayCuoiThang,
+                                                "mm/dd/yyyy"
+                                            )
+                                        )
+                                    )
+                                ),
+                                Collect(
+                                    statictialOrder,
+                                    {
+                                        Id: CountRows(statictialOrder) + 1,
+                                        Month: CountRows(statictialOrder) + 1 & "/" & Value(
+                                            Mid(
+                                                Dropdown2_2.Selected.Value,
+                                                7,
+                                                2
+                                            )
+                                        ) & "/" & Dropdown_Year_Director_2.Selected.Value,
+                                        Value: CountRows(
+                                            Filter(
+                                                Quote_Data,
+                                                Day(quote_Date) = CountRows(statictialOrder) + 1 && Month(quote_Date) = Value(
+                                                    Mid(
+                                                        Dropdown2_2.Selected.Value,
+                                                        7,
+                                                        2
+                                                    )
+                                                ) && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng"
+                                            )
+                                        )
+                                    }
+                                );Collect(
+                                    statictialPrice,
+                                    {
+                                        Id: CountRows(statictialPrice) + 1,
+                                        Month: CountRows(statictialPrice) + 1 & "/" & Value(
+                                            Mid(
+                                                Dropdown2_2.Selected.Value,
+                                                7,
+                                                2
+                                            )
+                                        ) & "/" & Dropdown_Year_Director_2.Selected.Value,
+                                        Value: If(IsBlank(Sum(
+                                            Filter(
+                                                Quote_Data,
+                                                Day(quote_Date) = CountRows(statictialPrice) + 1 && Month(quote_Date) = Value(
+                                                    Mid(
+                                                        Dropdown2_2.Selected.Value,
+                                                        7,
+                                                        2
+                                                    )
+                                                ) && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng"
+                                            ),
+                                            sumPriceQuote
+                                        )),0,Sum(
+                                            Filter(
+                                                Quote_Data,
+                                                Day(quote_Date) = CountRows(statictialPrice) + 1 && Month(quote_Date) = Value(
+                                                    Mid(
+                                                        Dropdown2_2.Selected.Value,
+                                                        7,
+                                                        2
+                                                    )
+                                                ) && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng"
+                                            ),
+                                            sumPriceQuote
+                                        ))
+                        
+                                    }
+                                )
+                            ),
+                            ForAll(
+                                Sequence(
+                                    Value(
+                                        Day(
+                                            Text(
+                                                ngayCuoiThang,
+                                                "mm/dd/yyyy"
+                                            )
+                                        )
+                                    )
+                                ),
+                                Collect(
+                                    statictialOrder,
+                                    {
+                                        Id: CountRows(statictialPrice) + 1,
+                                        Month: CountRows(statictialOrder) + 1 & "/" & Value(
+                                            Mid(
+                                                Dropdown2_2.Selected.Value,
+                                                7,
+                                                2
+                                            )
+                                        ) & "/" & Dropdown_Year_Director_2.Selected.Value,
+                                        Value: CountRows(
+                                            Filter(
+                                                Quote_Data,
+                                                Day(quote_Date) = CountRows(statictialOrder) + 1 && Month(quote_Date) = Value(
+                                                    Mid(
+                                                        Dropdown2_2.Selected.Value,
+                                                        7,
+                                                        2
+                                                    )
+                                                ) && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng" && id_User = ComboBox_Sales_Director_2.Selected.ID
+                                            )
+                                        )
+                                    }
+                                );Collect(
+                                    statictialPrice,
+                                    {
+                                        Id: CountRows(statictialPrice) + 1,
+                                        Month: CountRows(statictialPrice) + 1 & "/" & Value(
+                                            Mid(
+                                                Dropdown2_2.Selected.Value,
+                                                7,
+                                                2
+                                            )
+                                        ) & "/" & Dropdown_Year_Director_2.Selected.Value,
+                                        Value: If(IsBlank(Sum(
+                                            Filter(
+                                                Quote_Data,
+                                                Day(quote_Date) = CountRows(statictialPrice) + 1 && Month(quote_Date) = Value(
+                                                    Mid(
+                                                        Dropdown2_2.Selected.Value,
+                                                        7,
+                                                        2
+                                                    )
+                                                ) && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng"
+                                            ),
+                                            sumPriceQuote
+                                        )),0,Sum(
+                                            Filter(
+                                                Quote_Data,
+                                                Day(quote_Date) = CountRows(statictialPrice) + 1 && Month(quote_Date) = Value(
+                                                    Mid(
+                                                        Dropdown2_2.Selected.Value,
+                                                        7,
+                                                        2
+                                                    )
+                                                ) && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng"
+                                            ),
+                                            sumPriceQuote
+                                        ))
+                                    }
+                                )
+                            )
+                        );
+                    Size: =15
+                    Visible: =If('Dropdown_Type of statistics_Director_2'.SelectedText.Value = "Thống kê theo tháng",true,false)
+                    Width: =150
+                    X: =671
+                    Y: =60
+                    ZIndex: =5
+
+            Container_Title_Director_3 As groupContainer.verticalAutoLayoutContainer:
+                FillPortions: =9
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                ZIndex: =2
+
+                Container20_2 As groupContainer.verticalAutoLayoutContainer:
+                    FillPortions: =9
+                    LayoutDirection: =LayoutDirection.Vertical
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    ZIndex: =2
+
+                    Container28_2 As groupContainer.verticalAutoLayoutContainer:
+                        FillPortions: =0
+                        Height: =50
+                        LayoutAlignItems: =LayoutAlignItems.Center
+                        LayoutGap: =10
+                        LayoutJustifyContent: =LayoutJustifyContent.End
+                        LayoutMinHeight: =100
+                        LayoutMinWidth: =250
+                        LayoutMode: =LayoutMode.Auto
+                        PaddingRight: =20
+                        ZIndex: =1
+
+                        Container4_6 As groupContainer.manualLayoutContainer:
+                            AlignInContainer: =AlignInContainer.SetByContainer
+                            DropShadow: =DropShadow.None
+                            FillPortions: =0
+                            Height: |
+                                =35
+                            LayoutMinHeight: =Parent.Height
+                            LayoutMinWidth: =0
+                            Width: =120
+                            ZIndex: =3
+
+                            Button2_4 As button:
+                                Fill: |-
+                                    =RGBA(
+                                            0,
+                                            205,
+                                            0,
+                                            1
+                                        )
+                                Height: |
+                                    =35
+                                HoverFill: |-
+                                    =ColorFade(RGBA(
+                                            0,
+                                            205,
+                                            0,
+                                            1
+                                        ), -20%)
+                                OnSelect: |-
+                                    =If(
+                                        Dropdown2_2.Visible = false,
+                                        If(
+                                            IsEmpty(ComboBox_Sales_Director_2.SelectedItems),
+                                            ClearCollect(
+                                                Collect_Report,
+                                                []
+                                            );
+                                            ForAll(
+                                                Sequence(12),
+                                                Collect(
+                                                    Collect_Report,
+                                                    {
+                                                        Month: Text(CountRows(Collect_Report) + 1),
+                                                        Order: CountRows(
+                                                            Filter(
+                                                                Quote_Data,
+                                                                Month(quote_Date) = CountRows(Collect_Report) + 1 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng"
+                                                            )
+                                                        ),
+                                                        Price: If(
+                                                            IsBlank(
+                                                                Sum(
+                                                                    Filter(
+                                                                        Quote_Data,
+                                                                        Month(quote_Date) = CountRows(Collect_Report) + 1 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng"
+                                                                    ),
+                                                                    sumPriceQuote
+                                                                )
+                                                            ),
+                                                            0,
+                                                            Sum(
+                                                                Filter(
+                                                                    Quote_Data,
+                                                                    Month(quote_Date) = CountRows(Collect_Report) + 1 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng"
+                                                                ),
+                                                                sumPriceQuote
+                                                            )
+                                                        )
+                                                    }
+                                                )
+                                            );
+                                            Collect(
+                                                Collect_Report,
+                                                {
+                                                    Month: "Total",
+                                                    Order: CountRows(
+                                                        Filter(
+                                                            Quote_Data,
+                                                            Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng"
+                                                        )
+                                                    ),
+                                                    Price: If(
+                                                        IsBlank(
+                                                            Sum(
+                                                                Filter(
+                                                                    Quote_Data,
+                                                                    Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng"
+                                                                ),
+                                                                sumPriceQuote
+                                                            )
+                                                        ),
+                                                        0,
+                                                        Sum(
+                                                            Filter(
+                                                                Quote_Data,
+                                                                Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng"
+                                                            ),
+                                                            sumPriceQuote
+                                                        )
+                                                    )
+                                                }
+                                            );
+                                            Export_CSV_Warehouse_Manager.Run(
+                                                JSON(
+                                                    Collect_Report,
+                                                    JSONFormat.IncludeBinaryData & JSONFormat.IgnoreUnsupportedTypes
+                                                ),
+                                                "Báo cáo_Năm " & Dropdown_Year_Director_2.Selected.Value
+                                            ).url;
+                                            Notify(
+                                                "Xuất file thành công!!!",
+                                                NotificationType.Success,
+                                                1500
+                                            ),
+                                            ClearCollect(
+                                                Collect_Report,
+                                                []
+                                            );
+                                            ForAll(
+                                                Sequence(12),
+                                                Collect(
+                                                    Collect_Report,
+                                                    {
+                                                        Month: Text(CountRows(Collect_Report) + 1),
+                                                        Order: CountRows(
+                                                            Filter(
+                                                                Quote_Data,
+                                                                Month(quote_Date) = CountRows(Collect_Report) + 1 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status.Value = "Đơn hàng"
+                                                            )
+                                                        ),
+                                                        Price: If(
+                                                            IsBlank(
+                                                                Sum(
+                                                                    Filter(
+                                                                        Quote_Data,
+                                                                        Month(quote_Date) = CountRows(Collect_Report) + 1 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status.Value = "Đơn hàng"
+                                                                    ),
+                                                                    sumPriceQuote
+                                                                )
+                                                            ),
+                                                            0,
+                                                            Sum(
+                                                                Filter(
+                                                                    Quote_Data,
+                                                                    Month(quote_Date) = CountRows(Collect_Report) + 1 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status.Value = "Đơn hàng"
+                                                                ),
+                                                                sumPriceQuote
+                                                            )
+                                                        )
+                                                    }
+                                                )
+                                            );
+                                            Collect(
+                                                Collect_Report,
+                                                {
+                                                    Month: "Total",
+                                                    Order: CountRows(
+                                                        Filter(
+                                                            Quote_Data,
+                                                            Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng" && id_User = ComboBox_Sales_Director_2.Selected.ID
+                                                        )
+                                                    ),
+                                                    Price: If(
+                                                        IsBlank(
+                                                            Sum(
+                                                                Filter(
+                                                                    Quote_Data,
+                                                                    Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng" && id_User = ComboBox_Sales_Director_2.Selected.ID
+                                                                ),
+                                                                sumPriceQuote
+                                                            )
+                                                        ),
+                                                        0,
+                                                        Sum(
+                                                            Filter(
+                                                                Quote_Data,
+                                                                Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng" && id_User = ComboBox_Sales_Director_2.Selected.ID
+                                                            ),
+                                                            sumPriceQuote
+                                                        )
+                                                    )
+                                                }
+                                            );
+                                            Export_CSV_Warehouse_Manager.Run(
+                                                JSON(
+                                                    Collect_Report,
+                                                    JSONFormat.IncludeBinaryData & JSONFormat.IgnoreUnsupportedTypes
+                                                ),
+                                                "Báo cáo_" & ComboBox_Sales_Director_2.Selected.user_Name & "_Năm " & Dropdown_Year_Director_2.Selected.Value
+                                            ).url;
+                                            Notify(
+                                                "Xuất file thành công!!!",
+                                                NotificationType.Success,
+                                                1500
+                                            )
+                                        ),
+                                        ClearCollect(
+                                            reportOrder_Month,
+                                            []
+                                        );
+                                        Notify("as: " & JSON(statictialOrder));
+                                        ForAll(
+                                            Sequence(CountRows(statictialOrder)),
+                                            Collect(
+                                                reportOrder_Month,
+                                                {
+                                                    Date: "Tháng " & (CountRows(reportOrder_Month) + 1),
+                                                    Order: LookUp(
+                                                        statictialOrder,
+                                                        Id = CountRows(reportOrder_Month) + 1
+                                                    ).Value,
+                                                    Value: If(
+                                                        !IsBlank(
+                                                            LookUp(
+                                                                statictialPrice,
+                                                                Id = CountRows(reportOrder_Month) + 1
+                                                            ).Value
+                                                        ),
+                                                        LookUp(
+                                                            statictialPrice,
+                                                            Id = CountRows(reportOrder_Month) + 1
+                                                        ).Value,
+                                                        0
+                                                    )
+                                                }
+                                            )
+                                        );
+                                        Export_CSV_Warehouse_Manager.Run(
+                                            JSON(
+                                                reportOrder_Month,
+                                                JSONFormat.IncludeBinaryData & JSONFormat.IgnoreUnsupportedTypes
+                                            ),
+                                            "Báo cáo_" & ComboBox_Sales_Director_2.Selected.user_Name & "_" & Dropdown_Year_Director_2.Selected.Value
+                                        ).url;
+                                        Notify(
+                                            "Xuất file thành công!!!",
+                                            NotificationType.Success,
+                                            1500
+                                        )
+                                    )
+                                Size: =12
+                                Text: ="Tải xuống"
+                                Width: =120
+                                ZIndex: =2
+
+                        Container4_7 As groupContainer.manualLayoutContainer:
+                            AlignInContainer: =AlignInContainer.SetByContainer
+                            DropShadow: =DropShadow.None
+                            FillPortions: =0
+                            Height: |
+                                =35
+                            LayoutMinHeight: =Parent.Height
+                            LayoutMinWidth: =0
+                            Width: =120
+                            ZIndex: =4
+
+                            Button2_5 As button:
+                                Fill: =RGBA(0, 121, 187, 1)
+                                Height: =35
+                                OnSelect: |-
+                                    =Refresh(Quote);
+                                    Refresh(Quote_Data);
+                                    Refresh(Product);
+                                    Set(Quote_Data,Quote);
+                                    Set(Quote_Product_Data,Quote_Product);
+                                Size: =12
+                                Text: ="Làm mới"
+                                Width: =120
+                                ZIndex: =2
+
+                    Container23_2 As groupContainer.horizontalAutoLayoutContainer:
+                        FillPortions: =0
+                        Height: =300
+                        LayoutMinHeight: =100
+                        LayoutMinWidth: =250
+                        LayoutMode: =LayoutMode.Auto
+                        ZIndex: =2
+
+                        Container25_3 As groupContainer.verticalAutoLayoutContainer:
+                            LayoutDirection: =LayoutDirection.Vertical
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =250
+                            LayoutMode: =LayoutMode.Auto
+                            ZIndex: =1
+
+                            CompositeColumnChart1_2 As group:
+                                Height: =5
+                                LayoutMinHeight: =5
+                                LayoutMinWidth: =5
+                                Width: =5
+                                X: =40
+                                Y: =40
+                                ZIndex: =1
+
+                                Title1_2 As label:
+                                    Align: =Align.Center
+                                    FontWeight: =FontWeight.Semibold
+                                    Height: =25
+                                    Size: =15
+                                    Text: ="Đơn hàng"
+                                    Width: =Parent.Width
+                                    X: =40
+                                    Y: =40
+                                    ZIndex: =2
+
+                                ColumnChart1_2 As barChart:
+                                    GridStyle: =GridStyle.All
+                                    Height: =Parent.Height-25
+                                    Items: |-
+                                        =If(
+                                            Dropdown2_2.Visible = false,
+                                            If(
+                                                IsBlank(ComboBox_Sales_Director_2.Selected),
+                                                Table(
+                                                    {
+                                                        Month: "Tháng 1",
+                                                        Value: CountRows(
+                                                            Filter(
+                                                                Quote_Data,
+                                                                Month(quote_Date) = 1 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng"
+                                                            )
+                                                        )
+                                                    },
+                                                    {
+                                                        Month: "Tháng 2",
+                                                        Value: CountRows(
+                                                            Filter(
+                                                                Quote_Data,
+                                                                Month(quote_Date) = 2 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng"
+                                                            )
+                                                        )
+                                                    },
+                                                    {
+                                                        Month: "Tháng 3",
+                                                        Value: CountRows(
+                                                            Filter(
+                                                                Quote_Data,
+                                                                Month(quote_Date) = 3 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng"
+                                                            )
+                                                        )
+                                                    },
+                                                    {
+                                                        Month: "Tháng 4",
+                                                        Value: CountRows(
+                                                            Filter(
+                                                                Quote_Data,
+                                                                Month(quote_Date) = 4 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng"
+                                                            )
+                                                        )
+                                                    },
+                                                    {
+                                                        Month: "Tháng 5",
+                                                        Value: CountRows(
+                                                            Filter(
+                                                                Quote_Data,
+                                                                Month(quote_Date) = 5 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng"
+                                                            )
+                                                        )
+                                                    },
+                                                    {
+                                                        Month: "Tháng 6",
+                                                        Value: CountRows(
+                                                            Filter(
+                                                                Quote_Data,
+                                                                Month(quote_Date) = 6 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng"
+                                                            )
+                                                        )
+                                                    },
+                                                    {
+                                                        Month: "Tháng 7",
+                                                        Value: CountRows(
+                                                            Filter(
+                                                                Quote_Data,
+                                                                Month(quote_Date) = 7 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng"
+                                                            )
+                                                        )
+                                                    },
+                                                    {
+                                                        Month: "Tháng 8",
+                                                        Value: CountRows(
+                                                            Filter(
+                                                                Quote_Data,
+                                                                Month(quote_Date) = 8 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng"
+                                                            )
+                                                        )
+                                                    },
+                                                    {
+                                                        Month: "Tháng 9",
+                                                        Value: CountRows(
+                                                            Filter(
+                                                                Quote_Data,
+                                                                Month(quote_Date) = 9 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng"
+                                                            )
+                                                        )
+                                                    },
+                                                    {
+                                                        Month: "Tháng 10",
+                                                        Value: CountRows(
+                                                            Filter(
+                                                                Quote_Data,
+                                                                Month(quote_Date) = 10 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng"
+                                                            )
+                                                        )
+                                                    },
+                                                    {
+                                                        Month: "Tháng 11",
+                                                        Value: CountRows(
+                                                            Filter(
+                                                                Quote_Data,
+                                                                Month(quote_Date) = 11 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng"
+                                                            )
+                                                        )
+                                                    },
+                                                    {
+                                                        Month: "Tháng 12",
+                                                        Value: CountRows(
+                                                            Filter(
+                                                                Quote_Data,
+                                                                Month(quote_Date) = 12 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng"
+                                                            )
+                                                        )
+                                                    }
+                                                ),
+                                                Table(
+                                                    {
+                                                        Month: "Tháng 1",
+                                                        Value: CountRows(
+                                                            Filter(
+                                                                Quote_Data,
+                                                                Month(quote_Date) = 1 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status.Value = "Đơn hàng"
+                                                            )
+                                                        )
+                                                    },
+                                                    {
+                                                        Month: "Tháng 2",
+                                                        Value: CountRows(
+                                                            Filter(
+                                                                Quote_Data,
+                                                                Month(quote_Date) = 2 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status.Value = "Đơn hàng"
+                                                            )
+                                                        )
+                                                    },
+                                                    {
+                                                        Month: "Tháng 3",
+                                                        Value: CountRows(
+                                                            Filter(
+                                                                Quote_Data,
+                                                                Month(quote_Date) = 3 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status.Value = "Đơn hàng"
+                                                            )
+                                                        )
+                                                    },
+                                                    {
+                                                        Month: "Tháng 4",
+                                                        Value: CountRows(
+                                                            Filter(
+                                                                Quote_Data,
+                                                                Month(quote_Date) = 4 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status.Value = "Đơn hàng"
+                                                            )
+                                                        )
+                                                    },
+                                                    {
+                                                        Month: "Tháng 5",
+                                                        Value: CountRows(
+                                                            Filter(
+                                                                Quote_Data,
+                                                                Month(quote_Date) = 5 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status.Value = "Đơn hàng"
+                                                            )
+                                                        )
+                                                    },
+                                                    {
+                                                        Month: "Tháng 6",
+                                                        Value: CountRows(
+                                                            Filter(
+                                                                Quote_Data,
+                                                                Month(quote_Date) = 6 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status.Value = "Đơn hàng"
+                                                            )
+                                                        )
+                                                    },
+                                                    {
+                                                        Month: "Tháng 7",
+                                                        Value: CountRows(
+                                                            Filter(
+                                                                Quote_Data,
+                                                                Month(quote_Date) = 7 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status.Value = "Đơn hàng"
+                                                            )
+                                                        )
+                                                    },
+                                                    {
+                                                        Month: "Tháng 8",
+                                                        Value: CountRows(
+                                                            Filter(
+                                                                Quote_Data,
+                                                                Month(quote_Date) = 8 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status.Value = "Đơn hàng"
+                                                            )
+                                                        )
+                                                    },
+                                                    {
+                                                        Month: "Tháng 9",
+                                                        Value: CountRows(
+                                                            Filter(
+                                                                Quote_Data,
+                                                                Month(quote_Date) = 9 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status.Value = "Đơn hàng"
+                                                            )
+                                                        )
+                                                    },
+                                                    {
+                                                        Month: "Tháng 10",
+                                                        Value: CountRows(
+                                                            Filter(
+                                                                Quote_Data,
+                                                                Month(quote_Date) = 10 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status.Value = "Đơn hàng"
+                                                            )
+                                                        )
+                                                    },
+                                                    {
+                                                        Month: "Tháng 11",
+                                                        Value: CountRows(
+                                                            Filter(
+                                                                Quote_Data,
+                                                                Month(quote_Date) = 11 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status.Value = "Đơn hàng"
+                                                            )
+                                                        )
+                                                    },
+                                                    {
+                                                        Month: "Tháng 12",
+                                                        Value: CountRows(
+                                                            Filter(
+                                                                Quote_Data,
+                                                                Month(quote_Date) = 12 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status.Value = "Đơn hàng"
+                                                            )
+                                                        )
+                                                    }
+                                                )
+                                            ),statictialOrder
+                                        )
+                                    Width: =Parent.Width
+                                    X: =40
+                                    Y: =70
+                                    ZIndex: =3
+
+                        Container25_4 As groupContainer.verticalAutoLayoutContainer:
+                            LayoutDirection: =LayoutDirection.Vertical
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =250
+                            LayoutMode: =LayoutMode.Auto
+                            ZIndex: =2
+
+                            CompositeColumnChart1_3 As group:
+                                Height: =5
+                                LayoutMinHeight: =5
+                                LayoutMinWidth: =5
+                                Width: =5
+                                X: =-40
+                                Y: =-40
+                                ZIndex: =1
+
+                                Title1_3 As label:
+                                    Align: =Align.Center
+                                    FontWeight: =FontWeight.Semibold
+                                    Height: =25
+                                    Size: =15
+                                    Text: ="Doanh thu"
+                                    Width: =Parent.Width
+                                    X: =40
+                                    Y: =40
+                                    ZIndex: =2
+
+                                ColumnChart1_3 As barChart:
+                                    GridStyle: =GridStyle.All
+                                    Height: =Parent.Height-25
+                                    Items: |-
+                                        =If(
+                                            Dropdown2_2.Visible = false,
+                                            If(
+                                                IsBlank(ComboBox_Sales_Director_2.Selected),
+                                                Table(
+                                                    {
+                                                        Month: "Tháng 1",
+                                                        Value: If(
+                                                            IsBlank(
+                                                                Sum(
+                                                                    Filter(
+                                                                        Quote_Data,
+                                                                        Month(quote_Date) = 1 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng"
+                                                                    ),
+                                                                    sumPriceQuote
+                                                                )
+                                                            ),
+                                                            0,
+                                                            Sum(
+                                                                Filter(
+                                                                    Quote_Data,
+                                                                    Month(quote_Date) = 1 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng"
+                                                                ),
+                                                                sumPriceQuote
+                                                            )
+                                                        )
+                                                    },
+                                                    {
+                                                        Month: "Tháng 2",
+                                                        Value: If(
+                                                            IsBlank(
+                                                                Sum(
+                                                                    Filter(
+                                                                        Quote_Data,
+                                                                        Month(quote_Date) = 2 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng"
+                                                                    ),
+                                                                    sumPriceQuote
+                                                                )
+                                                            ),
+                                                            0,
+                                                            Sum(
+                                                                Filter(
+                                                                    Quote_Data,
+                                                                    Month(quote_Date) = 2 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng"
+                                                                ),
+                                                                sumPriceQuote
+                                                            )
+                                                        )
+                                                    },
+                                                    {
+                                                        Month: "Tháng 3",
+                                                        Value: If(
+                                                            IsBlank(
+                                                                Sum(
+                                                                    Filter(
+                                                                        Quote_Data,
+                                                                        Month(quote_Date) = 3 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng"
+                                                                    ),
+                                                                    sumPriceQuote
+                                                                )
+                                                            ),
+                                                            0,
+                                                            Sum(
+                                                                Filter(
+                                                                    Quote_Data,
+                                                                    Month(quote_Date) = 3 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng"
+                                                                ),
+                                                                sumPriceQuote
+                                                            )
+                                                        )
+                                                    },
+                                                    {
+                                                        Month: "Tháng 4",
+                                                        Value: If(
+                                                            IsBlank(
+                                                                Sum(
+                                                                    Filter(
+                                                                        Quote_Data,
+                                                                        Month(quote_Date) = 4 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng"
+                                                                    ),
+                                                                    sumPriceQuote
+                                                                )
+                                                            ),
+                                                            0,
+                                                            Sum(
+                                                                Filter(
+                                                                    Quote_Data,
+                                                                    Month(quote_Date) = 4 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng"
+                                                                ),
+                                                                sumPriceQuote
+                                                            )
+                                                        )
+                                                    },
+                                                    {
+                                                        Month: "Tháng 5",
+                                                        Value: If(
+                                                            IsBlank(
+                                                                Sum(
+                                                                    Filter(
+                                                                        Quote_Data,
+                                                                        Month(quote_Date) = 5 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng"
+                                                                    ),
+                                                                    sumPriceQuote
+                                                                )
+                                                            ),
+                                                            0,
+                                                            Sum(
+                                                                Filter(
+                                                                    Quote_Data,
+                                                                    Month(quote_Date) = 5 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng"
+                                                                ),
+                                                                sumPriceQuote
+                                                            )
+                                                        )
+                                                    },
+                                                    {
+                                                        Month: "Tháng 6",
+                                                        Value: If(
+                                                            IsBlank(
+                                                                Sum(
+                                                                    Filter(
+                                                                        Quote_Data,
+                                                                        Month(quote_Date) = 6 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng"
+                                                                    ),
+                                                                    sumPriceQuote
+                                                                )
+                                                            ),
+                                                            0,
+                                                            Sum(
+                                                                Filter(
+                                                                    Quote_Data,
+                                                                    Month(quote_Date) = 6 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng"
+                                                                ),
+                                                                sumPriceQuote
+                                                            )
+                                                        )
+                                                    },
+                                                    {
+                                                        Month: "Tháng 7",
+                                                        Value: If(
+                                                            IsBlank(
+                                                                Sum(
+                                                                    Filter(
+                                                                        Quote_Data,
+                                                                        Month(quote_Date) = 7 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng"
+                                                                    ),
+                                                                    sumPriceQuote
+                                                                )
+                                                            ),
+                                                            0,
+                                                            Sum(
+                                                                Filter(
+                                                                    Quote_Data,
+                                                                    Month(quote_Date) = 7 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng"
+                                                                ),
+                                                                sumPriceQuote
+                                                            )
+                                                        )
+                                                    },
+                                                    {
+                                                        Month: "Tháng 8",
+                                                        Value: If(
+                                                            IsBlank(
+                                                                Sum(
+                                                                    Filter(
+                                                                        Quote_Data,
+                                                                        Month(quote_Date) = 8 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng"
+                                                                    ),
+                                                                    sumPriceQuote
+                                                                )
+                                                            ),
+                                                            0,
+                                                            Sum(
+                                                                Filter(
+                                                                    Quote_Data,
+                                                                    Month(quote_Date) = 8 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng"
+                                                                ),
+                                                                sumPriceQuote
+                                                            )
+                                                        )
+                                                    },
+                                                    {
+                                                        Month: "Tháng 9",
+                                                        Value: If(
+                                                            IsBlank(
+                                                                Sum(
+                                                                    Filter(
+                                                                        Quote_Data,
+                                                                        Month(quote_Date) = 9 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng"
+                                                                    ),
+                                                                    sumPriceQuote
+                                                                )
+                                                            ),
+                                                            0,
+                                                            Sum(
+                                                                Filter(
+                                                                    Quote_Data,
+                                                                    Month(quote_Date) = 9 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng"
+                                                                ),
+                                                                sumPriceQuote
+                                                            )
+                                                        )
+                                                    },
+                                                    {
+                                                        Month: "Tháng 10",
+                                                        Value: If(
+                                                            IsBlank(
+                                                                Sum(
+                                                                    Filter(
+                                                                        Quote_Data,
+                                                                        Month(quote_Date) = 10 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng"
+                                                                    ),
+                                                                    sumPriceQuote
+                                                                )
+                                                            ),
+                                                            0,
+                                                            Sum(
+                                                                Filter(
+                                                                    Quote_Data,
+                                                                    Month(quote_Date) = 10 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng"
+                                                                ),
+                                                                sumPriceQuote
+                                                            )
+                                                        )
+                                                    },
+                                                    {
+                                                        Month: "Tháng 11",
+                                                        Value: If(
+                                                            IsBlank(
+                                                                Sum(
+                                                                    Filter(
+                                                                        Quote_Data,
+                                                                        Month(quote_Date) = 11 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng"
+                                                                    ),
+                                                                    sumPriceQuote
+                                                                )
+                                                            ),
+                                                            0,
+                                                            Sum(
+                                                                Filter(
+                                                                    Quote_Data,
+                                                                    Month(quote_Date) = 11 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng"
+                                                                ),
+                                                                sumPriceQuote
+                                                            )
+                                                        )
+                                                    },
+                                                    {
+                                                        Month: "Tháng 12",
+                                                        Value: If(
+                                                            IsBlank(
+                                                                Sum(
+                                                                    Filter(
+                                                                        Quote_Data,
+                                                                        Month(quote_Date) = 12 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng"
+                                                                    ),
+                                                                    sumPriceQuote
+                                                                )
+                                                            ),
+                                                            0,
+                                                            Sum(
+                                                                Filter(
+                                                                    Quote_Data,
+                                                                    Month(quote_Date) = 12 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng"
+                                                                ),
+                                                                sumPriceQuote
+                                                            )
+                                                        )
+                                                    }
+                                                ),
+                                                Table(
+                                                    {
+                                                        Month: "Tháng 1",
+                                                        Value: If(
+                                                            IsBlank(
+                                                                Sum(
+                                                                    Filter(
+                                                                        Quote_Data,
+                                                                        Month(quote_Date) = 1 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status.Value = "Đơn hàng"
+                                                                    ),
+                                                                    sumPriceQuote
+                                                                )
+                                                            ),
+                                                            0,
+                                                            Sum(
+                                                                Filter(
+                                                                    Quote_Data,
+                                                                    Month(quote_Date) = 1 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status.Value = "Đơn hàng"
+                                                                ),
+                                                                sumPriceQuote
+                                                            )
+                                                        )
+                                                    },
+                                                    {
+                                                        Month: "Tháng 2",
+                                                        Value: If(
+                                                            IsBlank(
+                                                                Sum(
+                                                                    Filter(
+                                                                        Quote_Data,
+                                                                        Month(quote_Date) = 2 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status.Value = "Đơn hàng"
+                                                                    ),
+                                                                    sumPriceQuote
+                                                                )
+                                                            ),
+                                                            0,
+                                                            Sum(
+                                                                Filter(
+                                                                    Quote_Data,
+                                                                    Month(quote_Date) = 2 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status.Value = "Đơn hàng"
+                                                                ),
+                                                                sumPriceQuote
+                                                            )
+                                                        )
+                                                    },
+                                                    {
+                                                        Month: "Tháng 3",
+                                                        Value: If(
+                                                            IsBlank(
+                                                                Sum(
+                                                                    Filter(
+                                                                        Quote_Data,
+                                                                        Month(quote_Date) = 3 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status.Value = "Đơn hàng"
+                                                                    ),
+                                                                    sumPriceQuote
+                                                                )
+                                                            ),
+                                                            0,
+                                                            Sum(
+                                                                Filter(
+                                                                    Quote_Data,
+                                                                    Month(quote_Date) = 3 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status.Value = "Đơn hàng"
+                                                                ),
+                                                                sumPriceQuote
+                                                            )
+                                                        )
+                                                    },
+                                                    {
+                                                        Month: "Tháng 4",
+                                                        Value: If(
+                                                            IsBlank(
+                                                                Sum(
+                                                                    Filter(
+                                                                        Quote_Data,
+                                                                        Month(quote_Date) = 4 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status.Value = "Đơn hàng"
+                                                                    ),
+                                                                    sumPriceQuote
+                                                                )
+                                                            ),
+                                                            0,
+                                                            Sum(
+                                                                Filter(
+                                                                    Quote_Data,
+                                                                    Month(quote_Date) = 4 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status.Value = "Đơn hàng"
+                                                                ),
+                                                                sumPriceQuote
+                                                            )
+                                                        )
+                                                    },
+                                                    {
+                                                        Month: "Tháng 5",
+                                                        Value: If(
+                                                            IsBlank(
+                                                                Sum(
+                                                                    Filter(
+                                                                        Quote_Data,
+                                                                        Month(quote_Date) = 5 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status.Value = "Đơn hàng"
+                                                                    ),
+                                                                    sumPriceQuote
+                                                                )
+                                                            ),
+                                                            0,
+                                                            Sum(
+                                                                Filter(
+                                                                    Quote_Data,
+                                                                    Month(quote_Date) = 5 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status.Value = "Đơn hàng"
+                                                                ),
+                                                                sumPriceQuote
+                                                            )
+                                                        )
+                                                    },
+                                                    {
+                                                        Month: "Tháng 6",
+                                                        Value: If(
+                                                            IsBlank(
+                                                                Sum(
+                                                                    Filter(
+                                                                        Quote_Data,
+                                                                        Month(quote_Date) = 6 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status.Value = "Đơn hàng"
+                                                                    ),
+                                                                    sumPriceQuote
+                                                                )
+                                                            ),
+                                                            0,
+                                                            Sum(
+                                                                Filter(
+                                                                    Quote_Data,
+                                                                    Month(quote_Date) = 6 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status.Value = "Đơn hàng"
+                                                                ),
+                                                                sumPriceQuote
+                                                            )
+                                                        )
+                                                    },
+                                                    {
+                                                        Month: "Tháng 7",
+                                                        Value: If(
+                                                            IsBlank(
+                                                                Sum(
+                                                                    Filter(
+                                                                        Quote_Data,
+                                                                        Month(quote_Date) = 7 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status.Value = "Đơn hàng"
+                                                                    ),
+                                                                    sumPriceQuote
+                                                                )
+                                                            ),
+                                                            0,
+                                                            Sum(
+                                                                Filter(
+                                                                    Quote_Data,
+                                                                    Month(quote_Date) = 7 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status.Value = "Đơn hàng"
+                                                                ),
+                                                                sumPriceQuote
+                                                            )
+                                                        )
+                                                    },
+                                                    {
+                                                        Month: "Tháng 8",
+                                                        Value: If(
+                                                            IsBlank(
+                                                                Sum(
+                                                                    Filter(
+                                                                        Quote_Data,
+                                                                        Month(quote_Date) = 8 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status.Value = "Đơn hàng"
+                                                                    ),
+                                                                    sumPriceQuote
+                                                                )
+                                                            ),
+                                                            0,
+                                                            Sum(
+                                                                Filter(
+                                                                    Quote_Data,
+                                                                    Month(quote_Date) = 8 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status.Value = "Đơn hàng"
+                                                                ),
+                                                                sumPriceQuote
+                                                            )
+                                                        )
+                                                    },
+                                                    {
+                                                        Month: "Tháng 9",
+                                                        Value: If(
+                                                            IsBlank(
+                                                                Sum(
+                                                                    Filter(
+                                                                        Quote_Data,
+                                                                        Month(quote_Date) = 9 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status.Value = "Đơn hàng"
+                                                                    ),
+                                                                    sumPriceQuote
+                                                                )
+                                                            ),
+                                                            0,
+                                                            Sum(
+                                                                Filter(
+                                                                    Quote_Data,
+                                                                    Month(quote_Date) = 9 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status.Value = "Đơn hàng"
+                                                                ),
+                                                                sumPriceQuote
+                                                            )
+                                                        )
+                                                    },
+                                                    {
+                                                        Month: "Tháng 10",
+                                                        Value: If(
+                                                            IsBlank(
+                                                                Sum(
+                                                                    Filter(
+                                                                        Quote_Data,
+                                                                        Month(quote_Date) = 10 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status.Value = "Đơn hàng"
+                                                                    ),
+                                                                    sumPriceQuote
+                                                                )
+                                                            ),
+                                                            0,
+                                                            Sum(
+                                                                Filter(
+                                                                    Quote_Data,
+                                                                    Month(quote_Date) = 10 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status.Value = "Đơn hàng"
+                                                                ),
+                                                                sumPriceQuote
+                                                            )
+                                                        )
+                                                    },
+                                                    {
+                                                        Month: "Tháng 11",
+                                                        Value: If(
+                                                            IsBlank(
+                                                                Sum(
+                                                                    Filter(
+                                                                        Quote_Data,
+                                                                        Month(quote_Date) = 11 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status.Value = "Đơn hàng"
+                                                                    ),
+                                                                    sumPriceQuote
+                                                                )
+                                                            ),
+                                                            0,
+                                                            Sum(
+                                                                Filter(
+                                                                    Quote_Data,
+                                                                    Month(quote_Date) = 11 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status.Value = "Đơn hàng"
+                                                                ),
+                                                                sumPriceQuote
+                                                            )
+                                                        )
+                                                    },
+                                                    {
+                                                        Month: "Tháng 12",
+                                                        Value: If(
+                                                            IsBlank(
+                                                                Sum(
+                                                                    Filter(
+                                                                        Quote_Data,
+                                                                        Month(quote_Date) = 12 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status.Value = "Đơn hàng"
+                                                                    ),
+                                                                    sumPriceQuote
+                                                                )
+                                                            ),
+                                                            0,
+                                                            Sum(
+                                                                Filter(
+                                                                    Quote_Data,
+                                                                    Month(quote_Date) = 12 && Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && id_User = ComboBox_Sales_Director_2.Selected.ID && quote_Status.Value = "Đơn hàng"
+                                                                ),
+                                                                sumPriceQuote
+                                                            )
+                                                        )
+                                                    }
+                                                )
+                                            ),
+                                            statictialPrice
+                                        )
+                                    Width: =Parent.Width
+                                    X: =40
+                                    Y: =30
+                                    ZIndex: =3
+
+                    Container17_4 As groupContainer.verticalAutoLayoutContainer:
+                        LayoutDirection: =LayoutDirection.Vertical
+                        LayoutMinHeight: =100
+                        LayoutMinWidth: =250
+                        LayoutMode: =LayoutMode.Auto
+                        ZIndex: =3
+
+                        Label80_4 As label:
+                            AlignInContainer: =AlignInContainer.Stretch
+                            Color: =RGBA(0, 121, 187, 1)
+                            FontWeight: =FontWeight.Semibold
+                            PaddingLeft: =20
+                            Size: =17
+                            Text: ="Chi tiết sản phẩm đã bán"
+                            ZIndex: =1
+
+                        Container116_1 As groupContainer.horizontalAutoLayoutContainer:
+                            Fill: =RGBA(214, 223, 238, 1)
+                            FillPortions: =0
+                            Height: =40
+                            LayoutGap: =5
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =250
+                            LayoutMode: =LayoutMode.Auto
+                            PaddingLeft: =10
+                            PaddingRight: =10
+                            ZIndex: =2
+
+                            Label_Table_Request_Code_Import_Product_Request_5 As label:
+                                FillPortions: =2
+                                FontWeight: =FontWeight.Semibold
+                                LayoutMinWidth: =0
+                                OnSelect: =
+                                Size: =15
+                                Text: ="Mã sản phẩm"
+                                Width: =200
+                                X: =20
+                                ZIndex: =1
+
+                            Label_Table_Id_Product_Import_Product_Request_6 As label:
+                                FillPortions: =3
+                                FontWeight: =FontWeight.Semibold
+                                LayoutMinWidth: =0
+                                OnSelect: =
+                                Size: =15
+                                Text: ="Tên sản phẩm"
+                                Width: =250
+                                X: =216
+                                Y: =Label_Table_Request_Code_Import_Product_Request_5.Y
+                                ZIndex: =2
+
+                            Label_Table_Name_Product_Import_Product_Request_8 As label:
+                                FillPortions: =1
+                                FontWeight: =FontWeight.Semibold
+                                LayoutMinWidth: =0
+                                OnSelect: =
+                                Size: =15
+                                Text: ="Loại"
+                                X: =676
+                                Y: =Label_Table_Request_Code_Import_Product_Request_5.Y
+                                ZIndex: =3
+
+                            Label_Table_Request_Import_Product_Request_19 As label:
+                                FillPortions: =1
+                                FontWeight: =FontWeight.Semibold
+                                LayoutMinWidth: =0
+                                OnSelect: =
+                                Size: =15
+                                Text: ="Kho"
+                                X: =800
+                                ZIndex: =4
+
+                            Label_Table_Request_Import_Product_Request_21 As label:
+                                FillPortions: =1
+                                FontWeight: =FontWeight.Semibold
+                                LayoutMinWidth: =0
+                                OnSelect: =
+                                Size: =15
+                                Text: ="Đã bán"
+                                Width: =80
+                                X: =950
+                                ZIndex: =5
+
+                            Label_Table_Name_Product_Import_Product_Request_9 As label:
+                                FillPortions: =1
+                                FontWeight: =FontWeight.Semibold
+                                LayoutMinWidth: =0
+                                OnSelect: =
+                                Size: =15
+                                Text: ="Đơn giá"
+                                X: =516
+                                Y: =Label_Table_Request_Code_Import_Product_Request_5.Y
+                                ZIndex: =6
+
+                            Label_Table_Request_Import_Product_Request_22 As label:
+                                FillPortions: =1
+                                FontWeight: =FontWeight.Semibold
+                                LayoutMinWidth: =0
+                                OnSelect: =
+                                Size: =15
+                                Text: ="Doanh thu"
+                                Width: =173
+                                X: =1109
+                                ZIndex: =7
+
+                        "Gallery_Request_Import_Product_Warehouse_4 As gallery.'BrowseLayout_Vertical_OneTextVariant_ver5.0'":
+                            AlignInContainer: =AlignInContainer.SetByContainer
+                            DelayItemLoading: =true
+                            Fill: =RGBA(191, 239, 255, 0)
+                            Items: |-
+                                =Filter(
+                                        Product,
+                                        activity = true
+                                    )
+                            Layout: =Layout.Vertical
+                            LayoutMinHeight: =0
+                            LayoutMinWidth: =320
+                            LoadingSpinner: =LoadingSpinner.Data
+                            OnSelect: =
+                            TemplatePadding: =0
+                            TemplateSize: =50
+                            Width: =Parent.Width
+                            ZIndex: =3
+
+                            Container117_1 As groupContainer.horizontalAutoLayoutContainer:
+                                BorderThickness: =1
+                                DropShadow: =DropShadow.None
+                                Height: =50
+                                LayoutGap: =5
+                                LayoutMode: =LayoutMode.Auto
+                                PaddingLeft: =10
+                                PaddingRight: =10
+                                Width: =1366
+                                ZIndex: =1
+
+                                Label_Child_Table_Request_Code_Import_Product_17 As label:
+                                    FillPortions: =2
+                                    Height: =50
+                                    Size: =15
+                                    Text: =ThisItem.id_Product
+                                    Width: =200
+                                    X: =Label_Table_Request_Code_Import_Product_Request_5.X
+                                    ZIndex: =1
+
+                                Label_Child_Table_Request_Code_Import_Product_18 As label:
+                                    FillPortions: =3
+                                    Height: =50
+                                    LayoutMinWidth: =0
+                                    Size: =15
+                                    Text: =ThisItem.name_Product
+                                    Width: =250
+                                    X: =Label_Table_Id_Product_Import_Product_Request_6.X
+                                    ZIndex: =2
+
+                                Label_Child_Table_Request_Code_Import_Product_20 As label:
+                                    FillPortions: =1
+                                    Height: =50
+                                    LayoutMinWidth: =0
+                                    Size: =15
+                                    Text: =LookUp(Category,ID=ThisItem.id_Category).name_Category
+                                    X: =23
+                                    ZIndex: =3
+
+                                Label_Child_Table_Request_Code_Import_Product_21 As label:
+                                    FillPortions: =1
+                                    Height: =50
+                                    LayoutMinWidth: =0
+                                    Size: =15
+                                    Text: =LookUp(Warehouse,ID=ThisItem.id_Warehouse).name_Warehouse
+                                    X: =23
+                                    ZIndex: =4
+
+                                Label_Child_Table_Request_Code_Import_Product_22 As label:
+                                    FillPortions: =1
+                                    Height: =50
+                                    LayoutMinWidth: =0
+                                    Size: =15
+                                    Text: |-
+                                        =If(
+                                            //Thống kê theo năm
+                                            Dropdown2_2.Visible = false,
+                                            If(
+                                                //Thống kê toàn bộ nhân viên
+                                                IsBlank(ComboBox_Sales_Director_2.Selected),
+                                                If(
+                                                    IsBlank(
+                                                        Sum(
+                                                            Filter(
+                                                                Quote_Product_Data As a,
+                                                                a.id_Product = ThisItem.id_Product && LookUp(
+                                                                    Quote_Data,
+                                                                    id_Quote = a.id_Quote
+                                                                ).quote_Status.Value = "Đơn hàng" && Year(
+                                                                    LookUp(
+                                                                        Quote_Data,
+                                                                        id_Quote = a.id_Quote
+                                                                    ).quote_Date
+                                                                ) = Dropdown_Year_Director_2.Selected.Value
+                                                            ),
+                                                            quantity_Quote_Product
+                                                        )
+                                                    ),
+                                                    0,
+                                                    Sum(
+                                                        Filter(
+                                                            Quote_Product_Data As a,
+                                                            a.id_Product = ThisItem.id_Product && LookUp(
+                                                                Quote_Data,
+                                                                id_Quote = a.id_Quote
+                                                            ).quote_Status.Value = "Đơn hàng" && Year(
+                                                                LookUp(
+                                                                    Quote_Data,
+                                                                    id_Quote = a.id_Quote
+                                                                ).quote_Date
+                                                            ) = Dropdown_Year_Director_2.Selected.Value
+                                                        ),
+                                                        quantity_Quote_Product
+                                                    )
+                                                ),
+                                                //Thống kê nhân viên được chọn
+                                                If(
+                                                    IsBlank(
+                                                        Sum(
+                                                            Filter(
+                                                                Quote_Product_Data As a,
+                                                                a.id_Product = ThisItem.id_Product && LookUp(
+                                                                    Quote_Data,
+                                                                    id_Quote = a.id_Quote
+                                                                ).quote_Status.Value = "Đơn hàng" && Year(
+                                                                    LookUp(
+                                                                        Quote_Data,
+                                                                        id_Quote = a.id_Quote
+                                                                    ).quote_Date
+                                                                ) = Dropdown_Year_Director_2.Selected.Value && LookUp(
+                                                                    Quote_Data,
+                                                                    id_Quote = a.id_Quote
+                                                                ).id_User = ComboBox_Sales_Director_2.Selected.ID
+                                                            ),
+                                                            quantity_Quote_Product
+                                                        )
+                                                    ),
+                                                    0,
+                                                    Sum(
+                                                        Filter(
+                                                            Quote_Product_Data As a,
+                                                            a.id_Product = ThisItem.id_Product && LookUp(
+                                                                Quote_Data,
+                                                                id_Quote = a.id_Quote
+                                                            ).quote_Status.Value = "Đơn hàng" && Year(
+                                                                LookUp(
+                                                                    Quote_Data,
+                                                                    id_Quote = a.id_Quote
+                                                                ).quote_Date
+                                                            ) = Dropdown_Year_Director_2.Selected.Value && LookUp(
+                                                                Quote_Data,
+                                                                id_Quote = a.id_Quote
+                                                            ).id_User = ComboBox_Sales_Director_2.Selected.ID
+                                                        ),
+                                                        quantity_Quote_Product
+                                                    )
+                                                )
+                                            ),
+                                            //Thông kê theo tháng
+                                            If(
+                                                IsBlank(ComboBox_Sales_Director_2.Selected),
+                                                //Thống kê toàn bộ nhân viên
+                                                If(
+                                                    IsBlank(
+                                                        Sum(
+                                                            Filter(
+                                                                Quote_Product_Data As a,
+                                                                a.id_Product = ThisItem.id_Product && LookUp(
+                                                                    Quote_Data,
+                                                                    id_Quote = a.id_Quote
+                                                                ).quote_Status.Value = "Đơn hàng" && Year(
+                                                                    LookUp(
+                                                                        Quote_Data,
+                                                                        id_Quote = a.id_Quote
+                                                                    ).quote_Date
+                                                                ) = Dropdown_Year_Director_2.Selected.Value && Month(
+                                                                    LookUp(
+                                                                        Quote_Data,
+                                                                        id_Quote = a.id_Quote
+                                                                    ).quote_Date
+                                                                ) = Value(
+                                                                    Mid(
+                                                                        Dropdown2_2.Selected.Value,
+                                                                        7,
+                                                                        2
+                                                                    )
+                                                                )
+                                                            ),
+                                                            quantity_Quote_Product
+                                                        )
+                                                    ),
+                                                    0,
+                                                    Sum(
+                                                        Filter(
+                                                            Quote_Product_Data As a,
+                                                            a.id_Product = ThisItem.id_Product && LookUp(
+                                                                Quote_Data,
+                                                                id_Quote = a.id_Quote
+                                                            ).quote_Status.Value = "Đơn hàng" && Year(
+                                                                LookUp(
+                                                                    Quote_Data,
+                                                                    id_Quote = a.id_Quote
+                                                                ).quote_Date
+                                                            ) = Dropdown_Year_Director_2.Selected.Value && Month(
+                                                                LookUp(
+                                                                    Quote_Data,
+                                                                    id_Quote = a.id_Quote
+                                                                ).quote_Date
+                                                            ) = Value(
+                                                                Mid(
+                                                                    Dropdown2_2.Selected.Value,
+                                                                    7,
+                                                                    2
+                                                                )
+                                                            )
+                                                        ),
+                                                        quantity_Quote_Product
+                                                    )
+                                                ),
+                                                //Thống kê theo nhân viên được chọn
+                                                If(
+                                                    IsBlank(
+                                                        Sum(
+                                                            Filter(
+                                                                Quote_Product_Data As a,
+                                                                a.id_Product = ThisItem.id_Product && LookUp(
+                                                                    Quote_Data,
+                                                                    id_Quote = a.id_Quote
+                                                                ).quote_Status.Value = "Đơn hàng" && Year(
+                                                                    LookUp(
+                                                                        Quote_Data,
+                                                                        id_Quote = a.id_Quote
+                                                                    ).quote_Date
+                                                                ) = Dropdown_Year_Director_2.Selected.Value && Month(
+                                                                    LookUp(
+                                                                        Quote_Data,
+                                                                        id_Quote = a.id_Quote
+                                                                    ).quote_Date
+                                                                ) = Value(
+                                                                    Mid(
+                                                                        Dropdown2_2.Selected.Value,
+                                                                        7,
+                                                                        2
+                                                                    )
+                                                                )&& LookUp(
+                                                                    Quote_Data,
+                                                                    id_Quote = a.id_Quote
+                                                                ).id_User = ComboBox_Sales_Director_2.Selected.ID
+                                                            ),
+                                                            quantity_Quote_Product
+                                                        )
+                                                    ),
+                                                    0,
+                                                    Sum(
+                                                        Filter(
+                                                            Quote_Product_Data As a,
+                                                            a.id_Product = ThisItem.id_Product && LookUp(
+                                                                Quote_Data,
+                                                                id_Quote = a.id_Quote
+                                                            ).quote_Status.Value = "Đơn hàng" && Year(
+                                                                LookUp(
+                                                                    Quote_Data,
+                                                                    id_Quote = a.id_Quote
+                                                                ).quote_Date
+                                                            ) = Dropdown_Year_Director_2.Selected.Value && Month(
+                                                                LookUp(
+                                                                    Quote_Data,
+                                                                    id_Quote = a.id_Quote
+                                                                ).quote_Date
+                                                            ) = Value(
+                                                                Mid(
+                                                                    Dropdown2_2.Selected.Value,
+                                                                    7,
+                                                                    2
+                                                                )
+                                                            )&& LookUp(
+                                                                    Quote_Data,
+                                                                    id_Quote = a.id_Quote
+                                                                ).id_User = ComboBox_Sales_Director_2.Selected.ID
+                                                        ),
+                                                        quantity_Quote_Product
+                                                    )
+                                                )
+                                            )
+                                        )
+                                    Width: =80
+                                    X: =93
+                                    ZIndex: =5
+
+                                Label_Child_Table_Request_Code_Import_Product_23 As label:
+                                    FillPortions: =1
+                                    Height: =50
+                                    LayoutMinWidth: =0
+                                    Size: =15
+                                    Text: |-
+                                        =If(ThisItem.price_Product=0,"0đ",Text(
+                                            ThisItem.price_Product,
+                                            "[$-en-US]#,###đ"
+                                        ))
+                                    X: =23
+                                    ZIndex: =6
+
+                                Label_Child_Table_Request_Code_Import_Product_24 As label:
+                                    FillPortions: =1
+                                    Height: =50
+                                    LayoutMinWidth: =0
+                                    Size: =15
+                                    Text: |-
+                                        =If(
+                                            //Thống kê theo năm
+                                            Dropdown2_2.Visible = false,
+                                            If(
+                                                //Thống kê toàn bộ nhân viên
+                                                IsBlank(ComboBox_Sales_Director_2.Selected),
+                                                If(
+                                                    IsBlank(
+                                                        Sum(
+                                                            Filter(
+                                                                Quote_Product_Data As a,
+                                                                a.id_Product = ThisItem.id_Product && LookUp(
+                                                                    Quote_Data,
+                                                                    id_Quote = a.id_Quote
+                                                                ).quote_Status.Value = "Đơn hàng" && Year(
+                                                                    LookUp(
+                                                                        Quote_Data,
+                                                                        id_Quote = a.id_Quote
+                                                                    ).quote_Date
+                                                                ) = Dropdown_Year_Director_2.Selected.Value
+                                                            ),
+                                                            quantity_Quote_Product * price_Quote_Product
+                                                        )
+                                                    ),
+                                                    "0đ",
+                                                    Text(
+                                                        Sum(
+                                                            Filter(
+                                                                Quote_Product_Data As a,
+                                                                a.id_Product = ThisItem.id_Product && LookUp(
+                                                                    Quote_Data,
+                                                                    id_Quote = a.id_Quote
+                                                                ).quote_Status.Value = "Đơn hàng" && Year(
+                                                                    LookUp(
+                                                                        Quote_Data,
+                                                                        id_Quote = a.id_Quote
+                                                                    ).quote_Date
+                                                                ) = Dropdown_Year_Director_2.Selected.Value
+                                                            ),
+                                                            quantity_Quote_Product * price_Quote_Product
+                                                        ),
+                                                        "[$-en-US]#,###đ"
+                                                    )
+                                                ),
+                                                //Thống kê nhân viên được chọn
+                                                If(
+                                                    IsBlank(
+                                                        Sum(
+                                                            Filter(
+                                                                Quote_Product_Data As a,
+                                                                a.id_Product = ThisItem.id_Product && LookUp(
+                                                                    Quote_Data,
+                                                                    id_Quote = a.id_Quote
+                                                                ).quote_Status.Value = "Đơn hàng" && Year(
+                                                                    LookUp(
+                                                                        Quote_Data,
+                                                                        id_Quote = a.id_Quote
+                                                                    ).quote_Date
+                                                                ) = Dropdown_Year_Director_2.Selected.Value && LookUp(
+                                                                    Quote_Data,
+                                                                    id_Quote = a.id_Quote
+                                                                ).id_User = ComboBox_Sales_Director_2.Selected.ID
+                                                            ),
+                                                            quantity_Quote_Product * price_Quote_Product
+                                                        )
+                                                    ),
+                                                    "0đ",
+                                                    Text(
+                                                        Sum(
+                                                            Filter(
+                                                                Quote_Product_Data As a,
+                                                                a.id_Product = ThisItem.id_Product && LookUp(
+                                                                    Quote_Data,
+                                                                    id_Quote = a.id_Quote
+                                                                ).quote_Status.Value = "Đơn hàng" && Year(
+                                                                    LookUp(
+                                                                        Quote_Data,
+                                                                        id_Quote = a.id_Quote
+                                                                    ).quote_Date
+                                                                ) = Dropdown_Year_Director_2.Selected.Value && LookUp(
+                                                                    Quote_Data,
+                                                                    id_Quote = a.id_Quote
+                                                                ).id_User = ComboBox_Sales_Director_2.Selected.ID
+                                                            ),
+                                                            quantity_Quote_Product * price_Quote_Product
+                                                        ),
+                                                        "[$-en-US]#,###đ"
+                                                    )
+                                                )
+                                            ),
+                                            //Thống kê theo tháng
+                                            If(
+                                                IsBlank(ComboBox_Sales_Director_2.Selected),
+                                                //Thống kê toàn bộ nhân viên
+                                                If(
+                                                    IsBlank(
+                                                        Sum(
+                                                            Filter(
+                                                                Quote_Product_Data As a,
+                                                                a.id_Product = ThisItem.id_Product && LookUp(
+                                                                    Quote_Data,
+                                                                    id_Quote = a.id_Quote
+                                                                ).quote_Status.Value = "Đơn hàng" && Year(
+                                                                    LookUp(
+                                                                        Quote_Data,
+                                                                        id_Quote = a.id_Quote
+                                                                    ).quote_Date
+                                                                ) = Dropdown_Year_Director_2.Selected.Value && Month(
+                                                                    LookUp(
+                                                                        Quote_Data,
+                                                                        id_Quote = a.id_Quote
+                                                                    ).quote_Date
+                                                                ) = Value(
+                                                                    Mid(
+                                                                        Dropdown2_2.Selected.Value,
+                                                                        7,
+                                                                        2
+                                                                    )
+                                                                )
+                                                            ),
+                                                            quantity_Quote_Product * price_Quote_Product
+                                                        )
+                                                    ),
+                                                    "0đ",
+                                                    Text(
+                                                        Sum(
+                                                            Filter(
+                                                                Quote_Product_Data As a,
+                                                                a.id_Product = ThisItem.id_Product && LookUp(
+                                                                    Quote_Data,
+                                                                    id_Quote = a.id_Quote
+                                                                ).quote_Status.Value = "Đơn hàng" && Year(
+                                                                    LookUp(
+                                                                        Quote_Data,
+                                                                        id_Quote = a.id_Quote
+                                                                    ).quote_Date
+                                                                ) = Dropdown_Year_Director_2.Selected.Value && Month(
+                                                                    LookUp(
+                                                                        Quote_Data,
+                                                                        id_Quote = a.id_Quote
+                                                                    ).quote_Date
+                                                                ) = Value(
+                                                                    Mid(
+                                                                        Dropdown2_2.Selected.Value,
+                                                                        7,
+                                                                        2
+                                                                    )
+                                                                )
+                                                            ),
+                                                            quantity_Quote_Product * price_Quote_Product
+                                                        ),
+                                                        "[$-en-US]#,###đ"
+                                                    )
+                                                ),
+                                                //Thống kê theo nhân viên được chọn
+                                                If(
+                                                    IsBlank(
+                                                        Sum(
+                                                            Filter(
+                                                                Quote_Product_Data As a,
+                                                                a.id_Product = ThisItem.id_Product && LookUp(
+                                                                    Quote_Data,
+                                                                    id_Quote = a.id_Quote
+                                                                ).quote_Status.Value = "Đơn hàng" && Year(
+                                                                    LookUp(
+                                                                        Quote_Data,
+                                                                        id_Quote = a.id_Quote
+                                                                    ).quote_Date
+                                                                ) = Dropdown_Year_Director_2.Selected.Value && Month(
+                                                                    LookUp(
+                                                                        Quote_Data,
+                                                                        id_Quote = a.id_Quote
+                                                                    ).quote_Date
+                                                                ) = Value(
+                                                                    Mid(
+                                                                        Dropdown2_2.Selected.Value,
+                                                                        7,
+                                                                        2
+                                                                    )
+                                                                ) && LookUp(
+                                                                    Quote_Data,
+                                                                    id_Quote = a.id_Quote
+                                                                ).id_User = ComboBox_Sales_Director_2.Selected.ID
+                                                            ),
+                                                            quantity_Quote_Product * price_Quote_Product
+                                                        )
+                                                    ),
+                                                    "0đ",
+                                                    Text(
+                                                        Sum(
+                                                            Filter(
+                                                                Quote_Product_Data As a,
+                                                                a.id_Product = ThisItem.id_Product && LookUp(
+                                                                    Quote_Data,
+                                                                    id_Quote = a.id_Quote
+                                                                ).quote_Status.Value = "Đơn hàng" && Year(
+                                                                    LookUp(
+                                                                        Quote_Data,
+                                                                        id_Quote = a.id_Quote
+                                                                    ).quote_Date
+                                                                ) = Dropdown_Year_Director_2.Selected.Value && Month(
+                                                                    LookUp(
+                                                                        Quote_Data,
+                                                                        id_Quote = a.id_Quote
+                                                                    ).quote_Date
+                                                                ) = Value(
+                                                                    Mid(
+                                                                        Dropdown2_2.Selected.Value,
+                                                                        7,
+                                                                        2
+                                                                    )
+                                                                ) && LookUp(
+                                                                    Quote_Data,
+                                                                    id_Quote = a.id_Quote
+                                                                ).id_User = ComboBox_Sales_Director_2.Selected.ID
+                                                            ),
+                                                            quantity_Quote_Product * price_Quote_Product
+                                                        ),
+                                                        "[$-en-US]#,###đ"
+                                                    )
+                                                )
+                                            )
+                                        )
+                                    Width: =173
+                                    X: =327
+                                    ZIndex: =7
 
