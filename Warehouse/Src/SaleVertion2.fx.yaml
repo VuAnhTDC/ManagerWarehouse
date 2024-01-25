@@ -1369,7 +1369,7 @@ SaleVertion2 As screen:
 
                         TextInput18_1 As text:
                             Default: =If(positionOptionService = "Create", "",If(positionOptionService = "Detail" || positionOptionService = "Edit",Gallery23.Selected.service_Decription))
-                            DisplayMode: =If(positionOptionService = "Create", "",If(positionOptionService = "Detail" || positionOptionService = "Edit",Gallery23.Selected.service_Decription))
+                            DisplayMode: =If(positionOptionService = "Create"|| positionOptionService = "Edit",DisplayMode.Edit, If(positionOptionService = "Detail" ,DisplayMode.Disabled))
                             Height: =81
                             HintText: ="Mô tả"
                             Mode: =TextMode.MultiLine
@@ -1390,19 +1390,8 @@ SaleVertion2 As screen:
                             ZIndex: =6
 
                         TextInput18_2 As text:
-                            Default: =If(positionOptionService = "Create", "",If(positionOptionService = "Detail" || positionOptionService = "Edit",Gallery23.Selected.service_Price))
-                            DisplayMode: |-
-                                =If(
-                                    positionOptionService = "Create",
-                                    "",
-                                    If(
-                                        positionOptionService = "Detail" || positionOptionService = "Edit",
-                                        Text(
-                                            Gallery23.Selected.service_Price,
-                                            "0,000"
-                                        )
-                                    )
-                                )
+                            Default: =If(positionOptionService = "Create", "",If(positionOptionService = "Detail" || positionOptionService = "Edit",If(Value(Gallery23.Selected.service_Price)<1,"0,000",Text(Gallery23.Selected.service_Price,"0,000"))))
+                            DisplayMode: =If(positionOptionService = "Create"|| positionOptionService = "Edit",DisplayMode.Edit, If(positionOptionService = "Detail" ,DisplayMode.Disabled))
                             Format: =TextFormat.Number
                             Height: =34
                             HintText: ="Giá"
