@@ -2919,6 +2919,7 @@ SaleVertion2 As screen:
                 RadiusBottomRight: =10
                 RadiusTopLeft: =10
                 RadiusTopRight: =10
+                Visible: =statusViewEditQuote = "view"
                 Width: =179
                 X: =If(Gallery16.Selected.quote_Status.Value = "Đơn hàng",542,710)
                 Y: =26
