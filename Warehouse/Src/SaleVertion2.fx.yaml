@@ -2134,7 +2134,7 @@ SaleVertion2 As screen:
                 FontWeight: =FontWeight.Semibold
                 Height: =50
                 Size: =24
-                Text: =If(statusViewEditQuote = "view","Chi tiết báo giá - Đơn hàng","Sửa thông tin báo giá")
+                Text: =If(statusViewEditQuote = "view","Chi tiết Báo giá - Đơn hàng","Sửa thông tin báo giá")
                 Width: =482
                 X: =42
                 Y: =19
