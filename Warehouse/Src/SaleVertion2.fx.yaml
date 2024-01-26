@@ -99,12 +99,12 @@ SaleVertion2 As screen:
                     ZIndex: =2
 
                     Image13 As image:
-                        Height: =59
+                        Height: =50
                         Image: =If(ThisItem.id = 0,iconQuote_Order,If(ThisItem.id  =1,customer,iconservice))
                         ImagePosition: =ImagePosition.Fill
-                        Width: =69
-                        X: =18
-                        Y: =9
+                        Width: =50
+                        X: =21
+                        Y: =13
                         ZIndex: =1
 
                     Label160 As label:
@@ -2410,7 +2410,7 @@ SaleVertion2 As screen:
                                 =Set(isVisibleUpdateProduct_Quote_Vertion2, true);
                                 Set(isVisibleDialogAddProductQuoteNew_SaleVertion2,true);
                                 Set(positionDialogAddDataQuoteNew_SaleVertion2,0)
-                            Visible: =statusViewEditQuote = "edit"
+                            Visible: =statusViewEditQuote = "edit" && LookUp(Product,id_Product = ThisItem.id_Product).activity 
                             Width: =30
                             X: =1115
                             Y: =6
