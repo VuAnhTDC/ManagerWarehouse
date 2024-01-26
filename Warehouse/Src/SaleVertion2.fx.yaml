@@ -2085,7 +2085,8 @@ SaleVertion2 As screen:
                             If(
                                 btnFunctionSaleVertion2 = "btnPurchase",
                                 Refresh(Purchase_request);
-                                Refresh(Purchase_request_Product)
+                                Refresh(Purchase_request_Product),// nếu là thống kê
+                                If(btnFunctionSaleVertion2 = "btnStatictical", Set(positionOptionObjectView,"product"))
                             )
                         )
                     PressedBorderColor: =/*Self.Fill*/
@@ -7956,6 +7957,7 @@ SaleVertion2 As screen:
 
         Container16_1 As groupContainer.verticalAutoLayoutContainer:
             Height: =688
+            LayoutAlignItems: =LayoutAlignItems.Stretch
             LayoutDirection: =LayoutDirection.Vertical
             LayoutMode: =LayoutMode.Auto
             LayoutOverflowY: =LayoutOverflow.Scroll
@@ -7965,6 +7967,7 @@ SaleVertion2 As screen:
             ZIndex: =1
 
             Container26_2 As groupContainer.manualLayoutContainer:
+                AlignInContainer: =AlignInContainer.SetByContainer
                 DropShadow: =DropShadow.Semibold
                 FillPortions: =0
                 Height: =60
@@ -8735,6 +8738,7 @@ SaleVertion2 As screen:
                     ZIndex: =5
 
             Container28_2 As groupContainer.verticalAutoLayoutContainer:
+                AlignInContainer: =AlignInContainer.SetByContainer
                 DropShadow: =DropShadow.None
                 FillPortions: =0
                 Height: =50
@@ -8744,7 +8748,6 @@ SaleVertion2 As screen:
                 LayoutMinHeight: =100
                 LayoutMinWidth: =250
                 LayoutMode: =LayoutMode.Auto
-                LayoutOverflowY: =LayoutOverflow.Scroll
                 PaddingRight: =20
                 ZIndex: =2
 
@@ -9218,12 +9221,12 @@ SaleVertion2 As screen:
                         ZIndex: =2
 
             Container23_2 As groupContainer.horizontalAutoLayoutContainer:
+                AlignInContainer: =AlignInContainer.SetByContainer
                 FillPortions: =0
                 Height: =300
                 LayoutMinHeight: =100
                 LayoutMinWidth: =250
                 LayoutMode: =LayoutMode.Auto
-                LayoutOverflowY: =LayoutOverflow.Scroll
                 ZIndex: =3
 
                 Container25_3 As groupContainer.verticalAutoLayoutContainer:
@@ -10062,4 +10065,292 @@ SaleVertion2 As screen:
                             X: =40
                             Y: =30
                             ZIndex: =3
+
+            Label165 As label:
+                Fill: =RGBA(128, 128, 128, 0.26)
+                FontWeight: =FontWeight.Semibold
+                Size: =20
+                Text: ="Chi tiết thống kê"
+                Width: =250
+                ZIndex: =4
+
+            Container114 As groupContainer.manualLayoutContainer:
+                AlignInContainer: =AlignInContainer.SetByContainer
+                DropShadow: =DropShadow.None
+                FillPortions: =0
+                Height: =90
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                ZIndex: =5
+
+                Container119 As groupContainer.manualLayoutContainer:
+                    Height: =80
+                    Width: =350
+                    X: =240
+                    Y: =5
+                    ZIndex: =1
+
+                    Label166 As label:
+                        Height: =36
+                        Size: =15
+                        Text: ="Tổng sản phẩm"
+                        Width: =282
+                        X: =68
+                        ZIndex: =1
+
+                    Label167 As label:
+                        FontWeight: =FontWeight.Semibold
+                        Height: =44
+                        Size: =20
+                        Text: =CountRows(Quote_Product)
+                        Width: =254
+                        X: =94
+                        Y: =36
+                        ZIndex: =2
+
+                Container119_1 As groupContainer.manualLayoutContainer:
+                    Height: =80
+                    Width: =350
+                    X: =754
+                    Y: =5
+                    ZIndex: =2
+
+                    Label166_1 As label:
+                        Height: =30
+                        Size: =15
+                        Text: ="Tổng dịch vụ"
+                        Width: =282
+                        X: =68
+                        ZIndex: =1
+
+                    Label167_1 As label:
+                        FontWeight: =FontWeight.Semibold
+                        Height: =56
+                        Size: =20
+                        Text: =CountRows(Quote_Service)
+                        Width: =254
+                        X: =92
+                        Y: =24
+                        ZIndex: =2
+
+            Container120 As groupContainer.manualLayoutContainer:
+                DropShadow: =DropShadow.None
+                FillPortions: =0
+                Height: =50
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                ZIndex: =6
+
+                Container121 As groupContainer.manualLayoutContainer:
+                    DropShadow: =If(positionOptionObjectView = "product",DropShadow.Semibold,DropShadow.Light)
+                    Fill: =RGBA(255, 255, 255, 1)
+                    Height: =If(positionOptionObjectView = "product",41,39)
+                    Width: =168
+                    X: =6
+                    Y: =2
+                    ZIndex: =1
+
+                    Label169 As label:
+                        Align: =Align.Center
+                        FontWeight: =FontWeight.Semibold
+                        Height: =Parent.Height
+                        Text: |-
+                            ="Sản phẩm
+                            "
+                        Width: =168
+                        ZIndex: =1
+
+                    Rectangle24 As rectangle:
+                        Fill: =RGBA(56, 96, 178, 0)
+                        Height: =Parent.Height
+                        OnSelect: =Set(positionOptionObjectView,"product")
+                        Width: =168
+                        ZIndex: =2
+
+                    Icon18 As icon.HorizontalLine:
+                        BorderColor: =RGBA(141, 198, 63, 1)
+                        BorderThickness: =1
+                        FocusedBorderThickness: =1
+                        Height: =0
+                        Icon: =Icon.HorizontalLine
+                        OnSelect: =
+                        Visible: =positionOptionObjectView = "product"
+                        Width: =87
+                        X: =40
+                        Y: =35
+                        ZIndex: =3
+
+                Container121_1 As groupContainer.manualLayoutContainer:
+                    DropShadow: =If(positionOptionObjectView = "service",DropShadow.Semibold,DropShadow.Light)
+                    Fill: =RGBA(255, 255, 255, 1)
+                    Height: =If(positionOptionObjectView = "service",41,39)
+                    Width: =168
+                    X: =190
+                    Y: =2
+                    ZIndex: =2
+
+                    Label169_1 As label:
+                        Align: =Align.Center
+                        FontWeight: =FontWeight.Semibold
+                        Height: =Parent.Height
+                        Text: ="Dịch vụ"
+                        Width: =168
+                        ZIndex: =1
+
+                    Rectangle25 As rectangle:
+                        Fill: =RGBA(56, 96, 178, 0)
+                        Height: =Parent.Height
+                        OnSelect: =Set(positionOptionObjectView,"service")
+                        Width: =168
+                        ZIndex: =2
+
+                    Icon18_1 As icon.HorizontalLine:
+                        BorderColor: =RGBA(141, 198, 63, 1)
+                        BorderThickness: =1
+                        Color: =RGBA(141, 198, 63, 1)
+                        FocusedBorderThickness: =1
+                        Height: =0
+                        Icon: =Icon.HorizontalLine
+                        Visible: =positionOptionObjectView = "service"
+                        Width: =87
+                        X: =40
+                        Y: =35
+                        ZIndex: =3
+
+            Container122 As groupContainer.manualLayoutContainer:
+                Fill: =RGBA(128, 128, 128, 0.06)
+                FillPortions: =0
+                Height: =40
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                ZIndex: =7
+
+                Label170 As label:
+                    Align: =Align.Center
+                    FontWeight: =FontWeight.Semibold
+                    Size: =15
+                    Text: ="Tên sản phẩm"
+                    Width: =567
+                    ZIndex: =1
+
+                Label170_1 As label:
+                    Align: =Align.Center
+                    FontWeight: =FontWeight.Semibold
+                    Height: =38
+                    Size: =15
+                    Text: ="Số lượng"
+                    Width: =136
+                    X: =567
+                    Y: =2
+                    ZIndex: =2
+
+                Label170_2 As label:
+                    Align: =Align.Center
+                    FontWeight: =FontWeight.Semibold
+                    Height: =38
+                    Size: =15
+                    Text: ="Giá"
+                    Width: =234
+                    X: =703
+                    Y: =2
+                    ZIndex: =3
+
+                Label170_3 As label:
+                    Align: =Align.Center
+                    FontWeight: =FontWeight.Semibold
+                    Height: =38
+                    Size: =15
+                    Text: ="Vat(%)"
+                    Width: =76
+                    X: =937
+                    Y: =2
+                    ZIndex: =4
+
+                Label170_4 As label:
+                    Align: =Align.Center
+                    FontWeight: =FontWeight.Semibold
+                    Height: =38
+                    Size: =15
+                    Text: ="Tổng tiền"
+                    Width: =321
+                    X: =1013
+                    Y: =2
+                    ZIndex: =5
+
+            "Gallery29 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+                AlignInContainer: =AlignInContainer.SetByContainer
+                DelayItemLoading: =true
+                DisplayMode: =DisplayMode.View
+                Fill: =RGBA(241, 244, 249, 1)
+                Items: =Quote_Product
+                Layout: =Layout.Vertical
+                LayoutMinHeight: =287
+                LayoutMinWidth: =320
+                LoadingSpinner: =LoadingSpinner.Data
+                ShowScrollbar: =false
+                TemplatePadding: =0
+                TemplateSize: =60
+                ZIndex: =8
+
+                Separator13 As rectangle:
+                    Height: =8
+                    OnSelect: =Select(Parent)
+                    Width: =Parent.TemplateWidth
+                    Y: =Parent.TemplateHeight - Self.Height
+                    ZIndex: =5
+
+                Label171 As label:
+                    Align: =Align.Center
+                    Color: =RGBA(0, 18, 107, 1)
+                    Height: =52
+                    Italic: =true
+                    OnSelect: =Select(Parent)
+                    Size: =15
+                    Text: =LookUp(Product,id_Product = ThisItem.id_Product).name_Product
+                    Width: =567
+                    Wrap: =false
+                    ZIndex: =6
+
+                Label171_1 As label:
+                    Align: =Align.Center
+                    Height: =52
+                    OnSelect: =Select(Parent)
+                    Size: =15
+                    Text: =ThisItem.quantity_Quote_Product
+                    Width: =136
+                    X: =567
+                    ZIndex: =7
+
+                Label171_2 As label:
+                    Align: =Align.Center
+                    Height: =52
+                    Italic: =true
+                    OnSelect: =Select(Parent)
+                    Size: =15
+                    Text: =Text(ThisItem.price_Quote_Product,"0,000")
+                    Width: =234
+                    X: =703
+                    ZIndex: =8
+
+                Label171_3 As label:
+                    Align: =Align.Center
+                    Height: =52
+                    OnSelect: =Select(Parent)
+                    Size: =15
+                    Text: =ThisItem.vat & "%"
+                    Width: =76
+                    X: =937
+                    ZIndex: =9
+
+                Label171_4 As label:
+                    Align: =Align.Center
+                    Color: =RGBA(184, 0, 0, 1)
+                    Height: =52
+                    Italic: =true
+                    OnSelect: =Select(Parent)
+                    Size: =15
+                    Text: =Text((ThisItem.quantity_Quote_Product * ThisItem.price_Quote_Product) +(ThisItem.quantity_Quote_Product * ThisItem.price_Quote_Product*ThisItem.vat%),"0,000")
+                    Width: =321
+                    X: =1013
+                    ZIndex: =10
 
