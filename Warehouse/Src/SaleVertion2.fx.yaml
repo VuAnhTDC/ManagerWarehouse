@@ -282,7 +282,7 @@ SaleVertion2 As screen:
                             id_Quote = Gallery16.Selected.id_Quote
                         )
                     );
-                    Reset(Toggle1)
+                    Reset(Toggle1);
                 TemplatePadding: =0
                 TemplateSize: =37
                 Width: =981
@@ -2486,7 +2486,11 @@ SaleVertion2 As screen:
                             Image: =iconhethang
                             ImagePosition: =ImagePosition.Fill
                             OnSelect: =Select(Parent)
-                            Visible: =ThisItem.quantity_Quote_Product > LookUp(Product,id_Product = ThisItem.id_Product).quantity_Product && Gallery16.Selected.quote_Status.Value = "Báo giá"
+                            Visible: |-
+                                =ThisItem.quantity_Quote_Product > LookUp(
+                                    Product,
+                                    id_Product = ThisItem.id_Product
+                                ).quantity_Product && Gallery16.Selected.quote_Status.Value = "Báo giá"
                             Width: =87
                             X: =1028
                             ZIndex: =15
@@ -2881,14 +2885,19 @@ SaleVertion2 As screen:
 
                 Toggle1 As toggleSwitch:
                     Color: =RGBA(128, 128, 128, 1)
-                    DisplayMode: =If(Container100.Visible ||Container100_1.Visible ||Image12.Visible,DisplayMode.Disabled,DisplayMode.Edit)
+                    DisplayMode: |-
+                        =If(
+                            Container100.Visible || Container100_1.Visible || Image12.Visible,
+                            DisplayMode.Disabled,
+                            DisplayMode.Edit
+                        )
                     FalseFill: =RGBA(56, 96, 178, 1)
                     FalseText: ="Chuyển sang đơn hàng"
                     FontWeight: =FontWeight.Semibold
                     Height: =47
                     Italic: =true
-                    OnCheck: |-
-                        =Patch(
+                    OnCheck: |
+                        =/*Patch(
                             Quote,
                             LookUp(
                                 Quote,
@@ -2931,7 +2940,7 @@ SaleVertion2 As screen:
                         Set(
                             isVisibleUpdatQuote_Vertion2,
                             false
-                        )
+                        )*/
                     Size: =15
                     TextPosition: =TextPosition.Left
                     TrueText: ="Chuyển sang đơn hàng"
@@ -9236,10 +9245,10 @@ SaleVertion2 As screen:
                                     Quote_Data,
                                     Quote
                                 );
-                                Set(
+                               /* Set(
                                     Quote_Product_Data,
                                     Quote_Product
-                                );
+                                );*/
                                 Refresh(Quote_Product);
                                 Refresh(Quote_Service);
                                 ClearCollect(

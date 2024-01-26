@@ -27095,47 +27095,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "SaleVertion2.containerstatictical.Container16_1.Container28_2.Container4_7.Button2_5.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "SaleVertion2.containerstatictical.Container16_1.Container28_2.Container4_7.Button2_5.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 18,
-                  "charOffset": 7607,
-                  "snippet": {
-                    "text": "Quote_Product_Data"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "SaleVertion2",
-                "type": "SaleVertion2.containerstatictical.Container16_1.Container28_2.Container4_7.Button2_5"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Data",
-              "Ident"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrExpectedFound-Ex-Fnd",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "SaleVertion2.containerstatictical.Container16_1.containerDetailStatitical_Product.Gallery29.Items"
                 }
               ],
