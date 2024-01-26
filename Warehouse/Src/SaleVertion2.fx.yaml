@@ -10100,20 +10100,22 @@ SaleVertion2 As screen:
 
                 Container119 As groupContainer.manualLayoutContainer:
                     Height: =80
-                    Width: =350
-                    X: =240
+                    X: =90
                     Y: =5
                     ZIndex: =1
 
                     Label166 As label:
+                        FontWeight: =FontWeight.Semibold
                         Height: =36
                         Size: =15
                         Text: ="Tổng sản phẩm"
-                        Width: =282
-                        X: =68
+                        Width: =170
+                        X: =1
+                        Y: =44
                         ZIndex: =1
 
                     Label167 As label:
+                        Align: =Align.Center
                         FontWeight: =FontWeight.Semibold
                         Height: =44
                         Size: =20
@@ -10141,10 +10143,57 @@ SaleVertion2 As screen:
                                     ).id_Quote
                                 )
                             ))
-                        Width: =254
-                        X: =94
-                        Y: =36
+                        Width: =170
+                        X: =1
                         ZIndex: =2
+
+                    Label172 As label:
+                        Align: =Align.Center
+                        FontWeight: =FontWeight.Semibold
+                        Height: =36
+                        Size: =15
+                        Text: ="Tổng tiền"
+                        Width: =311
+                        X: =189
+                        Y: =44
+                        ZIndex: =3
+
+                    Label167_2 As label:
+                        Align: =Align.Center
+                        FontWeight: =FontWeight.Semibold
+                        Height: =44
+                        Size: =20
+                        Text: |-
+                            =Text(
+                                Sum(
+                                    If(
+                                        !Dropdown2_2.Visible,
+                                        Filter(
+                                            Quote_Service,
+                                            id_Quote in Filter(
+                                                dataQuote,
+                                                Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value
+                                            ).id_Quote
+                                        ),
+                                        Filter(
+                                            Quote_Service,
+                                            id_Quote in Filter(
+                                                dataQuote,
+                                                Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && Month(quote_Date) = Value(
+                                                    Mid(
+                                                        Dropdown2_2.Selected.Value,
+                                                        7,
+                                                        2
+                                                    )
+                                                )
+                                            ).id_Quote
+                                        )
+                                    ),price_Quote_Service
+                                ),"0,000"
+                            )
+                        Width: =311
+                        X: =189
+                        ZIndex: =4
 
                 Container119_1 As groupContainer.manualLayoutContainer:
                     Height: =80
@@ -10154,11 +10203,10 @@ SaleVertion2 As screen:
                     ZIndex: =2
 
                     Label166_1 As label:
-                        Height: =30
+                        Height: =36
                         Size: =15
                         Text: ="Tổng dịch vụ"
-                        Width: =282
-                        X: =68
+                        Width: =170
                         ZIndex: =1
 
                     Label167_1 As label:

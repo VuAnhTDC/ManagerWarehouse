@@ -26445,6 +26445,86 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "SaleVertion2.containerstatictical.Container16_1.Container114.Container119.Label167_2.Text"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "SaleVertion2.containerstatictical.Container16_1.Container114.Container119.Label167_2.Text",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
+                  "charOffset": 137,
+                  "snippet": {
+                    "text": "in"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Text",
+                "module": "SaleVertion2",
+                "type": "SaleVertion2.containerstatictical.Container16_1.Container114.Container119.Label167_2"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint-InOpRhs",
+          "ruleIndex": 10
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "SaleVertion2.containerstatictical.Container16_1.Container114.Container119.Label167_2.Text"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "SaleVertion2.containerstatictical.Container16_1.Container114.Container119.Label167_2.Text",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
+                  "charOffset": 376,
+                  "snippet": {
+                    "text": "in"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Text",
+                "module": "SaleVertion2",
+                "type": "SaleVertion2.containerstatictical.Container16_1.Container114.Container119.Label167_2"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint-InOpRhs",
+          "ruleIndex": 10
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "DetailQuote_Screen.Container1.Arrow1.AccessibleLabel"
                 }
               ],
