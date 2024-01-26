@@ -10089,159 +10089,6 @@ SaleVertion2 As screen:
                 Width: =250
                 ZIndex: =4
 
-            Container114 As groupContainer.manualLayoutContainer:
-                AlignInContainer: =AlignInContainer.SetByContainer
-                DropShadow: =DropShadow.None
-                FillPortions: =0
-                Height: =90
-                LayoutMinHeight: =100
-                LayoutMinWidth: =250
-                ZIndex: =5
-
-                Container119 As groupContainer.manualLayoutContainer:
-                    Height: =80
-                    X: =90
-                    Y: =5
-                    ZIndex: =1
-
-                    Label166 As label:
-                        FontWeight: =FontWeight.Semibold
-                        Height: =36
-                        Size: =15
-                        Text: ="Tổng sản phẩm"
-                        Width: =170
-                        X: =1
-                        Y: =44
-                        ZIndex: =1
-
-                    Label167 As label:
-                        Align: =Align.Center
-                        FontWeight: =FontWeight.Semibold
-                        Height: =44
-                        Size: =20
-                        Text: |-
-                            =CountRows(If(
-                                !Dropdown2_2.Visible,
-                                Filter(
-                                    Quote_Product,
-                                    id_Quote in Filter(
-                                        dataQuote,
-                                        Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value
-                                    ).id_Quote
-                                ),
-                                Filter(
-                                    Quote_Product,
-                                    id_Quote in Filter(
-                                        dataQuote,
-                                        Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && Month(quote_Date) = Value(
-                                            Mid(
-                                                Dropdown2_2.Selected.Value,
-                                                7,
-                                                2
-                                            )
-                                        )
-                                    ).id_Quote
-                                )
-                            ))
-                        Width: =170
-                        X: =1
-                        ZIndex: =2
-
-                    Label172 As label:
-                        Align: =Align.Center
-                        FontWeight: =FontWeight.Semibold
-                        Height: =36
-                        Size: =15
-                        Text: ="Tổng tiền"
-                        Width: =311
-                        X: =189
-                        Y: =44
-                        ZIndex: =3
-
-                    Label167_2 As label:
-                        Align: =Align.Center
-                        FontWeight: =FontWeight.Semibold
-                        Height: =44
-                        Size: =20
-                        Text: |-
-                            =Text(
-                                Sum(
-                                    If(
-                                        !Dropdown2_2.Visible,
-                                        Filter(
-                                            Quote_Service,
-                                            id_Quote in Filter(
-                                                dataQuote,
-                                                Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value
-                                            ).id_Quote
-                                        ),
-                                        Filter(
-                                            Quote_Service,
-                                            id_Quote in Filter(
-                                                dataQuote,
-                                                Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && Month(quote_Date) = Value(
-                                                    Mid(
-                                                        Dropdown2_2.Selected.Value,
-                                                        7,
-                                                        2
-                                                    )
-                                                )
-                                            ).id_Quote
-                                        )
-                                    ),price_Quote_Service
-                                ),"0,000"
-                            )
-                        Width: =311
-                        X: =189
-                        ZIndex: =4
-
-                Container119_1 As groupContainer.manualLayoutContainer:
-                    Height: =80
-                    Width: =350
-                    X: =754
-                    Y: =5
-                    ZIndex: =2
-
-                    Label166_1 As label:
-                        Height: =36
-                        Size: =15
-                        Text: ="Tổng dịch vụ"
-                        Width: =170
-                        ZIndex: =1
-
-                    Label167_1 As label:
-                        FontWeight: =FontWeight.Semibold
-                        Height: =56
-                        Size: =20
-                        Text: |-
-                            =CountRows(If(
-                                !Dropdown2_2.Visible,
-                                Filter(
-                                    Quote_Service,
-                                    id_Quote in Filter(
-                                        dataQuote,
-                                        Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value
-                                    ).id_Quote
-                                ),
-                                Filter(
-                                    Quote_Service,
-                                    id_Quote in Filter(
-                                        dataQuote,
-                                        Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && Month(quote_Date) = Value(
-                                            Mid(
-                                                Dropdown2_2.Selected.Value,
-                                                7,
-                                                2
-                                            )
-                                        )
-                                    ).id_Quote
-                                )
-                            ))
-                        Width: =254
-                        X: =92
-                        Y: =24
-                        ZIndex: =2
-
             Container120 As groupContainer.manualLayoutContainer:
                 DropShadow: =DropShadow.None
                 FillPortions: =0
@@ -10510,13 +10357,16 @@ SaleVertion2 As screen:
                         Italic: =true
                         OnSelect: =Select(Parent)
                         Size: =15
-                        Text: =Text((ThisItem.quantity_Quote_Product * ThisItem.price_Quote_Product) +(ThisItem.quantity_Quote_Product * ThisItem.price_Quote_Product*ThisItem.vat%),"0,000")
+                        Text: |-
+                            =Text(
+                                (ThisItem.quantity_Quote_Product * ThisItem.price_Quote_Product) + (ThisItem.quantity_Quote_Product * ThisItem.price_Quote_Product * ThisItem.vat%),
+                                "0,000"
+                            )
                         Width: =321
                         X: =1013
                         ZIndex: =10
 
             containerDetailStatitical_Service As groupContainer.manualLayoutContainer:
-                FillPortions: =0
                 Height: =Container122_1.Height + Gallery29_1.Height
                 LayoutMinHeight: =100
                 LayoutMinWidth: =250
@@ -10566,7 +10416,8 @@ SaleVertion2 As screen:
                     DisplayMode: =DisplayMode.View
                     Fill: =RGBA(241, 244, 249, 1)
                     Height: |-
-                        =CountRows(If(
+                        =CountRows(
+                            If(
                             !Dropdown2_2.Visible,
                             Filter(
                                 Quote_Service,
@@ -10588,7 +10439,8 @@ SaleVertion2 As screen:
                                     )
                                 ).id_Quote
                             )
-                        )) * 60
+                        )
+                        ) * 60
                     Items: |-
                         =If(
                             !Dropdown2_2.Visible,
