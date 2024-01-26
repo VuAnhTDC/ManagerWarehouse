@@ -7052,7 +7052,7 @@ SaleVertion2 As screen:
                     Height: =48
                     OnSelect: =Select(Parent)
                     Size: =15
-                    Text: =ThisItem.quote_Date
+                    Text: =Text(ThisItem.quote_Date,"dd/mm/yyyy")
                     Width: =145
                     X: =258
                     ZIndex: =2
@@ -7063,7 +7063,7 @@ SaleVertion2 As screen:
                     Height: =48
                     OnSelect: =Select(Parent)
                     Size: =15
-                    Text: =ThisItem.quote_Expire
+                    Text: =Text(ThisItem.quote_Expire,"dd/mm/yyyy")
                     Width: =154
                     X: =403
                     ZIndex: =3
@@ -7881,7 +7881,8 @@ SaleVertion2 As screen:
 
             Container45 As groupContainer.manualLayoutContainer:
                 BorderThickness: =1
-                DropShadow: =DropShadow.None
+                DropShadow: =DropShadow.Semibold
+                Fill: =RGBA(241, 244, 249, 1)
                 Height: =474
                 RadiusBottomLeft: =10
                 RadiusBottomRight: =10
@@ -7940,6 +7941,7 @@ SaleVertion2 As screen:
                     BorderColor: =RGBA(56, 96, 178, 1)
                     BorderThickness: =1
                     DelayItemLoading: =true
+                    Fill: =RGBA(255, 255, 255, 0.98)
                     Height: =358
                     Items: =Filter(Purchase_request_Product,id_Purchase_request = Gallery25.Selected.id_Purchase_request)
                     Layout: =Layout.Vertical
