@@ -49,7 +49,7 @@
                 LoadingSpinner: =LoadingSpinner.Data
                 ShowScrollbar: =false
                 TemplatePadding: =0
-                TemplateSize: =250
+                TemplateSize: =228
                 Width: =Gallery_Menu_Warehouse.TemplateWidth*3
                 ZIndex: =1
 
@@ -58,7 +58,7 @@
                     OnSelect: =Select(Parent)
                     Size: =15
                     Text: =ThisItem.name
-                    X: =80
+                    X: =38
                     Y: =35
                     ZIndex: =1
 
@@ -67,8 +67,8 @@
                     Image: =ThisItem.icon
                     OnSelect: =Select(Parent)
                     Width: =50
-                    X: =27
-                    Y: =26
+                    X: =13
+                    Y: =25
                     ZIndex: =2
 
                 Button_Menu_Warehouse As button:
@@ -85,7 +85,7 @@
                     RadiusTopLeft: =0
                     RadiusTopRight: =0
                     Text: =""
-                    Width: =Gallery_Menu_Warehouse.TemplateWidth
+                    Width: =228
                     ZIndex: =3
 
             Container_Information_User As groupContainer.manualLayoutContainer:
