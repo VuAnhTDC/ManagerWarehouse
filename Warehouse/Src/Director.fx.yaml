@@ -1,8 +1,16 @@
 Director As screen:
-    OnVisible: |
+    OnVisible: |-
         =ClearCollect(
             dataQuote,
             Quote
+        );
+        ClearCollect(
+            Quote_Product_Data,
+            Quote_Product
+        );
+        ClearCollect(
+            Quote_Service_Data,
+            Quote_Service
         );
 
     Container16_2 As groupContainer.verticalAutoLayoutContainer:
@@ -1280,21 +1288,19 @@ Director As screen:
                                 )
                             ),
                             Refresh(Quote);
-                            Refresh(Quote_Data);
-                            Refresh(Product);
-                            Set(
-                                Quote_Data,
-                                Quote
-                            );
-                            Set(
-                                Quote_Product_Data,
-                                Quote_Product
-                            );
                             Refresh(Quote_Product);
                             Refresh(Quote_Service);
                             ClearCollect(
                                 dataQuote,
                                 Quote
+                            );
+                            ClearCollect(
+                                Quote_Product_Data,
+                                Quote_Product
+                            );
+                            ClearCollect(
+                                Quote_Service_Data,
+                                Quote_Service
                             );
                             
                         )
