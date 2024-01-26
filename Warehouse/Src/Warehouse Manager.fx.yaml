@@ -5069,20 +5069,41 @@
                             "Vui lòng chọn item cần xóa!!!",
                             NotificationType.Error
                         ),
-                        Patch(
-                            Product,
-                            LookUp(
-                                Product,
-                                id_Product = Gallery17_1.Selected.id_Product
+                        If(
+                            IsEmpty(
+                                Filter(
+                                    Quote_Product,
+                                    ThisRecord.id_Product = Gallery17_1.Selected.id_Product
+                                )
                             ),
-                            {activity: false}
+                            Patch(
+                                Product,
+                                LookUp(
+                                    Product,
+                                    id_Product = Gallery17_1.Selected.id_Product
+                                ),
+                                {activity: false}
+                            );
+                            Set(
+                                show_remove_product,
+                                false
+                            );
+                            Notify(
+                                "Xóa sản phẩm thành công!!!",
+                                NotificationType.Success,
+                                1500
+                            ),
+                              Set(
+                                show_remove_product,
+                                false
+                            );
+                            Notify(
+                                "Sản phẩm đã tồn tại trong báo giá!!!",
+                                NotificationType.Error,
+                                1500
+                            )
                         );
-                        Set(show_remove_product,false);
-                        Notify(
-                            "Xóa sản phẩm thành công!!!",
-                            NotificationType.Success,
-                            1500
-                        )
+                        
                     )
                 Text: ="Xác nhận"
                 Visible: =show_remove_product
