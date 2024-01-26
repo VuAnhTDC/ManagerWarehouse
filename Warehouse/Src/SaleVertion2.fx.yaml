@@ -1968,6 +1968,7 @@ SaleVertion2 As screen:
                     }
                 )
             LoadingSpinner: =LoadingSpinner.Data
+            OnSelect: =Notify("Ád"&informationUser.id_Role)
             TemplateSize: =242
             Width: =1017
             ZIndex: =1
