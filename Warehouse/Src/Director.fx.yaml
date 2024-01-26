@@ -4,7 +4,7 @@ Director As screen:
             dataQuote,
             Quote
         );
-        ClearCollect(
+        Set(
             Quote_Product_Data,
             Quote_Product
         );
@@ -1294,7 +1294,7 @@ Director As screen:
                                 dataQuote,
                                 Quote
                             );
-                            ClearCollect(
+                            Set(
                                 Quote_Product_Data,
                                 Quote_Product
                             );
