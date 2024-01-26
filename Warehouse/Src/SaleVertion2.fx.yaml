@@ -2085,8 +2085,23 @@ SaleVertion2 As screen:
                             If(
                                 btnFunctionSaleVertion2 = "btnPurchase",
                                 Refresh(Purchase_request);
-                                Refresh(Purchase_request_Product),// nếu là thống kê
-                                If(btnFunctionSaleVertion2 = "btnStatictical", Set(positionOptionObjectView,"product"))
+                                Refresh(Purchase_request_Product),
+                                // nếu là thống kê
+                                If(
+                                    btnFunctionSaleVertion2 = "btnStatictical",
+                                    Set(
+                                        positionOptionObjectView,
+                                        "product"
+                                    );
+                                    Refresh(Quote);
+                                    Refresh(Quote_Product);
+                                    Refresh(Quote_Service);
+                                    ClearCollect(
+                                        dataQuote,
+                                        Quote
+                                    );
+                        
+                                )
                             )
                         )
                     PressedBorderColor: =/*Self.Fill*/
@@ -10102,7 +10117,30 @@ SaleVertion2 As screen:
                         FontWeight: =FontWeight.Semibold
                         Height: =44
                         Size: =20
-                        Text: =CountRows(Quote_Product)
+                        Text: |-
+                            =CountRows(If(
+                                !Dropdown2_2.Visible,
+                                Filter(
+                                    Quote_Product,
+                                    id_Quote in Filter(
+                                        dataQuote,
+                                        Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value
+                                    ).id_Quote
+                                ),
+                                Filter(
+                                    Quote_Product,
+                                    id_Quote in Filter(
+                                        dataQuote,
+                                        Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && Month(quote_Date) = Value(
+                                            Mid(
+                                                Dropdown2_2.Selected.Value,
+                                                7,
+                                                2
+                                            )
+                                        )
+                                    ).id_Quote
+                                )
+                            ))
                         Width: =254
                         X: =94
                         Y: =36
@@ -10127,7 +10165,30 @@ SaleVertion2 As screen:
                         FontWeight: =FontWeight.Semibold
                         Height: =56
                         Size: =20
-                        Text: =CountRows(Quote_Service)
+                        Text: |-
+                            =CountRows(If(
+                                !Dropdown2_2.Visible,
+                                Filter(
+                                    Quote_Service,
+                                    id_Quote in Filter(
+                                        dataQuote,
+                                        Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value
+                                    ).id_Quote
+                                ),
+                                Filter(
+                                    Quote_Service,
+                                    id_Quote in Filter(
+                                        dataQuote,
+                                        Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && Month(quote_Date) = Value(
+                                            Mid(
+                                                Dropdown2_2.Selected.Value,
+                                                7,
+                                                2
+                                            )
+                                        )
+                                    ).id_Quote
+                                )
+                            ))
                         Width: =254
                         X: =92
                         Y: =24
@@ -10287,8 +10348,54 @@ SaleVertion2 As screen:
                     DelayItemLoading: =true
                     DisplayMode: =DisplayMode.View
                     Fill: =RGBA(241, 244, 249, 1)
-                    Height: =CountRows(Quote_Product) * 60
-                    Items: =Quote_Product
+                    Height: |-
+                        =CountRows(If(
+                            !Dropdown2_2.Visible,
+                            Filter(
+                                Quote_Product,
+                                id_Quote in Filter(
+                                    dataQuote,
+                                    Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value
+                                ).id_Quote
+                            ),
+                            Filter(
+                                Quote_Product,
+                                id_Quote in Filter(
+                                    dataQuote,
+                                    Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && Month(quote_Date) = Value(
+                                        Mid(
+                                            Dropdown2_2.Selected.Value,
+                                            7,
+                                            2
+                                        )
+                                    )
+                                ).id_Quote
+                            )
+                        )) * 60
+                    Items: |-
+                        =If(
+                            !Dropdown2_2.Visible,
+                            Filter(
+                                Quote_Product,
+                                id_Quote in Filter(
+                                    dataQuote,
+                                    Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value
+                                ).id_Quote
+                            ),
+                            Filter(
+                                Quote_Product,
+                                id_Quote in Filter(
+                                    dataQuote,
+                                    Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && Month(quote_Date) = Value(
+                                        Mid(
+                                            Dropdown2_2.Selected.Value,
+                                            7,
+                                            2
+                                        )
+                                    )
+                                ).id_Quote
+                            )
+                        )
                     Layout: =Layout.Vertical
                     LoadingSpinner: =LoadingSpinner.Data
                     ShowScrollbar: =false
@@ -10410,8 +10517,54 @@ SaleVertion2 As screen:
                     DelayItemLoading: =true
                     DisplayMode: =DisplayMode.View
                     Fill: =RGBA(241, 244, 249, 1)
-                    Height: =CountRows(Quote_Product) * 60
-                    Items: =Quote_Service
+                    Height: |-
+                        =CountRows(If(
+                            !Dropdown2_2.Visible,
+                            Filter(
+                                Quote_Service,
+                                id_Quote in Filter(
+                                    dataQuote,
+                                    Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value
+                                ).id_Quote
+                            ),
+                            Filter(
+                                Quote_Service,
+                                id_Quote in Filter(
+                                    dataQuote,
+                                    Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && Month(quote_Date) = Value(
+                                        Mid(
+                                            Dropdown2_2.Selected.Value,
+                                            7,
+                                            2
+                                        )
+                                    )
+                                ).id_Quote
+                            )
+                        )) * 60
+                    Items: |-
+                        =If(
+                            !Dropdown2_2.Visible,
+                            Filter(
+                                Quote_Service,
+                                id_Quote in Filter(
+                                    dataQuote,
+                                    Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value
+                                ).id_Quote
+                            ),
+                            Filter(
+                                Quote_Service,
+                                id_Quote in Filter(
+                                    dataQuote,
+                                    Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && Month(quote_Date) = Value(
+                                        Mid(
+                                            Dropdown2_2.Selected.Value,
+                                            7,
+                                            2
+                                        )
+                                    )
+                                ).id_Quote
+                            )
+                        )
                     Layout: =Layout.Vertical
                     LoadingSpinner: =LoadingSpinner.Data
                     ShowScrollbar: =false
