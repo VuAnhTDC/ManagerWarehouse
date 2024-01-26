@@ -9228,6 +9228,12 @@ SaleVertion2 As screen:
                                     Quote_Product_Data,
                                     Quote_Product
                                 );
+                                Refresh(Quote_Product);
+                                Refresh(Quote_Service);
+                                ClearCollect(
+                                    dataQuote,
+                                    Quote
+                                );
                                 
                             )
                         Size: =12
