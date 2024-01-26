@@ -256,7 +256,7 @@ Director As screen:
                         );
                         )
                     Width: =250
-                    X: =387
+                    X: =400
                     Y: =10
                     ZIndex: =2
 
@@ -632,7 +632,7 @@ Director As screen:
                         )
                     OnSelect: =
                     Width: =100
-                    X: =654
+                    X: =667
                     Y: =10
                     ZIndex: =4
 
@@ -818,7 +818,7 @@ Director As screen:
                     Size: =15
                     Visible: =If('Dropdown_Type of statistics_Director_3'.SelectedText.Value = "Thống kê theo tháng",true,false)
                     Width: =150
-                    X: =766
+                    X: =779
                     Y: =10
                     ZIndex: =5
 
