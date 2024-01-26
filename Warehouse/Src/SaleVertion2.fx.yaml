@@ -7958,12 +7958,15 @@ SaleVertion2 As screen:
             Height: =688
             LayoutDirection: =LayoutDirection.Vertical
             LayoutMode: =LayoutMode.Auto
+            PaddingLeft: =10
+            PaddingRight: =10
             Width: =1366
             ZIndex: =1
 
             Container26_2 As groupContainer.manualLayoutContainer:
+                DropShadow: =DropShadow.Semibold
                 FillPortions: =0
-                Height: =100
+                Height: =60
                 LayoutMinHeight: =100
                 LayoutMinWidth: =250
                 X: =866
@@ -7977,7 +7980,7 @@ SaleVertion2 As screen:
                     Text: |-
                         ="Bộ lọc:"
                     Width: =116
-                    X: =497
+                    X: =317
                     Y: =3
                     ZIndex: =1
 
@@ -8164,7 +8167,7 @@ SaleVertion2 As screen:
                         );
                         )
                     Width: =250
-                    X: =963
+                    X: =713
                     Y: =3
                     ZIndex: =2
 
@@ -8352,7 +8355,7 @@ SaleVertion2 As screen:
                     SearchItems: =Search(Filter(User,id_Role=LookUp(Role,name_Role="Sales").ID&&activity=true),ComboBox_Sales_Director_2.SearchText,"user_Name")
                     SelectMultiple: =false
                     Width: =250
-                    X: =671
+                    X: =433
                     Y: =3
                     ZIndex: =3
 
@@ -8540,7 +8543,7 @@ SaleVertion2 As screen:
                         )
                     OnSelect: =
                     Width: =100
-                    X: =1244
+                    X: =994
                     Y: =3
                     ZIndex: =4
 
@@ -8726,8 +8729,8 @@ SaleVertion2 As screen:
                     Size: =15
                     Visible: =If('Dropdown_Type of statistics_Director_2'.SelectedText.Value = "Thống kê theo tháng",true,false)
                     Width: =150
-                    X: =671
-                    Y: =60
+                    X: =1124
+                    Y: =3
                     ZIndex: =5
 
             Container_Title_Director_3 As groupContainer.verticalAutoLayoutContainer:
@@ -8746,6 +8749,7 @@ SaleVertion2 As screen:
                     ZIndex: =2
 
                     Container28_2 As groupContainer.verticalAutoLayoutContainer:
+                        DropShadow: =DropShadow.None
                         FillPortions: =0
                         Height: =50
                         LayoutAlignItems: =LayoutAlignItems.Center
