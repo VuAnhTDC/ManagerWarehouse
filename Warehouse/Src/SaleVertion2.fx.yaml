@@ -2149,10 +2149,22 @@ SaleVertion2 As screen:
             Label60 As label:
                 Color: =RGBA(54, 176, 75, 1)
                 FontWeight: =FontWeight.Semibold
-                Height: =50
+                Height: =43
                 Size: =24
-                Text: =If(statusViewEditQuote = "view","Chi tiết Báo giá - Đơn hàng","Sửa thông tin báo giá")
-                Width: =482
+                Text: |-
+                    =If(
+                        statusViewEditQuote = "view",
+                        If(
+                            Gallery16.Selected.quote_Status.Value = "Báo giá",
+                            "Chi tiết báo giá",
+                            If(
+                                Gallery16.Selected.quote_Status.Value = "Đơn hàng",
+                                "Chi tiết đơn hàng"
+                            )
+                        ),
+                        "Sửa thông tin báo giá"
+                    )
+                Width: =343
                 X: =42
                 Y: =19
                 ZIndex: =1
@@ -2938,8 +2950,8 @@ SaleVertion2 As screen:
                 RadiusTopRight: =10
                 Visible: =statusViewEditQuote = "view"
                 Width: =179
-                X: =If(Gallery16.Selected.quote_Status.Value = "Đơn hàng",542,710)
-                Y: =26
+                X: =If(Gallery16.Selected.quote_Status.Value = "Đơn hàng",402,570)
+                Y: =19
                 ZIndex: =19
 
                 Image15 As image:
@@ -3133,8 +3145,8 @@ SaleVertion2 As screen:
                 RadiusTopRight: =10
                 Visible: =statusViewEditQuote = "view" && Gallery16.Selected.quote_Status.Value = "Báo giá"
                 Width: =154
-                X: =542
-                Y: =26
+                X: =402
+                Y: =19
                 ZIndex: =20
 
                 Label164_1 As label:
