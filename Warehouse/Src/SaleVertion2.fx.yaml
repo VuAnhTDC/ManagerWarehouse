@@ -10175,7 +10175,7 @@ SaleVertion2 As screen:
 
             containerDetailStatitical_Product As groupContainer.manualLayoutContainer:
                 FillPortions: =0
-                Height: =Container122.Height + Gallery29.Height
+                Height: =Container122.Height + Gallery29.Height + 50
                 LayoutMinHeight: =100
                 LayoutMinWidth: =250
                 Visible: =positionOptionObjectView = "product"
@@ -10244,51 +10244,79 @@ SaleVertion2 As screen:
                     DisplayMode: =DisplayMode.View
                     Fill: =RGBA(241, 244, 249, 1)
                     Height: |-
-                        =CountRows(If(
-                            !Dropdown2_2.Visible,
-                            Filter(
-                                Quote_Product,
-                                id_Quote in Filter(
-                                    dataQuote,
-                                    Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value
-                                ).id_Quote
-                            ),
-                            Filter(
-                                Quote_Product,
-                                id_Quote in Filter(
-                                    dataQuote,
-                                    Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && Month(quote_Date) = Value(
-                                        Mid(
-                                            Dropdown2_2.Selected.Value,
-                                            7,
-                                            2
+                        =CountRows(
+                            If(
+                                !Dropdown2_2.Visible,
+                                Filter(
+                                    Quote_Product,
+                                    id_Quote in Filter(
+                                        dataQuote,
+                                        Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value
+                                    ).id_Quote
+                                ),
+                                Filter(
+                                    Quote_Product,
+                                    id_Quote in Filter(
+                                        dataQuote,
+                                        Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && Month(quote_Date) = Value(
+                                            Mid(
+                                                Dropdown2_2.Selected.Value,
+                                                7,
+                                                2
+                                            )
                                         )
-                                    )
-                                ).id_Quote
+                                    ).id_Quote
+                                )
                             )
-                        )) * 60
+                        ) * 60 + 30
                     Items: |-
                         =If(
-                            !Dropdown2_2.Visible,
-                            Filter(
-                                Quote_Product,
-                                id_Quote in Filter(
-                                    dataQuote,
-                                    Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value
-                                ).id_Quote
+                            IsBlank(ComboBox_Sales_Director_2.Selected),
+                            If(
+                                !Dropdown2_2.Visible,
+                                Filter(
+                                    Quote_Product,
+                                    id_Quote in Filter(
+                                        dataQuote,
+                                        Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng"
+                                    ).id_Quote
+                                ),
+                                Filter(
+                                    Quote_Product,
+                                    id_Quote in Filter(
+                                        dataQuote,
+                                        Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && Month(quote_Date) = Value(
+                                            Mid(
+                                                Dropdown2_2.Selected.Value,
+                                                7,
+                                                2
+                                            )
+                                        )&& quote_Status.Value = "Đơn hàng"
+                                    ).id_Quote
+                                )
                             ),
-                            Filter(
-                                Quote_Product,
-                                id_Quote in Filter(
-                                    dataQuote,
-                                    Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && Month(quote_Date) = Value(
-                                        Mid(
-                                            Dropdown2_2.Selected.Value,
-                                            7,
-                                            2
-                                        )
-                                    )
-                                ).id_Quote
+                            If(
+                                !Dropdown2_2.Visible,
+                                Filter(
+                                    Quote_Product,
+                                    id_Quote in Filter(
+                                        dataQuote,
+                                        Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng" && id_User = ComboBox_Sales_Director_2.Selected.ID
+                                    ).id_Quote
+                                ),
+                                Filter(
+                                    Quote_Product,
+                                    id_Quote in Filter(
+                                        dataQuote,
+                                        Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && Month(quote_Date) = Value(
+                                            Mid(
+                                                Dropdown2_2.Selected.Value,
+                                                7,
+                                                2
+                                            )
+                                        ) && quote_Status.Value = "Đơn hàng" && id_User = ComboBox_Sales_Director_2.Selected.ID
+                                    ).id_Quote
+                                )
                             )
                         )
                     Layout: =Layout.Vertical
@@ -10367,6 +10395,7 @@ SaleVertion2 As screen:
                         ZIndex: =10
 
             containerDetailStatitical_Service As groupContainer.manualLayoutContainer:
+                FillPortions: =0
                 Height: =Container122_1.Height + Gallery29_1.Height
                 LayoutMinHeight: =100
                 LayoutMinWidth: =250
@@ -10443,12 +10472,14 @@ SaleVertion2 As screen:
                         ) * 60
                     Items: |-
                         =If(
+                            IsBlank(ComboBox_Sales_Director_2.Selected),
+                            If(
                             !Dropdown2_2.Visible,
                             Filter(
                                 Quote_Service,
                                 id_Quote in Filter(
                                     dataQuote,
-                                    Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value
+                                    Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng"
                                 ).id_Quote
                             ),
                             Filter(
@@ -10461,9 +10492,33 @@ SaleVertion2 As screen:
                                             7,
                                             2
                                         )
-                                    )
+                                    )&& quote_Status.Value = "Đơn hàng"
                                 ).id_Quote
                             )
+                        ),
+                            If(
+                            !Dropdown2_2.Visible,
+                            Filter(
+                                Quote_Service,
+                                id_Quote in Filter(
+                                    dataQuote,
+                                    Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && quote_Status.Value = "Đơn hàng" && id_User = ComboBox_Sales_Director_2.Selected.ID
+                                ).id_Quote
+                            ),
+                            Filter(
+                                Quote_Service,
+                                id_Quote in Filter(
+                                    dataQuote,
+                                    Year(quote_Date) = Dropdown_Year_Director_2.Selected.Value && Month(quote_Date) = Value(
+                                        Mid(
+                                            Dropdown2_2.Selected.Value,
+                                            7,
+                                            2
+                                        )
+                                    )&& quote_Status.Value = "Đơn hàng" && id_User = ComboBox_Sales_Director_2.Selected.ID
+                                ).id_Quote
+                            )
+                        )
                         )
                     Layout: =Layout.Vertical
                     LoadingSpinner: =LoadingSpinner.Data
