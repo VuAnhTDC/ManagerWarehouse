@@ -2920,7 +2920,7 @@ SaleVertion2 As screen:
                 RadiusTopLeft: =10
                 RadiusTopRight: =10
                 Width: =179
-                X: =809
+                X: =If(Gallery16.Selected.quote_Status.Value = "Đơn hàng",542,710)
                 Y: =26
                 ZIndex: =19
 
@@ -3103,7 +3103,6 @@ SaleVertion2 As screen:
                            Gallery16.Selected.id_Quote & Label61.Text & ".html"
                         )
                     Width: =177
-                    X: =2
                     ZIndex: =3
 
             Container118_1 As groupContainer.manualLayoutContainer:
@@ -3114,8 +3113,9 @@ SaleVertion2 As screen:
                 RadiusBottomRight: =10
                 RadiusTopLeft: =10
                 RadiusTopRight: =10
+                Visible: =statusViewEditQuote = "view" && Gallery16.Selected.quote_Status.Value = "Báo giá"
                 Width: =154
-                X: =587
+                X: =542
                 Y: =26
                 ZIndex: =20
 
