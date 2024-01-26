@@ -258,18 +258,29 @@ SaleVertion2 As screen:
                     )
                 Layout: =Layout.Vertical
                 LoadingSpinner: =LoadingSpinner.Data
-                OnSelect: |
+                OnSelect: |-
                     =/*Set(
                         isVisibleDetailQuote_SaleVertion2,
                         true
                     );*/
-                    Set(statusViewEditQuote, "view");
-                    Set(isVisibleDialogAddQuoteNew_SaleVertion2,true);
-                    Set(isVisibleUpdatQuote_Vertion2,true);
-                    Set(positionOptionCreatQuote,0);
+                    Set(
+                        statusViewEditQuote,
+                        "view"
+                    );
+                    Set(
+                        isVisibleDialogAddQuoteNew_SaleVertion2,
+                        true
+                    );
+                    Set(
+                        isVisibleUpdatQuote_Vertion2,
+                        true
+                    );
+                    Set(
+                        positionOptionCreatQuote,
+                        0
+                    );
                     ClearCollect(
-                        arrProductAddQuoteNew_SaleVertion2
-                    ,
+                        arrProductAddQuoteNew_SaleVertion2,
                         Filter(
                             Quote_Product,
                             id_Quote = Gallery16.Selected.id_Quote
@@ -283,6 +294,43 @@ SaleVertion2 As screen:
                         )
                     );
                     Reset(Toggle1);
+                    ClearCollect(
+                        dataPdnull,
+                        []
+                    );
+                    Refresh(Product);
+                    ClearCollect(
+                        dataPd,
+                        Product
+                    );
+                    Refresh(Service);
+                    ClearCollect(
+                        dataSV,
+                        Service
+                    );
+                    ForAll(
+                        arrProductAddQuoteNew_SaleVertion2 As temp,
+                        If(
+                            temp.quantity_Quote_Product > LookUp(
+                                dataPd,
+                                id_Product = temp.id_Product
+                            ).quantity_Product || LookUp(
+                                dataPd,
+                                id_Product = temp.id_Product
+                            ).activity = false,
+                            Collect(
+                                dataPdnull,
+                                temp.id_Quote
+                            )
+                        )
+                    );
+                    ForAll(arrServiceAddQuoteNew_SaleVertion2 As temp, If(
+                            LookUp(dataSV,id_Serivce = temp.id_Service).activity = false,
+                            Collect(
+                                dataPdnull,
+                                temp.id_Quote
+                            )
+                        ))
                 TemplatePadding: =0
                 TemplateSize: =37
                 Width: =981
@@ -2885,12 +2933,7 @@ SaleVertion2 As screen:
 
                 Toggle1 As toggleSwitch:
                     Color: =RGBA(128, 128, 128, 1)
-                    DisplayMode: |-
-                        =If(
-                            Container100.Visible || Container100_1.Visible || Image12.Visible,
-                            DisplayMode.Disabled,
-                            DisplayMode.Edit
-                        )
+                    DisplayMode: =If(CountRows(dataPdnull) > 0, DisplayMode.Disabled, DisplayMode.Edit)
                     FalseFill: =RGBA(56, 96, 178, 1)
                     FalseText: ="Chuyển sang đơn hàng"
                     FontWeight: =FontWeight.Semibold

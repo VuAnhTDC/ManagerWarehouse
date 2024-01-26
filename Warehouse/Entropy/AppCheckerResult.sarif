@@ -44195,6 +44195,36 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "SaleVertion2.containerViewQuote.Container23.Gallery16.galleryTemplate19.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "SaleVertion2.containerViewQuote.Container23.Gallery16.galleryTemplate19.OnSelect",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "SaleVertion2",
+                "type": "SaleVertion2.containerViewQuote.Container23.Gallery16.galleryTemplate19"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-CollectDelegatableDataSource",
+          "ruleIndex": 17
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "Director.OnVisible"
                 }
               ],
@@ -44328,6 +44358,36 @@
                 "member": "OnSelect",
                 "module": "SaleVertion2",
                 "type": "SaleVertion2.Container17.Gallery9.Container18.Button9"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-CollectDelegatableDataSource",
+          "ruleIndex": 17
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "SaleVertion2.containerViewQuote.Container23.Gallery16.galleryTemplate19.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "SaleVertion2.containerViewQuote.Container23.Gallery16.galleryTemplate19.OnSelect",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "SaleVertion2",
+                "type": "SaleVertion2.containerViewQuote.Container23.Gallery16.galleryTemplate19"
               }
             }
           ],
