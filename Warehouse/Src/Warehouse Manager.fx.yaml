@@ -3002,13 +3002,13 @@
                             Text: |-
                                 =If(
                                     positionItemFunction_Supplier = 0,
-                                    "Thông tin sản phẩm",
+                                    "Thông tin nhà cung cấp",
                                     If(
                                         positionItemFunction_Supplier = 1,
-                                        "Sửa sản phẩm",
+                                        "Sửa nhà cung cấp",
                                         If(
                                             positionItemFunction_Supplier = 2,
-                                            "Thêm sản phẩm"
+                                            "Thêm nhà cung cấp"
                                         )
                                     )
                                 )
